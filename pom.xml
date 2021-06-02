@@ -1,0 +1,138 @@
+<!--
+  ============LICENSE_START=======================================================
+  Copyright (c) 2021 Nordix Foundation.
+  ================================================================================
+  Licensed under the Apache License, Version 2.0 (the "License");
+  you may not use this file except in compliance with the License.
+  You may obtain a copy of the License at
+
+        http://www.apache.org/licenses/LICENSE-2.0
+
+  Unless required by applicable law or agreed to in writing, software
+  distributed under the License is distributed on an "AS IS" BASIS,
+  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  See the License for the specific language governing permissions and
+  limitations under the License.
+  ============LICENSE_END=========================================================
+-->
+
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>org.onap.oparent</groupId>
+        <artifactId>oparent</artifactId>
+        <version>3.2.0</version>
+        <relativePath/>
+    </parent>
+
+    <organization>
+        <name>ONAP - CPS</name>
+        <url>http://www.onap.org/</url>
+    </organization>
+
+    <groupId>org.onap.cps</groupId>
+    <artifactId>ncmp-dmi-plugin</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+    <name>ncmp-dmi-plugin</name>
+    <description>DMI Plugin Service</description>
+    <packaging>pom</packaging>
+
+    <properties>
+        <app>org.onap.cps.Application</app>
+        <java.version>11</java.version>
+        <springboot.version>2.3.8.RELEASE</springboot.version>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <spring-boot-maven-plugin.version>2.3.3.RELEASE</spring-boot-maven-plugin.version>
+        <swagger.version>2.1.4</swagger.version>
+        <swagger-codegen-maven-plugin.version>3.0.18</swagger-codegen-maven-plugin.version>
+        <swagger-annotations-version>1.6.2</swagger-annotations-version>
+        <groovy.version>3.0.8</groovy.version>
+        <oparent.version>3.1.0</oparent.version>
+        <spock-core.version>2.0-M5-groovy-3.0</spock-core.version>
+        <spock-spring.version>2.0-M5-groovy-3.0</spock-spring.version>
+    </properties>
+
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-dependencies</artifactId>
+                <version>${springboot.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+            <dependency>
+                <groupId>io.swagger.core.v3</groupId>
+                <artifactId>swagger-annotations</artifactId>
+                <version>${swagger.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>io.swagger</groupId>
+                <artifactId>swagger-annotations</artifactId>
+                <version>${swagger-annotations-version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.codehaus.groovy</groupId>
+                <artifactId>groovy</artifactId>
+                <version>${groovy.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.codehaus.groovy</groupId>
+                <artifactId>groovy-json</artifactId>
+                <version>${groovy.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.spockframework</groupId>
+                <artifactId>spock-core</artifactId>
+                <version>${spock-core.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.spockframework</groupId>
+                <artifactId>spock-spring</artifactId>
+                <version>${spock-spring.version}</version>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
+    <modules>
+        <module>dmi-rest</module>
+        <module>dmi-plugin</module>
+    </modules>
+
+    <build>
+        <resources>
+            <resource>
+                <directory>src/main/resources</directory>
+                <filtering>true</filtering>
+            </resource>
+            <resource>
+                <directory>target/generated-sources/license</directory>
+                <includes>
+                    <include>third-party-licenses.txt</include>
+                </includes>
+            </resource>
+            <resource>
+                <directory>target/generated-resources/licenses</directory>
+                <includes>
+                    <include>*.*</include>
+                </includes>
+                <targetPath>third-party-licenses</targetPath>
+            </resource>
+        </resources>
+        <plugins>
+            <plugin>
+                <groupId>io.swagger.codegen.v3</groupId>
+                <artifactId>swagger-codegen-maven-plugin</artifactId>
+                <version>${swagger-codegen-maven-plugin.version}</version>
+            </plugin>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+                <version>${spring-boot-maven-plugin.version}</version>
+            </plugin>
+        </plugins>
+    </build>
+</project>
