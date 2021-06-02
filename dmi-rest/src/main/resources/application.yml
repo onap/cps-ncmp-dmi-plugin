@@ -1,0 +1,56 @@
+#  ============LICENSE_START=======================================================
+#  Modification (C) 2021 Nordix Foundation
+#  ================================================================================
+#  Licensed under the Apache License, Version 2.0 (the "License");
+#  you may not use this file except in compliance with the License.
+#  You may obtain a copy of the License at
+#
+#        http://www.apache.org/licenses/LICENSE-2.0
+#  Unless required by applicable law or agreed to in writing, software
+#  distributed under the License is distributed on an "AS IS" BASIS,
+#  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+#  See the License for the specific language governing permissions and
+#  limitations under the License.
+#
+#  SPDX-License-Identifier: Apache-2.0
+#  ============LICENSE_END=========================================================
+
+server:
+  port: 8080
+
+rest:
+  api:
+    dmi-base-path: /dmi/api
+
+security:
+  permit-uri: /manage/health/**,/manage/info,/swagger-ui/**,/swagger-resources/**,/v3/api-docs
+  auth:
+    username: ${CPS_USERNAME}
+    password: ${CPS_PASSWORD}
+
+spring:
+  main:
+    banner-mode: "off"
+  jpa:
+    ddl-auto: create
+    open-in-view: false
+    properties:
+      hibernate:
+        enable_lazy_load_no_trans: true
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+
+  cache:
+    type: caffeine
+    cache-names: yangSchema
+    caffeine:
+      spec: maximumSize=10000,expireAfterAccess=10m
+
+  liquibase:
+    change-log: classpath:changelog/changelog-master.yaml
+    labels: ${LIQUIBASE_LABELS}
+
+  servlet:
+    multipart:
+      enabled: true
+      max-file-size: 100MB
+      max-request-size: 100MB
