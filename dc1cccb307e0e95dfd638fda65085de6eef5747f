@@ -36,6 +36,52 @@
     },
     {
       "key": {
+        "uuid": "3e819fc2_42466d6b",
+        "filename": "dmi-rest/pom.xml",
+        "patchSetId": 2
+      },
+      "lineNbr": 77,
+      "author": {
+        "id": 7743
+      },
+      "writtenOn": "2021-06-03T09:04:21Z",
+      "side": 1,
+      "message": "Modify this to ${project.basedir}/docs/openapi/openapi.yml to align with cps-rest \u0026 cps-ncmp-rest",
+      "range": {
+        "startLine": 77,
+        "startChar": 67,
+        "endLine": 77,
+        "endChar": 78
+      },
+      "revId": "dc1cccb307e0e95dfd638fda65085de6eef5747f",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "cd360854_de6c4246",
+        "filename": "dmi-rest/src/main/java/org/onap/cps/Application.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 7743
+      },
+      "writtenOn": "2021-06-03T09:04:21Z",
+      "side": 1,
+      "message": "Remove System.out.println statement or refactor to use something like slf4j",
+      "range": {
+        "startLine": 31,
+        "startChar": 8,
+        "endLine": 31,
+        "endChar": 42
+      },
+      "revId": "dc1cccb307e0e95dfd638fda65085de6eef5747f",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "c86b4bfd_76a86388",
         "filename": "pom.xml",
         "patchSetId": 2
