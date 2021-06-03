@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "d0474928_23ba267e",
+        "filename": "dmi-plugin/pom.xml",
+        "patchSetId": 2
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 7744
+      },
+      "writtenOn": "2021-06-03T09:19:55Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "a7bceda6_660a9488",
+      "revId": "dc1cccb307e0e95dfd638fda65085de6eef5747f",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "54b7c456_5cc47ca0",
         "filename": "dmi-plugin/src/main/java/org/onap/cps/api/DmiService.java",
         "patchSetId": 2
@@ -33,6 +51,24 @@
       "revId": "dc1cccb307e0e95dfd638fda65085de6eef5747f",
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "48a90348_072678d6",
+        "filename": "dmi-plugin/src/main/java/org/onap/cps/api/DmiService.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 7744
+      },
+      "writtenOn": "2021-06-03T09:19:55Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "54b7c456_5cc47ca0",
+      "revId": "dc1cccb307e0e95dfd638fda65085de6eef5747f",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
     },
     {
       "key": {
@@ -96,6 +132,24 @@
       "revId": "dc1cccb307e0e95dfd638fda65085de6eef5747f",
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "1b098536_31a9c9de",
+        "filename": "pom.xml",
+        "patchSetId": 2
+      },
+      "lineNbr": 70,
+      "author": {
+        "id": 7744
+      },
+      "writtenOn": "2021-06-03T09:19:55Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "c86b4bfd_76a86388",
+      "revId": "dc1cccb307e0e95dfd638fda65085de6eef5747f",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
     }
   ]
 }
