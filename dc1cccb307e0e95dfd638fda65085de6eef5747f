@@ -95,6 +95,30 @@
     },
     {
       "key": {
+        "uuid": "fd0a7355_ff1416be",
+        "filename": "dmi-rest/pom.xml",
+        "patchSetId": 2
+      },
+      "lineNbr": 77,
+      "author": {
+        "id": 7744
+      },
+      "writtenOn": "2021-06-03T10:00:47Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3e819fc2_42466d6b",
+      "range": {
+        "startLine": 77,
+        "startChar": 67,
+        "endLine": 77,
+        "endChar": 78
+      },
+      "revId": "dc1cccb307e0e95dfd638fda65085de6eef5747f",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "cd360854_de6c4246",
         "filename": "dmi-rest/src/main/java/org/onap/cps/Application.java",
         "patchSetId": 2
@@ -106,6 +130,30 @@
       "writtenOn": "2021-06-03T09:04:21Z",
       "side": 1,
       "message": "Remove System.out.println statement or refactor to use something like slf4j",
+      "range": {
+        "startLine": 31,
+        "startChar": 8,
+        "endLine": 31,
+        "endChar": 42
+      },
+      "revId": "dc1cccb307e0e95dfd638fda65085de6eef5747f",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "586d7b84_b37b9b79",
+        "filename": "dmi-rest/src/main/java/org/onap/cps/Application.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 7744
+      },
+      "writtenOn": "2021-06-03T10:00:47Z",
+      "side": 1,
+      "message": "Removed Hello World output altogether as it\u0027s unnecessary, and was only put in as sanity check that Spring application was working correctly.",
+      "parentUuid": "cd360854_de6c4246",
       "range": {
         "startLine": 31,
         "startChar": 8,
