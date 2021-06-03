@@ -142,6 +142,30 @@
     },
     {
       "key": {
+        "uuid": "9d8da8dc_5a791bd8",
+        "filename": "dmi-rest/docs/api/swagger/openapi.yml",
+        "patchSetId": 2
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 7744
+      },
+      "writtenOn": "2021-06-03T16:56:25Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "cb2b145a_a8d99ab5",
+      "range": {
+        "startLine": 30,
+        "startChar": 11,
+        "endLine": 30,
+        "endChar": 24
+      },
+      "revId": "dc1cccb307e0e95dfd638fda65085de6eef5747f",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3e819fc2_42466d6b",
         "filename": "dmi-rest/pom.xml",
         "patchSetId": 2
@@ -236,6 +260,30 @@
     },
     {
       "key": {
+        "uuid": "18b8c955_71d48440",
+        "filename": "dmi-rest/src/main/java/org/onap/cps/Application.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 7744
+      },
+      "writtenOn": "2021-06-03T16:56:25Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "586d7b84_b37b9b79",
+      "range": {
+        "startLine": 31,
+        "startChar": 8,
+        "endLine": 31,
+        "endChar": 42
+      },
+      "revId": "dc1cccb307e0e95dfd638fda65085de6eef5747f",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "07915a8e_0f7d55d8",
         "filename": "dmi-rest/src/main/resources/application.yml",
         "patchSetId": 2
@@ -280,6 +328,30 @@
       "revId": "dc1cccb307e0e95dfd638fda65085de6eef5747f",
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "08494881_c51f1eee",
+        "filename": "dmi-rest/src/main/resources/application.yml",
+        "patchSetId": 2
+      },
+      "lineNbr": 50,
+      "author": {
+        "id": 7744
+      },
+      "writtenOn": "2021-06-03T16:56:25Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ea3cca9c_8c4e14e6",
+      "range": {
+        "startLine": 48,
+        "startChar": 0,
+        "endLine": 50,
+        "endChar": 31
+      },
+      "revId": "dc1cccb307e0e95dfd638fda65085de6eef5747f",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
     },
     {
       "key": {
