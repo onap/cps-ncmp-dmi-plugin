@@ -2,6 +2,29 @@
   "comments": [
     {
       "key": {
+        "uuid": "cf8d82d6_7d0f2d16",
+        "filename": "dmi-plugin/pom.xml",
+        "patchSetId": 2
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 6738
+      },
+      "writtenOn": "2021-06-03T10:23:17Z",
+      "side": 1,
+      "message": "is this the service layer? dmi-service would be keep it in sync with cps.\nAlso not sure if this needs to be a separate module.. could be different package as well inside the main project",
+      "range": {
+        "startLine": 13,
+        "startChar": 16,
+        "endLine": 13,
+        "endChar": 26
+      },
+      "revId": "dc1cccb307e0e95dfd638fda65085de6eef5747f",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "a7bceda6_660a9488",
         "filename": "dmi-plugin/pom.xml",
         "patchSetId": 2
@@ -69,6 +92,29 @@
       "revId": "dc1cccb307e0e95dfd638fda65085de6eef5747f",
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "cb2b145a_a8d99ab5",
+        "filename": "dmi-rest/docs/api/swagger/openapi.yml",
+        "patchSetId": 2
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 6738
+      },
+      "writtenOn": "2021-06-03T10:23:17Z",
+      "side": 1,
+      "message": "do we really need to add this file? The API specifications could be included in the same file here. In CPS it was done to split AdminApi and DataApis.",
+      "range": {
+        "startLine": 30,
+        "startChar": 11,
+        "endLine": 30,
+        "endChar": 24
+      },
+      "revId": "dc1cccb307e0e95dfd638fda65085de6eef5747f",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
     },
     {
       "key": {
@@ -159,6 +205,29 @@
         "startChar": 8,
         "endLine": 31,
         "endChar": 42
+      },
+      "revId": "dc1cccb307e0e95dfd638fda65085de6eef5747f",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "07915a8e_0f7d55d8",
+        "filename": "dmi-rest/src/main/resources/application.yml",
+        "patchSetId": 2
+      },
+      "lineNbr": 50,
+      "author": {
+        "id": 6738
+      },
+      "writtenOn": "2021-06-03T10:23:17Z",
+      "side": 1,
+      "message": "for the DMI plugin, do we need any DB modelling, if not lets remove the liquibase section",
+      "range": {
+        "startLine": 48,
+        "startChar": 0,
+        "endLine": 50,
+        "endChar": 31
       },
       "revId": "dc1cccb307e0e95dfd638fda65085de6eef5747f",
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
