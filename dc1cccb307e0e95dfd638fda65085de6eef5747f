@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "a7bceda6_660a9488",
+        "filename": "dmi-plugin/pom.xml",
+        "patchSetId": 2
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 6679
+      },
+      "writtenOn": "2021-06-03T08:34:03Z",
+      "side": 1,
+      "message": "remove version",
+      "revId": "dc1cccb307e0e95dfd638fda65085de6eef5747f",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "54b7c456_5cc47ca0",
+        "filename": "dmi-plugin/src/main/java/org/onap/cps/api/DmiService.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 6679
+      },
+      "writtenOn": "2021-06-03T08:34:03Z",
+      "side": 1,
+      "message": "document",
+      "revId": "dc1cccb307e0e95dfd638fda65085de6eef5747f",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "c86b4bfd_76a86388",
+        "filename": "pom.xml",
+        "patchSetId": 2
+      },
+      "lineNbr": 70,
+      "author": {
+        "id": 6679
+      },
+      "writtenOn": "2021-06-03T08:34:03Z",
+      "side": 1,
+      "message": "extract to properties",
+      "revId": "dc1cccb307e0e95dfd638fda65085de6eef5747f",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    }
+  ]
+}
