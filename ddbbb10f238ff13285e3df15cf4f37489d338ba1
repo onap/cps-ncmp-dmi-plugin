@@ -1,0 +1,165 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "b8b30695_c09f6603",
+        "filename": "dmi-plugin/pom.xml",
+        "patchSetId": 6
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 6862
+      },
+      "writtenOn": "2021-06-04T11:14:30Z",
+      "side": 1,
+      "message": "0.0.1",
+      "range": {
+        "startLine": 8,
+        "startChar": 17,
+        "endLine": 8,
+        "endChar": 22
+      },
+      "revId": "ddbbb10f238ff13285e3df15cf4f37489d338ba1",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "a44069dd_04a0cf1a",
+        "filename": "dmi-plugin/pom.xml",
+        "patchSetId": 6
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 6862
+      },
+      "writtenOn": "2021-06-04T11:14:30Z",
+      "side": 1,
+      "message": "should not be required if configured correctly in parent pom",
+      "range": {
+        "startLine": 22,
+        "startChar": 4,
+        "endLine": 32,
+        "endChar": 12
+      },
+      "revId": "ddbbb10f238ff13285e3df15cf4f37489d338ba1",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "1a1b5e0e_42a111af",
+        "filename": "dmi-plugin/src/main/java/org/onap/cps/api/impl/DmiServiceImpl.java",
+        "patchSetId": 6
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 6862
+      },
+      "writtenOn": "2021-06-04T11:14:30Z",
+      "side": 1,
+      "message": "not required explicitly",
+      "range": {
+        "startLine": 25,
+        "startChar": 8,
+        "endLine": 25,
+        "endChar": 26
+      },
+      "revId": "ddbbb10f238ff13285e3df15cf4f37489d338ba1",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "5dfc2fec_483333b7",
+        "filename": "dmi-rest/pom.xml",
+        "patchSetId": 6
+      },
+      "lineNbr": 99,
+      "author": {
+        "id": 6862
+      },
+      "writtenOn": "2021-06-04T11:14:30Z",
+      "side": 1,
+      "message": "really required ?",
+      "range": {
+        "startLine": 94,
+        "startChar": 8,
+        "endLine": 99,
+        "endChar": 17
+      },
+      "revId": "ddbbb10f238ff13285e3df15cf4f37489d338ba1",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "d9c8a4c5_f59ff1c2",
+        "filename": "dmi-rest/src/main/java/org/onap/cps/Application.java",
+        "patchSetId": 6
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 6862
+      },
+      "writtenOn": "2021-06-04T11:14:30Z",
+      "side": 1,
+      "message": "2021",
+      "range": {
+        "startLine": 3,
+        "startChar": 18,
+        "endLine": 3,
+        "endChar": 22
+      },
+      "revId": "ddbbb10f238ff13285e3df15cf4f37489d338ba1",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "646d156f_21d09751",
+        "filename": "pom.xml",
+        "patchSetId": 6
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 6862
+      },
+      "writtenOn": "2021-06-04T11:14:30Z",
+      "side": 1,
+      "message": "NOrdix",
+      "range": {
+        "startLine": 3,
+        "startChar": 21,
+        "endLine": 3,
+        "endChar": 26
+      },
+      "revId": "ddbbb10f238ff13285e3df15cf4f37489d338ba1",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "5b635378_73ae0da4",
+        "filename": "pom.xml",
+        "patchSetId": 6
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 6862
+      },
+      "writtenOn": "2021-06-04T11:14:30Z",
+      "side": 1,
+      "message": "0.0.1",
+      "range": {
+        "startLine": 38,
+        "startChar": 13,
+        "endLine": 38,
+        "endChar": 18
+      },
+      "revId": "ddbbb10f238ff13285e3df15cf4f37489d338ba1",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    }
+  ]
+}
