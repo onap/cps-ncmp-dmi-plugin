@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "75f7d8ad_c765d3b1",
+        "filename": "dmi-plugin/pom.xml",
+        "patchSetId": 6
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 7744
+      },
+      "writtenOn": "2021-06-04T15:51:37Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "b8b30695_c09f6603",
+      "range": {
+        "startLine": 8,
+        "startChar": 17,
+        "endLine": 8,
+        "endChar": 22
+      },
+      "revId": "ddbbb10f238ff13285e3df15cf4f37489d338ba1",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "a44069dd_04a0cf1a",
         "filename": "dmi-plugin/pom.xml",
         "patchSetId": 6
@@ -36,6 +60,30 @@
       "writtenOn": "2021-06-04T11:14:30Z",
       "side": 1,
       "message": "should not be required if configured correctly in parent pom",
+      "range": {
+        "startLine": 22,
+        "startChar": 4,
+        "endLine": 32,
+        "endChar": 12
+      },
+      "revId": "ddbbb10f238ff13285e3df15cf4f37489d338ba1",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "050c6281_d0cf23ca",
+        "filename": "dmi-plugin/pom.xml",
+        "patchSetId": 6
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 7744
+      },
+      "writtenOn": "2021-06-04T15:51:37Z",
+      "side": 1,
+      "message": "Removed Spring Framework references from this POM as they were not needed",
+      "parentUuid": "a44069dd_04a0cf1a",
       "range": {
         "startLine": 22,
         "startChar": 4,
@@ -65,6 +113,24 @@
     },
     {
       "key": {
+        "uuid": "5d51af10_4074d796",
+        "filename": "dmi-plugin/src/main/java/org/onap/cps/api/DmiService.java",
+        "patchSetId": 6
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 7744
+      },
+      "writtenOn": "2021-06-04T15:51:37Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "fe2e5fa9_415aaf9a",
+      "revId": "ddbbb10f238ff13285e3df15cf4f37489d338ba1",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a1b5e0e_42a111af",
         "filename": "dmi-plugin/src/main/java/org/onap/cps/api/impl/DmiServiceImpl.java",
         "patchSetId": 6
@@ -88,6 +154,30 @@
     },
     {
       "key": {
+        "uuid": "12798e5d_8873afb3",
+        "filename": "dmi-plugin/src/main/java/org/onap/cps/api/impl/DmiServiceImpl.java",
+        "patchSetId": 6
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 7744
+      },
+      "writtenOn": "2021-06-04T15:51:37Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1a1b5e0e_42a111af",
+      "range": {
+        "startLine": 25,
+        "startChar": 8,
+        "endLine": 25,
+        "endChar": 26
+      },
+      "revId": "ddbbb10f238ff13285e3df15cf4f37489d338ba1",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5dfc2fec_483333b7",
         "filename": "dmi-rest/pom.xml",
         "patchSetId": 6
@@ -99,6 +189,30 @@
       "writtenOn": "2021-06-04T11:14:30Z",
       "side": 1,
       "message": "really required ?",
+      "range": {
+        "startLine": 94,
+        "startChar": 8,
+        "endLine": 99,
+        "endChar": 17
+      },
+      "revId": "ddbbb10f238ff13285e3df15cf4f37489d338ba1",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "c06879b6_d2176f44",
+        "filename": "dmi-rest/pom.xml",
+        "patchSetId": 6
+      },
+      "lineNbr": 99,
+      "author": {
+        "id": 7744
+      },
+      "writtenOn": "2021-06-04T15:51:37Z",
+      "side": 1,
+      "message": "Required as Spring Application class is in this module. Edited to include execution block within this POM as Application class is located here, and fixes issue within Dmi Plugin POM(Unable to find a suitable main class) if it is defined in main POM",
+      "parentUuid": "5dfc2fec_483333b7",
       "range": {
         "startLine": 94,
         "startChar": 8,
@@ -128,6 +242,24 @@
     },
     {
       "key": {
+        "uuid": "7ed4be9e_8c95f192",
+        "filename": "dmi-rest/src/main/java/org/onap/cps/Application.java",
+        "patchSetId": 6
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 7744
+      },
+      "writtenOn": "2021-06-04T15:51:37Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5c8665dc_0bc0f9ad",
+      "revId": "ddbbb10f238ff13285e3df15cf4f37489d338ba1",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "d9c8a4c5_f59ff1c2",
         "filename": "dmi-rest/src/main/java/org/onap/cps/Application.java",
         "patchSetId": 6
@@ -148,6 +280,30 @@
       "revId": "ddbbb10f238ff13285e3df15cf4f37489d338ba1",
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "6c360f5c_4e388e10",
+        "filename": "dmi-rest/src/main/java/org/onap/cps/Application.java",
+        "patchSetId": 6
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 7744
+      },
+      "writtenOn": "2021-06-04T15:51:37Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "d9c8a4c5_f59ff1c2",
+      "range": {
+        "startLine": 3,
+        "startChar": 18,
+        "endLine": 3,
+        "endChar": 22
+      },
+      "revId": "ddbbb10f238ff13285e3df15cf4f37489d338ba1",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
     },
     {
       "key": {
@@ -174,6 +330,30 @@
     },
     {
       "key": {
+        "uuid": "869d7166_e644b5d6",
+        "filename": "pom.xml",
+        "patchSetId": 6
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 7744
+      },
+      "writtenOn": "2021-06-04T15:51:37Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "646d156f_21d09751",
+      "range": {
+        "startLine": 3,
+        "startChar": 21,
+        "endLine": 3,
+        "endChar": 26
+      },
+      "revId": "ddbbb10f238ff13285e3df15cf4f37489d338ba1",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5b635378_73ae0da4",
         "filename": "pom.xml",
         "patchSetId": 6
@@ -194,6 +374,30 @@
       "revId": "ddbbb10f238ff13285e3df15cf4f37489d338ba1",
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "0afd8320_13d5a036",
+        "filename": "pom.xml",
+        "patchSetId": 6
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 7744
+      },
+      "writtenOn": "2021-06-04T15:51:37Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5b635378_73ae0da4",
+      "range": {
+        "startLine": 38,
+        "startChar": 13,
+        "endLine": 38,
+        "endChar": 18
+      },
+      "revId": "ddbbb10f238ff13285e3df15cf4f37489d338ba1",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
     }
   ]
 }
