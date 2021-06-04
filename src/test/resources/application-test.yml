@@ -1,0 +1,10 @@
+server:
+  port: 8080
+
+rest:
+  api:
+    dmi-base-path: /dmi/api
+
+security:
+  basic:
+    enabled: false
