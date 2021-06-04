@@ -48,6 +48,23 @@
     },
     {
       "key": {
+        "uuid": "fe2e5fa9_415aaf9a",
+        "filename": "dmi-plugin/src/main/java/org/onap/cps/api/DmiService.java",
+        "patchSetId": 6
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 5006
+      },
+      "writtenOn": "2021-06-04T15:34:50Z",
+      "side": 1,
+      "message": "[INFO] Starting audit...\n[WARN] /onap/cps/ncmp-dmi-plugin/dmi-plugin/src/main/java/org/onap/cps/api/DmiService.java:22: First sentence of Javadoc is missing an ending period. [SummaryJavadoc]\n[WARN] /onap/cps/ncmp-dmi-plugin/dmi-plugin/src/main/java/org/onap/cps/api/DmiService.java:26: First sentence of Javadoc is missing an ending period. [SummaryJavadoc]\n\n\n\nI see these warn on checkstyle, could you please fix them",
+      "revId": "ddbbb10f238ff13285e3df15cf4f37489d338ba1",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "1a1b5e0e_42a111af",
         "filename": "dmi-plugin/src/main/java/org/onap/cps/api/impl/DmiServiceImpl.java",
         "patchSetId": 6
@@ -88,6 +105,23 @@
         "endLine": 99,
         "endChar": 17
       },
+      "revId": "ddbbb10f238ff13285e3df15cf4f37489d338ba1",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "5c8665dc_0bc0f9ad",
+        "filename": "dmi-rest/src/main/java/org/onap/cps/Application.java",
+        "patchSetId": 6
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 5006
+      },
+      "writtenOn": "2021-06-04T15:34:50Z",
+      "side": 1,
+      "message": "--- maven-checkstyle-plugin:3.1.1:check (onap-java-style) @ dmi-rest ---\n[INFO] Starting audit...\n[WARN] /onap/cps/ncmp-dmi-plugin/dmi-rest/src/main/java/org/onap/cps/Application.java:29:29: \u0027(\u0027 is preceded with whitespace. [MethodParamPad]\n\n\ncould you please fix these codestyle warn.\n\n\nrun mvn process-sources to verify",
       "revId": "ddbbb10f238ff13285e3df15cf4f37489d338ba1",
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
       "unresolved": true
