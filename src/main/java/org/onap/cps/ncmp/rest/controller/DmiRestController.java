@@ -20,6 +20,8 @@
 package org.onap.cps.ncmp.rest.controller;
 
 import org.onap.cps.ncmp.rest.api.DmiPluginApi;
+import org.onap.cps.ncmp.service.DmiService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -29,9 +31,12 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class DmiRestController implements DmiPluginApi {
 
+    @Autowired
+    private DmiService dmiService;
+
     @Override
     public ResponseEntity<Object> helloWorld() {
-        final var helloWorld = "Hello World";
+        final var helloWorld = dmiService.getHelloWorld()   ;
         return new ResponseEntity<>(helloWorld, HttpStatus.OK);
     }
 

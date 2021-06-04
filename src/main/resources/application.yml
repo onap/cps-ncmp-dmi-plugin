@@ -27,3 +27,19 @@ security:
   auth:
     username: ${CPS_USERNAME}
     password: ${CPS_PASSWORD}
+
+# Actuator
+management:
+  endpoints:
+    web:
+      base-path: /manage
+    exposure:
+      include: info,health,loggers
+  endpoint:
+    health:
+      show-details: always
+      # kubernetes probes: liveness and readiness
+      probes:
+        enabled: true
+    loggers:
+      enabled: true
