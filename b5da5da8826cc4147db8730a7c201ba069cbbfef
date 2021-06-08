@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "a0a98e15_09ebc2c8",
+        "filename": "dmi-plugin/src/main/java/org/onap/cps/api/impl/DmiServiceImpl.java",
+        "patchSetId": 8
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 7744
+      },
+      "writtenOn": "2021-06-08T12:37:46Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "734492df_a4d9e52e",
+      "range": {
+        "startLine": 27,
+        "startChar": 16,
+        "endLine": 27,
+        "endChar": 29
+      },
+      "revId": "b5da5da8826cc4147db8730a7c201ba069cbbfef",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ec4b025f_bc4dc1af",
         "filename": "dmi-rest/src/test/groovy/org/onap/cps/rest/controller/DmiRestControllerSpec.groovy",
         "patchSetId": 8
@@ -71,6 +95,54 @@
     },
     {
       "key": {
+        "uuid": "21f9198a_63b0ba06",
+        "filename": "dmi-rest/src/test/groovy/org/onap/cps/rest/controller/DmiRestControllerSpec.groovy",
+        "patchSetId": 8
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 7744
+      },
+      "writtenOn": "2021-06-08T12:37:46Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ec4b025f_bc4dc1af",
+      "range": {
+        "startLine": 41,
+        "startChar": 4,
+        "endLine": 41,
+        "endChar": 34
+      },
+      "revId": "b5da5da8826cc4147db8730a7c201ba069cbbfef",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "efb1e87b_8016b94e",
+        "filename": "dmi-rest/src/test/groovy/org/onap/cps/rest/controller/DmiRestControllerSpec.groovy",
+        "patchSetId": 8
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 7744
+      },
+      "writtenOn": "2021-06-08T12:37:46Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "14a53a85_21702b76",
+      "range": {
+        "startLine": 41,
+        "startChar": 33,
+        "endLine": 41,
+        "endChar": 34
+      },
+      "revId": "b5da5da8826cc4147db8730a7c201ba069cbbfef",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7a7ffddc_ca77c6ca",
         "filename": "dmi-rest/src/test/groovy/org/onap/cps/rest/controller/DmiRestControllerSpec.groovy",
         "patchSetId": 8
@@ -94,6 +166,30 @@
     },
     {
       "key": {
+        "uuid": "5aec28f4_8a6af551",
+        "filename": "dmi-rest/src/test/groovy/org/onap/cps/rest/controller/DmiRestControllerSpec.groovy",
+        "patchSetId": 8
+      },
+      "lineNbr": 45,
+      "author": {
+        "id": 7744
+      },
+      "writtenOn": "2021-06-08T12:37:46Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7a7ffddc_ca77c6ca",
+      "range": {
+        "startLine": 45,
+        "startChar": 9,
+        "endLine": 45,
+        "endChar": 58
+      },
+      "revId": "b5da5da8826cc4147db8730a7c201ba069cbbfef",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "accaf599_ab1f9c63",
         "filename": "dmi-rest/src/test/groovy/org/onap/cps/rest/controller/DmiRestControllerSpec.groovy",
         "patchSetId": 8
@@ -114,6 +210,30 @@
       "revId": "b5da5da8826cc4147db8730a7c201ba069cbbfef",
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "2e992882_f9cb7726",
+        "filename": "dmi-rest/src/test/groovy/org/onap/cps/rest/controller/DmiRestControllerSpec.groovy",
+        "patchSetId": 8
+      },
+      "lineNbr": 50,
+      "author": {
+        "id": 7744
+      },
+      "writtenOn": "2021-06-08T12:37:46Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "accaf599_ab1f9c63",
+      "range": {
+        "startLine": 50,
+        "startChar": 15,
+        "endLine": 50,
+        "endChar": 38
+      },
+      "revId": "b5da5da8826cc4147db8730a7c201ba069cbbfef",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
     },
     {
       "key": {
