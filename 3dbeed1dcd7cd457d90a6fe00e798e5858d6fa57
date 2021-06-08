@@ -1,0 +1,96 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "784b968b_a9be14d9",
+        "filename": "dmi-plugin/pom.xml",
+        "patchSetId": 9
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2021-06-08T15:57:56Z",
+      "side": 1,
+      "message": "dont think you need this",
+      "range": {
+        "startLine": 26,
+        "startChar": 4,
+        "endLine": 36,
+        "endChar": 17
+      },
+      "revId": "3dbeed1dcd7cd457d90a6fe00e798e5858d6fa57",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "bf5ab748_3228680d",
+        "filename": "dmi-plugin/src/main/java/org/onap/cps/api/impl/DmiServiceImpl.java",
+        "patchSetId": 9
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2021-06-08T15:57:56Z",
+      "side": 1,
+      "message": "usually this method returns a string to make it more realistic (and testable)",
+      "range": {
+        "startLine": 27,
+        "startChar": 16,
+        "endLine": 27,
+        "endChar": 31
+      },
+      "revId": "3dbeed1dcd7cd457d90a6fe00e798e5858d6fa57",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "798bb342_136fb573",
+        "filename": "dmi-plugin/src/test/groovy/org/onap/cps/api/impl/DmiServiceImplSpec.groovy",
+        "patchSetId": 9
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2021-06-08T15:57:56Z",
+      "side": 1,
+      "message": "not needed",
+      "range": {
+        "startLine": 26,
+        "startChar": 5,
+        "endLine": 26,
+        "endChar": 51
+      },
+      "revId": "3dbeed1dcd7cd457d90a6fe00e798e5858d6fa57",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "c8dfd852_ff5c509b",
+        "filename": "dmi-plugin/src/test/groovy/org/onap/cps/api/impl/DmiServiceImplSpec.groovy",
+        "patchSetId": 9
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2021-06-08T15:57:56Z",
+      "side": 1,
+      "message": "only now realize you method is void, better to return a string and then you can test it here using \u0027expect:\u0027",
+      "range": {
+        "startLine": 29,
+        "startChar": 0,
+        "endLine": 31,
+        "endChar": 5
+      },
+      "revId": "3dbeed1dcd7cd457d90a6fe00e798e5858d6fa57",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    }
+  ]
+}
