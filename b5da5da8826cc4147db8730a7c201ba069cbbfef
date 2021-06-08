@@ -2,6 +2,121 @@
   "comments": [
     {
       "key": {
+        "uuid": "734492df_a4d9e52e",
+        "filename": "dmi-plugin/src/main/java/org/onap/cps/api/impl/DmiServiceImpl.java",
+        "patchSetId": 8
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2021-06-08T10:14:12Z",
+      "side": 1,
+      "message": "need test for this class too. (just setting up tets structure really :-))",
+      "range": {
+        "startLine": 27,
+        "startChar": 16,
+        "endLine": 27,
+        "endChar": 29
+      },
+      "revId": "b5da5da8826cc4147db8730a7c201ba069cbbfef",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "ec4b025f_bc4dc1af",
+        "filename": "dmi-rest/src/test/groovy/org/onap/cps/rest/controller/DmiRestControllerSpec.groovy",
+        "patchSetId": 8
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2021-06-08T10:14:12Z",
+      "side": 1,
+      "message": "no need for (common) variable. Just use string literal on line 52",
+      "range": {
+        "startLine": 41,
+        "startChar": 4,
+        "endLine": 41,
+        "endChar": 34
+      },
+      "revId": "b5da5da8826cc4147db8730a7c201ba069cbbfef",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "14a53a85_21702b76",
+        "filename": "dmi-rest/src/test/groovy/org/onap/cps/rest/controller/DmiRestControllerSpec.groovy",
+        "patchSetId": 8
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2021-06-08T10:14:12Z",
+      "side": 1,
+      "message": "shoudl use single \u0027",
+      "range": {
+        "startLine": 41,
+        "startChar": 33,
+        "endLine": 41,
+        "endChar": 34
+      },
+      "revId": "b5da5da8826cc4147db8730a7c201ba069cbbfef",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "7a7ffddc_ca77c6ca",
+        "filename": "dmi-rest/src/test/groovy/org/onap/cps/rest/controller/DmiRestControllerSpec.groovy",
+        "patchSetId": 8
+      },
+      "lineNbr": 45,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2021-06-08T10:14:12Z",
+      "side": 1,
+      "message": "fix indentation (all three blocks)",
+      "range": {
+        "startLine": 45,
+        "startChar": 9,
+        "endLine": 45,
+        "endChar": 58
+      },
+      "revId": "b5da5da8826cc4147db8730a7c201ba069cbbfef",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "accaf599_ab1f9c63",
+        "filename": "dmi-rest/src/test/groovy/org/onap/cps/rest/controller/DmiRestControllerSpec.groovy",
+        "patchSetId": 8
+      },
+      "lineNbr": 50,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2021-06-08T10:14:12Z",
+      "side": 1,
+      "message": "the response status is OK and contains expected text",
+      "range": {
+        "startLine": 50,
+        "startChar": 15,
+        "endLine": 50,
+        "endChar": 38
+      },
+      "revId": "b5da5da8826cc4147db8730a7c201ba069cbbfef",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "432de255_a76025fd",
         "filename": "pom.xml",
         "patchSetId": 8
@@ -37,6 +152,30 @@
       "side": 1,
       "message": "I think we want the DMI plugin to be independent from CPS dependencies. Which is why oparent is set up as the parent POM.",
       "parentUuid": "432de255_a76025fd",
+      "range": {
+        "startLine": 26,
+        "startChar": 8,
+        "endLine": 26,
+        "endChar": 40
+      },
+      "revId": "b5da5da8826cc4147db8730a7c201ba069cbbfef",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "4713e2c7_6a40cfa6",
+        "filename": "pom.xml",
+        "patchSetId": 8
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2021-06-08T10:14:12Z",
+      "side": 1,
+      "message": "I agree with Dylan, I don\u0027t think CPS should be the parent project.",
+      "parentUuid": "621f02f3_4b5a5a40",
       "range": {
         "startLine": 26,
         "startChar": 8,
