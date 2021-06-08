@@ -22,6 +22,30 @@
       "revId": "b5da5da8826cc4147db8730a7c201ba069cbbfef",
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "621f02f3_4b5a5a40",
+        "filename": "pom.xml",
+        "patchSetId": 8
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 7744
+      },
+      "writtenOn": "2021-06-08T10:05:40Z",
+      "side": 1,
+      "message": "I think we want the DMI plugin to be independent from CPS dependencies. Which is why oparent is set up as the parent POM.",
+      "parentUuid": "432de255_a76025fd",
+      "range": {
+        "startLine": 26,
+        "startChar": 8,
+        "endLine": 26,
+        "endChar": 40
+      },
+      "revId": "b5da5da8826cc4147db8730a7c201ba069cbbfef",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
     }
   ]
 }
