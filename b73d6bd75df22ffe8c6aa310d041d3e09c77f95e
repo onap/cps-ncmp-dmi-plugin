@@ -88,6 +88,29 @@
     },
     {
       "key": {
+        "uuid": "fc66b954_4eaf1840",
+        "filename": "pom.xml",
+        "patchSetId": 10
+      },
+      "lineNbr": 101,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2021-06-09T13:45:35Z",
+      "side": 1,
+      "message": "no module needed as per our discussion in standup\n(OpenAPI will be published separately anyway)",
+      "range": {
+        "startLine": 101,
+        "startChar": 16,
+        "endLine": 101,
+        "endChar": 24
+      },
+      "revId": "b73d6bd75df22ffe8c6aa310d041d3e09c77f95e",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "b5f0e9b2_68ee0b1d",
         "filename": "pom.xml",
         "patchSetId": 10
