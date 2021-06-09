@@ -48,6 +48,23 @@
     },
     {
       "key": {
+        "uuid": "ac4f0087_16066dc7",
+        "filename": "dmi-plugin/src/test/groovy/org/onap/cps/api/impl/DmiServiceImplSpec.groovy",
+        "patchSetId": 10
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 6841
+      },
+      "writtenOn": "2021-06-09T13:00:57Z",
+      "side": 1,
+      "message": "not blocking issue but here is a guide with how we use the groovy labels and assert keyword\nhttps://wiki.onap.org/pages/viewpage.action?pageId\u003d92998161",
+      "revId": "b73d6bd75df22ffe8c6aa310d041d3e09c77f95e",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "5ccd576a_8ce527c4",
         "filename": "dmi-rest/pom.xml",
         "patchSetId": 10
