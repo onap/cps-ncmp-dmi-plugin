@@ -1,0 +1,96 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1e50dc8f_04fe4281",
+        "filename": "dmi-plugin/pom.xml",
+        "patchSetId": 10
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 7680
+      },
+      "writtenOn": "2021-06-09T11:50:00Z",
+      "side": 1,
+      "message": "The maven artifact will be released with group-id \u0027org.onap.cps\u0027 and artifact-id \u0027dmi-plugin\u0027, which does not mention anything about ncmp. \n\nThe parent artifact-id is \u0027ncmp-dmi-plugin\u0027 and this one is \u0027dmi-plugin\u0027, which makes it difficult to differentiate if I just look at maven artifacts.\n\nWe should change the module name to make it the purpose explicit.",
+      "range": {
+        "startLine": 13,
+        "startChar": 4,
+        "endLine": 13,
+        "endChar": 39
+      },
+      "revId": "b73d6bd75df22ffe8c6aa310d041d3e09c77f95e",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "2b118b4f_1dcd8bd8",
+        "filename": "dmi-plugin/src/main/java/org/onap/cps/api/DmiService.java",
+        "patchSetId": 10
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 7680
+      },
+      "writtenOn": "2021-06-09T11:50:00Z",
+      "side": 1,
+      "message": "I would suggest to add ncmp in the package name like \u0027org.onap.cps.ncmp.api\u0027.",
+      "range": {
+        "startLine": 20,
+        "startChar": 0,
+        "endLine": 20,
+        "endChar": 25
+      },
+      "revId": "b73d6bd75df22ffe8c6aa310d041d3e09c77f95e",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "5ccd576a_8ce527c4",
+        "filename": "dmi-rest/pom.xml",
+        "patchSetId": 10
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 7680
+      },
+      "writtenOn": "2021-06-09T11:50:00Z",
+      "side": 1,
+      "message": "\u0027ncmp\u0027 should be mentioned in either group-id or atifact-id.",
+      "range": {
+        "startLine": 34,
+        "startChar": 4,
+        "endLine": 34,
+        "endChar": 37
+      },
+      "revId": "b73d6bd75df22ffe8c6aa310d041d3e09c77f95e",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "b5f0e9b2_68ee0b1d",
+        "filename": "pom.xml",
+        "patchSetId": 10
+      },
+      "lineNbr": 130,
+      "author": {
+        "id": 7680
+      },
+      "writtenOn": "2021-06-09T11:50:00Z",
+      "side": 1,
+      "message": "This plugin is not applicable for most of the modules and should be moved to pluginMaganement.",
+      "range": {
+        "startLine": 126,
+        "startChar": 12,
+        "endLine": 130,
+        "endChar": 21
+      },
+      "revId": "b73d6bd75df22ffe8c6aa310d041d3e09c77f95e",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    }
+  ]
+}
