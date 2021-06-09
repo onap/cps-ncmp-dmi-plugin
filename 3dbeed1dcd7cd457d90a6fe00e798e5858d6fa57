@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "c1e23c1b_035e266d",
+        "filename": "dmi-plugin/pom.xml",
+        "patchSetId": 9
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 7744
+      },
+      "writtenOn": "2021-06-09T10:15:58Z",
+      "side": 1,
+      "message": "I think this may be needed. I get the following maven build error if it is not included.\n\n\"There was an error in the forked processTestEngine with ID \u0027spock\u0027 failed to discover tests\"",
+      "parentUuid": "784b968b_a9be14d9",
+      "range": {
+        "startLine": 26,
+        "startChar": 4,
+        "endLine": 36,
+        "endChar": 17
+      },
+      "revId": "3dbeed1dcd7cd457d90a6fe00e798e5858d6fa57",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "bf5ab748_3228680d",
         "filename": "dmi-plugin/src/main/java/org/onap/cps/api/impl/DmiServiceImpl.java",
         "patchSetId": 9
@@ -45,6 +69,30 @@
       "revId": "3dbeed1dcd7cd457d90a6fe00e798e5858d6fa57",
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "48a5f82c_021531b1",
+        "filename": "dmi-plugin/src/main/java/org/onap/cps/api/impl/DmiServiceImpl.java",
+        "patchSetId": 9
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 7744
+      },
+      "writtenOn": "2021-06-09T10:15:58Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "bf5ab748_3228680d",
+      "range": {
+        "startLine": 27,
+        "startChar": 16,
+        "endLine": 27,
+        "endChar": 31
+      },
+      "revId": "3dbeed1dcd7cd457d90a6fe00e798e5858d6fa57",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
     },
     {
       "key": {
@@ -71,6 +119,30 @@
     },
     {
       "key": {
+        "uuid": "da5502b2_edb67ae4",
+        "filename": "dmi-plugin/src/test/groovy/org/onap/cps/api/impl/DmiServiceImplSpec.groovy",
+        "patchSetId": 9
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 7744
+      },
+      "writtenOn": "2021-06-09T10:15:58Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "798bb342_136fb573",
+      "range": {
+        "startLine": 26,
+        "startChar": 5,
+        "endLine": 26,
+        "endChar": 51
+      },
+      "revId": "3dbeed1dcd7cd457d90a6fe00e798e5858d6fa57",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "c8dfd852_ff5c509b",
         "filename": "dmi-plugin/src/test/groovy/org/onap/cps/api/impl/DmiServiceImplSpec.groovy",
         "patchSetId": 9
@@ -91,6 +163,30 @@
       "revId": "3dbeed1dcd7cd457d90a6fe00e798e5858d6fa57",
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "e81e8fb8_29f56d42",
+        "filename": "dmi-plugin/src/test/groovy/org/onap/cps/api/impl/DmiServiceImplSpec.groovy",
+        "patchSetId": 9
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 7744
+      },
+      "writtenOn": "2021-06-09T10:15:58Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "c8dfd852_ff5c509b",
+      "range": {
+        "startLine": 29,
+        "startChar": 0,
+        "endLine": 31,
+        "endChar": 5
+      },
+      "revId": "3dbeed1dcd7cd457d90a6fe00e798e5858d6fa57",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
     }
   ]
 }
