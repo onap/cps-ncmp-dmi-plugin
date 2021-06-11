@@ -1,0 +1,9 @@
+Verified+1: ONAP Jobbuilder <onap-jobbuilder@jenkins.onap.org>
+Code-Review+1: Joseph Keenan <joseph.keenan@est.tech>
+Code-Review+1: Niamh Core <niamh.core@est.tech>
+Code-Review+2: Rishi Chail <rishi.chail@est.tech>
+Submitted-by: Rishi Chail <rishi.chail@est.tech>
+Submitted-at: Fri, 11 Jun 2021 10:41:03 +0000
+Reviewed-on: https://gerrit.onap.org/r/c/cps/ncmp-dmi-plugin/+/121673
+Project: cps/ncmp-dmi-plugin
+Branch: refs/heads/master
