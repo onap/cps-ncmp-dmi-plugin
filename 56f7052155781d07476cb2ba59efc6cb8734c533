@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "0432425e_c6479d63",
+        "filename": "pom.xml",
+        "patchSetId": 14
+      },
+      "lineNbr": 180,
+      "author": {
+        "id": 6862
+      },
+      "writtenOn": "2021-06-11T09:55:14Z",
+      "side": 1,
+      "message": "should not be required. plz check",
+      "range": {
+        "startLine": 180,
+        "startChar": 16,
+        "endLine": 180,
+        "endChar": 70
+      },
+      "revId": "56f7052155781d07476cb2ba59efc6cb8734c533",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    }
+  ]
+}
