@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "2152ff2a_629653c7",
+        "filename": "pom.xml",
+        "patchSetId": 12
+      },
+      "lineNbr": 45,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2021-06-11T09:10:23Z",
+      "side": 1,
+      "message": "agreed, meant to check that yesterday but forgot",
+      "parentUuid": "be000bdf_a20c3e23",
+      "range": {
+        "startLine": 45,
+        "startChar": 28,
+        "endLine": 45,
+        "endChar": 41
+      },
+      "revId": "2049475504ea1e097e1eeee6f30fab31de2f6894",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "c03190d0_e395ec57",
         "filename": "pom.xml",
         "patchSetId": 12
