@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "4d1c46da_ce60759e",
+        "filename": "src/main/java/org/onap/cps/ncmp/config/WebSecurityConfig.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 65,
+      "author": {
+        "id": 5006
+      },
+      "writtenOn": "2021-06-14T15:14:51Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "e1a62907_c6147e50",
+      "range": {
+        "startLine": 65,
+        "startChar": 7,
+        "endLine": 65,
+        "endChar": 11
+      },
+      "revId": "5b24088e50d68fc912cca35ad7e45d3755feee42",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "8611a064_89524688",
         "filename": "src/main/java/org/onap/cps/ncmp/config/WebSecurityConfig.java",
         "patchSetId": 2
@@ -45,6 +69,30 @@
       "revId": "5b24088e50d68fc912cca35ad7e45d3755feee42",
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "f4130cfe_6f0bd736",
+        "filename": "src/main/java/org/onap/cps/ncmp/config/WebSecurityConfig.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 66,
+      "author": {
+        "id": 5006
+      },
+      "writtenOn": "2021-06-14T15:14:51Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "8611a064_89524688",
+      "range": {
+        "startLine": 66,
+        "startChar": 25,
+        "endLine": 66,
+        "endChar": 29
+      },
+      "revId": "5b24088e50d68fc912cca35ad7e45d3755feee42",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
     }
   ]
 }
