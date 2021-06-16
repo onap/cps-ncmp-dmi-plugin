@@ -49,6 +49,12 @@
         <swagger.version>2.1.4</swagger.version>
         <swagger-annotations-version>1.6.2</swagger-annotations-version>
         <swagger-codegen-maven-plugin.version>3.0.18</swagger-codegen-maven-plugin.version>
+
+        <jib-maven-plugin.version>2.8.0</jib-maven-plugin.version>
+        <maven.build.timestamp.format>yyyyMMdd'T'HHmmss'Z'</maven.build.timestamp.format>
+
+        <base.image>${docker.pull.registry}onap/integration-java11:8.0.0</base.image>
+        <image.tag>${project.version}-${maven.build.timestamp}</image.tag>
     </properties>
     <dependencyManagement>
         <dependencies>
@@ -338,6 +344,61 @@
                     </excludes>
                 </configuration>
             </plugin>
+            <plugin>
+                <groupId>com.google.cloud.tools</groupId>
+                <artifactId>jib-maven-plugin</artifactId>
+                <version>${jib-maven-plugin.version}</version>
+                <configuration>
+                    <container>
+                        <mainClass>${app}</mainClass>
+                        <creationTime>USE_CURRENT_TIMESTAMP</creationTime>
+                    </container>
+                    <from>
+                        <image>${base.image}</image>
+                    </from>
+                    <to>
+                        <tags>
+                            <tag>latest</tag>
+                        </tags>
+                        <image>${docker.push.registry}onap/${image.name}:${image.tag}</image>
+                    </to>
+                </configuration>
+                <executions>
+                    <execution>
+                        <phase>package</phase>
+                        <id>build</id>
+                        <goals>
+                            <goal>dockerBuild</goal>
+                        </goals>
+                    </execution>
+                    <execution>
+                        <phase>deploy</phase>
+                        <id>buildAndPush</id>
+                        <goals>
+                            <goal>build</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
         </plugins>
     </build>
+    <profiles>
+        <profile>
+            <id>dmi-docker</id>
+            <activation>
+                <activeByDefault>true</activeByDefault>
+            </activation>
+            <properties>
+                <image.name>ncmp-dmi-plugin</image.name>
+            </properties>
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>com.google.cloud.tools</groupId>
+                        <artifactId>jib-maven-plugin</artifactId>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+    </profiles>
 </project>
