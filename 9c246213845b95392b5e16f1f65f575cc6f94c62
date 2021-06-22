@@ -1,0 +1,142 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9da5d75b_8fc9e488",
+        "filename": "docker-compose/README.md",
+        "patchSetId": 3
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 6738
+      },
+      "writtenOn": "2021-06-22T14:44:04Z",
+      "side": 1,
+      "message": "extra space",
+      "range": {
+        "startLine": 6,
+        "startChar": 37,
+        "endLine": 6,
+        "endChar": 39
+      },
+      "revId": "9c246213845b95392b5e16f1f65f575cc6f94c62",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "4be35555_72d18e81",
+        "filename": "docker-compose/README.md",
+        "patchSetId": 3
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 6738
+      },
+      "writtenOn": "2021-06-22T14:44:04Z",
+      "side": 1,
+      "message": "what is the difference between this and line 14-18. Also I see only one profile  named dmi-docker in pom.xml .. Not sure about dmi-plugin",
+      "range": {
+        "startLine": 20,
+        "startChar": 0,
+        "endLine": 24,
+        "endChar": 62
+      },
+      "revId": "9c246213845b95392b5e16f1f65f575cc6f94c62",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "904c57a0_ea723cd6",
+        "filename": "docker-compose/README.md",
+        "patchSetId": 3
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 6738
+      },
+      "writtenOn": "2021-06-22T14:44:04Z",
+      "side": 1,
+      "message": "not really required",
+      "range": {
+        "startLine": 38,
+        "startChar": 18,
+        "endLine": 38,
+        "endChar": 65
+      },
+      "revId": "9c246213845b95392b5e16f1f65f575cc6f94c62",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "37684b89_d32b76ad",
+        "filename": "docker-compose/README.md",
+        "patchSetId": 3
+      },
+      "lineNbr": 43,
+      "author": {
+        "id": 6738
+      },
+      "writtenOn": "2021-06-22T14:44:04Z",
+      "side": 1,
+      "message": "n extra",
+      "range": {
+        "startLine": 43,
+        "startChar": 4,
+        "endLine": 43,
+        "endChar": 11
+      },
+      "revId": "9c246213845b95392b5e16f1f65f575cc6f94c62",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "1923c4dc_01e1a461",
+        "filename": "docker-compose/README.md",
+        "patchSetId": 3
+      },
+      "lineNbr": 58,
+      "author": {
+        "id": 6738
+      },
+      "writtenOn": "2021-06-22T14:44:04Z",
+      "side": 1,
+      "message": "from",
+      "range": {
+        "startLine": 58,
+        "startChar": 36,
+        "endLine": 58,
+        "endChar": 41
+      },
+      "revId": "9c246213845b95392b5e16f1f65f575cc6f94c62",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "9bdbabc0_8eed0abb",
+        "filename": "pom.xml",
+        "patchSetId": 3
+      },
+      "lineNbr": 387,
+      "author": {
+        "id": 6738
+      },
+      "writtenOn": "2021-06-22T14:44:04Z",
+      "side": 1,
+      "message": "Question : any specific reason to have the docker profile enabled by default? I think its better to be disabled and use it whenevr required.",
+      "range": {
+        "startLine": 387,
+        "startChar": 33,
+        "endLine": 387,
+        "endChar": 37
+      },
+      "revId": "9c246213845b95392b5e16f1f65f575cc6f94c62",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    }
+  ]
+}
