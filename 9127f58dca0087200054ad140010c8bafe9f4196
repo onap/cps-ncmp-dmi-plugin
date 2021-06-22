@@ -46,6 +46,30 @@
       "revId": "9127f58dca0087200054ad140010c8bafe9f4196",
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "9c4a2755_e3a0b224",
+        "filename": "src/test/groovy/org/onap/cps/ncmp/rest/controller/DmiRestControllerSpec.groovy",
+        "patchSetId": 3
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 5006
+      },
+      "writtenOn": "2021-06-22T14:22:58Z",
+      "side": 1,
+      "message": "this will bypass spring security for tests. Thats why I added this. This is a sample test so I added this here. Upcoming tests require it or not, depends on the requirements.",
+      "parentUuid": "d5728f40_de482c18",
+      "range": {
+        "startLine": 35,
+        "startChar": 21,
+        "endLine": 35,
+        "endChar": 41
+      },
+      "revId": "9127f58dca0087200054ad140010c8bafe9f4196",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
     }
   ]
 }
