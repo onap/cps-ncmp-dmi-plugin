@@ -305,6 +305,30 @@
       "revId": "9c246213845b95392b5e16f1f65f575cc6f94c62",
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "a949e9fd_87eaa9e6",
+        "filename": "pom.xml",
+        "patchSetId": 3
+      },
+      "lineNbr": 387,
+      "author": {
+        "id": 7486
+      },
+      "writtenOn": "2021-06-23T15:08:25Z",
+      "side": 1,
+      "message": "Changing this to false makes the build fail, changing it back to true",
+      "parentUuid": "ee746339_3d6a2867",
+      "range": {
+        "startLine": 387,
+        "startChar": 33,
+        "endLine": 387,
+        "endChar": 37
+      },
+      "revId": "9c246213845b95392b5e16f1f65f575cc6f94c62",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
     }
   ]
 }
