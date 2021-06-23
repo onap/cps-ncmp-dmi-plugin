@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "03e94aaf_7e462d09",
+        "filename": "docker-compose/README.md",
+        "patchSetId": 3
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 7486
+      },
+      "writtenOn": "2021-06-23T15:02:28Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9da5d75b_8fc9e488",
+      "range": {
+        "startLine": 6,
+        "startChar": 37,
+        "endLine": 6,
+        "endChar": 39
+      },
+      "revId": "9c246213845b95392b5e16f1f65f575cc6f94c62",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "4be35555_72d18e81",
         "filename": "docker-compose/README.md",
         "patchSetId": 3
@@ -45,6 +69,30 @@
       "revId": "9c246213845b95392b5e16f1f65f575cc6f94c62",
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "2730d4a3_bac53c88",
+        "filename": "docker-compose/README.md",
+        "patchSetId": 3
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 7486
+      },
+      "writtenOn": "2021-06-23T15:02:28Z",
+      "side": 1,
+      "message": "removed and also updated line 17 to be -Pdmi-docker instead of -Pdmi-plugin",
+      "parentUuid": "4be35555_72d18e81",
+      "range": {
+        "startLine": 20,
+        "startChar": 0,
+        "endLine": 24,
+        "endChar": 62
+      },
+      "revId": "9c246213845b95392b5e16f1f65f575cc6f94c62",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
     },
     {
       "key": {
@@ -71,6 +119,30 @@
     },
     {
       "key": {
+        "uuid": "d3254c0b_4218c0f4",
+        "filename": "docker-compose/README.md",
+        "patchSetId": 3
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 7486
+      },
+      "writtenOn": "2021-06-23T15:02:28Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "904c57a0_ea723cd6",
+      "range": {
+        "startLine": 38,
+        "startChar": 18,
+        "endLine": 38,
+        "endChar": 65
+      },
+      "revId": "9c246213845b95392b5e16f1f65f575cc6f94c62",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "37684b89_d32b76ad",
         "filename": "docker-compose/README.md",
         "patchSetId": 3
@@ -94,6 +166,30 @@
     },
     {
       "key": {
+        "uuid": "a1b49c43_f22f88d8",
+        "filename": "docker-compose/README.md",
+        "patchSetId": 3
+      },
+      "lineNbr": 43,
+      "author": {
+        "id": 7486
+      },
+      "writtenOn": "2021-06-23T15:02:28Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "37684b89_d32b76ad",
+      "range": {
+        "startLine": 43,
+        "startChar": 4,
+        "endLine": 43,
+        "endChar": 11
+      },
+      "revId": "9c246213845b95392b5e16f1f65f575cc6f94c62",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1923c4dc_01e1a461",
         "filename": "docker-compose/README.md",
         "patchSetId": 3
@@ -114,6 +210,30 @@
       "revId": "9c246213845b95392b5e16f1f65f575cc6f94c62",
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "3a18d55c_0d84b10d",
+        "filename": "docker-compose/README.md",
+        "patchSetId": 3
+      },
+      "lineNbr": 58,
+      "author": {
+        "id": 7486
+      },
+      "writtenOn": "2021-06-23T15:02:28Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1923c4dc_01e1a461",
+      "range": {
+        "startLine": 58,
+        "startChar": 36,
+        "endLine": 58,
+        "endChar": 41
+      },
+      "revId": "9c246213845b95392b5e16f1f65f575cc6f94c62",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
     },
     {
       "key": {
@@ -161,6 +281,30 @@
       "revId": "9c246213845b95392b5e16f1f65f575cc6f94c62",
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "ee746339_3d6a2867",
+        "filename": "pom.xml",
+        "patchSetId": 3
+      },
+      "lineNbr": 387,
+      "author": {
+        "id": 7486
+      },
+      "writtenOn": "2021-06-23T15:02:28Z",
+      "side": 1,
+      "message": "Changed it to false",
+      "parentUuid": "77bd22f5_bb5a1bfd",
+      "range": {
+        "startLine": 387,
+        "startChar": 33,
+        "endLine": 387,
+        "endChar": 37
+      },
+      "revId": "9c246213845b95392b5e16f1f65f575cc6f94c62",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
     }
   ]
 }
