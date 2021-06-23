@@ -137,6 +137,30 @@
       "revId": "9c246213845b95392b5e16f1f65f575cc6f94c62",
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "77bd22f5_bb5a1bfd",
+        "filename": "pom.xml",
+        "patchSetId": 3
+      },
+      "lineNbr": 387,
+      "author": {
+        "id": 5006
+      },
+      "writtenOn": "2021-06-23T10:40:37Z",
+      "side": 1,
+      "message": "I followed practice done in cps-application where main docker profile is default active. IMO this should be false too, that will save lot of space on local disk as well build time.",
+      "parentUuid": "9bdbabc0_8eed0abb",
+      "range": {
+        "startLine": 387,
+        "startChar": 33,
+        "endLine": 387,
+        "endChar": 37
+      },
+      "revId": "9c246213845b95392b5e16f1f65f575cc6f94c62",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
     }
   ]
 }
