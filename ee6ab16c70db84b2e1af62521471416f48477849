@@ -1,0 +1,119 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9168bcca_5974de7f",
+        "filename": "pom.xml",
+        "patchSetId": 4
+      },
+      "lineNbr": 43,
+      "author": {
+        "id": 7680
+      },
+      "writtenOn": "2021-06-23T19:15:20Z",
+      "side": 1,
+      "message": "version is already provided in the parent. Do we need it?",
+      "range": {
+        "startLine": 43,
+        "startChar": 8,
+        "endLine": 43,
+        "endChar": 48
+      },
+      "revId": "ee6ab16c70db84b2e1af62521471416f48477849",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "c2f43e34_781960c2",
+        "filename": "pom.xml",
+        "patchSetId": 4
+      },
+      "lineNbr": 244,
+      "author": {
+        "id": 7680
+      },
+      "writtenOn": "2021-06-23T19:15:20Z",
+      "side": 1,
+      "message": "are we planning to use cps checkstyle?",
+      "range": {
+        "startLine": 240,
+        "startChar": 20,
+        "endLine": 244,
+        "endChar": 33
+      },
+      "revId": "ee6ab16c70db84b2e1af62521471416f48477849",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "94feda92_113e8b99",
+        "filename": "pom.xml",
+        "patchSetId": 4
+      },
+      "lineNbr": 266,
+      "author": {
+        "id": 7680
+      },
+      "writtenOn": "2021-06-23T19:15:20Z",
+      "side": 1,
+      "message": "are we planning to use cps-spotbugs ?",
+      "range": {
+        "startLine": 261,
+        "startChar": 20,
+        "endLine": 266,
+        "endChar": 33
+      },
+      "revId": "ee6ab16c70db84b2e1af62521471416f48477849",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "585cd45c_b46f33fd",
+        "filename": "pom.xml",
+        "patchSetId": 4
+      },
+      "lineNbr": 302,
+      "author": {
+        "id": 7680
+      },
+      "writtenOn": "2021-06-23T19:15:20Z",
+      "side": 1,
+      "message": "it should be org/onap/cps/ncmp/rest/model/*",
+      "range": {
+        "startLine": 302,
+        "startChar": 32,
+        "endLine": 302,
+        "endChar": 76
+      },
+      "revId": "ee6ab16c70db84b2e1af62521471416f48477849",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "17522d8a_e2d1b74f",
+        "filename": "spotbugs/pom.xml",
+        "patchSetId": 4
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 7680
+      },
+      "writtenOn": "2021-06-23T19:15:20Z",
+      "side": 1,
+      "message": "maven artifact clashes with existing cps artifact. We can try to keep only exclude xml inside the spotbugs folder and check if it works.",
+      "range": {
+        "startLine": 26,
+        "startChar": 4,
+        "endLine": 27,
+        "endChar": 37
+      },
+      "revId": "ee6ab16c70db84b2e1af62521471416f48477849",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    }
+  ]
+}
