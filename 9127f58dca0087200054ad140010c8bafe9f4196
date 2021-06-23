@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "b3e14c53_ebe4653a",
+        "filename": "pom.xml",
+        "patchSetId": 3
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 5006
+      },
+      "writtenOn": "2021-06-23T10:34:18Z",
+      "side": 1,
+      "message": "it should not be 0 but as this project have only configuration files currently recommended number .9 doesnt allow it to pass. So i intentionally put it 0, will change it when more dev and test files will be added to this.",
+      "parentUuid": "8435c061_1819a233",
+      "range": {
+        "startLine": 41,
+        "startChar": 8,
+        "endLine": 41,
+        "endChar": 62
+      },
+      "revId": "9127f58dca0087200054ad140010c8bafe9f4196",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "db60d4b9_9218d578",
         "filename": "pom.xml",
         "patchSetId": 3
@@ -36,6 +60,30 @@
       "writtenOn": "2021-06-23T09:58:07Z",
       "side": 1,
       "message": "I dont see this file in project",
+      "range": {
+        "startLine": 279,
+        "startChar": 39,
+        "endLine": 279,
+        "endChar": 59
+      },
+      "revId": "9127f58dca0087200054ad140010c8bafe9f4196",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "a40b1215_b10afe78",
+        "filename": "pom.xml",
+        "patchSetId": 3
+      },
+      "lineNbr": 279,
+      "author": {
+        "id": 5006
+      },
+      "writtenOn": "2021-06-23T10:34:18Z",
+      "side": 1,
+      "message": "will fix.",
+      "parentUuid": "db60d4b9_9218d578",
       "range": {
         "startLine": 279,
         "startChar": 39,
