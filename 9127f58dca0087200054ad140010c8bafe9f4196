@@ -2,6 +2,52 @@
   "comments": [
     {
       "key": {
+        "uuid": "8435c061_1819a233",
+        "filename": "pom.xml",
+        "patchSetId": 3
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 6738
+      },
+      "writtenOn": "2021-06-23T09:58:07Z",
+      "side": 1,
+      "message": "should not be 0",
+      "range": {
+        "startLine": 41,
+        "startChar": 8,
+        "endLine": 41,
+        "endChar": 62
+      },
+      "revId": "9127f58dca0087200054ad140010c8bafe9f4196",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "db60d4b9_9218d578",
+        "filename": "pom.xml",
+        "patchSetId": 3
+      },
+      "lineNbr": 279,
+      "author": {
+        "id": 6738
+      },
+      "writtenOn": "2021-06-23T09:58:07Z",
+      "side": 1,
+      "message": "I dont see this file in project",
+      "range": {
+        "startLine": 279,
+        "startChar": 39,
+        "endLine": 279,
+        "endChar": 59
+      },
+      "revId": "9127f58dca0087200054ad140010c8bafe9f4196",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "ad77c69a_c4246a14",
         "filename": "src/test/groovy/org/onap/cps/ncmp/rest/controller/DmiRestControllerSpec.groovy",
         "patchSetId": 3
