@@ -2,6 +2,29 @@
   "comments": [
     {
       "key": {
+        "uuid": "5a3cd55e_e13fcccf",
+        "filename": "docker-compose/README.md",
+        "patchSetId": 5
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 7680
+      },
+      "writtenOn": "2021-06-23T18:01:33Z",
+      "side": 1,
+      "message": "if you remove the profile, you don\u0027t need to skip jib.",
+      "range": {
+        "startLine": 9,
+        "startChar": 18,
+        "endLine": 9,
+        "endChar": 41
+      },
+      "revId": "c42bf0b5f717df5f11c5afba0bff6a9b553503b4",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "92c9dd71_1ae63e78",
         "filename": "docker-compose/README.md",
         "patchSetId": 5
@@ -25,6 +48,53 @@
     },
     {
       "key": {
+        "uuid": "4cb797cf_2f3369d3",
+        "filename": "docker-compose/README.md",
+        "patchSetId": 5
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 7680
+      },
+      "writtenOn": "2021-06-23T18:01:33Z",
+      "side": 1,
+      "message": "${docker.push.registry} variable is defined in the pom.xml.\n\nIf we change the docker image.name in the jib plugin, the image name should be fine.",
+      "parentUuid": "92c9dd71_1ae63e78",
+      "range": {
+        "startLine": 17,
+        "startChar": 30,
+        "endLine": 17,
+        "endChar": 56
+      },
+      "revId": "c42bf0b5f717df5f11c5afba0bff6a9b553503b4",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "38d705c8_0f0e0954",
+        "filename": "docker-compose/README.md",
+        "patchSetId": 5
+      },
+      "lineNbr": 60,
+      "author": {
+        "id": 7680
+      },
+      "writtenOn": "2021-06-23T18:01:33Z",
+      "side": 1,
+      "message": "are we using the same group?",
+      "range": {
+        "startLine": 60,
+        "startChar": 46,
+        "endLine": 60,
+        "endChar": 63
+      },
+      "revId": "c42bf0b5f717df5f11c5afba0bff6a9b553503b4",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "8b351c05_bbe09ad6",
         "filename": "docker-compose/docker-compose.yml",
         "patchSetId": 5
@@ -41,6 +111,76 @@
         "startChar": 11,
         "endLine": 22,
         "endChar": 32
+      },
+      "revId": "c42bf0b5f717df5f11c5afba0bff6a9b553503b4",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "68e7f20a_2e855e93",
+        "filename": "docker-compose/docker-compose.yml",
+        "patchSetId": 5
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 7680
+      },
+      "writtenOn": "2021-06-23T18:01:33Z",
+      "side": 1,
+      "message": "In CPS, we do not have any registry information in the docker-compose. We can follow the same convention here to be consistent.",
+      "parentUuid": "8b351c05_bbe09ad6",
+      "range": {
+        "startLine": 22,
+        "startChar": 11,
+        "endLine": 22,
+        "endChar": 32
+      },
+      "revId": "c42bf0b5f717df5f11c5afba0bff6a9b553503b4",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "8fd22e5d_02e22ce5",
+        "filename": "pom.xml",
+        "patchSetId": 5
+      },
+      "lineNbr": 348,
+      "author": {
+        "id": 7680
+      },
+      "writtenOn": "2021-06-23T18:01:33Z",
+      "side": 1,
+      "message": "I think you want to run this plugin only when profile dmi-docker is active. If it is the case then plugin should be defined under plugin-managements. \nPlease refer cps-application/pom.xml for more details",
+      "range": {
+        "startLine": 345,
+        "startChar": 12,
+        "endLine": 348,
+        "endChar": 62
+      },
+      "revId": "c42bf0b5f717df5f11c5afba0bff6a9b553503b4",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "14d87afc_816d4242",
+        "filename": "pom.xml",
+        "patchSetId": 5
+      },
+      "lineNbr": 361,
+      "author": {
+        "id": 7680
+      },
+      "writtenOn": "2021-06-23T18:01:33Z",
+      "side": 1,
+      "message": "In CPS, we pass the \u0027/\u0027 along with registry name. For example,\n\ndocker.push.registry\u003dnexus3.onap.org:10003/\n\nSo, we don\u0027t need \u0027/\u0027 after the ${docker.push.registry} variable. It is little odd but I think it has been done to avoid writing logic for it.",
+      "range": {
+        "startLine": 361,
+        "startChar": 51,
+        "endLine": 361,
+        "endChar": 59
       },
       "revId": "c42bf0b5f717df5f11c5afba0bff6a9b553503b4",
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
