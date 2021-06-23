@@ -1,5 +1,5 @@
 /*
- * ============LICENSE_START=======================================================
+ *  ============LICENSE_START=======================================================
  *  Copyright (C) 2021 Nordix Foundation
  *  ================================================================================
  *  Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,30 +14,21 @@
  *  limitations under the License.
  *
  *  SPDX-License-Identifier: Apache-2.0
- *  ============LICENSE_END=========================================================
+ * ============LICENSE_END=========================================================
  */
 
 package org.onap.cps.ncmp.rest.controller;
 
-import org.onap.cps.ncmp.rest.api.DmiPluginApi;
-import org.onap.cps.ncmp.service.DmiService;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-@RequestMapping("${rest.api.dmi-base-path}")
 @RestController
-public class DmiRestController implements DmiPluginApi {
+public class TestController {
 
-    @Autowired
-    private DmiService dmiService;
-
-    @Override
-    public ResponseEntity<Object> helloWorld() {
-        final var helloWorld = dmiService.getHelloWorld()   ;
-        return new ResponseEntity<>(helloWorld, HttpStatus.OK);
+    @GetMapping("/test")
+    ResponseEntity<String> test() {
+        return new ResponseEntity<>(HttpStatus.OK);
     }
-
 }
