@@ -19,10 +19,12 @@
 
 package org.onap.cps.ncmp.rest.controller
 
-import org.springframework.http.HttpStatus
-
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get
 
+import org.onap.cps.ncmp.service.DmiService
+import org.spockframework.spring.SpringBean
+import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc
+import org.springframework.http.HttpStatus
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.beans.factory.annotation.Value
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest
@@ -30,7 +32,11 @@ import org.springframework.test.web.servlet.MockMvc
 import spock.lang.Specification
 
 @WebMvcTest
+@AutoConfigureMockMvc(addFilters = false)
 class DmiRestControllerSpec extends Specification {
+
+    @SpringBean
+    DmiService mockDmiService = Mock()
 
     @Autowired
     private MockMvc mvc
@@ -43,11 +49,14 @@ class DmiRestControllerSpec extends Specification {
             def helloWorldEndpoint = "$basePath/v1/helloworld"
 
         when: 'get hello world api is invoked'
-            def response = mvc.perform(get(helloWorldEndpoint)).andReturn().response
+            def response = mvc.perform(
+                                    get(helloWorldEndpoint)
+                           ).andReturn().response
 
         then: 'Response Status is OK and contains expected text'
             response.status == HttpStatus.OK.value()
-            response.getContentAsString() == 'Hello World'
+        then: 'the java API was called with the correct parameters'
+            1 * mockDmiService.getHelloWorld()
     }
 
 }
