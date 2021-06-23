@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "92c9dd71_1ae63e78",
+        "filename": "docker-compose/README.md",
+        "patchSetId": 5
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 6738
+      },
+      "writtenOn": "2021-06-23T15:42:21Z",
+      "side": 1,
+      "message": "this is not required as the image name defined in docker-compose is using nexus3.onap.org:10003/onap/ncmp-dmi-plugin:${VERSION:-latest}.\nIf we execute the above mentioned step, the image generated would be /onap/ncmp-dmi-plugin:${VERSION:-latest} which is not a valid image name.",
+      "range": {
+        "startLine": 17,
+        "startChar": 30,
+        "endLine": 17,
+        "endChar": 56
+      },
+      "revId": "c42bf0b5f717df5f11c5afba0bff6a9b553503b4",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    }
+  ]
+}
