@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "08705446_f35e38bd",
+        "filename": "pom.xml",
+        "patchSetId": 5
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 7486
+      },
+      "writtenOn": "2021-06-24T17:03:39Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "56803d60_b7eab507",
+      "range": {
+        "startLine": 41,
+        "startChar": 33,
+        "endLine": 41,
+        "endChar": 36
+      },
+      "revId": "7f9b61b3a661727653d931ff5a1508b678c361d7",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "a3e32930_3ecb6b60",
         "filename": "src/main/resources/application.yml",
         "patchSetId": 5
