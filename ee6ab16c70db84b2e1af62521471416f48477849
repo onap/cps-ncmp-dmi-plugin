@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "40c23fce_4d46ce70",
+        "filename": "pom.xml",
+        "patchSetId": 4
+      },
+      "lineNbr": 43,
+      "author": {
+        "id": 7486
+      },
+      "writtenOn": "2021-06-24T11:53:45Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9168bcca_5974de7f",
+      "range": {
+        "startLine": 43,
+        "startChar": 8,
+        "endLine": 43,
+        "endChar": 48
+      },
+      "revId": "ee6ab16c70db84b2e1af62521471416f48477849",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "c2f43e34_781960c2",
         "filename": "pom.xml",
         "patchSetId": 4
@@ -143,6 +167,30 @@
     },
     {
       "key": {
+        "uuid": "e4272d82_00ae425c",
+        "filename": "pom.xml",
+        "patchSetId": 4
+      },
+      "lineNbr": 266,
+      "author": {
+        "id": 7486
+      },
+      "writtenOn": "2021-06-24T11:53:45Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "acc995bc_b8d6a552",
+      "range": {
+        "startLine": 261,
+        "startChar": 20,
+        "endLine": 266,
+        "endChar": 33
+      },
+      "revId": "ee6ab16c70db84b2e1af62521471416f48477849",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "585cd45c_b46f33fd",
         "filename": "pom.xml",
         "patchSetId": 4
@@ -163,6 +211,30 @@
       "revId": "ee6ab16c70db84b2e1af62521471416f48477849",
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "0bb3f453_0911d7c1",
+        "filename": "pom.xml",
+        "patchSetId": 4
+      },
+      "lineNbr": 302,
+      "author": {
+        "id": 7486
+      },
+      "writtenOn": "2021-06-24T11:53:45Z",
+      "side": 1,
+      "message": "Whoever adds in the models should include this excludes statement, for now I am removing it as it is not needed.",
+      "parentUuid": "585cd45c_b46f33fd",
+      "range": {
+        "startLine": 302,
+        "startChar": 32,
+        "endLine": 302,
+        "endChar": 76
+      },
+      "revId": "ee6ab16c70db84b2e1af62521471416f48477849",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
     },
     {
       "key": {
