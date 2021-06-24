@@ -1,0 +1,44 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "95f015c4_d0dbed80",
+        "filename": "docker-compose/docker-compose.yml",
+        "patchSetId": 6
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 6738
+      },
+      "writtenOn": "2021-06-24T10:21:29Z",
+      "side": 1,
+      "message": "should come before onap and not with the env variable",
+      "range": {
+        "startLine": 22,
+        "startChar": 47,
+        "endLine": 22,
+        "endChar": 48
+      },
+      "revId": "d4e1879cb4ed18b6ac181bca5fe8faf6ebae43d8",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "04693ca4_f08c78ba",
+        "filename": "src/main/java/org/onap/cps/ncmp/config/DmiPluginConfig.java",
+        "patchSetId": 6
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 6738
+      },
+      "writtenOn": "2021-06-24T10:21:29Z",
+      "side": 1,
+      "message": "not related to this jira.. this is required for swagger-ui config which is part of https://jira.onap.org/browse/CPS-432",
+      "revId": "d4e1879cb4ed18b6ac181bca5fe8faf6ebae43d8",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    }
+  ]
+}
