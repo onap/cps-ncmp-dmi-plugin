@@ -119,6 +119,30 @@
     },
     {
       "key": {
+        "uuid": "acc995bc_b8d6a552",
+        "filename": "pom.xml",
+        "patchSetId": 4
+      },
+      "lineNbr": 266,
+      "author": {
+        "id": 6738
+      },
+      "writtenOn": "2021-06-24T10:35:02Z",
+      "side": 1,
+      "message": "As this is included, we dont need to add spotbugs module.\nMy apologies even the spotbugs-exclude file will be picked up from cps-spotbugs, it need not be added here again",
+      "parentUuid": "e88db714_541c9818",
+      "range": {
+        "startLine": 261,
+        "startChar": 20,
+        "endLine": 266,
+        "endChar": 33
+      },
+      "revId": "ee6ab16c70db84b2e1af62521471416f48477849",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "585cd45c_b46f33fd",
         "filename": "pom.xml",
         "patchSetId": 4
