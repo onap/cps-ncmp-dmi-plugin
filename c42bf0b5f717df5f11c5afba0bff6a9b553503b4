@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "2b5961c1_c06fbc0e",
+        "filename": "docker-compose/README.md",
+        "patchSetId": 5
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 7486
+      },
+      "writtenOn": "2021-06-24T10:05:45Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5a3cd55e_e13fcccf",
+      "range": {
+        "startLine": 9,
+        "startChar": 18,
+        "endLine": 9,
+        "endChar": 41
+      },
+      "revId": "c42bf0b5f717df5f11c5afba0bff6a9b553503b4",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "92c9dd71_1ae63e78",
         "filename": "docker-compose/README.md",
         "patchSetId": 5
@@ -72,6 +96,30 @@
     },
     {
       "key": {
+        "uuid": "4388b4d9_80d57c31",
+        "filename": "docker-compose/README.md",
+        "patchSetId": 5
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 7486
+      },
+      "writtenOn": "2021-06-24T10:05:45Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "4cb797cf_2f3369d3",
+      "range": {
+        "startLine": 17,
+        "startChar": 30,
+        "endLine": 17,
+        "endChar": 56
+      },
+      "revId": "c42bf0b5f717df5f11c5afba0bff6a9b553503b4",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "38d705c8_0f0e0954",
         "filename": "docker-compose/README.md",
         "patchSetId": 5
@@ -92,6 +140,30 @@
       "revId": "c42bf0b5f717df5f11c5afba0bff6a9b553503b4",
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "4bfbeb08_254e9394",
+        "filename": "docker-compose/README.md",
+        "patchSetId": 5
+      },
+      "lineNbr": 60,
+      "author": {
+        "id": 7486
+      },
+      "writtenOn": "2021-06-24T10:05:45Z",
+      "side": 1,
+      "message": "We are using dmi-plugin-docket, change is reflected in new patch set.",
+      "parentUuid": "38d705c8_0f0e0954",
+      "range": {
+        "startLine": 60,
+        "startChar": 46,
+        "endLine": 60,
+        "endChar": 63
+      },
+      "revId": "c42bf0b5f717df5f11c5afba0bff6a9b553503b4",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
     },
     {
       "key": {
@@ -142,6 +214,30 @@
     },
     {
       "key": {
+        "uuid": "081cc9ae_ad972fc1",
+        "filename": "docker-compose/docker-compose.yml",
+        "patchSetId": 5
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 7486
+      },
+      "writtenOn": "2021-06-24T10:05:45Z",
+      "side": 1,
+      "message": "Implemented Aditya\u0027s comment",
+      "parentUuid": "68e7f20a_2e855e93",
+      "range": {
+        "startLine": 22,
+        "startChar": 11,
+        "endLine": 22,
+        "endChar": 32
+      },
+      "revId": "c42bf0b5f717df5f11c5afba0bff6a9b553503b4",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "8fd22e5d_02e22ce5",
         "filename": "pom.xml",
         "patchSetId": 5
@@ -165,6 +261,30 @@
     },
     {
       "key": {
+        "uuid": "b168f4ba_061e2ec7",
+        "filename": "pom.xml",
+        "patchSetId": 5
+      },
+      "lineNbr": 348,
+      "author": {
+        "id": 7486
+      },
+      "writtenOn": "2021-06-24T10:05:45Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "8fd22e5d_02e22ce5",
+      "range": {
+        "startLine": 345,
+        "startChar": 12,
+        "endLine": 348,
+        "endChar": 62
+      },
+      "revId": "c42bf0b5f717df5f11c5afba0bff6a9b553503b4",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "14d87afc_816d4242",
         "filename": "pom.xml",
         "patchSetId": 5
@@ -185,6 +305,30 @@
       "revId": "c42bf0b5f717df5f11c5afba0bff6a9b553503b4",
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "99333efa_b440a31f",
+        "filename": "pom.xml",
+        "patchSetId": 5
+      },
+      "lineNbr": 361,
+      "author": {
+        "id": 7486
+      },
+      "writtenOn": "2021-06-24T10:05:45Z",
+      "side": 1,
+      "message": "The dmi-plugins pom\u0027s parent pom is org.onap.oparent, in this parent pom the docker.push.registry variable equals nexus3.onap.org:10003, this is why we need the / here. In CPS, we are not using the docker.push.registry from the oparent pom, instead we are using docker.repository.push which comes from the cps-parent pom.",
+      "parentUuid": "14d87afc_816d4242",
+      "range": {
+        "startLine": 361,
+        "startChar": 51,
+        "endLine": 361,
+        "endChar": 59
+      },
+      "revId": "c42bf0b5f717df5f11c5afba0bff6a9b553503b4",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
     }
   ]
 }
