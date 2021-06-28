@@ -22,6 +22,30 @@
       "revId": "5a6b1c9cfb924b6e1c770c8f05f67b564007b334",
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "768d2023_ea6f44d3",
+        "filename": "docker-compose/README.md",
+        "patchSetId": 8
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 7486
+      },
+      "writtenOn": "2021-06-28T12:59:53Z",
+      "side": 1,
+      "message": "Fixed",
+      "parentUuid": "efc62550_e58c5d51",
+      "range": {
+        "startLine": 5,
+        "startChar": 0,
+        "endLine": 6,
+        "endChar": 37
+      },
+      "revId": "5a6b1c9cfb924b6e1c770c8f05f67b564007b334",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
     }
   ]
 }
