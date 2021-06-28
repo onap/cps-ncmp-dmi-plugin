@@ -49,6 +49,29 @@
     },
     {
       "key": {
+        "uuid": "8683dfc1_83db0dbf",
+        "filename": "docker-compose/README.md",
+        "patchSetId": 3
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2021-06-28T15:29:58Z",
+      "side": 1,
+      "message": "If there are other (more important) comments please remove redundant whitespace (indicated as pink in gerrit :-))",
+      "range": {
+        "startLine": 6,
+        "startChar": 37,
+        "endLine": 6,
+        "endChar": 39
+      },
+      "revId": "9c246213845b95392b5e16f1f65f575cc6f94c62",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "4be35555_72d18e81",
         "filename": "docker-compose/README.md",
         "patchSetId": 3
@@ -187,6 +210,29 @@
       "revId": "9c246213845b95392b5e16f1f65f575cc6f94c62",
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a9b514a_08d7a3fb",
+        "filename": "docker-compose/README.md",
+        "patchSetId": 3
+      },
+      "lineNbr": 43,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2021-06-28T15:29:58Z",
+      "side": 1,
+      "message": "typo",
+      "range": {
+        "startLine": 43,
+        "startChar": 9,
+        "endLine": 43,
+        "endChar": 11
+      },
+      "revId": "9c246213845b95392b5e16f1f65f575cc6f94c62",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
     },
     {
       "key": {
