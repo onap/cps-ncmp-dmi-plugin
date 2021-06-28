@@ -49,6 +49,99 @@
     },
     {
       "key": {
+        "uuid": "d55a3606_d6496260",
+        "filename": "src/test/groovy/org/onap/cps/ncmp/rest/controller/ControllerSecuritySpec.groovy",
+        "patchSetId": 7
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2021-06-28T15:27:40Z",
+      "side": 1,
+      "message": "as per our convention java access modifiers are NOT to be used in groovy test classes. so current impl. is correct.\n\nSee https://wiki.onap.org/pages/viewpage.action?pageId\u003d92998161",
+      "parentUuid": "8d7b2dd8_d5562ab4",
+      "range": {
+        "startLine": 34,
+        "startChar": 4,
+        "endLine": 34,
+        "endChar": 15
+      },
+      "revId": "048a5454d29f28de5b5b14fe7a00d5895842c5d9",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "2a6029d4_af2700d6",
+        "filename": "src/test/groovy/org/onap/cps/ncmp/rest/controller/ControllerSecuritySpec.groovy",
+        "patchSetId": 7
+      },
+      "lineNbr": 43,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2021-06-28T15:27:40Z",
+      "side": 1,
+      "message": "fix indentation (throughout)\nsee https://wiki.onap.org/pages/viewpage.action?pageId\u003d92998161",
+      "range": {
+        "startLine": 40,
+        "startChar": 1,
+        "endLine": 43,
+        "endChar": 31
+      },
+      "revId": "048a5454d29f28de5b5b14fe7a00d5895842c5d9",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "d1cb1822_b3cdabec",
+        "filename": "src/test/groovy/org/onap/cps/ncmp/rest/controller/ControllerSecuritySpec.groovy",
+        "patchSetId": 7
+      },
+      "lineNbr": 47,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2021-06-28T15:27:40Z",
+      "side": 1,
+      "message": "scenario is just \u0027Get request without authentication\u0027 (it can get too messy for more complex tests, you probably copied from pre-existing test but want to make sure to be clear on the conventions going forward, it would not be a blocking comment in this case)\n\nThe details of what happens are in the subsequent labels description below",
+      "range": {
+        "startLine": 47,
+        "startChar": 43,
+        "endLine": 47,
+        "endChar": 61
+      },
+      "revId": "048a5454d29f28de5b5b14fe7a00d5895842c5d9",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "e104a9bc_da9396d8",
+        "filename": "src/test/groovy/org/onap/cps/ncmp/rest/controller/ControllerSecuritySpec.groovy",
+        "patchSetId": 7
+      },
+      "lineNbr": 54,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2021-06-28T15:27:40Z",
+      "side": 1,
+      "message": "as above, remove this part",
+      "range": {
+        "startLine": 54,
+        "startChar": 48,
+        "endLine": 54,
+        "endChar": 66
+      },
+      "revId": "048a5454d29f28de5b5b14fe7a00d5895842c5d9",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "63ec69af_999b6c82",
         "filename": "src/test/groovy/org/onap/cps/ncmp/rest/controller/DmiRestControllerSpec.groovy",
         "patchSetId": 7
@@ -96,6 +189,30 @@
     },
     {
       "key": {
+        "uuid": "46c69ae7_6c36d58d",
+        "filename": "src/test/groovy/org/onap/cps/ncmp/rest/controller/DmiRestControllerSpec.groovy",
+        "patchSetId": 7
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2021-06-28T15:27:40Z",
+      "side": 1,
+      "message": "agreed",
+      "parentUuid": "c0bafb8f_2cc1faeb",
+      "range": {
+        "startLine": 39,
+        "startChar": 4,
+        "endLine": 39,
+        "endChar": 38
+      },
+      "revId": "048a5454d29f28de5b5b14fe7a00d5895842c5d9",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "f8b62460_049d260b",
         "filename": "src/test/resources/application.yml",
         "patchSetId": 7
@@ -131,6 +248,30 @@
       "side": 1,
       "message": "This is being used by a test class and I think it is fine as it is",
       "parentUuid": "f8b62460_049d260b",
+      "range": {
+        "startLine": 24,
+        "startChar": 1,
+        "endLine": 25,
+        "endChar": 23
+      },
+      "revId": "048a5454d29f28de5b5b14fe7a00d5895842c5d9",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "9ded216f_72859c43",
+        "filename": "src/test/resources/application.yml",
+        "patchSetId": 7
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2021-06-28T15:27:40Z",
+      "side": 1,
+      "message": "I think either way is OK",
+      "parentUuid": "06879c7b_41d96643",
       "range": {
         "startLine": 24,
         "startChar": 1,
