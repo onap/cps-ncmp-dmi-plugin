@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "8d7b2dd8_d5562ab4",
+        "filename": "src/test/groovy/org/onap/cps/ncmp/rest/controller/ControllerSecuritySpec.groovy",
+        "patchSetId": 7
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 7486
+      },
+      "writtenOn": "2021-06-28T09:52:08Z",
+      "side": 1,
+      "message": "Groovy tests are not covered by sonarcloud. Any other reason as to why this should be private?",
+      "parentUuid": "54fa4077_b0ab2c4a",
+      "range": {
+        "startLine": 34,
+        "startChar": 4,
+        "endLine": 34,
+        "endChar": 15
+      },
+      "revId": "048a5454d29f28de5b5b14fe7a00d5895842c5d9",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "63ec69af_999b6c82",
         "filename": "src/test/groovy/org/onap/cps/ncmp/rest/controller/DmiRestControllerSpec.groovy",
         "patchSetId": 7
@@ -48,6 +72,30 @@
     },
     {
       "key": {
+        "uuid": "c0bafb8f_2cc1faeb",
+        "filename": "src/test/groovy/org/onap/cps/ncmp/rest/controller/DmiRestControllerSpec.groovy",
+        "patchSetId": 7
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 7486
+      },
+      "writtenOn": "2021-06-28T09:52:08Z",
+      "side": 1,
+      "message": "Groovy tests are not covered by sonarcloud. Same comment as previous one",
+      "parentUuid": "63ec69af_999b6c82",
+      "range": {
+        "startLine": 39,
+        "startChar": 4,
+        "endLine": 39,
+        "endChar": 38
+      },
+      "revId": "048a5454d29f28de5b5b14fe7a00d5895842c5d9",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "f8b62460_049d260b",
         "filename": "src/test/resources/application.yml",
         "patchSetId": 7
@@ -59,6 +107,30 @@
       "writtenOn": "2021-06-28T07:49:37Z",
       "side": 1,
       "message": "I may be wrong but should these be defined as in src/main application/yaml? \n    username: ${CPS_USERNAME}\n    password: ${CPS_PASSWORD}",
+      "range": {
+        "startLine": 24,
+        "startChar": 1,
+        "endLine": 25,
+        "endChar": 23
+      },
+      "revId": "048a5454d29f28de5b5b14fe7a00d5895842c5d9",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "06879c7b_41d96643",
+        "filename": "src/test/resources/application.yml",
+        "patchSetId": 7
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 7486
+      },
+      "writtenOn": "2021-06-28T09:52:08Z",
+      "side": 1,
+      "message": "This is being used by a test class and I think it is fine as it is",
+      "parentUuid": "f8b62460_049d260b",
       "range": {
         "startLine": 24,
         "startChar": 1,
