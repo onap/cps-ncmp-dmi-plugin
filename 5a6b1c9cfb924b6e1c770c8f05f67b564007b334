@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "efc62550_e58c5d51",
+        "filename": "docker-compose/README.md",
+        "patchSetId": 8
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 7680
+      },
+      "writtenOn": "2021-06-28T12:13:09Z",
+      "side": 1,
+      "message": "We have dmi-docker profile enabled by default so image gets created with mvn command.\nEither don\u0027t enable the profile or update the readme.",
+      "range": {
+        "startLine": 5,
+        "startChar": 0,
+        "endLine": 6,
+        "endChar": 37
+      },
+      "revId": "5a6b1c9cfb924b6e1c770c8f05f67b564007b334",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    }
+  ]
+}
