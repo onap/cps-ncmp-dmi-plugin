@@ -377,6 +377,30 @@
       "revId": "048a5454d29f28de5b5b14fe7a00d5895842c5d9",
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "3bf0d498_41818650",
+        "filename": "src/test/resources/application.yml",
+        "patchSetId": 7
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2021-06-29T14:04:02Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9ded216f_72859c43",
+      "range": {
+        "startLine": 24,
+        "startChar": 1,
+        "endLine": 25,
+        "endChar": 23
+      },
+      "revId": "048a5454d29f28de5b5b14fe7a00d5895842c5d9",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
     }
   ]
 }
