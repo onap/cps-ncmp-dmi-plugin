@@ -73,6 +73,30 @@
     },
     {
       "key": {
+        "uuid": "d3842a4b_e7eb89a6",
+        "filename": "src/test/groovy/org/onap/cps/ncmp/rest/controller/ControllerSecuritySpec.groovy",
+        "patchSetId": 7
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 7486
+      },
+      "writtenOn": "2021-06-29T01:37:27Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "d55a3606_d6496260",
+      "range": {
+        "startLine": 34,
+        "startChar": 4,
+        "endLine": 34,
+        "endChar": 15
+      },
+      "revId": "048a5454d29f28de5b5b14fe7a00d5895842c5d9",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "2a6029d4_af2700d6",
         "filename": "src/test/groovy/org/onap/cps/ncmp/rest/controller/ControllerSecuritySpec.groovy",
         "patchSetId": 7
@@ -93,6 +117,30 @@
       "revId": "048a5454d29f28de5b5b14fe7a00d5895842c5d9",
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "c5fee639_823a4263",
+        "filename": "src/test/groovy/org/onap/cps/ncmp/rest/controller/ControllerSecuritySpec.groovy",
+        "patchSetId": 7
+      },
+      "lineNbr": 43,
+      "author": {
+        "id": 7486
+      },
+      "writtenOn": "2021-06-29T01:37:27Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "2a6029d4_af2700d6",
+      "range": {
+        "startLine": 40,
+        "startChar": 1,
+        "endLine": 43,
+        "endChar": 31
+      },
+      "revId": "048a5454d29f28de5b5b14fe7a00d5895842c5d9",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
     },
     {
       "key": {
@@ -119,6 +167,30 @@
     },
     {
       "key": {
+        "uuid": "80e40a22_e292a3f0",
+        "filename": "src/test/groovy/org/onap/cps/ncmp/rest/controller/ControllerSecuritySpec.groovy",
+        "patchSetId": 7
+      },
+      "lineNbr": 47,
+      "author": {
+        "id": 7486
+      },
+      "writtenOn": "2021-06-29T01:37:27Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "d1cb1822_b3cdabec",
+      "range": {
+        "startLine": 47,
+        "startChar": 43,
+        "endLine": 47,
+        "endChar": 61
+      },
+      "revId": "048a5454d29f28de5b5b14fe7a00d5895842c5d9",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "e104a9bc_da9396d8",
         "filename": "src/test/groovy/org/onap/cps/ncmp/rest/controller/ControllerSecuritySpec.groovy",
         "patchSetId": 7
@@ -139,6 +211,30 @@
       "revId": "048a5454d29f28de5b5b14fe7a00d5895842c5d9",
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "092f147d_f2d6307e",
+        "filename": "src/test/groovy/org/onap/cps/ncmp/rest/controller/ControllerSecuritySpec.groovy",
+        "patchSetId": 7
+      },
+      "lineNbr": 54,
+      "author": {
+        "id": 7486
+      },
+      "writtenOn": "2021-06-29T01:37:27Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "e104a9bc_da9396d8",
+      "range": {
+        "startLine": 54,
+        "startChar": 48,
+        "endLine": 54,
+        "endChar": 66
+      },
+      "revId": "048a5454d29f28de5b5b14fe7a00d5895842c5d9",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
     },
     {
       "key": {
