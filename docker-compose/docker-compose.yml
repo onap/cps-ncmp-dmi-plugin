@@ -21,7 +21,7 @@ services:
     container_name: ncmp-dmi-plugin
     image: ${DOCKER_REPO:-nexus3.onap.org:10003}/onap/ncmp-dmi-plugin:${VERSION:-latest}
     ports:
-      - "8883:8080"
+      - "8885:8080"
     environment:
       CPS_USERNAME: ${CPS_USERNAME:-cpsuser}
       CPS_PASSWORD: ${CPS_PASSWORD:-cpsr0cks!}

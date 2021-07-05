@@ -43,3 +43,6 @@ management:
         enabled: true
     loggers:
       enabled: true
+
+cps:
+  cpsBaseUrl: http://localhost:8883
