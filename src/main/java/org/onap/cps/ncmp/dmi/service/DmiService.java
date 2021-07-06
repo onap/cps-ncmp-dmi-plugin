@@ -18,15 +18,14 @@
  *  ============LICENSE_END=========================================================
  */
 
-package org.onap.cps.ncmp.service;
+package org.onap.cps.ncmp.dmi.service;
 
-import org.springframework.stereotype.Service;
-
-@Service
-public class DmiServiceImpl implements DmiService {
-
-    @Override
-    public String getHelloWorld() {
-        return "Hello World";
-    }
+/**
+ * Interface for handling Dmi plugin Data.
+ */
+public interface DmiService {
+    /**
+     * Return Simple Hello World Statement.
+     */
+    String getHelloWorld();
 }

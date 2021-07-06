@@ -18,11 +18,11 @@
  *  ============LICENSE_END=========================================================
  */
 
-package org.onap.cps.ncmp.rest.controller
+package org.onap.cps.ncmp.dmi.rest.controller
+
 
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get
 
-import org.onap.cps.ncmp.service.DmiService
 import org.spockframework.spring.SpringBean
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc
 import org.springframework.http.HttpStatus
@@ -37,7 +37,7 @@ import spock.lang.Specification
 class DmiRestControllerSpec extends Specification {
 
     @SpringBean
-    DmiService mockDmiService = Mock()
+    org.onap.cps.ncmp.dmi.service.DmiService mockDmiService = Mock()
 
     @Autowired
     private MockMvc mvc

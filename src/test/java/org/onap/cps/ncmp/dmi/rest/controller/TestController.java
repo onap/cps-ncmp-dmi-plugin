@@ -18,17 +18,18 @@
  *  ============LICENSE_END=========================================================
  */
 
-package org.onap.cps.ncmp.service
+package org.onap.cps.ncmp.dmi.rest.controller;
 
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RestController;
 
-import spock.lang.Specification
+@RestController
+public class TestController {
 
-class DmiServiceImplSpec extends Specification {
-    def objectUnderTest = new DmiServiceImpl()
-
-    def 'Retrieve Hello World'() {
-        expect: 'Hello World is Returned'
-            objectUnderTest.getHelloWorld() == 'Hello World'
+    @GetMapping("/test")
+    ResponseEntity<String> test() {
+        return new ResponseEntity<>(HttpStatus.OK);
     }
-
 }
