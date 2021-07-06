@@ -18,27 +18,29 @@
  *  ============LICENSE_END=========================================================
  */
 
-package org.onap.cps.ncmp.rest.controller;
+package org.onap.cps.ncmp.dmi.config;
 
-import org.onap.cps.ncmp.rest.api.DmiPluginApi;
-import org.onap.cps.ncmp.service.DmiService;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+import springfox.documentation.builders.PathSelectors;
+import springfox.documentation.builders.RequestHandlerSelectors;
+import springfox.documentation.spi.DocumentationType;
+import springfox.documentation.spring.web.plugins.Docket;
 
-@RequestMapping("${rest.api.dmi-base-path}")
-@RestController
-public class DmiRestController implements DmiPluginApi {
 
-    @Autowired
-    private DmiService dmiService;
-
-    @Override
-    public ResponseEntity<Object> helloWorld() {
-        final var helloWorld = dmiService.getHelloWorld();
-        return new ResponseEntity<>(helloWorld, HttpStatus.OK);
+@Configuration
+public class DmiPluginConfig {
+    /**
+     * Swagger-ui configuration.
+     */
+    @Bean("dmi-plugin-docket")
+    public Docket api() {
+        return new Docket(DocumentationType.OAS_30)
+                .groupName("dmi-plugin-docket")
+                .select()
+                .apis(RequestHandlerSelectors.any())
+                .paths(PathSelectors.any())
+                .build();
     }
-
 }
+

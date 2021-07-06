@@ -18,17 +18,14 @@
  *  ============LICENSE_END=========================================================
  */
 
-package org.onap.cps.ncmp.service
+package org.onap.cps.ncmp.dmi.service;
 
-
-import spock.lang.Specification
-
-class DmiServiceImplSpec extends Specification {
-    def objectUnderTest = new DmiServiceImpl()
-
-    def 'Retrieve Hello World'() {
-        expect: 'Hello World is Returned'
-            objectUnderTest.getHelloWorld() == 'Hello World'
-    }
-
+/**
+ * Interface for handling Dmi plugin Data.
+ */
+public interface DmiService {
+    /**
+     * Return Simple Hello World Statement.
+     */
+    String getHelloWorld();
 }
