@@ -18,18 +18,15 @@
  *  ============LICENSE_END=========================================================
  */
 
-package org.onap.cps.ncmp.rest.controller;
+package org.onap.cps.ncmp.dmi.service;
 
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.stereotype.Service;
 
-@RestController
-public class TestController {
+@Service
+public class DmiServiceImpl implements DmiService {
 
-    @GetMapping("/test")
-    ResponseEntity<String> test() {
-        return new ResponseEntity<>(HttpStatus.OK);
+    @Override
+    public String getHelloWorld() {
+        return "Hello World";
     }
 }
