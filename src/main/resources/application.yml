@@ -44,3 +44,9 @@ management:
         enabled: true
     loggers:
       enabled: true
+
+cps-core:
+  baseUrl: http://${CPS_CORE_HOST}:${CPS_CORE_PORT}
+  auth:
+    username: ${CPS_CORE_USERNAME}
+    password: ${CPS_CORE_PASSWORD}
