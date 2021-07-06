@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "028636f4_15e40762",
+        "filename": "src/main/resources/application.yml",
+        "patchSetId": 2
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 5658
+      },
+      "writtenOn": "2021-07-06T11:12:13Z",
+      "side": 1,
+      "message": "It seems to me that this username property is the user name for ncmp-dmi-plugin requests authentication.\n\nThen, some additional username and password properties are needed to configure cps-core authentication. These additional ones will be the ones to be used to authenticate cps core requests.",
+      "revId": "8d6faf978f944a39c32517eeae016fa8c43e6893",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    }
+  ]
+}
