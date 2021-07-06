@@ -37,7 +37,7 @@
     <name>ncmp-dmi-plugin</name>
     <description>DMI Plugin Service</description>
     <properties>
-        <app>org.onap.cps.ncmp.Application</app>
+        <app>org.onap.cps.ncmp.dmi.Application</app>
         <base.image>${docker.pull.registry}/onap/integration-java11:8.0.0</base.image>
         <cps.version>1.1.0-SNAPSHOT</cps.version>
         <image.tag>${project.version}-${maven.build.timestamp}</image.tag>
@@ -114,6 +114,10 @@
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-actuator</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
         </dependency>
     </dependencies>
     <build>

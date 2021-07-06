@@ -18,29 +18,17 @@
  *  ============LICENSE_END=========================================================
  */
 
-package org.onap.cps.ncmp.config;
-
-import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.Configuration;
-import springfox.documentation.builders.PathSelectors;
-import springfox.documentation.builders.RequestHandlerSelectors;
-import springfox.documentation.spi.DocumentationType;
-import springfox.documentation.spring.web.plugins.Docket;
+package org.onap.cps.ncmp.dmi.service
 
 
-@Configuration
-public class DmiPluginConfig {
-    /**
-     * Swagger-ui configuration.
-     */
-    @Bean("dmi-plugin-docket")
-    public Docket api() {
-        return new Docket(DocumentationType.OAS_30)
-                .groupName("dmi-plugin-docket")
-                .select()
-                .apis(RequestHandlerSelectors.any())
-                .paths(PathSelectors.any())
-                .build();
+import spock.lang.Specification
+
+class DmiServiceImplSpec extends Specification {
+    def objectUnderTest = new DmiServiceImpl()
+
+    def 'Retrieve Hello World'() {
+        expect: 'Hello World is Returned'
+            objectUnderTest.getHelloWorld() == 'Hello World'
     }
-}
 
+}
