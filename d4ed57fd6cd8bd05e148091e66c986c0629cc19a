@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "81323162_49e8d9a0",
+        "filename": "src/main/java/org/onap/cps/ncmp/client/NcmpRestClient.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 55,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2021-07-07T08:25:37Z",
+      "side": 1,
+      "message": "suggestion (not blocking) this is a case where a private contant would be acceptabel to more clearly explain what this string is\n\neg DMI_REGISTRATION_PATH \u003d \"...\"",
+      "range": {
+        "startLine": 55,
+        "startChar": 18,
+        "endLine": 55,
+        "endChar": 47
+      },
+      "revId": "d4ed57fd6cd8bd05e148091e66c986c0629cc19a",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    }
+  ]
+}
