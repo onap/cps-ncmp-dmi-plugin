@@ -73,6 +73,30 @@
     },
     {
       "key": {
+        "uuid": "d8274335_84da63da",
+        "filename": "src/main/java/org/onap/cps/ncmp/client/NcmpRestClient.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 5658
+      },
+      "writtenOn": "2021-07-07T13:00:04Z",
+      "side": 1,
+      "message": "I think that it is the root package of all packages of cps-ncmp-dmi-plugin project that should be renamed with something like `org.onap.cps.ncmp_dmi_plugin`.\n`org.onap.cps.ncmp` is already a package prefix used for cps ncmp modules. Better to clearly make the distinction between these components at package root level.\n\nThat being said, such a refactoring is not part of this change and would need its own change.",
+      "parentUuid": "b72500eb_9f2bc696",
+      "range": {
+        "startLine": 20,
+        "startChar": 8,
+        "endLine": 20,
+        "endChar": 32
+      },
+      "revId": "d4ed57fd6cd8bd05e148091e66c986c0629cc19a",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "644738f0_79634136",
         "filename": "src/main/java/org/onap/cps/ncmp/client/NcmpRestClient.java",
         "patchSetId": 3
@@ -447,6 +471,30 @@
       "revId": "d4ed57fd6cd8bd05e148091e66c986c0629cc19a",
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "2282be3f_6e7f07b1",
+        "filename": "src/main/java/org/onap/cps/ncmp/model/CpsConfiguration.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 46,
+      "author": {
+        "id": 5658
+      },
+      "writtenOn": "2021-07-07T13:00:04Z",
+      "side": 1,
+      "message": "But it seems that the client is using the rest template from its instance property.",
+      "parentUuid": "c2e41017_7a7afdab",
+      "range": {
+        "startLine": 46,
+        "startChar": 11,
+        "endLine": 46,
+        "endChar": 39
+      },
+      "revId": "d4ed57fd6cd8bd05e148091e66c986c0629cc19a",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
     },
     {
       "key": {
