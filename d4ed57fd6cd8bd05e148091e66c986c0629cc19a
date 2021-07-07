@@ -2,6 +2,121 @@
   "comments": [
     {
       "key": {
+        "uuid": "485eeb60_d556ca08",
+        "filename": "src/main/java/org/onap/cps/ncmp/client/NcmpRestClient.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 5006
+      },
+      "writtenOn": "2021-07-07T09:44:13Z",
+      "side": 1,
+      "message": "i would prefer org.onap.cps.dmi.clients",
+      "range": {
+        "startLine": 20,
+        "startChar": 8,
+        "endLine": 20,
+        "endChar": 32
+      },
+      "revId": "d4ed57fd6cd8bd05e148091e66c986c0629cc19a",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "644738f0_79634136",
+        "filename": "src/main/java/org/onap/cps/ncmp/client/NcmpRestClient.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 5006
+      },
+      "writtenOn": "2021-07-07T09:44:13Z",
+      "side": 1,
+      "message": "this can be removed. Here in dmi when we mention cpsncmp , in northbound cps and ncmp are two diff modules, this might give different understanding to dev.",
+      "range": {
+        "startLine": 42,
+        "startChar": 17,
+        "endLine": 42,
+        "endChar": 21
+      },
+      "revId": "d4ed57fd6cd8bd05e148091e66c986c0629cc19a",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "4810fe19_445795a0",
+        "filename": "src/main/java/org/onap/cps/ncmp/client/NcmpRestClient.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 45,
+      "author": {
+        "id": 5006
+      },
+      "writtenOn": "2021-07-07T09:44:13Z",
+      "side": 1,
+      "message": "better to pull this up in a map , in future this might support multiple content type so just add the values in map.",
+      "range": {
+        "startLine": 45,
+        "startChar": 24,
+        "endLine": 45,
+        "endChar": 58
+      },
+      "revId": "d4ed57fd6cd8bd05e148091e66c986c0629cc19a",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "6c7f750c_d99f0983",
+        "filename": "src/main/java/org/onap/cps/ncmp/client/NcmpRestClient.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 46,
+      "author": {
+        "id": 5006
+      },
+      "writtenOn": "2021-07-07T09:44:13Z",
+      "side": 1,
+      "message": "it is being assumed here that whatever jsondata is being received that is correct/valid in context of cmhandles and it is being posted to the ncmp.\n\ndefinitely controller on server side will validate this json, if this json is not valid server/ncmp will fail this.\n\nBut This is a client class and can be called independently so can we validate this data anyhow.\nI know this data will come from post request from cps-406 where controller in dmi will validate and call service-\u003encmpclient(this.class). \n\nIf this is the clear path then write an archtype testcase where it is mentioned that this class can only be called from dmi-service and not from anywhere else.",
+      "range": {
+        "startLine": 46,
+        "startChar": 48,
+        "endLine": 46,
+        "endChar": 56
+      },
+      "revId": "d4ed57fd6cd8bd05e148091e66c986c0629cc19a",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "5ef5ae1b_d97980b5",
+        "filename": "src/main/java/org/onap/cps/ncmp/client/NcmpRestClient.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 52,
+      "author": {
+        "id": 5006
+      },
+      "writtenOn": "2021-07-07T09:44:13Z",
+      "side": 1,
+      "message": "this can be removed",
+      "range": {
+        "startLine": 52,
+        "startChar": 24,
+        "endLine": 52,
+        "endChar": 27
+      },
+      "revId": "d4ed57fd6cd8bd05e148091e66c986c0629cc19a",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "81323162_49e8d9a0",
         "filename": "src/main/java/org/onap/cps/ncmp/client/NcmpRestClient.java",
         "patchSetId": 3
@@ -19,6 +134,69 @@
         "endLine": 55,
         "endChar": 47
       },
+      "revId": "d4ed57fd6cd8bd05e148091e66c986c0629cc19a",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "9aa75c1d_a33badc6",
+        "filename": "src/main/java/org/onap/cps/ncmp/model/CpsConfiguration.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 5006
+      },
+      "writtenOn": "2021-07-07T09:44:13Z",
+      "side": 1,
+      "message": "give a brief description of this class, that ncmp modules uses cps-core auths.",
+      "range": {
+        "startLine": 31,
+        "startChar": 13,
+        "endLine": 31,
+        "endChar": 29
+      },
+      "revId": "d4ed57fd6cd8bd05e148091e66c986c0629cc19a",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "cb8763b5_a19aac04",
+        "filename": "src/main/java/org/onap/cps/ncmp/model/CpsConfiguration.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 46,
+      "author": {
+        "id": 5006
+      },
+      "writtenOn": "2021-07-07T09:44:13Z",
+      "side": 1,
+      "message": "what is the usage of this in current scenario.",
+      "range": {
+        "startLine": 46,
+        "startChar": 11,
+        "endLine": 46,
+        "endChar": 39
+      },
+      "revId": "d4ed57fd6cd8bd05e148091e66c986c0629cc19a",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "4f2d309f_0ca1dd17",
+        "filename": "src/main/resources/application.yml",
+        "patchSetId": 3
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 5006
+      },
+      "writtenOn": "2021-07-07T09:44:13Z",
+      "side": 1,
+      "message": "i know this is not in scope of this but here we assumed that dmi will have same cps creds. \nshould these not be dmi_username, dmi_pwd. its an independent ms, it can have its own uname pwd.",
       "revId": "d4ed57fd6cd8bd05e148091e66c986c0629cc19a",
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
       "unresolved": true
