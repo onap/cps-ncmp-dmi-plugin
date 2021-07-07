@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "b72500eb_9f2bc696",
+        "filename": "src/main/java/org/onap/cps/ncmp/client/NcmpRestClient.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2021-07-07T10:29:27Z",
+      "side": 1,
+      "message": "agreed",
+      "parentUuid": "485eeb60_d556ca08",
+      "range": {
+        "startLine": 20,
+        "startChar": 8,
+        "endLine": 20,
+        "endChar": 32
+      },
+      "revId": "d4ed57fd6cd8bd05e148091e66c986c0629cc19a",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "644738f0_79634136",
         "filename": "src/main/java/org/onap/cps/ncmp/client/NcmpRestClient.java",
         "patchSetId": 3
@@ -71,6 +95,30 @@
     },
     {
       "key": {
+        "uuid": "c780ac9c_8be1a7d8",
+        "filename": "src/main/java/org/onap/cps/ncmp/client/NcmpRestClient.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 45,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2021-07-07T10:29:27Z",
+      "side": 1,
+      "message": "as per agile, don\u0027t over complicate until needed, don\u0027t code for the future",
+      "parentUuid": "4810fe19_445795a0",
+      "range": {
+        "startLine": 45,
+        "startChar": 24,
+        "endLine": 45,
+        "endChar": 58
+      },
+      "revId": "d4ed57fd6cd8bd05e148091e66c986c0629cc19a",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "6c7f750c_d99f0983",
         "filename": "src/main/java/org/onap/cps/ncmp/client/NcmpRestClient.java",
         "patchSetId": 3
@@ -82,6 +130,30 @@
       "writtenOn": "2021-07-07T09:44:13Z",
       "side": 1,
       "message": "it is being assumed here that whatever jsondata is being received that is correct/valid in context of cmhandles and it is being posted to the ncmp.\n\ndefinitely controller on server side will validate this json, if this json is not valid server/ncmp will fail this.\n\nBut This is a client class and can be called independently so can we validate this data anyhow.\nI know this data will come from post request from cps-406 where controller in dmi will validate and call service-\u003encmpclient(this.class). \n\nIf this is the clear path then write an archtype testcase where it is mentioned that this class can only be called from dmi-service and not from anywhere else.",
+      "range": {
+        "startLine": 46,
+        "startChar": 48,
+        "endLine": 46,
+        "endChar": 56
+      },
+      "revId": "d4ed57fd6cd8bd05e148091e66c986c0629cc19a",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "d781a804_b3f03018",
+        "filename": "src/main/java/org/onap/cps/ncmp/client/NcmpRestClient.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 46,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2021-07-07T10:29:27Z",
+      "side": 1,
+      "message": "lets focus on functionality, (early) validation etc can be handled in future\n(its not part of AC of user story either and until we have core functionality workign I think we should not worry to much about validation)",
+      "parentUuid": "6c7f750c_d99f0983",
       "range": {
         "startLine": 46,
         "startChar": 48,
