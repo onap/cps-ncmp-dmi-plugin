@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9c66f0cb_f52031f3",
+        "filename": "src/main/resources/application.yml",
+        "patchSetId": 4
+      },
+      "lineNbr": 48,
+      "author": {
+        "id": 5006
+      },
+      "writtenOn": "2021-07-07T16:23:46Z",
+      "side": 1,
+      "message": "please provide default value to these vars too.",
+      "range": {
+        "startLine": 48,
+        "startChar": 20,
+        "endLine": 48,
+        "endChar": 50
+      },
+      "revId": "6fe917c984f86e6e78af5a1acf1be8b42c5f7703",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "9be3b067_c422c81c",
+        "filename": "src/main/resources/application.yml",
+        "patchSetId": 4
+      },
+      "lineNbr": 50,
+      "author": {
+        "id": 5006
+      },
+      "writtenOn": "2021-07-07T16:23:46Z",
+      "side": 1,
+      "message": "please provide default value to these vars too. same for below var",
+      "range": {
+        "startLine": 50,
+        "startChar": 21,
+        "endLine": 50,
+        "endChar": 32
+      },
+      "revId": "6fe917c984f86e6e78af5a1acf1be8b42c5f7703",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    }
+  ]
+}
