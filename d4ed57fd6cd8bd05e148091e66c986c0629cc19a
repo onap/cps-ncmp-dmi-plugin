@@ -2,6 +2,30 @@
   "comments": [
     {
       "key": {
+        "uuid": "80f74079_d0a431d9",
+        "filename": "src/main/java/org/onap/cps/dmi/clients/NcmpRestClient.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2021-07-08T09:26:11Z",
+      "side": 1,
+      "message": "lets have a quick chat in standup later today",
+      "parentUuid": "d8274335_84da63da",
+      "range": {
+        "startLine": 20,
+        "startChar": 8,
+        "endLine": 20,
+        "endChar": 32
+      },
+      "revId": "d4ed57fd6cd8bd05e148091e66c986c0629cc19a",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "485eeb60_d556ca08",
         "filename": "src/main/java/org/onap/cps/ncmp/client/NcmpRestClient.java",
         "patchSetId": 3
