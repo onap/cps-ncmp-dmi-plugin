@@ -1,0 +1,14 @@
+{
+  "cm-handles": [
+    {
+      "id": "idval",
+      "dmi-service-name": "dminameval",
+      "additional-properties": [
+        {
+          "name": "nameval",
+          "value": "valval"
+        }
+      ]
+    }
+  ]
+}

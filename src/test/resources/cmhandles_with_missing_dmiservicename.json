@@ -1,0 +1,13 @@
+{
+  "cm-handles": [
+    {
+      "id": "idval",
+      "additional-properties": [
+        {
+          "name": "nameval",
+          "value": "valval"
+        }
+      ]
+    }
+  ]
+}
