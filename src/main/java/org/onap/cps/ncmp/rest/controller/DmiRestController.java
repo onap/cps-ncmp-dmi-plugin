@@ -21,12 +21,15 @@
 package org.onap.cps.ncmp.rest.controller;
 
 import org.onap.cps.ncmp.rest.api.DmiPluginApi;
+import org.onap.cps.ncmp.rest.model.CmHandles;
 import org.onap.cps.ncmp.service.DmiService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+
+import javax.validation.Valid;
 
 @RequestMapping("${rest.api.dmi-base-path}")
 @RestController
@@ -39,6 +42,11 @@ public class DmiRestController implements DmiPluginApi {
     public ResponseEntity<Object> helloWorld() {
         final var helloWorld = dmiService.getHelloWorld()   ;
         return new ResponseEntity<>(helloWorld, HttpStatus.OK);
+    }
+
+    @Override
+    public ResponseEntity<String> registerCmHandles(final @Valid CmHandles body) {
+        return  dmiService.registerCmHandles(body);
     }
 
 }

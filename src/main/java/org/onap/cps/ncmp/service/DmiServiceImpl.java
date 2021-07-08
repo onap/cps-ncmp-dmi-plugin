@@ -20,13 +20,45 @@
 
 package org.onap.cps.ncmp.service;
 
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import org.onap.cps.dmi.clients.NcmpRestClient;
+import org.onap.cps.ncmp.rest.model.CmHandles;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
 @Service
 public class DmiServiceImpl implements DmiService {
 
+    private static final Logger LOG = LoggerFactory.getLogger(DmiServiceImpl.class);
+
+    @Autowired
+    private ObjectMapper mapper;
+
+    @Autowired
+    private NcmpRestClient ncmpRestClient;
+
     @Override
     public String getHelloWorld() {
         return "Hello World";
+    }
+
+    @Override
+    public ResponseEntity<String> registerCmHandles(final CmHandles cmHandles) {
+
+        ResponseEntity responseEntity;
+        try {
+            final String jsonString = mapper.writeValueAsString(cmHandles);
+            responseEntity = ncmpRestClient.registerCmHandlesWithNcmp(jsonString);
+        }catch (final JsonProcessingException jPE)
+        {
+            LOG.error("Parsing error occurred while converting cm-handles to JSON {}", cmHandles);
+            responseEntity = new ResponseEntity<>("Wrong data", HttpStatus.BAD_REQUEST);
+        }
+        return responseEntity;
     }
 }
