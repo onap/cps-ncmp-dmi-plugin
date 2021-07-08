@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "d51e6788_9cbc5c08",
+        "filename": "pom.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 7486
+      },
+      "writtenOn": "2021-07-08T10:21:32Z",
+      "side": 1,
+      "message": "The scope of the task was to remove version properties that are being used only once within the files that I am looking at. These 2 properties are being used twice within this pom file and thus are kept. In cps-temporal groovy.version is being used once so it is removed and there is no cps.version, the property I removed was called cps.events.version, which is being used only once.",
+      "parentUuid": "3f213983_debaf813",
+      "range": {
+        "startLine": 38,
+        "startChar": 0,
+        "endLine": 39,
+        "endChar": 46
+      },
+      "revId": "4e3d046e851bd5881682c672fb223cbf4771ca86",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "71461d96_dd5210ec",
         "filename": "pom.xml",
         "patchSetId": 1
@@ -48,6 +72,30 @@
     },
     {
       "key": {
+        "uuid": "fc6ca0d5_14ccc9d1",
+        "filename": "pom.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 7486
+      },
+      "writtenOn": "2021-07-08T10:21:32Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "71461d96_dd5210ec",
+      "range": {
+        "startLine": 42,
+        "startChar": 6,
+        "endLine": 42,
+        "endChar": 66
+      },
+      "revId": "4e3d046e851bd5881682c672fb223cbf4771ca86",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "741a0878_5c7793cf",
         "filename": "pom.xml",
         "patchSetId": 1
@@ -62,6 +110,24 @@
       "revId": "4e3d046e851bd5881682c672fb223cbf4771ca86",
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "95d68cf5_2545570d",
+        "filename": "pom.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 45,
+      "author": {
+        "id": 7486
+      },
+      "writtenOn": "2021-07-08T10:21:32Z",
+      "side": 1,
+      "message": "This property is being used in 2 places within this file and that\u0027s why its kept in",
+      "parentUuid": "741a0878_5c7793cf",
+      "revId": "4e3d046e851bd5881682c672fb223cbf4771ca86",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
     }
   ]
 }
