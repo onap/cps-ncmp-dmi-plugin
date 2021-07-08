@@ -2,6 +2,29 @@
   "comments": [
     {
       "key": {
+        "uuid": "3f213983_debaf813",
+        "filename": "pom.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 6738
+      },
+      "writtenOn": "2021-07-08T09:16:34Z",
+      "side": 1,
+      "message": "not consistent with https://gerrit.onap.org/r/c/cps/cps-temporal/+/122504/1/pom.xml\nIn cps-temporal, I see the groovy.version and cps.version are also removed.\nNot sure what the best approach would be.",
+      "range": {
+        "startLine": 38,
+        "startChar": 0,
+        "endLine": 39,
+        "endChar": 46
+      },
+      "revId": "4e3d046e851bd5881682c672fb223cbf4771ca86",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "71461d96_dd5210ec",
         "filename": "pom.xml",
         "patchSetId": 1
