@@ -58,3 +58,28 @@ paths:
           $ref: 'components.yml#/components/responses/Unauthorized'
         '403':
           $ref: 'components.yml#/components/responses/Forbidden'
+
+  /v1/inventory/cmhandles:
+    post:
+      tags:
+        - dmi-plugin-internal
+      summary: register given list of cm handles (internal use only)
+      description: register given list of cm handles (internal use only)
+      x-api-audience: component-internal
+      operationId: registerCmHandles
+      requestBody:
+        description: list of cm handles
+        content:
+          application/json:
+            schema:
+                $ref: 'components.yml#/components/schemas/CmHandles'
+        required: true
+      responses:
+        '201':
+          $ref: 'components.yml#/components/responses/Created'
+        '400':
+          $ref: 'components.yml#/components/responses/BadRequest'
+        '401':
+          $ref: 'components.yml#/components/responses/Unauthorized'
+        '403':
+          $ref: 'components.yml#/components/responses/Forbidden'

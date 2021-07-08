@@ -20,6 +20,10 @@
 server:
   port: 8080
 
+dmi:
+  service:
+    name: onap-dmi-plugin
+
 rest:
   api:
     dmi-base-path: /dmi/api
@@ -61,3 +65,12 @@ sdnc:
   auth:
     username: ${SDNC_USERNAME}
     password: ${SDNC_PASSWORD}
+
+logging:
+  level:
+    org.springframework: ERROR
+    org.onap.cps: DEBUG
+  pattern:
+    console: "%d{HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n"
+    file: "%d %p %c{1.} [%t] %m%n"
+  file: dmi.log
