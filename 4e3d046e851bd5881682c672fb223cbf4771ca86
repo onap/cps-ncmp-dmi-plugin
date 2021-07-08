@@ -45,6 +45,23 @@
       "revId": "4e3d046e851bd5881682c672fb223cbf4771ca86",
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "741a0878_5c7793cf",
+        "filename": "pom.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 45,
+      "author": {
+        "id": 7744
+      },
+      "writtenOn": "2021-07-08T09:28:35Z",
+      "side": 1,
+      "message": "Should this also be removed be put within the swagger annotations dependency?",
+      "revId": "4e3d046e851bd5881682c672fb223cbf4771ca86",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
     }
   ]
 }
