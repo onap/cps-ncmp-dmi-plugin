@@ -128,6 +128,29 @@
       "revId": "4e3d046e851bd5881682c672fb223cbf4771ca86",
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "0c13156c_72437840",
+        "filename": "pom.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 80,
+      "author": {
+        "id": 6738
+      },
+      "writtenOn": "2021-07-08T10:50:44Z",
+      "side": 1,
+      "message": "these should be moved to dependency, not needed in both places.\nInstead add :  \n            \u003c dependency\u003e\n                \u003cgroupId\u003eorg.spockframework\u003c/groupId\u003e\n                \u003cartifactId\u003espock-bom\u003c/artifactId\u003e\n                \u003cversion\u003e${spock-bom.version}\u003c/version\u003e\n                \u003ctype\u003epom\u003c/type\u003e\n                \u003cscope\u003eimport\u003c/scope\u003e\n            \u003c/dependency\u003e",
+      "range": {
+        "startLine": 56,
+        "startChar": 12,
+        "endLine": 80,
+        "endChar": 25
+      },
+      "revId": "4e3d046e851bd5881682c672fb223cbf4771ca86",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
     }
   ]
 }
