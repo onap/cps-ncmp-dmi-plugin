@@ -2,6 +2,29 @@
   "comments": [
     {
       "key": {
+        "uuid": "b513b60d_1f9f265d",
+        "filename": "src/main/java/org/onap/cps/dmi/clients/NcmpRestClient.java",
+        "patchSetId": 4
+      },
+      "lineNbr": 43,
+      "author": {
+        "id": 5006
+      },
+      "writtenOn": "2021-07-08T14:30:18Z",
+      "side": 1,
+      "message": "write a generic post method for this client and then call that method with params from registerCmHandlesWithNcmp.\n\nthat way code reusability will the there for this client",
+      "range": {
+        "startLine": 43,
+        "startChar": 33,
+        "endLine": 43,
+        "endChar": 34
+      },
+      "revId": "6fe917c984f86e6e78af5a1acf1be8b42c5f7703",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "9c66f0cb_f52031f3",
         "filename": "src/main/resources/application.yml",
         "patchSetId": 4
