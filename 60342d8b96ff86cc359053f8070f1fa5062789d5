@@ -2,6 +2,52 @@
   "comments": [
     {
       "key": {
+        "uuid": "6efca1cb_6c3e0372",
+        "filename": "pom.xml",
+        "patchSetId": 5
+      },
+      "lineNbr": 149,
+      "author": {
+        "id": 6738
+      },
+      "writtenOn": "2021-07-08T16:20:00Z",
+      "side": 1,
+      "message": "being added, lombok.config file would be needed with \u0027config.stopBubbling \u003d true\u0027, else the jacoco coverage will also include the lombok generated code",
+      "range": {
+        "startLine": 146,
+        "startChar": 0,
+        "endLine": 149,
+        "endChar": 21
+      },
+      "revId": "60342d8b96ff86cc359053f8070f1fa5062789d5",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "09241da2_ea322d00",
+        "filename": "src/main/java/org/onap/cps/Application.java",
+        "patchSetId": 5
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 6738
+      },
+      "writtenOn": "2021-07-08T16:20:00Z",
+      "side": 1,
+      "message": "This should still be under \u0027org.onap.cps.ncmp\u0027 package",
+      "range": {
+        "startLine": 21,
+        "startChar": 0,
+        "endLine": 21,
+        "endChar": 21
+      },
+      "revId": "60342d8b96ff86cc359053f8070f1fa5062789d5",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "d042cf7c_1edaba4d",
         "filename": "src/main/java/org/onap/cps/dmi/clients/NcmpRestClient.java",
         "patchSetId": 5
@@ -35,6 +81,29 @@
         "startChar": 57,
         "endLine": 35,
         "endChar": 84
+      },
+      "revId": "60342d8b96ff86cc359053f8070f1fa5062789d5",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "8ba55ee3_f74d6443",
+        "filename": "src/main/resources/application.yml",
+        "patchSetId": 5
+      },
+      "lineNbr": 48,
+      "author": {
+        "id": 6738
+      },
+      "writtenOn": "2021-07-08T16:20:00Z",
+      "side": 1,
+      "message": "its good to have default values for these newly added env variables",
+      "range": {
+        "startLine": 48,
+        "startChar": 20,
+        "endLine": 48,
+        "endChar": 33
       },
       "revId": "60342d8b96ff86cc359053f8070f1fa5062789d5",
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
