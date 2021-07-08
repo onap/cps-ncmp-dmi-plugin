@@ -20,22 +20,51 @@
 
 package org.onap.cps.ncmp.dmi.service;
 
-import io.micrometer.core.instrument.util.StringUtils;
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import java.util.ArrayList;
+import java.util.List;
+import lombok.extern.slf4j.Slf4j;
+import org.apache.groovy.parser.antlr4.util.StringUtils;
+import org.onap.cps.ncmp.dmi.config.DmiPluginConfig.DmiPluginProperties;
+import org.onap.cps.ncmp.dmi.exception.CmHandleRegistrationException;
 import org.onap.cps.ncmp.dmi.exception.DmiException;
 import org.onap.cps.ncmp.dmi.exception.ModulesNotFoundException;
+import org.onap.cps.ncmp.dmi.model.CmHandleOperation;
+import org.onap.cps.ncmp.dmi.model.CreatedCmHandle;
+import org.onap.cps.ncmp.dmi.service.client.NcmpRestClient;
 import org.onap.cps.ncmp.dmi.service.operation.SdncOperations;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
+
 @Service
+@Slf4j
 public class DmiServiceImpl implements DmiService {
 
     private SdncOperations sdncOperations;
+    private NcmpRestClient ncmpRestClient;
+    private ObjectMapper objectMapper;
+    private DmiPluginProperties dmiPluginProperties;
 
+    /**
+     * Constructor.
+     *
+     * @param dmiPluginProperties dmiPluginProperties
+     * @param ncmpRestClient ncmpRestClient
+     * @param objectMapper objectMapper
+     * @param sdncOperations sdncOperations
+     */
     @Autowired
-    public DmiServiceImpl(final SdncOperations sdncOperations) {
+    public DmiServiceImpl(final DmiPluginProperties dmiPluginProperties,
+                          final NcmpRestClient ncmpRestClient,
+                          final ObjectMapper objectMapper,
+                          final SdncOperations sdncOperations) {
+        this.dmiPluginProperties = dmiPluginProperties;
+        this.ncmpRestClient = ncmpRestClient;
+        this.objectMapper = objectMapper;
         this.sdncOperations = sdncOperations;
     }
 
@@ -53,4 +82,30 @@ public class DmiServiceImpl implements DmiService {
                     "response code : " + responseEntity.getStatusCode() + " message : " + responseEntity.getBody());
         }
     }
+
+    @Override
+    public void registerCmHandles(final List<String> cmHandles) {
+        final CmHandleOperation cmHandleOperation = new CmHandleOperation();
+        cmHandleOperation.setDmiPlugin(dmiPluginProperties.getDmiServiceName());
+        final List<CreatedCmHandle> createdCmHandleList = new ArrayList<>();
+        for (final String cmHandle: cmHandles) {
+            final CreatedCmHandle createdCmHandle = new CreatedCmHandle();
+            createdCmHandle.setCmHandle(cmHandle);
+            createdCmHandleList.add(createdCmHandle);
+        }
+        cmHandleOperation.setCreatedCmHandles(createdCmHandleList);
+        final String cmHandlesJson;
+        try {
+            cmHandlesJson = objectMapper.writeValueAsString(cmHandleOperation);
+        } catch (final JsonProcessingException e) {
+            log.error("Parsing error occurred while converting cm-handles to JSON {}", cmHandles);
+            throw new DmiException("Internal Server Error.",
+                    "Parsing error occurred while converting given cm-handles object list to JSON ");
+        }
+        final ResponseEntity<String> responseEntity = ncmpRestClient.registerCmHandlesWithNcmp(cmHandlesJson);
+        if (!(responseEntity.getStatusCode() == HttpStatus.CREATED)) {
+            throw new CmHandleRegistrationException(responseEntity.getBody());
+        }
+    }
+
 }
