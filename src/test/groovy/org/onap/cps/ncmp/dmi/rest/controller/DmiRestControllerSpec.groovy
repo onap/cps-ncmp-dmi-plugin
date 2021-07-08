@@ -20,18 +20,16 @@
 
 package org.onap.cps.ncmp.dmi.rest.controller
 
-
 import org.onap.cps.ncmp.dmi.exception.DmiException
 import org.onap.cps.ncmp.dmi.exception.ModulesNotFoundException
 import org.onap.cps.ncmp.dmi.service.DmiService
-import org.onap.cps.ncmp.dmi.service.DmiServiceImpl
-import org.springframework.http.MediaType
 import org.spockframework.spring.SpringBean
-import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc
-import org.springframework.http.HttpStatus
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.beans.factory.annotation.Value
+import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest
+import org.springframework.http.HttpStatus
+import org.springframework.http.MediaType
 import org.springframework.test.web.servlet.MockMvc
 import spock.lang.Specification
 
@@ -58,8 +56,8 @@ class DmiRestControllerSpec extends Specification {
             mockDmiService.getModulesForCmHandle('node1') >> someJson
         when: 'post is being called'
             def response = mvc.perform( post(getModuleUrl)
-                            .contentType(MediaType.APPLICATION_JSON))
-                            .andReturn().response
+                    .contentType(MediaType.APPLICATION_JSON))
+                    .andReturn().response
         then: 'status is OK'
             response.status == HttpStatus.OK.value()
         and: 'the response content matches the result from the DMI service'
@@ -82,5 +80,36 @@ class DmiRestControllerSpec extends Specification {
             'dmi service exception'        |  DmiException.class             || HttpStatus.INTERNAL_SERVER_ERROR.value()
             'no modules found'             |  ModulesNotFoundException.class || HttpStatus.NOT_FOUND.value()
             'any other runtime exception'  |  RuntimeException.class         || HttpStatus.INTERNAL_SERVER_ERROR.value()
+    }
+
+    def 'Register given list of cm handles.'() {
+        given: 'register cm handle url and cm handles json'
+            def registerCmhandlesPost = "${basePathV1}/inventory/cmHandles"
+            def cmHandleJson =  '{"cmHandles":["node1", "node2"]}'
+        when: 'post register cm handles api is invoked'
+            def response = mvc.perform(
+                    post(registerCmhandlesPost)
+                            .contentType(MediaType.APPLICATION_JSON)
+                            .content(cmHandleJson)
+            ).andReturn().response
+        then: 'register cm handles in dmi service is called once'
+            1 * mockDmiService.registerCmHandles(_ as List<String>)
+        and: 'response status is created'
+            response.status == HttpStatus.CREATED.value()
+    }
+
+    def 'register cm handles called with empty content.'() {
+        given: 'register cm handle url and empty json'
+            def registerCmhandlesPost = "${basePathV1}/inventory/cmHandles"
+            def emptyJson = '{"cmHandles":[]}'
+        when: 'register cm handles post api is invoked with no content'
+            def response = mvc.perform(
+                    post(registerCmhandlesPost).contentType(MediaType.APPLICATION_JSON)
+                            .content(emptyJson)
+            ).andReturn().response
+        then: 'response status is "bad request"'
+            response.status == HttpStatus.BAD_REQUEST.value()
+        and: 'dmi service is not called'
+            0 * mockDmiService.registerCmHandles(_)
     }
 }
