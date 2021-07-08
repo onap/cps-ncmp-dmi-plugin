@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "63109c5f_cc2891a8",
+        "filename": "pom.xml",
+        "patchSetId": 3
+      },
+      "lineNbr": 62,
+      "author": {
+        "id": 6738
+      },
+      "writtenOn": "2021-07-08T14:22:27Z",
+      "side": 1,
+      "message": "even these 2 are defined in both dependencyManagement as well as dependencies ... please remove from here and keep them only in dependencies",
+      "range": {
+        "startLine": 54,
+        "startChar": 0,
+        "endLine": 62,
+        "endChar": 25
+      },
+      "revId": "b04c4e43c0b470504d9e3a7a87b26b990335a919",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    }
+  ]
+}
