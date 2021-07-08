@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "a32098a1_43bced4c",
+        "filename": "src/main/resources/application.yml",
+        "patchSetId": 4
+      },
+      "lineNbr": 48,
+      "author": {
+        "id": 5658
+      },
+      "writtenOn": "2021-07-08T12:21:45Z",
+      "side": 1,
+      "message": "I\u0027m not sure about having default values here as ncp-dmi-plugin does not own these values. Some other external services or deployments are responsible for these. \n\nThen, providing some default value here is assuming something about another service. From a design point of view it make me thinking about a kind coupling (even if not a hard one by having the option to change).\n\nAlso providing a default value means giving preference to only one specific environment or deployment (local, docker compose, oom, ...) as what is going to work for one environment is not going to work for another. \n\nThese are the reasons why I tend to leave these env variables for runtime only.\n\nWhat do you think ?",
+      "parentUuid": "9c66f0cb_f52031f3",
+      "range": {
+        "startLine": 48,
+        "startChar": 20,
+        "endLine": 48,
+        "endChar": 50
+      },
+      "revId": "6fe917c984f86e6e78af5a1acf1be8b42c5f7703",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "9be3b067_c422c81c",
         "filename": "src/main/resources/application.yml",
         "patchSetId": 4
@@ -36,6 +60,30 @@
       "writtenOn": "2021-07-07T16:23:46Z",
       "side": 1,
       "message": "please provide default value to these vars too. same for below var",
+      "range": {
+        "startLine": 50,
+        "startChar": 21,
+        "endLine": 50,
+        "endChar": 32
+      },
+      "revId": "6fe917c984f86e6e78af5a1acf1be8b42c5f7703",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "d9a48c8b_4c365ff4",
+        "filename": "src/main/resources/application.yml",
+        "patchSetId": 4
+      },
+      "lineNbr": 50,
+      "author": {
+        "id": 5658
+      },
+      "writtenOn": "2021-07-08T12:21:45Z",
+      "side": 1,
+      "message": "Same comment as above.",
+      "parentUuid": "9be3b067_c422c81c",
       "range": {
         "startLine": 50,
         "startChar": 21,
