@@ -20,10 +20,12 @@
 
 package org.onap.cps.ncmp.dmi.rest.controller
 
+import com.fasterxml.jackson.core.JsonProcessingException
+import com.fasterxml.jackson.databind.ObjectMapper
+import org.onap.cps.ncmp.dmi.TestUtils
 import org.onap.cps.ncmp.dmi.service.DmiService
-
-import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get
-
+import org.onap.cps.ncmp.rest.model.CmHandles
+import org.springframework.http.MediaType
 import org.spockframework.spring.SpringBean
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc
 import org.springframework.http.HttpStatus
@@ -33,12 +35,17 @@ import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest
 import org.springframework.test.web.servlet.MockMvc
 import spock.lang.Specification
 
-@WebMvcTest
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post
+
+@WebMvcTest(DmiRestController.class)
 @AutoConfigureMockMvc(addFilters = false)
 class DmiRestControllerSpec extends Specification {
 
     @SpringBean
     DmiService mockDmiService = Mock()
+
+    @SpringBean
+    ObjectMapper objectMapper = new ObjectMapper()
 
     @Autowired
     private MockMvc mvc
@@ -46,19 +53,72 @@ class DmiRestControllerSpec extends Specification {
     @Value('${rest.api.dmi-base-path}')
     def basePath
 
-    def 'Get Hello World'() {
-        given: 'hello world endpoint'
-            def helloWorldEndpoint = "$basePath/v1/helloworld"
-
-        when: 'get hello world api is invoked'
-            def response = mvc.perform(
-                                    get(helloWorldEndpoint)
-                           ).andReturn().response
-
-        then: 'Response Status is OK and contains expected text'
-            response.status == HttpStatus.OK.value()
-        then: 'the java API was called with the correct parameters'
-            1 * mockDmiService.getHelloWorld()
+    def setup(){
+        basePath = basePath + "/v1"
     }
 
+    def 'Post request for register cm handles called with correct content.'() {
+
+        given: 'register cm handle url and cm handles json'
+            def registerCmhandlesPost = "${basePath}/inventory/cmhandles"
+
+            def cmhandlejsoncontent =  org.onap.cps.ncmp.dmi.TestUtils.getResourceFileContent('cmhandles.json')
+
+        when: 'get register cmhandles post api is invoked'
+            def response = mvc.perform(
+                    post(registerCmhandlesPost)
+                            .contentType(MediaType.APPLICATION_JSON)
+                            .content(cmhandlejsoncontent)
+                    ).andReturn().response
+
+        then: 'service called once'
+            1 * mockDmiService.registerCmHandles(cmhandlejsoncontent)
+
+
+    }
+
+    def 'Post request for register cm handles called with wrong content.'() {
+
+        given: 'register cm handle url'
+            def registerCmhandlesPost = "${basePath}/inventory/cmhandles"
+
+        when: 'get register cm handles post api is invoked with no content'
+            def response = mvc.perform(
+                    post(registerCmhandlesPost).contentType(MediaType.APPLICATION_JSON)
+                            .content(contentValue)
+                    ).andReturn().response
+
+        then: 'response Status is bad request'
+            response.status == HttpStatus.BAD_REQUEST.value()
+
+        and: 'the service is not called'
+            0 * mockDmiService.registerCmHandles(_)
+
+        where: 'given content value is wrong'
+            scenario                                     |          contentValue
+            'content value without id'                   |          TestUtils.getResourceFileContent('cmhandles_with_without_id.json')
+
+            'content value without dmi-service-name'     |          TestUtils.getResourceFileContent('cmhandles_with_without_dmiservicename.json')
+
+            'content is empty'                           |          ""
+    }
+
+    def 'Post request for register cm handles called with no content.'() {
+        
+        given: 'register cm handle url'
+            def registerCmhandlesPost = "${basePath}/inventory/cmhandles"
+
+        when: 'get register cmhandles post api is invoked with no content'
+            def response = mvc.perform(
+                    post(registerCmhandlesPost)
+                    .contentType(MediaType.APPLICATION_XML)
+                            .content("")
+            ).andReturn().response
+
+        then: 'response status is unsupported media type'
+            response.status == HttpStatus.UNSUPPORTED_MEDIA_TYPE.value()
+
+        and: 'the service is not called'
+            0 * mockDmiService.registerCmHandles(_)
+    }
 }

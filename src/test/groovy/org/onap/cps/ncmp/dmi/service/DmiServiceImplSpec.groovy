@@ -1,4 +1,4 @@
-/*
+    /*
  *  ============LICENSE_START=======================================================
  *  Copyright (C) 2021 Nordix Foundation
  *  ================================================================================
@@ -20,15 +20,37 @@
 
 package org.onap.cps.ncmp.dmi.service
 
-
+import org.onap.cps.ncmp.dmi.service.client.NcmpRestClient
+import org.springframework.http.HttpStatus
+import org.springframework.http.ResponseEntity
 import spock.lang.Specification
 
 class DmiServiceImplSpec extends Specification {
+
     def objectUnderTest = new DmiServiceImpl()
 
-    def 'Retrieve Hello World'() {
-        expect: 'Hello World is Returned'
-            objectUnderTest.getHelloWorld() == 'Hello World'
+    def mockNcmpRestClient = Mock(NcmpRestClient)
+
+    def setup() {
+        objectUnderTest.ncmpRestClient = mockNcmpRestClient
     }
 
+    def 'Register cm handles with ncmp.'() {
+        def jsonString = "this Json"
+
+        given: "ncmpRestClient mocks returning response entity"
+            mockNcmpRestClient.registerCmHandlesWithNcmp(jsonString) >> responseEntity
+
+        when: "registerCmHandles service method called"
+            def response = objectUnderTest.registerCmHandles(jsonString)
+
+        then: "returns expected result"
+            response == expectedresult
+
+        where: 'given response entity'
+                casedetector                               |   responseEntity                                   ||     expectedresult
+                'response entity is ok'                    |   new ResponseEntity<>(HttpStatus.OK)              ||     true
+                'response entity is created'               |   new ResponseEntity<>(HttpStatus.CREATED)         ||     true
+                'response entity is bad request'           |   new ResponseEntity<>(HttpStatus.BAD_REQUEST)     ||     false
+    }
 }

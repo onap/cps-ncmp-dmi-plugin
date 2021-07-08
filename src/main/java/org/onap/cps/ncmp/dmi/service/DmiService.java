@@ -25,7 +25,12 @@ package org.onap.cps.ncmp.dmi.service;
  */
 public interface DmiService {
     /**
-     * Return Simple Hello World Statement.
+     * This method used to register the given {@code CmHandles}
+     * which contains list of {@code CmHandle} to cps repository.
+     *
+     * @param cmHandles cm-handles which contains list of cm-handle
+     * @return {@code boolean} returns true for success and false for failure
      */
-    String getHelloWorld();
+    boolean registerCmHandles(String cmHandles);
+
 }

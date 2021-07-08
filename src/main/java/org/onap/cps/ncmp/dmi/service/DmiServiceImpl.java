@@ -20,13 +20,26 @@
 
 package org.onap.cps.ncmp.dmi.service;
 
+import org.onap.cps.ncmp.dmi.service.client.NcmpRestClient;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
 @Service
 public class DmiServiceImpl implements DmiService {
 
+
+    @Autowired
+    private NcmpRestClient ncmpRestClient;
+
     @Override
-    public String getHelloWorld() {
-        return "Hello World";
+    public boolean registerCmHandles(final String cmHandles) {
+        final ResponseEntity<String> responseEntity = ncmpRestClient.registerCmHandlesWithNcmp(cmHandles);
+        if (responseEntity.getStatusCode() == HttpStatus.OK || responseEntity.getStatusCode() == HttpStatus.CREATED) {
+            return true;
+        } else {
+            return false;
+        }
     }
 }

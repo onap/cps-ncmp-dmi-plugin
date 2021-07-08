@@ -54,3 +54,12 @@ cps-core:
   auth:
     username: ${CPS_CORE_USERNAME}
     password: ${CPS_CORE_PASSWORD}
+
+logging:
+  level:
+    org.springframework: ERROR
+    org.onap.cps: DEBUG
+  pattern:
+    console: "%d{HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n"
+    file: "%d %p %c{1.} [%t] %m%n"
+  file: dmi.log
