@@ -108,6 +108,30 @@
       "revId": "60342d8b96ff86cc359053f8070f1fa5062789d5",
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "157b8838_597b234e",
+        "filename": "src/main/resources/application.yml",
+        "patchSetId": 5
+      },
+      "lineNbr": 48,
+      "author": {
+        "id": 5658
+      },
+      "writtenOn": "2021-07-08T22:35:57Z",
+      "side": 1,
+      "message": "Rahul also started the same discussion about this section: https://gerrit.onap.org/r/c/cps/ncmp-dmi-plugin/+/122455/4/src/main/resources/application.yml#48\n\nProbably to be discussed during one of our coming meeting then.",
+      "parentUuid": "8ba55ee3_f74d6443",
+      "range": {
+        "startLine": 48,
+        "startChar": 20,
+        "endLine": 48,
+        "endChar": 33
+      },
+      "revId": "60342d8b96ff86cc359053f8070f1fa5062789d5",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
     }
   ]
 }
