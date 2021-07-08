@@ -19,6 +19,11 @@
 
 package org.onap.cps.ncmp.service;
 
+import org.onap.cps.ncmp.rest.model.CmHandle;
+import org.springframework.http.ResponseEntity;
+
+import java.util.*;
+
 /**
  * Interface for handling Dmi plugin Data.
  */
@@ -27,4 +32,14 @@ public interface DmiService {
      * Return Simple Hello World Statement.
      */
     String getHelloWorld();
+
+    /**
+     * This method used to register the given {@code List} of {@code CmHandle}
+     * to cps repository.
+     *
+     * @param cmHandles list of cmhandles {@code CmHandle}
+     * @return {@code ResponseEntity} returns the response code
+     */
+    ResponseEntity<String> registerCmHandles(List<CmHandle> cmHandles);
+
 }

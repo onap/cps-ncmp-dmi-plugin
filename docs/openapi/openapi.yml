@@ -42,3 +42,31 @@ paths:
           $ref: 'components.yml#/components/responses/Unauthorized'
         '403':
           $ref: 'components.yml#/components/responses/Forbidden'
+
+
+  /v1/cmhandles:
+    post:
+      tags:
+        - dmi-plugin
+      summary: register given list of cmhandles
+      description: register given list of cmhandles
+      operationId: registerCmHandles
+      requestBody:
+        description: list of cmhandle
+        content:
+          application/json:
+            schema:
+              type: array
+              items:
+                $ref: 'components.yml#/components/schemas/CmHandle'
+        required: true
+      responses:
+        '201':
+          $ref: 'components.yml#/components/responses/Created'
+        '400':
+          $ref: 'components.yml#/components/responses/BadRequest'
+        '401':
+          $ref: 'components.yml#/components/responses/Unauthorized'
+        '403':
+          $ref: 'components.yml#/components/responses/Forbidden'
+

@@ -11,6 +11,29 @@ components:
         details:
           type: string
 
+    CmHandle:
+      required:
+        - id
+        - dmi-service-name
+      type: object
+      properties:
+        id:
+          type: string
+        dmi-service-name:
+          type: string
+        additional-properties:
+          type: array
+          items:
+            $ref: '#/components/schemas/property'
+
+    property:
+      type: object
+      properties:
+        name:
+          type: string
+        value:
+          type: string
+
   responses:
     NotFound:
       description: The specified resource was not found
