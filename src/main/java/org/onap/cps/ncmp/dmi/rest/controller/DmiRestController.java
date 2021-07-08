@@ -20,25 +20,47 @@
 
 package org.onap.cps.ncmp.dmi.rest.controller;
 
+import java.util.List;
+import javax.validation.Valid;
+import lombok.extern.slf4j.Slf4j;
 import org.onap.cps.ncmp.dmi.service.DmiService;
 import org.onap.cps.ncmp.rest.api.DmiPluginApi;
+import org.onap.cps.ncmp.rest.model.CmHandles;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+
+
 @RequestMapping("${rest.api.dmi-base-path}")
 @RestController
+@Slf4j
 public class DmiRestController implements DmiPluginApi {
 
-    @Autowired
     private DmiService dmiService;
 
-    @Override
-    public ResponseEntity<Object> helloWorld() {
-        final var helloWorld = dmiService.getHelloWorld();
-        return new ResponseEntity<>(helloWorld, HttpStatus.OK);
+    @Autowired
+    public DmiRestController(final DmiService dmiService) {
+        this.dmiService = dmiService;
+    }
+
+    /**
+     * This method register given list of cm-handles to ncmp.
+     *
+     * @param cmHandles list of cm-handles
+     * @return (@code ResponseEntity) response entity
+     */
+    public ResponseEntity<String> registerCmHandles(final @Valid CmHandles cmHandles) {
+        final List<String> cmHandlesList = cmHandles.getCmHandles();
+
+        if (cmHandlesList == null || cmHandlesList.isEmpty()) {
+            return new ResponseEntity<>("Need at least one cm-handle.", HttpStatus.NOT_ACCEPTABLE);
+        }
+        final boolean result = dmiService.registerCmHandles(cmHandlesList);
+        return result ? new ResponseEntity<>("cm-handle registered successfully.", HttpStatus.CREATED)
+                : new ResponseEntity<>("Not able to process.", HttpStatus.BAD_REQUEST);
     }
 
 }

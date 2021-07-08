@@ -20,20 +20,22 @@
 
 package org.onap.cps.ncmp.dmi.rest.controller
 
+import com.fasterxml.jackson.databind.ObjectMapper
+import org.onap.cps.ncmp.dmi.TestUtils
 import org.onap.cps.ncmp.dmi.service.DmiService
-
-import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get
-
 import org.spockframework.spring.SpringBean
-import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc
-import org.springframework.http.HttpStatus
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.beans.factory.annotation.Value
+import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest
+import org.springframework.http.HttpStatus
+import org.springframework.http.MediaType
 import org.springframework.test.web.servlet.MockMvc
 import spock.lang.Specification
 
-@WebMvcTest
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post
+
+@WebMvcTest(DmiRestController.class)
 @AutoConfigureMockMvc(addFilters = false)
 class DmiRestControllerSpec extends Specification {
 
@@ -43,22 +45,47 @@ class DmiRestControllerSpec extends Specification {
     @Autowired
     private MockMvc mvc
 
-    @Value('${rest.api.dmi-base-path}')
-    def basePath
+    @Value('${rest.api.dmi-base-path}/v1')
+    def basePathV1
 
-    def 'Get Hello World'() {
-        given: 'hello world endpoint'
-            def helloWorldEndpoint = "$basePath/v1/helloworld"
+    def 'Post request for register cm handles called with correct content.'() {
 
-        when: 'get hello world api is invoked'
+        given: 'register cm handle url and cm handles json'
+            def registerCmhandlesPost = "${basePathV1}/inventory/cmhandles"
+
+            def cmHandleJson =  '{"cm-handles":["node1", "node2"]}'
+
+        when: 'get register cmhandles post api is invoked'
             def response = mvc.perform(
-                                    get(helloWorldEndpoint)
-                           ).andReturn().response
+                    post(registerCmhandlesPost)
+                            .contentType(MediaType.APPLICATION_JSON)
+                            .content(cmHandleJson)
+                    ).andReturn().response
 
-        then: 'Response Status is OK and contains expected text'
-            response.status == HttpStatus.OK.value()
-        then: 'the java API was called with the correct parameters'
-            1 * mockDmiService.getHelloWorld()
+        then: 'service called once and returns true'
+            1 * mockDmiService.registerCmHandles(_ as List<String>) >> true
+
+        and: 'resonse should be CREATED'
+            response.status == HttpStatus.CREATED.value()
     }
 
+    def 'Post request for register cm handles called with empty content.'() {
+
+        given: 'register cm handle url and empty json'
+            def registerCmhandlesPost = "${basePathV1}/inventory/cmhandles"
+
+            def emptyJson = '{"cm-handles":[]}'
+
+        when: 'get register cm handles post api is invoked with no content'
+            def response = mvc.perform(
+                    post(registerCmhandlesPost).contentType(MediaType.APPLICATION_JSON)
+                            .content(emptyJson)
+                    ).andReturn().response
+
+        then: 'response Status is not acceptable'
+            response.status == HttpStatus.NOT_ACCEPTABLE.value()
+
+        and: 'the service is not called'
+            0 * mockDmiService.registerCmHandles(_)
+    }
 }

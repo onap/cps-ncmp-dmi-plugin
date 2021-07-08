@@ -18,21 +18,21 @@
  *  ============LICENSE_END=========================================================
  */
 
-package org.onap.cps.ncmp.dmi.service;
+package org.onap.cps.ncmp.dmi.exception;
 
-import java.util.List;
+public class CmHandleRegistrationException extends DmiException {
 
-/**
- * Interface for handling Dmi plugin Data.
- */
-public interface DmiService {
+    private static final long serialVersionUID = 8973438585188332404L;
+
+    private static final String ERROR_MESSAGE = "Not able to register the given cm-handles.";
+
     /**
-     * This method used to register the given {@code CmHandles}
-     * which contains list of {@code CmHandle} to cps repository.
+     * Constructor.
      *
-     * @param cmHandles cm-handles which contains list of cm-handle
-     * @return {@code boolean} returns true for success and false for failure
+     * @param details the error details
      */
-    boolean registerCmHandles(List<String> cmHandles);
+    public CmHandleRegistrationException(final String details) {
+        super(ERROR_MESSAGE, details);
+    }
 
 }

@@ -18,21 +18,40 @@
  *  ============LICENSE_END=========================================================
  */
 
-package org.onap.cps.ncmp.dmi.service;
+package org.onap.cps.ncmp.dmi.exception;
 
-import java.util.List;
+import lombok.Getter;
 
 /**
- * Interface for handling Dmi plugin Data.
+ * Dmi exception.
  */
-public interface DmiService {
-    /**
-     * This method used to register the given {@code CmHandles}
-     * which contains list of {@code CmHandle} to cps repository.
-     *
-     * @param cmHandles cm-handles which contains list of cm-handle
-     * @return {@code boolean} returns true for success and false for failure
-     */
-    boolean registerCmHandles(List<String> cmHandles);
+public class DmiException extends RuntimeException {
 
+    private static final long serialVersionUID = 1481520410918497487L;
+
+    @Getter
+    final String details;
+
+    /**
+     * Constructor.
+     *
+     * @param message the error message
+     * @param details the error details
+     */
+    public DmiException(final String message, final String details) {
+        super(message);
+        this.details = details;
+    }
+
+    /**
+     * Constructor.
+     *
+     * @param message the error message
+     * @param details the error details
+     * @param cause   the cause of the exception
+     */
+    public DmiException(final String message, final String details, final Throwable cause) {
+        super(message, cause);
+        this.details = details;
+    }
 }
