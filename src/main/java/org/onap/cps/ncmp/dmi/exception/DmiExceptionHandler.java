@@ -51,7 +51,7 @@ public class DmiExceptionHandler {
         return buildErrorResponse(HttpStatus.NOT_FOUND, exception);
     }
 
-    @ExceptionHandler({DmiException.class})
+    @ExceptionHandler({CmHandleRegistrationException.class, DmiException.class})
     public static ResponseEntity<Object> handleAnyOtherDmiExceptions(final DmiException exception) {
         return buildErrorResponse(HttpStatus.INTERNAL_SERVER_ERROR, exception);
     }

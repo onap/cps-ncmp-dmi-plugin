@@ -20,8 +20,11 @@
 
 package org.onap.cps.ncmp.dmi.config;
 
+import lombok.Getter;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.stereotype.Component;
 import springfox.documentation.builders.PathSelectors;
 import springfox.documentation.builders.RequestHandlerSelectors;
 import springfox.documentation.spi.DocumentationType;
@@ -41,6 +44,14 @@ public class DmiPluginConfig {
                 .apis(RequestHandlerSelectors.any())
                 .paths(PathSelectors.any())
                 .build();
+    }
+
+    @Getter
+    @Component
+    public static class DmiPluginProperties {
+
+        @Value("${dmi.service.name}")
+        private String dmiServiceName;
     }
 }
 
