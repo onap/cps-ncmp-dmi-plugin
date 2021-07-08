@@ -18,21 +18,33 @@
  *  ============LICENSE_END=========================================================
  */
 
-package org.onap.cps.ncmp.dmi.service;
+package org.onap.cps.ncmp.dmi.model;
 
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import java.util.List;
+import lombok.Getter;
+import lombok.Setter;
 
-/**
- * Interface for handling Dmi plugin Data.
- */
-public interface DmiService {
-    /**
-     * This method used to register the given {@code CmHandles}
-     * which contains list of {@code CmHandle} to cps repository.
-     *
-     * @param cmHandles cm-handles which contains list of cm-handle
-     * @return {@code boolean} returns true for success and false for failure
-     */
-    boolean registerCmHandles(List<String> cmHandles);
+@JsonInclude(JsonInclude.Include.NON_NULL)
+@JsonPropertyOrder({
+        "dmi-plugin",
+        "created-cm-handles",
+        "updated-cm-handles",
+        "removed-cm-handles"
+})
+@Getter
+@Setter
+public class CmHandleOperation {
+
+    @JsonProperty("dmi-plugin")
+    private String dmiPlugin;
+    @JsonProperty("created-cm-handles")
+    private List<CreatedCmHandle> createdCmHandles = null;
+    @JsonProperty("updated-cm-handles")
+    private List<String> updatedCmHandles = null;
+    @JsonProperty("removed-cm-handles")
+    private List<String> removedCmHandles = null;
 
 }

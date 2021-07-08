@@ -27,16 +27,24 @@ tags:
   - name: dmi-rest
     description: DMI Rest
 paths:
-  /v1/helloworld:
-    get:
-      description: Hello World
+  /v1/inventory/cmhandles:
+    post:
       tags:
         - dmi-plugin
-      summary: Hello World
-      operationId: helloWorld
+      summary: register given list of cmhandles (internal use only)
+      description: register given list of cmhandles (internal use only)
+      x-api-audience: component-internal
+      operationId: registerCmHandles
+      requestBody:
+        description: list of cmhandle
+        content:
+          application/json:
+            schema:
+                $ref: 'components.yml#/components/schemas/cm-handles'
+        required: true
       responses:
-        '200':
-          $ref: 'components.yml#/components/responses/Ok'
+        '201':
+          $ref: 'components.yml#/components/responses/Created'
         '400':
           $ref: 'components.yml#/components/responses/BadRequest'
         '401':

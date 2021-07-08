@@ -11,6 +11,14 @@ components:
         details:
           type: string
 
+    cm-handles:
+      type: object
+      properties:
+        cm-handles:
+          type: array
+          items:
+            type: string
+
   responses:
     NotFound:
       description: The specified resource was not found
