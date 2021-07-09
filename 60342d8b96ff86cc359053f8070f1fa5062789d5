@@ -65,6 +65,29 @@
     },
     {
       "key": {
+        "uuid": "319b4b8e_c67e296f",
+        "filename": "src/main/java/org/onap/cps/dmi/clients/NcmpRestClient.java",
+        "patchSetId": 5
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 7680
+      },
+      "writtenOn": "2021-07-09T03:08:46Z",
+      "side": 1,
+      "message": "any reason for not creating this class inside ncmp package (org.onap.cps.ncmp.dmi.clients) ?",
+      "range": {
+        "startLine": 20,
+        "startChar": 7,
+        "endLine": 20,
+        "endChar": 32
+      },
+      "revId": "60342d8b96ff86cc359053f8070f1fa5062789d5",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "8bdb24d4_35dde629",
         "filename": "src/main/java/org/onap/cps/dmi/clients/NcmpRestClient.java",
         "patchSetId": 5
@@ -81,6 +104,121 @@
         "startChar": 57,
         "endLine": 35,
         "endChar": 84
+      },
+      "revId": "60342d8b96ff86cc359053f8070f1fa5062789d5",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "446a0fff_ab25a492",
+        "filename": "src/main/java/org/onap/cps/dmi/clients/NcmpRestClient.java",
+        "patchSetId": 5
+      },
+      "lineNbr": 47,
+      "author": {
+        "id": 7680
+      },
+      "writtenOn": "2021-07-09T03:08:46Z",
+      "side": 1,
+      "message": "suggestion: \ncan use HttpHeaders.CONTENT_TYPE and MediaType.APPLICATION_JSON_VALUE",
+      "range": {
+        "startLine": 47,
+        "startChar": 8,
+        "endLine": 47,
+        "endChar": 60
+      },
+      "revId": "60342d8b96ff86cc359053f8070f1fa5062789d5",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "54c482eb_80a3f15b",
+        "filename": "src/main/java/org/onap/cps/dmi/clients/NcmpRestClient.java",
+        "patchSetId": 5
+      },
+      "lineNbr": 50,
+      "author": {
+        "id": 7680
+      },
+      "writtenOn": "2021-07-09T03:08:46Z",
+      "side": 1,
+      "message": "suggestion: restTemplate.postForEntity instead of exchange - It makes it clear which http method is being called in the method name itself.",
+      "range": {
+        "startLine": 50,
+        "startChar": 25,
+        "endLine": 50,
+        "endChar": 33
+      },
+      "revId": "60342d8b96ff86cc359053f8070f1fa5062789d5",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "13ea3ebf_da74445f",
+        "filename": "src/main/java/org/onap/cps/ncmp/model/CpsConfiguration.java",
+        "patchSetId": 5
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 7680
+      },
+      "writtenOn": "2021-07-09T03:08:46Z",
+      "side": 1,
+      "message": "config class should not be in model package.",
+      "range": {
+        "startLine": 20,
+        "startChar": 0,
+        "endLine": 20,
+        "endChar": 32
+      },
+      "revId": "60342d8b96ff86cc359053f8070f1fa5062789d5",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "42030163_771d9270",
+        "filename": "src/main/java/org/onap/cps/ncmp/model/CpsConfiguration.java",
+        "patchSetId": 5
+      },
+      "lineNbr": 48,
+      "author": {
+        "id": 7680
+      },
+      "writtenOn": "2021-07-09T03:08:46Z",
+      "side": 1,
+      "message": "I am not sure if this class is the right place to create the bean. It looks like the class is mostly responsible for connection properties. But it is also creating resttemplate bean and breaks single responsibility principle.",
+      "range": {
+        "startLine": 48,
+        "startChar": 5,
+        "endLine": 48,
+        "endChar": 9
+      },
+      "revId": "60342d8b96ff86cc359053f8070f1fa5062789d5",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "44e5ea26_d40548e8",
+        "filename": "src/main/java/org/onap/cps/ncmp/model/CpsConfiguration.java",
+        "patchSetId": 5
+      },
+      "lineNbr": 51,
+      "author": {
+        "id": 7680
+      },
+      "writtenOn": "2021-07-09T03:08:46Z",
+      "side": 1,
+      "message": "It is recommended to use RestTemplateBuilder to create an instance of RestTemplate.\n\nhttps://medium.com/@TimvanBaarsen/spring-boot-why-you-should-always-use-the-resttemplatebuilder-to-create-a-resttemplate-instance-d5a44ebad9e9",
+      "range": {
+        "startLine": 48,
+        "startChar": 4,
+        "endLine": 51,
+        "endChar": 5
       },
       "revId": "60342d8b96ff86cc359053f8070f1fa5062789d5",
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
