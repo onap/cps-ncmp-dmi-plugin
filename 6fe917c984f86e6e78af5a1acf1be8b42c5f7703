@@ -120,6 +120,30 @@
     },
     {
       "key": {
+        "uuid": "5c024c58_43bfd321",
+        "filename": "src/main/resources/application.yml",
+        "patchSetId": 4
+      },
+      "lineNbr": 48,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2021-07-12T13:18:21Z",
+      "side": 1,
+      "message": "@Team decided during stand-up to put default values in docker-compose.yml only",
+      "parentUuid": "0250fc8d_f9dfea48",
+      "range": {
+        "startLine": 48,
+        "startChar": 20,
+        "endLine": 48,
+        "endChar": 50
+      },
+      "revId": "6fe917c984f86e6e78af5a1acf1be8b42c5f7703",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "9be3b067_c422c81c",
         "filename": "src/main/resources/application.yml",
         "patchSetId": 4
@@ -155,6 +179,30 @@
       "side": 1,
       "message": "Same comment as above.",
       "parentUuid": "9be3b067_c422c81c",
+      "range": {
+        "startLine": 50,
+        "startChar": 21,
+        "endLine": 50,
+        "endChar": 32
+      },
+      "revId": "6fe917c984f86e6e78af5a1acf1be8b42c5f7703",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "5203c822_fa120fb3",
+        "filename": "src/main/resources/application.yml",
+        "patchSetId": 4
+      },
+      "lineNbr": 50,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2021-07-12T13:18:21Z",
+      "side": 1,
+      "message": "@Team decided during stand-up to put default values in docker-compose.yml only",
+      "parentUuid": "d9a48c8b_4c365ff4",
       "range": {
         "startLine": 50,
         "startChar": 21,
