@@ -48,6 +48,30 @@
     },
     {
       "key": {
+        "uuid": "0b39c5be_60530c53",
+        "filename": "src/main/java/org/onap/cps/Application.java",
+        "patchSetId": 5
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2021-07-12T10:38:33Z",
+      "side": 1,
+      "message": "Suggestion top level package for dmi-plugin classes : org.onap.cps.ncmp.dmi\nDo as separated refactoring task: https://jira.onap.org/browse/CPS-499",
+      "parentUuid": "09241da2_ea322d00",
+      "range": {
+        "startLine": 21,
+        "startChar": 0,
+        "endLine": 21,
+        "endChar": 21
+      },
+      "revId": "60342d8b96ff86cc359053f8070f1fa5062789d5",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "d042cf7c_1edaba4d",
         "filename": "src/main/java/org/onap/cps/dmi/clients/NcmpRestClient.java",
         "patchSetId": 5
@@ -99,6 +123,30 @@
       "writtenOn": "2021-07-08T15:57:48Z",
       "side": 1,
       "message": "should be configured in application.yml",
+      "range": {
+        "startLine": 35,
+        "startChar": 57,
+        "endLine": 35,
+        "endChar": 84
+      },
+      "revId": "60342d8b96ff86cc359053f8070f1fa5062789d5",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "896b4e78_ba0d3458",
+        "filename": "src/main/java/org/onap/cps/dmi/clients/NcmpRestClient.java",
+        "patchSetId": 5
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2021-07-12T10:38:33Z",
+      "side": 1,
+      "message": "it should be configurable",
+      "parentUuid": "8bdb24d4_35dde629",
       "range": {
         "startLine": 35,
         "startChar": 57,
@@ -261,6 +309,30 @@
       "side": 1,
       "message": "Rahul also started the same discussion about this section: https://gerrit.onap.org/r/c/cps/ncmp-dmi-plugin/+/122455/4/src/main/resources/application.yml#48\n\nProbably to be discussed during one of our coming meeting then.",
       "parentUuid": "8ba55ee3_f74d6443",
+      "range": {
+        "startLine": 48,
+        "startChar": 20,
+        "endLine": 48,
+        "endChar": 33
+      },
+      "revId": "60342d8b96ff86cc359053f8070f1fa5062789d5",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "1570336f_f6dd1e35",
+        "filename": "src/main/resources/application.yml",
+        "patchSetId": 5
+      },
+      "lineNbr": 48,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2021-07-12T10:38:33Z",
+      "side": 1,
+      "message": "I agree, default values are a good idea for convenience\nWe can discuss at next stand-up",
+      "parentUuid": "157b8838_597b234e",
       "range": {
         "startLine": 48,
         "startChar": 20,

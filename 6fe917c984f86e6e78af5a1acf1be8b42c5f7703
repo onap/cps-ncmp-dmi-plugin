@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "9c897f1b_8dd5fcf8",
+        "filename": "src/main/java/org/onap/cps/dmi/clients/NcmpRestClient.java",
+        "patchSetId": 4
+      },
+      "lineNbr": 43,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2021-07-12T10:38:33Z",
+      "side": 1,
+      "message": "will refactor when needed ie when more methods can added",
+      "parentUuid": "b513b60d_1f9f265d",
+      "range": {
+        "startLine": 43,
+        "startChar": 33,
+        "endLine": 43,
+        "endChar": 34
+      },
+      "revId": "6fe917c984f86e6e78af5a1acf1be8b42c5f7703",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "9c66f0cb_f52031f3",
         "filename": "src/main/resources/application.yml",
         "patchSetId": 4
