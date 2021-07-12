@@ -72,6 +72,30 @@
     },
     {
       "key": {
+        "uuid": "0250fc8d_f9dfea48",
+        "filename": "src/main/resources/application.yml",
+        "patchSetId": 4
+      },
+      "lineNbr": 48,
+      "author": {
+        "id": 5006
+      },
+      "writtenOn": "2021-07-12T09:33:47Z",
+      "side": 1,
+      "message": "CPS_CORE must be running on some default values CPS_CORE_HOST and PORT. \n\nIf this application.yml mentions those default values here, its in sync automatically. And if CPS_CORE changes those default value , here those values should be changed. Currently there are not separate configs for prod, dev and test so defalut configs are handy. I agree on above comments if we separate these profiles. \n\nSecondly in my opinion we should provide as much information before hand for config files as we have at the time of writing config files. And let admins decide if they want to go away with given information and use other alternatives. \n\nThese are my 2 cents here.",
+      "parentUuid": "a32098a1_43bced4c",
+      "range": {
+        "startLine": 48,
+        "startChar": 20,
+        "endLine": 48,
+        "endChar": 50
+      },
+      "revId": "6fe917c984f86e6e78af5a1acf1be8b42c5f7703",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "9be3b067_c422c81c",
         "filename": "src/main/resources/application.yml",
         "patchSetId": 4
