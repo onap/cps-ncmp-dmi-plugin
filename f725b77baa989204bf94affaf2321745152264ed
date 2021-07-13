@@ -143,6 +143,30 @@
     },
     {
       "key": {
+        "uuid": "b7e53609_1e0e8f57",
+        "filename": "src/main/resources/application.yml",
+        "patchSetId": 7
+      },
+      "lineNbr": 50,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2021-07-13T12:54:59Z",
+      "side": 1,
+      "message": "maybe put in a link to the WIki Page with that interface definition?",
+      "parentUuid": "9bc6f99e_090aa378",
+      "range": {
+        "startLine": 50,
+        "startChar": 24,
+        "endLine": 50,
+        "endChar": 45
+      },
+      "revId": "f725b77baa989204bf94affaf2321745152264ed",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "83c9eafa_21a207ef",
         "filename": "src/test/groovy/org/onap/cps/dmi/clients/NcmpRestClientSpec.groovy",
         "patchSetId": 7
