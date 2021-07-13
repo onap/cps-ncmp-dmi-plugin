@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9ff5b609_b40dc9b1",
+        "filename": "src/main/java/org/onap/cps/ncmp/service/DmiServiceImpl.java",
+        "patchSetId": 4
+      },
+      "lineNbr": 55,
+      "author": {
+        "id": 6738
+      },
+      "writtenOn": "2021-07-13T11:07:31Z",
+      "side": 1,
+      "message": "custom exception to be defined to handle this",
+      "range": {
+        "startLine": 54,
+        "startChar": 11,
+        "endLine": 55,
+        "endChar": 88
+      },
+      "revId": "4d7bde78bec51b9dcef675504088a742dc4dff6e",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    }
+  ]
+}
