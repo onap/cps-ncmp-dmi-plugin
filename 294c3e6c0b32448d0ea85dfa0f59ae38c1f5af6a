@@ -2,6 +2,29 @@
   "comments": [
     {
       "key": {
+        "uuid": "11ced302_861a5856",
+        "filename": "docs/openapi/components.yml",
+        "patchSetId": 2
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2021-07-13T08:10:16Z",
+      "side": 1,
+      "message": "maybe additional-property for clarity?",
+      "range": {
+        "startLine": 36,
+        "startChar": 40,
+        "endLine": 36,
+        "endChar": 48
+      },
+      "revId": "294c3e6c0b32448d0ea85dfa0f59ae38c1f5af6a",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "7b68805f_6b7d6bb8",
         "filename": "docs/openapi/openapi.yml",
         "patchSetId": 2
@@ -41,6 +64,213 @@
         "startChar": 16,
         "endLine": 52,
         "endChar": 51
+      },
+      "revId": "294c3e6c0b32448d0ea85dfa0f59ae38c1f5af6a",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "a31463ed_e2abdf14",
+        "filename": "src/main/java/org/onap/cps/ncmp/rest/controller/DmiRestController.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 45,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2021-07-13T08:10:16Z",
+      "side": 1,
+      "message": "Should this be removed now?",
+      "range": {
+        "startLine": 41,
+        "startChar": 0,
+        "endLine": 45,
+        "endChar": 5
+      },
+      "revId": "294c3e6c0b32448d0ea85dfa0f59ae38c1f5af6a",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "5b8a0b32_5fb48f3b",
+        "filename": "src/main/java/org/onap/cps/ncmp/rest/controller/DmiRestController.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 48,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2021-07-13T08:10:16Z",
+      "side": 1,
+      "message": "cmHandles",
+      "range": {
+        "startLine": 48,
+        "startChar": 75,
+        "endLine": 48,
+        "endChar": 79
+      },
+      "revId": "294c3e6c0b32448d0ea85dfa0f59ae38c1f5af6a",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "c50fe13e_5ba4cdb1",
+        "filename": "src/main/java/org/onap/cps/ncmp/service/DmiServiceImpl.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2021-07-13T08:10:16Z",
+      "side": 1,
+      "message": "LOGGER",
+      "range": {
+        "startLine": 37,
+        "startChar": 32,
+        "endLine": 37,
+        "endChar": 36
+      },
+      "revId": "294c3e6c0b32448d0ea85dfa0f59ae38c1f5af6a",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "f18825a8_540bc204",
+        "filename": "src/main/java/org/onap/cps/ncmp/service/DmiServiceImpl.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2021-07-13T08:10:16Z",
+      "side": 1,
+      "message": "objectMapper",
+      "range": {
+        "startLine": 40,
+        "startChar": 25,
+        "endLine": 40,
+        "endChar": 31
+      },
+      "revId": "294c3e6c0b32448d0ea85dfa0f59ae38c1f5af6a",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "1d9b6298_235736bf",
+        "filename": "src/main/java/org/onap/cps/ncmp/service/DmiServiceImpl.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 57,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2021-07-13T08:10:16Z",
+      "side": 1,
+      "message": "\u0027e\u0027 or \u0027jsonProcessingException\u0027  (e and i are commonly accept short variable names)\n\u0027e\u0027 is usually fine unless more then 1 type of exception is handled in the same code block",
+      "range": {
+        "startLine": 57,
+        "startChar": 46,
+        "endLine": 57,
+        "endChar": 49
+      },
+      "revId": "294c3e6c0b32448d0ea85dfa0f59ae38c1f5af6a",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "cb06c86a_ed1d95b2",
+        "filename": "src/main/resources/application.yml",
+        "patchSetId": 2
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2021-07-13T08:10:16Z",
+      "side": 1,
+      "message": "I thought we agreed to do default only in docker-compose ?!",
+      "range": {
+        "startLine": 29,
+        "startChar": 29,
+        "endLine": 29,
+        "endChar": 32
+      },
+      "revId": "294c3e6c0b32448d0ea85dfa0f59ae38c1f5af6a",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "18432d57_649dda13",
+        "filename": "src/main/resources/application.yml",
+        "patchSetId": 2
+      },
+      "lineNbr": 51,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2021-07-13T08:10:16Z",
+      "side": 1,
+      "message": "I thought we agreed to do default only in docker-compose ?!",
+      "range": {
+        "startLine": 51,
+        "startChar": 34,
+        "endLine": 51,
+        "endChar": 37
+      },
+      "revId": "294c3e6c0b32448d0ea85dfa0f59ae38c1f5af6a",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "66d21d96_08ed4c1a",
+        "filename": "src/test/groovy/org/onap/cps/ncmp/rest/controller/DmiRestControllerSpec.groovy",
+        "patchSetId": 2
+      },
+      "lineNbr": 68,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2021-07-13T08:10:16Z",
+      "side": 1,
+      "message": "no expectations in slogans (test name)\nand while you are editing them use capital and full stop for these\nsuggestion \u0027Post request for registering CM Handles.\u0027",
+      "range": {
+        "startLine": 68,
+        "startChar": 44,
+        "endLine": 68,
+        "endChar": 52
+      },
+      "revId": "294c3e6c0b32448d0ea85dfa0f59ae38c1f5af6a",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "342ad520_091a8060",
+        "filename": "src/test/groovy/org/onap/cps/ncmp/rest/controller/DmiRestControllerSpec.groovy",
+        "patchSetId": 2
+      },
+      "lineNbr": 88,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2021-07-13T08:10:16Z",
+      "side": 1,
+      "message": "I think this is better defined as a test resource file.\nSee also the use of org.onap.cps.TestUtils#getResourceFileContent in cps-service, you can introduce something similar here (or maybe even extract out a common test module?)",
+      "range": {
+        "startLine": 75,
+        "startChar": 38,
+        "endLine": 88,
+        "endChar": 41
       },
       "revId": "294c3e6c0b32448d0ea85dfa0f59ae38c1f5af6a",
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
@@ -94,6 +324,52 @@
     },
     {
       "key": {
+        "uuid": "2653ae7b_398debf3",
+        "filename": "src/test/groovy/org/onap/cps/ncmp/rest/controller/DmiRestControllerSpec.groovy",
+        "patchSetId": 2
+      },
+      "lineNbr": 95,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2021-07-13T08:10:16Z",
+      "side": 1,
+      "message": "this could be stricter...",
+      "range": {
+        "startLine": 95,
+        "startChar": 49,
+        "endLine": 95,
+        "endChar": 50
+      },
+      "revId": "294c3e6c0b32448d0ea85dfa0f59ae38c1f5af6a",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "5c4425a5_faf91937",
+        "filename": "src/test/groovy/org/onap/cps/ncmp/rest/controller/DmiRestControllerSpec.groovy",
+        "patchSetId": 2
+      },
+      "lineNbr": 108,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2021-07-13T08:10:16Z",
+      "side": 1,
+      "message": "bad request",
+      "range": {
+        "startLine": 108,
+        "startChar": 34,
+        "endLine": 108,
+        "endChar": 45
+      },
+      "revId": "294c3e6c0b32448d0ea85dfa0f59ae38c1f5af6a",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "a940beb5_ac05a533",
         "filename": "src/test/groovy/org/onap/cps/ncmp/rest/controller/DmiRestControllerSpec.groovy",
         "patchSetId": 2
@@ -140,6 +416,53 @@
     },
     {
       "key": {
+        "uuid": "08320dc9_20249d50",
+        "filename": "src/test/groovy/org/onap/cps/ncmp/rest/controller/DmiRestControllerSpec.groovy",
+        "patchSetId": 2
+      },
+      "lineNbr": 142,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2021-07-13T08:10:16Z",
+      "side": 1,
+      "message": "really need for a resource file here!",
+      "parentUuid": "4a4ef0c8_95fb19b4",
+      "range": {
+        "startLine": 115,
+        "startChar": 68,
+        "endLine": 142,
+        "endChar": 73
+      },
+      "revId": "294c3e6c0b32448d0ea85dfa0f59ae38c1f5af6a",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "99a15b34_fb640f21",
+        "filename": "src/test/groovy/org/onap/cps/ncmp/rest/controller/DmiRestControllerSpec.groovy",
+        "patchSetId": 2
+      },
+      "lineNbr": 157,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2021-07-13T08:10:16Z",
+      "side": 1,
+      "message": "unsupported media type \n(use plain English no vars, constant or class names)",
+      "range": {
+        "startLine": 157,
+        "startChar": 34,
+        "endLine": 157,
+        "endChar": 45
+      },
+      "revId": "294c3e6c0b32448d0ea85dfa0f59ae38c1f5af6a",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "1dda041c_7ebc8be9",
         "filename": "src/test/groovy/org/onap/cps/ncmp/rest/controller/DmiRestControllerSpec.groovy",
         "patchSetId": 2
@@ -156,6 +479,98 @@
         "startChar": 8,
         "endLine": 160,
         "endChar": 12
+      },
+      "revId": "294c3e6c0b32448d0ea85dfa0f59ae38c1f5af6a",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "00001356_6b681ca8",
+        "filename": "src/test/groovy/org/onap/cps/ncmp/service/DmiServiceImplSpec.groovy",
+        "patchSetId": 2
+      },
+      "lineNbr": 47,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2021-07-13T08:10:16Z",
+      "side": 1,
+      "message": "time to remove",
+      "range": {
+        "startLine": 43,
+        "startChar": 0,
+        "endLine": 47,
+        "endChar": 0
+      },
+      "revId": "294c3e6c0b32448d0ea85dfa0f59ae38c1f5af6a",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "010488ce_60061f4f",
+        "filename": "src/test/groovy/org/onap/cps/ncmp/service/DmiServiceImplSpec.groovy",
+        "patchSetId": 2
+      },
+      "lineNbr": 48,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2021-07-13T08:10:16Z",
+      "side": 1,
+      "message": "Register CM Handles with NCMP.",
+      "range": {
+        "startLine": 48,
+        "startChar": 9,
+        "endLine": 48,
+        "endChar": 62
+      },
+      "revId": "294c3e6c0b32448d0ea85dfa0f59ae38c1f5af6a",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "48b9ea88_ce9b4e17",
+        "filename": "src/test/groovy/org/onap/cps/ncmp/service/DmiServiceImplSpec.groovy",
+        "patchSetId": 2
+      },
+      "lineNbr": 54,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2021-07-13T08:10:16Z",
+      "side": 1,
+      "message": "move to setup() method (executed before each test)",
+      "range": {
+        "startLine": 53,
+        "startChar": 6,
+        "endLine": 54,
+        "endChar": 53
+      },
+      "revId": "294c3e6c0b32448d0ea85dfa0f59ae38c1f5af6a",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "06ed8b4f_5141b1ec",
+        "filename": "src/test/groovy/org/onap/cps/ncmp/service/DmiServiceImplSpec.groovy",
+        "patchSetId": 2
+      },
+      "lineNbr": 82,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2021-07-13T08:10:16Z",
+      "side": 1,
+      "message": "we need to talk about this test.",
+      "range": {
+        "startLine": 64,
+        "startChar": 0,
+        "endLine": 82,
+        "endChar": 5
       },
       "revId": "294c3e6c0b32448d0ea85dfa0f59ae38c1f5af6a",
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
