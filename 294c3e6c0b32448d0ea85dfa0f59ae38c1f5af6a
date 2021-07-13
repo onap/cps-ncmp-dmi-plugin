@@ -278,6 +278,30 @@
     },
     {
       "key": {
+        "uuid": "f59e5df6_59a9ee10",
+        "filename": "src/test/groovy/org/onap/cps/ncmp/rest/controller/DmiRestControllerSpec.groovy",
+        "patchSetId": 2
+      },
+      "lineNbr": 88,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2021-07-13T09:43:46Z",
+      "side": 1,
+      "message": "ignore what I said about extacrting out common module, it is not even same repo :-(",
+      "parentUuid": "342ad520_091a8060",
+      "range": {
+        "startLine": 75,
+        "startChar": 38,
+        "endLine": 88,
+        "endChar": 41
+      },
+      "revId": "294c3e6c0b32448d0ea85dfa0f59ae38c1f5af6a",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "12080f36_3114199b",
         "filename": "src/test/groovy/org/onap/cps/ncmp/rest/controller/DmiRestControllerSpec.groovy",
         "patchSetId": 2
