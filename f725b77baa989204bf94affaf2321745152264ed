@@ -71,6 +71,30 @@
     },
     {
       "key": {
+        "uuid": "29899499_5604c54e",
+        "filename": "src/main/resources/application.yml",
+        "patchSetId": 7
+      },
+      "lineNbr": 50,
+      "author": {
+        "id": 6738
+      },
+      "writtenOn": "2021-07-13T10:34:47Z",
+      "side": 1,
+      "message": "Also this is not in sync with the dmi-base-path defined above in the file",
+      "parentUuid": "e47cd9e7_0d38b15c",
+      "range": {
+        "startLine": 50,
+        "startChar": 24,
+        "endLine": 50,
+        "endChar": 45
+      },
+      "revId": "f725b77baa989204bf94affaf2321745152264ed",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "83c9eafa_21a207ef",
         "filename": "src/test/groovy/org/onap/cps/dmi/clients/NcmpRestClientSpec.groovy",
         "patchSetId": 7
