@@ -144,6 +144,30 @@
     },
     {
       "key": {
+        "uuid": "60e39bea_e820aa8c",
+        "filename": "src/main/java/org/onap/cps/Application.java",
+        "patchSetId": 5
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 6841
+      },
+      "writtenOn": "2021-07-13T11:32:02Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "75d4adb0_53b298a7",
+      "range": {
+        "startLine": 21,
+        "startChar": 0,
+        "endLine": 21,
+        "endChar": 21
+      },
+      "revId": "60342d8b96ff86cc359053f8070f1fa5062789d5",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "d042cf7c_1edaba4d",
         "filename": "src/main/java/org/onap/cps/dmi/clients/NcmpRestClient.java",
         "patchSetId": 5

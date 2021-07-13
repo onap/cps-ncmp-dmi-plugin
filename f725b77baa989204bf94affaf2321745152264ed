@@ -48,6 +48,30 @@
     },
     {
       "key": {
+        "uuid": "aa5d7bb0_83d3fd46",
+        "filename": "src/main/java/org/onap/cps/ncmp/config/CpsConfiguration.java",
+        "patchSetId": 7
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 6841
+      },
+      "writtenOn": "2021-07-13T11:32:02Z",
+      "side": 1,
+      "message": "the package dmi was created to contain the dmi clients such as the ncmp rest client",
+      "parentUuid": "80ca57d8_78adb469",
+      "range": {
+        "startLine": 21,
+        "startChar": 21,
+        "endLine": 21,
+        "endChar": 25
+      },
+      "revId": "f725b77baa989204bf94affaf2321745152264ed",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "e47cd9e7_0d38b15c",
         "filename": "src/main/resources/application.yml",
         "patchSetId": 7
@@ -95,6 +119,30 @@
     },
     {
       "key": {
+        "uuid": "9bc6f99e_090aa378",
+        "filename": "src/main/resources/application.yml",
+        "patchSetId": 7
+      },
+      "lineNbr": 50,
+      "author": {
+        "id": 6841
+      },
+      "writtenOn": "2021-07-13T11:32:02Z",
+      "side": 1,
+      "message": "this is using the url for registering cm handles in cps ncmp that will be implemented as part of https://gerrit.onap.org/r/c/cps/+/122418",
+      "parentUuid": "29899499_5604c54e",
+      "range": {
+        "startLine": 50,
+        "startChar": 24,
+        "endLine": 50,
+        "endChar": 45
+      },
+      "revId": "f725b77baa989204bf94affaf2321745152264ed",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "83c9eafa_21a207ef",
         "filename": "src/test/groovy/org/onap/cps/dmi/clients/NcmpRestClientSpec.groovy",
         "patchSetId": 7
@@ -109,6 +157,24 @@
       "revId": "f725b77baa989204bf94affaf2321745152264ed",
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "e867676e_28c5b477",
+        "filename": "src/test/groovy/org/onap/cps/dmi/clients/NcmpRestClientSpec.groovy",
+        "patchSetId": 7
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 6841
+      },
+      "writtenOn": "2021-07-13T11:32:02Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "83c9eafa_21a207ef",
+      "revId": "f725b77baa989204bf94affaf2321745152264ed",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
     }
   ]
 }
