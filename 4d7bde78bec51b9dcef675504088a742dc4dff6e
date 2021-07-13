@@ -2,6 +2,52 @@
   "comments": [
     {
       "key": {
+        "uuid": "c56389c5_9a90a272",
+        "filename": "src/main/java/org/onap/cps/ncmp/service/DmiService.java",
+        "patchSetId": 4
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 7680
+      },
+      "writtenOn": "2021-07-13T12:31:56Z",
+      "side": 1,
+      "message": "Http response should not be defined in the Service layer.",
+      "range": {
+        "startLine": 37,
+        "startChar": 4,
+        "endLine": 37,
+        "endChar": 18
+      },
+      "revId": "4d7bde78bec51b9dcef675504088a742dc4dff6e",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "d7daf872_3962bacd",
+        "filename": "src/main/java/org/onap/cps/ncmp/service/DmiServiceImpl.java",
+        "patchSetId": 4
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 7680
+      },
+      "writtenOn": "2021-07-13T12:31:56Z",
+      "side": 1,
+      "message": "can use @Slf4j lombok annotation to add logger.",
+      "range": {
+        "startLine": 37,
+        "startChar": 4,
+        "endLine": 37,
+        "endChar": 87
+      },
+      "revId": "4d7bde78bec51b9dcef675504088a742dc4dff6e",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "9ff5b609_b40dc9b1",
         "filename": "src/main/java/org/onap/cps/ncmp/service/DmiServiceImpl.java",
         "patchSetId": 4
@@ -18,6 +64,29 @@
         "startChar": 11,
         "endLine": 55,
         "endChar": 88
+      },
+      "revId": "4d7bde78bec51b9dcef675504088a742dc4dff6e",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "cbc05c58_86fecee9",
+        "filename": "src/test/groovy/org/onap/cps/ncmp/rest/controller/DmiRestControllerSpec.groovy",
+        "patchSetId": 4
+      },
+      "lineNbr": 66,
+      "author": {
+        "id": 7680
+      },
+      "writtenOn": "2021-07-13T12:31:56Z",
+      "side": 1,
+      "message": "can use objectmapper to convert to jsonstring",
+      "range": {
+        "startLine": 66,
+        "startChar": 38,
+        "endLine": 66,
+        "endChar": 106
       },
       "revId": "4d7bde78bec51b9dcef675504088a742dc4dff6e",
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
