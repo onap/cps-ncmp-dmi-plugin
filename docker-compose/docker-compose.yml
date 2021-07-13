@@ -1,5 +1,6 @@
 # ============LICENSE_START=======================================================
 # Copyright (C) 2021 Nordix Foundation
+# Modifications Copyright (C) 2021 Bell Canada.
 # ================================================================================
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -23,7 +24,8 @@ services:
     container_name: ncmp-dmi-plugin
     image: ${DOCKER_REPO:-nexus3.onap.org:10003}/onap/ncmp-dmi-plugin:${VERSION:-latest}
     ports:
-      - "8883:8080"
+      - "8783:8080"
+      - "8787:8081"
     environment:
       CPS_USERNAME: ${CPS_USERNAME:-cpsuser}
       CPS_PASSWORD: ${CPS_PASSWORD:-cpsr0cks!}

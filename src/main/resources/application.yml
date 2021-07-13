@@ -1,5 +1,6 @@
 #  ============LICENSE_START=======================================================
-#  Modification (C) 2021 Nordix Foundation
+#  Copyright (C) 2021 Nordix Foundation
+#  Modifications Copyright (C) 2021 Bell Canada.
 #  ================================================================================
 #  Licensed under the Apache License, Version 2.0 (the "License");
 #  you may not use this file except in compliance with the License.
@@ -24,23 +25,23 @@ rest:
     dmi-base-path: /dmi/api
 
 security:
-  permit-uri: /manage/health/**,/manage/info,/swagger-ui/**,/swagger-resources/**,/v3/api-docs
+  permit-uri: /manage/**,/swagger-ui/**,/swagger-resources/**,/v3/api-docs
   auth:
     username: ${CPS_USERNAME}
     password: ${CPS_PASSWORD}
 
 # Actuator
 management:
+  server:
+    port: 8081
   endpoints:
     web:
       base-path: /manage
       exposure:
-        include: info,health,loggers
+        include: info,health,loggers,prometheus
   endpoint:
     health:
       show-details: always
       # kubernetes probes: liveness and readiness
       probes:
         enabled: true
-    loggers:
-      enabled: true
