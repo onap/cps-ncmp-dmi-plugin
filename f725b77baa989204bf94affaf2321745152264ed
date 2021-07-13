@@ -22,6 +22,69 @@
       "revId": "f725b77baa989204bf94affaf2321745152264ed",
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "80ca57d8_78adb469",
+        "filename": "src/main/java/org/onap/cps/ncmp/config/CpsConfiguration.java",
+        "patchSetId": 7
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 6738
+      },
+      "writtenOn": "2021-07-13T10:27:23Z",
+      "side": 1,
+      "message": "any specific reason to have different packages dmi and ncmp",
+      "range": {
+        "startLine": 21,
+        "startChar": 21,
+        "endLine": 21,
+        "endChar": 25
+      },
+      "revId": "f725b77baa989204bf94affaf2321745152264ed",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "e47cd9e7_0d38b15c",
+        "filename": "src/main/resources/application.yml",
+        "patchSetId": 7
+      },
+      "lineNbr": 50,
+      "author": {
+        "id": 6738
+      },
+      "writtenOn": "2021-07-13T10:27:23Z",
+      "side": 1,
+      "message": "Not really sure why we would like to include both cps-ncmp and ncmp-dmi in the URL? preferably should be either cps-ncmp-dmi/api/v1/ch or something similar..",
+      "range": {
+        "startLine": 50,
+        "startChar": 24,
+        "endLine": 50,
+        "endChar": 45
+      },
+      "revId": "f725b77baa989204bf94affaf2321745152264ed",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "83c9eafa_21a207ef",
+        "filename": "src/test/groovy/org/onap/cps/dmi/clients/NcmpRestClientSpec.groovy",
+        "patchSetId": 7
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 6738
+      },
+      "writtenOn": "2021-07-13T10:27:23Z",
+      "side": 1,
+      "message": "space there",
+      "revId": "f725b77baa989204bf94affaf2321745152264ed",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
     }
   ]
 }
