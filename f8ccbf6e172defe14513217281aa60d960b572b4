@@ -22,6 +22,29 @@
       "revId": "f8ccbf6e172defe14513217281aa60d960b572b4",
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "cb1adb74_f7569533",
+        "filename": "src/main/java/org/onap/cps/ncmp/dmi/clients/NcmpRestClient.java",
+        "patchSetId": 8
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 5658
+      },
+      "writtenOn": "2021-07-14T04:17:55Z",
+      "side": 1,
+      "message": "As an improvement from cps core, it would be good to replace field injection with constructor injection for such immutable dependencies.\n\nField injection is not recommended and has some drawbacks.\nSee this discussion for some explanations: https://stackoverflow.com/questions/39890849/what-exactly-is-field-injection-and-how-to-avoid-it",
+      "range": {
+        "startLine": 36,
+        "startChar": 4,
+        "endLine": 36,
+        "endChar": 14
+      },
+      "revId": "f8ccbf6e172defe14513217281aa60d960b572b4",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
     }
   ]
 }
