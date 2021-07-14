@@ -45,6 +45,30 @@
       "revId": "f8ccbf6e172defe14513217281aa60d960b572b4",
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "c4133c12_b2cf6588",
+        "filename": "src/main/java/org/onap/cps/ncmp/dmi/clients/NcmpRestClient.java",
+        "patchSetId": 8
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 6841
+      },
+      "writtenOn": "2021-07-14T09:22:33Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "cb1adb74_f7569533",
+      "range": {
+        "startLine": 36,
+        "startChar": 4,
+        "endLine": 36,
+        "endChar": 14
+      },
+      "revId": "f8ccbf6e172defe14513217281aa60d960b572b4",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
     }
   ]
 }
