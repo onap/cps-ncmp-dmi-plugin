@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "293f86e6_517401b1",
+        "filename": "src/main/java/org/onap/cps/ncmp/dmi/service/client/NcmpRestClient.java",
+        "patchSetId": 11
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 6738
+      },
+      "writtenOn": "2021-07-14T16:29:57Z",
+      "side": 1,
+      "message": "Generally best practice is to to put exposed beans in configuration classes. Rather than adding it here, I feel it best suited in  CpsConfiguration if RestTemplate would be only used n the app for invoking cps rest apis.\n\nIf the scope of RestTemplate is wider that CPS configuration, then probably we could add that to common configs or main class.",
+      "parentUuid": "9597754f_73c6e5d1",
+      "range": {
+        "startLine": 41,
+        "startChar": 4,
+        "endLine": 41,
+        "endChar": 9
+      },
+      "revId": "5cac1be6d4e24ca01f013bda075e9002fa7fdf80",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "e00f1742_82d9b195",
         "filename": "src/test/groovy/org/onap/cps/ncmp/dmi/rest/controller/DmiRestControllerSpec.groovy",
         "patchSetId": 11
