@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "c355461d_4852c734",
+        "filename": "src/main/java/org/onap/cps/ncmp/dmi/config/CpsConfiguration.java",
+        "patchSetId": 12
+      },
+      "lineNbr": 58,
+      "author": {
+        "id": 7680
+      },
+      "writtenOn": "2021-07-14T18:16:48Z",
+      "side": 1,
+      "message": "I agree with Aditya\u0027s comment in other file that @Bean should not be in @component.\n\nI still find it odd to @Autowired CPSConfiguration when we want to access only properties.\n\nSuggestion: \n------\n@Configuration\npublic class CpsConfiguration {\n\n    @Setter @Getter\n    @ConfigurationProperties(prefix \u003d \"cps-core\")\n    @Component\n    public static class CPSProperties {\n\n        private String baseUrl;\n        private String dmiRegistrationUrl;\n        private Credential auth;\n\n        @Getter\n        @Setter\n        public static class Credential {\n\n            private String username;\n            private String password;\n        }\n    }\n\n    @Bean\n    public RestTemplate restTemplate(final RestTemplateBuilder restTemplateBuilder) {\n        return restTemplateBuilder.build();\n    }\n}\n-----\nThis implementation will allow to autowire only CPSProperties in NCMPRestClient.",
+      "range": {
+        "startLine": 55,
+        "startChar": 3,
+        "endLine": 58,
+        "endChar": 5
+      },
+      "revId": "aa1a760957307df39988f4ec9b344c158dd6240a",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    }
+  ]
+}
