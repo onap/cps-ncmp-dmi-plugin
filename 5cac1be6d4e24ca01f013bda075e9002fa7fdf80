@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9597754f_73c6e5d1",
+        "filename": "src/main/java/org/onap/cps/ncmp/dmi/service/client/NcmpRestClient.java",
+        "patchSetId": 11
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2021-07-14T15:48:50Z",
+      "side": 1,
+      "message": "is this needed?",
+      "range": {
+        "startLine": 41,
+        "startChar": 4,
+        "endLine": 41,
+        "endChar": 9
+      },
+      "revId": "5cac1be6d4e24ca01f013bda075e9002fa7fdf80",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "e00f1742_82d9b195",
+        "filename": "src/test/groovy/org/onap/cps/ncmp/dmi/rest/controller/DmiRestControllerSpec.groovy",
+        "patchSetId": 11
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2021-07-14T15:48:50Z",
+      "side": 1,
+      "message": "can you import instead",
+      "range": {
+        "startLine": 40,
+        "startChar": 5,
+        "endLine": 40,
+        "endChar": 34
+      },
+      "revId": "5cac1be6d4e24ca01f013bda075e9002fa7fdf80",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    }
+  ]
+}
