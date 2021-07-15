@@ -37,7 +37,7 @@ public class DmiRestController implements DmiPluginApi {
 
     @Override
     public ResponseEntity<Object> helloWorld() {
-        final var helloWorld = dmiService.getHelloWorld()   ;
+        final var helloWorld = dmiService.getHelloWorld();
         return new ResponseEntity<>(helloWorld, HttpStatus.OK);
     }
 

@@ -208,6 +208,44 @@
                 <artifactId>maven-checkstyle-plugin</artifactId>
                 <executions>
                     <execution>
+                        <id>onap-license</id>
+                        <goals>
+                            <goal>check</goal>
+                        </goals>
+                        <phase>process-sources</phase>
+                        <configuration>
+                            <configLocation>onap-checkstyle/check-license.xml</configLocation>
+                            <includeResources>false</includeResources>
+                            <includeTestSourceDirectory>true</includeTestSourceDirectory>
+                            <includeTestResources>false</includeTestResources>
+                            <sourceDirectories>
+                                <sourceDirectory>${project.build.sourceDirectory}</sourceDirectory>
+                            </sourceDirectories>
+                            <consoleOutput>false</consoleOutput>
+                            <violationSeverity>warning</violationSeverity>
+                            <failOnViolation>true</failOnViolation>
+                        </configuration>
+                    </execution>
+                    <execution>
+                        <id>onap-java-style</id>
+                        <goals>
+                            <goal>check</goal>
+                        </goals>
+                        <phase>process-sources</phase>
+                        <configuration>
+                            <configLocation>onap-checkstyle/onap-java-style.xml</configLocation>
+                            <sourceDirectories>
+                                <sourceDirectory>${project.build.sourceDirectory}</sourceDirectory>
+                            </sourceDirectories>
+                            <includeResources>true</includeResources>
+                            <includeTestSourceDirectory>true</includeTestSourceDirectory>
+                            <includeTestResources>true</includeTestResources>
+                            <consoleOutput>false</consoleOutput>
+                            <violationSeverity>warning</violationSeverity>
+                            <failOnViolation>true</failOnViolation>
+                        </configuration>
+                    </execution>
+                    <execution>
                         <id>cps-java-style</id>
                         <goals>
                             <goal>check</goal>
