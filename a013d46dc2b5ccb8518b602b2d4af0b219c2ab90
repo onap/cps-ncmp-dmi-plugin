@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "91f84c19_5b190f9a",
+        "filename": "src/main/java/org/onap/cps/ncmp/dmi/rest/controller/DmiRestController.java",
+        "patchSetId": 5
+      },
+      "lineNbr": 48,
+      "author": {
+        "id": 5006
+      },
+      "writtenOn": "2021-07-16T14:48:32Z",
+      "side": 1,
+      "message": "will remove this in next patch, waiting for https://gerrit.onap.org/r/c/cps/+/122418 to complete for correct openapi defs.",
+      "range": {
+        "startLine": 48,
+        "startChar": 8,
+        "endLine": 48,
+        "endChar": 37
+      },
+      "revId": "a013d46dc2b5ccb8518b602b2d4af0b219c2ab90",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    }
+  ]
+}
