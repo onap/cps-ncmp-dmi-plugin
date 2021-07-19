@@ -18,22 +18,22 @@
  *  ============LICENSE_END=========================================================
  */
 
-package org.onap.cps.ncmp.dmi.service;
+package org.onap.cps.ncmp.dmi.exception;
 
-import org.onap.cps.ncmp.dmi.exception.DmiException;
-import org.onap.cps.ncmp.dmi.exception.ModulesNotFoundException;
+import java.util.List;
 
-/**
- * Interface for handling Dmi plugin Data.
- */
-public interface DmiService {
-    /**
-     * This method used to register the given {@code CmHandles}
-     * which contains list of {@code CmHandle} to cps repository.
-     *
-     * @param cmHandle cm-handle to fetch the modules information
-     * @return {@code String} returns all modules
-     */
-    String getModulesForCmHandle(String cmHandle) throws DmiException, ModulesNotFoundException;
+public class ApiError {
+    private List<String> errors;
 
+    public ApiError(final List<String> errors) {
+        this.errors = errors;
+    }
+
+    public List<String> getErrors() {
+        return errors;
+    }
+
+    public void setErrors(final List<String> errors) {
+        this.errors = errors;
+    }
 }
