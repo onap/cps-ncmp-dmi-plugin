@@ -20,6 +20,9 @@
 
 package org.onap.cps.ncmp.dmi.service;
 
+import java.util.Optional;
+import org.onap.cps.ncmp.dmi.model.RequestOperation;
+
 /**
  * Interface for handling Dmi plugin Data.
  */
@@ -28,4 +31,15 @@ public interface DmiService {
      * Return Simple Hello World Statement.
      */
     String getHelloWorld();
+
+    /**
+     * This method used to register the given {@code CmHandles}
+     * which contains list of {@code CmHandle} to cps repository.
+     *
+     * @param cmHandleId cm-handle id to fetch the modules information
+     * @param requestOperation body of post request
+     * @return {@code boolean} returns true for success and false for failure
+     */
+    Optional<String> getModulesForCmhandle(String cmHandleId, RequestOperation requestOperation);
+
 }

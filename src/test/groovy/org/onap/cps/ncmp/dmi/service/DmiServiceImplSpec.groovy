@@ -20,15 +20,61 @@
 
 package org.onap.cps.ncmp.dmi.service
 
-
+import org.onap.cps.ncmp.dmi.model.RequestOperation
+import org.onap.cps.ncmp.dmi.service.operation.SdncOperations
+import org.springframework.http.HttpStatus
+import org.springframework.http.ResponseEntity
 import spock.lang.Specification
 
 class DmiServiceImplSpec extends Specification {
+
     def objectUnderTest = new DmiServiceImpl()
+
+    def mockSdncOperations = Mock(SdncOperations)
+
+    def setup() {
+        objectUnderTest.sdncOperations = mockSdncOperations
+    }
 
     def 'Retrieve Hello World'() {
         expect: 'Hello World is Returned'
             objectUnderTest.getHelloWorld() == 'Hello World'
     }
 
+    def 'Call getModulesForCmhandle with valid params.'() {
+
+        given: 'cm handle id , requestoperation'
+            def cmHandleId = "node1"
+            def requestOperation  = new RequestOperation()
+            requestOperation.setOperation(RequestOperation.OperationEnum.READ)
+            requestOperation.setDataType(RequestOperation.DataTypeEnum.JSON)
+
+            mockSdncOperations.getModulesFromNode(cmHandleId) >> responseEntity
+
+        when: 'getModulesForCmhandle is called'
+            def optional = objectUnderTest.getModulesForCmhandle(cmHandleId, requestOperation)
+
+        then:
+            optional.isEmpty() == expected
+
+        where:
+            scenario                        |   responseEntity                                              ||  expected
+            "sdncop returns OK"             |   new ResponseEntity<String>("body", HttpStatus.OK)           ||  false
+            "sdncop return BAD REQUEST"     |   new ResponseEntity<String>("body", HttpStatus.BAD_REQUEST)  ||  true
+    }
+
+    def 'Call getModulesForCmhandle with invalid params.'() {
+
+        given: 'cm handle id , requestoperation'
+            def cmHandleId = "node1"
+            def requestOperation  = new RequestOperation()
+            requestOperation.setOperation(RequestOperation.OperationEnum.WRITE)
+            requestOperation.setDataType(RequestOperation.DataTypeEnum.JSON)
+
+        when: 'getModulesForCmhandle is called'
+            def optional = objectUnderTest.getModulesForCmhandle(cmHandleId, requestOperation)
+
+        then:
+            optional.isEmpty() == true
+    }
 }
