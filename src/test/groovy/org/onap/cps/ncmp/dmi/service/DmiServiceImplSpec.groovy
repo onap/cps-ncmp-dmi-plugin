@@ -20,15 +20,49 @@
 
 package org.onap.cps.ncmp.dmi.service
 
-
+import org.onap.cps.ncmp.dmi.exception.DmiException
+import org.onap.cps.ncmp.dmi.service.operation.SdncOperations
+import org.springframework.http.HttpStatus
+import org.springframework.http.ResponseEntity
 import spock.lang.Specification
 
 class DmiServiceImplSpec extends Specification {
+
     def objectUnderTest = new DmiServiceImpl()
 
-    def 'Retrieve Hello World'() {
-        expect: 'Hello World is Returned'
-            objectUnderTest.getHelloWorld() == 'Hello World'
+    def mockSdncOperations = Mock(SdncOperations)
+
+    def setup() {
+        objectUnderTest.sdncOperations = mockSdncOperations
     }
 
+    def 'Call getModulesForCmhandle with valid output.'() {
+
+        given: 'cm handle id'
+            def cmHandle = "node1"
+
+        and: 'request operation returns OK'
+            mockSdncOperations.getModulesFromNode(cmHandle) >> new ResponseEntity<String>("body", HttpStatus.OK)
+
+        when: 'getModulesForCmhandle is called'
+            def optional = objectUnderTest.getModulesForCmHandle(cmHandle)
+
+        then: 'check value of optional output'
+            optional.isEmpty() == false
+    }
+
+    def 'Call getModulesForCmhandle with NOT OK return.'() {
+
+        given: 'cm handle id'
+            def cmHandle = "node1"
+
+        and: 'request operation returns OK'
+            mockSdncOperations.getModulesFromNode(cmHandle) >> new ResponseEntity<String>("body", HttpStatus.BAD_REQUEST)
+
+        when: 'getModulesForCmhandle is called'
+            objectUnderTest.getModulesForCmHandle(cmHandle)
+
+        then: 'check for DmiException'
+            thrown( DmiException )
+    }
 }

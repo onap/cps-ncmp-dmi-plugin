@@ -32,7 +32,7 @@ import org.springframework.web.client.RestTemplate;
  * Provides access to cps base url and cps authentication.
  */
 @Configuration
-public class CpsConfiguration {
+public class DmiConfiguration {
 
     @Getter
     @Component
@@ -46,6 +46,20 @@ public class CpsConfiguration {
         private String authUsername;
         @Value("${cps-core.auth.password}")
         private String authPassword;
+    }
+
+    @Getter
+    @Component
+    public static class SdncProperties {
+
+        @Value("${sdnc.baseUrl}")
+        private String baseUrl;
+        @Value("${sdnc.auth.username}")
+        private String authUsername;
+        @Value("${sdnc.auth.password}")
+        private String authPassword;
+        @Value("${sdnc.topologyId}")
+        public String topologyId;
     }
 
     @Bean

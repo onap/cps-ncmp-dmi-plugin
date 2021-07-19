@@ -18,22 +18,42 @@
  *  ============LICENSE_END=========================================================
  */
 
-package org.onap.cps.ncmp.dmi.service;
 
-import org.onap.cps.ncmp.dmi.exception.DmiException;
-import org.onap.cps.ncmp.dmi.exception.ModulesNotFoundException;
+package org.onap.cps.ncmp.dmi.exception;
+
+import lombok.Getter;
 
 /**
- * Interface for handling Dmi plugin Data.
+ * Dmi exception.
  */
-public interface DmiService {
+public class DmiException extends RuntimeException {
+
+    private static final long serialVersionUID = 1481520410918497487L;
+
+    @Getter
+    final String details;
+
     /**
-     * This method used to register the given {@code CmHandles}
-     * which contains list of {@code CmHandle} to cps repository.
+     * Constructor.
      *
-     * @param cmHandle cm-handle to fetch the modules information
-     * @return {@code String} returns all modules
+     * @param message the error message
+     * @param details the error details
      */
-    String getModulesForCmHandle(String cmHandle) throws DmiException, ModulesNotFoundException;
+    public DmiException(final String message, final String details) {
+        super(message);
+        this.details = details;
+    }
+
+    /**
+     * Constructor.
+     *
+     * @param message the error message
+     * @param details the error details
+     * @param cause   the cause of the exception
+     */
+    public DmiException(final String message, final String details, final Throwable cause) {
+        super(message, cause);
+        this.details = details;
+    }
 
 }

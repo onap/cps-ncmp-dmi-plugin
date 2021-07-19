@@ -18,32 +18,21 @@
  *  ============LICENSE_END=========================================================
  */
 
-package org.onap.cps.ncmp.dmi.rest.controller;
+package org.onap.cps.ncmp.dmi.exception;
 
-import org.onap.cps.ncmp.dmi.rest.api.DmiPluginApi;
-import org.onap.cps.ncmp.dmi.service.DmiService;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+public class ModulesNotFoundException extends RuntimeException {
+    private String cmHandle;
 
+    public static ModulesNotFoundException createWith(final String cmHandle) {
+        return new ModulesNotFoundException(cmHandle);
+    }
 
-@RequestMapping("${rest.api.dmi-base-path}")
-@RestController
-public class DmiRestController implements DmiPluginApi {
-
-    private DmiService dmiService;
-
-    @Autowired
-    public DmiRestController(final DmiService dmiService) {
-        this.dmiService = dmiService;
+    private ModulesNotFoundException(final String cmHandle) {
+        this.cmHandle = cmHandle;
     }
 
     @Override
-    public ResponseEntity<String> getModulesForCmHandle(final String cmHandle) {
-
-        final String modulesListAsJson = dmiService.getModulesForCmHandle(cmHandle);
-        return new ResponseEntity<>(modulesListAsJson, HttpStatus.OK);
+    public String getMessage() {
+        return "Modules for '" + cmHandle + "' not found";
     }
 }
