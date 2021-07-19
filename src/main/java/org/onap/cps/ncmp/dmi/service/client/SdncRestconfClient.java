@@ -15,49 +15,43 @@
  *  limitations under the License.
  *
  *  SPDX-License-Identifier: Apache-2.0
- * ============LICENSE_END=========================================================
+ *  ============LICENSE_END=========================================================
  */
 
 package org.onap.cps.ncmp.dmi.service.client;
 
-import org.onap.cps.ncmp.dmi.config.DmiConfiguration.CpsProperties;
+import org.onap.cps.ncmp.dmi.config.DmiConfiguration.SdncProperties;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Component;
 import org.springframework.web.client.RestTemplate;
-import org.springframework.web.util.UriComponentsBuilder;
 
 @Component
-public class NcmpRestClient {
-
-    private CpsProperties cpsProperties;
+public class SdncRestconfClient {
+    private SdncProperties sdncProperties;
     private RestTemplate restTemplate;
 
-    public NcmpRestClient(final CpsProperties cpsProperties, final RestTemplate restTemplate) {
-        this.cpsProperties = cpsProperties;
+    public SdncRestconfClient(final SdncProperties sdncProperties, final RestTemplate restTemplate) {
+        this.sdncProperties = sdncProperties;
         this.restTemplate = restTemplate;
     }
 
     /**
-     * Register a cmHandle with NCMP using a HTTP call.
-     * @param jsonData json data
+     * restconf get operation on sdnc.
+     *
+     * @param getResourceUrl sdnc get url
+     *
      * @return the response entity
      */
-    public ResponseEntity<String> registerCmHandlesWithNcmp(final String jsonData) {
-        final var ncmpRegistrationUrl = buildNcmpRegistrationUrl();
+    public ResponseEntity<String> getOperation(final String getResourceUrl) {
+        final StringBuilder sdncBaseUrl = new StringBuilder(sdncProperties.getBaseUrl());
+        sdncBaseUrl.append(getResourceUrl);
         final var httpHeaders = new HttpHeaders();
-        httpHeaders.setBasicAuth(cpsProperties.getAuthUsername(), cpsProperties.getAuthPassword());
-        httpHeaders.set(HttpHeaders.CONTENT_TYPE, MediaType.APPLICATION_JSON_VALUE);
-        final var httpEntity = new HttpEntity<>(jsonData, httpHeaders);
-        return restTemplate.postForEntity(ncmpRegistrationUrl, httpEntity, String.class);
-    }
-
-    private String buildNcmpRegistrationUrl() {
-        return UriComponentsBuilder
-            .fromHttpUrl(cpsProperties.getBaseUrl())
-            .path(cpsProperties.getDmiRegistrationUrl())
-            .toUriString();
+        httpHeaders.setBasicAuth(sdncProperties.getAuthUsername(), sdncProperties.getAuthPassword());
+        httpHeaders.set(HttpHeaders.ACCEPT, MediaType.APPLICATION_JSON.toString());
+        final var httpEntity = new HttpEntity<>(httpHeaders);
+        return restTemplate.getForEntity(sdncBaseUrl.toString(), String.class, httpEntity);
     }
 }

@@ -20,7 +20,12 @@
 
 package org.onap.cps.ncmp.dmi.rest.controller
 
+
+import org.onap.cps.ncmp.dmi.exception.DmiException
+import org.onap.cps.ncmp.dmi.exception.ModulesNotFoundException
 import org.onap.cps.ncmp.dmi.service.DmiService
+import org.onap.cps.ncmp.dmi.service.DmiServiceImpl
+import org.springframework.http.MediaType
 
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get
 
@@ -33,6 +38,8 @@ import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest
 import org.springframework.test.web.servlet.MockMvc
 import spock.lang.Specification
 
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post
+
 @WebMvcTest
 @AutoConfigureMockMvc(addFilters = false)
 class DmiRestControllerSpec extends Specification {
@@ -43,22 +50,77 @@ class DmiRestControllerSpec extends Specification {
     @Autowired
     private MockMvc mvc
 
-    @Value('${rest.api.dmi-base-path}')
-    def basePath
+    @Value('${rest.api.dmi-base-path}/v1')
+    def basePathV1
 
-    def 'Get Hello World'() {
-        given: 'hello world endpoint'
-            def helloWorldEndpoint = "$basePath/v1/helloworld"
+    def 'Get all moduels for given cm handle with valid response.'() {
 
-        when: 'get hello world api is invoked'
-            def response = mvc.perform(
-                                    get(helloWorldEndpoint)
-                           ).andReturn().response
+        given: 'url and request body'
+            def getModuleUrl = "$basePathV1/ch/node1/modules"
 
-        then: 'Response Status is OK and contains expected text'
+            mockDmiService.getModulesForCmHandle("node1") >> "json"
+
+        when: 'post is being called'
+            def response = mvc.perform( post(getModuleUrl)
+                            .contentType(MediaType.APPLICATION_JSON))
+                            .andReturn().response
+
+        then: 'response should match'
             response.status == HttpStatus.OK.value()
-        then: 'the java API was called with the correct parameters'
-            1 * mockDmiService.getHelloWorld()
+
+        and: 'content should match'
+            response.getContentAsString() == 'json'
+
     }
 
+    def 'Get all modules for given cm handle threw DmiException.'() {
+
+        given: 'url and request body'
+            def getModuleUrl = "$basePathV1/ch/node1/modules"
+
+        when: 'post is being called'
+            def response = mvc.perform( post(getModuleUrl)
+                    .contentType(MediaType.APPLICATION_JSON))
+                    .andReturn().response
+
+        then: 'mock throw DmiException'
+            1 * mockDmiService.getModulesForCmHandle("node1") >> { throw new DmiException("message", "detail") }
+
+        and: 'response should be internal server error'
+            response.status == HttpStatus.INTERNAL_SERVER_ERROR.value()
+    }
+
+    def 'Get all modules for given cm handle threw ModuleNotFoundEx.'() {
+
+        given: 'url and request body'
+            def getModuleUrl = "$basePathV1/ch/node1/modules"
+
+        when: 'post is being called'
+            def response = mvc.perform( post(getModuleUrl)
+                    .contentType(MediaType.APPLICATION_JSON))
+                    .andReturn().response
+
+        then: 'mock throw ModulesNotFoundException'
+            1 * mockDmiService.getModulesForCmHandle("node1") >> { throw new ModulesNotFoundException("cm-handle", "") }
+
+        then: 'response should be not found'
+            response.status == HttpStatus.NOT_FOUND.value()
+    }
+
+    def 'Get all modules for given cm handle threw Some RuntimeException.'() {
+
+        given: 'url and request body'
+            def getModuleUrl = "$basePathV1/ch/node1/modules"
+
+        when: 'post is being called'
+            def response = mvc.perform( post(getModuleUrl)
+                    .contentType(MediaType.APPLICATION_JSON))
+                    .andReturn().response
+
+        then: 'mock throw RuntimeException'
+            1 * mockDmiService.getModulesForCmHandle("node1") >> { throw new RuntimeException() }
+
+        then: 'response should be internal server error'
+            response.status == HttpStatus.INTERNAL_SERVER_ERROR.value()
+    }
 }
