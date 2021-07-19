@@ -20,13 +20,40 @@
 
 package org.onap.cps.ncmp.dmi.service;
 
+import org.onap.cps.ncmp.dmi.model.RequestOperation;
+import org.onap.cps.ncmp.dmi.service.client.SdncOperations;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
+
+import java.util.Optional;
 
 @Service
 public class DmiServiceImpl implements DmiService {
 
+    private SdncOperations sdncOperations;
+
+    @Autowired
+    public DmiServiceImpl(SdncOperations sdncOperations){
+        this.sdncOperations = sdncOperations;
+    }
+
     @Override
     public String getHelloWorld() {
         return "Hello World";
+    }
+
+    @Override
+    public Optional<String> getModulesForCmhandle(final String cmHandleId, final RequestOperation requestOperation) {
+        if(requestOperation.getOperation() != RequestOperation.OperationEnum.READ){
+            return Optional.empty();
+        }
+        final ResponseEntity<String> responseEntity = sdncOperations.getModulesFromNode(cmHandleId);
+        if(responseEntity.getStatusCode() == HttpStatus.OK){
+            return Optional.of(responseEntity.getBody());
+        } else {
+            return Optional.empty();
+        }
     }
 }

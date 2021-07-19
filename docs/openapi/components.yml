@@ -11,6 +11,27 @@ components:
         details:
           type: string
 
+    operation-body:
+      required:
+        - operation
+      type: object
+      properties:
+        operation:
+          type: string
+          enum:
+            - read
+            - write
+        data-type:
+          type: string
+          enum:
+            - application/json
+        data:
+          type: object
+        additionalProperties:
+          type: object
+          additionalProperties:
+            type: string
+
   responses:
     NotFound:
       description: The specified resource was not found

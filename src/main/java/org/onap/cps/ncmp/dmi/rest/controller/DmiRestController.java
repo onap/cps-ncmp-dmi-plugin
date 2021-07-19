@@ -20,13 +20,20 @@
 
 package org.onap.cps.ncmp.dmi.rest.controller;
 
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import org.onap.cps.ncmp.dmi.model.RequestOperation;
 import org.onap.cps.ncmp.dmi.service.DmiService;
 import org.onap.cps.ncmp.rest.api.DmiPluginApi;
+import org.onap.cps.ncmp.rest.model.OperationBody;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+
+import javax.validation.Valid;
+import java.util.Optional;
 
 @RequestMapping("${rest.api.dmi-base-path}")
 @RestController
@@ -35,10 +42,30 @@ public class DmiRestController implements DmiPluginApi {
     @Autowired
     private DmiService dmiService;
 
+    @Autowired
+    private ObjectMapper objectMapper;
+
     @Override
     public ResponseEntity<Object> helloWorld() {
         final var helloWorld = dmiService.getHelloWorld();
         return new ResponseEntity<>(helloWorld, HttpStatus.OK);
+    }
+
+    @Override
+    public ResponseEntity<String> getModulesForCmhandle(@Valid OperationBody operationBody, String cmhandleid) {
+        if(cmhandleid == null
+                || cmhandleid.isEmpty()
+                || operationBody.getOperation() != OperationBody.OperationEnum.READ) {
+            return new ResponseEntity<>(HttpStatus.NOT_ACCEPTABLE);
+        }
+        final RequestOperation requestOperation = objectMapper.convertValue(operationBody, RequestOperation.class);
+        final Optional<String> optional = dmiService.getModulesForCmhandle(cmhandleid, requestOperation);
+
+        if(optional.isEmpty()) {
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+        }
+
+        return new ResponseEntity<>(optional.get(), HttpStatus.OK);
     }
 
 }
