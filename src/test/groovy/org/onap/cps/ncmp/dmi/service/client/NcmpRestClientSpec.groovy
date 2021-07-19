@@ -20,14 +20,14 @@
 
 package org.onap.cps.ncmp.dmi.service.client
 
-import org.onap.cps.ncmp.dmi.config.CpsConfiguration
+import org.onap.cps.ncmp.dmi.config.DmiConfiguration
 import org.springframework.http.ResponseEntity
 import org.springframework.web.client.RestTemplate
 import spock.lang.Specification
 
 class NcmpRestClientSpec extends Specification {
     def objectUnderTest = new NcmpRestClient(mockCpsProperties, mockRestTemplate)
-    def mockCpsProperties = Mock(CpsConfiguration.CpsProperties)
+    def mockCpsProperties = Mock(DmiConfiguration.CpsProperties)
     def mockRestTemplate = Mock(RestTemplate)
 
     def setup() {

@@ -54,3 +54,9 @@ cps-core:
   auth:
     username: ${CPS_CORE_USERNAME}
     password: ${CPS_CORE_PASSWORD}
+
+sdnc:
+  baseUrl: http://${SDNC_HOST}:${SDNC_PORT}
+  auth:
+    username: ${SDNC_USERNAME}
+    password: ${SDNC_PASSWORD}

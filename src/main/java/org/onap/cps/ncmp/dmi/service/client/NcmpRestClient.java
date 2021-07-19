@@ -20,7 +20,7 @@
 
 package org.onap.cps.ncmp.dmi.service.client;
 
-import org.onap.cps.ncmp.dmi.config.CpsConfiguration.CpsProperties;
+import org.onap.cps.ncmp.dmi.config.DmiConfiguration.CpsProperties;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.MediaType;

@@ -24,8 +24,12 @@ info:
 servers:
   - url: //localhost:8088/
 tags:
-  - name: dmi-rest
-    description: DMI Rest
+  - name: dmi-plugin-internal
+    description: DMI plugin internal rest apis
+  - name: dmi-plugin
+    description: DMI plugin rest apis
+
+
 paths:
   /v1/helloworld:
     get:
@@ -37,6 +41,35 @@ paths:
       responses:
         '200':
           $ref: 'components.yml#/components/responses/Ok'
+        '400':
+          $ref: 'components.yml#/components/responses/BadRequest'
+        '401':
+          $ref: 'components.yml#/components/responses/Unauthorized'
+        '403':
+          $ref: 'components.yml#/components/responses/Forbidden'
+
+  /v1/ch/{cmhandleid}/modules :
+    post:
+      tags:
+        - dmi-plugin
+      summary: xxx
+      description: xxx
+      operationId: getModulesForCmhandle
+      parameters:
+        - name: cmhandleid
+          in: path
+          description: ID of cmhandle to fetch all schemas
+          required: true
+          schema:
+            type: String
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: 'components.yml#/components/schemas/operation-body'
+      responses:
+        '200':
+          $ref: 'components.yml#/components/responses/OK'
         '400':
           $ref: 'components.yml#/components/responses/BadRequest'
         '401':

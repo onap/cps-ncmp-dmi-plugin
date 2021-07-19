@@ -28,4 +28,15 @@ public interface DmiService {
      * Return Simple Hello World Statement.
      */
     String getHelloWorld();
+
+    /**
+     * This method used to register the given {@code CmHandles}
+     * which contains list of {@code CmHandle} to cps repository.
+     *
+     * @param cmHandleId cm-handle id to fetch the modules information
+     * @param jsonBody body of post request
+     * @return {@code boolean} returns true for success and false for failure
+     */
+    Object getModulesForCmhandle(String cmHandleId, String jsonBody);
+
 }

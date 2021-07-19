@@ -29,4 +29,9 @@ public class DmiServiceImpl implements DmiService {
     public String getHelloWorld() {
         return "Hello World";
     }
+
+    @Override
+    public Object getModulesForCmhandle(final String cmHandleId, final String jsonBody) {
+        return null;
+    }
 }
