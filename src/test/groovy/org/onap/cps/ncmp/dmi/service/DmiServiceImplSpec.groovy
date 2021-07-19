@@ -21,14 +21,41 @@
 package org.onap.cps.ncmp.dmi.service
 
 
+import org.onap.cps.ncmp.dmi.service.operation.SdncOperations
+import org.springframework.http.HttpStatus
+import org.springframework.http.ResponseEntity
 import spock.lang.Specification
 
 class DmiServiceImplSpec extends Specification {
+
     def objectUnderTest = new DmiServiceImpl()
+
+    def mockSdncOperations = Mock(SdncOperations)
+
+    def setup() {
+        objectUnderTest.sdncOperations = mockSdncOperations
+    }
 
     def 'Retrieve Hello World'() {
         expect: 'Hello World is Returned'
             objectUnderTest.getHelloWorld() == 'Hello World'
     }
 
+    def 'Call getModulesForCmhandle with valid params.'() {
+
+        given: 'cm handle id , requestoperation'
+            def cmHandle = "node1"
+            mockSdncOperations.getModulesFromNode(cmHandle) >> responseEntity
+
+        when: 'getModulesForCmhandle is called'
+            def optional = objectUnderTest.getModulesForCmhandle(cmHandle)
+
+        then:
+            optional.isEmpty() == expected
+
+        where:
+            scenario                               |   responseEntity                                              ||  expected
+            'sdncoperation returns OK'             |   new ResponseEntity<String>("body", HttpStatus.OK)           ||  false
+            'sdncoperation return BAD REQUEST'     |   new ResponseEntity<String>("body", HttpStatus.BAD_REQUEST)  ||  true
+    }
 }

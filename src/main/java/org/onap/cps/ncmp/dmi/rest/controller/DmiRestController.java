@@ -20,13 +20,16 @@
 
 package org.onap.cps.ncmp.dmi.rest.controller;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
+import java.util.Optional;
+import org.onap.cps.ncmp.dmi.rest.api.DmiPluginApi;
 import org.onap.cps.ncmp.dmi.service.DmiService;
-import org.onap.cps.ncmp.rest.api.DmiPluginApi;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+
 
 @RequestMapping("${rest.api.dmi-base-path}")
 @RestController
@@ -35,10 +38,25 @@ public class DmiRestController implements DmiPluginApi {
     @Autowired
     private DmiService dmiService;
 
+    @Autowired
+    private ObjectMapper objectMapper;
+
+
     @Override
     public ResponseEntity<Object> helloWorld() {
         final var helloWorld = dmiService.getHelloWorld();
         return new ResponseEntity<>(helloWorld, HttpStatus.OK);
     }
 
+
+    @Override
+    public ResponseEntity<String> getModulesForCmhandle(final String cmHandle) {
+        final Optional<String> optionalModulesListAsJson = dmiService.getModulesForCmhandle(cmHandle);
+
+        if (optionalModulesListAsJson.isEmpty()) {
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+        }
+
+        return new ResponseEntity<>(optionalModulesListAsJson.get(), HttpStatus.OK);
+    }
 }
