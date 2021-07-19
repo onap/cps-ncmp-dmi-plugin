@@ -20,18 +20,20 @@
 
 package org.onap.cps.ncmp.dmi.rest.controller
 
+import org.onap.cps.ncmp.dmi.exception.DmiException
+import org.onap.cps.ncmp.dmi.exception.ModulesNotFoundException
 import org.onap.cps.ncmp.dmi.service.DmiService
-
-import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get
-
 import org.spockframework.spring.SpringBean
-import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc
-import org.springframework.http.HttpStatus
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.beans.factory.annotation.Value
+import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest
+import org.springframework.http.HttpStatus
+import org.springframework.http.MediaType
 import org.springframework.test.web.servlet.MockMvc
 import spock.lang.Specification
+
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post
 
 @WebMvcTest
 @AutoConfigureMockMvc(addFilters = false)
@@ -43,22 +45,40 @@ class DmiRestControllerSpec extends Specification {
     @Autowired
     private MockMvc mvc
 
-    @Value('${rest.api.dmi-base-path}')
-    def basePath
+    @Value('${rest.api.dmi-base-path}/v1')
+    def basePathV1
 
-    def 'Get Hello World'() {
-        given: 'hello world endpoint'
-            def helloWorldEndpoint = "$basePath/v1/helloworld"
-
-        when: 'get hello world api is invoked'
-            def response = mvc.perform(
-                                    get(helloWorldEndpoint)
-                           ).andReturn().response
-
-        then: 'Response Status is OK and contains expected text'
+    def 'Get all modules for given cm handle.'() {
+        given: 'REST endpoint for getting all modules'
+            def getModuleUrl = "$basePathV1/ch/node1/modules"
+        and: 'get modules for cm-handle returns a json'
+            def someJson = 'some-json'
+            mockDmiService.getModulesForCmHandle('node1') >> someJson
+        when: 'post is being called'
+            def response = mvc.perform( post(getModuleUrl)
+                            .contentType(MediaType.APPLICATION_JSON))
+                            .andReturn().response
+        then: 'status is OK'
             response.status == HttpStatus.OK.value()
-        then: 'the java API was called with the correct parameters'
-            1 * mockDmiService.getHelloWorld()
+        and: 'the response content matches the result from the DMI service'
+            response.getContentAsString() == someJson
     }
 
+    def 'Get all modules for given cm handle with exception handling of #scenario.'() {
+        given: 'REST endpoint for getting all modules'
+            def getModuleUrl = "$basePathV1/ch/node1/modules"
+        and: 'get modules for cm-handle throws #exceptionClass'
+            mockDmiService.getModulesForCmHandle('node1') >> { throw Mock(exceptionClass) }
+        when: 'post is invoked'
+            def response = mvc.perform( post(getModuleUrl)
+                    .contentType(MediaType.APPLICATION_JSON))
+                    .andReturn().response
+        then: 'response status is #expectedResponse'
+            response.status == expectedResponse
+        where: 'the scenario is #scenario'
+            scenario                       |  exceptionClass                 || expectedResponse
+            'dmi service exception'        |  DmiException.class             || HttpStatus.INTERNAL_SERVER_ERROR.value()
+            'no modules found'             |  ModulesNotFoundException.class || HttpStatus.NOT_FOUND.value()
+            'any other runtime exception'  |  RuntimeException.class         || HttpStatus.INTERNAL_SERVER_ERROR.value()
+    }
 }

@@ -20,15 +20,54 @@
 
 package org.onap.cps.ncmp.dmi.service
 
-
+import org.onap.cps.ncmp.dmi.exception.DmiException
+import org.onap.cps.ncmp.dmi.exception.ModulesNotFoundException
+import org.onap.cps.ncmp.dmi.service.operation.SdncOperations
+import org.springframework.http.HttpStatus
+import org.springframework.http.ResponseEntity
 import spock.lang.Specification
 
 class DmiServiceImplSpec extends Specification {
+
     def objectUnderTest = new DmiServiceImpl()
 
-    def 'Retrieve Hello World'() {
-        expect: 'Hello World is Returned'
-            objectUnderTest.getHelloWorld() == 'Hello World'
+    def mockSdncOperations = Mock(SdncOperations)
+
+    def setup() {
+        objectUnderTest.sdncOperations = mockSdncOperations
     }
 
+    def 'Call get modules for cm-handle on dmi Service.'() {
+        given: 'cm handle id'
+            def cmHandle = 'node1'
+        and: 'request operation returns OK'
+            def body = 'body'
+            mockSdncOperations.getModulesFromNode(cmHandle) >> new ResponseEntity<String>(body, HttpStatus.OK)
+        when: 'get modules for cm-handle is called'
+            def result = objectUnderTest.getModulesForCmHandle(cmHandle)
+        then: 'result is equal to the response from the SDNC service'
+            result == body
+    }
+
+    def 'Call get modules for cm-handle and SDNC returns "bad request" status.'() {
+        given: 'cm handle id'
+            def cmHandle = 'node1'
+        and: 'get modules from node returns "bad request" status'
+            mockSdncOperations.getModulesFromNode(cmHandle) >> new ResponseEntity<String>('body', HttpStatus.BAD_REQUEST)
+        when: 'get modules for cm-handle is called'
+            objectUnderTest.getModulesForCmHandle(cmHandle)
+        then: 'dmi exception is thrown'
+            thrown( DmiException )
+    }
+
+    def 'Call get modules for cm-handle and SDNC returns OK with empty body.'() {
+        given: 'cm handle id'
+            def cmHandle = 'node1'
+        and: 'get modules for cm-handle returns OK with empty body'
+            mockSdncOperations.getModulesFromNode(cmHandle) >> new ResponseEntity<String>('', HttpStatus.OK)
+        when: 'get modules for cm-handle is called'
+            objectUnderTest.getModulesForCmHandle(cmHandle)
+        then: 'ModulesNotFoundException is thrown'
+            thrown( ModulesNotFoundException )
+    }
 }

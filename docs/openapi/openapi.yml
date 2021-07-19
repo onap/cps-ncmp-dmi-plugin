@@ -24,19 +24,49 @@ info:
 servers:
   - url: //localhost:8088/
 tags:
-  - name: dmi-rest
-    description: DMI Rest
+  - name: dmi-plugin-internal
+    description: DMI plugin internal rest apis
+  - name: dmi-plugin
+    description: DMI plugin rest apis
+
+
 paths:
-  /v1/helloworld:
-    get:
-      description: Hello World
+  /v1/ch/{cmHandle}/modules :
+    post:
       tags:
         - dmi-plugin
-      summary: Hello World
-      operationId: helloWorld
+      summary: Get all modules for cm handle
+      description: Get all modules for given cm handle
+      operationId: getModulesForCmHandle
+      parameters:
+        - name: cmHandle
+          in: path
+          description: The cm handle to fetch all the modules
+          required: true
+          schema:
+            type: string
       responses:
         '200':
-          $ref: 'components.yml#/components/responses/Ok'
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: string
+                example: {
+                            'schemas': {
+                              'schema': [
+                                {
+                                  'identifier': 'example-identifier',
+                                  'version': 'example-version',
+                                  'format': 'example-format',
+                                  'namespace': 'example:namespace',
+                                  'location': [
+                                    'example-location'
+                                  ]
+                                }
+                              ]
+                            }
+                          }
         '400':
           $ref: 'components.yml#/components/responses/BadRequest'
         '401':

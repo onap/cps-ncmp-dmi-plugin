@@ -20,13 +20,37 @@
 
 package org.onap.cps.ncmp.dmi.service;
 
+import io.micrometer.core.instrument.util.StringUtils;
+import org.onap.cps.ncmp.dmi.exception.DmiException;
+import org.onap.cps.ncmp.dmi.exception.ModulesNotFoundException;
+import org.onap.cps.ncmp.dmi.service.operation.SdncOperations;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
 @Service
 public class DmiServiceImpl implements DmiService {
 
+    private SdncOperations sdncOperations;
+
+    @Autowired
+    public DmiServiceImpl(final SdncOperations sdncOperations) {
+        this.sdncOperations = sdncOperations;
+    }
+
     @Override
-    public String getHelloWorld() {
-        return "Hello World";
+    public String getModulesForCmHandle(final String cmHandle) throws DmiException {
+        final ResponseEntity<String> responseEntity = sdncOperations.getModulesFromNode(cmHandle);
+        if (responseEntity.getStatusCode() == HttpStatus.OK) {
+            final String responseBody = responseEntity.getBody();
+            if (StringUtils.isEmpty(responseBody)) {
+                throw new ModulesNotFoundException(cmHandle, "SDNC returned no modules for given cm-handle.");
+            }
+            return responseBody;
+        } else {
+            throw new DmiException("SDNC is not able to process request.",
+                    "response code : " + responseEntity.getStatusCode() + " message : " + responseEntity.getBody());
+        }
     }
 }
