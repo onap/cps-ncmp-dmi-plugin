@@ -20,7 +20,10 @@
 
 package org.onap.cps.ncmp.dmi.rest.controller
 
+
+import org.onap.cps.ncmp.dmi.exception.DmiException
 import org.onap.cps.ncmp.dmi.service.DmiService
+import org.springframework.http.MediaType
 
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get
 
@@ -32,6 +35,8 @@ import org.springframework.beans.factory.annotation.Value
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest
 import org.springframework.test.web.servlet.MockMvc
 import spock.lang.Specification
+
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post
 
 @WebMvcTest
 @AutoConfigureMockMvc(addFilters = false)
@@ -45,6 +50,12 @@ class DmiRestControllerSpec extends Specification {
 
     @Value('${rest.api.dmi-base-path}')
     def basePath
+
+    def basePathV1
+
+    def setup(){
+        basePathV1 = "$basePath/v1"
+    }
 
     def 'Get Hello World'() {
         given: 'hello world endpoint'
@@ -61,4 +72,45 @@ class DmiRestControllerSpec extends Specification {
             1 * mockDmiService.getHelloWorld()
     }
 
+    def 'Get all moduels for given cm handle with scenarios.'() {
+
+        given: 'url and request body'
+            def getModuleUrl = "$basePathV1/ch/node1/modules"
+
+            def jsonBody = "some json"
+
+            mockDmiService.getModulesForCmHandle(_ as String) >> responseFromService
+
+        when: 'post is being called'
+            def response = mvc.perform( post(getModuleUrl)
+                                        .contentType(MediaType.APPLICATION_JSON)
+                                        .content(jsonBody)).andReturn().response
+
+        then: 'response should match'
+            response.status == expectedResponse
+
+        where:
+            scenario                       |  responseFromService                                || expectedResponse
+            'valid response body'          |  Optional.of("{json}")                              || HttpStatus.OK.value()
+            'empty response body'          |  Optional.empty()                                   || HttpStatus.NOT_FOUND.value()
+
+    }
+
+    def 'Get all moduels for given cm handle threw excpetion.'() {
+
+        given: 'url and request body'
+        def getModuleUrl = "$basePathV1/ch/node1/modules"
+
+        def jsonBody = "some json"
+
+        mockDmiService.getModulesForCmHandle(_ as String) >> { throw new DmiException("message", "detail") }
+
+        when: 'post is being called'
+        def response = mvc.perform( post(getModuleUrl)
+                .contentType(MediaType.APPLICATION_JSON)
+                .content(jsonBody)).andReturn().response
+
+        then: 'response should be internal server error'
+            response.status == HttpStatus.INTERNAL_SERVER_ERROR.value()
+    }
 }

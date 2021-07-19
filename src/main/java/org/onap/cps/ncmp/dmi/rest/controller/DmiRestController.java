@@ -20,13 +20,16 @@
 
 package org.onap.cps.ncmp.dmi.rest.controller;
 
+import java.util.Optional;
+import org.onap.cps.ncmp.dmi.exception.DmiException;
+import org.onap.cps.ncmp.dmi.rest.api.DmiPluginApi;
 import org.onap.cps.ncmp.dmi.service.DmiService;
-import org.onap.cps.ncmp.rest.api.DmiPluginApi;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+
 
 @RequestMapping("${rest.api.dmi-base-path}")
 @RestController
@@ -41,4 +44,19 @@ public class DmiRestController implements DmiPluginApi {
         return new ResponseEntity<>(helloWorld, HttpStatus.OK);
     }
 
+
+    @Override
+    public ResponseEntity<String> getModulesForCmHandle(final String cmHandle) {
+
+        try {
+            final Optional<String> optionalModulesListAsJson = dmiService.getModulesForCmHandle(cmHandle);
+            if (optionalModulesListAsJson.isPresent()) {
+                return new ResponseEntity<>(optionalModulesListAsJson.get(), HttpStatus.OK);
+            } else {
+                return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+            }
+        } catch (final DmiException e) {
+            return new ResponseEntity<>(e.getDetails(), HttpStatus.INTERNAL_SERVER_ERROR);
+        }
+    }
 }

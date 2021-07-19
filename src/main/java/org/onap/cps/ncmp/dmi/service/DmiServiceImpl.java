@@ -20,13 +20,37 @@
 
 package org.onap.cps.ncmp.dmi.service;
 
+import java.util.Optional;
+import org.onap.cps.ncmp.dmi.exception.DmiException;
+import org.onap.cps.ncmp.dmi.service.operation.SdncOperations;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
 @Service
 public class DmiServiceImpl implements DmiService {
 
+    private SdncOperations sdncOperations;
+
+    @Autowired
+    public DmiServiceImpl(final SdncOperations sdncOperations) {
+        this.sdncOperations = sdncOperations;
+    }
+
     @Override
     public String getHelloWorld() {
         return "Hello World";
+    }
+
+    @Override
+    public Optional<String> getModulesForCmHandle(final String cmHandle) throws DmiException {
+        final ResponseEntity<String> responseEntity = sdncOperations.getModulesFromNode(cmHandle);
+        if (responseEntity.getStatusCode() == HttpStatus.OK) {
+            return Optional.of(responseEntity.getBody());
+        } else {
+            throw new DmiException("Server is not able to process request.",
+                    "server code : " + responseEntity.getStatusCode() + " message : " + responseEntity.getBody());
+        }
     }
 }
