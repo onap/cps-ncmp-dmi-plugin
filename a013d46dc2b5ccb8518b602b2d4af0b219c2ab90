@@ -2,6 +2,52 @@
   "comments": [
     {
       "key": {
+        "uuid": "624f039a_27d2f178",
+        "filename": "docs/openapi/components.yml",
+        "patchSetId": 5
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2021-07-20T16:31:19Z",
+      "side": 1,
+      "message": "not needed, can be hardcoded instead, in any case this structure is not in line with the RETS API for the NCMP Registration, see body defined in #1 in https://wiki.onap.org/display/DW/CPS-390+Spike%3A+Define+and+Agree+DMI+Plugin+REST+Interface#CPS390Spike:DefineandAgreeDMIPluginRESTInterface-DMIInventory,Model\u0026DataSyncAPI \n\n(better also await delivery of Dylan\u0027s API)",
+      "range": {
+        "startLine": 25,
+        "startChar": 8,
+        "endLine": 25,
+        "endChar": 26
+      },
+      "revId": "a013d46dc2b5ccb8518b602b2d4af0b219c2ab90",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "0c6f8649_0557a88f",
+        "filename": "docs/openapi/components.yml",
+        "patchSetId": 5
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2021-07-20T16:31:19Z",
+      "side": 1,
+      "message": "not here / not needed at all",
+      "range": {
+        "startLine": 30,
+        "startChar": 0,
+        "endLine": 31,
+        "endChar": 22
+      },
+      "revId": "a013d46dc2b5ccb8518b602b2d4af0b219c2ab90",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "91f84c19_5b190f9a",
         "filename": "src/main/java/org/onap/cps/ncmp/dmi/rest/controller/DmiRestController.java",
         "patchSetId": 5
@@ -19,6 +65,323 @@
         "endLine": 48,
         "endChar": 37
       },
+      "revId": "a013d46dc2b5ccb8518b602b2d4af0b219c2ab90",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "0bc79567_ddd4e078",
+        "filename": "src/main/java/org/onap/cps/ncmp/dmi/rest/controller/DmiRestController.java",
+        "patchSetId": 5
+      },
+      "lineNbr": 48,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2021-07-20T16:31:19Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "91f84c19_5b190f9a",
+      "range": {
+        "startLine": 48,
+        "startChar": 8,
+        "endLine": 48,
+        "endChar": 37
+      },
+      "revId": "a013d46dc2b5ccb8518b602b2d4af0b219c2ab90",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "cd67e474_40b682b2",
+        "filename": "src/main/java/org/onap/cps/ncmp/dmi/service/DmiServiceImpl.java",
+        "patchSetId": 5
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2021-07-20T16:31:19Z",
+      "side": 1,
+      "message": "we should know for definite which response we get, no need for OR (align with Dylan)",
+      "range": {
+        "startLine": 39,
+        "startChar": 60,
+        "endLine": 39,
+        "endChar": 62
+      },
+      "revId": "a013d46dc2b5ccb8518b602b2d4af0b219c2ab90",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "2a6f9f61_9410b270",
+        "filename": "src/main/java/org/onap/cps/ncmp/dmi/service/DmiServiceImpl.java",
+        "patchSetId": 5
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2021-07-20T16:31:19Z",
+      "side": 1,
+      "message": "instead of branching use something like\n\nreturn (esponseEntity.getStatusCode() \u003d\u003d HttpStatus.OK); \n\n(brackets might not be needed too)",
+      "range": {
+        "startLine": 40,
+        "startChar": 9,
+        "endLine": 42,
+        "endChar": 25
+      },
+      "revId": "a013d46dc2b5ccb8518b602b2d4af0b219c2ab90",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "48e8e23a_de7500ed",
+        "filename": "src/test/groovy/org/onap/cps/ncmp/dmi/rest/controller/DmiRestControllerSpec.groovy",
+        "patchSetId": 5
+      },
+      "lineNbr": 65,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2021-07-20T16:31:19Z",
+      "side": 1,
+      "message": "use camel case",
+      "range": {
+        "startLine": 65,
+        "startChar": 16,
+        "endLine": 65,
+        "endChar": 35
+      },
+      "revId": "a013d46dc2b5ccb8518b602b2d4af0b219c2ab90",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "7dd09e03_730d62f5",
+        "filename": "src/test/groovy/org/onap/cps/ncmp/dmi/rest/controller/DmiRestControllerSpec.groovy",
+        "patchSetId": 5
+      },
+      "lineNbr": 98,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2021-07-20T16:31:19Z",
+      "side": 1,
+      "message": "as comment on prev. patch use \u0027fileName\u0027 (see suggestion how to handle empty below)",
+      "range": {
+        "startLine": 98,
+        "startChar": 68,
+        "endLine": 98,
+        "endChar": 80
+      },
+      "revId": "a013d46dc2b5ccb8518b602b2d4af0b219c2ab90",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "8dca5a89_077d6f5a",
+        "filename": "src/test/groovy/org/onap/cps/ncmp/dmi/rest/controller/DmiRestControllerSpec.groovy",
+        "patchSetId": 5
+      },
+      "lineNbr": 99,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2021-07-20T16:31:19Z",
+      "side": 1,
+      "message": "as befoer I dont like this repeat inside table. Now you added an empty string scenario jsut add an empty file too (empty.json), wil make this test easier to read... (I think we did it before for some oterh test too)",
+      "range": {
+        "startLine": 99,
+        "startChar": 68,
+        "endLine": 99,
+        "endChar": 100
+      },
+      "revId": "a013d46dc2b5ccb8518b602b2d4af0b219c2ab90",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "df5d19da_f9582c49",
+        "filename": "src/test/groovy/org/onap/cps/ncmp/dmi/rest/controller/DmiRestControllerSpec.groovy",
+        "patchSetId": 5
+      },
+      "lineNbr": 116,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2021-07-20T16:31:19Z",
+      "side": 1,
+      "message": "is this really testing any production code (not generated code), I don\u0027t think so. So this test can be removed. If not show me the code/branch it covers please",
+      "range": {
+        "startLine": 111,
+        "startChar": 6,
+        "endLine": 116,
+        "endChar": 34
+      },
+      "revId": "a013d46dc2b5ccb8518b602b2d4af0b219c2ab90",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "26842223_2f4e598b",
+        "filename": "src/test/groovy/org/onap/cps/ncmp/dmi/service/DmiServiceImplSpec.groovy",
+        "patchSetId": 5
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2021-07-20T16:31:19Z",
+      "side": 1,
+      "message": "\u0027Register cm handles with ncmp with response is #scenario.\u0027",
+      "range": {
+        "startLine": 38,
+        "startChar": 34,
+        "endLine": 38,
+        "endChar": 38
+      },
+      "revId": "a013d46dc2b5ccb8518b602b2d4af0b219c2ab90",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "a2417479_0fe5f7ad",
+        "filename": "src/test/groovy/org/onap/cps/ncmp/dmi/service/DmiServiceImplSpec.groovy",
+        "patchSetId": 5
+      },
+      "lineNbr": 45,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2021-07-20T16:31:19Z",
+      "side": 1,
+      "message": "\u0027response\u0027 suggests a rest method here, I prefer the term \u0027result\u0027 as more generic",
+      "range": {
+        "startLine": 45,
+        "startChar": 16,
+        "endLine": 45,
+        "endChar": 25
+      },
+      "revId": "a013d46dc2b5ccb8518b602b2d4af0b219c2ab90",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "8df75e43_03250360",
+        "filename": "src/test/groovy/org/onap/cps/ncmp/dmi/service/DmiServiceImplSpec.groovy",
+        "patchSetId": 5
+      },
+      "lineNbr": 51,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2021-07-20T16:31:19Z",
+      "side": 1,
+      "message": "camel",
+      "range": {
+        "startLine": 51,
+        "startChar": 119,
+        "endLine": 51,
+        "endChar": 133
+      },
+      "revId": "a013d46dc2b5ccb8518b602b2d4af0b219c2ab90",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "ec13cff7_0de260bd",
+        "filename": "src/test/groovy/org/onap/cps/ncmp/dmi/service/DmiServiceImplSpec.groovy",
+        "patchSetId": 5
+      },
+      "lineNbr": 51,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2021-07-20T16:31:19Z",
+      "side": 1,
+      "message": "scenario\n\nAlso you need to use this in the \u0027Slogan\u0027 or a another label description for it to be in reports",
+      "range": {
+        "startLine": 51,
+        "startChar": 16,
+        "endLine": 51,
+        "endChar": 59
+      },
+      "revId": "a013d46dc2b5ccb8518b602b2d4af0b219c2ab90",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "80d6ff14_400fc74c",
+        "filename": "src/test/groovy/org/onap/cps/ncmp/dmi/service/DmiServiceImplSpec.groovy",
+        "patchSetId": 5
+      },
+      "lineNbr": 52,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2021-07-20T16:31:19Z",
+      "side": 1,
+      "message": "move common string into the \u0027slogan\u0027 on line 38",
+      "range": {
+        "startLine": 52,
+        "startChar": 17,
+        "endLine": 52,
+        "endChar": 35
+      },
+      "revId": "a013d46dc2b5ccb8518b602b2d4af0b219c2ab90",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "3d90cc1e_155b71cc",
+        "filename": "src/test/groovy/org/onap/cps/ncmp/dmi/service/DmiServiceImplSpec.groovy",
+        "patchSetId": 5
+      },
+      "lineNbr": 52,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2021-07-20T16:31:19Z",
+      "side": 1,
+      "message": "shouldn\u0027t have to repeat this if line 42 is refactored correctly",
+      "range": {
+        "startLine": 52,
+        "startChar": 63,
+        "endLine": 52,
+        "endChar": 84
+      },
+      "revId": "a013d46dc2b5ccb8518b602b2d4af0b219c2ab90",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "3945ae9c_9fde398c",
+        "filename": "src/test/resources/cmhandles.json",
+        "patchSetId": 5
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2021-07-20T16:31:19Z",
+      "side": 1,
+      "message": "prefer to be json beatified (as in next file)",
       "revId": "a013d46dc2b5ccb8518b602b2d4af0b219c2ab90",
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
       "unresolved": true
