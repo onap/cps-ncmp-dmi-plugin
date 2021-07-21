@@ -1,0 +1,487 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "2a042a39_ffa7d421",
+        "filename": "docs/openapi/components.yml",
+        "patchSetId": 2
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2021-07-21T13:28:23Z",
+      "side": 1,
+      "message": "should this not break into key-value pair ?",
+      "range": {
+        "startLine": 30,
+        "startChar": 7,
+        "endLine": 33,
+        "endChar": 24
+      },
+      "revId": "480e9ccf18f554bbd2275c221fbcdc3e73a5e19e",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "c73a3f7e_ff466dda",
+        "filename": "docs/openapi/openapi.yml",
+        "patchSetId": 2
+      },
+      "lineNbr": 59,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2021-07-21T13:28:23Z",
+      "side": 1,
+      "message": "for consistency I think we agreed upon cmhandle (should snake-case be used here cm-handle ?)",
+      "range": {
+        "startLine": 59,
+        "startChar": 16,
+        "endLine": 59,
+        "endChar": 26
+      },
+      "revId": "480e9ccf18f554bbd2275c221fbcdc3e73a5e19e",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "c51100cf_da1168ff",
+        "filename": "docs/openapi/openapi.yml",
+        "patchSetId": 2
+      },
+      "lineNbr": 61,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2021-07-21T13:28:23Z",
+      "side": 1,
+      "message": "The cm handle to fetch all modules for",
+      "range": {
+        "startLine": 61,
+        "startChar": 23,
+        "endLine": 61,
+        "endChar": 58
+      },
+      "revId": "480e9ccf18f554bbd2275c221fbcdc3e73a5e19e",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "93a8408f_5a402b63",
+        "filename": "src/main/java/org/onap/cps/ncmp/dmi/model/RequestOperation.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2021-07-21T13:28:23Z",
+      "side": 1,
+      "message": "this file is quite big and contains 2 inner classes probably better to extract them out in the next iteration",
+      "range": {
+        "startLine": 20,
+        "startChar": 16,
+        "endLine": 20,
+        "endChar": 30
+      },
+      "revId": "480e9ccf18f554bbd2275c221fbcdc3e73a5e19e",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "90537ca1_78722c2f",
+        "filename": "src/main/java/org/onap/cps/ncmp/dmi/model/RequestOperation.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2021-07-21T13:28:23Z",
+      "side": 1,
+      "message": "can you not (static)import this ?",
+      "range": {
+        "startLine": 38,
+        "startChar": 22,
+        "endLine": 38,
+        "endChar": 68
+      },
+      "revId": "480e9ccf18f554bbd2275c221fbcdc3e73a5e19e",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "b17455f6_a71a2694",
+        "filename": "src/main/java/org/onap/cps/ncmp/dmi/model/RequestOperation.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2021-07-21T13:28:23Z",
+      "side": 1,
+      "message": "?",
+      "range": {
+        "startLine": 39,
+        "startChar": 76,
+        "endLine": 39,
+        "endChar": 77
+      },
+      "revId": "480e9ccf18f554bbd2275c221fbcdc3e73a5e19e",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "9021fb00_9245da43",
+        "filename": "src/main/java/org/onap/cps/ncmp/dmi/rest/controller/DmiRestController.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 55,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2021-07-21T13:28:23Z",
+      "side": 1,
+      "message": "cmHandle",
+      "range": {
+        "startLine": 55,
+        "startChar": 99,
+        "endLine": 55,
+        "endChar": 109
+      },
+      "revId": "480e9ccf18f554bbd2275c221fbcdc3e73a5e19e",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "f6f27f91_03905f0c",
+        "filename": "src/main/java/org/onap/cps/ncmp/dmi/rest/controller/DmiRestController.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 62,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2021-07-21T13:28:23Z",
+      "side": 1,
+      "message": "optional what ? e.g. optionalRepspons, optionalModulesAsString ...",
+      "range": {
+        "startLine": 62,
+        "startChar": 31,
+        "endLine": 62,
+        "endChar": 40
+      },
+      "revId": "480e9ccf18f554bbd2275c221fbcdc3e73a5e19e",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "15577893_8b1a0e2a",
+        "filename": "src/main/java/org/onap/cps/ncmp/dmi/service/DmiService.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2021-07-21T13:28:23Z",
+      "side": 1,
+      "message": "see previous suggestion in other file",
+      "range": {
+        "startLine": 40,
+        "startChar": 25,
+        "endLine": 40,
+        "endChar": 70
+      },
+      "revId": "480e9ccf18f554bbd2275c221fbcdc3e73a5e19e",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "ba5fd51a_f3126dfe",
+        "filename": "src/main/java/org/onap/cps/ncmp/dmi/service/DmiService.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 44,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2021-07-21T13:28:23Z",
+      "side": 1,
+      "message": "cmHandle",
+      "range": {
+        "startLine": 44,
+        "startChar": 50,
+        "endLine": 44,
+        "endChar": 60
+      },
+      "revId": "480e9ccf18f554bbd2275c221fbcdc3e73a5e19e",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "7209ca70_885cac17",
+        "filename": "src/main/java/org/onap/cps/ncmp/dmi/service/DmiServiceImpl.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 48,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2021-07-21T13:28:23Z",
+      "side": 1,
+      "message": "cmHandle",
+      "range": {
+        "startLine": 48,
+        "startChar": 63,
+        "endLine": 48,
+        "endChar": 73
+      },
+      "revId": "480e9ccf18f554bbd2275c221fbcdc3e73a5e19e",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "f113c9e5_935b21a6",
+        "filename": "src/main/java/org/onap/cps/ncmp/dmi/service/client/SdncOperations.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2021-07-21T13:28:23Z",
+      "side": 1,
+      "message": "I think using string literal instead of this constant will make the code more readable",
+      "range": {
+        "startLine": 19,
+        "startChar": 32,
+        "endLine": 19,
+        "endChar": 53
+      },
+      "revId": "480e9ccf18f554bbd2275c221fbcdc3e73a5e19e",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "c6f0910e_ab0967c9",
+        "filename": "src/main/java/org/onap/cps/ncmp/dmi/service/client/SdncOperations.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2021-07-21T13:28:23Z",
+      "side": 1,
+      "message": "I think using string literal instead of this constant will make the code more readable",
+      "range": {
+        "startLine": 20,
+        "startChar": 32,
+        "endLine": 20,
+        "endChar": 49
+      },
+      "revId": "480e9ccf18f554bbd2275c221fbcdc3e73a5e19e",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "aa8f4af8_9873453b",
+        "filename": "src/main/java/org/onap/cps/ncmp/dmi/service/client/SdncOperations.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2021-07-21T13:28:23Z",
+      "side": 1,
+      "message": "I think using string literal instead of this constant will make the code more readable",
+      "range": {
+        "startLine": 31,
+        "startChar": 52,
+        "endLine": 31,
+        "endChar": 72
+      },
+      "revId": "480e9ccf18f554bbd2275c221fbcdc3e73a5e19e",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "a91062f0_7efcf1d5",
+        "filename": "src/main/java/org/onap/cps/ncmp/dmi/service/client/SdncOperations.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 45,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2021-07-21T13:28:23Z",
+      "side": 1,
+      "message": "I think string builder use here makes this more complex then needed.\n\nWhy not:\n\n getSchemaUrl \u003d topologyMountUrlTemplate.replace(\"{nodeId}\",nodeId) + GET_SCHEMA_URL;",
+      "range": {
+        "startLine": 43,
+        "startChar": 3,
+        "endLine": 45,
+        "endChar": 39
+      },
+      "revId": "480e9ccf18f554bbd2275c221fbcdc3e73a5e19e",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "af82420e_29ee9148",
+        "filename": "src/main/java/org/onap/cps/ncmp/dmi/service/client/SdncOperations.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 46,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2021-07-21T13:28:23Z",
+      "side": 1,
+      "message": "no relevant anymore but normally when you do have to use a builder and are only interested in the string it produced you would return builder.toString() here....",
+      "range": {
+        "startLine": 46,
+        "startChar": 15,
+        "endLine": 46,
+        "endChar": 22
+      },
+      "revId": "480e9ccf18f554bbd2275c221fbcdc3e73a5e19e",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "63212edc_349e7a3a",
+        "filename": "src/main/java/org/onap/cps/ncmp/dmi/service/client/SdncRestconfClient.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2021-07-21T13:28:23Z",
+      "side": 1,
+      "message": "Operation",
+      "range": {
+        "startLine": 29,
+        "startChar": 37,
+        "endLine": 29,
+        "endChar": 39
+      },
+      "revId": "480e9ccf18f554bbd2275c221fbcdc3e73a5e19e",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "871bac91_e918f7ea",
+        "filename": "src/main/java/org/onap/cps/ncmp/dmi/service/client/SdncRestconfClient.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2021-07-21T13:28:23Z",
+      "side": 1,
+      "message": "needs beter name to distinguis from sdncGetUrl ie. getBaseUrl ?",
+      "range": {
+        "startLine": 29,
+        "startChar": 53,
+        "endLine": 29,
+        "endChar": 59
+      },
+      "revId": "480e9ccf18f554bbd2275c221fbcdc3e73a5e19e",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "847e7c92_c102e3b2",
+        "filename": "src/test/groovy/org/onap/cps/ncmp/dmi/rest/controller/DmiRestControllerSpec.groovy",
+        "patchSetId": 2
+      },
+      "lineNbr": 94,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2021-07-21T13:28:23Z",
+      "side": 1,
+      "message": "I don\u0027t think there is need for a realist json in this test ie. \u0027some json\u0027 should do...\nWe can discuss if needed",
+      "range": {
+        "startLine": 86,
+        "startChar": 28,
+        "endLine": 94,
+        "endChar": 30
+      },
+      "revId": "480e9ccf18f554bbd2275c221fbcdc3e73a5e19e",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "e6eca4ca_7f9cf407",
+        "filename": "src/test/groovy/org/onap/cps/ncmp/dmi/rest/controller/DmiRestControllerSpec.groovy",
+        "patchSetId": 2
+      },
+      "lineNbr": 107,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2021-07-21T13:28:23Z",
+      "side": 1,
+      "message": "check all groovy test for unnecessary use of \" (use \u0027 unless you depend on gString functionality)",
+      "range": {
+        "startLine": 107,
+        "startChar": 12,
+        "endLine": 107,
+        "endChar": 13
+      },
+      "revId": "480e9ccf18f554bbd2275c221fbcdc3e73a5e19e",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "0097b8f5_68d00c43",
+        "filename": "src/test/groovy/org/onap/cps/ncmp/dmi/rest/controller/DmiRestControllerSpec.groovy",
+        "patchSetId": 2
+      },
+      "lineNbr": 112,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2021-07-21T13:28:23Z",
+      "side": 1,
+      "message": "typo",
+      "range": {
+        "startLine": 112,
+        "startChar": 13,
+        "endLine": 112,
+        "endChar": 20
+      },
+      "revId": "480e9ccf18f554bbd2275c221fbcdc3e73a5e19e",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    }
+  ]
+}
