@@ -48,6 +48,52 @@
     },
     {
       "key": {
+        "uuid": "713b707b_169862eb",
+        "filename": "src/main/java/org/onap/cps/ncmp/dmi/service/DmiServiceImpl.java",
+        "patchSetId": 4
+      },
+      "lineNbr": 47,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2021-07-22T16:23:22Z",
+      "side": 1,
+      "message": "uppercase H",
+      "range": {
+        "startLine": 47,
+        "startChar": 43,
+        "endLine": 47,
+        "endChar": 45
+      },
+      "revId": "a7e771fd7c80303d34fea572cab3219395860724",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "5312a39f_01f0c040",
+        "filename": "src/main/java/org/onap/cps/ncmp/dmi/service/DmiServiceImpl.java",
+        "patchSetId": 4
+      },
+      "lineNbr": 49,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2021-07-22T16:23:22Z",
+      "side": 1,
+      "message": "we are ignoring errors?!\nI think any non-200 error should thrown an exception here (logger here or by the caller and return a 500 error there)",
+      "range": {
+        "startLine": 49,
+        "startChar": 43,
+        "endLine": 49,
+        "endChar": 59
+      },
+      "revId": "a7e771fd7c80303d34fea572cab3219395860724",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "c99bb301_5fc55a43",
         "filename": "src/main/java/org/onap/cps/ncmp/dmi/service/client/SdncRestconfClient.java",
         "patchSetId": 4
@@ -64,6 +110,53 @@
         "startChar": 0,
         "endLine": 45,
         "endChar": 62
+      },
+      "revId": "a7e771fd7c80303d34fea572cab3219395860724",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "91d5189b_6a55e7d9",
+        "filename": "src/main/java/org/onap/cps/ncmp/dmi/service/client/SdncRestconfClient.java",
+        "patchSetId": 4
+      },
+      "lineNbr": 45,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2021-07-22T16:23:22Z",
+      "side": 1,
+      "message": "agreed not needed for now",
+      "parentUuid": "c99bb301_5fc55a43",
+      "range": {
+        "startLine": 45,
+        "startChar": 0,
+        "endLine": 45,
+        "endChar": 62
+      },
+      "revId": "a7e771fd7c80303d34fea572cab3219395860724",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "903a76ba_d497007b",
+        "filename": "src/main/java/org/onap/cps/ncmp/dmi/service/client/SdncRestconfClient.java",
+        "patchSetId": 4
+      },
+      "lineNbr": 54,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2021-07-22T16:23:22Z",
+      "side": 1,
+      "message": "set to normal default for rest/json (does it need to be set at all?)",
+      "range": {
+        "startLine": 54,
+        "startChar": 44,
+        "endLine": 54,
+        "endChar": 61
       },
       "revId": "a7e771fd7c80303d34fea572cab3219395860724",
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
@@ -110,6 +203,29 @@
         "startChar": 2,
         "endLine": 76,
         "endChar": 5
+      },
+      "revId": "a7e771fd7c80303d34fea572cab3219395860724",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "54b3696d_387ad2b5",
+        "filename": "src/test/groovy/org/onap/cps/ncmp/dmi/rest/controller/DmiRestControllerSpec.groovy",
+        "patchSetId": 4
+      },
+      "lineNbr": 49,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2021-07-22T16:23:22Z",
+      "side": 1,
+      "message": "why spy?",
+      "range": {
+        "startLine": 49,
+        "startChar": 35,
+        "endLine": 49,
+        "endChar": 40
       },
       "revId": "a7e771fd7c80303d34fea572cab3219395860724",
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
@@ -225,6 +341,75 @@
         "startChar": 13,
         "endLine": 58,
         "endChar": 34
+      },
+      "revId": "a7e771fd7c80303d34fea572cab3219395860724",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "7f777390_45f745d4",
+        "filename": "src/test/groovy/org/onap/cps/ncmp/dmi/service/client/SdncRestconfClientSpec.groovy",
+        "patchSetId": 4
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2021-07-22T16:23:22Z",
+      "side": 1,
+      "message": "getUrl  (can you think of a better name?, to me it is not clear what part of teh URI this represents)",
+      "range": {
+        "startLine": 18,
+        "startChar": 19,
+        "endLine": 18,
+        "endChar": 22
+      },
+      "revId": "a7e771fd7c80303d34fea572cab3219395860724",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "1edf3c01_c42fbc49",
+        "filename": "src/test/groovy/org/onap/cps/ncmp/dmi/service/client/SdncRestconfClientSpec.groovy",
+        "patchSetId": 4
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2021-07-22T16:23:22Z",
+      "side": 1,
+      "message": "not needed, see comment on production code",
+      "range": {
+        "startLine": 31,
+        "startChar": 62,
+        "endLine": 31,
+        "endChar": 71
+      },
+      "revId": "a7e771fd7c80303d34fea572cab3219395860724",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "82c7e07c_a17ace28",
+        "filename": "src/test/groovy/org/onap/cps/ncmp/dmi/service/client/SdncRestconfClientSpec.groovy",
+        "patchSetId": 4
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2021-07-22T16:23:22Z",
+      "side": 1,
+      "message": "you normal verify the interaction OR the (mocked) result (where possible) in this case I would NOT check the interaction but simply defined the mock behavior in the given block instead...",
+      "range": {
+        "startLine": 33,
+        "startChar": 0,
+        "endLine": 37,
+        "endChar": 41
       },
       "revId": "a7e771fd7c80303d34fea572cab3219395860724",
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
