@@ -73,6 +73,30 @@
     },
     {
       "key": {
+        "uuid": "7e5e7475_0a947d5a",
+        "filename": "docs/openapi/components.yml",
+        "patchSetId": 2
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2021-07-22T14:25:12Z",
+      "side": 1,
+      "message": "I looked at the interface proposal again and I think your are right. I don\u0027t fully understand the yml definition but the result in json should look like as you say, \"additionalProperties\":[{\"keyname1\",\"value1\"},{\"keyname2\",\"value1\"}, ...]\n]",
+      "parentUuid": "243f9dd9_9fa8620c",
+      "range": {
+        "startLine": 30,
+        "startChar": 7,
+        "endLine": 33,
+        "endChar": 24
+      },
+      "revId": "480e9ccf18f554bbd2275c221fbcdc3e73a5e19e",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "c73a3f7e_ff466dda",
         "filename": "docs/openapi/openapi.yml",
         "patchSetId": 2
