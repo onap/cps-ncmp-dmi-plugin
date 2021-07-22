@@ -2,6 +2,29 @@
   "comments": [
     {
       "key": {
+        "uuid": "d327eafd_e443dcec",
+        "filename": "src/main/java/org/onap/cps/ncmp/dmi/rest/controller/DmiRestController.java",
+        "patchSetId": 4
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 6841
+      },
+      "writtenOn": "2021-07-22T11:41:52Z",
+      "side": 1,
+      "message": "do we need this?",
+      "range": {
+        "startLine": 42,
+        "startChar": 12,
+        "endLine": 42,
+        "endChar": 38
+      },
+      "revId": "a7e771fd7c80303d34fea572cab3219395860724",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "68ff0642_e2927b78",
         "filename": "src/main/java/org/onap/cps/ncmp/dmi/service/DmiService.java",
         "patchSetId": 4
