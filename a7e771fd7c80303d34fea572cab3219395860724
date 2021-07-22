@@ -1,0 +1,142 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "68ff0642_e2927b78",
+        "filename": "src/main/java/org/onap/cps/ncmp/dmi/service/DmiService.java",
+        "patchSetId": 4
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 6841
+      },
+      "writtenOn": "2021-07-22T09:06:44Z",
+      "side": 1,
+      "message": "please update this",
+      "range": {
+        "startLine": 39,
+        "startChar": 16,
+        "endLine": 39,
+        "endChar": 77
+      },
+      "revId": "a7e771fd7c80303d34fea572cab3219395860724",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "c99bb301_5fc55a43",
+        "filename": "src/main/java/org/onap/cps/ncmp/dmi/service/client/SdncRestconfClient.java",
+        "patchSetId": 4
+      },
+      "lineNbr": 45,
+      "author": {
+        "id": 6841
+      },
+      "writtenOn": "2021-07-22T09:06:44Z",
+      "side": 1,
+      "message": "I think we can remove this because we agreed to only take json. no need to specify the media type",
+      "range": {
+        "startLine": 45,
+        "startChar": 0,
+        "endLine": 45,
+        "endChar": 62
+      },
+      "revId": "a7e771fd7c80303d34fea572cab3219395860724",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "258ba865_9042bd95",
+        "filename": "src/main/java/org/onap/cps/ncmp/dmi/service/client/SdncRestconfClient.java",
+        "patchSetId": 4
+      },
+      "lineNbr": 56,
+      "author": {
+        "id": 6841
+      },
+      "writtenOn": "2021-07-22T09:06:44Z",
+      "side": 1,
+      "message": "not a blocking comment. I prefer getForEntity",
+      "range": {
+        "startLine": 56,
+        "startChar": 28,
+        "endLine": 56,
+        "endChar": 36
+      },
+      "revId": "a7e771fd7c80303d34fea572cab3219395860724",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "8843acfb_c18d8b0c",
+        "filename": "src/test/groovy/org/onap/cps/ncmp/dmi/service/DmiServiceImplSpec.groovy",
+        "patchSetId": 4
+      },
+      "lineNbr": 53,
+      "author": {
+        "id": 6841
+      },
+      "writtenOn": "2021-07-22T09:06:44Z",
+      "side": 1,
+      "message": "add label",
+      "range": {
+        "startLine": 53,
+        "startChar": 8,
+        "endLine": 53,
+        "endChar": 13
+      },
+      "revId": "a7e771fd7c80303d34fea572cab3219395860724",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "fef7dadc_d7ba88a5",
+        "filename": "src/test/groovy/org/onap/cps/ncmp/dmi/service/DmiServiceImplSpec.groovy",
+        "patchSetId": 4
+      },
+      "lineNbr": 56,
+      "author": {
+        "id": 6841
+      },
+      "writtenOn": "2021-07-22T09:06:44Z",
+      "side": 1,
+      "message": "add label",
+      "range": {
+        "startLine": 56,
+        "startChar": 8,
+        "endLine": 56,
+        "endChar": 13
+      },
+      "revId": "a7e771fd7c80303d34fea572cab3219395860724",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "3cdaa22d_b50290d6",
+        "filename": "src/test/groovy/org/onap/cps/ncmp/dmi/service/operation/SdncOperationsSpec.groovy",
+        "patchSetId": 4
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 6841
+      },
+      "writtenOn": "2021-07-22T09:06:44Z",
+      "side": 1,
+      "message": "add label",
+      "range": {
+        "startLine": 27,
+        "startChar": 8,
+        "endLine": 27,
+        "endChar": 12
+      },
+      "revId": "a7e771fd7c80303d34fea572cab3219395860724",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    }
+  ]
+}
