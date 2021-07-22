@@ -49,6 +49,30 @@
     },
     {
       "key": {
+        "uuid": "243f9dd9_9fa8620c",
+        "filename": "docs/openapi/components.yml",
+        "patchSetId": 2
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2021-07-22T11:48:13Z",
+      "side": 1,
+      "message": "yes,but I am not sure, I know that the DB (yang) model has it like that. but maybe we dont need to label them till we convert to (Json) DB entity (Dylan has this code now, i helped him with that). So maybe this is OK",
+      "parentUuid": "60f1c0d7_a539336d",
+      "range": {
+        "startLine": 30,
+        "startChar": 7,
+        "endLine": 33,
+        "endChar": 24
+      },
+      "revId": "480e9ccf18f554bbd2275c221fbcdc3e73a5e19e",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "c73a3f7e_ff466dda",
         "filename": "docs/openapi/openapi.yml",
         "patchSetId": 2
@@ -695,6 +719,30 @@
       "side": 1,
       "message": "I see lot of string operations done here, so i used stringbuilder, if there are multiple threads accessing this then that \u0027ll make lot of string objects , however builder is only one object needed here.",
       "parentUuid": "a91062f0_7efcf1d5",
+      "range": {
+        "startLine": 43,
+        "startChar": 3,
+        "endLine": 45,
+        "endChar": 39
+      },
+      "revId": "480e9ccf18f554bbd2275c221fbcdc3e73a5e19e",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "63927e7c_9f82dbf8",
+        "filename": "src/main/java/org/onap/cps/ncmp/dmi/service/client/SdncOperations.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 45,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2021-07-22T11:48:13Z",
+      "side": 1,
+      "message": "I dont see any threadsafety issue so I think less complex code is better",
+      "parentUuid": "571c9b8d_04da7ddc",
       "range": {
         "startLine": 43,
         "startChar": 3,

@@ -94,6 +94,75 @@
     },
     {
       "key": {
+        "uuid": "9934a964_71bbcb9a",
+        "filename": "src/main/java/org/onap/cps/ncmp/dmi/service/operation/SdncOperations.java",
+        "patchSetId": 4
+      },
+      "lineNbr": 76,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2021-07-22T11:48:13Z",
+      "side": 1,
+      "message": "see pervious comment and reply, I still think it is beter to have mor readable code. Java wil optimze the siting additions anyway",
+      "range": {
+        "startLine": 71,
+        "startChar": 2,
+        "endLine": 76,
+        "endChar": 5
+      },
+      "revId": "a7e771fd7c80303d34fea572cab3219395860724",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "33a777d6_9a590c2c",
+        "filename": "src/test/groovy/org/onap/cps/ncmp/dmi/rest/controller/DmiRestControllerSpec.groovy",
+        "patchSetId": 4
+      },
+      "lineNbr": 95,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2021-07-22T11:48:13Z",
+      "side": 1,
+      "message": "align and rename to \u0027responseFromService\u0027 or similar",
+      "range": {
+        "startLine": 95,
+        "startChar": 45,
+        "endLine": 95,
+        "endChar": 52
+      },
+      "revId": "a7e771fd7c80303d34fea572cab3219395860724",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "4c5202f2_adb678a3",
+        "filename": "src/test/groovy/org/onap/cps/ncmp/dmi/service/DmiServiceImplSpec.groovy",
+        "patchSetId": 4
+      },
+      "lineNbr": 44,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2021-07-22T11:48:13Z",
+      "side": 1,
+      "message": "use \u0027scenario defined\u0027 in table",
+      "range": {
+        "startLine": 44,
+        "startChar": 41,
+        "endLine": 44,
+        "endChar": 54
+      },
+      "revId": "a7e771fd7c80303d34fea572cab3219395860724",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "8843acfb_c18d8b0c",
         "filename": "src/test/groovy/org/onap/cps/ncmp/dmi/service/DmiServiceImplSpec.groovy",
         "patchSetId": 4
@@ -140,6 +209,29 @@
     },
     {
       "key": {
+        "uuid": "57a07626_3edc23d9",
+        "filename": "src/test/groovy/org/onap/cps/ncmp/dmi/service/DmiServiceImplSpec.groovy",
+        "patchSetId": 4
+      },
+      "lineNbr": 58,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2021-07-22T11:48:13Z",
+      "side": 1,
+      "message": "dont\u0027 repeat common string in \u0027scenario\u0027",
+      "range": {
+        "startLine": 58,
+        "startChar": 13,
+        "endLine": 58,
+        "endChar": 34
+      },
+      "revId": "a7e771fd7c80303d34fea572cab3219395860724",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "3cdaa22d_b50290d6",
         "filename": "src/test/groovy/org/onap/cps/ncmp/dmi/service/operation/SdncOperationsSpec.groovy",
         "patchSetId": 4
@@ -156,6 +248,29 @@
         "startChar": 8,
         "endLine": 27,
         "endChar": 12
+      },
+      "revId": "a7e771fd7c80303d34fea572cab3219395860724",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "9490e172_f8178aea",
+        "filename": "src/test/groovy/org/onap/cps/ncmp/dmi/service/operation/SdncOperationsSpec.groovy",
+        "patchSetId": 4
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2021-07-22T11:48:13Z",
+      "side": 1,
+      "message": "you are verify a mock result defined in test, no point!\n\nInstead just check the interaction like 1 * .... (with parameter checks where possible)",
+      "range": {
+        "startLine": 28,
+        "startChar": 12,
+        "endLine": 28,
+        "endChar": 38
       },
       "revId": "a7e771fd7c80303d34fea572cab3219395860724",
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
