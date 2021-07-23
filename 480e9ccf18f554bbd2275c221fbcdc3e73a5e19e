@@ -779,6 +779,30 @@
     },
     {
       "key": {
+        "uuid": "76efe49a_35e93a4b",
+        "filename": "src/main/java/org/onap/cps/ncmp/dmi/service/client/SdncOperations.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 45,
+      "author": {
+        "id": 5006
+      },
+      "writtenOn": "2021-07-23T16:37:24Z",
+      "side": 1,
+      "message": "This is not due to threadsafty, as these are local variable. But if I use string here then there are lot of immutable objects in stack memory if multiple threads accessing it same time. Thats why i used stringbuilder here.",
+      "parentUuid": "63927e7c_9f82dbf8",
+      "range": {
+        "startLine": 43,
+        "startChar": 3,
+        "endLine": 45,
+        "endChar": 39
+      },
+      "revId": "480e9ccf18f554bbd2275c221fbcdc3e73a5e19e",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "af82420e_29ee9148",
         "filename": "src/main/java/org/onap/cps/ncmp/dmi/service/client/SdncOperations.java",
         "patchSetId": 2
