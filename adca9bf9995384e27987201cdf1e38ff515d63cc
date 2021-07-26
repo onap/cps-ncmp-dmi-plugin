@@ -1,0 +1,326 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "22728bd0_c613f1fb",
+        "filename": "src/main/java/org/onap/cps/ncmp/dmi/model/AdditionalProperties.java",
+        "patchSetId": 6
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 7680
+      },
+      "writtenOn": "2021-07-26T16:58:34Z",
+      "side": 1,
+      "message": "Do we already know additional properties list or it is unknown?",
+      "range": {
+        "startLine": 35,
+        "startChar": 13,
+        "endLine": 35,
+        "endChar": 33
+      },
+      "revId": "adca9bf9995384e27987201cdf1e38ff515d63cc",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "44538ddc_781ea967",
+        "filename": "src/main/java/org/onap/cps/ncmp/dmi/model/CreatedCmHandle.java",
+        "patchSetId": 6
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 7680
+      },
+      "writtenOn": "2021-07-26T16:58:34Z",
+      "side": 1,
+      "message": "Can this class represent CMHandle in general or it is specific to create CMHandle? I don\u0027t see any property specific to create operation and got confused.",
+      "range": {
+        "startLine": 36,
+        "startChar": 13,
+        "endLine": 36,
+        "endChar": 28
+      },
+      "revId": "adca9bf9995384e27987201cdf1e38ff515d63cc",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "18618869_ebf53559",
+        "filename": "src/main/java/org/onap/cps/ncmp/dmi/model/CreatedCmHandle.java",
+        "patchSetId": 6
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 7680
+      },
+      "writtenOn": "2021-07-26T16:58:34Z",
+      "side": 1,
+      "message": "this property does not seem to be used anywhere.",
+      "range": {
+        "startLine": 41,
+        "startChar": 12,
+        "endLine": 41,
+        "endChar": 32
+      },
+      "revId": "adca9bf9995384e27987201cdf1e38ff515d63cc",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "a892e5a8_1191fc7c",
+        "filename": "src/main/java/org/onap/cps/ncmp/dmi/rest/controller/DmiRestController.java",
+        "patchSetId": 6
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 7680
+      },
+      "writtenOn": "2021-07-26T16:58:34Z",
+      "side": 1,
+      "message": "It is recommended to use constructor for autowiring.",
+      "range": {
+        "startLine": 40,
+        "startChar": 4,
+        "endLine": 41,
+        "endChar": 34
+      },
+      "revId": "adca9bf9995384e27987201cdf1e38ff515d63cc",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "3d74c288_9d5aa466",
+        "filename": "src/main/java/org/onap/cps/ncmp/dmi/rest/controller/DmiRestController.java",
+        "patchSetId": 6
+      },
+      "lineNbr": 56,
+      "author": {
+        "id": 7680
+      },
+      "writtenOn": "2021-07-26T16:58:34Z",
+      "side": 1,
+      "message": "Return type expect a string but we don\u0027t return anything.",
+      "range": {
+        "startLine": 56,
+        "startChar": 27,
+        "endLine": 56,
+        "endChar": 65
+      },
+      "revId": "adca9bf9995384e27987201cdf1e38ff515d63cc",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "8161aefd_01e02c87",
+        "filename": "src/main/java/org/onap/cps/ncmp/dmi/service/DmiServiceImpl.java",
+        "patchSetId": 6
+      },
+      "lineNbr": 50,
+      "author": {
+        "id": 7680
+      },
+      "writtenOn": "2021-07-26T16:58:34Z",
+      "side": 1,
+      "message": "It is recommended to use constructor for autowiring.",
+      "range": {
+        "startLine": 43,
+        "startChar": 4,
+        "endLine": 50,
+        "endChar": 67
+      },
+      "revId": "adca9bf9995384e27987201cdf1e38ff515d63cc",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "f68442b9_8503b688",
+        "filename": "src/main/java/org/onap/cps/ncmp/dmi/service/DmiServiceImpl.java",
+        "patchSetId": 6
+      },
+      "lineNbr": 70,
+      "author": {
+        "id": 7680
+      },
+      "writtenOn": "2021-07-26T16:58:34Z",
+      "side": 1,
+      "message": "rather than passing json string, we should pass CMHandleOperation",
+      "range": {
+        "startLine": 70,
+        "startChar": 95,
+        "endLine": 70,
+        "endChar": 108
+      },
+      "revId": "adca9bf9995384e27987201cdf1e38ff515d63cc",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "88ccdd70_fae1531d",
+        "filename": "src/main/java/org/onap/cps/ncmp/dmi/service/DmiServiceImpl.java",
+        "patchSetId": 6
+      },
+      "lineNbr": 72,
+      "author": {
+        "id": 7680
+      },
+      "writtenOn": "2021-07-26T16:58:34Z",
+      "side": 1,
+      "message": "If NCMP is returning 4XX/5XX response, then how are we handling it? Will it throw any exception or we are only returning false as response. If it just returns false, we need to find a way to handle it.",
+      "range": {
+        "startLine": 70,
+        "startChar": 8,
+        "endLine": 72,
+        "endChar": 119
+      },
+      "revId": "adca9bf9995384e27987201cdf1e38ff515d63cc",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "215f8836_f043986c",
+        "filename": "src/test/groovy/org/onap/cps/ncmp/dmi/rest/controller/DmiRestControllerSpec.groovy",
+        "patchSetId": 6
+      },
+      "lineNbr": 60,
+      "author": {
+        "id": 7680
+      },
+      "writtenOn": "2021-07-26T16:58:34Z",
+      "side": 1,
+      "message": "use \u0027{\"cm-handles\":[\"node1\", \"node2\"]}\u0027",
+      "range": {
+        "startLine": 60,
+        "startChar": 31,
+        "endLine": 60,
+        "endChar": 82
+      },
+      "revId": "adca9bf9995384e27987201cdf1e38ff515d63cc",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "d0320c25_3414d746",
+        "filename": "src/test/groovy/org/onap/cps/ncmp/dmi/rest/controller/DmiRestControllerSpec.groovy",
+        "patchSetId": 6
+      },
+      "lineNbr": 83,
+      "author": {
+        "id": 7680
+      },
+      "writtenOn": "2021-07-26T16:58:34Z",
+      "side": 1,
+      "message": "use \u0027{\"cm-handles\":[]}\u0027",
+      "range": {
+        "startLine": 83,
+        "startChar": 28,
+        "endLine": 83,
+        "endChar": 84
+      },
+      "revId": "adca9bf9995384e27987201cdf1e38ff515d63cc",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "b63a03fb_cee907cd",
+        "filename": "src/test/groovy/org/onap/cps/ncmp/dmi/service/DmiServiceImplSpec.groovy",
+        "patchSetId": 6
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 7680
+      },
+      "writtenOn": "2021-07-26T16:58:34Z",
+      "side": 1,
+      "message": "Fix the indentation",
+      "range": {
+        "startLine": 23,
+        "startChar": 0,
+        "endLine": 30,
+        "endChar": 35
+      },
+      "revId": "adca9bf9995384e27987201cdf1e38ff515d63cc",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "98f7a1c7_623911c2",
+        "filename": "src/test/groovy/org/onap/cps/ncmp/dmi/service/DmiServiceImplSpec.groovy",
+        "patchSetId": 6
+      },
+      "lineNbr": 55,
+      "author": {
+        "id": 7680
+      },
+      "writtenOn": "2021-07-26T16:58:34Z",
+      "side": 1,
+      "message": "[\"node1\", \"node2\"]",
+      "range": {
+        "startLine": 53,
+        "startChar": 32,
+        "endLine": 55,
+        "endChar": 38
+      },
+      "revId": "adca9bf9995384e27987201cdf1e38ff515d63cc",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "d3d0548b_250a6fac",
+        "filename": "src/test/groovy/org/onap/cps/ncmp/dmi/service/DmiServiceImplSpec.groovy",
+        "patchSetId": 6
+      },
+      "lineNbr": 57,
+      "author": {
+        "id": 7680
+      },
+      "writtenOn": "2021-07-26T16:58:34Z",
+      "side": 1,
+      "message": "use \u0027{\"dmi-plugin\":\"test-dmi-service\",\"created-cm-handles\":[{\"cmhandle\":\"node1\"},{\"cmhandle\":\"node2\"}]}\u0027 instead of reading from file. \nIt is small enough string to keep in the file.",
+      "range": {
+        "startLine": 57,
+        "startChar": 24,
+        "endLine": 57,
+        "endChar": 86
+      },
+      "revId": "adca9bf9995384e27987201cdf1e38ff515d63cc",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "c24059c6_d5005af3",
+        "filename": "src/test/groovy/org/onap/cps/ncmp/dmi/service/DmiServiceImplSpec.groovy",
+        "patchSetId": 6
+      },
+      "lineNbr": 83,
+      "author": {
+        "id": 7680
+      },
+      "writtenOn": "2021-07-26T16:58:34Z",
+      "side": 1,
+      "message": "[\"node1\"]",
+      "range": {
+        "startLine": 82,
+        "startChar": 32,
+        "endLine": 83,
+        "endChar": 38
+      },
+      "revId": "adca9bf9995384e27987201cdf1e38ff515d63cc",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    }
+  ]
+}
