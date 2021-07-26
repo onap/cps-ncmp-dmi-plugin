@@ -1,0 +1,119 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "f235f5a9_f4252650",
+        "filename": "src/main/java/org/onap/cps/ncmp/dmi/rest/controller/DmiRestController.java",
+        "patchSetId": 5
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 7680
+      },
+      "writtenOn": "2021-07-26T17:28:12Z",
+      "side": 1,
+      "message": "constructor autowiring is recommended",
+      "range": {
+        "startLine": 38,
+        "startChar": 4,
+        "endLine": 39,
+        "endChar": 34
+      },
+      "revId": "32d515f6c863778e966009cea2beab91fd99274c",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "bfb7704e_6a985afc",
+        "filename": "src/main/java/org/onap/cps/ncmp/dmi/rest/controller/DmiRestController.java",
+        "patchSetId": 5
+      },
+      "lineNbr": 45,
+      "author": {
+        "id": 7680
+      },
+      "writtenOn": "2021-07-26T17:28:12Z",
+      "side": 1,
+      "message": "I think it is not required anymore.",
+      "range": {
+        "startLine": 41,
+        "startChar": 4,
+        "endLine": 45,
+        "endChar": 5
+      },
+      "revId": "32d515f6c863778e966009cea2beab91fd99274c",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "df266c55_49e166d6",
+        "filename": "src/main/java/org/onap/cps/ncmp/dmi/rest/controller/DmiRestController.java",
+        "patchSetId": 5
+      },
+      "lineNbr": 60,
+      "author": {
+        "id": 7680
+      },
+      "writtenOn": "2021-07-26T17:28:12Z",
+      "side": 1,
+      "message": "Create ControllerAdvice for handling exception at controller layer",
+      "range": {
+        "startLine": 58,
+        "startChar": 10,
+        "endLine": 60,
+        "endChar": 9
+      },
+      "revId": "32d515f6c863778e966009cea2beab91fd99274c",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "44e6b992_18edcbc2",
+        "filename": "src/main/java/org/onap/cps/ncmp/dmi/service/DmiService.java",
+        "patchSetId": 5
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 7680
+      },
+      "writtenOn": "2021-07-26T17:28:12Z",
+      "side": 1,
+      "message": "I don\u0027t think it is required anymore.",
+      "range": {
+        "startLine": 30,
+        "startChar": 5,
+        "endLine": 33,
+        "endChar": 27
+      },
+      "revId": "32d515f6c863778e966009cea2beab91fd99274c",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "5ff444d5_31ee1787",
+        "filename": "src/main/java/org/onap/cps/ncmp/dmi/service/client/SdncRestconfClient.java",
+        "patchSetId": 5
+      },
+      "lineNbr": 56,
+      "author": {
+        "id": 7680
+      },
+      "writtenOn": "2021-07-26T17:28:12Z",
+      "side": 1,
+      "message": "suggestion: restTemplate.getForEntity highlights which HTTP method is used.",
+      "range": {
+        "startLine": 56,
+        "startChar": 15,
+        "endLine": 56,
+        "endChar": 76
+      },
+      "revId": "32d515f6c863778e966009cea2beab91fd99274c",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    }
+  ]
+}
