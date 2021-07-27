@@ -409,7 +409,7 @@
     </build>
     <profiles>
         <profile>
-            <id>dmi-docker</id>
+            <id>docker</id>
             <activation>
                 <activeByDefault>true</activeByDefault>
             </activation>
