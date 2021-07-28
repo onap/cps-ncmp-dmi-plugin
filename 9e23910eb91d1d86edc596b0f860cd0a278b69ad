@@ -1,0 +1,257 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "556171a6_75d82b87",
+        "filename": "docs/openapi/openapi.yml",
+        "patchSetId": 7
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 7680
+      },
+      "writtenOn": "2021-07-28T13:51:09Z",
+      "side": 1,
+      "message": "Why we decided to got with POST for a get endpoint?",
+      "range": {
+        "startLine": 35,
+        "startChar": 3,
+        "endLine": 38,
+        "endChar": 44
+      },
+      "revId": "9e23910eb91d1d86edc596b0f860cd0a278b69ad",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "f1f86cb1_b6f7bed6",
+        "filename": "src/main/java/org/onap/cps/ncmp/dmi/exception/ApiError.java",
+        "patchSetId": 7
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 7680
+      },
+      "writtenOn": "2021-07-28T13:51:09Z",
+      "side": 1,
+      "message": "This error class is usually automatically created by swagger-codegen based on open-api.yml. We have defined ErrorMessage in the openapi.yml. Is it possible to use it?",
+      "range": {
+        "startLine": 25,
+        "startChar": 13,
+        "endLine": 25,
+        "endChar": 21
+      },
+      "revId": "9e23910eb91d1d86edc596b0f860cd0a278b69ad",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "8d9532c7_d3e8e699",
+        "filename": "src/main/java/org/onap/cps/ncmp/dmi/exception/DmiExceptionHandler.java",
+        "patchSetId": 7
+      },
+      "lineNbr": 73,
+      "author": {
+        "id": 7680
+      },
+      "writtenOn": "2021-07-28T13:51:09Z",
+      "side": 1,
+      "message": "It is good to have separate methods for each type of handling rather than having if else in on handle. \n\nPlease refer CPS exception handler: \n\nhttps://gerrit.onap.org/r/gitweb?p\u003dcps.git;a\u003dblob;f\u003dcps-rest/src/main/java/org/onap/cps/rest/exceptions/CpsRestExceptionHandler.java;h\u003d143ad8b8865e8925af8700342f13337c9c62102b;hb\u003drefs/heads/master",
+      "range": {
+        "startLine": 56,
+        "startChar": 8,
+        "endLine": 73,
+        "endChar": 9
+      },
+      "revId": "9e23910eb91d1d86edc596b0f860cd0a278b69ad",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "3f40653e_d72e3917",
+        "filename": "src/main/java/org/onap/cps/ncmp/dmi/exception/ModulesNotFoundException.java",
+        "patchSetId": 7
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 7680
+      },
+      "writtenOn": "2021-07-28T13:51:09Z",
+      "side": 1,
+      "message": "Should it extend from DMIException?",
+      "range": {
+        "startLine": 23,
+        "startChar": 13,
+        "endLine": 23,
+        "endChar": 37
+      },
+      "revId": "9e23910eb91d1d86edc596b0f860cd0a278b69ad",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "6fdfc9ea_18edee63",
+        "filename": "src/main/java/org/onap/cps/ncmp/dmi/service/DmiServiceImpl.java",
+        "patchSetId": 7
+      },
+      "lineNbr": 46,
+      "author": {
+        "id": 7680
+      },
+      "writtenOn": "2021-07-28T13:51:09Z",
+      "side": 1,
+      "message": "Suggestion: StringUtils.isEmpty(body)",
+      "range": {
+        "startLine": 46,
+        "startChar": 16,
+        "endLine": 46,
+        "endChar": 46
+      },
+      "revId": "9e23910eb91d1d86edc596b0f860cd0a278b69ad",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "7a0e4c1c_5df7581b",
+        "filename": "src/test/groovy/org/onap/cps/ncmp/dmi/rest/controller/DmiRestControllerSpec.groovy",
+        "patchSetId": 7
+      },
+      "lineNbr": 55,
+      "author": {
+        "id": 7680
+      },
+      "writtenOn": "2021-07-28T13:51:09Z",
+      "side": 1,
+      "message": "suggestion: \n\n@Value(\u0027${rest.api.dmi-base-path}/v1\u0027)\ndef basePathV1\n\ninstead of:\n\n\u0027@Value(\u0027${rest.api.dmi-base-path}\u0027)\n    def basePath\n\n    def basePathV1\n\ndef setup(){\n        basePathV1 \u003d \"$basePath/v1\"\n    }\n\u0027",
+      "range": {
+        "startLine": 55,
+        "startChar": 4,
+        "endLine": 55,
+        "endChar": 18
+      },
+      "revId": "9e23910eb91d1d86edc596b0f860cd0a278b69ad",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "2606c0ed_8dc779b4",
+        "filename": "src/test/groovy/org/onap/cps/ncmp/dmi/rest/controller/DmiRestControllerSpec.groovy",
+        "patchSetId": 7
+      },
+      "lineNbr": 66,
+      "author": {
+        "id": 7680
+      },
+      "writtenOn": "2021-07-28T13:51:09Z",
+      "side": 1,
+      "message": "no request body in the endpoint",
+      "range": {
+        "startLine": 66,
+        "startChar": 12,
+        "endLine": 66,
+        "endChar": 38
+      },
+      "revId": "9e23910eb91d1d86edc596b0f860cd0a278b69ad",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "db5cb357_f14cdbcd",
+        "filename": "src/test/groovy/org/onap/cps/ncmp/dmi/rest/controller/DmiRestControllerSpec.groovy",
+        "patchSetId": 7
+      },
+      "lineNbr": 68,
+      "author": {
+        "id": 7680
+      },
+      "writtenOn": "2021-07-28T13:51:09Z",
+      "side": 1,
+      "message": "should verify the response too in then:",
+      "range": {
+        "startLine": 68,
+        "startChar": 13,
+        "endLine": 68,
+        "endChar": 71
+      },
+      "revId": "9e23910eb91d1d86edc596b0f860cd0a278b69ad",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "ae25251d_3b0f0aec",
+        "filename": "src/test/groovy/org/onap/cps/ncmp/dmi/rest/controller/DmiRestControllerSpec.groovy",
+        "patchSetId": 7
+      },
+      "lineNbr": 73,
+      "author": {
+        "id": 7680
+      },
+      "writtenOn": "2021-07-28T13:51:09Z",
+      "side": 1,
+      "message": "There is no body for this post controller endpoint.",
+      "range": {
+        "startLine": 73,
+        "startChar": 41,
+        "endLine": 73,
+        "endChar": 58
+      },
+      "revId": "9e23910eb91d1d86edc596b0f860cd0a278b69ad",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "57f3b4fc_3ff6da99",
+        "filename": "src/test/groovy/org/onap/cps/ncmp/dmi/rest/controller/DmiRestControllerSpec.groovy",
+        "patchSetId": 7
+      },
+      "lineNbr": 85,
+      "author": {
+        "id": 7680
+      },
+      "writtenOn": "2021-07-28T13:51:09Z",
+      "side": 1,
+      "message": "no request body in endpoint.",
+      "range": {
+        "startLine": 85,
+        "startChar": 7,
+        "endLine": 85,
+        "endChar": 33
+      },
+      "revId": "9e23910eb91d1d86edc596b0f860cd0a278b69ad",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "befbb69a_872490dc",
+        "filename": "src/test/groovy/org/onap/cps/ncmp/dmi/rest/controller/DmiRestControllerSpec.groovy",
+        "patchSetId": 7
+      },
+      "lineNbr": 116,
+      "author": {
+        "id": 7680
+      },
+      "writtenOn": "2021-07-28T13:51:09Z",
+      "side": 1,
+      "message": "Is it possible to have one single test for error handling, using where",
+      "range": {
+        "startLine": 116,
+        "startChar": 9,
+        "endLine": 116,
+        "endChar": 65
+      },
+      "revId": "9e23910eb91d1d86edc596b0f860cd0a278b69ad",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    }
+  ]
+}
