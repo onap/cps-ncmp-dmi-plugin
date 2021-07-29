@@ -25,6 +25,75 @@
     },
     {
       "key": {
+        "uuid": "998a89bb_43b684f5",
+        "filename": "src/main/java/org/onap/cps/ncmp/dmi/exception/DmiExceptionHandler.java",
+        "patchSetId": 8
+      },
+      "lineNbr": 60,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2021-07-29T10:59:10Z",
+      "side": 1,
+      "message": "why are we having this checks if need extract to method with meaningful name",
+      "range": {
+        "startLine": 60,
+        "startChar": 12,
+        "endLine": 60,
+        "endChar": 80
+      },
+      "revId": "11869bef567d991bfdfedf3c15ba83e682695de2",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "29d68454_a894f5ac",
+        "filename": "src/main/java/org/onap/cps/ncmp/dmi/exception/ModulesNotFoundException.java",
+        "patchSetId": 8
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2021-07-29T10:59:10Z",
+      "side": 1,
+      "message": "if this is not used (I only saw empty string), please remove from constructor",
+      "range": {
+        "startLine": 34,
+        "startChar": 58,
+        "endLine": 34,
+        "endChar": 79
+      },
+      "revId": "11869bef567d991bfdfedf3c15ba83e682695de2",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "8b2cd422_de8b7bc6",
+        "filename": "src/main/java/org/onap/cps/ncmp/dmi/service/DmiServiceImpl.java",
+        "patchSetId": 8
+      },
+      "lineNbr": 47,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2021-07-29T10:59:10Z",
+      "side": 1,
+      "message": "just use body.isEmpty()",
+      "range": {
+        "startLine": 47,
+        "startChar": 16,
+        "endLine": 47,
+        "endChar": 35
+      },
+      "revId": "11869bef567d991bfdfedf3c15ba83e682695de2",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "06c2fa0d_e188606f",
         "filename": "src/main/java/org/onap/cps/ncmp/dmi/service/DmiServiceImpl.java",
         "patchSetId": 8
@@ -41,6 +110,52 @@
         "startChar": 61,
         "endLine": 48,
         "endChar": 63
+      },
+      "revId": "11869bef567d991bfdfedf3c15ba83e682695de2",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "a08b23d7_7182ef07",
+        "filename": "src/main/java/org/onap/cps/ncmp/dmi/service/DmiServiceImpl.java",
+        "patchSetId": 8
+      },
+      "lineNbr": 52,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2021-07-29T10:59:10Z",
+      "side": 1,
+      "message": "SDNC",
+      "range": {
+        "startLine": 52,
+        "startChar": 36,
+        "endLine": 52,
+        "endChar": 42
+      },
+      "revId": "11869bef567d991bfdfedf3c15ba83e682695de2",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "f32cf7f8_4464721e",
+        "filename": "src/main/java/org/onap/cps/ncmp/dmi/service/DmiServiceImpl.java",
+        "patchSetId": 8
+      },
+      "lineNbr": 53,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2021-07-29T10:59:10Z",
+      "side": 1,
+      "message": "response",
+      "range": {
+        "startLine": 53,
+        "startChar": 21,
+        "endLine": 53,
+        "endChar": 28
       },
       "revId": "11869bef567d991bfdfedf3c15ba83e682695de2",
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
@@ -117,6 +232,52 @@
     },
     {
       "key": {
+        "uuid": "06780562_ea6fea62",
+        "filename": "src/test/groovy/org/onap/cps/ncmp/dmi/rest/controller/DmiRestControllerSpec.groovy",
+        "patchSetId": 8
+      },
+      "lineNbr": 56,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2021-07-29T10:59:10Z",
+      "side": 1,
+      "message": "no need to add this part, this is the normal assumption for test. Only add explanations when something special is happing which is different from the main positive test like \u0027with exception handling\u0027",
+      "range": {
+        "startLine": 56,
+        "startChar": 45,
+        "endLine": 56,
+        "endChar": 64
+      },
+      "revId": "11869bef567d991bfdfedf3c15ba83e682695de2",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "02b25c41_fb677d1b",
+        "filename": "src/test/groovy/org/onap/cps/ncmp/dmi/rest/controller/DmiRestControllerSpec.groovy",
+        "patchSetId": 8
+      },
+      "lineNbr": 58,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2021-07-29T10:59:10Z",
+      "side": 1,
+      "message": "REST endpoint for getting all modules",
+      "range": {
+        "startLine": 58,
+        "startChar": 16,
+        "endLine": 58,
+        "endChar": 36
+      },
+      "revId": "11869bef567d991bfdfedf3c15ba83e682695de2",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "fa47b0a7_505e2b5a",
         "filename": "src/test/groovy/org/onap/cps/ncmp/dmi/rest/controller/DmiRestControllerSpec.groovy",
         "patchSetId": 8
@@ -163,6 +324,98 @@
     },
     {
       "key": {
+        "uuid": "2c939096_4003afdd",
+        "filename": "src/test/groovy/org/onap/cps/ncmp/dmi/rest/controller/DmiRestControllerSpec.groovy",
+        "patchSetId": 8
+      },
+      "lineNbr": 76,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2021-07-29T10:59:10Z",
+      "side": 1,
+      "message": "with exception handling",
+      "range": {
+        "startLine": 76,
+        "startChar": 45,
+        "endLine": 76,
+        "endChar": 64
+      },
+      "revId": "11869bef567d991bfdfedf3c15ba83e682695de2",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "be4d57b3_c49138b3",
+        "filename": "src/test/groovy/org/onap/cps/ncmp/dmi/rest/controller/DmiRestControllerSpec.groovy",
+        "patchSetId": 8
+      },
+      "lineNbr": 78,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2021-07-29T10:59:10Z",
+      "side": 1,
+      "message": "REST endpoint for getting all modules",
+      "range": {
+        "startLine": 78,
+        "startChar": 16,
+        "endLine": 78,
+        "endChar": 36
+      },
+      "revId": "11869bef567d991bfdfedf3c15ba83e682695de2",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "7105cc2b_2d011fe1",
+        "filename": "src/test/groovy/org/onap/cps/ncmp/dmi/rest/controller/DmiRestControllerSpec.groovy",
+        "patchSetId": 8
+      },
+      "lineNbr": 81,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2021-07-29T10:59:10Z",
+      "side": 1,
+      "message": "post is invoked",
+      "range": {
+        "startLine": 81,
+        "startChar": 15,
+        "endLine": 81,
+        "endChar": 35
+      },
+      "revId": "11869bef567d991bfdfedf3c15ba83e682695de2",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "3ca7efd4_7bbe2161",
+        "filename": "src/test/groovy/org/onap/cps/ncmp/dmi/rest/controller/DmiRestControllerSpec.groovy",
+        "patchSetId": 8
+      },
+      "lineNbr": 87,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2021-07-29T10:59:10Z",
+      "side": 1,
+      "message": "no need to check invocations as test depends on mocked behavior, this should be part of given (and) block\n\nand: \u0027the DMI service throws an exception\u0027\n   mockDmiService.getModulesForCmHandle(\"node1\") \u003e\u003e { throw new DmiException(\"message\", \"detail\") }",
+      "range": {
+        "startLine": 86,
+        "startChar": 8,
+        "endLine": 87,
+        "endChar": 112
+      },
+      "revId": "11869bef567d991bfdfedf3c15ba83e682695de2",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "b60782f8_b3092182",
         "filename": "src/test/groovy/org/onap/cps/ncmp/dmi/rest/controller/DmiRestControllerSpec.groovy",
         "patchSetId": 8
@@ -186,6 +439,29 @@
     },
     {
       "key": {
+        "uuid": "e582a18b_f33f7a0e",
+        "filename": "src/test/groovy/org/onap/cps/ncmp/dmi/rest/controller/DmiRestControllerSpec.groovy",
+        "patchSetId": 8
+      },
+      "lineNbr": 89,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2021-07-29T10:59:10Z",
+      "side": 1,
+      "message": "no this becomes \u0027then:\u0027",
+      "range": {
+        "startLine": 89,
+        "startChar": 8,
+        "endLine": 89,
+        "endChar": 11
+      },
+      "revId": "11869bef567d991bfdfedf3c15ba83e682695de2",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "5dcd3f76_542d8162",
         "filename": "src/test/groovy/org/onap/cps/ncmp/dmi/rest/controller/DmiRestControllerSpec.groovy",
         "patchSetId": 8
@@ -202,6 +478,29 @@
         "startChar": 24,
         "endLine": 106,
         "endChar": 33
+      },
+      "revId": "11869bef567d991bfdfedf3c15ba83e682695de2",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "eb66430f_50c520e3",
+        "filename": "src/test/groovy/org/onap/cps/ncmp/dmi/rest/controller/DmiRestControllerSpec.groovy",
+        "patchSetId": 8
+      },
+      "lineNbr": 106,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2021-07-29T10:59:10Z",
+      "side": 1,
+      "message": "see previous comments",
+      "range": {
+        "startLine": 93,
+        "startChar": 0,
+        "endLine": 106,
+        "endChar": 44
       },
       "revId": "11869bef567d991bfdfedf3c15ba83e682695de2",
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
@@ -381,6 +680,30 @@
       "writtenOn": "2021-07-29T09:49:09Z",
       "side": 1,
       "message": "a get url",
+      "range": {
+        "startLine": 18,
+        "startChar": 16,
+        "endLine": 18,
+        "endChar": 36
+      },
+      "revId": "11869bef567d991bfdfedf3c15ba83e682695de2",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "926308a0_feb0c655",
+        "filename": "src/test/groovy/org/onap/cps/ncmp/dmi/service/client/SdncRestconfClientSpec.groovy",
+        "patchSetId": 8
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2021-07-29T10:59:10Z",
+      "side": 1,
+      "message": "actually see further comments on previous groovy test regarding best practices for labels",
+      "parentUuid": "0adcfee0_1154329e",
       "range": {
         "startLine": 18,
         "startChar": 16,
