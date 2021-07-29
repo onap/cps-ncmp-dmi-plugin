@@ -2,6 +2,52 @@
   "comments": [
     {
       "key": {
+        "uuid": "35bc1c46_48cbd464",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 7
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2021-07-29T09:09:56Z",
+      "side": 1,
+      "message": "for big commits it is sometimes useful to add a little more detail, see example here: https://gerrit.onap.org/r/c/cps/+/122452",
+      "range": {
+        "startLine": 7,
+        "startChar": 0,
+        "endLine": 7,
+        "endChar": 26
+      },
+      "revId": "9e23910eb91d1d86edc596b0f860cd0a278b69ad",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "92822c19_dce0cf9a",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 7
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2021-07-29T09:09:56Z",
+      "side": 1,
+      "message": "note sure if the order really matter but this does not follow usual template",
+      "range": {
+        "startLine": 11,
+        "startChar": 0,
+        "endLine": 11,
+        "endChar": 17
+      },
+      "revId": "9e23910eb91d1d86edc596b0f860cd0a278b69ad",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "556171a6_75d82b87",
         "filename": "docs/openapi/openapi.yml",
         "patchSetId": 7
@@ -36,6 +82,30 @@
       "writtenOn": "2021-07-29T09:04:31Z",
       "side": 1,
       "message": "It is being anticipated that in future requestbody might be needed with multiple props, so it is being decided that all get ops b/w ncmp and dmi-plugin which are meant for sdnc will be post.",
+      "parentUuid": "556171a6_75d82b87",
+      "range": {
+        "startLine": 35,
+        "startChar": 3,
+        "endLine": 38,
+        "endChar": 44
+      },
+      "revId": "9e23910eb91d1d86edc596b0f860cd0a278b69ad",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "f0c7e81e_7be63bbf",
+        "filename": "docs/openapi/openapi.yml",
+        "patchSetId": 7
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2021-07-29T09:09:56Z",
+      "side": 1,
+      "message": "This as as per agreed API, the reason is the Addiotnal properties that can be posted for the cm-handle although the ONAP DMI Plugin probably don\u0027t need these it is import that other plug-impl. can avail of these additional properties",
       "parentUuid": "556171a6_75d82b87",
       "range": {
         "startLine": 35,
@@ -93,6 +163,52 @@
       "revId": "9e23910eb91d1d86edc596b0f860cd0a278b69ad",
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7743aa01_2a3b90b6",
+        "filename": "src/main/java/org/onap/cps/ncmp/dmi/exception/DmiExceptionHandler.java",
+        "patchSetId": 7
+      },
+      "lineNbr": 51,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2021-07-29T09:09:56Z",
+      "side": 1,
+      "message": "webRequest",
+      "range": {
+        "startLine": 51,
+        "startChar": 95,
+        "endLine": 51,
+        "endChar": 102
+      },
+      "revId": "9e23910eb91d1d86edc596b0f860cd0a278b69ad",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "feb02b31_4c814b9f",
+        "filename": "src/main/java/org/onap/cps/ncmp/dmi/exception/DmiExceptionHandler.java",
+        "patchSetId": 7
+      },
+      "lineNbr": 51,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2021-07-29T09:09:56Z",
+      "side": 1,
+      "message": "\u0027e\u0027 is the agreed convention for exceptions",
+      "range": {
+        "startLine": 51,
+        "startChar": 74,
+        "endLine": 51,
+        "endChar": 76
+      },
+      "revId": "9e23910eb91d1d86edc596b0f860cd0a278b69ad",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
     },
     {
       "key": {
