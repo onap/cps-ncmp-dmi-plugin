@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "95176bc3_4c1360d1",
+        "filename": "src/main/java/org/onap/cps/ncmp/dmi/rest/controller/DmiRestController.java",
+        "patchSetId": 7
+      },
+      "lineNbr": 59,
+      "author": {
+        "id": 6738
+      },
+      "writtenOn": "2021-07-29T11:18:52Z",
+      "side": 1,
+      "message": "The 406 Not Acceptable is an HTTP response status code indicating that the client has requested a response using Accept- headers that the server is unable to fulfill.\nThis looks like a BAD_REQUEST.",
+      "range": {
+        "startLine": 59,
+        "startChar": 11,
+        "endLine": 59,
+        "endChar": 99
+      },
+      "revId": "6396a00137602773e0eb3c7a65e9eb514602acf9",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    }
+  ]
+}
