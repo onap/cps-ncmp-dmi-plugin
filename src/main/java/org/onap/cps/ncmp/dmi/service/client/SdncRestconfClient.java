@@ -30,6 +30,7 @@ import org.springframework.web.client.RestTemplate;
 
 @Component
 public class SdncRestconfClient {
+
     private SdncProperties sdncProperties;
     private RestTemplate restTemplate;
 
@@ -42,7 +43,6 @@ public class SdncRestconfClient {
      * restconf get operation on sdnc.
      *
      * @param getResourceUrl sdnc get url
-     *
      * @return the response entity
      */
     public ResponseEntity<String> getOperation(final String getResourceUrl) {
@@ -53,5 +53,23 @@ public class SdncRestconfClient {
         httpHeaders.set(HttpHeaders.ACCEPT, MediaType.APPLICATION_JSON.toString());
         final var httpEntity = new HttpEntity<>(httpHeaders);
         return restTemplate.getForEntity(sdncRestconfUrl, String.class, httpEntity);
+    }
+
+    /**
+     * restconf get module sources operation on sdnc.
+     *
+     * @param sdncGetModuleResourceUrl sdnc get yang resource url
+     * @param jsonData                 json data
+     * @return the response entity
+     */
+    public ResponseEntity<String> postOperationWithJsonData(final String sdncGetModuleResourceUrl,
+        final String jsonData) {
+        final var sdncBaseUrl = sdncProperties.getBaseUrl();
+        final var sdncRestconfUrl = sdncBaseUrl.concat(sdncGetModuleResourceUrl);
+        final var httpHeaders = new HttpHeaders();
+        httpHeaders.setBasicAuth(sdncProperties.getAuthUsername(), sdncProperties.getAuthPassword());
+        httpHeaders.set(HttpHeaders.CONTENT_TYPE, MediaType.APPLICATION_JSON_VALUE);
+        final var httpEntity = new HttpEntity<>(jsonData, httpHeaders);
+        return restTemplate.postForEntity(sdncRestconfUrl, httpEntity, String.class);
     }
 }

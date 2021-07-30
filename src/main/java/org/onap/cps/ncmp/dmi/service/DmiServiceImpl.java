@@ -20,9 +20,15 @@
 
 package org.onap.cps.ncmp.dmi.service;
 
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import io.micrometer.core.instrument.util.StringUtils;
+import java.util.LinkedHashMap;
+import java.util.List;
 import org.onap.cps.ncmp.dmi.exception.DmiException;
+import org.onap.cps.ncmp.dmi.exception.ModuleResourceNotFoundException;
 import org.onap.cps.ncmp.dmi.exception.ModulesNotFoundException;
+import org.onap.cps.ncmp.dmi.service.models.ModuleData;
 import org.onap.cps.ncmp.dmi.service.operation.SdncOperations;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -34,9 +40,12 @@ public class DmiServiceImpl implements DmiService {
 
     private SdncOperations sdncOperations;
 
+    private ObjectMapper objectMapper;
+
     @Autowired
-    public DmiServiceImpl(final SdncOperations sdncOperations) {
+    public DmiServiceImpl(final SdncOperations sdncOperations, final ObjectMapper objectMapper) {
         this.sdncOperations = sdncOperations;
+        this.objectMapper = objectMapper;
     }
 
     @Override
@@ -50,7 +59,38 @@ public class DmiServiceImpl implements DmiService {
             return responseEntity.getBody();
         } else {
             throw new DmiException("SDNC is not able to process request.",
-                    "response code : " + responseEntity.getStatusCode() + " message : " + responseEntity.getBody());
+                "response code : " + responseEntity.getStatusCode() + " message : " + responseEntity.getBody());
         }
+    }
+
+    @Override
+    public String getModuleSources(final String cmHandle, final List<ModuleData> moduleData) {
+        final var response = new StringBuilder();
+        for (final var module : moduleData) {
+            final var moduleRequest = createModuleRequest(module);
+            final var responseEntity = sdncOperations.getYangResources(cmHandle, moduleRequest);
+            if (responseEntity.getStatusCode() == HttpStatus.OK) {
+                response.append(responseEntity.getBody());
+            } else {
+                throw new ModuleResourceNotFoundException(cmHandle,
+                    "SDNC did not return a module resource for given cmHandle.");
+            }
+        }
+        return response.toString();
+    }
+
+    private String createModuleRequest(final ModuleData moduleData) {
+        final var module = new LinkedHashMap<>();
+        module.put("ietf-netconf-monitoring:identifier", moduleData.getName());
+        module.put("ietf-netconf-monitoring:version", moduleData.getRevision());
+        final var writer = objectMapper.writer().withRootName("ietf-netconf-monitoring:input");
+        final String moduleRequest;
+        try {
+            moduleRequest = writer.writeValueAsString(module);
+        } catch (final JsonProcessingException e) {
+            throw new DmiException("Unable to process JSON.",
+                "Json exception occurred when processing creating the module request.", e);
+        }
+        return moduleRequest;
     }
 }
