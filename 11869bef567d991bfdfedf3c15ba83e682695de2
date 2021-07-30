@@ -96,6 +96,30 @@
     },
     {
       "key": {
+        "uuid": "8b7150e0_91f84840",
+        "filename": "src/main/java/org/onap/cps/ncmp/dmi/exception/DmiExceptionHandler.java",
+        "patchSetId": 8
+      },
+      "lineNbr": 60,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2021-07-30T09:34:17Z",
+      "side": 1,
+      "message": "ah, since DMiExceptions are part of logic and result in http error code and messages, I see now.",
+      "parentUuid": "7e56eda6_0a64ea3f",
+      "range": {
+        "startLine": 60,
+        "startChar": 12,
+        "endLine": 60,
+        "endChar": 80
+      },
+      "revId": "11869bef567d991bfdfedf3c15ba83e682695de2",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "29d68454_a894f5ac",
         "filename": "src/main/java/org/onap/cps/ncmp/dmi/exception/ModulesNotFoundException.java",
         "patchSetId": 8
@@ -187,6 +211,30 @@
       "revId": "11869bef567d991bfdfedf3c15ba83e682695de2",
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "90328a43_4d99c015",
+        "filename": "src/main/java/org/onap/cps/ncmp/dmi/service/DmiServiceImpl.java",
+        "patchSetId": 8
+      },
+      "lineNbr": 47,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2021-07-30T09:34:17Z",
+      "side": 1,
+      "message": "OK as per ReponsEnitty.getBody() method definition shows that body CAN be null stringUtils is correct",
+      "parentUuid": "75252b98_d6dd5cd2",
+      "range": {
+        "startLine": 47,
+        "startChar": 16,
+        "endLine": 47,
+        "endChar": 35
+      },
+      "revId": "11869bef567d991bfdfedf3c15ba83e682695de2",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
     },
     {
       "key": {
@@ -1294,6 +1342,30 @@
     },
     {
       "key": {
+        "uuid": "4566c893_5216dc55",
+        "filename": "src/test/groovy/org/onap/cps/ncmp/dmi/service/client/SdncRestconfClientSpec.groovy",
+        "patchSetId": 8
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2021-07-30T09:34:17Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5a5f2d73_3ab16650",
+      "range": {
+        "startLine": 1,
+        "startChar": 0,
+        "endLine": 1,
+        "endChar": 8
+      },
+      "revId": "11869bef567d991bfdfedf3c15ba83e682695de2",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5b543aea_899e27bc",
         "filename": "src/test/groovy/org/onap/cps/ncmp/dmi/service/client/SdncRestconfClientSpec.groovy",
         "patchSetId": 8
@@ -1506,6 +1578,30 @@
     },
     {
       "key": {
+        "uuid": "59f4f7e6_b6613cb2",
+        "filename": "src/test/groovy/org/onap/cps/ncmp/dmi/service/client/SdncRestconfClientSpec.groovy",
+        "patchSetId": 8
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2021-07-30T09:34:17Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "f4a767fd_6adbddec",
+      "range": {
+        "startLine": 23,
+        "startChar": 11,
+        "endLine": 24,
+        "endChar": 62
+      },
+      "revId": "11869bef567d991bfdfedf3c15ba83e682695de2",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "6345ba8e_1097173a",
         "filename": "src/test/groovy/org/onap/cps/ncmp/dmi/service/client/SdncRestconfClientSpec.groovy",
         "patchSetId": 8
@@ -1550,6 +1646,30 @@
       "revId": "11869bef567d991bfdfedf3c15ba83e682695de2",
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "0a6e74a0_93a6be4f",
+        "filename": "src/test/groovy/org/onap/cps/ncmp/dmi/service/client/SdncRestconfClientSpec.groovy",
+        "patchSetId": 8
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2021-07-30T09:34:17Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "f13b686a_2b2719ce",
+      "range": {
+        "startLine": 25,
+        "startChar": 12,
+        "endLine": 25,
+        "endChar": 61
+      },
+      "revId": "11869bef567d991bfdfedf3c15ba83e682695de2",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
     },
     {
       "key": {
