@@ -20,8 +20,12 @@
 
 package org.onap.cps.ncmp.dmi.rest.controller;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
+import javax.validation.Valid;
+import org.onap.cps.ncmp.dmi.model.ModuleSources;
 import org.onap.cps.ncmp.dmi.rest.api.DmiPluginApi;
 import org.onap.cps.ncmp.dmi.service.DmiService;
+import org.onap.cps.ncmp.dmi.service.models.Modules;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -36,6 +40,9 @@ public class DmiRestController implements DmiPluginApi {
     private DmiService dmiService;
 
     @Autowired
+    private ObjectMapper objectMapper;
+
+    @Autowired
     public DmiRestController(final DmiService dmiService) {
         this.dmiService = dmiService;
     }
@@ -45,5 +52,20 @@ public class DmiRestController implements DmiPluginApi {
 
         final String modulesListAsJson = dmiService.getModulesForCmHandle(cmHandle);
         return new ResponseEntity<>(modulesListAsJson, HttpStatus.OK);
+    }
+
+    @Override
+    public ResponseEntity<Object> retrieveModuleResources(@Valid final ModuleSources moduleSources,
+        final String cmHandle) {
+        final var modulesData = convertRestObjectToJavaApiObject(moduleSources);
+        final var response = dmiService.getModuleSources(cmHandle, modulesData.getModules());
+        if (!response.isEmpty()) {
+            return new ResponseEntity<>(response, HttpStatus.OK);
+        }
+        return new ResponseEntity<>(response, HttpStatus.NOT_FOUND);
+    }
+
+    private Modules convertRestObjectToJavaApiObject(final ModuleSources moduleSources) {
+        return objectMapper.convertValue(moduleSources.getData(), Modules.class);
     }
 }

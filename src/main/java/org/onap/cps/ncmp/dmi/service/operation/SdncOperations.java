@@ -30,28 +30,28 @@ import org.springframework.stereotype.Component;
 public class SdncOperations {
 
     private static final String TOPOLOGY_URL_TEMPLATE = "/rests/data/network-topology:network-topology"
-            + "/topology={topologyId}";
-    private static final String MOUNT_URL_TEMPLATE = "/node={nodeId}/yang-ext:mount";
+        + "/topology={topologyId}";
+    private static final String TOPOLOGY_URL_OPERATION_TEMPLATE =
+        "/restconf/operations/network-topology:network-topology"
+            + "/topology/{topologyId}";
+    private static final String MOUNT_URL_TEMPLATE_GET_SCHEMA = "/node={nodeId}/yang-ext:mount";
+    private static final String MOUNT_URL_GET_YANG_RESOURCE = "/node/{nodeId}/yang-ext:mount";
     private static final String GET_SCHEMA_URL = "/ietf-netconf-monitoring:netconf-state/schemas";
+    private static final String GET_SCHEMA_SOURCES_URL = "/ietf-netconf-monitoring:get-schema";
 
     private SdncProperties sdncProperties;
     private SdncRestconfClient sdncRestconfClient;
-    private final String topologyUrl;
-    private final String topologyMountUrlTemplate;
 
     /**
-     * Constructor for {@code SdncOperations}. This method also manipulates
-     * url properties.
+     * Constructor for {@code SdncOperations}. This method also manipulates url properties.
      *
-     * @param sdncProperties {@code SdncProperties}
+     * @param sdncProperties     {@code SdncProperties}
      * @param sdncRestconfClient {@code SdncRestconfClient}
      */
 
     public SdncOperations(final SdncProperties sdncProperties, final SdncRestconfClient sdncRestconfClient) {
         this.sdncProperties = sdncProperties;
         this.sdncRestconfClient = sdncRestconfClient;
-        topologyUrl = TOPOLOGY_URL_TEMPLATE.replace("{topologyId}", this.sdncProperties.getTopologyId());
-        topologyMountUrlTemplate = topologyUrl + MOUNT_URL_TEMPLATE;
     }
 
     /**
@@ -67,9 +67,26 @@ public class SdncOperations {
 
     @NotNull
     private String prepareGetSchemaUrl(final String nodeId) {
-        final String topologyMountUrl = topologyMountUrlTemplate;
+        final String topologyUrl = TOPOLOGY_URL_TEMPLATE.replace("{topologyId}", this.sdncProperties.getTopologyId());
+        final var topologyMountUrl = topologyUrl + MOUNT_URL_TEMPLATE_GET_SCHEMA;
         final String topologyMountUrlWithNodeId = topologyMountUrl.replace("{nodeId}", nodeId);
         final String resourceUrl = topologyMountUrlWithNodeId.concat(GET_SCHEMA_URL);
         return resourceUrl;
+    }
+
+    /**
+     * Get yang resources.
+     *
+     * @param nodeId           node ID
+     * @param moduleProperties module properties
+     * @return response entity
+     */
+    public ResponseEntity<String> getYangResources(final String nodeId, final String moduleProperties) {
+        final var topologyUrl =
+            TOPOLOGY_URL_OPERATION_TEMPLATE.replace("{topologyId}", this.sdncProperties.getTopologyId());
+        final var topologyMountUrl = topologyUrl + MOUNT_URL_GET_YANG_RESOURCE;
+        final var topologyMountUrlWithNodeId = topologyMountUrl.replace("{nodeId}", nodeId);
+        final var resourceUrl = topologyMountUrlWithNodeId.concat(GET_SCHEMA_SOURCES_URL);
+        return sdncRestconfClient.getModuleSources(resourceUrl, moduleProperties);
     }
 }

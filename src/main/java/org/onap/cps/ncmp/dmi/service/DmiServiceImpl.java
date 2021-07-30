@@ -20,9 +20,14 @@
 
 package org.onap.cps.ncmp.dmi.service;
 
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import io.micrometer.core.instrument.util.StringUtils;
+import java.util.HashMap;
+import java.util.List;
 import org.onap.cps.ncmp.dmi.exception.DmiException;
 import org.onap.cps.ncmp.dmi.exception.ModulesNotFoundException;
+import org.onap.cps.ncmp.dmi.service.models.ModuleData;
 import org.onap.cps.ncmp.dmi.service.operation.SdncOperations;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -50,7 +55,37 @@ public class DmiServiceImpl implements DmiService {
             return responseEntity.getBody();
         } else {
             throw new DmiException("SDNC is not able to process request.",
-                    "response code : " + responseEntity.getStatusCode() + " message : " + responseEntity.getBody());
+                "response code : " + responseEntity.getStatusCode() + " message : " + responseEntity.getBody());
         }
+    }
+
+    @Override
+    public String getModuleSources(final String cmHandle, final List<ModuleData> moduleData) {
+        final var response = new StringBuffer();
+        for (final var module : moduleData) {
+            final var moduleRequest = createModuleRequest(module);
+            final var responseEntity = sdncOperations.getYangResources(cmHandle, moduleRequest);
+            if (responseEntity.getStatusCode() == HttpStatus.OK) {
+                response.append(responseEntity.getBody());
+            } else {
+                throw new ModulesNotFoundException(cmHandle, "SDNC returned no modules for given cmHandle.");
+            }
+        }
+        return response.toString();
+    }
+
+    private String createModuleRequest(final ModuleData moduleData) {
+        final var module = new HashMap();
+        module.put("ietf-netconf-monitoring:identifier", moduleData.getName());
+        module.put("ietf-netconf-monitoring:version", moduleData.getRevision());
+        final var mapper = new ObjectMapper();
+        final var writer = mapper.writer().withRootName("ietf-netconf-monitoring:input");
+        String moduleRequest = null;
+        try {
+            moduleRequest = writer.writeValueAsString(module);
+        } catch (final JsonProcessingException e) {
+            e.printStackTrace();
+        }
+        return moduleRequest;
     }
 }
