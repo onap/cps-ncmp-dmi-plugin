@@ -1270,6 +1270,30 @@
     },
     {
       "key": {
+        "uuid": "95681a18_9013e2c4",
+        "filename": "src/test/groovy/org/onap/cps/ncmp/dmi/service/client/SdncRestconfClientSpec.groovy",
+        "patchSetId": 8
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 5006
+      },
+      "writtenOn": "2021-07-30T09:18:06Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5a5f2d73_3ab16650",
+      "range": {
+        "startLine": 1,
+        "startChar": 0,
+        "endLine": 1,
+        "endChar": 8
+      },
+      "revId": "11869bef567d991bfdfedf3c15ba83e682695de2",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5b543aea_899e27bc",
         "filename": "src/test/groovy/org/onap/cps/ncmp/dmi/service/client/SdncRestconfClientSpec.groovy",
         "patchSetId": 8
