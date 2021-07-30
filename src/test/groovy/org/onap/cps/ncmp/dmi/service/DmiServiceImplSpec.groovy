@@ -25,7 +25,9 @@ import com.fasterxml.jackson.databind.ObjectMapper
 import org.onap.cps.ncmp.dmi.config.DmiPluginConfig
 import org.onap.cps.ncmp.dmi.exception.CmHandleRegistrationException
 import org.onap.cps.ncmp.dmi.exception.DmiException
+import org.onap.cps.ncmp.dmi.exception.ModuleResourceNotFoundException
 import org.onap.cps.ncmp.dmi.exception.ModulesNotFoundException
+import org.onap.cps.ncmp.dmi.model.ModuleReference
 import org.onap.cps.ncmp.dmi.service.client.NcmpRestClient
 import org.onap.cps.ncmp.dmi.service.operation.SdncOperations
 import org.springframework.http.HttpStatus
@@ -40,7 +42,9 @@ class DmiServiceImplSpec extends Specification {
     def objectMapper = new ObjectMapper()
     def mockObjectMapper = Mock(ObjectMapper)
     def mockSdncOperations = Mock(SdncOperations)
-    def objectUnderTest = new DmiServiceImpl(mockDmiPluginProperties, mockNcmpRestClient, objectMapper, mockSdncOperations)
+    def objectUnderTest = new DmiServiceImpl(mockDmiPluginProperties, mockNcmpRestClient, mockSdncOperations, objectMapper)
+
+    def moduleList = [new ModuleReference(), new ModuleReference()] as LinkedList<ModuleReference>
 
     def 'Call get modules for cm-handle on dmi Service.'() {
         given: 'cm handle id'
@@ -62,7 +66,7 @@ class DmiServiceImplSpec extends Specification {
         when: 'get modules for cm-handle is called'
             objectUnderTest.getModulesForCmHandle(cmHandle)
         then: 'dmi exception is thrown'
-            thrown( DmiException )
+            thrown(DmiException)
     }
 
     def 'Call get modules for cm-handle and SDNC returns OK with empty body.'() {
@@ -73,7 +77,7 @@ class DmiServiceImplSpec extends Specification {
         when: 'get modules for cm-handle is called'
             objectUnderTest.getModulesForCmHandle(cmHandle)
         then: 'ModulesNotFoundException is thrown'
-            thrown( ModulesNotFoundException )
+            thrown(ModulesNotFoundException)
     }
 
     def 'Register cm handles with ncmp.'() {
@@ -100,9 +104,9 @@ class DmiServiceImplSpec extends Specification {
         then: 'a registration exception is thrown'
             thrown(CmHandleRegistrationException.class)
         where: 'given #scenario'
-            scenario                                        |   responseEntity
-            'ncmp rest client returns bad request'          |   new ResponseEntity<>(HttpStatus.BAD_REQUEST)
-            'ncmp rest client returns internal server error'|   new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR)
+            scenario                                         | responseEntity
+            'ncmp rest client returns bad request'           | new ResponseEntity<>(HttpStatus.BAD_REQUEST)
+            'ncmp rest client returns internal server error' | new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR)
     }
 
     def 'Register cm handles with ncmp with wrong data.'() {
@@ -115,5 +119,23 @@ class DmiServiceImplSpec extends Specification {
             objectUnderTest.registerCmHandles(cmHandlesList)
         then: 'a dmi exception is thrown'
             thrown(DmiException.class)
+    }
+
+    def 'Get module resources.'() {
+        given: 'request operation for get module schema is invoked and returns ok'
+            mockSdncOperations.getModuleSchema(_, _) >> new ResponseEntity<String>('some-response-body', HttpStatus.OK)
+        when: 'get module resources is invoked with the given cm handle and a module list'
+            def response = objectUnderTest.getModuleResources('some-cmHandle', moduleList)
+        then: 'the response contains the expected response body'
+            response.contains('["some-response-body","some-response-body"]')
+    }
+
+    def 'Get module resources for a failed get module schema request.'() {
+        given: 'get module schema is invoked and returns not found'
+            mockSdncOperations.getModuleSchema(_, _) >> new ResponseEntity<String>('some-response-body', HttpStatus.NOT_FOUND)
+        when: 'get module resources is invoked with the given cm handle and a module list'
+            objectUnderTest.getModuleResources('some-cmHandle', moduleList)
+        then: 'ModulesNotFoundException is thrown'
+            thrown(ModuleResourceNotFoundException)
     }
 }

@@ -98,3 +98,28 @@ paths:
           $ref: 'components.yml#/components/responses/Unauthorized'
         '403':
           $ref: 'components.yml#/components/responses/Forbidden'
+
+  /v1/ch/{cmHandle}/moduleResources:
+    post:
+      description: Retrieve module resources for one or more modules
+      tags:
+        - dmi-plugin
+      summary: Retrieve module resources
+      operationId: retrieveModuleReources
+      parameters:
+        - $ref: 'components.yml#/components/parameters/cmHandleInPath'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: 'components.yml#/components/schemas/ModuleResources'
+      responses:
+        '200':
+          $ref: 'components.yml#/components/responses/Ok'
+        '400':
+          $ref: 'components.yml#/components/responses/BadRequest'
+        '401':
+          $ref: 'components.yml#/components/responses/Unauthorized'
+        '403':
+          $ref: 'components.yml#/components/responses/Forbidden'
