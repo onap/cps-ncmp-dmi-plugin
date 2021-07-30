@@ -46,7 +46,7 @@ public class DmiExceptionHandler {
         return buildErrorResponse(HttpStatus.INTERNAL_SERVER_ERROR, exception);
     }
 
-    @ExceptionHandler({ModulesNotFoundException.class})
+    @ExceptionHandler({ModulesNotFoundException.class, ModuleResourceNotFoundException.class})
     public static ResponseEntity<Object> handleNotFoundExceptions(final DmiException exception) {
         return buildErrorResponse(HttpStatus.NOT_FOUND, exception);
     }
