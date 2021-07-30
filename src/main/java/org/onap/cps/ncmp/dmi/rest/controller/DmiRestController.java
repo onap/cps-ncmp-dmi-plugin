@@ -20,14 +20,16 @@
 
 package org.onap.cps.ncmp.dmi.rest.controller;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
 import java.util.List;
 import javax.validation.Valid;
 import lombok.extern.slf4j.Slf4j;
 import org.onap.cps.ncmp.dmi.model.CmHandles;
+import org.onap.cps.ncmp.dmi.model.ModuleSources;
+import org.onap.cps.ncmp.dmi.model.Modules;
 import org.onap.cps.ncmp.dmi.rest.api.DmiPluginApi;
 import org.onap.cps.ncmp.dmi.rest.api.DmiPluginInternalApi;
 import org.onap.cps.ncmp.dmi.service.DmiService;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -40,9 +42,11 @@ public class DmiRestController implements DmiPluginApi, DmiPluginInternalApi {
 
     private DmiService dmiService;
 
-    @Autowired
-    public DmiRestController(final DmiService dmiService) {
+    private ObjectMapper objectMapper;
+
+    public DmiRestController(final DmiService dmiService, final ObjectMapper objectMapper) {
         this.dmiService = dmiService;
+        this.objectMapper = objectMapper;
     }
 
     @Override
@@ -52,11 +56,26 @@ public class DmiRestController implements DmiPluginApi, DmiPluginInternalApi {
         return new ResponseEntity<>(modulesListAsJson, HttpStatus.OK);
     }
 
+    @Override
+    public ResponseEntity<Object> retrieveModuleResources(@Valid final ModuleSources moduleSources,
+        final String cmHandle) {
+        final var modulesData = convertRestObjectToJavaApiObject(moduleSources);
+        final var response = dmiService.getModuleSources(cmHandle, modulesData.getModules());
+        if (!response.isEmpty()) {
+            return new ResponseEntity<>(response, HttpStatus.OK);
+        }
+        return new ResponseEntity<>(response, HttpStatus.NOT_FOUND);
+    }
+
+    private Modules convertRestObjectToJavaApiObject(final ModuleSources moduleSources) {
+        return objectMapper.convertValue(moduleSources.getData(), Modules.class);
+    }
+
     /**
      * This method register given list of cm-handles to ncmp.
      *
      * @param cmHandles list of cm-handles
-     * @return (@code ResponseEntity) response entity
+     * @return (@ code ResponseEntity) response entity
      */
     public ResponseEntity<String> registerCmHandles(final @Valid CmHandles cmHandles) {
         final List<String> cmHandlesList = cmHandles.getCmHandles();
