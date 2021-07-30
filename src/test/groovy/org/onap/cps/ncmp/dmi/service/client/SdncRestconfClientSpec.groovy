@@ -22,7 +22,6 @@ package org.onap.cps.ncmp.dmi.service.client
 
 import org.onap.cps.ncmp.dmi.config.DmiConfiguration
 import org.springframework.http.HttpEntity
-import org.springframework.http.HttpMethod
 import org.springframework.http.ResponseEntity
 import org.springframework.web.client.RestTemplate
 import spock.lang.Specification
@@ -37,16 +36,38 @@ class SdncRestconfClientSpec extends Specification {
         given: 'a get url'
             def getResourceUrl = '/getResourceUrl'
         and: 'sdnc properties'
-            mockSdncProperties.baseUrl >> 'http://test-sdnc-uri'
-            mockSdncProperties.authUsername >> 'test-username'
-            mockSdncProperties.authPassword >> 'test-password'
-            mockSdncProperties.topologyId >> 'testTopologyId'
+            setupTestConfigurationData()
         and: 'the rest template returns a valid response entity'
             def mockResponseEntity = Mock(ResponseEntity)
-            mockRestTemplate.getForEntity({ it.toString() == 'http://test-sdnc-uri/getResourceUrl' }, String.class, _ as HttpEntity) >> mockResponseEntity
+            mockRestTemplate.getForEntity({ it.toString() == 'http://some-uri/getResourceUrl' }, String.class, _ as HttpEntity) >> mockResponseEntity
         when: 'GET operation is invoked'
             def result = objectUnderTest.getOperation(getResourceUrl)
         then: 'the output of the method is equal to the output from the test template'
             result == mockResponseEntity
+    }
+
+    def 'SDNC POST operation called.'() {
+        given: 'json data'
+            def jsonData = 'some-json'
+        and: 'a url for get module resources'
+            def getModuleResourceUrl = '/getModuleResourceUrl'
+        and: 'configuration data'
+            setupTestConfigurationData()
+        and: 'the rest template returns a valid response entity'
+            def mockResponseEntity = Mock(ResponseEntity)
+        when: 'get module resources is invoked'
+            def result = objectUnderTest.postOperationWithJsonData(getModuleResourceUrl, jsonData)
+        then: 'the rest template is called with the correct uri and json in the body'
+            1 * mockRestTemplate.postForEntity({ it.toString() == 'http://some-uri/getModuleResourceUrl' },
+                    { it.body.contains(jsonData) }, String.class) >> mockResponseEntity
+        and: 'the output of the method is the same as the output from the test template'
+            result == mockResponseEntity
+    }
+
+    def setupTestConfigurationData() {
+        mockSdncProperties.baseUrl >> 'http://some-uri'
+        mockSdncProperties.authUsername >> 'some-username'
+        mockSdncProperties.authPassword >> 'some-password'
+        mockSdncProperties.topologyId >> 'some-topology-id'
     }
 }

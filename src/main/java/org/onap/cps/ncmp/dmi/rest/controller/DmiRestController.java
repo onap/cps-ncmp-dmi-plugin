@@ -20,14 +20,17 @@
 
 package org.onap.cps.ncmp.dmi.rest.controller;
 
+import com.fasterxml.jackson.core.type.TypeReference;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import java.util.List;
 import javax.validation.Valid;
 import lombok.extern.slf4j.Slf4j;
 import org.onap.cps.ncmp.dmi.model.CmHandles;
+import org.onap.cps.ncmp.dmi.model.ModuleReference;
+import org.onap.cps.ncmp.dmi.model.ModuleRequestParent;
 import org.onap.cps.ncmp.dmi.rest.api.DmiPluginApi;
 import org.onap.cps.ncmp.dmi.rest.api.DmiPluginInternalApi;
 import org.onap.cps.ncmp.dmi.service.DmiService;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -40,9 +43,11 @@ public class DmiRestController implements DmiPluginApi, DmiPluginInternalApi {
 
     private DmiService dmiService;
 
-    @Autowired
-    public DmiRestController(final DmiService dmiService) {
+    private ObjectMapper objectMapper;
+
+    public DmiRestController(final DmiService dmiService, final ObjectMapper objectMapper) {
         this.dmiService = dmiService;
+        this.objectMapper = objectMapper;
     }
 
     @Override
@@ -52,11 +57,25 @@ public class DmiRestController implements DmiPluginApi, DmiPluginInternalApi {
         return new ResponseEntity<>(modulesListAsJson, HttpStatus.OK);
     }
 
+    @Override
+    public ResponseEntity<Object> retrieveModuleResources(@Valid final ModuleRequestParent moduleRequestParent,
+        final String cmHandle) {
+        if (moduleRequestParent.getOperation().toString().equals("read")) {
+            final var moduleReferenceList = convertRestObjectToJavaApiObject(moduleRequestParent);
+            final var response = dmiService.getModuleResources(cmHandle, moduleReferenceList);
+            if (response.isEmpty()) {
+                return new ResponseEntity<>(response, HttpStatus.NOT_FOUND);
+            }
+            return new ResponseEntity<>(response, HttpStatus.OK);
+        }
+        return new ResponseEntity<>("Unsupported operation", HttpStatus.CONFLICT);
+    }
+
     /**
      * This method register given list of cm-handles to ncmp.
      *
      * @param cmHandles list of cm-handles
-     * @return (@code ResponseEntity) response entity
+     * @return (@ code ResponseEntity) response entity
      */
     public ResponseEntity<String> registerCmHandles(final @Valid CmHandles cmHandles) {
         final List<String> cmHandlesList = cmHandles.getCmHandles();
@@ -65,5 +84,10 @@ public class DmiRestController implements DmiPluginApi, DmiPluginInternalApi {
         }
         dmiService.registerCmHandles(cmHandlesList);
         return new ResponseEntity<>("cm-handle registered successfully.", HttpStatus.CREATED);
+    }
+
+    private List<ModuleReference> convertRestObjectToJavaApiObject(final ModuleRequestParent moduleRequestParent) {
+        return objectMapper
+            .convertValue(moduleRequestParent.getData().getModules(), new TypeReference<List<ModuleReference>>() {});
     }
 }

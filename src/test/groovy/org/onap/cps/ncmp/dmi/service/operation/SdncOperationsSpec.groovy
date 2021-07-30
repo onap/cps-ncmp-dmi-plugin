@@ -22,23 +22,38 @@ package org.onap.cps.ncmp.dmi.service.operation
 
 import org.onap.cps.ncmp.dmi.config.DmiConfiguration
 import org.onap.cps.ncmp.dmi.service.client.SdncRestconfClient
-import org.springframework.http.HttpStatus
-import org.springframework.http.ResponseEntity
+import org.spockframework.spring.SpringBean
+import org.springframework.beans.factory.annotation.Autowired
+import org.springframework.boot.test.context.SpringBootTest
+import org.springframework.test.context.ContextConfiguration
 import spock.lang.Specification
 
-class SdncOperationsSpec extends  Specification {
-    def mockSdncProperties = Mock(DmiConfiguration.SdncProperties)
-    def mockSdncRestClient = Mock(SdncRestconfClient)
+@SpringBootTest
+@ContextConfiguration(classes = [DmiConfiguration.SdncProperties, SdncOperations])
+class SdncOperationsSpec extends Specification {
+
+    @SpringBean
+    SdncRestconfClient mockSdncRestClient = Mock()
+    @Autowired
+    SdncOperations objectUnderTest
 
     def 'call get modules from node to SDNC.'() {
-        given: 'nodeid, topology-id, responseentity'
+        given: 'node id and url'
             def nodeId = 'node1'
             def expectedUrl = '/rests/data/network-topology:network-topology/topology=test-topology/node=node1/yang-ext:mount/ietf-netconf-monitoring:netconf-state/schemas'
-            mockSdncProperties.getTopologyId() >> 'test-topology'
-            def objectUnderTest = new SdncOperations(mockSdncProperties, mockSdncRestClient)
         when: 'called get modules from node'
             objectUnderTest.getModulesFromNode(nodeId)
         then: 'the get operation is executed with the correct URL'
             1 * mockSdncRestClient.getOperation(expectedUrl)
+    }
+
+    def 'Get module resources from SDNC.'() {
+        given: 'node id and url'
+            def nodeId = 'some-node'
+            def expectedUrl = '/rests/operations/network-topology:network-topology/topology=test-topology/node=some-node/yang-ext:mount/ietf-netconf-monitoring:get-schema'
+        when: 'get module resources is called with the expected parameters'
+            objectUnderTest.getModuleResource(nodeId, 'some-json-data')
+        then: 'the SDNC Rest client is invoked with the correct URL and json data'
+            1 * mockSdncRestClient.postOperationWithJsonData(expectedUrl, 'some-json-data')
     }
 }

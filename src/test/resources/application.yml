@@ -24,3 +24,10 @@ security:
   auth:
     username: cpsuser
     password: cpsr0cks!
+
+sdnc:
+  baseUrl: http://test
+  topologyId: test-topology
+  auth:
+    username: test
+    password: test

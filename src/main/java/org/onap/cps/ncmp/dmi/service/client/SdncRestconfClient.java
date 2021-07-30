@@ -30,6 +30,7 @@ import org.springframework.web.client.RestTemplate;
 
 @Component
 public class SdncRestconfClient {
+
     private SdncProperties sdncProperties;
     private RestTemplate restTemplate;
 
@@ -42,16 +43,34 @@ public class SdncRestconfClient {
      * restconf get operation on sdnc.
      *
      * @param getResourceUrl sdnc get url
-     *
      * @return the response entity
      */
     public ResponseEntity<String> getOperation(final String getResourceUrl) {
         final String sdncBaseUrl = sdncProperties.getBaseUrl();
         final String sdncRestconfUrl = sdncBaseUrl.concat(getResourceUrl);
+        final var httpEntity = new HttpEntity<>(configureHttpHeaders());
+        return restTemplate.getForEntity(sdncRestconfUrl, String.class, httpEntity);
+    }
+
+    /**
+     * restconf post operation on sdnc.
+     *
+     * @param postResourceUrl sdnc post resource url
+     * @param jsonData        json data
+     * @return the response entity
+     */
+    public ResponseEntity<String> postOperationWithJsonData(final String postResourceUrl,
+        final String jsonData) {
+        final var sdncBaseUrl = sdncProperties.getBaseUrl();
+        final var sdncRestconfUrl = sdncBaseUrl.concat(postResourceUrl);
+        final var httpEntity = new HttpEntity<>(jsonData, configureHttpHeaders());
+        return restTemplate.postForEntity(sdncRestconfUrl, httpEntity, String.class);
+    }
+
+    private HttpHeaders configureHttpHeaders() {
         final var httpHeaders = new HttpHeaders();
         httpHeaders.setBasicAuth(sdncProperties.getAuthUsername(), sdncProperties.getAuthPassword());
-        httpHeaders.set(HttpHeaders.ACCEPT, MediaType.APPLICATION_JSON.toString());
-        final var httpEntity = new HttpEntity<>(httpHeaders);
-        return restTemplate.getForEntity(sdncRestconfUrl, String.class, httpEntity);
+        httpHeaders.set(HttpHeaders.CONTENT_TYPE, MediaType.APPLICATION_JSON_VALUE);
+        return httpHeaders;
     }
 }
