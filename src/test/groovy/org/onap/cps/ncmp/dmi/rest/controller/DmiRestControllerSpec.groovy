@@ -20,7 +20,9 @@
 
 package org.onap.cps.ncmp.dmi.rest.controller
 
+import org.onap.cps.ncmp.dmi.TestUtils
 import org.onap.cps.ncmp.dmi.exception.DmiException
+import org.onap.cps.ncmp.dmi.exception.ModuleResourceNotFoundException
 import org.onap.cps.ncmp.dmi.exception.ModulesNotFoundException
 import org.onap.cps.ncmp.dmi.service.DmiService
 import org.spockframework.spring.SpringBean
@@ -55,7 +57,7 @@ class DmiRestControllerSpec extends Specification {
             def someJson = 'some-json'
             mockDmiService.getModulesForCmHandle('node1') >> someJson
         when: 'post is being called'
-            def response = mvc.perform( post(getModuleUrl)
+            def response = mvc.perform(post(getModuleUrl)
                     .contentType(MediaType.APPLICATION_JSON))
                     .andReturn().response
         then: 'status is OK'
@@ -70,16 +72,16 @@ class DmiRestControllerSpec extends Specification {
         and: 'get modules for cm-handle throws #exceptionClass'
             mockDmiService.getModulesForCmHandle('node1') >> { throw Mock(exceptionClass) }
         when: 'post is invoked'
-            def response = mvc.perform( post(getModuleUrl)
+            def response = mvc.perform(post(getModuleUrl)
                     .contentType(MediaType.APPLICATION_JSON))
                     .andReturn().response
         then: 'response status is #expectedResponse'
             response.status == expectedResponse
         where: 'the scenario is #scenario'
-            scenario                       |  exceptionClass                 || expectedResponse
-            'dmi service exception'        |  DmiException.class             || HttpStatus.INTERNAL_SERVER_ERROR.value()
-            'no modules found'             |  ModulesNotFoundException.class || HttpStatus.NOT_FOUND.value()
-            'any other runtime exception'  |  RuntimeException.class         || HttpStatus.INTERNAL_SERVER_ERROR.value()
+            scenario                      | exceptionClass                 || expectedResponse
+            'dmi service exception'       | DmiException.class             || HttpStatus.INTERNAL_SERVER_ERROR.value()
+            'no modules found'            | ModulesNotFoundException.class || HttpStatus.NOT_FOUND.value()
+            'any other runtime exception' | RuntimeException.class         || HttpStatus.INTERNAL_SERVER_ERROR.value()
     }
 
     def 'Register given list of cm handles.'() {
@@ -111,5 +113,35 @@ class DmiRestControllerSpec extends Specification {
             response.status == HttpStatus.BAD_REQUEST.value()
         and: 'dmi service is not called'
             0 * mockDmiService.registerCmHandles(_)
+    }
+
+    def 'Retrieve module resources.'() {
+        given: 'an endpoint and json data'
+            def getModulesEndpoint = "$basePathV1/ch/some-cm-handle/moduleResources"
+            def jsonData = TestUtils.getResourceFileContent('GetModules.json')
+        and: 'the DMI service returns some json data'
+            mockDmiService.getModuleResources('some-cm-handle', _) >> '{some-json}'
+        when: 'get module resource api is invoked'
+            def response = mvc.perform(post(getModulesEndpoint)
+                    .contentType(MediaType.APPLICATION_JSON)
+                    .content(jsonData)).andReturn().response
+        then:'a OK status is returned'
+            response.status == HttpStatus.OK.value()
+        and: 'the expected response is returned'
+            response.getContentAsString() == '{some-json}'
+    }
+
+    def 'Retrieve module resources with exception handling.'() {
+        given: 'an endpoint and json data'
+            def getModulesEndpoint = "$basePathV1/ch/some-cm-handle/moduleResources"
+            def jsonData = TestUtils.getResourceFileContent('GetModules.json')
+        and: 'the service method is invoked to get module resources and throws an exception'
+            mockDmiService.getModuleResources('some-cm-handle', _) >> { throw Mock(ModuleResourceNotFoundException.class) }
+        when: 'get module resource api is invoked'
+            def response = mvc.perform(post(getModulesEndpoint)
+                    .contentType(MediaType.APPLICATION_JSON)
+                    .content(jsonData)).andReturn().response
+        then: 'a not found status is returned'
+            response.status == HttpStatus.NOT_FOUND.value()
     }
 }

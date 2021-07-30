@@ -22,6 +22,7 @@ package org.onap.cps.ncmp.dmi.service;
 
 import java.util.List;
 import org.onap.cps.ncmp.dmi.exception.DmiException;
+import org.onap.cps.ncmp.dmi.model.ModuleReference;
 
 /**
  * Interface for handling Dmi plugin Data.
@@ -45,4 +46,12 @@ public interface DmiService {
      */
     void registerCmHandles(List<String> cmHandles);
 
+    /**
+     * Get module resources for the given cm handle and modules.
+     *
+     * @param cmHandle cmHandle
+     * @param modules a list of module data
+     * @return returns all module resources
+     */
+    String getModuleResources(String cmHandle, List<ModuleReference> modules);
 }

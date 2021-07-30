@@ -19,6 +19,30 @@ components:
           items:
             type: string
 
+    ModuleReferences:
+      type: object
+      properties:
+        operation:
+          type: string
+          enum: [read,write]
+        data:
+          type: object
+          properties:
+            modules:
+              type: array
+              items:
+                type: object
+                properties:
+                  name:
+                    type: string
+                  revision:
+                    type: string
+        cmHandleProperties:
+          type: object
+          additionalProperties:
+            type: string
+            example: system-001
+
   responses:
     NotFound:
       description: The specified resource was not found
@@ -65,3 +89,12 @@ components:
     NoContent:
       description: No Content
       content: {}
+
+  parameters:
+    cmHandleInPath:
+      name: cmHandle
+      in: path
+      description: The identifier for a network function, network element, subnetwork, or any other cm object by managed Network CM Proxy
+      required: true
+      schema:
+        type: string
