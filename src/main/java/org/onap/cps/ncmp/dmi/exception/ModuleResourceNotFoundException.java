@@ -18,31 +18,21 @@
  *  ============LICENSE_END=========================================================
  */
 
-package org.onap.cps.ncmp.dmi.service;
+package org.onap.cps.ncmp.dmi.exception;
 
-import java.util.List;
-import org.onap.cps.ncmp.dmi.exception.DmiException;
-import org.onap.cps.ncmp.dmi.service.models.ModuleData;
+public class ModuleResourceNotFoundException extends DmiException {
 
-/**
- * Interface for handling Dmi plugin Data.
- */
-public interface DmiService {
-    /**
-     * This method used to register the given {@code CmHandles}
-     * which contains list of {@code CmHandle} to cps repository.
-     *
-     * @param cmHandle cm-handle to fetch the modules information
-     * @return {@code String} returns all modules
-     */
-    String getModulesForCmHandle(String cmHandle) throws DmiException;
+    private static final long serialVersionUID = 4764849097602543408L;
+
+    private static final String ERROR_MESSAGE = "Module resource not found for given cmHandles: ";
 
     /**
-     * Get module sources for the given cm handle and modules.
+     * Constructor.
      *
-     * @param cmHandle cmHandle
-     * @param modules a list of module data
-     * @return returns all module sources
+     * @param cmHandle the cm handle
+     * @param details the details of the error
      */
-    String getModuleSources(String cmHandle, List<ModuleData> modules);
+    public ModuleResourceNotFoundException(final String cmHandle, final String details) {
+        super(ERROR_MESSAGE + cmHandle, details);
+    }
 }

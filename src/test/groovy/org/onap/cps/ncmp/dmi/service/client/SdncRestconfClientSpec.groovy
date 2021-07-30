@@ -22,7 +22,6 @@ package org.onap.cps.ncmp.dmi.service.client
 
 import org.onap.cps.ncmp.dmi.config.DmiConfiguration
 import org.springframework.http.HttpEntity
-import org.springframework.http.HttpMethod
 import org.springframework.http.ResponseEntity
 import org.springframework.web.client.RestTemplate
 import spock.lang.Specification
@@ -32,6 +31,12 @@ class SdncRestconfClientSpec extends Specification {
     def mockSdncProperties = Mock(DmiConfiguration.SdncProperties)
     def mockRestTemplate = Mock(RestTemplate)
     def objectUnderTest = new SdncRestconfClient(mockSdncProperties, mockRestTemplate)
+
+    def setup() {
+        objectUnderTest.restTemplate = mockRestTemplate
+        objectUnderTest.sdncProperties = mockSdncProperties
+    }
+
 
     def 'SDNC GET operation.'() {
         given: 'a get url'
@@ -47,6 +52,27 @@ class SdncRestconfClientSpec extends Specification {
         when: 'getOperation is invoked'
             def result = objectUnderTest.getOperation(getResourceUrl)
         then: 'result equals mockResponseEntity'
+            result == mockResponseEntity
+    }
+
+    def 'Get module sources.'() {
+        given: 'json data'
+            def jsonData = 'some-json'
+        and: 'a url for get module sources'
+            def getModuleSourceUrl = '/getModuleSourceUrl'
+        and: 'configuration data'
+            mockSdncProperties.baseUrl >> 'http://some-uri'
+            mockSdncProperties.authUsername >> 'some-username'
+            mockSdncProperties.authPassword >> 'some-password'
+            mockSdncProperties.topologyId >> 'some-topology-id'
+        and: 'the rest template returns a valid response entity'
+            def mockResponseEntity = Mock(ResponseEntity)
+        when: 'get module sources is invoked'
+            def result = objectUnderTest.postOperationWithJsonData(getModuleSourceUrl, jsonData)
+        then: 'the rest template is called with the correct uri and json in the body'
+            1 * mockRestTemplate.postForEntity({ it.toString() == 'http://some-uri/getModuleSourceUrl' },
+                    { it.body.contains(jsonData) }, String.class) >> mockResponseEntity
+        and: 'the output of the method is the same as the output from the test template'
             result == mockResponseEntity
     }
 }

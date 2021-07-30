@@ -20,18 +20,17 @@
 
 package org.onap.cps.ncmp.dmi.rest.controller
 
-
+import org.onap.cps.ncmp.dmi.TestUtils
 import org.onap.cps.ncmp.dmi.exception.DmiException
 import org.onap.cps.ncmp.dmi.exception.ModulesNotFoundException
 import org.onap.cps.ncmp.dmi.service.DmiService
-import org.onap.cps.ncmp.dmi.service.DmiServiceImpl
-import org.springframework.http.MediaType
 import org.spockframework.spring.SpringBean
-import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc
-import org.springframework.http.HttpStatus
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.beans.factory.annotation.Value
+import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest
+import org.springframework.http.HttpStatus
+import org.springframework.http.MediaType
 import org.springframework.test.web.servlet.MockMvc
 import spock.lang.Specification
 
@@ -57,9 +56,9 @@ class DmiRestControllerSpec extends Specification {
         and: 'getModulesForCmHandle returns a json'
             mockDmiService.getModulesForCmHandle("node1") >> someJson
         when: 'post is being called'
-            def response = mvc.perform( post(getModuleUrl)
-                            .contentType(MediaType.APPLICATION_JSON))
-                            .andReturn().response
+            def response = mvc.perform(post(getModuleUrl)
+                    .contentType(MediaType.APPLICATION_JSON))
+                    .andReturn().response
         then: 'status is OK'
             response.status == HttpStatus.OK.value()
         and: 'the response content matches the result from the DMI service'
@@ -72,15 +71,44 @@ class DmiRestControllerSpec extends Specification {
         and: 'getModulesForCmHandle throws #exceptionClass'
             mockDmiService.getModulesForCmHandle("node1") >> { throw Mock(exceptionClass) }
         when: 'post is invoked'
-            def response = mvc.perform( post(getModuleUrl)
+            def response = mvc.perform(post(getModuleUrl)
                     .contentType(MediaType.APPLICATION_JSON))
                     .andReturn().response
         then: 'response status is #expectedResponse'
             response.status == expectedResponse
         where: 'the scenario is #scenario'
-            scenario                       |  exceptionClass                 || expectedResponse
-            'dmi service exception'        |  DmiException.class             || HttpStatus.INTERNAL_SERVER_ERROR.value()
-            'no modules found'             |  ModulesNotFoundException.class || HttpStatus.NOT_FOUND.value()
-            'any other runtime exception'  |  RuntimeException.class         || HttpStatus.INTERNAL_SERVER_ERROR.value()
+            scenario                      | exceptionClass                 || expectedResponse
+            'dmi service exception'       | DmiException.class             || HttpStatus.INTERNAL_SERVER_ERROR.value()
+            'no modules found'            | ModulesNotFoundException.class || HttpStatus.NOT_FOUND.value()
+            'any other runtime exception' | RuntimeException.class         || HttpStatus.INTERNAL_SERVER_ERROR.value()
+    }
+
+    def 'Retrieve yang resources.'() {
+        given: 'an endpoint and json data'
+            def getModulesEndpoint = "$basePathV1/ch/some-cm-handle/moduleSources"
+            def jsonData = TestUtils.getResourceFileContent('GetModules.json')
+        and: 'the service method is invoked with the expected parameters'
+            mockDmiService.getModuleSources('some-cm-handle', _) >> '{some-json}'
+        when: 'get module resource api is invoked'
+            def response = mvc.perform(post(getModulesEndpoint)
+                    .contentType(MediaType.APPLICATION_JSON)
+                    .content(jsonData)).andReturn().response
+        then: 'the expected response is returned'
+            response.status == HttpStatus.OK.value()
+            response.getContentAsString() == '{some-json}'
+    }
+
+    def 'Retrieve yang resources with exception handling.'() {
+        given: 'an endpoint and json data'
+            def getModulesEndpoint = "$basePathV1/ch/some-cm-handle/moduleSources"
+            def jsonData = TestUtils.getResourceFileContent('GetModules.json')
+        and: 'the service method is invoked and throws an exception'
+            mockDmiService.getModuleSources('some-cm-handle', _) >> { throw Mock(ModulesNotFoundException.class) }
+        when: 'get module resource api is invoked'
+            def response = mvc.perform(post(getModulesEndpoint)
+                    .contentType(MediaType.APPLICATION_JSON)
+                    .content(jsonData)).andReturn().response
+        then: 'the expected response is returned'
+            response.status == HttpStatus.NOT_FOUND.value()
     }
 }
