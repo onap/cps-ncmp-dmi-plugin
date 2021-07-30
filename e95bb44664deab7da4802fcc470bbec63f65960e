@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "382352f3_5dc8cdd7",
+        "filename": "docs/openapi/openapi.yml",
+        "patchSetId": 10
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 5006
+      },
+      "writtenOn": "2021-07-30T18:48:00Z",
+      "side": 1,
+      "message": "I followed cps-ncmp-rest/openapi.yml practice here. Thought to be in sync with that. Will change",
+      "parentUuid": "20c518b8_1aef9d9b",
+      "range": {
+        "startLine": 34,
+        "startChar": 10,
+        "endLine": 34,
+        "endChar": 19
+      },
+      "revId": "e95bb44664deab7da4802fcc470bbec63f65960e",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "27c6be48_f16c972f",
         "filename": "docs/openapi/openapi.yml",
         "patchSetId": 10
@@ -36,6 +60,30 @@
       "writtenOn": "2021-07-30T16:06:44Z",
       "side": 1,
       "message": "cmHandle.\nShould we extract this parameter to the components class as we are doing in cps core?",
+      "range": {
+        "startLine": 42,
+        "startChar": 16,
+        "endLine": 42,
+        "endChar": 25
+      },
+      "revId": "e95bb44664deab7da4802fcc470bbec63f65960e",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "726347af_134fd557",
+        "filename": "docs/openapi/openapi.yml",
+        "patchSetId": 10
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 5006
+      },
+      "writtenOn": "2021-07-30T18:48:00Z",
+      "side": 1,
+      "message": "I would prefer to extract it for re usability when multiple instance of cmHandle happen in future. As this is only single instance here. For now lets keep it this way for simplicity.",
+      "parentUuid": "27c6be48_f16c972f",
       "range": {
         "startLine": 42,
         "startChar": 16,
@@ -119,6 +167,30 @@
     },
     {
       "key": {
+        "uuid": "64cbaf82_b35eb55b",
+        "filename": "src/main/java/org/onap/cps/ncmp/dmi/service/operation/SdncOperations.java",
+        "patchSetId": 10
+      },
+      "lineNbr": 53,
+      "author": {
+        "id": 5006
+      },
+      "writtenOn": "2021-07-30T18:48:00Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "8df161e3_194a0d66",
+      "range": {
+        "startLine": 53,
+        "startChar": 22,
+        "endLine": 53,
+        "endChar": 43
+      },
+      "revId": "e95bb44664deab7da4802fcc470bbec63f65960e",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "d9b97078_7901077b",
         "filename": "src/test/groovy/org/onap/cps/ncmp/dmi/rest/controller/DmiRestControllerSpec.groovy",
         "patchSetId": 10
@@ -142,6 +214,30 @@
     },
     {
       "key": {
+        "uuid": "1232932e_70ed8359",
+        "filename": "src/test/groovy/org/onap/cps/ncmp/dmi/rest/controller/DmiRestControllerSpec.groovy",
+        "patchSetId": 10
+      },
+      "lineNbr": 55,
+      "author": {
+        "id": 5006
+      },
+      "writtenOn": "2021-07-30T18:48:00Z",
+      "side": 1,
+      "message": "I tried this \u0027 \u0027 but it doesnt work with $ somehow. So intentionally used double quotes.",
+      "parentUuid": "d9b97078_7901077b",
+      "range": {
+        "startLine": 55,
+        "startChar": 31,
+        "endLine": 55,
+        "endChar": 61
+      },
+      "revId": "e95bb44664deab7da4802fcc470bbec63f65960e",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "24490d5c_dc40c1d1",
         "filename": "src/test/groovy/org/onap/cps/ncmp/dmi/rest/controller/DmiRestControllerSpec.groovy",
         "patchSetId": 10
@@ -153,6 +249,30 @@
       "writtenOn": "2021-07-30T16:06:44Z",
       "side": 1,
       "message": "please change to \u0027$basePathV1/ch/node1/modules\u0027",
+      "range": {
+        "startLine": 71,
+        "startChar": 31,
+        "endLine": 71,
+        "endChar": 61
+      },
+      "revId": "e95bb44664deab7da4802fcc470bbec63f65960e",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "fb897c11_fbac458b",
+        "filename": "src/test/groovy/org/onap/cps/ncmp/dmi/rest/controller/DmiRestControllerSpec.groovy",
+        "patchSetId": 10
+      },
+      "lineNbr": 71,
+      "author": {
+        "id": 5006
+      },
+      "writtenOn": "2021-07-30T18:48:00Z",
+      "side": 1,
+      "message": "I tried this \u0027 \u0027 but it doesnt work with $ somehow. So intentionally used double quotes.",
+      "parentUuid": "24490d5c_dc40c1d1",
       "range": {
         "startLine": 71,
         "startChar": 31,
