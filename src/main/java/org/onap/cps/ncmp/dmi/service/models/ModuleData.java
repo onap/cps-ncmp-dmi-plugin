@@ -18,31 +18,23 @@
  *  ============LICENSE_END=========================================================
  */
 
-package org.onap.cps.ncmp.dmi.service;
+package org.onap.cps.ncmp.dmi.service.models;
 
-import java.util.List;
-import org.onap.cps.ncmp.dmi.exception.DmiException;
-import org.onap.cps.ncmp.dmi.service.models.ModuleData;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import lombok.Getter;
 
 /**
- * Interface for handling Dmi plugin Data.
+ * Module Data.
  */
-public interface DmiService {
-    /**
-     * This method used to register the given {@code CmHandles}
-     * which contains list of {@code CmHandle} to cps repository.
-     *
-     * @param cmHandle cm-handle to fetch the modules information
-     * @return {@code String} returns all modules
-     */
-    String getModulesForCmHandle(String cmHandle) throws DmiException;
+@Getter
+public class ModuleData {
 
-    /**
-     * Get module sources for the given module and cm handle.
-     *
-     * @param cmHandle cmHandle
-     * @param modules a list of module data
-     * @return returns all module sources
-     */
-    String getModuleSources(String cmHandle, List<ModuleData> modules);
+    @JsonProperty("namespace")
+    private String namespace;
+
+    @JsonProperty("name")
+    private String name;
+
+    @JsonProperty("revision")
+    private String revision;
 }

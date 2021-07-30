@@ -22,11 +22,9 @@ package org.onap.cps.ncmp.dmi.service.operation
 
 import org.onap.cps.ncmp.dmi.config.DmiConfiguration
 import org.onap.cps.ncmp.dmi.service.client.SdncRestconfClient
-import org.springframework.http.HttpStatus
-import org.springframework.http.ResponseEntity
 import spock.lang.Specification
 
-class SdncOperationsSpec extends  Specification {
+class SdncOperationsSpec extends Specification {
     def mockSdncProperties = Mock(DmiConfiguration.SdncProperties)
     def mockSdncRestClient = Mock(SdncRestconfClient)
 
@@ -40,5 +38,17 @@ class SdncOperationsSpec extends  Specification {
             objectUnderTest.getModulesFromNode(nodeId)
         then: 'the get operation is executed with the correct URL'
             1 * mockSdncRestClient.getOperation(expectedUrl)
+    }
+
+    def 'Get module resources from SDNC.'() {
+        given: 'node id, a url and topology id'
+            def nodeId = 'some-node'
+            def expectedUrl = '/restconf/operations/network-topology:network-topology/topology/some-topology-id/node/some-node/yang-ext:mount/ietf-netconf-monitoring:get-schema'
+            mockSdncProperties.getTopologyId() >> 'some-topology-id'
+            def objectUnderTest = new SdncOperations(mockSdncProperties, mockSdncRestClient)
+        when: 'get module resources is called with the expected parameters'
+            objectUnderTest.getYangResources(nodeId, 'some-json-data')
+        then: 'the get operation is executed with the correct URL and json data'
+            1 * mockSdncRestClient.getModuleSources(expectedUrl, 'some-json-data')
     }
 }

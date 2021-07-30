@@ -20,8 +20,11 @@
 
 package org.onap.cps.ncmp.dmi.service
 
+import com.fasterxml.jackson.core.JsonProcessingException
+import com.fasterxml.jackson.databind.ObjectMapper
 import org.onap.cps.ncmp.dmi.exception.DmiException
 import org.onap.cps.ncmp.dmi.exception.ModulesNotFoundException
+import org.onap.cps.ncmp.dmi.service.models.ModuleData
 import org.onap.cps.ncmp.dmi.service.operation.SdncOperations
 import org.springframework.http.HttpStatus
 import org.springframework.http.ResponseEntity
@@ -57,17 +60,45 @@ class DmiServiceImplSpec extends Specification {
         when: 'getModulesForCmhandle is called'
             objectUnderTest.getModulesForCmHandle(cmHandle)
         then: 'DmiException is thrown'
-            thrown( DmiException )
+            thrown(DmiException)
     }
 
     def 'Call getModulesForCmhandle and SDNC returns OK with empty body.'() {
         given: 'cm handle id'
-        def cmHandle = "node1"
+            def cmHandle = "node1"
         and: 'getModulesFromNode returns OK with empty body'
-        mockSdncOperations.getModulesFromNode(cmHandle) >> new ResponseEntity<String>("", HttpStatus.OK)
+            mockSdncOperations.getModulesFromNode(cmHandle) >> new ResponseEntity<String>("", HttpStatus.OK)
         when: 'getModulesForCmhandle is called'
-        objectUnderTest.getModulesForCmHandle(cmHandle)
+            objectUnderTest.getModulesForCmHandle(cmHandle)
         then: 'ModulesNotFoundException is thrown'
-        thrown( ModulesNotFoundException )
+            thrown(ModulesNotFoundException)
+    }
+
+    def 'Get module resources.'() {
+        given: 'request operation for get yang resources is invoked and returns ok'
+            mockSdncOperations.getYangResources(_, _) >> new ResponseEntity<String>('some-response-body', HttpStatus.OK)
+        when: 'get module resources is invoked with the given cm handle and a module list'
+            def modules = new ModuleData()
+            modules.namespace >> 'some-namespace'
+            modules.name >> 'some-name'
+            modules.revision >> 'some-revision'
+            def moduleData = [modules] as LinkedList<ModuleData>
+            def response = objectUnderTest.getModuleSources('some-cmHandle', moduleData)
+        then: 'the response contains the expected response body'
+            response == 'some-response-body'
+    }
+
+    def 'Get module resources for a failed module request.'() {
+        given: 'get yang resources is invoked and returns not found'
+            mockSdncOperations.getYangResources(_, _) >> new ResponseEntity<String>('some-response-body', HttpStatus.NOT_FOUND)
+        when: 'get module resources is invoked with the given cm handle and a module list'
+            def modules = new ModuleData()
+            modules.namespace >> 'some-namespace'
+            modules.name >> 'some-name'
+            modules.revision >> 'some-revision'
+            def modulesDataModulesList = [modules] as LinkedList<ModuleData>
+            objectUnderTest.getModuleSources('some-cmHandle', modulesDataModulesList)
+        then: 'ModulesNotFoundException is thrown'
+            thrown(ModulesNotFoundException)
     }
 }
