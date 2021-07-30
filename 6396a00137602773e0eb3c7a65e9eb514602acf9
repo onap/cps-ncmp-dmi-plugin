@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "807750d5_23554259",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 7
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 5006
+      },
+      "writtenOn": "2021-07-30T14:12:35Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "a06d2de1_26b1f189",
+      "range": {
+        "startLine": 9,
+        "startChar": 0,
+        "endLine": 11,
+        "endChar": 52
+      },
+      "revId": "6396a00137602773e0eb3c7a65e9eb514602acf9",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "61e854c4_6a5c1ab5",
         "filename": "docs/openapi/components.yml",
         "patchSetId": 7
@@ -45,6 +69,30 @@
       "revId": "6396a00137602773e0eb3c7a65e9eb514602acf9",
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "7882498b_1d61f57d",
+        "filename": "docs/openapi/components.yml",
+        "patchSetId": 7
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 5006
+      },
+      "writtenOn": "2021-07-30T14:12:35Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "61e854c4_6a5c1ab5",
+      "range": {
+        "startLine": 14,
+        "startChar": 4,
+        "endLine": 14,
+        "endChar": 14
+      },
+      "revId": "6396a00137602773e0eb3c7a65e9eb514602acf9",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
     },
     {
       "key": {
@@ -71,6 +119,30 @@
     },
     {
       "key": {
+        "uuid": "05739435_276ab69c",
+        "filename": "docs/openapi/components.yml",
+        "patchSetId": 7
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 5006
+      },
+      "writtenOn": "2021-07-30T14:12:35Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "625b4631_5942adac",
+      "range": {
+        "startLine": 17,
+        "startChar": 8,
+        "endLine": 17,
+        "endChar": 18
+      },
+      "revId": "6396a00137602773e0eb3c7a65e9eb514602acf9",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3305b675_94b37b45",
         "filename": "docs/openapi/openapi.yml",
         "patchSetId": 7
@@ -91,6 +163,30 @@
       "revId": "6396a00137602773e0eb3c7a65e9eb514602acf9",
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "a80701c1_5e24c450",
+        "filename": "docs/openapi/openapi.yml",
+        "patchSetId": 7
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 5006
+      },
+      "writtenOn": "2021-07-30T14:12:35Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3305b675_94b37b45",
+      "range": {
+        "startLine": 39,
+        "startChar": 29,
+        "endLine": 39,
+        "endChar": 37
+      },
+      "revId": "6396a00137602773e0eb3c7a65e9eb514602acf9",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
     },
     {
       "key": {
@@ -117,6 +213,30 @@
     },
     {
       "key": {
+        "uuid": "e098b389_9c7ce511",
+        "filename": "docs/openapi/openapi.yml",
+        "patchSetId": 7
+      },
+      "lineNbr": 43,
+      "author": {
+        "id": 5006
+      },
+      "writtenOn": "2021-07-30T14:12:35Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "cabc8b23_a378659d",
+      "range": {
+        "startLine": 43,
+        "startChar": 58,
+        "endLine": 43,
+        "endChar": 68
+      },
+      "revId": "6396a00137602773e0eb3c7a65e9eb514602acf9",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ddb18157_d9e77ea6",
         "filename": "src/main/java/org/onap/cps/ncmp/dmi/exception/CmHandleRegistrationException.java",
         "patchSetId": 7
@@ -137,6 +257,30 @@
       "revId": "6396a00137602773e0eb3c7a65e9eb514602acf9",
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "8c8586df_94dcb1a1",
+        "filename": "src/main/java/org/onap/cps/ncmp/dmi/exception/CmHandleRegistrationException.java",
+        "patchSetId": 7
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 5006
+      },
+      "writtenOn": "2021-07-30T14:12:35Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ddb18157_d9e77ea6",
+      "range": {
+        "startLine": 27,
+        "startChar": 31,
+        "endLine": 27,
+        "endChar": 93
+      },
+      "revId": "6396a00137602773e0eb3c7a65e9eb514602acf9",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
     },
     {
       "key": {
@@ -163,6 +307,30 @@
     },
     {
       "key": {
+        "uuid": "1d411dcd_b8edbc03",
+        "filename": "src/main/java/org/onap/cps/ncmp/dmi/exception/DmiExceptionHandler.java",
+        "patchSetId": 7
+      },
+      "lineNbr": 59,
+      "author": {
+        "id": 5006
+      },
+      "writtenOn": "2021-07-30T14:12:35Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "faeec7bc_4ad753d5",
+      "range": {
+        "startLine": 59,
+        "startChar": 78,
+        "endLine": 59,
+        "endChar": 84
+      },
+      "revId": "6396a00137602773e0eb3c7a65e9eb514602acf9",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "bd1978c5_095ce6ee",
         "filename": "src/main/java/org/onap/cps/ncmp/dmi/exception/DmiExceptionHandler.java",
         "patchSetId": 7
@@ -183,6 +351,30 @@
       "revId": "6396a00137602773e0eb3c7a65e9eb514602acf9",
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "6717ff22_f63ae38d",
+        "filename": "src/main/java/org/onap/cps/ncmp/dmi/exception/DmiExceptionHandler.java",
+        "patchSetId": 7
+      },
+      "lineNbr": 60,
+      "author": {
+        "id": 5006
+      },
+      "writtenOn": "2021-07-30T14:12:35Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "bd1978c5_095ce6ee",
+      "range": {
+        "startLine": 60,
+        "startChar": 12,
+        "endLine": 60,
+        "endChar": 80
+      },
+      "revId": "6396a00137602773e0eb3c7a65e9eb514602acf9",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
     },
     {
       "key": {
@@ -209,6 +401,30 @@
     },
     {
       "key": {
+        "uuid": "b0550df3_be3cc4d0",
+        "filename": "src/main/java/org/onap/cps/ncmp/dmi/model/CmHandleOperation.java",
+        "patchSetId": 7
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 5006
+      },
+      "writtenOn": "2021-07-30T14:12:35Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "54f3c41f_44a74537",
+      "range": {
+        "startLine": 41,
+        "startChar": 19,
+        "endLine": 41,
+        "endChar": 29
+      },
+      "revId": "6396a00137602773e0eb3c7a65e9eb514602acf9",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "bef37e23_4db24876",
         "filename": "src/main/java/org/onap/cps/ncmp/dmi/model/CmHandleOperation.java",
         "patchSetId": 7
@@ -229,6 +445,30 @@
       "revId": "6396a00137602773e0eb3c7a65e9eb514602acf9",
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "3b820518_8b68c97f",
+        "filename": "src/main/java/org/onap/cps/ncmp/dmi/model/CmHandleOperation.java",
+        "patchSetId": 7
+      },
+      "lineNbr": 43,
+      "author": {
+        "id": 5006
+      },
+      "writtenOn": "2021-07-30T14:12:35Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "bef37e23_4db24876",
+      "range": {
+        "startLine": 43,
+        "startChar": 19,
+        "endLine": 43,
+        "endChar": 37
+      },
+      "revId": "6396a00137602773e0eb3c7a65e9eb514602acf9",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
     },
     {
       "key": {
@@ -255,6 +495,30 @@
     },
     {
       "key": {
+        "uuid": "67b6ed4d_4ba6c533",
+        "filename": "src/main/java/org/onap/cps/ncmp/dmi/model/CmHandleOperation.java",
+        "patchSetId": 7
+      },
+      "lineNbr": 48,
+      "author": {
+        "id": 5006
+      },
+      "writtenOn": "2021-07-30T14:12:35Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "bb9457d0_358a34f7",
+      "range": {
+        "startLine": 45,
+        "startChar": 0,
+        "endLine": 48,
+        "endChar": 49
+      },
+      "revId": "6396a00137602773e0eb3c7a65e9eb514602acf9",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ce9f3b68_4fb15e9a",
         "filename": "src/main/java/org/onap/cps/ncmp/dmi/model/CreatedCmHandle.java",
         "patchSetId": 7
@@ -266,6 +530,30 @@
       "writtenOn": "2021-07-29T12:01:42Z",
       "side": 1,
       "message": "is this really needed? API examples are just that \u0027examples\u0027",
+      "range": {
+        "startLine": 32,
+        "startChar": 0,
+        "endLine": 35,
+        "endChar": 2
+      },
+      "revId": "6396a00137602773e0eb3c7a65e9eb514602acf9",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "8bca70ec_297b238a",
+        "filename": "src/main/java/org/onap/cps/ncmp/dmi/model/CreatedCmHandle.java",
+        "patchSetId": 7
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 5006
+      },
+      "writtenOn": "2021-07-30T14:12:35Z",
+      "side": 1,
+      "message": "It is not explicitly mentioned in json that property order does not matter. So i used this.",
+      "parentUuid": "ce9f3b68_4fb15e9a",
       "range": {
         "startLine": 32,
         "startChar": 0,
@@ -301,6 +589,30 @@
     },
     {
       "key": {
+        "uuid": "56a62e4e_8e569fb1",
+        "filename": "src/main/java/org/onap/cps/ncmp/dmi/model/CreatedCmHandle.java",
+        "patchSetId": 7
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 5006
+      },
+      "writtenOn": "2021-07-30T14:12:35Z",
+      "side": 1,
+      "message": "Picked it from api json example given at 390 wiki page. Will fix it.",
+      "parentUuid": "ff78e3fe_d578d86b",
+      "range": {
+        "startLine": 40,
+        "startChar": 19,
+        "endLine": 40,
+        "endChar": 27
+      },
+      "revId": "6396a00137602773e0eb3c7a65e9eb514602acf9",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "7b76f06b_7e37dc20",
         "filename": "src/main/java/org/onap/cps/ncmp/dmi/model/CreatedCmHandle.java",
         "patchSetId": 7
@@ -321,6 +633,30 @@
       "revId": "6396a00137602773e0eb3c7a65e9eb514602acf9",
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "c3100307_d2d363d5",
+        "filename": "src/main/java/org/onap/cps/ncmp/dmi/model/CreatedCmHandle.java",
+        "patchSetId": 7
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 5006
+      },
+      "writtenOn": "2021-07-30T14:12:35Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7b76f06b_7e37dc20",
+      "range": {
+        "startLine": 41,
+        "startChar": 19,
+        "endLine": 41,
+        "endChar": 27
+      },
+      "revId": "6396a00137602773e0eb3c7a65e9eb514602acf9",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
     },
     {
       "key": {
@@ -347,6 +683,30 @@
     },
     {
       "key": {
+        "uuid": "ca785f3f_31920f57",
+        "filename": "src/main/java/org/onap/cps/ncmp/dmi/rest/controller/DmiRestController.java",
+        "patchSetId": 7
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 5006
+      },
+      "writtenOn": "2021-07-30T14:12:35Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ec6dd120_e8c84a2e",
+      "range": {
+        "startLine": 35,
+        "startChar": 0,
+        "endLine": 35,
+        "endChar": 0
+      },
+      "revId": "6396a00137602773e0eb3c7a65e9eb514602acf9",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7d9dfbb8_9210baf3",
         "filename": "src/main/java/org/onap/cps/ncmp/dmi/rest/controller/DmiRestController.java",
         "patchSetId": 7
@@ -367,6 +727,30 @@
       "revId": "6396a00137602773e0eb3c7a65e9eb514602acf9",
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "f74ed936_2d3f1427",
+        "filename": "src/main/java/org/onap/cps/ncmp/dmi/rest/controller/DmiRestController.java",
+        "patchSetId": 7
+      },
+      "lineNbr": 58,
+      "author": {
+        "id": 5006
+      },
+      "writtenOn": "2021-07-30T14:12:35Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "7d9dfbb8_9210baf3",
+      "range": {
+        "startLine": 58,
+        "startChar": 12,
+        "endLine": 58,
+        "endChar": 33
+      },
+      "revId": "6396a00137602773e0eb3c7a65e9eb514602acf9",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
     },
     {
       "key": {
@@ -393,6 +777,30 @@
     },
     {
       "key": {
+        "uuid": "abddaa23_52ea09bb",
+        "filename": "src/main/java/org/onap/cps/ncmp/dmi/rest/controller/DmiRestController.java",
+        "patchSetId": 7
+      },
+      "lineNbr": 59,
+      "author": {
+        "id": 5006
+      },
+      "writtenOn": "2021-07-30T14:12:35Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "95176bc3_4c1360d1",
+      "range": {
+        "startLine": 59,
+        "startChar": 11,
+        "endLine": 59,
+        "endChar": 99
+      },
+      "revId": "6396a00137602773e0eb3c7a65e9eb514602acf9",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5cd0e838_c78bcb6d",
         "filename": "src/main/java/org/onap/cps/ncmp/dmi/rest/controller/DmiRestController.java",
         "patchSetId": 7
@@ -413,6 +821,30 @@
       "revId": "6396a00137602773e0eb3c7a65e9eb514602acf9",
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "fb03c0c3_61df9cb7",
+        "filename": "src/main/java/org/onap/cps/ncmp/dmi/rest/controller/DmiRestController.java",
+        "patchSetId": 7
+      },
+      "lineNbr": 60,
+      "author": {
+        "id": 5006
+      },
+      "writtenOn": "2021-07-30T14:12:35Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "5cd0e838_c78bcb6d",
+      "range": {
+        "startLine": 57,
+        "startChar": 0,
+        "endLine": 60,
+        "endChar": 9
+      },
+      "revId": "6396a00137602773e0eb3c7a65e9eb514602acf9",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
     },
     {
       "key": {
@@ -439,6 +871,30 @@
     },
     {
       "key": {
+        "uuid": "65e8c6f0_e2b57762",
+        "filename": "src/main/java/org/onap/cps/ncmp/dmi/service/DmiServiceImpl.java",
+        "patchSetId": 7
+      },
+      "lineNbr": 66,
+      "author": {
+        "id": 5006
+      },
+      "writtenOn": "2021-07-30T14:12:35Z",
+      "side": 1,
+      "message": "yeah void is enough, missed it.",
+      "parentUuid": "6dcffa91_7f32f486",
+      "range": {
+        "startLine": 66,
+        "startChar": 11,
+        "endLine": 66,
+        "endChar": 19
+      },
+      "revId": "6396a00137602773e0eb3c7a65e9eb514602acf9",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "4fca60fe_b8ab5095",
         "filename": "src/main/java/org/onap/cps/ncmp/dmi/service/DmiServiceImpl.java",
         "patchSetId": 7
@@ -450,6 +906,30 @@
       "writtenOn": "2021-07-29T12:01:42Z",
       "side": 1,
       "message": "include additional properties too!",
+      "range": {
+        "startLine": 70,
+        "startChar": 5,
+        "endLine": 74,
+        "endChar": 9
+      },
+      "revId": "6396a00137602773e0eb3c7a65e9eb514602acf9",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "a7bea29d_0f406291",
+        "filename": "src/main/java/org/onap/cps/ncmp/dmi/service/DmiServiceImpl.java",
+        "patchSetId": 7
+      },
+      "lineNbr": 74,
+      "author": {
+        "id": 5006
+      },
+      "writtenOn": "2021-07-30T14:12:35Z",
+      "side": 1,
+      "message": "xNF id as a url param - POST /dmi/api/v1/inventory/cmhandles/ { \"xnf-ids\" : [ \"some-id\" ,\"\", \"\"]]}\n\nthis is given in ticket how but server accepts \n\ncmhandle + cmhandleprops\n\ndo you want me to put empty tag with no props.",
+      "parentUuid": "4fca60fe_b8ab5095",
       "range": {
         "startLine": 70,
         "startChar": 5,
@@ -482,6 +962,30 @@
       "revId": "6396a00137602773e0eb3c7a65e9eb514602acf9",
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "e6b31a35_3eb0ddc9",
+        "filename": "src/main/java/org/onap/cps/ncmp/dmi/service/DmiServiceImpl.java",
+        "patchSetId": 7
+      },
+      "lineNbr": 88,
+      "author": {
+        "id": 5006
+      },
+      "writtenOn": "2021-07-30T14:12:35Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "d254063f_b44048e3",
+      "range": {
+        "startLine": 87,
+        "startChar": 57,
+        "endLine": 88,
+        "endChar": 70
+      },
+      "revId": "6396a00137602773e0eb3c7a65e9eb514602acf9",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
     }
   ]
 }
