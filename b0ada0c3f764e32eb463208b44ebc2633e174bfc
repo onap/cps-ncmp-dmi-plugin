@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "d7ecce3c_9153f562",
+        "filename": "docs/openapi/openapi.yml",
+        "patchSetId": 8
+      },
+      "lineNbr": 62,
+      "author": {
+        "id": 5006
+      },
+      "writtenOn": "2021-07-30T19:04:34Z",
+      "side": 1,
+      "message": "Are there any guidelines regarding this in CPS. I see a bit contradiction here. In cps, i see lot of instances like this given below \n\n/v1/dataspaces/{dataspace-name}/schema-sets/{schema-set-name}\u0027:\n\neven in ncmp \n\n /v1/cm-handles/{cm-handle}/list-node: \n\nBefore changing this can we take a consensus.",
+      "parentUuid": "95ad6edb_30389a30",
+      "range": {
+        "startLine": 62,
+        "startChar": 16,
+        "endLine": 62,
+        "endChar": 25
+      },
+      "revId": "b0ada0c3f764e32eb463208b44ebc2633e174bfc",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "17cdd5b2_15add6b5",
         "filename": "src/main/java/org/onap/cps/ncmp/dmi/exception/CmHandleRegistrationException.java",
         "patchSetId": 8
@@ -36,6 +60,30 @@
       "writtenOn": "2021-07-30T16:24:18Z",
       "side": 1,
       "message": "see comment in patch #7, you marked as Done but dint actually change :-(",
+      "range": {
+        "startLine": 27,
+        "startChar": 32,
+        "endLine": 27,
+        "endChar": 45
+      },
+      "revId": "b0ada0c3f764e32eb463208b44ebc2633e174bfc",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "c1958a08_e331c7fd",
+        "filename": "src/main/java/org/onap/cps/ncmp/dmi/exception/CmHandleRegistrationException.java",
+        "patchSetId": 8
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 5006
+      },
+      "writtenOn": "2021-07-30T19:04:34Z",
+      "side": 1,
+      "message": "ah, i changed it but somehow that gone due to merge conflicts resolution. Will fix.",
+      "parentUuid": "17cdd5b2_15add6b5",
       "range": {
         "startLine": 27,
         "startChar": 32,
@@ -232,6 +280,30 @@
     },
     {
       "key": {
+        "uuid": "fc80ea60_a09703ce",
+        "filename": "src/test/groovy/org/onap/cps/ncmp/dmi/rest/controller/DmiRestControllerSpec.groovy",
+        "patchSetId": 8
+      },
+      "lineNbr": 87,
+      "author": {
+        "id": 5006
+      },
+      "writtenOn": "2021-07-30T19:04:34Z",
+      "side": 1,
+      "message": "somehow it doesn\u0027t work with single quote.",
+      "parentUuid": "b05871a0_1f072426",
+      "range": {
+        "startLine": 87,
+        "startChar": 40,
+        "endLine": 87,
+        "endChar": 41
+      },
+      "revId": "b0ada0c3f764e32eb463208b44ebc2633e174bfc",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "910f5e89_6dcaf6bd",
         "filename": "src/test/groovy/org/onap/cps/ncmp/dmi/rest/controller/DmiRestControllerSpec.groovy",
         "patchSetId": 8
@@ -358,6 +430,30 @@
       "writtenOn": "2021-07-30T16:24:18Z",
       "side": 1,
       "message": "not needed, test would fail if there was an exception",
+      "range": {
+        "startLine": 89,
+        "startChar": 2,
+        "endLine": 90,
+        "endChar": 31
+      },
+      "revId": "b0ada0c3f764e32eb463208b44ebc2633e174bfc",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "2526f8ab_0cfde037",
+        "filename": "src/test/groovy/org/onap/cps/ncmp/dmi/service/DmiServiceImplSpec.groovy",
+        "patchSetId": 8
+      },
+      "lineNbr": 90,
+      "author": {
+        "id": 5006
+      },
+      "writtenOn": "2021-07-30T19:04:34Z",
+      "side": 1,
+      "message": "i think it is better to state the expectation clear, rather than leaving it open ended. I would prefer to have it for readability.",
+      "parentUuid": "1db886be_a40d34ec",
       "range": {
         "startLine": 89,
         "startChar": 2,
