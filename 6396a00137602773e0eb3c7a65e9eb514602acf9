@@ -566,6 +566,30 @@
     },
     {
       "key": {
+        "uuid": "a1f3314e_1ede8eda",
+        "filename": "src/main/java/org/onap/cps/ncmp/dmi/model/CreatedCmHandle.java",
+        "patchSetId": 7
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2021-07-30T16:24:18Z",
+      "side": 1,
+      "message": "its not explicitly mentioned that it does matter either. So this still is unnecessary code to me",
+      "parentUuid": "8bca70ec_297b238a",
+      "range": {
+        "startLine": 32,
+        "startChar": 0,
+        "endLine": 35,
+        "endChar": 2
+      },
+      "revId": "6396a00137602773e0eb3c7a65e9eb514602acf9",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "ff78e3fe_d578d86b",
         "filename": "src/main/java/org/onap/cps/ncmp/dmi/model/CreatedCmHandle.java",
         "patchSetId": 7
@@ -930,6 +954,30 @@
       "side": 1,
       "message": "xNF id as a url param - POST /dmi/api/v1/inventory/cmhandles/ { \"xnf-ids\" : [ \"some-id\" ,\"\", \"\"]]}\n\nthis is given in ticket how but server accepts \n\ncmhandle + cmhandleprops\n\ndo you want me to put empty tag with no props.",
       "parentUuid": "4fca60fe_b8ab5095",
+      "range": {
+        "startLine": 70,
+        "startChar": 5,
+        "endLine": 74,
+        "endChar": 9
+      },
+      "revId": "6396a00137602773e0eb3c7a65e9eb514602acf9",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "4bcb8daf_704989e9",
+        "filename": "src/main/java/org/onap/cps/ncmp/dmi/service/DmiServiceImpl.java",
+        "patchSetId": 7
+      },
+      "lineNbr": 74,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2021-07-30T16:24:18Z",
+      "side": 1,
+      "message": "ok, so this is the (onap) dmi plugin impl.. which does not need cmHandleProperties and simply ignores them. Yes I think it is OK",
+      "parentUuid": "a7bea29d_0f406291",
       "range": {
         "startLine": 70,
         "startChar": 5,
