@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ea01bd29_e3faad4f",
+        "filename": "src/main/java/org/onap/cps/ncmp/dmi/service/operation/SdncOperations.java",
+        "patchSetId": 10
+      },
+      "lineNbr": 53,
+      "author": {
+        "id": 6841
+      },
+      "writtenOn": "2021-07-30T12:22:34Z",
+      "side": 1,
+      "message": "I think we should use a setter for this as it can either start with/rests/data/ or restconf/operations/",
+      "range": {
+        "startLine": 53,
+        "startChar": 22,
+        "endLine": 53,
+        "endChar": 43
+      },
+      "revId": "e95bb44664deab7da4802fcc470bbec63f65960e",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    }
+  ]
+}
