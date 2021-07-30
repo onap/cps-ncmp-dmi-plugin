@@ -22,6 +22,30 @@
       "revId": "e95bb44664deab7da4802fcc470bbec63f65960e",
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "b2dbf62a_9734c160",
+        "filename": "src/main/java/org/onap/cps/ncmp/dmi/service/operation/SdncOperations.java",
+        "patchSetId": 10
+      },
+      "lineNbr": 53,
+      "author": {
+        "id": 5006
+      },
+      "writtenOn": "2021-07-30T15:18:48Z",
+      "side": 1,
+      "message": "It is recommended to use rests endpoints. If you think we need sometime to use restconf endpoints , its better to create new constant for that.",
+      "parentUuid": "ea01bd29_e3faad4f",
+      "range": {
+        "startLine": 53,
+        "startChar": 22,
+        "endLine": 53,
+        "endChar": 43
+      },
+      "revId": "e95bb44664deab7da4802fcc470bbec63f65960e",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
     }
   ]
 }
