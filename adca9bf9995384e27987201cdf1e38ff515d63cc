@@ -96,6 +96,30 @@
     },
     {
       "key": {
+        "uuid": "f72b5209_c45a9f5d",
+        "filename": "src/main/java/org/onap/cps/ncmp/dmi/model/CreatedCmHandle.java",
+        "patchSetId": 6
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 7680
+      },
+      "writtenOn": "2021-08-02T18:45:59Z",
+      "side": 1,
+      "message": "What I understand that the structure for both created-cm-handles and updated-cm-handles is same\n\n‘created-cm-handles” : used for initial cm handle registrations or subsequentcmhandle creations\n“updated-cm-handles” : Used for updates to cmhandles. Same structure as for create handles\n\nCan we rename it such a way so that it can used by both created and updated scenario.",
+      "parentUuid": "dbffeb4c_11b2b8c4",
+      "range": {
+        "startLine": 36,
+        "startChar": 13,
+        "endLine": 36,
+        "endChar": 28
+      },
+      "revId": "adca9bf9995384e27987201cdf1e38ff515d63cc",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "18618869_ebf53559",
         "filename": "src/main/java/org/onap/cps/ncmp/dmi/model/CreatedCmHandle.java",
         "patchSetId": 6
