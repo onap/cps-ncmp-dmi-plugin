@@ -97,6 +97,30 @@
     },
     {
       "key": {
+        "uuid": "31e32c95_e30f1e51",
+        "filename": "docs/openapi/openapi.yml",
+        "patchSetId": 8
+      },
+      "lineNbr": 62,
+      "author": {
+        "id": 5006
+      },
+      "writtenOn": "2021-08-03T09:10:46Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "4ccb6b5b_e3033165",
+      "range": {
+        "startLine": 62,
+        "startChar": 16,
+        "endLine": 62,
+        "endChar": 25
+      },
+      "revId": "b0ada0c3f764e32eb463208b44ebc2633e174bfc",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "17cdd5b2_15add6b5",
         "filename": "src/main/java/org/onap/cps/ncmp/dmi/exception/CmHandleRegistrationException.java",
         "patchSetId": 8
