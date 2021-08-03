@@ -49,6 +49,30 @@
     },
     {
       "key": {
+        "uuid": "6bc0397d_ac957849",
+        "filename": "src/test/groovy/org/onap/cps/ncmp/dmi/service/DmiServiceImplSpec.groovy",
+        "patchSetId": 9
+      },
+      "lineNbr": 82,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2021-08-03T15:36:21Z",
+      "side": 1,
+      "message": "let me download patch and try...\nYes you are right, that is a bit weird. I tried changing the order but then (as this test a void method) there is not much to verify so you can leave it as it is. Thanks",
+      "parentUuid": "146401d8_399b7c92",
+      "range": {
+        "startLine": 82,
+        "startChar": 12,
+        "endLine": 82,
+        "endChar": 128
+      },
+      "revId": "6327034dcbb986908060113074ae56769fd412a7",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "89ca2706_9f194bd8",
         "filename": "src/test/groovy/org/onap/cps/ncmp/dmi/service/DmiServiceImplSpec.groovy",
         "patchSetId": 9
