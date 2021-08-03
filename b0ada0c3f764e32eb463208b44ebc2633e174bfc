@@ -1016,6 +1016,30 @@
     },
     {
       "key": {
+        "uuid": "129337ee_44f1e8cd",
+        "filename": "src/test/groovy/org/onap/cps/ncmp/dmi/service/DmiServiceImplSpec.groovy",
+        "patchSetId": 8
+      },
+      "lineNbr": 90,
+      "author": {
+        "id": 5006
+      },
+      "writtenOn": "2021-08-03T15:04:02Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "14d2db2f_8615d654",
+      "range": {
+        "startLine": 89,
+        "startChar": 2,
+        "endLine": 90,
+        "endChar": 31
+      },
+      "revId": "b0ada0c3f764e32eb463208b44ebc2633e174bfc",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1fcf63e4_85f8e6bb",
         "filename": "src/test/groovy/org/onap/cps/ncmp/dmi/service/DmiServiceImplSpec.groovy",
         "patchSetId": 8
