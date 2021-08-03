@@ -49,6 +49,30 @@
     },
     {
       "key": {
+        "uuid": "b596c25d_6d3e6707",
+        "filename": "docs/openapi/openapi.yml",
+        "patchSetId": 8
+      },
+      "lineNbr": 62,
+      "author": {
+        "id": 6841
+      },
+      "writtenOn": "2021-08-03T08:35:00Z",
+      "side": 1,
+      "message": "yes, in cps we still use that naming convention. For dmi plugin we have agreed to follow openapi preferred naming convention which is camel case. We will probably update cps and ncmp to follow this naming convention. https://wiki.onap.org/display/DW/CPS-390+Spike%3A+Define+and+Agree+DMI+Plugin+REST+Interface",
+      "parentUuid": "d7ecce3c_9153f562",
+      "range": {
+        "startLine": 62,
+        "startChar": 16,
+        "endLine": 62,
+        "endChar": 25
+      },
+      "revId": "b0ada0c3f764e32eb463208b44ebc2633e174bfc",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "17cdd5b2_15add6b5",
         "filename": "src/main/java/org/onap/cps/ncmp/dmi/exception/CmHandleRegistrationException.java",
         "patchSetId": 8
