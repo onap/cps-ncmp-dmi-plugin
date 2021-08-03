@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "e559f411_15903546",
+        "filename": "docs/openapi/components.yml",
+        "patchSetId": 1
+      },
+      "lineNbr": 90,
+      "author": {
+        "id": 6841
+      },
+      "writtenOn": "2021-08-03T11:49:02Z",
+      "side": 1,
+      "message": "I think by managed Network CM Proxy is correct. I followed the description in ncmp",
+      "parentUuid": "7f357213_7e19ecd2",
+      "range": {
+        "startLine": 90,
+        "startChar": 109,
+        "endLine": 90,
+        "endChar": 119
+      },
+      "revId": "7ebaebe8e8eb73202cfff28b42036e4308675d2e",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "db9c296b_30866ab8",
         "filename": "src/main/java/org/onap/cps/ncmp/dmi/service/operation/SdncOperations.java",
         "patchSetId": 1
@@ -48,6 +72,30 @@
     },
     {
       "key": {
+        "uuid": "241dc63f_b7c065e9",
+        "filename": "src/main/java/org/onap/cps/ncmp/dmi/service/operation/SdncOperations.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 72,
+      "author": {
+        "id": 6841
+      },
+      "writtenOn": "2021-08-03T11:49:02Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "db9c296b_30866ab8",
+      "range": {
+        "startLine": 71,
+        "startChar": 8,
+        "endLine": 72,
+        "endChar": 65
+      },
+      "revId": "7ebaebe8e8eb73202cfff28b42036e4308675d2e",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5413f530_f797d1f4",
         "filename": "src/main/java/org/onap/cps/ncmp/dmi/service/operation/SdncOperations.java",
         "patchSetId": 1
@@ -68,6 +116,30 @@
       "revId": "7ebaebe8e8eb73202cfff28b42036e4308675d2e",
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "ae2493f1_b151c6bb",
+        "filename": "src/main/java/org/onap/cps/ncmp/dmi/service/operation/SdncOperations.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 89,
+      "author": {
+        "id": 6841
+      },
+      "writtenOn": "2021-08-03T11:49:02Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5413f530_f797d1f4",
+      "range": {
+        "startLine": 88,
+        "startChar": 8,
+        "endLine": 89,
+        "endChar": 62
+      },
+      "revId": "7ebaebe8e8eb73202cfff28b42036e4308675d2e",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
     }
   ]
 }
