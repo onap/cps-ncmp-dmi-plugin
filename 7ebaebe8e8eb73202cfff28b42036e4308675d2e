@@ -1,0 +1,73 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7f357213_7e19ecd2",
+        "filename": "docs/openapi/components.yml",
+        "patchSetId": 1
+      },
+      "lineNbr": 90,
+      "author": {
+        "id": 7486
+      },
+      "writtenOn": "2021-08-03T09:57:18Z",
+      "side": 1,
+      "message": "managed by",
+      "range": {
+        "startLine": 90,
+        "startChar": 109,
+        "endLine": 90,
+        "endChar": 119
+      },
+      "revId": "7ebaebe8e8eb73202cfff28b42036e4308675d2e",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "db9c296b_30866ab8",
+        "filename": "src/main/java/org/onap/cps/ncmp/dmi/service/operation/SdncOperations.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 72,
+      "author": {
+        "id": 7486
+      },
+      "writtenOn": "2021-08-03T09:57:18Z",
+      "side": 1,
+      "message": "since line 71 has been moved in from the constructor. I think you can combine line 71 and 72.\nfinal String topologyMountUrl \u003d topologyUrl + MOUNT_URL_TEMPLATE;",
+      "range": {
+        "startLine": 71,
+        "startChar": 8,
+        "endLine": 72,
+        "endChar": 65
+      },
+      "revId": "7ebaebe8e8eb73202cfff28b42036e4308675d2e",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "5413f530_f797d1f4",
+        "filename": "src/main/java/org/onap/cps/ncmp/dmi/service/operation/SdncOperations.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 89,
+      "author": {
+        "id": 7486
+      },
+      "writtenOn": "2021-08-03T09:57:18Z",
+      "side": 1,
+      "message": "same as above command",
+      "range": {
+        "startLine": 88,
+        "startChar": 8,
+        "endLine": 89,
+        "endChar": 62
+      },
+      "revId": "7ebaebe8e8eb73202cfff28b42036e4308675d2e",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    }
+  ]
+}
