@@ -49,6 +49,30 @@
     },
     {
       "key": {
+        "uuid": "578aec75_15bff76a",
+        "filename": "docs/openapi/openapi.yml",
+        "patchSetId": 10
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2021-08-03T08:11:58Z",
+      "side": 1,
+      "message": "agreed",
+      "parentUuid": "20c518b8_1aef9d9b",
+      "range": {
+        "startLine": 34,
+        "startChar": 10,
+        "endLine": 34,
+        "endChar": 19
+      },
+      "revId": "e95bb44664deab7da4802fcc470bbec63f65960e",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "27c6be48_f16c972f",
         "filename": "docs/openapi/openapi.yml",
         "patchSetId": 10
@@ -238,6 +262,30 @@
     },
     {
       "key": {
+        "uuid": "052acaf1_1a2f3814",
+        "filename": "src/test/groovy/org/onap/cps/ncmp/dmi/rest/controller/DmiRestControllerSpec.groovy",
+        "patchSetId": 10
+      },
+      "lineNbr": 55,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2021-08-03T08:11:58Z",
+      "side": 1,
+      "message": "$ is the \"GString\" function its macro substitution. A String in \" is a GString and can do this substitution of variables but there is some overhead so hence al string NOT using this function should be in \u0027. The \" are correctly used here",
+      "parentUuid": "1232932e_70ed8359",
+      "range": {
+        "startLine": 55,
+        "startChar": 31,
+        "endLine": 55,
+        "endChar": 61
+      },
+      "revId": "e95bb44664deab7da4802fcc470bbec63f65960e",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "24490d5c_dc40c1d1",
         "filename": "src/test/groovy/org/onap/cps/ncmp/dmi/rest/controller/DmiRestControllerSpec.groovy",
         "patchSetId": 10
@@ -282,6 +330,30 @@
       "revId": "e95bb44664deab7da4802fcc470bbec63f65960e",
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "8bffff21_3159e2c0",
+        "filename": "src/test/groovy/org/onap/cps/ncmp/dmi/rest/controller/DmiRestControllerSpec.groovy",
+        "patchSetId": 10
+      },
+      "lineNbr": 71,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2021-08-03T08:11:58Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "fb897c11_fbac458b",
+      "range": {
+        "startLine": 71,
+        "startChar": 31,
+        "endLine": 71,
+        "endChar": 61
+      },
+      "revId": "e95bb44664deab7da4802fcc470bbec63f65960e",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
     }
   ]
 }
