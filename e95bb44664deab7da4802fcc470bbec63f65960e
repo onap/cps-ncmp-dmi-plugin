@@ -73,6 +73,30 @@
     },
     {
       "key": {
+        "uuid": "0f5c2298_785844dd",
+        "filename": "docs/openapi/openapi.yml",
+        "patchSetId": 10
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2021-08-03T15:09:07Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "578aec75_15bff76a",
+      "range": {
+        "startLine": 34,
+        "startChar": 10,
+        "endLine": 34,
+        "endChar": 19
+      },
+      "revId": "e95bb44664deab7da4802fcc470bbec63f65960e",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "27c6be48_f16c972f",
         "filename": "docs/openapi/openapi.yml",
         "patchSetId": 10
@@ -117,6 +141,30 @@
       "revId": "e95bb44664deab7da4802fcc470bbec63f65960e",
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "55f49520_ca5de87f",
+        "filename": "docs/openapi/openapi.yml",
+        "patchSetId": 10
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2021-08-03T15:09:07Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "726347af_134fd557",
+      "range": {
+        "startLine": 42,
+        "startChar": 16,
+        "endLine": 42,
+        "endChar": 25
+      },
+      "revId": "e95bb44664deab7da4802fcc470bbec63f65960e",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
     },
     {
       "key": {
@@ -283,6 +331,30 @@
       "revId": "e95bb44664deab7da4802fcc470bbec63f65960e",
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "821b0a59_3f8462f6",
+        "filename": "src/test/groovy/org/onap/cps/ncmp/dmi/rest/controller/DmiRestControllerSpec.groovy",
+        "patchSetId": 10
+      },
+      "lineNbr": 55,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2021-08-03T15:09:07Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "052acaf1_1a2f3814",
+      "range": {
+        "startLine": 55,
+        "startChar": 31,
+        "endLine": 55,
+        "endChar": 61
+      },
+      "revId": "e95bb44664deab7da4802fcc470bbec63f65960e",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
     },
     {
       "key": {
