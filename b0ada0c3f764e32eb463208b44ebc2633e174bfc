@@ -992,6 +992,30 @@
     },
     {
       "key": {
+        "uuid": "14d2db2f_8615d654",
+        "filename": "src/test/groovy/org/onap/cps/ncmp/dmi/service/DmiServiceImplSpec.groovy",
+        "patchSetId": 8
+      },
+      "lineNbr": 90,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2021-08-03T13:36:12Z",
+      "side": 1,
+      "message": "In te latest patch you do check the call is correctly forwarded, that is enough\nBy your logic almost all test should have this ?!",
+      "parentUuid": "2526f8ab_0cfde037",
+      "range": {
+        "startLine": 89,
+        "startChar": 2,
+        "endLine": 90,
+        "endChar": 31
+      },
+      "revId": "b0ada0c3f764e32eb463208b44ebc2633e174bfc",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "1fcf63e4_85f8e6bb",
         "filename": "src/test/groovy/org/onap/cps/ncmp/dmi/service/DmiServiceImplSpec.groovy",
         "patchSetId": 8
