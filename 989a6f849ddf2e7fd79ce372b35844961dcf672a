@@ -1,0 +1,349 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5a6ec428_ac15e728",
+        "filename": "docs/openapi/components.yml",
+        "patchSetId": 2
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 5006
+      },
+      "writtenOn": "2021-08-03T12:24:30Z",
+      "side": 1,
+      "message": "systemid is itself a var property, i think this is wrong here\n\ncmHandleProperties is of type \"string\":\"string\"\n\nalso datatype is missing here.\n\nPlease change on wiki page too.\n\n{\n  \"operation\": \"read\",\n    \"dataType\": \"application/json\",\n    \"data\": {\n       \"modules\": [\n        {\n          \"namespace\": \"urn:3gpp:sa5:_3gpp-nr-nrm-nrnetwork-nrsectorcarrier\",\n          \"name\": \"_3gpp-nr-nrm-nrsectorcarrier\",\n          \"revision\": \"2020-12-09\"\n        }\n      ]\n    },\n    \"additionalProperties\": {\n      \"subSystemId\": \"system-001\"\n    }\n}",
+      "range": {
+        "startLine": 36,
+        "startChar": 13,
+        "endLine": 36,
+        "endChar": 24
+      },
+      "revId": "989a6f849ddf2e7fd79ce372b35844961dcf672a",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "ed8b8b9d_f5a4ce2c",
+        "filename": "docs/openapi/openapi.yml",
+        "patchSetId": 2
+      },
+      "lineNbr": 75,
+      "author": {
+        "id": 5006
+      },
+      "writtenOn": "2021-08-03T12:24:30Z",
+      "side": 1,
+      "message": "pull parameters near operationId",
+      "range": {
+        "startLine": 75,
+        "startChar": 6,
+        "endLine": 75,
+        "endChar": 17
+      },
+      "revId": "989a6f849ddf2e7fd79ce372b35844961dcf672a",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "2161ff3c_f4cd1f62",
+        "filename": "src/main/java/org/onap/cps/ncmp/dmi/rest/controller/DmiRestController.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 43,
+      "author": {
+        "id": 5006
+      },
+      "writtenOn": "2021-08-03T12:24:30Z",
+      "side": 1,
+      "message": "add it below in constructor",
+      "range": {
+        "startLine": 43,
+        "startChar": 10,
+        "endLine": 43,
+        "endChar": 22
+      },
+      "revId": "989a6f849ddf2e7fd79ce372b35844961dcf672a",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "56b3dea7_576ff13d",
+        "filename": "src/main/java/org/onap/cps/ncmp/dmi/service/DmiService.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 5006
+      },
+      "writtenOn": "2021-08-03T12:24:30Z",
+      "side": 1,
+      "message": "the given cm handle and given modules. (prefer to write in same seq as given in params)",
+      "range": {
+        "startLine": 41,
+        "startChar": 30,
+        "endLine": 41,
+        "endChar": 60
+      },
+      "revId": "989a6f849ddf2e7fd79ce372b35844961dcf672a",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "e3f15b8c_7e784074",
+        "filename": "src/main/java/org/onap/cps/ncmp/dmi/service/DmiServiceImpl.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 64,
+      "author": {
+        "id": 5006
+      },
+      "writtenOn": "2021-08-03T12:24:30Z",
+      "side": 1,
+      "message": "any specific reason to have stringbuffer here. its a threadsafe class which slows down the operation. will prefer stringbuilder if lot of update ops on string",
+      "range": {
+        "startLine": 64,
+        "startChar": 33,
+        "endLine": 64,
+        "endChar": 45
+      },
+      "revId": "989a6f849ddf2e7fd79ce372b35844961dcf672a",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "9e2da337_f5b44bc4",
+        "filename": "src/main/java/org/onap/cps/ncmp/dmi/service/DmiServiceImpl.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 71,
+      "author": {
+        "id": 5006
+      },
+      "writtenOn": "2021-08-03T12:24:30Z",
+      "side": 1,
+      "message": "this is for Modules metadata, u are using it for modules resource content.",
+      "range": {
+        "startLine": 71,
+        "startChar": 29,
+        "endLine": 71,
+        "endChar": 38
+      },
+      "revId": "989a6f849ddf2e7fd79ce372b35844961dcf672a",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "ef4367e7_abcce122",
+        "filename": "src/main/java/org/onap/cps/ncmp/dmi/service/DmiServiceImpl.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 78,
+      "author": {
+        "id": 5006
+      },
+      "writtenOn": "2021-08-03T12:24:30Z",
+      "side": 1,
+      "message": "i would prefer to maintain order of modules that is coming in request. what is your opinion on that.",
+      "range": {
+        "startLine": 78,
+        "startChar": 31,
+        "endLine": 78,
+        "endChar": 38
+      },
+      "revId": "989a6f849ddf2e7fd79ce372b35844961dcf672a",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "c0afa4e4_bdb5c1d2",
+        "filename": "src/main/java/org/onap/cps/ncmp/dmi/service/DmiServiceImpl.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 81,
+      "author": {
+        "id": 5006
+      },
+      "writtenOn": "2021-08-03T12:24:30Z",
+      "side": 1,
+      "message": "its a very expensive object, better thing is its a stateless class which can server every request concurrently. please think about it.",
+      "range": {
+        "startLine": 81,
+        "startChar": 29,
+        "endLine": 81,
+        "endChar": 45
+      },
+      "revId": "989a6f849ddf2e7fd79ce372b35844961dcf672a",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "2590cf0c_648697e5",
+        "filename": "src/main/java/org/onap/cps/ncmp/dmi/service/DmiServiceImpl.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 87,
+      "author": {
+        "id": 5006
+      },
+      "writtenOn": "2021-08-03T12:24:30Z",
+      "side": 1,
+      "message": "throw a proper dmiexception instance or create new exception class for better exception handling",
+      "range": {
+        "startLine": 87,
+        "startChar": 18,
+        "endLine": 87,
+        "endChar": 29
+      },
+      "revId": "989a6f849ddf2e7fd79ce372b35844961dcf672a",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "d475bf4f_5e2d2826",
+        "filename": "src/main/java/org/onap/cps/ncmp/dmi/service/client/SdncRestconfClient.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 65,
+      "author": {
+        "id": 5006
+      },
+      "writtenOn": "2021-08-03T12:24:30Z",
+      "side": 1,
+      "message": "this method is generic better make it postOperation with params",
+      "range": {
+        "startLine": 65,
+        "startChar": 36,
+        "endLine": 65,
+        "endChar": 47
+      },
+      "revId": "989a6f849ddf2e7fd79ce372b35844961dcf672a",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "a5ed79c0_7752a433",
+        "filename": "src/main/java/org/onap/cps/ncmp/dmi/service/models/ModuleData.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 5006
+      },
+      "writtenOn": "2021-08-03T12:24:30Z",
+      "side": 1,
+      "message": "i got few comments from Toine that if propertyname is same as json that this is redundant statement. same for below props.",
+      "range": {
+        "startLine": 32,
+        "startChar": 7,
+        "endLine": 32,
+        "endChar": 27
+      },
+      "revId": "989a6f849ddf2e7fd79ce372b35844961dcf672a",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "4f673452_310cb1b9",
+        "filename": "src/main/java/org/onap/cps/ncmp/dmi/service/models/Modules.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 5006
+      },
+      "writtenOn": "2021-08-03T12:24:30Z",
+      "side": 1,
+      "message": "same as prev comment",
+      "range": {
+        "startLine": 33,
+        "startChar": 20,
+        "endLine": 33,
+        "endChar": 27
+      },
+      "revId": "989a6f849ddf2e7fd79ce372b35844961dcf672a",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "0883d7ed_b65dabfc",
+        "filename": "src/main/java/org/onap/cps/ncmp/dmi/service/operation/SdncOperations.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 5006
+      },
+      "writtenOn": "2021-08-03T12:24:30Z",
+      "side": 1,
+      "message": "Functional comment: does rests doesnt work here. I think it will",
+      "range": {
+        "startLine": 35,
+        "startChar": 10,
+        "endLine": 35,
+        "endChar": 25
+      },
+      "revId": "989a6f849ddf2e7fd79ce372b35844961dcf672a",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "db95f458_541660d0",
+        "filename": "src/main/java/org/onap/cps/ncmp/dmi/service/operation/SdncOperations.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 69,
+      "author": {
+        "id": 5006
+      },
+      "writtenOn": "2021-08-03T12:24:30Z",
+      "side": 1,
+      "message": "does change in this method come in the scope of this ticket.",
+      "range": {
+        "startLine": 69,
+        "startChar": 21,
+        "endLine": 69,
+        "endChar": 28
+      },
+      "revId": "989a6f849ddf2e7fd79ce372b35844961dcf672a",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "d0b6828c_fbbf6aca",
+        "filename": "src/main/java/org/onap/cps/ncmp/dmi/service/operation/SdncOperations.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 70,
+      "author": {
+        "id": 5006
+      },
+      "writtenOn": "2021-08-03T12:24:30Z",
+      "side": 1,
+      "message": "this will change this template string too. That is why it was stored in new variable.",
+      "range": {
+        "startLine": 70,
+        "startChar": 42,
+        "endLine": 70,
+        "endChar": 54
+      },
+      "revId": "989a6f849ddf2e7fd79ce372b35844961dcf672a",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    }
+  ]
+}
