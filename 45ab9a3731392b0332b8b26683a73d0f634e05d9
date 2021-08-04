@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "61afc7e9_1cc522c8",
+        "filename": "docs/openapi/openapi.yml",
+        "patchSetId": 11
+      },
+      "lineNbr": 54,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2021-08-04T09:45:03Z",
+      "side": 1,
+      "message": "actually we need to transform the output from RestConf into a new format, I crated a new user story for that: https://jira.onap.org/browse/CPS-531",
+      "parentUuid": "59ff169d_bb5d0668",
+      "range": {
+        "startLine": 53,
+        "startChar": 0,
+        "endLine": 54,
+        "endChar": 28
+      },
+      "revId": "45ab9a3731392b0332b8b26683a73d0f634e05d9",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "1a90c9df_93af9c7d",
         "filename": "src/main/java/org/onap/cps/ncmp/dmi/service/DmiService.java",
         "patchSetId": 11
@@ -235,6 +259,30 @@
       "writtenOn": "2021-08-04T09:41:52Z",
       "side": 1,
       "message": "If empty rpc is returned from node with no error, then SDNC will return success with no modules. This is to target that scenario.",
+      "parentUuid": "7654bb2c_f4e7f807",
+      "range": {
+        "startLine": 66,
+        "startChar": 8,
+        "endLine": 67,
+        "endChar": 108
+      },
+      "revId": "45ab9a3731392b0332b8b26683a73d0f634e05d9",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "3bd15a22_2eeaf53a",
+        "filename": "src/test/groovy/org/onap/cps/ncmp/dmi/service/DmiServiceImplSpec.groovy",
+        "patchSetId": 11
+      },
+      "lineNbr": 67,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2021-08-04T09:45:03Z",
+      "side": 1,
+      "message": "lets handle that when it occurs (normally positive flow that shouldn\u0027t)",
       "parentUuid": "7654bb2c_f4e7f807",
       "range": {
         "startLine": 66,
