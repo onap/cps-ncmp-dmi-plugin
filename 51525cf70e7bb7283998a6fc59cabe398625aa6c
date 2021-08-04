@@ -1,0 +1,234 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ed58da5d_4ca85e90",
+        "filename": "src/main/java/org/onap/cps/ncmp/dmi/service/DmiServiceImpl.java",
+        "patchSetId": 5
+      },
+      "lineNbr": 92,
+      "author": {
+        "id": 5006
+      },
+      "writtenOn": "2021-08-04T13:35:06Z",
+      "side": 1,
+      "message": "please see Toine comments in previously",
+      "range": {
+        "startLine": 92,
+        "startChar": 23,
+        "endLine": 92,
+        "endChar": 29
+      },
+      "revId": "51525cf70e7bb7283998a6fc59cabe398625aa6c",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "2bd4ce78_493deae7",
+        "filename": "src/main/java/org/onap/cps/ncmp/dmi/service/DmiServiceImpl.java",
+        "patchSetId": 5
+      },
+      "lineNbr": 94,
+      "author": {
+        "id": 5006
+      },
+      "writtenOn": "2021-08-04T13:35:06Z",
+      "side": 1,
+      "message": "as these operations are independent of each other , an improvement in future can be to run it on multithreaded way.",
+      "range": {
+        "startLine": 94,
+        "startChar": 11,
+        "endLine": 94,
+        "endChar": 12
+      },
+      "revId": "51525cf70e7bb7283998a6fc59cabe398625aa6c",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "b01add55_02408d88",
+        "filename": "src/main/java/org/onap/cps/ncmp/dmi/service/DmiServiceImpl.java",
+        "patchSetId": 5
+      },
+      "lineNbr": 96,
+      "author": {
+        "id": 5006
+      },
+      "writtenOn": "2021-08-04T13:35:06Z",
+      "side": 1,
+      "message": "this is how the outcome should look like.\n\n{ [\n{\n\"name\" : \"_3gpp-nr-nrm-nrsectorcarrier\",\n\"revision\" : \"2020-12-09\",\n\"namespace\": \"urn:3gpp:sa5:_3gpp-nr-nrm-nrnetwork-nrsectorcarrier\" },\n\"yang-source\": \"module pnf-sw-upgrade {\\n namespace \\\"http://onap.org/pnf-sw-upgrade\\\";\\n prefix upgrade;\\n\\n import ietf-yang-types {\\n prefix yang;\\n }\n\\n\\n revision 2019-12-03 {\\n description\\n \\\"initial version\\\";\\n }\\n\\n container software-upgrade {\\n list upgrade-package {\\n key \\\"id\\\";\\n leaf id {\\n type string;\\n }\n\\n\\n leaf current-status {\\n type enumeration {\\n enum \\\"CREATED\\\";\\n enum \\\"INITIALIZED\\\";\\n enum \\\"DOWNLOAD_IN_PROGRESS\\\";\\n enum \\\"DOWNLOAD_COMPLETED\\\";\\n\n enum \\\"ACTIVATION_IN_PROGRESS\\\";\\n enum \\\"ACTIVATION_COMPLETED\\\";\\n }\\n description\\n \\\"List of possible states of the upgrade\\\";\\n }\\n\\n leaf state-change-time\n{\\n type yang:date-and-time;\\n mandatory false;\\n description\\n \\\"Date and time of the last state change.\\\";\\n }\\n\\n leaf action {\\n type enumeration\n{\\n enum \\\"NONE\\\";\\n enum \\\"PRE_CHECK\\\";\\n enum \\\"DOWNLOAD_NE_SW\\\";\\n enum \\\"ACTIVATE_NE_SW\\\";\\n enum \\\"CANCEL\\\";\\n }\\n mandatory false;\\n description\\n\n\\\"List of possible actions for the upgrade\\\";\\n }\\n\\n leaf software-version {\\n type string;\\n description\\n \\\"Possible name or release version of the UP\\\";\\n }\n\\n\\n leaf uri {\\n type string;\\n description\\n \\\"A URI that points to the directory where the UP can be found.\\\";\\n }\\n\\n leaf user {\\n type string;\\n description\\n\n \\\"Indicates the user.\\\";\\n }\\n\\n leaf password {\\n type string;\\n description\\n \\\"Indicates the password.\\\";\\n }\\n\\n leaf user-label {\\n type string;\\n description\\n\n \\\"Free-text description of the UP.\\\";\\n }\\n\\n leaf node-health {\\n type string;\\n description\\n \\\"Reflect Node Health Status\\\";\\n }\\n }\\n }\\n}\"\n}, {...} ]\n}\n\n\ni think currently this will look like\n\n{...}{...}{...}\nrather than\n{[{...},{...},{...}]}",
+      "range": {
+        "startLine": 96,
+        "startChar": 14,
+        "endLine": 96,
+        "endChar": 16
+      },
+      "revId": "51525cf70e7bb7283998a6fc59cabe398625aa6c",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "87201721_79b613e6",
+        "filename": "src/main/java/org/onap/cps/ncmp/dmi/service/DmiServiceImpl.java",
+        "patchSetId": 5
+      },
+      "lineNbr": 98,
+      "author": {
+        "id": 5006
+      },
+      "writtenOn": "2021-08-04T13:35:06Z",
+      "side": 1,
+      "message": "this is case of discussion that if there are 10 modules and 9 returned the data but 1 not then should you abort(you are doing this currently) or retry or return 9 concatenated results.",
+      "range": {
+        "startLine": 98,
+        "startChar": 14,
+        "endLine": 98,
+        "endChar": 16
+      },
+      "revId": "51525cf70e7bb7283998a6fc59cabe398625aa6c",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "7253b435_40dbdd3f",
+        "filename": "src/main/java/org/onap/cps/ncmp/dmi/service/client/SdncRestconfClient.java",
+        "patchSetId": 5
+      },
+      "lineNbr": 59,
+      "author": {
+        "id": 5006
+      },
+      "writtenOn": "2021-08-04T13:35:06Z",
+      "side": 1,
+      "message": "restconf post operation on sdnc.",
+      "range": {
+        "startLine": 59,
+        "startChar": 7,
+        "endLine": 59,
+        "endChar": 53
+      },
+      "revId": "51525cf70e7bb7283998a6fc59cabe398625aa6c",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "8fb85472_7751a327",
+        "filename": "src/main/java/org/onap/cps/ncmp/dmi/service/client/SdncRestconfClient.java",
+        "patchSetId": 5
+      },
+      "lineNbr": 65,
+      "author": {
+        "id": 5006
+      },
+      "writtenOn": "2021-08-04T13:35:06Z",
+      "side": 1,
+      "message": "lets not make this var specific to any usecase, keep it simple postResourceUrl",
+      "range": {
+        "startLine": 65,
+        "startChar": 73,
+        "endLine": 65,
+        "endChar": 97
+      },
+      "revId": "51525cf70e7bb7283998a6fc59cabe398625aa6c",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "4568a36a_643883ae",
+        "filename": "src/test/groovy/org/onap/cps/ncmp/dmi/rest/controller/DmiRestControllerSpec.groovy",
+        "patchSetId": 5
+      },
+      "lineNbr": 137,
+      "author": {
+        "id": 5006
+      },
+      "writtenOn": "2021-08-04T13:35:06Z",
+      "side": 1,
+      "message": "Do you mean here ModuleResourceNotFound",
+      "range": {
+        "startLine": 137,
+        "startChar": 86,
+        "endLine": 137,
+        "endChar": 91
+      },
+      "revId": "51525cf70e7bb7283998a6fc59cabe398625aa6c",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "79e8a94c_c7094707",
+        "filename": "src/test/groovy/org/onap/cps/ncmp/dmi/service/DmiServiceImplSpec.groovy",
+        "patchSetId": 5
+      },
+      "lineNbr": 122,
+      "author": {
+        "id": 5006
+      },
+      "writtenOn": "2021-08-04T13:35:06Z",
+      "side": 1,
+      "message": "write a test which check that getYanResources is being called as many times as the length of the modules list with OK response and result is being accumulated in a response list.",
+      "range": {
+        "startLine": 122,
+        "startChar": 3,
+        "endLine": 122,
+        "endChar": 4
+      },
+      "revId": "51525cf70e7bb7283998a6fc59cabe398625aa6c",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "67bdb04b_140d4a7e",
+        "filename": "src/test/groovy/org/onap/cps/ncmp/dmi/service/client/SdncRestconfClientSpec.groovy",
+        "patchSetId": 5
+      },
+      "lineNbr": 52,
+      "author": {
+        "id": 5006
+      },
+      "writtenOn": "2021-08-04T13:35:06Z",
+      "side": 1,
+      "message": "SDNC POST operation called",
+      "range": {
+        "startLine": 52,
+        "startChar": 9,
+        "endLine": 52,
+        "endChar": 27
+      },
+      "revId": "51525cf70e7bb7283998a6fc59cabe398625aa6c",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "d556a667_112d9c5f",
+        "filename": "src/test/groovy/org/onap/cps/ncmp/dmi/service/client/SdncRestconfClientSpec.groovy",
+        "patchSetId": 5
+      },
+      "lineNbr": 58,
+      "author": {
+        "id": 5006
+      },
+      "writtenOn": "2021-08-04T13:35:06Z",
+      "side": 1,
+      "message": "from 58 to 61 , i think this can be extracte to a method for reusability, can be used at 39 to 42 line too.",
+      "range": {
+        "startLine": 58,
+        "startChar": 7,
+        "endLine": 58,
+        "endChar": 10
+      },
+      "revId": "51525cf70e7bb7283998a6fc59cabe398625aa6c",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    }
+  ]
+}
