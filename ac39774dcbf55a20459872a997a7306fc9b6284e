@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "0d8b2197_2347d158",
+        "filename": "docs/openapi/components.yml",
+        "patchSetId": 4
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 7486
+      },
+      "writtenOn": "2021-08-04T12:54:24Z",
+      "side": 1,
+      "message": "namespace is not needed",
+      "parentUuid": "de04d578_d2161f95",
+      "range": {
+        "startLine": 28,
+        "startChar": 1,
+        "endLine": 29,
+        "endChar": 32
+      },
+      "revId": "ac39774dcbf55a20459872a997a7306fc9b6284e",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "26717eff_049bd25d",
         "filename": "docs/openapi/openapi.yml",
         "patchSetId": 4
