@@ -25,6 +25,29 @@
     },
     {
       "key": {
+        "uuid": "1a90c9df_93af9c7d",
+        "filename": "src/main/java/org/onap/cps/ncmp/dmi/service/DmiService.java",
+        "patchSetId": 11
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 7680
+      },
+      "writtenOn": "2021-08-04T03:13:18Z",
+      "side": 1,
+      "message": "Doc comments need to be updated?",
+      "range": {
+        "startLine": 31,
+        "startChar": 6,
+        "endLine": 32,
+        "endChar": 65
+      },
+      "revId": "45ab9a3731392b0332b8b26683a73d0f634e05d9",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "e9548032_3236da38",
         "filename": "src/main/java/org/onap/cps/ncmp/dmi/service/DmiServiceImpl.java",
         "patchSetId": 11
@@ -82,6 +105,29 @@
       "writtenOn": "2021-08-03T16:12:44Z",
       "side": 1,
       "message": "extra line",
+      "revId": "45ab9a3731392b0332b8b26683a73d0f634e05d9",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "7654bb2c_f4e7f807",
+        "filename": "src/test/groovy/org/onap/cps/ncmp/dmi/service/DmiServiceImplSpec.groovy",
+        "patchSetId": 11
+      },
+      "lineNbr": 67,
+      "author": {
+        "id": 7680
+      },
+      "writtenOn": "2021-08-04T03:13:18Z",
+      "side": 1,
+      "message": "Question: Does SDNC not return 404 when Module is not found?",
+      "range": {
+        "startLine": 66,
+        "startChar": 8,
+        "endLine": 67,
+        "endChar": 108
+      },
       "revId": "45ab9a3731392b0332b8b26683a73d0f634e05d9",
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
       "unresolved": true
