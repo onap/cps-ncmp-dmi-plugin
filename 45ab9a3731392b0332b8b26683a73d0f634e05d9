@@ -48,6 +48,30 @@
     },
     {
       "key": {
+        "uuid": "fc0356df_9f700897",
+        "filename": "src/main/java/org/onap/cps/ncmp/dmi/service/DmiService.java",
+        "patchSetId": 11
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 5006
+      },
+      "writtenOn": "2021-08-04T09:41:52Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "1a90c9df_93af9c7d",
+      "range": {
+        "startLine": 31,
+        "startChar": 6,
+        "endLine": 32,
+        "endChar": 65
+      },
+      "revId": "45ab9a3731392b0332b8b26683a73d0f634e05d9",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "e9548032_3236da38",
         "filename": "src/main/java/org/onap/cps/ncmp/dmi/service/DmiServiceImpl.java",
         "patchSetId": 11
@@ -68,6 +92,30 @@
       "revId": "45ab9a3731392b0332b8b26683a73d0f634e05d9",
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "1c8bb1f3_4fe9af38",
+        "filename": "src/main/java/org/onap/cps/ncmp/dmi/service/DmiServiceImpl.java",
+        "patchSetId": 11
+      },
+      "lineNbr": 46,
+      "author": {
+        "id": 5006
+      },
+      "writtenOn": "2021-08-04T09:41:52Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "e9548032_3236da38",
+      "range": {
+        "startLine": 46,
+        "startChar": 25,
+        "endLine": 46,
+        "endChar": 29
+      },
+      "revId": "45ab9a3731392b0332b8b26683a73d0f634e05d9",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
     },
     {
       "key": {
@@ -94,6 +142,30 @@
     },
     {
       "key": {
+        "uuid": "a29e79db_a906bdf7",
+        "filename": "src/main/java/org/onap/cps/ncmp/dmi/service/DmiServiceImpl.java",
+        "patchSetId": 11
+      },
+      "lineNbr": 50,
+      "author": {
+        "id": 5006
+      },
+      "writtenOn": "2021-08-04T09:41:52Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "91f4bc7b_1be29997",
+      "range": {
+        "startLine": 50,
+        "startChar": 19,
+        "endLine": 50,
+        "endChar": 43
+      },
+      "revId": "45ab9a3731392b0332b8b26683a73d0f634e05d9",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7b878a40_90a34967",
         "filename": "src/test/groovy/org/onap/cps/ncmp/dmi/rest/controller/DmiRestControllerSpec.groovy",
         "patchSetId": 11
@@ -111,6 +183,24 @@
     },
     {
       "key": {
+        "uuid": "0cee6974_fce1e583",
+        "filename": "src/test/groovy/org/onap/cps/ncmp/dmi/rest/controller/DmiRestControllerSpec.groovy",
+        "patchSetId": 11
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 5006
+      },
+      "writtenOn": "2021-08-04T09:41:52Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "7b878a40_90a34967",
+      "revId": "45ab9a3731392b0332b8b26683a73d0f634e05d9",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7654bb2c_f4e7f807",
         "filename": "src/test/groovy/org/onap/cps/ncmp/dmi/service/DmiServiceImplSpec.groovy",
         "patchSetId": 11
@@ -122,6 +212,30 @@
       "writtenOn": "2021-08-04T03:13:18Z",
       "side": 1,
       "message": "Question: Does SDNC not return 404 when Module is not found?",
+      "range": {
+        "startLine": 66,
+        "startChar": 8,
+        "endLine": 67,
+        "endChar": 108
+      },
+      "revId": "45ab9a3731392b0332b8b26683a73d0f634e05d9",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "0c1782c2_6d60d3fb",
+        "filename": "src/test/groovy/org/onap/cps/ncmp/dmi/service/DmiServiceImplSpec.groovy",
+        "patchSetId": 11
+      },
+      "lineNbr": 67,
+      "author": {
+        "id": 5006
+      },
+      "writtenOn": "2021-08-04T09:41:52Z",
+      "side": 1,
+      "message": "If empty rpc is returned from node with no error, then SDNC will return success with no modules. This is to target that scenario.",
+      "parentUuid": "7654bb2c_f4e7f807",
       "range": {
         "startLine": 66,
         "startChar": 8,
