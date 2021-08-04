@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "116c7a3f_8e3ce318",
+        "filename": "src/main/java/org/onap/cps/ncmp/dmi/rest/controller/DmiRestController.java",
+        "patchSetId": 4
+      },
+      "lineNbr": 43,
+      "author": {
+        "id": 7744
+      },
+      "writtenOn": "2021-08-04T11:05:25Z",
+      "side": 1,
+      "message": "Do we still need this autowired tag if we are using constructor injection for the dependencies?",
+      "revId": "ac39774dcbf55a20459872a997a7306fc9b6284e",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "00b7fda1_f519f628",
+        "filename": "src/main/java/org/onap/cps/ncmp/dmi/service/models/ModuleData.java",
+        "patchSetId": 4
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 7744
+      },
+      "writtenOn": "2021-08-04T11:05:25Z",
+      "side": 1,
+      "message": "I don\u0027t think we need these JsonProperty tags if they are not changing the name of the respective field. But to avoid spotbug violation, lombok setter tag must be added in place.",
+      "revId": "ac39774dcbf55a20459872a997a7306fc9b6284e",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "c1cc6168_896f6c47",
+        "filename": "src/main/java/org/onap/cps/ncmp/dmi/service/models/Modules.java",
+        "patchSetId": 4
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 7744
+      },
+      "writtenOn": "2021-08-04T11:05:25Z",
+      "side": 1,
+      "message": "See previous comment around JsonProperty tag",
+      "revId": "ac39774dcbf55a20459872a997a7306fc9b6284e",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "a624c5cb_850dee33",
+        "filename": "src/test/groovy/org/onap/cps/ncmp/dmi/service/client/SdncRestconfClientSpec.groovy",
+        "patchSetId": 4
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 7744
+      },
+      "writtenOn": "2021-08-04T11:05:25Z",
+      "side": 1,
+      "message": "I don\u0027t think we need this as it is being done on line 33",
+      "revId": "ac39774dcbf55a20459872a997a7306fc9b6284e",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    }
+  ]
+}
