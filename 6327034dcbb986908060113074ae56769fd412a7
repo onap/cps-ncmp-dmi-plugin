@@ -73,6 +73,30 @@
     },
     {
       "key": {
+        "uuid": "1ab7401e_fdc41aa5",
+        "filename": "src/test/groovy/org/onap/cps/ncmp/dmi/service/DmiServiceImplSpec.groovy",
+        "patchSetId": 9
+      },
+      "lineNbr": 82,
+      "author": {
+        "id": 7680
+      },
+      "writtenOn": "2021-08-04T10:30:38Z",
+      "side": 1,
+      "message": "the interactions in \u0027then\u0027 are moved before \u0027when\u0027 during the runtime and when it is moved it does not move the \u0027def\u0027 statement. \n\nTo define to variable and use it in the interaction in then block\neither we define it in given ( as we did in this test )\nor we explicitly define the interaction block\n\nthen: \u0027register cm handle with ncmp called once and return \"created\" status\u0027\n            interaction {\n                def expectedJson \u003d \u0027{\"dmiPlugin\":\"test-dmi-service\",\"createdCmHandles\":[{\"cmHandle\":\"node1\"},{\"cmHandle\":\"node2\"}]}\u0027\n                1 * mockNcmpRestClient.registerCmHandlesWithNcmp(expectedJson) \u003e\u003e new ResponseEntity\u003c\u003e(HttpStatus.CREATED)\n            }",
+      "parentUuid": "6bc0397d_ac957849",
+      "range": {
+        "startLine": 82,
+        "startChar": 12,
+        "endLine": 82,
+        "endChar": 128
+      },
+      "revId": "6327034dcbb986908060113074ae56769fd412a7",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "89ca2706_9f194bd8",
         "filename": "src/test/groovy/org/onap/cps/ncmp/dmi/service/DmiServiceImplSpec.groovy",
         "patchSetId": 9
