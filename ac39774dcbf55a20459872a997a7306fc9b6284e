@@ -49,6 +49,30 @@
     },
     {
       "key": {
+        "uuid": "39d21887_98683e32",
+        "filename": "docs/openapi/components.yml",
+        "patchSetId": 4
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 6841
+      },
+      "writtenOn": "2021-08-04T13:36:55Z",
+      "side": 1,
+      "message": "yes we only need name and revision for this request. I will also update the dmi wiki",
+      "parentUuid": "0d8b2197_2347d158",
+      "range": {
+        "startLine": 28,
+        "startChar": 1,
+        "endLine": 29,
+        "endChar": 32
+      },
+      "revId": "ac39774dcbf55a20459872a997a7306fc9b6284e",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "26717eff_049bd25d",
         "filename": "docs/openapi/openapi.yml",
         "patchSetId": 4
@@ -72,6 +96,30 @@
     },
     {
       "key": {
+        "uuid": "d79089fe_12e6abdc",
+        "filename": "docs/openapi/openapi.yml",
+        "patchSetId": 4
+      },
+      "lineNbr": 64,
+      "author": {
+        "id": 6841
+      },
+      "writtenOn": "2021-08-04T13:36:55Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "26717eff_049bd25d",
+      "range": {
+        "startLine": 64,
+        "startChar": 35,
+        "endLine": 64,
+        "endChar": 44
+      },
+      "revId": "ac39774dcbf55a20459872a997a7306fc9b6284e",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "348a1243_99dfdef0",
         "filename": "docs/openapi/openapi.yml",
         "patchSetId": 4
@@ -92,6 +140,30 @@
       "revId": "ac39774dcbf55a20459872a997a7306fc9b6284e",
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "39c40c8a_d109ada5",
+        "filename": "docs/openapi/openapi.yml",
+        "patchSetId": 4
+      },
+      "lineNbr": 68,
+      "author": {
+        "id": 6841
+      },
+      "writtenOn": "2021-08-04T13:36:55Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "348a1243_99dfdef0",
+      "range": {
+        "startLine": 67,
+        "startChar": 9,
+        "endLine": 68,
+        "endChar": 42
+      },
+      "revId": "ac39774dcbf55a20459872a997a7306fc9b6284e",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
     },
     {
       "key": {
@@ -153,6 +225,30 @@
     },
     {
       "key": {
+        "uuid": "1e62e0cd_bfb4c457",
+        "filename": "src/main/java/org/onap/cps/ncmp/dmi/rest/controller/DmiRestController.java",
+        "patchSetId": 4
+      },
+      "lineNbr": 64,
+      "author": {
+        "id": 6841
+      },
+      "writtenOn": "2021-08-04T13:36:55Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "edb9df34_a3de4c16",
+      "range": {
+        "startLine": 61,
+        "startChar": 0,
+        "endLine": 64,
+        "endChar": 68
+      },
+      "revId": "ac39774dcbf55a20459872a997a7306fc9b6284e",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "f5ec4afa_ed9d0930",
         "filename": "src/main/java/org/onap/cps/ncmp/dmi/service/DmiService.java",
         "patchSetId": 4
@@ -164,6 +260,30 @@
       "writtenOn": "2021-08-04T12:42:29Z",
       "side": 1,
       "message": "see prev. comment on term",
+      "range": {
+        "startLine": 41,
+        "startChar": 18,
+        "endLine": 41,
+        "endChar": 26
+      },
+      "revId": "ac39774dcbf55a20459872a997a7306fc9b6284e",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "fc2a7813_ae9f92d1",
+        "filename": "src/main/java/org/onap/cps/ncmp/dmi/service/DmiService.java",
+        "patchSetId": 4
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 6841
+      },
+      "writtenOn": "2021-08-04T13:36:55Z",
+      "side": 1,
+      "message": "a bit confused. You said you prefer \u0027sources\u0027?",
+      "parentUuid": "f5ec4afa_ed9d0930",
       "range": {
         "startLine": 41,
         "startChar": 18,
@@ -196,6 +316,30 @@
       "revId": "ac39774dcbf55a20459872a997a7306fc9b6284e",
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "e5c60dde_183e3d20",
+        "filename": "src/main/java/org/onap/cps/ncmp/dmi/service/DmiServiceImpl.java",
+        "patchSetId": 4
+      },
+      "lineNbr": 69,
+      "author": {
+        "id": 6841
+      },
+      "writtenOn": "2021-08-04T13:36:55Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ee4587dc_4d7d0de9",
+      "range": {
+        "startLine": 69,
+        "startChar": 23,
+        "endLine": 69,
+        "endChar": 30
+      },
+      "revId": "ac39774dcbf55a20459872a997a7306fc9b6284e",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
     },
     {
       "key": {
@@ -245,6 +389,30 @@
     },
     {
       "key": {
+        "uuid": "f13fa8ad_8c32d49c",
+        "filename": "src/main/java/org/onap/cps/ncmp/dmi/service/DmiServiceImpl.java",
+        "patchSetId": 4
+      },
+      "lineNbr": 83,
+      "author": {
+        "id": 6841
+      },
+      "writtenOn": "2021-08-04T13:36:55Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "6646d536_32bf4782",
+      "range": {
+        "startLine": 83,
+        "startChar": 18,
+        "endLine": 83,
+        "endChar": 25
+      },
+      "revId": "ac39774dcbf55a20459872a997a7306fc9b6284e",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "4d7e7b3d_c173f811",
         "filename": "src/main/java/org/onap/cps/ncmp/dmi/service/models/ModuleData.java",
         "patchSetId": 4
@@ -265,6 +433,30 @@
       "revId": "ac39774dcbf55a20459872a997a7306fc9b6284e",
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "b7571210_96342b17",
+        "filename": "src/main/java/org/onap/cps/ncmp/dmi/service/models/ModuleData.java",
+        "patchSetId": 4
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 6841
+      },
+      "writtenOn": "2021-08-04T13:36:55Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "4d7e7b3d_c173f811",
+      "range": {
+        "startLine": 30,
+        "startChar": 13,
+        "endLine": 30,
+        "endChar": 24
+      },
+      "revId": "ac39774dcbf55a20459872a997a7306fc9b6284e",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
     },
     {
       "key": {
@@ -314,6 +506,30 @@
       "writtenOn": "2021-08-04T12:42:29Z",
       "side": 1,
       "message": "can you think of beter name (can always use annotation to fix name for json output I think)",
+      "range": {
+        "startLine": 31,
+        "startChar": 13,
+        "endLine": 31,
+        "endChar": 21
+      },
+      "revId": "ac39774dcbf55a20459872a997a7306fc9b6284e",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "cdbf6eff_70c05318",
+        "filename": "src/main/java/org/onap/cps/ncmp/dmi/service/models/Modules.java",
+        "patchSetId": 4
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 6841
+      },
+      "writtenOn": "2021-08-04T13:36:55Z",
+      "side": 1,
+      "message": "I think Modules and ModuleReferences is a good name. Cant think of a better one",
+      "parentUuid": "5e58f896_86978138",
       "range": {
         "startLine": 31,
         "startChar": 13,
@@ -384,6 +600,30 @@
     },
     {
       "key": {
+        "uuid": "e0ebbf58_dc01ca3d",
+        "filename": "src/main/java/org/onap/cps/ncmp/dmi/service/operation/SdncOperations.java",
+        "patchSetId": 4
+      },
+      "lineNbr": 89,
+      "author": {
+        "id": 6841
+      },
+      "writtenOn": "2021-08-04T13:36:55Z",
+      "side": 1,
+      "message": "I dont think this will ever not be null so I will remove this.",
+      "parentUuid": "dba4ee9c_177d852e",
+      "range": {
+        "startLine": 89,
+        "startChar": 4,
+        "endLine": 89,
+        "endChar": 12
+      },
+      "revId": "ac39774dcbf55a20459872a997a7306fc9b6284e",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "8795c71e_08f712c6",
         "filename": "src/test/groovy/org/onap/cps/ncmp/dmi/rest/controller/DmiRestControllerSpec.groovy",
         "patchSetId": 4
@@ -404,6 +644,30 @@
       "revId": "ac39774dcbf55a20459872a997a7306fc9b6284e",
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "f5303ea0_c7af6522",
+        "filename": "src/test/groovy/org/onap/cps/ncmp/dmi/rest/controller/DmiRestControllerSpec.groovy",
+        "patchSetId": 4
+      },
+      "lineNbr": 90,
+      "author": {
+        "id": 6841
+      },
+      "writtenOn": "2021-08-04T13:36:55Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "8795c71e_08f712c6",
+      "range": {
+        "startLine": 90,
+        "startChar": 14,
+        "endLine": 90,
+        "endChar": 72
+      },
+      "revId": "ac39774dcbf55a20459872a997a7306fc9b6284e",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
     },
     {
       "key": {
@@ -430,6 +694,30 @@
     },
     {
       "key": {
+        "uuid": "a1ef250f_f95d4afb",
+        "filename": "src/test/groovy/org/onap/cps/ncmp/dmi/rest/controller/DmiRestControllerSpec.groovy",
+        "patchSetId": 4
+      },
+      "lineNbr": 98,
+      "author": {
+        "id": 6841
+      },
+      "writtenOn": "2021-08-04T13:36:55Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "2e7aad22_af17879a",
+      "range": {
+        "startLine": 96,
+        "startChar": 6,
+        "endLine": 98,
+        "endChar": 58
+      },
+      "revId": "ac39774dcbf55a20459872a997a7306fc9b6284e",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "dfd1d0b4_ab38c310",
         "filename": "src/test/groovy/org/onap/cps/ncmp/dmi/rest/controller/DmiRestControllerSpec.groovy",
         "patchSetId": 4
@@ -453,6 +741,30 @@
     },
     {
       "key": {
+        "uuid": "4ebfa569_5d6bad3e",
+        "filename": "src/test/groovy/org/onap/cps/ncmp/dmi/rest/controller/DmiRestControllerSpec.groovy",
+        "patchSetId": 4
+      },
+      "lineNbr": 104,
+      "author": {
+        "id": 6841
+      },
+      "writtenOn": "2021-08-04T13:36:55Z",
+      "side": 1,
+      "message": "The rest endpoint expects json data with a valid schema",
+      "parentUuid": "dfd1d0b4_ab38c310",
+      "range": {
+        "startLine": 104,
+        "startChar": 12,
+        "endLine": 104,
+        "endChar": 78
+      },
+      "revId": "ac39774dcbf55a20459872a997a7306fc9b6284e",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "d041c4a6_b0d5a61e",
         "filename": "src/test/groovy/org/onap/cps/ncmp/dmi/rest/controller/DmiRestControllerSpec.groovy",
         "patchSetId": 4
@@ -473,6 +785,30 @@
       "revId": "ac39774dcbf55a20459872a997a7306fc9b6284e",
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "343e91af_197c7f74",
+        "filename": "src/test/groovy/org/onap/cps/ncmp/dmi/rest/controller/DmiRestControllerSpec.groovy",
+        "patchSetId": 4
+      },
+      "lineNbr": 111,
+      "author": {
+        "id": 6841
+      },
+      "writtenOn": "2021-08-04T13:36:55Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "d041c4a6_b0d5a61e",
+      "range": {
+        "startLine": 111,
+        "startChar": 15,
+        "endLine": 111,
+        "endChar": 48
+      },
+      "revId": "ac39774dcbf55a20459872a997a7306fc9b6284e",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
     },
     {
       "key": {
@@ -554,6 +890,30 @@
       "revId": "ac39774dcbf55a20459872a997a7306fc9b6284e",
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "f9a88e6f_2273b176",
+        "filename": "src/test/groovy/org/onap/cps/ncmp/dmi/service/operation/SdncOperationsSpec.groovy",
+        "patchSetId": 4
+      },
+      "lineNbr": 51,
+      "author": {
+        "id": 6841
+      },
+      "writtenOn": "2021-08-04T13:36:55Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "a343264b_b2db612c",
+      "range": {
+        "startLine": 51,
+        "startChar": 19,
+        "endLine": 51,
+        "endChar": 23
+      },
+      "revId": "ac39774dcbf55a20459872a997a7306fc9b6284e",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
     }
   ]
 }
