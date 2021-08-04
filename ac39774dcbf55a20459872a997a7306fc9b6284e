@@ -2,6 +2,75 @@
   "comments": [
     {
       "key": {
+        "uuid": "de04d578_d2161f95",
+        "filename": "docs/openapi/components.yml",
+        "patchSetId": 4
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2021-08-04T12:42:29Z",
+      "side": 1,
+      "message": "I think we don\u0027t need namespace (double check with Shiva and Rahul)",
+      "range": {
+        "startLine": 28,
+        "startChar": 1,
+        "endLine": 29,
+        "endChar": 32
+      },
+      "revId": "ac39774dcbf55a20459872a997a7306fc9b6284e",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "26717eff_049bd25d",
+        "filename": "docs/openapi/openapi.yml",
+        "patchSetId": 4
+      },
+      "lineNbr": 64,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2021-08-04T12:42:29Z",
+      "side": 1,
+      "message": "maybe we should be consistent (with URL) nd call it \u0027source\u0027 which I think is a better term anyway",
+      "range": {
+        "startLine": 64,
+        "startChar": 35,
+        "endLine": 64,
+        "endChar": 44
+      },
+      "revId": "ac39774dcbf55a20459872a997a7306fc9b6284e",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "348a1243_99dfdef0",
+        "filename": "docs/openapi/openapi.yml",
+        "patchSetId": 4
+      },
+      "lineNbr": 68,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2021-08-04T12:42:29Z",
+      "side": 1,
+      "message": "see comments on term resources v. sources above",
+      "range": {
+        "startLine": 67,
+        "startChar": 9,
+        "endLine": 68,
+        "endChar": 42
+      },
+      "revId": "ac39774dcbf55a20459872a997a7306fc9b6284e",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "116c7a3f_8e3ce318",
         "filename": "src/main/java/org/onap/cps/ncmp/dmi/rest/controller/DmiRestController.java",
         "patchSetId": 4
@@ -34,6 +103,144 @@
       "revId": "ac39774dcbf55a20459872a997a7306fc9b6284e",
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "edb9df34_a3de4c16",
+        "filename": "src/main/java/org/onap/cps/ncmp/dmi/rest/controller/DmiRestController.java",
+        "patchSetId": 4
+      },
+      "lineNbr": 64,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2021-08-04T12:42:29Z",
+      "side": 1,
+      "message": "swap around (it always easy to miss the \u0027!\u0027 )",
+      "range": {
+        "startLine": 61,
+        "startChar": 0,
+        "endLine": 64,
+        "endChar": 68
+      },
+      "revId": "ac39774dcbf55a20459872a997a7306fc9b6284e",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "f5ec4afa_ed9d0930",
+        "filename": "src/main/java/org/onap/cps/ncmp/dmi/service/DmiService.java",
+        "patchSetId": 4
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2021-08-04T12:42:29Z",
+      "side": 1,
+      "message": "see prev. comment on term",
+      "range": {
+        "startLine": 41,
+        "startChar": 18,
+        "endLine": 41,
+        "endChar": 26
+      },
+      "revId": "ac39774dcbf55a20459872a997a7306fc9b6284e",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "ee4587dc_4d7d0de9",
+        "filename": "src/main/java/org/onap/cps/ncmp/dmi/service/DmiServiceImpl.java",
+        "patchSetId": 4
+      },
+      "lineNbr": 69,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2021-08-04T12:42:29Z",
+      "side": 1,
+      "message": "module is java keyword now too I think. I need to think on class name too.\nJust did and I suggest this:\nList\u003cModuleReference\u003e moduleReferences\n....\nfor (var moduleReference : moduleReferences)",
+      "range": {
+        "startLine": 69,
+        "startChar": 23,
+        "endLine": 69,
+        "endChar": 30
+      },
+      "revId": "ac39774dcbf55a20459872a997a7306fc9b6284e",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "23a34366_c097dbb2",
+        "filename": "src/main/java/org/onap/cps/ncmp/dmi/service/DmiServiceImpl.java",
+        "patchSetId": 4
+      },
+      "lineNbr": 77,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2021-08-04T12:42:29Z",
+      "side": 1,
+      "message": "Request will fail/stop when any request fails which is OK for now maybe need future improvement with retry mechanism (as demonstrated before bY Bruno somewhere else)\n\nMaybe add Improvement/robustness user story for this to back log (lower priority)",
+      "range": {
+        "startLine": 74,
+        "startChar": 0,
+        "endLine": 77,
+        "endChar": 13
+      },
+      "revId": "ac39774dcbf55a20459872a997a7306fc9b6284e",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "6646d536_32bf4782",
+        "filename": "src/main/java/org/onap/cps/ncmp/dmi/service/DmiServiceImpl.java",
+        "patchSetId": 4
+      },
+      "lineNbr": 83,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2021-08-04T12:42:29Z",
+      "side": 1,
+      "message": "ietfNetconfModuleReferences",
+      "range": {
+        "startLine": 83,
+        "startChar": 18,
+        "endLine": 83,
+        "endChar": 25
+      },
+      "revId": "ac39774dcbf55a20459872a997a7306fc9b6284e",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "4d7e7b3d_c173f811",
+        "filename": "src/main/java/org/onap/cps/ncmp/dmi/service/models/ModuleData.java",
+        "patchSetId": 4
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2021-08-04T12:42:29Z",
+      "side": 1,
+      "message": "ModuleReference would be better",
+      "range": {
+        "startLine": 30,
+        "startChar": 13,
+        "endLine": 30,
+        "endChar": 24
+      },
+      "revId": "ac39774dcbf55a20459872a997a7306fc9b6284e",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
     },
     {
       "key": {
@@ -72,6 +279,29 @@
     },
     {
       "key": {
+        "uuid": "5e58f896_86978138",
+        "filename": "src/main/java/org/onap/cps/ncmp/dmi/service/models/Modules.java",
+        "patchSetId": 4
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2021-08-04T12:42:29Z",
+      "side": 1,
+      "message": "can you think of beter name (can always use annotation to fix name for json output I think)",
+      "range": {
+        "startLine": 31,
+        "startChar": 13,
+        "endLine": 31,
+        "endChar": 21
+      },
+      "revId": "ac39774dcbf55a20459872a997a7306fc9b6284e",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "c1cc6168_896f6c47",
         "filename": "src/main/java/org/onap/cps/ncmp/dmi/service/models/Modules.java",
         "patchSetId": 4
@@ -107,6 +337,144 @@
     },
     {
       "key": {
+        "uuid": "dba4ee9c_177d852e",
+        "filename": "src/main/java/org/onap/cps/ncmp/dmi/service/operation/SdncOperations.java",
+        "patchSetId": 4
+      },
+      "lineNbr": 89,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2021-08-04T12:42:29Z",
+      "side": 1,
+      "message": "just wondering what exactly does this do, is it needed?!",
+      "range": {
+        "startLine": 89,
+        "startChar": 4,
+        "endLine": 89,
+        "endChar": 12
+      },
+      "revId": "ac39774dcbf55a20459872a997a7306fc9b6284e",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "8795c71e_08f712c6",
+        "filename": "src/test/groovy/org/onap/cps/ncmp/dmi/rest/controller/DmiRestControllerSpec.groovy",
+        "patchSetId": 4
+      },
+      "lineNbr": 90,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2021-08-04T12:42:29Z",
+      "side": 1,
+      "message": "the DMI service returns some json data",
+      "range": {
+        "startLine": 90,
+        "startChar": 14,
+        "endLine": 90,
+        "endChar": 72
+      },
+      "revId": "ac39774dcbf55a20459872a997a7306fc9b6284e",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "2e7aad22_af17879a",
+        "filename": "src/test/groovy/org/onap/cps/ncmp/dmi/rest/controller/DmiRestControllerSpec.groovy",
+        "patchSetId": 4
+      },
+      "lineNbr": 98,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2021-08-04T12:42:29Z",
+      "side": 1,
+      "message": "split in two:\nthen: \u0027a status OK is returned\u0027\nand: the response (json) data is that from the DMI service",
+      "range": {
+        "startLine": 96,
+        "startChar": 6,
+        "endLine": 98,
+        "endChar": 58
+      },
+      "revId": "ac39774dcbf55a20459872a997a7306fc9b6284e",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "dfd1d0b4_ab38c310",
+        "filename": "src/test/groovy/org/onap/cps/ncmp/dmi/rest/controller/DmiRestControllerSpec.groovy",
+        "patchSetId": 4
+      },
+      "lineNbr": 104,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2021-08-04T12:42:29Z",
+      "side": 1,
+      "message": "why do we need proper json data for error scenario testing?!",
+      "range": {
+        "startLine": 104,
+        "startChar": 12,
+        "endLine": 104,
+        "endChar": 78
+      },
+      "revId": "ac39774dcbf55a20459872a997a7306fc9b6284e",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "d041c4a6_b0d5a61e",
+        "filename": "src/test/groovy/org/onap/cps/ncmp/dmi/rest/controller/DmiRestControllerSpec.groovy",
+        "patchSetId": 4
+      },
+      "lineNbr": 111,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2021-08-04T12:42:29Z",
+      "side": 1,
+      "message": "be more specific ie. say what status is returned",
+      "range": {
+        "startLine": 111,
+        "startChar": 15,
+        "endLine": 111,
+        "endChar": 48
+      },
+      "revId": "ac39774dcbf55a20459872a997a7306fc9b6284e",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "a3be5aff_9be57f8a",
+        "filename": "src/test/groovy/org/onap/cps/ncmp/dmi/service/DmiServiceImplSpec.groovy",
+        "patchSetId": 4
+      },
+      "lineNbr": 95,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2021-08-04T12:42:29Z",
+      "side": 1,
+      "message": "duplicate: extract out as class variable",
+      "range": {
+        "startLine": 91,
+        "startChar": 0,
+        "endLine": 95,
+        "endChar": 76
+      },
+      "revId": "ac39774dcbf55a20459872a997a7306fc9b6284e",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "a624c5cb_850dee33",
         "filename": "src/test/groovy/org/onap/cps/ncmp/dmi/service/client/SdncRestconfClientSpec.groovy",
         "patchSetId": 4
@@ -139,6 +507,29 @@
       "revId": "ac39774dcbf55a20459872a997a7306fc9b6284e",
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "a343264b_b2db612c",
+        "filename": "src/test/groovy/org/onap/cps/ncmp/dmi/service/operation/SdncOperationsSpec.groovy",
+        "patchSetId": 4
+      },
+      "lineNbr": 51,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2021-08-04T12:42:29Z",
+      "side": 1,
+      "message": "post?! \nBut maybe this is just too technical for PO/client \nmaybe say something like \"the SDNC Rest client is invoked with the correct...\u0027",
+      "range": {
+        "startLine": 51,
+        "startChar": 19,
+        "endLine": 51,
+        "endChar": 23
+      },
+      "revId": "ac39774dcbf55a20459872a997a7306fc9b6284e",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
     }
   ]
 }
