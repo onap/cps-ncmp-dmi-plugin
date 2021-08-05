@@ -86,8 +86,31 @@ public class DmiRestController implements DmiPluginApi, DmiPluginInternalApi {
         return new ResponseEntity<>("cm-handle registered successfully.", HttpStatus.CREATED);
     }
 
+    /**
+     * This method fetches the resource for given cm handle using pass
+     * through option. It filters the response on the basis of depth and field
+     * query parameters and returns response.
+
+     * @param cmHandle cm handle identifier
+     * @param resourceIdentifier resource identifier to fetch data
+     * @param acceptParam accept header parameter
+     * @param fields fields to filter the response data
+     * @param depth depth parameter for the response
+     * @return {@code ResponseEntity} response entity
+     */
+    @Override
+    public ResponseEntity<Object> getResourceDataOperationalForCmHandle(final String cmHandle,
+                                                                        final String resourceIdentifier,
+                                                                        final String acceptParam,
+                                                                        final @Valid String fields,
+                                                                        final @Valid Integer depth) {
+        return new ResponseEntity<>(HttpStatus.NOT_IMPLEMENTED);
+    }
+
+
     private List<ModuleReference> convertRestObjectToJavaApiObject(final ModuleRequestParent moduleRequestParent) {
         return objectMapper
-            .convertValue(moduleRequestParent.getData().getModules(), new TypeReference<List<ModuleReference>>() {});
+                .convertValue(moduleRequestParent.getData().getModules(),
+                        new TypeReference<List<ModuleReference>>() {});
     }
 }
