@@ -28,6 +28,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.onap.cps.ncmp.dmi.model.CmHandles;
 import org.onap.cps.ncmp.dmi.model.ModuleReference;
 import org.onap.cps.ncmp.dmi.model.ModuleRequestParent;
+import org.onap.cps.ncmp.dmi.model.OperationalRequest;
 import org.onap.cps.ncmp.dmi.rest.api.DmiPluginApi;
 import org.onap.cps.ncmp.dmi.rest.api.DmiPluginInternalApi;
 import org.onap.cps.ncmp.dmi.service.DmiService;
@@ -86,8 +87,33 @@ public class DmiRestController implements DmiPluginApi, DmiPluginInternalApi {
         return new ResponseEntity<>("cm-handle registered successfully.", HttpStatus.CREATED);
     }
 
+    /**
+     * This method fetches the resource for given cm handle using pass
+     * through option. It filters the response on the basis of depth and field
+     * query parameters and returns response.
+
+     * @param cmHandle cm handle identifier
+     * @param resourceIdentifier resource identifier to fetch data
+     * @param body operational request body
+     * @param acceptParam accept header parameter
+     * @param fields fields to filter the response data
+     * @param depth depth parameter for the response
+     * @return {@code ResponseEntity} response entity
+     */
+    @Override
+    public ResponseEntity<Object> getResourceDataOperationalForCmHandle(final String cmHandle,
+                                                                        final String resourceIdentifier,
+                                                                        final @Valid OperationalRequest body,
+                                                                        final String acceptParam,
+                                                                        final @Valid String fields,
+                                                                        final @Valid Integer depth) {
+        return new ResponseEntity<>(HttpStatus.NOT_IMPLEMENTED);
+    }
+
+
     private List<ModuleReference> convertRestObjectToJavaApiObject(final ModuleRequestParent moduleRequestParent) {
         return objectMapper
-            .convertValue(moduleRequestParent.getData().getModules(), new TypeReference<List<ModuleReference>>() {});
+                .convertValue(moduleRequestParent.getData().getModules(),
+                        new TypeReference<List<ModuleReference>>() {});
     }
 }

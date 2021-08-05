@@ -43,6 +43,17 @@ components:
             type: string
             example: system-001
 
+    OperationalRequest:
+      type: object
+      properties:
+        operation:
+          type: string
+          enum: [ read ]
+        cmHandleProperties:
+          type: object
+          additionalProperties:
+            type: string
+
   responses:
     NotFound:
       description: The specified resource was not found
