@@ -65,3 +65,12 @@ components:
     NoContent:
       description: No Content
       content: {}
+
+  parameters:
+    cmHandleInPath:
+      name: cmHandle
+      in: path
+      description: The identifier for a network function, network element, subnetwork, or any other cm object by managed Network CM Proxy
+      required: true
+      schema:
+        type: string
