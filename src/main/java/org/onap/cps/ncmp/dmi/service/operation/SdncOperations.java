@@ -20,9 +20,11 @@
 
 package org.onap.cps.ncmp.dmi.service.operation;
 
+import java.util.List;
 import org.jetbrains.annotations.NotNull;
 import org.onap.cps.ncmp.dmi.config.DmiConfiguration.SdncProperties;
 import org.onap.cps.ncmp.dmi.service.client.SdncRestconfClient;
+import org.springframework.http.HttpHeaders;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Component;
 
@@ -46,7 +48,6 @@ public class SdncOperations {
      * @param sdncProperties {@code SdncProperties}
      * @param sdncRestconfClient {@code SdncRestconfClient}
      */
-
     public SdncOperations(final SdncProperties sdncProperties, final SdncRestconfClient sdncRestconfClient) {
         this.sdncProperties = sdncProperties;
         this.sdncRestconfClient = sdncRestconfClient;
@@ -55,21 +56,77 @@ public class SdncOperations {
     }
 
     /**
-     * This method fetches list of modules usind sdnc client.
+     * This method fetches list of modules using sdnc client.
      *
      * @param nodeId node id for node
      * @return returns {@code ResponseEntity} which contains list of modules
      */
-    public ResponseEntity<String> getModulesFromNode(final String nodeId) {
+    public ResponseEntity<String> getModulesFromNode(@NotNull final String nodeId) {
         final String urlWithNodeId = prepareGetSchemaUrl(nodeId);
         return sdncRestconfClient.getOperation(urlWithNodeId);
     }
 
+    /**
+     * This method fetches the resource data for given node identifier on given resource
+     * using sdnc client.
+     *
+     * @param nodeId network resource identifier
+     * @param resourceId resource identifier
+     * @param queryList query list
+     * @param acceptParam accept parameter
+     * @return {@code ResponseEntity} response entity
+     */
+    public ResponseEntity<String> getResouceDataFromNode(final String nodeId,
+                                                         final String resourceId,
+                                                         final List<String> queryList,
+                                                         final String acceptParam) {
+        final String getResourceDataUrl = prepareResourceDataUrl(nodeId, resourceId, queryList);
+        final HttpHeaders httpHeaders = new HttpHeaders();
+        httpHeaders.set(HttpHeaders.ACCEPT, acceptParam);
+        return sdncRestconfClient.getOperation(getResourceDataUrl, httpHeaders);
+    }
+
     @NotNull
     private String prepareGetSchemaUrl(final String nodeId) {
+        final var getSchemaUrl = addResource(addTopologywithNodeUrl(nodeId), GET_SCHEMA_URL);
+        return getSchemaUrl;
+    }
+
+    @NotNull
+    private String prepareResourceDataUrl(final String nodeId,
+                                             final String resourceId,
+                                             final List<String> queryList) {
+        final var resourceDataUrl = addQuery(addResource(addTopologywithNodeUrl(nodeId), resourceId), queryList);
+        return resourceDataUrl;
+    }
+
+    @NotNull
+    private String addTopologywithNodeUrl(final String nodeId) {
         final String topologyMountUrl = topologyMountUrlTemplate;
-        final String topologyMountUrlWithNodeId = topologyMountUrl.replace("{nodeId}", nodeId);
-        final String resourceUrl = topologyMountUrlWithNodeId.concat(GET_SCHEMA_URL);
-        return resourceUrl;
+        return topologyMountUrl.replace("{nodeId}", nodeId);
+    }
+
+    @NotNull
+    private String addResource(final String url, final String resourceId) {
+        if (resourceId.startsWith("/")) {
+            return url.concat(resourceId);
+        } else {
+            return url.concat("/" + resourceId);
+        }
+    }
+
+    @NotNull
+    private String addQuery(final String url, final List<String> queryList) {
+        if (queryList.isEmpty()) {
+            return url;
+        }
+        final StringBuilder urlBuilder = new StringBuilder(url);
+        urlBuilder.append("?");
+        urlBuilder.append(queryList.get(0));
+        for (int i = 1; i < queryList.size(); i++) {
+            urlBuilder.append("&");
+            urlBuilder.append(queryList.get(i));
+        }
+        return urlBuilder.toString();
     }
 }

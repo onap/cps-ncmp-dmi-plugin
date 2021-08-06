@@ -83,8 +83,15 @@ public class DmiRestController implements DmiPluginApi, DmiPluginInternalApi {
     public ResponseEntity<Object> getResourceDataForCmHandle(final @Valid String cmHandle,
                                                          final @Valid String passThroughParam,
                                                          final @Valid String resourceIdentifier,
+                                                         final @Valid String acceptParam,
                                                          final @Valid String fields,
                                                          final @Valid Integer depth) {
-        return null;
+        final var modulesListAsJson = dmiService.getResourceDataForCmHandle(cmHandle,
+                                                                                    passThroughParam,
+                                                                                    resourceIdentifier,
+                                                                                    acceptParam,
+                                                                                    fields,
+                                                                                    depth);
+        return new ResponseEntity<>(modulesListAsJson, HttpStatus.OK);
     }
 }
