@@ -94,6 +94,29 @@
     },
     {
       "key": {
+        "uuid": "1ebb5d9a_58f5c79e",
+        "filename": "src/main/java/org/onap/cps/ncmp/dmi/rest/controller/DmiRestController.java",
+        "patchSetId": 7
+      },
+      "lineNbr": 60,
+      "author": {
+        "id": 7486
+      },
+      "writtenOn": "2021-08-06T10:42:31Z",
+      "side": 1,
+      "message": "Typo: Resources",
+      "range": {
+        "startLine": 60,
+        "startChar": 48,
+        "endLine": 60,
+        "endChar": 56
+      },
+      "revId": "a564b276fe35353236093847ed3d1c4a801b4006",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "d75f4de4_90a0fc50",
         "filename": "src/main/java/org/onap/cps/ncmp/dmi/service/DmiServiceImpl.java",
         "patchSetId": 7
