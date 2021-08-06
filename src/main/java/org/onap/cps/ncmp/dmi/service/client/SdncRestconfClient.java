@@ -43,12 +43,25 @@ public class SdncRestconfClient {
      * restconf get operation on sdnc.
      *
      * @param getResourceUrl sdnc get url
+     *
      * @return the response entity
      */
     public ResponseEntity<String> getOperation(final String getResourceUrl) {
+        return getOperation(getResourceUrl, new HttpHeaders());
+    }
+    /**
+     * Overloaded restconf get operation on sdnc with http headers.
+     *
+     * @param getResourceUrl sdnc get url
+     * @param httpHeaders http headers
+     *
+     * @return the response entity
+     */
+    public ResponseEntity<String> getOperation(final String getResourceUrl, final HttpHeaders httpHeaders) {
         final String sdncBaseUrl = sdncProperties.getBaseUrl();
         final String sdncRestconfUrl = sdncBaseUrl.concat(getResourceUrl);
-        final var httpEntity = new HttpEntity<>(configureHttpHeaders());
+        httpHeaders.setBasicAuth(sdncProperties.getAuthUsername(), sdncProperties.getAuthPassword());
+        final var httpEntity = new HttpEntity<>(httpHeaders);
         return restTemplate.getForEntity(sdncRestconfUrl, String.class, httpEntity);
     }
 
@@ -60,7 +73,7 @@ public class SdncRestconfClient {
      * @return the response entity
      */
     public ResponseEntity<String> postOperationWithJsonData(final String postResourceUrl,
-        final String jsonData) {
+                                                            final String jsonData) {
         final var sdncBaseUrl = sdncProperties.getBaseUrl();
         final var sdncRestconfUrl = sdncBaseUrl.concat(postResourceUrl);
         final var httpEntity = new HttpEntity<>(jsonData, configureHttpHeaders());
