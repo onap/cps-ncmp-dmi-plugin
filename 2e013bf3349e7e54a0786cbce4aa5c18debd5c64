@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "03db785f_19b5a9c8",
+        "filename": "src/main/java/org/onap/cps/ncmp/dmi/service/operation/SdncOperations.java",
+        "patchSetId": 8
+      },
+      "lineNbr": 77,
+      "author": {
+        "id": 5006
+      },
+      "writtenOn": "2021-08-06T13:23:12Z",
+      "side": 1,
+      "message": "typo",
+      "range": {
+        "startLine": 77,
+        "startChar": 43,
+        "endLine": 77,
+        "endChar": 52
+      },
+      "revId": "2e013bf3349e7e54a0786cbce4aa5c18debd5c64",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "46ab0b6f_4d9f514d",
+        "filename": "src/test/groovy/org/onap/cps/ncmp/dmi/service/DmiServiceImplSpec.groovy",
+        "patchSetId": 8
+      },
+      "lineNbr": 122,
+      "author": {
+        "id": 5006
+      },
+      "writtenOn": "2021-08-06T13:23:12Z",
+      "side": 1,
+      "message": "def \u0027Get module resourcesxxx.\u0027() {\n       given: \u0027cmHandle, expected jsons and module reference list\u0027\n            def cmHandle \u003d \u0027some-cmHandle\u0027\n            def excpectedModulesJson1 \u003d \u0027{\"ietf-netconf-monitoring:input\":{\"ietf-netconf-monitoring:identifier\":\"mRef1\",\"ietf-netconf-monitoring:version\":\"mRefV1\"}}\u0027\n            def excpectedModulesJson2 \u003d \u0027{\"ietf-netconf-monitoring:input\":{\"ietf-netconf-monitoring:identifier\":\"mRef2\",\"ietf-netconf-monitoring:version\":\"mRefV2\"}}\u0027\n            def mRef1 \u003d Mock(ModuleReference.class)\n            def mRef2 \u003d Mock(ModuleReference.class)\n            mRef1.getName() \u003e\u003e \u0027mRef1\u0027\n            mRef1.getRevision() \u003e\u003e \u0027mRefV1\u0027\n            mRef2.getName() \u003e\u003e \u0027mRef2\u0027\n            mRef2.getRevision() \u003e\u003e \u0027mRefV2\u0027\n            def moduleList \u003d [mRef1, mRef2] as LinkedList\u003cModuleReference\u003e\n        when: \u0027get module resources is invoked with the given cm handle and a module list\u0027\n            def response \u003d objectUnderTest.getModuleResources(cmHandle, moduleList)\n        then: \u0027then get modules resources called correctly\u0027\n            1 * mockSdncOperations.getModuleRescource(cmHandle,excpectedModulesJson1) \u003e\u003e new ResponseEntity\u003cString\u003e(\u0027response-body1\u0027, HttpStatus.OK)\n            1 * mockSdncOperations.getModuleRescource(cmHandle,excpectedModulesJson2) \u003e\u003e new ResponseEntity\u003cString\u003e(\u0027response-body2\u0027, HttpStatus.OK)\n        then: \u0027the response contains the expected response body\u0027\n            response.contains(\u0027[\"response-body1\",\"response-body2\"]\u0027)\n    }\n\n\njust keeping this test here for comparison for discussion in future.",
+      "range": {
+        "startLine": 122,
+        "startChar": 2,
+        "endLine": 122,
+        "endChar": 4
+      },
+      "revId": "2e013bf3349e7e54a0786cbce4aa5c18debd5c64",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    }
+  ]
+}
