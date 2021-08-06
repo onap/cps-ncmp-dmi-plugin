@@ -2,6 +2,98 @@
   "comments": [
     {
       "key": {
+        "uuid": "2f34dea9_57e095bc",
+        "filename": "docs/openapi/components.yml",
+        "patchSetId": 7
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 5006
+      },
+      "writtenOn": "2021-08-06T09:33:56Z",
+      "side": 1,
+      "message": "is this a candidate to use enum, due to only 2 possible values currently. what do you think.",
+      "range": {
+        "startLine": 25,
+        "startChar": 9,
+        "endLine": 25,
+        "endChar": 17
+      },
+      "revId": "a564b276fe35353236093847ed3d1c4a801b4006",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "e998b51c_1844fa95",
+        "filename": "docs/openapi/components.yml",
+        "patchSetId": 7
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 5006
+      },
+      "writtenOn": "2021-08-06T09:33:56Z",
+      "side": 1,
+      "message": "can only be read or write",
+      "range": {
+        "startLine": 27,
+        "startChar": 10,
+        "endLine": 27,
+        "endChar": 34
+      },
+      "revId": "a564b276fe35353236093847ed3d1c4a801b4006",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "655de6b1_bb250254",
+        "filename": "pom.xml",
+        "patchSetId": 7
+      },
+      "lineNbr": 128,
+      "author": {
+        "id": 5006
+      },
+      "writtenOn": "2021-08-06T09:33:56Z",
+      "side": 1,
+      "message": "is this lib apache licensed , i hope this lib follows all onap 3rd party libraray usage guidelines.",
+      "range": {
+        "startLine": 128,
+        "startChar": 21,
+        "endLine": 128,
+        "endChar": 32
+      },
+      "revId": "a564b276fe35353236093847ed3d1c4a801b4006",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "2f89c64b_d39fb905",
+        "filename": "src/main/java/org/onap/cps/ncmp/dmi/exception/ModuleResourceNotFoundException.java",
+        "patchSetId": 7
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 5006
+      },
+      "writtenOn": "2021-08-06T09:33:56Z",
+      "side": 1,
+      "message": "rm",
+      "range": {
+        "startLine": 27,
+        "startChar": 93,
+        "endLine": 27,
+        "endChar": 94
+      },
+      "revId": "a564b276fe35353236093847ed3d1c4a801b4006",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "d75f4de4_90a0fc50",
         "filename": "src/main/java/org/onap/cps/ncmp/dmi/service/DmiServiceImpl.java",
         "patchSetId": 7
