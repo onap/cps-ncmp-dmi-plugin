@@ -22,8 +22,6 @@ package org.onap.cps.ncmp.dmi.rest.controller;
 
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import java.util.List;
-import javax.validation.Valid;
 import lombok.extern.slf4j.Slf4j;
 import org.onap.cps.ncmp.dmi.model.CmHandles;
 import org.onap.cps.ncmp.dmi.model.ModuleReference;
@@ -35,6 +33,9 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+
+import javax.validation.Valid;
+import java.util.List;
 
 @RequestMapping("${rest.api.dmi-base-path}")
 @RestController
@@ -59,7 +60,7 @@ public class DmiRestController implements DmiPluginApi, DmiPluginInternalApi {
 
     @Override
     public ResponseEntity<Object> retrieveModuleResources(@Valid final ModuleRequestParent moduleRequestParent,
-        final String cmHandle) {
+                                                          final String cmHandle) {
         if (moduleRequestParent.getOperation().toString().equals("read")) {
             final var moduleReferenceList = convertRestObjectToJavaApiObject(moduleRequestParent);
             final var response = dmiService.getModuleResources(cmHandle, moduleReferenceList);
@@ -90,7 +91,7 @@ public class DmiRestController implements DmiPluginApi, DmiPluginInternalApi {
      * This method fetches the resource for given cm handle using pass
      * through option. It filters the response on the basis of depth and field
      * query parameters and returns response.
-
+     *
      * @param cmHandle cm handle identifier
      * @param resourceIdentifier resource identifier to fetch data
      * @param acceptParam accept header parameter
@@ -102,15 +103,18 @@ public class DmiRestController implements DmiPluginApi, DmiPluginInternalApi {
     public ResponseEntity<Object> getResourceDataOperationalForCmHandle(final String cmHandle,
                                                                         final String resourceIdentifier,
                                                                         final String acceptParam,
-                                                                        final @Valid String fields,
-                                                                        final @Valid Integer depth) {
-        return new ResponseEntity<>(HttpStatus.NOT_IMPLEMENTED);
+                                                                        final String fields,
+                                                                        final Integer depth) {
+        final var modulesListAsJson = dmiService.getResourceDataOperationalForCmHandle(cmHandle,
+                resourceIdentifier,
+                acceptParam,
+                fields,
+                depth);
+        return new ResponseEntity<>(modulesListAsJson, HttpStatus.OK);
     }
-
 
     private List<ModuleReference> convertRestObjectToJavaApiObject(final ModuleRequestParent moduleRequestParent) {
         return objectMapper
-                .convertValue(moduleRequestParent.getData().getModules(),
-                        new TypeReference<List<ModuleReference>>() {});
+                .convertValue(moduleRequestParent.getData().getModules(), new TypeReference<List<ModuleReference>>() {});
     }
 }

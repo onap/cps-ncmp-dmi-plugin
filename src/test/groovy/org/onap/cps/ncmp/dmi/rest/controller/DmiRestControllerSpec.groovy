@@ -36,7 +36,9 @@ import org.springframework.http.MediaType
 import org.springframework.test.web.servlet.MockMvc
 import spock.lang.Specification
 
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.put
 
 @WebMvcTest
 @AutoConfigureMockMvc(addFilters = false)
@@ -151,5 +153,24 @@ class DmiRestControllerSpec extends Specification {
                     .content(jsonData)).andReturn().response
         then: 'a not found status is returned'
             response.status == HttpStatus.NOT_FOUND.value()
+    }
+
+    def 'Get resource data for cm handle.'() {
+        given: 'Get resource data url'
+            def getResourceDataForCmHandleUrl = "${basePathV1}/ch/some-cmHandle/data/ds/ncmp-datastore:passthrough-operational" +
+                    "/resourceIdentifier?fields=myfields&depth=5"
+        when: 'get resource data GET api is invoked'
+            def response = mvc.perform(
+                    put(getResourceDataForCmHandleUrl).contentType(MediaType.APPLICATION_JSON)
+                            .accept(MediaType.APPLICATION_JSON)
+            ).andReturn().response
+        then: 'response status is ok'
+            response.status == HttpStatus.OK.value()
+        and: 'dmi service called with get resource data for cm handle'
+            1 * mockDmiService.getResourceDataOperationalForCmHandle("some-cmHandle",
+                    "resourceIdentifier",
+                    "application/json",
+                    "myfields",
+                    5)
     }
 }
