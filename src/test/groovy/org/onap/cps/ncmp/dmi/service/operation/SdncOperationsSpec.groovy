@@ -25,6 +25,7 @@ import org.onap.cps.ncmp.dmi.service.client.SdncRestconfClient
 import org.spockframework.spring.SpringBean
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.boot.test.context.SpringBootTest
+import org.springframework.http.HttpHeaders
 import org.springframework.test.context.ContextConfiguration
 import spock.lang.Specification
 
@@ -34,6 +35,7 @@ class SdncOperationsSpec extends Specification {
 
     @SpringBean
     SdncRestconfClient mockSdncRestClient = Mock()
+
     @Autowired
     SdncOperations objectUnderTest
 
@@ -55,5 +57,14 @@ class SdncOperationsSpec extends Specification {
             objectUnderTest.getModuleResource(nodeId, 'some-json-data')
         then: 'the SDNC Rest client is invoked with the correct URL and json data'
             1 * mockSdncRestClient.postOperationWithJsonData(expectedUrl, 'some-json-data')
+    }
+
+    def 'Get resource data from node to SDNC.'() {
+        given: 'excpected url, topology-id, sdncOperation object'
+            def expectedUrl = '/rests/data/network-topology:network-topology/topology=test-topology/node=node1/yang-ext:mount/testResourceId?fields=testFields&depth=10&content=all'
+        when: 'called get modules from node'
+            objectUnderTest.getResouceDataFromNode('node1', 'testResourceId',  ['fields=testFields', 'depth=10', 'content=all'],'testAcceptParam')
+        then: 'the get operation is executed with the correct URL'
+            1 * mockSdncRestClient.getOperation(expectedUrl, _ as HttpHeaders)
     }
 }

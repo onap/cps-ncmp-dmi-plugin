@@ -123,3 +123,52 @@ paths:
           $ref: 'components.yml#/components/responses/Unauthorized'
         '403':
           $ref: 'components.yml#/components/responses/Forbidden'
+
+  /v1/ch/{cmHandle}/data/ds/ncmp-datastore:passthrough-operational/{resourceIdentifier}:
+    put:
+      tags:
+        - dmi-plugin
+      summary: Get resource data for cm handle
+      description: Get resource data for given cm handle
+      operationId: getResourceDataOperationalForCmHandle
+      parameters:
+        - $ref: 'components.yml#/components/parameters/cmHandleInPath'
+        - name: resourceIdentifier
+          in: path
+          description: Resource identifier to fetch the resource data
+          required: true
+          schema:
+            type: string
+        - name: accept
+          in: header
+          description: Accept parameter for response, if accept parameter is null, that means client can accept any format.
+          schema:
+            type: string
+            enum: [ application/json, application/yang-data+json ]
+        - name: fields
+          in: query
+          description: Fields parameter to filter resource
+          required: false
+          schema:
+            type: string
+        - name: depth
+          in: query
+          description: Depth parameter for response
+          required: false
+          schema:
+            type: integer
+      requestBody:
+        description: Operational body
+        content:
+          application/json:
+            schema:
+              $ref: 'components.yml#/components/schemas/OperationalRequest'
+      responses:
+        '200':
+          $ref: 'components.yml#/components/responses/Ok'
+        '400':
+          $ref: 'components.yml#/components/responses/BadRequest'
+        '401':
+          $ref: 'components.yml#/components/responses/Unauthorized'
+        '403':
+          $ref: 'components.yml#/components/responses/Forbidden'
