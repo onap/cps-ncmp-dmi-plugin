@@ -26,6 +26,7 @@ import org.onap.cps.ncmp.dmi.config.DmiPluginConfig
 import org.onap.cps.ncmp.dmi.exception.CmHandleRegistrationException
 import org.onap.cps.ncmp.dmi.exception.DmiException
 import org.onap.cps.ncmp.dmi.exception.ModulesNotFoundException
+import org.onap.cps.ncmp.dmi.exception.ResourceDataNotFound
 import org.onap.cps.ncmp.dmi.service.client.NcmpRestClient
 import org.onap.cps.ncmp.dmi.service.operation.SdncOperations
 import org.springframework.http.HttpStatus
@@ -115,5 +116,54 @@ class DmiServiceImplSpec extends Specification {
             objectUnderTest.registerCmHandles(cmHandlesList)
         then: 'a dmi exception is thrown'
             thrown(DmiException.class)
+    }
+
+    def 'Get resource data from cm handle with #scenario.'() {
+        given: 'cm-handle, pass through parameter, resourceId, accept header, fields, depth'
+            def cmHandle = 'testCmHandle'
+            def resourceId = 'testResourceId'
+            def acceptHeaderParam = 'testAcceptParam'
+            def fieldsParam = 'testFields'
+            def depthParam = 10
+        and: 'sdnc operation returns OK response'
+            mockSdncOperations.getResouceDataFromNode(cmHandle, resourceId, queryList, acceptHeaderParam ) >> new ResponseEntity<>('response json', HttpStatus.OK)
+        when: 'get resource data from cm handles service method invoked'
+            def response = objectUnderTest.getResourceDataForCmHandle(cmHandle, dataStore,
+                                                        resourceId, acceptHeaderParam,
+                                                        fieldsParam, depthParam)
+        then: 'response have expected json'
+            response == 'response json'
+        where: 'datastore is given'
+            scenario                                   |     dataStore                                  |    queryList
+            'data store is pass thorough operational'  |     'ncmp-datastore:passthrough-operational'   |    ['fields=testFields', 'depth=10', 'content=all']
+            'data store is pass thorough operational'  |     'ncmp-datastore:passthrough-running'       |    ['fields=testFields', 'depth=10', 'content=config']
+        }
+
+    def 'Get resource data from cm handle called with wrong pass through param.'() {
+        when: 'get resource data from cm handles service method invoked with wrong passthrough param'
+            objectUnderTest.getResourceDataForCmHandle("cmHandle", "wrongPassThroughParam",
+                    "resourceId", "acceptHeaderParam",
+                    "fieldsParam", 10)
+        then: 'request fail with exception'
+            thrown(DmiException.class)
+    }
+
+    def 'Get resource data from cm handle with exception.'() {
+        given: 'cm-handle, pass through parameter, resourceId, accept header, fields, depth'
+            def cmHandle = 'testCmHandle'
+            def passThroughParam = 'ncmp-datastore:passthrough-operational'
+            def resourceId = 'testResourceId'
+            def acceptHeaderParam = 'testAcceptParam'
+            def fieldsParam = 'testFields'
+            def depthParam = 10
+        and: 'sdnc operation returns "NOT_FOUND" response'
+            mockSdncOperations.getResouceDataFromNode(cmHandle, resourceId, _ as List, acceptHeaderParam )
+                    >> new ResponseEntity<>(HttpStatus.NOT_FOUND)
+        when: 'get resource data from cm handles service method invoked'
+            objectUnderTest.getResourceDataForCmHandle(cmHandle, passThroughParam,
+                    resourceId, acceptHeaderParam,
+                    fieldsParam, depthParam)
+        then: 'resource data not found'
+            thrown(ResourceDataNotFound.class)
     }
 }
