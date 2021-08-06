@@ -1,0 +1,297 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "d75f4de4_90a0fc50",
+        "filename": "src/main/java/org/onap/cps/ncmp/dmi/service/DmiServiceImpl.java",
+        "patchSetId": 7
+      },
+      "lineNbr": 62,
+      "author": {
+        "id": 5006
+      },
+      "writtenOn": "2021-08-06T09:27:11Z",
+      "side": 1,
+      "message": "add objectmapper",
+      "range": {
+        "startLine": 62,
+        "startChar": 3,
+        "endLine": 62,
+        "endChar": 5
+      },
+      "revId": "a564b276fe35353236093847ed3d1c4a801b4006",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "8a369908_104d51a3",
+        "filename": "src/main/java/org/onap/cps/ncmp/dmi/service/DmiServiceImpl.java",
+        "patchSetId": 7
+      },
+      "lineNbr": 98,
+      "author": {
+        "id": 5006
+      },
+      "writtenOn": "2021-08-06T09:27:11Z",
+      "side": 1,
+      "message": "log this exception",
+      "range": {
+        "startLine": 98,
+        "startChar": 14,
+        "endLine": 98,
+        "endChar": 16
+      },
+      "revId": "a564b276fe35353236093847ed3d1c4a801b4006",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "c6fbbe64_912efe08",
+        "filename": "src/main/java/org/onap/cps/ncmp/dmi/service/DmiServiceImpl.java",
+        "patchSetId": 7
+      },
+      "lineNbr": 139,
+      "author": {
+        "id": 5006
+      },
+      "writtenOn": "2021-08-06T09:27:11Z",
+      "side": 1,
+      "message": "please log this exception too",
+      "range": {
+        "startLine": 139,
+        "startChar": 10,
+        "endLine": 139,
+        "endChar": 11
+      },
+      "revId": "a564b276fe35353236093847ed3d1c4a801b4006",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "93929da4_53a3cb0e",
+        "filename": "src/main/java/org/onap/cps/ncmp/dmi/service/client/SdncRestconfClient.java",
+        "patchSetId": 7
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 5006
+      },
+      "writtenOn": "2021-08-06T09:27:11Z",
+      "side": 1,
+      "message": "except some duplicate code this file looks good",
+      "revId": "a564b276fe35353236093847ed3d1c4a801b4006",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "995ce02e_d3f03712",
+        "filename": "src/main/java/org/onap/cps/ncmp/dmi/service/operation/SdncOperations.java",
+        "patchSetId": 7
+      },
+      "lineNbr": 80,
+      "author": {
+        "id": 5006
+      },
+      "writtenOn": "2021-08-06T09:27:11Z",
+      "side": 1,
+      "message": "same as below",
+      "range": {
+        "startLine": 80,
+        "startChar": 12,
+        "endLine": 80,
+        "endChar": 100
+      },
+      "revId": "a564b276fe35353236093847ed3d1c4a801b4006",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "b0a403f3_2077b7a8",
+        "filename": "src/main/java/org/onap/cps/ncmp/dmi/service/operation/SdncOperations.java",
+        "patchSetId": 7
+      },
+      "lineNbr": 89,
+      "author": {
+        "id": 5006
+      },
+      "writtenOn": "2021-08-06T09:27:11Z",
+      "side": 1,
+      "message": "as this property is coming from application.yml and is fixed for the lifetime of the spring context. Why are you calculating it for every request now. Thats the reason it was in constructor previously.",
+      "range": {
+        "startLine": 89,
+        "startChar": 12,
+        "endLine": 89,
+        "endChar": 107
+      },
+      "revId": "a564b276fe35353236093847ed3d1c4a801b4006",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "3328365b_ef0cb253",
+        "filename": "src/test/groovy/org/onap/cps/ncmp/dmi/rest/controller/DmiRestControllerSpec.groovy",
+        "patchSetId": 7
+      },
+      "lineNbr": 137,
+      "author": {
+        "id": 5006
+      },
+      "writtenOn": "2021-08-06T09:27:11Z",
+      "side": 1,
+      "message": "to get module resources",
+      "range": {
+        "startLine": 137,
+        "startChar": 32,
+        "endLine": 137,
+        "endChar": 33
+      },
+      "revId": "a564b276fe35353236093847ed3d1c4a801b4006",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "f91db0fd_d0fabc99",
+        "filename": "src/test/groovy/org/onap/cps/ncmp/dmi/rest/controller/DmiRestControllerSpec.groovy",
+        "patchSetId": 7
+      },
+      "lineNbr": 138,
+      "author": {
+        "id": 5006
+      },
+      "writtenOn": "2021-08-06T09:27:11Z",
+      "side": 1,
+      "message": "getModuleResource never throws this exception, please check comment of prev patch",
+      "range": {
+        "startLine": 138,
+        "startChar": 83,
+        "endLine": 138,
+        "endChar": 107
+      },
+      "revId": "a564b276fe35353236093847ed3d1c4a801b4006",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "0bce6eca_db2a54bf",
+        "filename": "src/test/groovy/org/onap/cps/ncmp/dmi/service/DmiServiceImplSpec.groovy",
+        "patchSetId": 7
+      },
+      "lineNbr": 47,
+      "author": {
+        "id": 5006
+      },
+      "writtenOn": "2021-08-06T09:27:11Z",
+      "side": 1,
+      "message": "pull down to specific test",
+      "range": {
+        "startLine": 47,
+        "startChar": 4,
+        "endLine": 47,
+        "endChar": 98
+      },
+      "revId": "a564b276fe35353236093847ed3d1c4a801b4006",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "52610cbe_07396cca",
+        "filename": "src/test/groovy/org/onap/cps/ncmp/dmi/service/DmiServiceImplSpec.groovy",
+        "patchSetId": 7
+      },
+      "lineNbr": 126,
+      "author": {
+        "id": 5006
+      },
+      "writtenOn": "2021-08-06T09:27:11Z",
+      "side": 1,
+      "message": "i know this is being discussed earlier with Toine, but in this case its better to put this statement in then and check if correct cm-handle and correct module list is being passed to this method or not. What is your opinion. Else the private method return string will be untested/unasserted in this case.",
+      "range": {
+        "startLine": 126,
+        "startChar": 9,
+        "endLine": 126,
+        "endChar": 11
+      },
+      "revId": "a564b276fe35353236093847ed3d1c4a801b4006",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "b17f100c_57a81ab9",
+        "filename": "src/test/groovy/org/onap/cps/ncmp/dmi/service/DmiServiceImplSpec.groovy",
+        "patchSetId": 7
+      },
+      "lineNbr": 137,
+      "author": {
+        "id": 5006
+      },
+      "writtenOn": "2021-08-06T09:27:11Z",
+      "side": 1,
+      "message": "not needed here, wild card can work",
+      "range": {
+        "startLine": 137,
+        "startChar": 67,
+        "endLine": 137,
+        "endChar": 72
+      },
+      "revId": "a564b276fe35353236093847ed3d1c4a801b4006",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "a399fe85_30c26ccc",
+        "filename": "src/test/groovy/org/onap/cps/ncmp/dmi/service/DmiServiceImplSpec.groovy",
+        "patchSetId": 7
+      },
+      "lineNbr": 138,
+      "author": {
+        "id": 5006
+      },
+      "writtenOn": "2021-08-06T09:27:11Z",
+      "side": 1,
+      "message": "ModuleResourceNotFoundException",
+      "range": {
+        "startLine": 138,
+        "startChar": 15,
+        "endLine": 138,
+        "endChar": 39
+      },
+      "revId": "a564b276fe35353236093847ed3d1c4a801b4006",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "426dc923_fb8355f2",
+        "filename": "src/test/groovy/org/onap/cps/ncmp/dmi/service/operation/SdncOperationsSpec.groovy",
+        "patchSetId": 7
+      },
+      "lineNbr": 49,
+      "author": {
+        "id": 5006
+      },
+      "writtenOn": "2021-08-06T09:27:11Z",
+      "side": 1,
+      "message": "schema? or resource/ I would suggest this method name getModuleSchema or getModuleResource everywhere from controller service operation layer for no confusion",
+      "range": {
+        "startLine": 49,
+        "startChar": 26,
+        "endLine": 49,
+        "endChar": 35
+      },
+      "revId": "a564b276fe35353236093847ed3d1c4a801b4006",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    }
+  ]
+}
