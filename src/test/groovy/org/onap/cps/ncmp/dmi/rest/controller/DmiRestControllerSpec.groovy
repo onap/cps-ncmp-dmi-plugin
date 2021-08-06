@@ -33,6 +33,7 @@ import org.springframework.http.MediaType
 import org.springframework.test.web.servlet.MockMvc
 import spock.lang.Specification
 
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post
 
 @WebMvcTest
@@ -112,4 +113,18 @@ class DmiRestControllerSpec extends Specification {
         and: 'dmi service is not called'
             0 * mockDmiService.registerCmHandles(_)
     }
+
+    def 'Get resource data for cm handle.'() {
+        given: 'Get resource data url'
+        def getResourceDataForCmHandleUrl = "${basePathV1}/ch/cmHandle/data/ds/passThroughParam/resourceIdentifier?fields=xxx&depth=5"
+        when: 'register cm handles post api is invoked with no content'
+        def response = mvc.perform(
+                get(getResourceDataForCmHandleUrl).contentType(MediaType.APPLICATION_JSON)
+        ).andReturn().response
+        then: 'response status is ok'
+        response.status == HttpStatus.OK.value()
+        and: 'dmi service is not called'
+        0 * mockDmiService.registerCmHandles(_)
+    }
+
 }

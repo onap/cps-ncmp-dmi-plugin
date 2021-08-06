@@ -38,6 +38,7 @@ public class SdncRestconfClient {
         this.restTemplate = restTemplate;
     }
 
+
     /**
      * restconf get operation on sdnc.
      *
@@ -46,11 +47,23 @@ public class SdncRestconfClient {
      * @return the response entity
      */
     public ResponseEntity<String> getOperation(final String getResourceUrl) {
+        return getOperation(getResourceUrl, MediaType.APPLICATION_JSON_VALUE);
+    }
+
+    /**
+     * restconf get operation on sdnc.
+     *
+     * @param getResourceUrl sdnc get url
+     * @param acceptMediaType accept media type
+     *
+     * @return the response entity
+     */
+    public ResponseEntity<String> getOperation(final String getResourceUrl, final String acceptMediaType) {
         final String sdncBaseUrl = sdncProperties.getBaseUrl();
         final String sdncRestconfUrl = sdncBaseUrl.concat(getResourceUrl);
         final var httpHeaders = new HttpHeaders();
         httpHeaders.setBasicAuth(sdncProperties.getAuthUsername(), sdncProperties.getAuthPassword());
-        httpHeaders.set(HttpHeaders.ACCEPT, MediaType.APPLICATION_JSON.toString());
+        httpHeaders.set(HttpHeaders.ACCEPT, acceptMediaType);
         final var httpEntity = new HttpEntity<>(httpHeaders);
         return restTemplate.getForEntity(sdncRestconfUrl, String.class, httpEntity);
     }

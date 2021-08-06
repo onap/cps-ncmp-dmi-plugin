@@ -26,6 +26,8 @@ import org.onap.cps.ncmp.dmi.service.client.SdncRestconfClient;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Component;
 
+import java.util.List;
+
 @Component
 public class SdncOperations {
 
@@ -60,16 +62,57 @@ public class SdncOperations {
      * @param nodeId node id for node
      * @return returns {@code ResponseEntity} which contains list of modules
      */
-    public ResponseEntity<String> getModulesFromNode(final String nodeId) {
+    public ResponseEntity<String> getModulesFromNode(@NotNull final String nodeId) {
         final String urlWithNodeId = prepareGetSchemaUrl(nodeId);
         return sdncRestconfClient.getOperation(urlWithNodeId);
     }
 
+    public ResponseEntity<String> getResouceDataFromNode(final String nodeId, final String resourceId, final List<String> queryList) {
+        final String getResourceDataUrl = prepareResourceDataUrl(nodeId, resourceId, queryList);
+        return sdncRestconfClient.getOperation(getResourceDataUrl);
+    }
+
     @NotNull
     private String prepareGetSchemaUrl(final String nodeId) {
+        final var getSchemaUrl = addResource(addTopologywithNodeUrl(nodeId), GET_SCHEMA_URL);
+        return getSchemaUrl;
+    }
+
+    @NotNull
+    private String prepareResourceDataUrl(final String nodeId,
+                                             final String resourceId,
+                                             final List<String> queryList) {
+        final var resourceDataUrl = addQuery(addResource(addTopologywithNodeUrl(nodeId), resourceId), queryList);
+        return resourceDataUrl;
+    }
+
+    @NotNull
+    private String addTopologywithNodeUrl(final String nodeId) {
         final String topologyMountUrl = topologyMountUrlTemplate;
-        final String topologyMountUrlWithNodeId = topologyMountUrl.replace("{nodeId}", nodeId);
-        final String resourceUrl = topologyMountUrlWithNodeId.concat(GET_SCHEMA_URL);
-        return resourceUrl;
+        return topologyMountUrl.replace("{nodeId}", nodeId);
+    }
+
+    @NotNull
+    private String addResource(final String url, final String resourceId) {
+        if(resourceId.startsWith("/")) {
+            return url.concat(resourceId);
+        } else {
+            return url.concat("/"+resourceId);
+        }
+    }
+
+    @NotNull
+    private String addQuery(final String url, final List<String> queryList) {
+        if(queryList.isEmpty()) {
+            return url;
+        }
+        final StringBuilder urlBuilder = new StringBuilder(url);
+        urlBuilder.append("?");
+        urlBuilder.append(queryList.get(0));
+        for(int i = 1;i<queryList.size();i++) {
+            urlBuilder.append("&");
+            urlBuilder.append(queryList.get(i));
+        }
+        return urlBuilder.toString();
     }
 }

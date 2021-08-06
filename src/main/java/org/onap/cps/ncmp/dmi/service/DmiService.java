@@ -23,6 +23,8 @@ package org.onap.cps.ncmp.dmi.service;
 import java.util.List;
 import org.onap.cps.ncmp.dmi.exception.DmiException;
 
+import javax.validation.constraints.NotNull;
+
 /**
  * Interface for handling Dmi plugin Data.
  */
@@ -44,5 +46,24 @@ public interface DmiService {
      * @param cmHandles list of cm-handles
      */
     void registerCmHandles(List<String> cmHandles);
+
+    /**
+     * This method use to fetch the resource data from cm handle
+     * for given datasource and Identifier. Fields and depths query
+     * parameter are used to filter the response from network resource.
+     *
+     * @param cmHandle cm handle identifier
+     * @param passThroughParam pass through param value
+     * @param resourceIdentifier resource identifier
+     * @param fieldsQuery fields query parameter
+     * @param depthQuery depth query parameter
+     *
+     * @return {@code Object} response from network function
+     */
+    Object getResourceDataForCmHandle(@NotNull String cmHandle,
+                                    @NotNull String passThroughParam,
+                                    @NotNull String resourceIdentifier,
+                                    String fieldsQuery,
+                                    Integer depthQuery);
 
 }

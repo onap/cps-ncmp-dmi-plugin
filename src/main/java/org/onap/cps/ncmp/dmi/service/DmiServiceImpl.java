@@ -23,7 +23,9 @@ package org.onap.cps.ncmp.dmi.service;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.List;
+
 import lombok.extern.slf4j.Slf4j;
 import org.apache.groovy.parser.antlr4.util.StringUtils;
 import org.onap.cps.ncmp.dmi.config.DmiPluginConfig.DmiPluginProperties;
@@ -39,10 +41,14 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
+import javax.validation.constraints.NotNull;
+
 
 @Service
 @Slf4j
 public class DmiServiceImpl implements DmiService {
+
+    private static final String PASSTHROUGH_OPERATIONAL = "ncmp-datastore:passthrough-operational";
 
     private SdncOperations sdncOperations;
     private NcmpRestClient ncmpRestClient;
@@ -108,4 +114,47 @@ public class DmiServiceImpl implements DmiService {
         }
     }
 
+    @Override
+    public Object getResourceDataForCmHandle(final @NotNull String cmHandle,
+                                             final @NotNull String passThroughParam,
+                                             final @NotNull String resourceIdentifier,
+                                             final String fieldsQuery,
+                                             final Integer depthQuery) {
+        final List<String> queryList = getQueryList(fieldsQuery, depthQuery);
+        addContentQueryByPassthrough(passThroughParam, queryList);
+        final ResponseEntity<String> responseEntity = sdncOperations.getResouceDataFromNode(cmHandle,
+                                                                                            resourceIdentifier,
+                                                                                            queryList);
+        return preareAndSendResponse(responseEntity);
+    }
+
+    private String preareAndSendResponse(ResponseEntity<String> responseEntity) {
+        if (responseEntity.getStatusCode() == HttpStatus.OK) {
+            return responseEntity.getBody();
+        } else {
+            throw new DmiException("SDNC returned no value for this request.",
+                    "response code : " + responseEntity.getStatusCode() + " message : " + responseEntity.getBody());
+        }
+    }
+
+    private void addContentQueryByPassthrough(final String passThroughParam, final List<String> queryList) {
+        switch (passThroughParam) {
+            case PASSTHROUGH_OPERATIONAL: queryList.add("content=all");
+                                          break;
+            default: throw  new DmiException("Wrong pass-through datastore type.",
+                    "Wrong pass-through datastore type given in url, please provide correct pass-through datastore.");
+        }
+    }
+
+    @NotNull
+    private List<String> getQueryList(final String fieldsQuery, final Integer depthQuery) {
+        final List <String> queryList = new LinkedList<>();
+        if(fieldsQuery != null && !fieldsQuery.isEmpty()){
+            queryList.add("fields="+ fieldsQuery);
+        }
+        if(depthQuery !=null){
+            queryList.add("depth="+ depthQuery);
+        }
+        return queryList;
+    }
 }
