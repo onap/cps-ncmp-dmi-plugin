@@ -45,6 +45,29 @@
       "revId": "2e013bf3349e7e54a0786cbce4aa5c18debd5c64",
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "8c7301de_adf7c184",
+        "filename": "src/test/groovy/org/onap/cps/ncmp/dmi/service/DmiServiceImplSpec.groovy",
+        "patchSetId": 8
+      },
+      "lineNbr": 129,
+      "author": {
+        "id": 5006
+      },
+      "writtenOn": "2021-08-06T13:27:32Z",
+      "side": 1,
+      "message": "sorry last moment catch: better to have exact comparision\n\n response \u003d\u003d \u0027[\"response-body1\",\"response-body2\"]\u0027",
+      "range": {
+        "startLine": 129,
+        "startChar": 12,
+        "endLine": 129,
+        "endChar": 76
+      },
+      "revId": "2e013bf3349e7e54a0786cbce4aa5c18debd5c64",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
     }
   ]
 }
