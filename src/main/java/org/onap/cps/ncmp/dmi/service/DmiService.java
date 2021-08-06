@@ -21,6 +21,8 @@
 package org.onap.cps.ncmp.dmi.service;
 
 import java.util.List;
+import java.util.Map;
+import javax.validation.constraints.NotNull;
 import org.onap.cps.ncmp.dmi.exception.DmiException;
 import org.onap.cps.ncmp.dmi.model.ModuleReference;
 
@@ -54,4 +56,25 @@ public interface DmiService {
      * @return returns all module resources
      */
     String getModuleResources(String cmHandle, List<ModuleReference> modules);
+
+    /**
+     * This method use to fetch the resource data from cm handle
+     * for given datasource and Identifier. Fields and depths query
+     * parameter are used to filter the response from network resource.
+     *
+     * @param cmHandle cm handle identifier
+     * @param resourceIdentifier resource identifier
+     * @param acceptParam accept header parameter
+     * @param fieldsQuery fields query parameter
+     * @param depthQuery depth query parameter
+     * @param cmHandlePropertyMap cm handle properties
+     *
+     * @return {@code Object} response from network function
+     */
+    Object getResourceDataOperationalForCmHandle(@NotNull String cmHandle,
+                                      @NotNull String resourceIdentifier,
+                                      String acceptParam,
+                                      String fieldsQuery,
+                                      Integer depthQuery,
+                                      Map<String, String> cmHandlePropertyMap);
 }
