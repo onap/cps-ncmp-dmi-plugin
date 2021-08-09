@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "eaaca1f5_0f99a67c",
+        "filename": "docs/openapi/openapi.yml",
+        "patchSetId": 9
+      },
+      "lineNbr": 116,
+      "author": {
+        "id": 6738
+      },
+      "writtenOn": "2021-08-09T10:45:12Z",
+      "side": 1,
+      "message": "I see the resource being requested is also moduleResources and the request is also ModuleResources. I was expecting CMHandles in the request. Am I missing something?",
+      "range": {
+        "startLine": 113,
+        "startChar": 0,
+        "endLine": 116,
+        "endChar": 72
+      },
+      "revId": "5431248add88f3763c16ebcbd21473a426eb68cf",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "cd86686f_0c9f0934",
+        "filename": "docs/openapi/openapi.yml",
+        "patchSetId": 9
+      },
+      "lineNbr": 119,
+      "author": {
+        "id": 6738
+      },
+      "writtenOn": "2021-08-09T10:45:12Z",
+      "side": 1,
+      "message": "response object to be defined with examples as done in cps",
+      "range": {
+        "startLine": 119,
+        "startChar": 0,
+        "endLine": 119,
+        "endChar": 57
+      },
+      "revId": "5431248add88f3763c16ebcbd21473a426eb68cf",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    }
+  ]
+}
