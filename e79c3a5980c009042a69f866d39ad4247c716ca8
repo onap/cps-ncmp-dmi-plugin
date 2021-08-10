@@ -160,6 +160,52 @@
       "revId": "e79c3a5980c009042a69f866d39ad4247c716ca8",
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "97d8ff9c_b282abca",
+        "filename": "src/test/groovy/org/onap/cps/ncmp/dmi/rest/controller/DmiRestControllerSpec.groovy",
+        "patchSetId": 10
+      },
+      "lineNbr": 123,
+      "author": {
+        "id": 7680
+      },
+      "writtenOn": "2021-08-10T03:43:56Z",
+      "side": 1,
+      "message": "we should validate the getModuleResources is being called with correct input. With the existing test the input json and the output has no direct or indirect relation.",
+      "range": {
+        "startLine": 123,
+        "startChar": 64,
+        "endLine": 123,
+        "endChar": 65
+      },
+      "revId": "e79c3a5980c009042a69f866d39ad4247c716ca8",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "14ce31e8_1647de29",
+        "filename": "src/test/groovy/org/onap/cps/ncmp/dmi/service/operation/SdncOperationsSpec.groovy",
+        "patchSetId": 10
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 7680
+      },
+      "writtenOn": "2021-08-10T03:43:56Z",
+      "side": 1,
+      "message": "Suggestion: We can use @Springboottest here, to provide the sdncproperties from the application.yml.\n\n---------\n@SpringBootTest\n@ContextConfiguration(classes \u003d [DmiConfiguration.SdncProperties, SdncOperations])\nclass SdncOperationsSpec extends Specification {\n\n    @SpringBean\n    SdncRestconfClient mockSdncRestClient \u003d Mock()\n\n    @Autowired\n    SdncOperations objectUnderTest\n\n------ \nNo need to mock the topology-id and create objectUnderTest within the test. It also makes test more readable.",
+      "range": {
+        "startLine": 27,
+        "startChar": 0,
+        "endLine": 29,
+        "endChar": 53
+      },
+      "revId": "e79c3a5980c009042a69f866d39ad4247c716ca8",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
     }
   ]
 }
