@@ -22,6 +22,30 @@
       "revId": "b97be355c46488ded95f6bfe0a6db3eaeb936188",
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "37e74150_0d69d0bb",
+        "filename": "docs/openapi/openapi.yml",
+        "patchSetId": 5
+      },
+      "lineNbr": 146,
+      "author": {
+        "id": 5006
+      },
+      "writtenOn": "2021-08-10T10:01:08Z",
+      "side": 1,
+      "message": "In upcoming requests, if any of these params are used then we can extract them for reusability. As at this point, we dont know which will be used in future. So lets keep them in request itself.",
+      "parentUuid": "3f484d65_a81741ad",
+      "range": {
+        "startLine": 110,
+        "startChar": 6,
+        "endLine": 146,
+        "endChar": 25
+      },
+      "revId": "b97be355c46488ded95f6bfe0a6db3eaeb936188",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
     }
   ]
 }
