@@ -2,6 +2,52 @@
   "comments": [
     {
       "key": {
+        "uuid": "13007b59_056f2a4b",
+        "filename": "docs/openapi/openapi.yml",
+        "patchSetId": 5
+      },
+      "lineNbr": 115,
+      "author": {
+        "id": 7680
+      },
+      "writtenOn": "2021-08-10T10:46:30Z",
+      "side": 1,
+      "message": "cmHandle is being used in /v1/ch/{cmHandle}/modules too. It makes sense to extract and use it at both places.",
+      "range": {
+        "startLine": 110,
+        "startChar": 8,
+        "endLine": 115,
+        "endChar": 24
+      },
+      "revId": "b97be355c46488ded95f6bfe0a6db3eaeb936188",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "91bf759c_97d59f91",
+        "filename": "docs/openapi/openapi.yml",
+        "patchSetId": 5
+      },
+      "lineNbr": 134,
+      "author": {
+        "id": 7680
+      },
+      "writtenOn": "2021-08-10T10:46:30Z",
+      "side": 1,
+      "message": "We should specify supported values here",
+      "range": {
+        "startLine": 129,
+        "startChar": 10,
+        "endLine": 134,
+        "endChar": 24
+      },
+      "revId": "b97be355c46488ded95f6bfe0a6db3eaeb936188",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "3f484d65_a81741ad",
         "filename": "docs/openapi/openapi.yml",
         "patchSetId": 5
@@ -84,6 +130,29 @@
       "writtenOn": "2021-08-10T10:41:32Z",
       "side": 1,
       "message": "add example for the response code 200.",
+      "revId": "b97be355c46488ded95f6bfe0a6db3eaeb936188",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "199f6ce6_62121ea6",
+        "filename": "src/main/java/org/onap/cps/ncmp/dmi/rest/controller/DmiRestController.java",
+        "patchSetId": 5
+      },
+      "lineNbr": 90,
+      "author": {
+        "id": 7680
+      },
+      "writtenOn": "2021-08-10T10:46:30Z",
+      "side": 1,
+      "message": "return new ResponseEntity\u003c\u003e(HttpStatus.NOT_IMPLEMENTED).",
+      "range": {
+        "startLine": 90,
+        "startChar": 7,
+        "endLine": 90,
+        "endChar": 20
+      },
       "revId": "b97be355c46488ded95f6bfe0a6db3eaeb936188",
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
       "unresolved": true
