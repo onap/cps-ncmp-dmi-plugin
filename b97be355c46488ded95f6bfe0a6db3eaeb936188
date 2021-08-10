@@ -192,6 +192,30 @@
     },
     {
       "key": {
+        "uuid": "7d759bdc_a0002b0f",
+        "filename": "docs/openapi/openapi.yml",
+        "patchSetId": 5
+      },
+      "lineNbr": 134,
+      "author": {
+        "id": 7680
+      },
+      "writtenOn": "2021-08-10T14:52:40Z",
+      "side": 1,
+      "message": "I think, I don\u0027t understand the use-case here. Lets discuss it in the daily call.",
+      "parentUuid": "728a93ba_00af618e",
+      "range": {
+        "startLine": 129,
+        "startChar": 10,
+        "endLine": 134,
+        "endChar": 24
+      },
+      "revId": "b97be355c46488ded95f6bfe0a6db3eaeb936188",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "3f484d65_a81741ad",
         "filename": "docs/openapi/openapi.yml",
         "patchSetId": 5
