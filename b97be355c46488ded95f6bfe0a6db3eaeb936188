@@ -46,6 +46,30 @@
       "revId": "b97be355c46488ded95f6bfe0a6db3eaeb936188",
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "d10477c6_9c7ec2e0",
+        "filename": "docs/openapi/openapi.yml",
+        "patchSetId": 5
+      },
+      "lineNbr": 146,
+      "author": {
+        "id": 6841
+      },
+      "writtenOn": "2021-08-10T10:13:02Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "37e74150_0d69d0bb",
+      "range": {
+        "startLine": 110,
+        "startChar": 6,
+        "endLine": 146,
+        "endChar": 25
+      },
+      "revId": "b97be355c46488ded95f6bfe0a6db3eaeb936188",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
     }
   ]
 }
