@@ -144,6 +144,30 @@
     },
     {
       "key": {
+        "uuid": "3f08cb83_8fa04e10",
+        "filename": "docs/openapi/openapi.yml",
+        "patchSetId": 5
+      },
+      "lineNbr": 134,
+      "author": {
+        "id": 7680
+      },
+      "writtenOn": "2021-08-10T13:25:07Z",
+      "side": 1,
+      "message": "header -\u003e accept looks like a field which should not be blank. It can be optional if we specify a default value as user don\u0027t need to provide it. \n\nAs we are returning response even if this parameter is missing there would be still some default content-type.\n\nBecause type is explicitly defined in the parameters, we should provide the default value too.",
+      "parentUuid": "932bc0b5_1dcd75ef",
+      "range": {
+        "startLine": 129,
+        "startChar": 10,
+        "endLine": 134,
+        "endChar": 24
+      },
+      "revId": "b97be355c46488ded95f6bfe0a6db3eaeb936188",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "3f484d65_a81741ad",
         "filename": "docs/openapi/openapi.yml",
         "patchSetId": 5
