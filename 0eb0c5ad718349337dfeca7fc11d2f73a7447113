@@ -1,0 +1,119 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "447d1e64_15afd3ed",
+        "filename": "src/main/java/org/onap/cps/ncmp/dmi/exception/ResourceDataNotFound.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 6841
+      },
+      "writtenOn": "2021-08-10T09:30:07Z",
+      "side": 1,
+      "message": "non blocking - cmHandle",
+      "range": {
+        "startLine": 27,
+        "startChar": 87,
+        "endLine": 27,
+        "endChar": 97
+      },
+      "revId": "0eb0c5ad718349337dfeca7fc11d2f73a7447113",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "389d6093_89804df3",
+        "filename": "src/main/java/org/onap/cps/ncmp/dmi/service/DmiService.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 59,
+      "author": {
+        "id": 6841
+      },
+      "writtenOn": "2021-08-10T09:30:07Z",
+      "side": 1,
+      "message": "do we need a confid param?",
+      "range": {
+        "startLine": 54,
+        "startChar": 0,
+        "endLine": 59,
+        "endChar": 46
+      },
+      "revId": "0eb0c5ad718349337dfeca7fc11d2f73a7447113",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "898ee4d8_1fd81f09",
+        "filename": "src/main/java/org/onap/cps/ncmp/dmi/service/DmiServiceImpl.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 144,
+      "author": {
+        "id": 6841
+      },
+      "writtenOn": "2021-08-10T09:30:07Z",
+      "side": 1,
+      "message": "do we need a custom exception for this?",
+      "range": {
+        "startLine": 144,
+        "startChar": 32,
+        "endLine": 144,
+        "endChar": 44
+      },
+      "revId": "0eb0c5ad718349337dfeca7fc11d2f73a7447113",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "42827adf_08e5efda",
+        "filename": "src/test/groovy/org/onap/cps/ncmp/dmi/service/DmiServiceImplSpec.groovy",
+        "patchSetId": 2
+      },
+      "lineNbr": 163,
+      "author": {
+        "id": 6841
+      },
+      "writtenOn": "2021-08-10T09:30:07Z",
+      "side": 1,
+      "message": "extract out",
+      "range": {
+        "startLine": 158,
+        "startChar": 11,
+        "endLine": 163,
+        "endChar": 31
+      },
+      "revId": "0eb0c5ad718349337dfeca7fc11d2f73a7447113",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "5fdd6ee4_79ed59bd",
+        "filename": "src/test/groovy/org/onap/cps/ncmp/dmi/service/client/SdncRestconfClientSpec.groovy",
+        "patchSetId": 2
+      },
+      "lineNbr": 61,
+      "author": {
+        "id": 6841
+      },
+      "writtenOn": "2021-08-10T09:30:07Z",
+      "side": 1,
+      "message": "extract properties out to reduce duplication",
+      "range": {
+        "startLine": 58,
+        "startChar": 3,
+        "endLine": 61,
+        "endChar": 61
+      },
+      "revId": "0eb0c5ad718349337dfeca7fc11d2f73a7447113",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    }
+  ]
+}
