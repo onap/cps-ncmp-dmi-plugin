@@ -1,0 +1,119 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3274d0b4_951327e9",
+        "filename": "src/test/groovy/org/onap/cps/ncmp/dmi/rest/controller/DmiRestControllerSpec.groovy",
+        "patchSetId": 11
+      },
+      "lineNbr": 124,
+      "author": {
+        "id": 5006
+      },
+      "writtenOn": "2021-08-10T13:28:40Z",
+      "side": 1,
+      "message": "nb: def",
+      "range": {
+        "startLine": 124,
+        "startChar": 12,
+        "endLine": 124,
+        "endChar": 27
+      },
+      "revId": "3139ece993c68ce7e40d166acdd5d9572a3a8a1e",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "094e6bfb_bd6f7f14",
+        "filename": "src/test/groovy/org/onap/cps/ncmp/dmi/rest/controller/DmiRestControllerSpec.groovy",
+        "patchSetId": 11
+      },
+      "lineNbr": 127,
+      "author": {
+        "id": 5006
+      },
+      "writtenOn": "2021-08-10T13:28:40Z",
+      "side": 1,
+      "message": "nb: def",
+      "range": {
+        "startLine": 127,
+        "startChar": 12,
+        "endLine": 127,
+        "endChar": 27
+      },
+      "revId": "3139ece993c68ce7e40d166acdd5d9572a3a8a1e",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "ec88993a_f99dbfc9",
+        "filename": "src/test/groovy/org/onap/cps/ncmp/dmi/service/DmiServiceImplSpec.groovy",
+        "patchSetId": 11
+      },
+      "lineNbr": 139,
+      "author": {
+        "id": 5006
+      },
+      "writtenOn": "2021-08-10T13:28:40Z",
+      "side": 1,
+      "message": "nb: and",
+      "range": {
+        "startLine": 139,
+        "startChar": 8,
+        "endLine": 139,
+        "endChar": 12
+      },
+      "revId": "3139ece993c68ce7e40d166acdd5d9572a3a8a1e",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "5e770117_b499898b",
+        "filename": "src/test/groovy/org/onap/cps/ncmp/dmi/service/DmiServiceImplSpec.groovy",
+        "patchSetId": 11
+      },
+      "lineNbr": 140,
+      "author": {
+        "id": 5006
+      },
+      "writtenOn": "2021-08-10T13:28:40Z",
+      "side": 1,
+      "message": "nb: \u003d\u003d",
+      "range": {
+        "startLine": 140,
+        "startChar": 20,
+        "endLine": 140,
+        "endChar": 30
+      },
+      "revId": "3139ece993c68ce7e40d166acdd5d9572a3a8a1e",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "728459ab_a17e5ca7",
+        "filename": "src/test/groovy/org/onap/cps/ncmp/dmi/service/client/SdncRestconfClientSpec.groovy",
+        "patchSetId": 11
+      },
+      "lineNbr": 67,
+      "author": {
+        "id": 5006
+      },
+      "writtenOn": "2021-08-10T13:28:40Z",
+      "side": 1,
+      "message": "nb: i think, after application.yml this is not needed.",
+      "range": {
+        "startLine": 67,
+        "startChar": 3,
+        "endLine": 67,
+        "endChar": 4
+      },
+      "revId": "3139ece993c68ce7e40d166acdd5d9572a3a8a1e",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    }
+  ]
+}
