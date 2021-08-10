@@ -206,6 +206,30 @@
       "revId": "e79c3a5980c009042a69f866d39ad4247c716ca8",
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "4c91e491_5ada6b9d",
+        "filename": "src/test/groovy/org/onap/cps/ncmp/dmi/service/operation/SdncOperationsSpec.groovy",
+        "patchSetId": 10
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 7680
+      },
+      "writtenOn": "2021-08-10T03:45:41Z",
+      "side": 1,
+      "message": "Also we need to add below properties in the application.yml for spring context to pick the values.\n\nsdnc:\n  baseUrl: http://test\n  topologyId: test-topology\n  auth:\n    username: test\n    password: test",
+      "parentUuid": "14ce31e8_1647de29",
+      "range": {
+        "startLine": 27,
+        "startChar": 0,
+        "endLine": 29,
+        "endChar": 53
+      },
+      "revId": "e79c3a5980c009042a69f866d39ad4247c716ca8",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
     }
   ]
 }
