@@ -1,0 +1,165 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "c1c62d80_8a625427",
+        "filename": "docs/openapi/components.yml",
+        "patchSetId": 10
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 7680
+      },
+      "writtenOn": "2021-08-10T03:26:04Z",
+      "side": 1,
+      "message": "ModuleReference has been used differently inside the code and in the open-api documentation. In the code, name and version is the module reference but in the open-api, ModuleReferences is the entire request payload. \n\nI think we should rename it in the open api documentation",
+      "range": {
+        "startLine": 22,
+        "startChar": 4,
+        "endLine": 22,
+        "endChar": 20
+      },
+      "revId": "e79c3a5980c009042a69f866d39ad4247c716ca8",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "f6c453ac_35612ed3",
+        "filename": "docs/openapi/components.yml",
+        "patchSetId": 10
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 7680
+      },
+      "writtenOn": "2021-08-10T03:26:04Z",
+      "side": 1,
+      "message": "as per the wiki the modules should also have namespace. I think it was identified later that it is not required but then our documentation is not updated. \nopenapi and wiki should be in sync",
+      "range": {
+        "startLine": 31,
+        "startChar": 12,
+        "endLine": 39,
+        "endChar": 32
+      },
+      "revId": "e79c3a5980c009042a69f866d39ad4247c716ca8",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "a9acf094_748cab10",
+        "filename": "docs/openapi/openapi.yml",
+        "patchSetId": 10
+      },
+      "lineNbr": 108,
+      "author": {
+        "id": 7680
+      },
+      "writtenOn": "2021-08-10T03:26:04Z",
+      "side": 1,
+      "message": "As per the request input \u0027ModuleReferences\u0027, user can provide both read/write operation. The existing operationId represents only read use-case not write.",
+      "range": {
+        "startLine": 108,
+        "startChar": 4,
+        "endLine": 108,
+        "endChar": 42
+      },
+      "revId": "e79c3a5980c009042a69f866d39ad4247c716ca8",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "03e4bd25_1b8e530d",
+        "filename": "src/main/java/org/onap/cps/ncmp/dmi/rest/controller/DmiRestController.java",
+        "patchSetId": 10
+      },
+      "lineNbr": 61,
+      "author": {
+        "id": 7680
+      },
+      "writtenOn": "2021-08-10T03:26:04Z",
+      "side": 1,
+      "message": "not validating operation \u003d\u003d \u0027read\u0027 before calling getModuleResources",
+      "range": {
+        "startLine": 60,
+        "startChar": 4,
+        "endLine": 61,
+        "endChar": 30
+      },
+      "revId": "e79c3a5980c009042a69f866d39ad4247c716ca8",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "866237fa_e0d5282f",
+        "filename": "src/main/java/org/onap/cps/ncmp/dmi/rest/controller/DmiRestController.java",
+        "patchSetId": 10
+      },
+      "lineNbr": 86,
+      "author": {
+        "id": 7680
+      },
+      "writtenOn": "2021-08-10T03:26:04Z",
+      "side": 1,
+      "message": "Suggestion: \nIf the Modules class was created only for converting to List\u003cModuleReference\u003e then it can achieved by using type references\nreturn objectMapper.convertValue(moduleReferences.getData().getModules(),\n            new TypeReference\u003cList\u003cModuleReference\u003e\u003e(){});",
+      "range": {
+        "startLine": 86,
+        "startChar": 15,
+        "endLine": 86,
+        "endChar": 84
+      },
+      "revId": "e79c3a5980c009042a69f866d39ad4247c716ca8",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "3589e9e6_0fb90a80",
+        "filename": "src/main/java/org/onap/cps/ncmp/dmi/service/DmiServiceImpl.java",
+        "patchSetId": 10
+      },
+      "lineNbr": 101,
+      "author": {
+        "id": 7680
+      },
+      "writtenOn": "2021-08-10T03:26:04Z",
+      "side": 1,
+      "message": "We are assuming all the errors as resource not found. Is it expected?",
+      "range": {
+        "startLine": 97,
+        "startChar": 14,
+        "endLine": 101,
+        "endChar": 13
+      },
+      "revId": "e79c3a5980c009042a69f866d39ad4247c716ca8",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "c5869efb_4baaa5ea",
+        "filename": "src/main/java/org/onap/cps/ncmp/dmi/service/client/SdncRestconfClient.java",
+        "patchSetId": 10
+      },
+      "lineNbr": 71,
+      "author": {
+        "id": 7680
+      },
+      "writtenOn": "2021-08-10T03:26:04Z",
+      "side": 1,
+      "message": "can be extracted as a separate method and can be used in both getOperation and postOperationWithJsonData method.",
+      "range": {
+        "startLine": 69,
+        "startChar": 8,
+        "endLine": 71,
+        "endChar": 84
+      },
+      "revId": "e79c3a5980c009042a69f866d39ad4247c716ca8",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    }
+  ]
+}

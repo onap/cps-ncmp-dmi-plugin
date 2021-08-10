@@ -96,6 +96,30 @@
     },
     {
       "key": {
+        "uuid": "7a5d821a_cae3b1ef",
+        "filename": "src/test/groovy/org/onap/cps/ncmp/dmi/service/DmiServiceImplSpec.groovy",
+        "patchSetId": 8
+      },
+      "lineNbr": 122,
+      "author": {
+        "id": 7680
+      },
+      "writtenOn": "2021-08-10T03:26:04Z",
+      "side": 1,
+      "message": "I agree that we are not testing the parameters sent to sdncOperations and we should.",
+      "parentUuid": "4a45d1c9_7e01211d",
+      "range": {
+        "startLine": 122,
+        "startChar": 2,
+        "endLine": 122,
+        "endChar": 4
+      },
+      "revId": "2e013bf3349e7e54a0786cbce4aa5c18debd5c64",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "8c7301de_adf7c184",
         "filename": "src/test/groovy/org/onap/cps/ncmp/dmi/service/DmiServiceImplSpec.groovy",
         "patchSetId": 8
