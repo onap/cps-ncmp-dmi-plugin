@@ -72,6 +72,30 @@
     },
     {
       "key": {
+        "uuid": "91b8b5e5_f9f9d529",
+        "filename": "docs/openapi/openapi.yml",
+        "patchSetId": 5
+      },
+      "lineNbr": 134,
+      "author": {
+        "id": 7680
+      },
+      "writtenOn": "2021-08-10T12:28:40Z",
+      "side": 1,
+      "message": "We should also specify default value for this property.",
+      "parentUuid": "6e9903e8_8473606c",
+      "range": {
+        "startLine": 129,
+        "startChar": 10,
+        "endLine": 134,
+        "endChar": 24
+      },
+      "revId": "b97be355c46488ded95f6bfe0a6db3eaeb936188",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "3f484d65_a81741ad",
         "filename": "docs/openapi/openapi.yml",
         "patchSetId": 5
