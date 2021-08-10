@@ -330,6 +330,30 @@
       "revId": "0eb0c5ad718349337dfeca7fc11d2f73a7447113",
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "dba80bb0_ba1f57fe",
+        "filename": "src/test/groovy/org/onap/cps/ncmp/dmi/service/client/SdncRestconfClientSpec.groovy",
+        "patchSetId": 2
+      },
+      "lineNbr": 61,
+      "author": {
+        "id": 6841
+      },
+      "writtenOn": "2021-08-10T11:45:18Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "64d8c21b_59b2f87b",
+      "range": {
+        "startLine": 58,
+        "startChar": 3,
+        "endLine": 61,
+        "endChar": 61
+      },
+      "revId": "0eb0c5ad718349337dfeca7fc11d2f73a7447113",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
     }
   ]
 }
