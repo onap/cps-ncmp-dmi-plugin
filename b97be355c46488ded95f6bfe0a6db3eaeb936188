@@ -168,6 +168,30 @@
     },
     {
       "key": {
+        "uuid": "728a93ba_00af618e",
+        "filename": "docs/openapi/openapi.yml",
+        "patchSetId": 5
+      },
+      "lineNbr": 134,
+      "author": {
+        "id": 5006
+      },
+      "writtenOn": "2021-08-10T13:37:15Z",
+      "side": 1,
+      "message": "Accept parameter is indication to server from client that what kind of data format client accepts. Here if accept is nothing that means whatever format response data received from server then client will accept it. By giving default value IMO we will the override client\u0027s choice of accepting any kind of data format. \n\nAs data is not owned by dmi-plugin but by sdnc-\u003enode, so dmi-plugin should not act on behalf of client if nothing is coming.\n\nWhat do you think about it. Please comment.",
+      "parentUuid": "3f08cb83_8fa04e10",
+      "range": {
+        "startLine": 129,
+        "startChar": 10,
+        "endLine": 134,
+        "endChar": 24
+      },
+      "revId": "b97be355c46488ded95f6bfe0a6db3eaeb936188",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "3f484d65_a81741ad",
         "filename": "docs/openapi/openapi.yml",
         "patchSetId": 5
