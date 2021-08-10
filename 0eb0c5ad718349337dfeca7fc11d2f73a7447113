@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "6b16993c_10991f58",
+        "filename": "src/main/java/org/onap/cps/ncmp/dmi/exception/ResourceDataNotFound.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 5006
+      },
+      "writtenOn": "2021-08-10T11:41:41Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "447d1e64_15afd3ed",
+      "range": {
+        "startLine": 27,
+        "startChar": 87,
+        "endLine": 27,
+        "endChar": 97
+      },
+      "revId": "0eb0c5ad718349337dfeca7fc11d2f73a7447113",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "389d6093_89804df3",
         "filename": "src/main/java/org/onap/cps/ncmp/dmi/service/DmiService.java",
         "patchSetId": 2
@@ -238,6 +262,30 @@
     },
     {
       "key": {
+        "uuid": "e414ecac_d823c54a",
+        "filename": "src/test/groovy/org/onap/cps/ncmp/dmi/service/DmiServiceImplSpec.groovy",
+        "patchSetId": 2
+      },
+      "lineNbr": 163,
+      "author": {
+        "id": 5006
+      },
+      "writtenOn": "2021-08-10T11:41:41Z",
+      "side": 1,
+      "message": "i think except these 2 testcases these vars will be of no use for other test cases, will change accordingly",
+      "parentUuid": "bfd16897_72e75516",
+      "range": {
+        "startLine": 158,
+        "startChar": 11,
+        "endLine": 163,
+        "endChar": 31
+      },
+      "revId": "0eb0c5ad718349337dfeca7fc11d2f73a7447113",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5fdd6ee4_79ed59bd",
         "filename": "src/test/groovy/org/onap/cps/ncmp/dmi/service/client/SdncRestconfClientSpec.groovy",
         "patchSetId": 2
@@ -249,6 +297,30 @@
       "writtenOn": "2021-08-10T09:30:07Z",
       "side": 1,
       "message": "extract properties out to reduce duplication",
+      "range": {
+        "startLine": 58,
+        "startChar": 3,
+        "endLine": 61,
+        "endChar": 61
+      },
+      "revId": "0eb0c5ad718349337dfeca7fc11d2f73a7447113",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "64d8c21b_59b2f87b",
+        "filename": "src/test/groovy/org/onap/cps/ncmp/dmi/service/client/SdncRestconfClientSpec.groovy",
+        "patchSetId": 2
+      },
+      "lineNbr": 61,
+      "author": {
+        "id": 5006
+      },
+      "writtenOn": "2021-08-10T11:41:41Z",
+      "side": 1,
+      "message": "I think after Renu comment fix in your commit this will be gone itself. I\u0027ll wait until your code merges.",
+      "parentUuid": "5fdd6ee4_79ed59bd",
       "range": {
         "startLine": 58,
         "startChar": 3,
