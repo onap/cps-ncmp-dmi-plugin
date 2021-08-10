@@ -48,6 +48,30 @@
     },
     {
       "key": {
+        "uuid": "6e9903e8_8473606c",
+        "filename": "docs/openapi/openapi.yml",
+        "patchSetId": 5
+      },
+      "lineNbr": 134,
+      "author": {
+        "id": 5006
+      },
+      "writtenOn": "2021-08-10T11:40:01Z",
+      "side": 1,
+      "message": "pass thorugh is defined enum so possbile values are given. \nresourceIdentifier is yang module name from node where data is being fetched, so its hard to defined specified values.\n\ni\u0027ll define possible accept header param value here.",
+      "parentUuid": "91bf759c_97d59f91",
+      "range": {
+        "startLine": 129,
+        "startChar": 10,
+        "endLine": 134,
+        "endChar": 24
+      },
+      "revId": "b97be355c46488ded95f6bfe0a6db3eaeb936188",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "3f484d65_a81741ad",
         "filename": "docs/openapi/openapi.yml",
         "patchSetId": 5
@@ -130,6 +154,24 @@
       "writtenOn": "2021-08-10T10:41:32Z",
       "side": 1,
       "message": "add example for the response code 200.",
+      "revId": "b97be355c46488ded95f6bfe0a6db3eaeb936188",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "03cb4e3c_61064098",
+        "filename": "docs/openapi/openapi.yml",
+        "patchSetId": 5
+      },
+      "lineNbr": 149,
+      "author": {
+        "id": 5006
+      },
+      "writtenOn": "2021-08-10T11:40:01Z",
+      "side": 1,
+      "message": "example is hard to define. It will return value of data against a yang module stored in node.",
+      "parentUuid": "b85a0c30_1a0ae341",
       "revId": "b97be355c46488ded95f6bfe0a6db3eaeb936188",
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
       "unresolved": true
