@@ -72,6 +72,30 @@
     },
     {
       "key": {
+        "uuid": "d4f1cf7f_c1accca0",
+        "filename": "src/main/java/org/onap/cps/ncmp/dmi/service/DmiService.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 59,
+      "author": {
+        "id": 6841
+      },
+      "writtenOn": "2021-08-10T10:12:34Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "9a0564db_35889240",
+      "range": {
+        "startLine": 54,
+        "startChar": 0,
+        "endLine": 59,
+        "endChar": 46
+      },
+      "revId": "0eb0c5ad718349337dfeca7fc11d2f73a7447113",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "898ee4d8_1fd81f09",
         "filename": "src/main/java/org/onap/cps/ncmp/dmi/service/DmiServiceImpl.java",
         "patchSetId": 2
@@ -119,6 +143,30 @@
     },
     {
       "key": {
+        "uuid": "e7b3c2d8_37815fdf",
+        "filename": "src/main/java/org/onap/cps/ncmp/dmi/service/DmiServiceImpl.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 144,
+      "author": {
+        "id": 6841
+      },
+      "writtenOn": "2021-08-10T10:12:34Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "da4c4ae2_4ef8cd64",
+      "range": {
+        "startLine": 144,
+        "startChar": 32,
+        "endLine": 144,
+        "endChar": 44
+      },
+      "revId": "0eb0c5ad718349337dfeca7fc11d2f73a7447113",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "42827adf_08e5efda",
         "filename": "src/test/groovy/org/onap/cps/ncmp/dmi/service/DmiServiceImplSpec.groovy",
         "patchSetId": 2
@@ -154,6 +202,30 @@
       "side": 1,
       "message": "do you want me to extract it out of this mehtod\u003e?",
       "parentUuid": "42827adf_08e5efda",
+      "range": {
+        "startLine": 158,
+        "startChar": 11,
+        "endLine": 163,
+        "endChar": 31
+      },
+      "revId": "0eb0c5ad718349337dfeca7fc11d2f73a7447113",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "bfd16897_72e75516",
+        "filename": "src/test/groovy/org/onap/cps/ncmp/dmi/service/DmiServiceImplSpec.groovy",
+        "patchSetId": 2
+      },
+      "lineNbr": 163,
+      "author": {
+        "id": 6841
+      },
+      "writtenOn": "2021-08-10T10:12:34Z",
+      "side": 1,
+      "message": "yes, seems like the same variable are used in the above 3 methods. would probably be good to add a global variable",
+      "parentUuid": "ccf34efa_5baf243a",
       "range": {
         "startLine": 158,
         "startChar": 11,
