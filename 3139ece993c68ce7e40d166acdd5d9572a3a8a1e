@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "2482f063_e48ecb76",
+        "filename": "docs/openapi/components.yml",
+        "patchSetId": 11
+      },
+      "lineNbr": 95,
+      "author": {
+        "id": 6841
+      },
+      "writtenOn": "2021-08-11T14:12:42Z",
+      "side": 1,
+      "message": "we agreed to follow open api best practices and to start using camel case for params.",
+      "parentUuid": "b231cb25_87ca2758",
+      "revId": "3139ece993c68ce7e40d166acdd5d9572a3a8a1e",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "360d5760_17815ee6",
         "filename": "src/main/java/org/onap/cps/ncmp/dmi/service/DmiServiceImpl.java",
         "patchSetId": 11
@@ -30,6 +48,24 @@
       "writtenOn": "2021-08-11T13:52:52Z",
       "side": 1,
       "message": "Not a blocking issue. Shouldn\u0027t need autowired here, now that constructor injection is implemented.",
+      "revId": "3139ece993c68ce7e40d166acdd5d9572a3a8a1e",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "5f8d6c2e_0362dbc9",
+        "filename": "src/main/java/org/onap/cps/ncmp/dmi/service/DmiServiceImpl.java",
+        "patchSetId": 11
+      },
+      "lineNbr": 63,
+      "author": {
+        "id": 6841
+      },
+      "writtenOn": "2021-08-11T14:12:42Z",
+      "side": 1,
+      "message": "ok this is not part of my change but I can fix it in the refactoring task",
+      "parentUuid": "360d5760_17815ee6",
       "revId": "3139ece993c68ce7e40d166acdd5d9572a3a8a1e",
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
       "unresolved": true
