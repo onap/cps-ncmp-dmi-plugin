@@ -28,6 +28,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.onap.cps.ncmp.dmi.model.CmHandles;
 import org.onap.cps.ncmp.dmi.model.ModuleReference;
 import org.onap.cps.ncmp.dmi.model.ModuleRequestParent;
+import org.onap.cps.ncmp.dmi.model.ModuleSet;
 import org.onap.cps.ncmp.dmi.rest.api.DmiPluginApi;
 import org.onap.cps.ncmp.dmi.rest.api.DmiPluginInternalApi;
 import org.onap.cps.ncmp.dmi.service.DmiService;
@@ -51,10 +52,9 @@ public class DmiRestController implements DmiPluginApi, DmiPluginInternalApi {
     }
 
     @Override
-    public ResponseEntity<String> getModulesForCmHandle(final String cmHandle) {
-
-        final String modulesListAsJson = dmiService.getModulesForCmHandle(cmHandle);
-        return new ResponseEntity<>(modulesListAsJson, HttpStatus.OK);
+    public ResponseEntity<ModuleSet> getModulesForCmHandle(final String cmHandle) {
+        final var modulesListAsJson = dmiService.getModulesForCmHandle(cmHandle);
+        return new ResponseEntity<ModuleSet>(modulesListAsJson, HttpStatus.OK);
     }
 
     @Override
@@ -88,6 +88,7 @@ public class DmiRestController implements DmiPluginApi, DmiPluginInternalApi {
 
     private List<ModuleReference> convertRestObjectToJavaApiObject(final ModuleRequestParent moduleRequestParent) {
         return objectMapper
-            .convertValue(moduleRequestParent.getData().getModules(), new TypeReference<List<ModuleReference>>() {});
+            .convertValue(moduleRequestParent.getData().getModules(), new TypeReference<List<ModuleReference>>() {
+            });
     }
 }

@@ -22,12 +22,15 @@ package org.onap.cps.ncmp.dmi.service
 
 import com.fasterxml.jackson.core.JsonProcessingException
 import com.fasterxml.jackson.databind.ObjectMapper
+import org.onap.cps.ncmp.dmi.TestUtils
 import org.onap.cps.ncmp.dmi.config.DmiPluginConfig
 import org.onap.cps.ncmp.dmi.exception.CmHandleRegistrationException
 import org.onap.cps.ncmp.dmi.exception.DmiException
 import org.onap.cps.ncmp.dmi.exception.ModuleResourceNotFoundException
 import org.onap.cps.ncmp.dmi.exception.ModulesNotFoundException
 import org.onap.cps.ncmp.dmi.model.ModuleReference
+import org.onap.cps.ncmp.dmi.model.ModuleSchemaList
+import org.onap.cps.ncmp.dmi.model.ModuleSchemas
 import org.onap.cps.ncmp.dmi.service.client.NcmpRestClient
 import org.onap.cps.ncmp.dmi.service.operation.SdncOperations
 import org.springframework.http.HttpStatus
@@ -48,12 +51,25 @@ class DmiServiceImplSpec extends Specification {
         given: 'cm handle id'
             def cmHandle = 'node1'
         and: 'request operation returns OK'
-            def body = 'body'
+            def body = TestUtils.getResourceFileContent('ModuleSchema.json')
             mockSdncOperations.getModulesFromNode(cmHandle) >> new ResponseEntity<String>(body, HttpStatus.OK)
         when: 'get modules for cm-handle is called'
             def result = objectUnderTest.getModulesForCmHandle(cmHandle)
         then: 'result is equal to the response from the SDNC service'
-            result == body
+            result.toString().contains('moduleName: example-identifier')
+            result.toString().contains('revision: example-version')
+    }
+
+    def 'Call get modules for cm-handle with invalid json.'() {
+        given: 'cm handle id'
+            def cmHandle = 'node1'
+        and: 'request operation returns invalid json'
+            def body = TestUtils.getResourceFileContent('ModuleSchema.json')
+            mockSdncOperations.getModulesFromNode(cmHandle) >> new ResponseEntity<String>('invalid json', HttpStatus.OK)
+        when: 'get modules for cm-handle is called'
+            def result = objectUnderTest.getModulesForCmHandle(cmHandle)
+        then: 'a dmi exception is thrown'
+           thrown(DmiException)
     }
 
     def 'Call get modules for cm-handle and SDNC returns "bad request" status.'() {
