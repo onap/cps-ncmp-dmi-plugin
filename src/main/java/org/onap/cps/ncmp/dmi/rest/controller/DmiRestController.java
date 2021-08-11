@@ -20,10 +20,13 @@
 
 package org.onap.cps.ncmp.dmi.rest.controller;
 
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import java.util.List;
 import javax.validation.Valid;
 import lombok.extern.slf4j.Slf4j;
 import org.onap.cps.ncmp.dmi.model.CmHandles;
+import org.onap.cps.ncmp.dmi.model.NodeSchemaProperties;
 import org.onap.cps.ncmp.dmi.rest.api.DmiPluginApi;
 import org.onap.cps.ncmp.dmi.rest.api.DmiPluginInternalApi;
 import org.onap.cps.ncmp.dmi.service.DmiService;
@@ -38,6 +41,9 @@ import org.springframework.web.bind.annotation.RestController;
 @Slf4j
 public class DmiRestController implements DmiPluginApi, DmiPluginInternalApi {
 
+    @Autowired
+    private ObjectMapper objectMapper;
+
     private DmiService dmiService;
 
     @Autowired
@@ -46,17 +52,26 @@ public class DmiRestController implements DmiPluginApi, DmiPluginInternalApi {
     }
 
     @Override
-    public ResponseEntity<String> getModulesForCmHandle(final String cmHandle) {
-
+    public ResponseEntity<NodeSchemaProperties> getModulesForCmHandle(final String cmHandle) {
         final String modulesListAsJson = dmiService.getModulesForCmHandle(cmHandle);
-        return new ResponseEntity<>(modulesListAsJson, HttpStatus.OK);
+        return ResponseEntity.status(HttpStatus.OK).body(convertRestObjectToJavaApiObject(modulesListAsJson));
+    }
+
+
+    private NodeSchemaProperties convertRestObjectToJavaApiObject(final String modulesListAsJson) {
+        try {
+            return objectMapper.readValue(modulesListAsJson, NodeSchemaProperties.class);
+        } catch (final JsonProcessingException e) {
+            e.printStackTrace();
+        }
+        return null;
     }
 
     /**
      * This method register given list of cm-handles to ncmp.
      *
      * @param cmHandles list of cm-handles
-     * @return (@code ResponseEntity) response entity
+     * @return (@ code ResponseEntity) response entity
      */
     public ResponseEntity<String> registerCmHandles(final @Valid CmHandles cmHandles) {
         final List<String> cmHandlesList = cmHandles.getCmHandles();

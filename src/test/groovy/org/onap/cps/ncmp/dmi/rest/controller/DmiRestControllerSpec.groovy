@@ -20,8 +20,12 @@
 
 package org.onap.cps.ncmp.dmi.rest.controller
 
+import com.fasterxml.jackson.core.type.TypeReference
+import com.fasterxml.jackson.databind.ObjectMapper
+import org.mockito.Spy
 import org.onap.cps.ncmp.dmi.exception.DmiException
 import org.onap.cps.ncmp.dmi.exception.ModulesNotFoundException
+import org.onap.cps.ncmp.dmi.model.NodeSchemaProperties
 import org.onap.cps.ncmp.dmi.service.DmiService
 import org.spockframework.spring.SpringBean
 import org.springframework.beans.factory.annotation.Autowired
@@ -42,18 +46,35 @@ class DmiRestControllerSpec extends Specification {
     @SpringBean
     DmiService mockDmiService = Mock()
 
+    @SpringBean
+    ObjectMapper mockObjectMapper = Spy()
+
     @Autowired
     private MockMvc mvc
 
     @Value('${rest.api.dmi-base-path}/v1')
     def basePathV1
 
+    def moduleSchemaJson = '{"schemas": {\n' +
+            '                              "schema": [\n' +
+            '                                {\n' +
+            '                                  "identifier": "example-identifier",\n' +
+            '                                  "version": "example-version",\n' +
+            '                                  "format": "example-format",\n' +
+            '                                  "namespace": "example:namespace",\n' +
+            '                                  "location": [\n' +
+            '                                    "example-location"\n' +
+            '                                  ]\n' +
+            '                                }\n' +
+            '                              ]\n' +
+            '                            }\n' +
+            '                          }'
+
     def 'Get all modules for given cm handle.'() {
         given: 'REST endpoint for getting all modules'
             def getModuleUrl = "$basePathV1/ch/node1/modules"
         and: 'get modules for cm-handle returns a json'
-            def someJson = 'some-json'
-            mockDmiService.getModulesForCmHandle('node1') >> someJson
+            mockDmiService.getModulesForCmHandle('node1') >> moduleSchemaJson
         when: 'post is being called'
             def response = mvc.perform( post(getModuleUrl)
                     .contentType(MediaType.APPLICATION_JSON))
@@ -61,7 +82,7 @@ class DmiRestControllerSpec extends Specification {
         then: 'status is OK'
             response.status == HttpStatus.OK.value()
         and: 'the response content matches the result from the DMI service'
-            response.getContentAsString() == someJson
+            response.getContentAsString() == '{"schemas":{"schema":[{"identifier":"example-identifier","version":"example-version","format":"example-format","namespace":"example:namespace","location":["example-location"]}]}}'
     }
 
     def 'Get all modules for given cm handle with exception handling of #scenario.'() {

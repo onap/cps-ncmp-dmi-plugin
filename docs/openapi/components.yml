@@ -19,6 +19,30 @@ components:
           items:
             type: string
 
+    NodeSchemaProperties:
+      type: object
+      properties:
+        schemas:
+          type: object
+          properties:
+            schema:
+              type: array
+              items:
+                type: object
+                properties:
+                  identifier:
+                    type: string
+                  version:
+                    type: string
+                  format:
+                    type: string
+                  namespace:
+                    type: string
+                  location:
+                    type: array
+                    items:
+                      type: string
+
   responses:
     NotFound:
       description: The specified resource was not found
