@@ -284,6 +284,30 @@
     },
     {
       "key": {
+        "uuid": "2b3d6884_c95e0855",
+        "filename": "src/main/java/org/onap/cps/ncmp/dmi/service/DmiServiceImpl.java",
+        "patchSetId": 10
+      },
+      "lineNbr": 101,
+      "author": {
+        "id": 7680
+      },
+      "writtenOn": "2021-08-11T15:31:15Z",
+      "side": 1,
+      "message": "Question: Do we have a separate story to work on error handling. If we get 500 from server, we should not send ModuleResourceNotFoundException exception.",
+      "parentUuid": "e0d3a662_63e9124c",
+      "range": {
+        "startLine": 97,
+        "startChar": 14,
+        "endLine": 101,
+        "endChar": 13
+      },
+      "revId": "e79c3a5980c009042a69f866d39ad4247c716ca8",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "c5869efb_4baaa5ea",
         "filename": "src/main/java/org/onap/cps/ncmp/dmi/service/client/SdncRestconfClient.java",
         "patchSetId": 10

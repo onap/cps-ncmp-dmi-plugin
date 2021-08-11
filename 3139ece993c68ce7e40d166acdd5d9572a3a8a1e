@@ -2,6 +2,29 @@
   "comments": [
     {
       "key": {
+        "uuid": "74789b02_be38288f",
+        "filename": "docs/openapi/components.yml",
+        "patchSetId": 11
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 7680
+      },
+      "writtenOn": "2021-08-11T15:31:15Z",
+      "side": 1,
+      "message": "nb: \nIt still does not represent what object is. \nI don\u0027t have good suggestion for it",
+      "range": {
+        "startLine": 22,
+        "startChar": 4,
+        "endLine": 22,
+        "endChar": 23
+      },
+      "revId": "3139ece993c68ce7e40d166acdd5d9572a3a8a1e",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "b231cb25_87ca2758",
         "filename": "docs/openapi/components.yml",
         "patchSetId": 11
@@ -111,6 +134,75 @@
         "startChar": 12,
         "endLine": 127,
         "endChar": 27
+      },
+      "revId": "3139ece993c68ce7e40d166acdd5d9572a3a8a1e",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "97984411_213550bf",
+        "filename": "src/test/groovy/org/onap/cps/ncmp/dmi/service/DmiServiceImplSpec.groovy",
+        "patchSetId": 11
+      },
+      "lineNbr": 132,
+      "author": {
+        "id": 7680
+      },
+      "writtenOn": "2021-08-11T15:31:15Z",
+      "side": 1,
+      "message": "nb: Why we decided to mock rather than creating object directly ?",
+      "range": {
+        "startLine": 127,
+        "startChar": 12,
+        "endLine": 132,
+        "endChar": 43
+      },
+      "revId": "3139ece993c68ce7e40d166acdd5d9572a3a8a1e",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "66b577db_ae95be4b",
+        "filename": "src/test/groovy/org/onap/cps/ncmp/dmi/service/DmiServiceImplSpec.groovy",
+        "patchSetId": 11
+      },
+      "lineNbr": 136,
+      "author": {
+        "id": 7680
+      },
+      "writtenOn": "2021-08-11T15:31:15Z",
+      "side": 1,
+      "message": "nb: \u0027then\u0027 word not required",
+      "range": {
+        "startLine": 136,
+        "startChar": 15,
+        "endLine": 136,
+        "endChar": 19
+      },
+      "revId": "3139ece993c68ce7e40d166acdd5d9572a3a8a1e",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "89b618f6_1510d4f4",
+        "filename": "src/test/groovy/org/onap/cps/ncmp/dmi/service/DmiServiceImplSpec.groovy",
+        "patchSetId": 11
+      },
+      "lineNbr": 138,
+      "author": {
+        "id": 7680
+      },
+      "writtenOn": "2021-08-11T15:31:15Z",
+      "side": 1,
+      "message": "nb: no need to check 1* as we are checking the input and response too. It can be moved to given section.",
+      "range": {
+        "startLine": 137,
+        "startChar": 16,
+        "endLine": 138,
+        "endChar": 147
       },
       "revId": "3139ece993c68ce7e40d166acdd5d9572a3a8a1e",
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
