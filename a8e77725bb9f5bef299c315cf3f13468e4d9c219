@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "b7e01ffb_e235e796",
+        "filename": "docs/openapi/components.yml",
+        "patchSetId": 6
+      },
+      "lineNbr": 71,
+      "author": {
+        "id": 7744
+      },
+      "writtenOn": "2021-08-11T13:33:20Z",
+      "side": 1,
+      "message": "Shouldn\u0027t this name be in snake case to keep it consistent with other yml files?",
+      "revId": "a8e77725bb9f5bef299c315cf3f13468e4d9c219",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "16cdbf3f_e80a7814",
         "filename": "docs/openapi/openapi.yml",
         "patchSetId": 6
