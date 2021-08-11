@@ -1,0 +1,15 @@
+{
+  "schemas": {
+    "schema": [
+      {
+        "identifier": "example-identifier",
+        "version": "example-version",
+        "format": "example-format",
+        "namespace": "example:namespace",
+        "location": [
+          "example-location"
+        ]
+      }
+    ]
+  }
+}

@@ -25,6 +25,7 @@ import java.util.Map;
 import javax.validation.constraints.NotNull;
 import org.onap.cps.ncmp.dmi.exception.DmiException;
 import org.onap.cps.ncmp.dmi.model.ModuleReference;
+import org.onap.cps.ncmp.dmi.model.ModuleSet;
 
 /**
  * Interface for handling Dmi plugin Data.
@@ -38,7 +39,7 @@ public interface DmiService {
      * @return {@code String} returns all modules
      * @throws DmiException can throw dmi exception
      */
-    String getModulesForCmHandle(String cmHandle) throws DmiException;
+    ModuleSet getModulesForCmHandle(String cmHandle) throws DmiException;
 
     /**
      * This method used to register the given {@code CmHandles}

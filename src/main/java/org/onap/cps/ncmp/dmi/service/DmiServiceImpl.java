@@ -39,6 +39,10 @@ import org.onap.cps.ncmp.dmi.exception.ResourceDataNotFound;
 import org.onap.cps.ncmp.dmi.model.CmHandleOperation;
 import org.onap.cps.ncmp.dmi.model.CreatedCmHandle;
 import org.onap.cps.ncmp.dmi.model.ModuleReference;
+import org.onap.cps.ncmp.dmi.model.ModuleSchemaProperties;
+import org.onap.cps.ncmp.dmi.model.ModuleSchemas;
+import org.onap.cps.ncmp.dmi.model.ModuleSet;
+import org.onap.cps.ncmp.dmi.model.ModuleSetSchemas;
 import org.onap.cps.ncmp.dmi.service.client.NcmpRestClient;
 import org.onap.cps.ncmp.dmi.service.operation.SdncOperations;
 import org.springframework.http.HttpStatus;
@@ -73,14 +77,15 @@ public class DmiServiceImpl implements DmiService {
     }
 
     @Override
-    public String getModulesForCmHandle(final String cmHandle) throws DmiException {
+    public ModuleSet getModulesForCmHandle(final String cmHandle) throws DmiException {
         final ResponseEntity<String> responseEntity = sdncOperations.getModulesFromNode(cmHandle);
         if (responseEntity.getStatusCode() == HttpStatus.OK) {
             final String responseBody = responseEntity.getBody();
             if (StringUtils.isEmpty(responseBody)) {
                 throw new ModulesNotFoundException(cmHandle, "SDNC returned no modules for given cm-handle.");
             }
-            return responseBody;
+            final ModuleSet moduleSet = createModuleSchema(responseBody);
+            return moduleSet;
         } else {
             throw new DmiException("SDNC is not able to process request.",
                     "response code : " + responseEntity.getStatusCode() + " message : " + responseEntity.getBody());
@@ -126,6 +131,36 @@ public class DmiServiceImpl implements DmiService {
         final ResponseEntity<String> responseEntity = ncmpRestClient.registerCmHandlesWithNcmp(cmHandlesJson);
         if (!(responseEntity.getStatusCode() == HttpStatus.CREATED)) {
             throw new CmHandleRegistrationException(responseEntity.getBody());
+        }
+    }
+
+    private ModuleSet createModuleSchema(final String responseBody) {
+        final var moduleSchemas = convertModulesToNodeSchema(responseBody);
+        final List<ModuleSetSchemas> moduleSetSchemas = new ArrayList<>();
+        for (final ModuleSchemaProperties schemaProperties : moduleSchemas.getSchemas().getSchema()) {
+            moduleSetSchemas.add(convertModulesToModuleSchemas(schemaProperties));
+        }
+        final var moduleSet = new ModuleSet();
+        moduleSet.setSchemas(moduleSetSchemas);
+        return moduleSet;
+    }
+
+    private ModuleSetSchemas convertModulesToModuleSchemas(final ModuleSchemaProperties moduleSchemaProperties) {
+        final var moduleSetSchemas = new ModuleSetSchemas();
+        moduleSetSchemas.setModuleName(moduleSchemaProperties.getIdentifier());
+        moduleSetSchemas.setNamespace(moduleSchemaProperties.getNamespace());
+        moduleSetSchemas.setRevision(moduleSchemaProperties.getVersion());
+        return moduleSetSchemas;
+    }
+
+    private ModuleSchemas convertModulesToNodeSchema(final String modulesListAsJson) {
+        try {
+            return objectMapper.readValue(modulesListAsJson, ModuleSchemas.class);
+        } catch (final JsonProcessingException e) {
+            log.error("JSON exception occurred when converting the following modules to node schema "
+                + "{}", modulesListAsJson);
+            throw new DmiException("Unable to process JSON.",
+                "JSON exception occurred when mapping modules.", e);
         }
     }
 
