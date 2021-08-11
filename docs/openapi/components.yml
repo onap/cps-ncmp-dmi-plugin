@@ -43,6 +43,21 @@ components:
             type: string
             example: system-001
 
+    ModuleSet:
+      type: object
+      properties:
+        schemas:
+          type: array
+          items:
+            type: object
+            properties:
+              moduleName:
+                type: string
+              revision:
+                type: string
+              namespace:
+                type: string
+
   responses:
     NotFound:
       description: The specified resource was not found
