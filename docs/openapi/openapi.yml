@@ -51,22 +51,16 @@ paths:
           content:
             application/json:
               schema:
-                type: string
+                $ref: 'components.yml#/components/schemas/NodeRequest'
                 example: {
-                            'schemas': {
-                              'schema': [
-                                {
-                                  'identifier': 'example-identifier',
-                                  'version': 'example-version',
-                                  'format': 'example-format',
-                                  'namespace': 'example:namespace',
-                                  'location': [
-                                    'example-location'
-                                  ]
-                                }
-                              ]
-                            }
-                          }
+                  "Modules": [
+                    {
+                      "moduleName": "example-identifier",
+                      "revision": "example-version",
+                      "namespace": "example-namespace"
+                    }
+                  ]
+                }
         '400':
           $ref: 'components.yml#/components/responses/BadRequest'
         '401':

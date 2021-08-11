@@ -20,14 +20,21 @@
 
 package org.onap.cps.ncmp.dmi.rest.controller;
 
+import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import java.util.ArrayList;
 import java.util.List;
 import javax.validation.Valid;
 import lombok.extern.slf4j.Slf4j;
+import org.onap.cps.ncmp.dmi.exception.DmiException;
 import org.onap.cps.ncmp.dmi.model.CmHandles;
 import org.onap.cps.ncmp.dmi.model.ModuleReference;
 import org.onap.cps.ncmp.dmi.model.ModuleRequestParent;
+import org.onap.cps.ncmp.dmi.model.NodeRequest;
+import org.onap.cps.ncmp.dmi.model.NodeRequestModules;
+import org.onap.cps.ncmp.dmi.model.NodeSchema;
+import org.onap.cps.ncmp.dmi.model.NodeSchemaProperties;
 import org.onap.cps.ncmp.dmi.rest.api.DmiPluginApi;
 import org.onap.cps.ncmp.dmi.rest.api.DmiPluginInternalApi;
 import org.onap.cps.ncmp.dmi.service.DmiService;
@@ -51,10 +58,16 @@ public class DmiRestController implements DmiPluginApi, DmiPluginInternalApi {
     }
 
     @Override
-    public ResponseEntity<String> getModulesForCmHandle(final String cmHandle) {
-
-        final String modulesListAsJson = dmiService.getModulesForCmHandle(cmHandle);
-        return new ResponseEntity<>(modulesListAsJson, HttpStatus.OK);
+    public ResponseEntity<NodeRequest> getModulesForCmHandle(final String cmHandle) {
+        final var modulesListAsJson = dmiService.getModulesForCmHandle(cmHandle);
+        final var nodeSchema = convertModulesToNodeSchema(modulesListAsJson);
+        final List<NodeRequestModules> moduleRequests = new ArrayList<>();
+        for (final NodeSchemaProperties schemaProperties : nodeSchema.getSchemas().getSchema()) {
+            moduleRequests.add(convertNodeSchemaToModuleRequest(schemaProperties));
+        }
+        final var moduleRequest = new NodeRequest();
+        moduleRequest.setModules(moduleRequests);
+        return new ResponseEntity<>(moduleRequest, HttpStatus.OK);
     }
 
     @Override
@@ -88,6 +101,27 @@ public class DmiRestController implements DmiPluginApi, DmiPluginInternalApi {
 
     private List<ModuleReference> convertRestObjectToJavaApiObject(final ModuleRequestParent moduleRequestParent) {
         return objectMapper
-            .convertValue(moduleRequestParent.getData().getModules(), new TypeReference<List<ModuleReference>>() {});
+            .convertValue(moduleRequestParent.getData().getModules(), new TypeReference<List<ModuleReference>>() {
+            });
+    }
+
+    private NodeRequestModules convertNodeSchemaToModuleRequest(
+        final NodeSchemaProperties nodeSchemaPropertiesSchemasSchema) {
+        final var moduleRequest = new NodeRequestModules();
+        moduleRequest.setModuleName(nodeSchemaPropertiesSchemasSchema.getIdentifier());
+        moduleRequest.setNamespace(nodeSchemaPropertiesSchemasSchema.getNamespace());
+        moduleRequest.setRevision(nodeSchemaPropertiesSchemasSchema.getVersion());
+        return moduleRequest;
+    }
+
+    private NodeSchema convertModulesToNodeSchema(final String modulesListAsJson) {
+        try {
+            return objectMapper.readValue(modulesListAsJson, NodeSchema.class);
+        } catch (final JsonProcessingException e) {
+            log.error("JSON exception occurred when converting the following modules to node schema "
+                + "{}", modulesListAsJson);
+            throw new DmiException("Unable to process JSON.",
+                "JSON exception occurred when mapping modules.", e);
+        }
     }
 }

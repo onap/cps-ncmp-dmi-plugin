@@ -20,11 +20,15 @@
 
 package org.onap.cps.ncmp.dmi.rest.controller
 
+
+import com.fasterxml.jackson.databind.ObjectMapper
 import org.onap.cps.ncmp.dmi.TestUtils
 import org.onap.cps.ncmp.dmi.exception.DmiException
 import org.onap.cps.ncmp.dmi.exception.ModuleResourceNotFoundException
 import org.onap.cps.ncmp.dmi.exception.ModulesNotFoundException
+
 import org.onap.cps.ncmp.dmi.model.ModuleReference
+import org.onap.cps.ncmp.dmi.model.NodeSchemas
 import org.onap.cps.ncmp.dmi.service.DmiService
 import org.spockframework.spring.SpringBean
 import org.springframework.beans.factory.annotation.Autowired
@@ -45,6 +49,9 @@ class DmiRestControllerSpec extends Specification {
     @SpringBean
     DmiService mockDmiService = Mock()
 
+    @SpringBean
+    ObjectMapper mockObjectMapper = Spy()
+
     @Autowired
     private MockMvc mvc
 
@@ -55,8 +62,8 @@ class DmiRestControllerSpec extends Specification {
         given: 'REST endpoint for getting all modules'
             def getModuleUrl = "$basePathV1/ch/node1/modules"
         and: 'get modules for cm-handle returns a json'
-            def someJson = 'some-json'
-            mockDmiService.getModulesForCmHandle('node1') >> someJson
+            def jsonData = TestUtils.getResourceFileContent('ModuleSchema.json')
+            mockDmiService.getModulesForCmHandle('node1') >> jsonData
         when: 'post is being called'
             def response = mvc.perform(post(getModuleUrl)
                     .contentType(MediaType.APPLICATION_JSON))
@@ -64,7 +71,21 @@ class DmiRestControllerSpec extends Specification {
         then: 'status is OK'
             response.status == HttpStatus.OK.value()
         and: 'the response content matches the result from the DMI service'
-            response.getContentAsString() == someJson
+            response.getContentAsString() == '{"Modules":[{"moduleName":"example-identifier","revision":"example-version","namespace":"example:namespace"}]}'
+    }
+
+    def 'Get all modules for given cm handle with invalid json.'() {
+        given: 'REST endpoint for getting all modules'
+            def getModuleUrl = "$basePathV1/ch/node1/modules"
+        and: 'get modules for cmHandle throws an exception'
+            mockObjectMapper.readValue(_ as String, _ as NodeSchemas) >> { throw Mock(DmiException.class) }
+            mockDmiService.getModulesForCmHandle('node1') >> 'some-value'
+        when: 'post is being called'
+            def response = mvc.perform(post(getModuleUrl)
+                    .contentType(MediaType.APPLICATION_JSON))
+                    .andReturn().response
+        then: 'the status is as expected'
+            response.status == HttpStatus.INTERNAL_SERVER_ERROR.value()
     }
 
     def 'Get all modules for given cm handle with exception handling of #scenario.'() {
@@ -73,16 +94,16 @@ class DmiRestControllerSpec extends Specification {
         and: 'get modules for cm-handle throws #exceptionClass'
             mockDmiService.getModulesForCmHandle('node1') >> { throw Mock(exceptionClass) }
         when: 'post is invoked'
-            def response = mvc.perform(post(getModuleUrl)
+            def response = mvc.perform( post(getModuleUrl)
                     .contentType(MediaType.APPLICATION_JSON))
                     .andReturn().response
         then: 'response status is #expectedResponse'
             response.status == expectedResponse
         where: 'the scenario is #scenario'
-            scenario                      | exceptionClass                 || expectedResponse
-            'dmi service exception'       | DmiException.class             || HttpStatus.INTERNAL_SERVER_ERROR.value()
-            'no modules found'            | ModulesNotFoundException.class || HttpStatus.NOT_FOUND.value()
-            'any other runtime exception' | RuntimeException.class         || HttpStatus.INTERNAL_SERVER_ERROR.value()
+            scenario                       |  exceptionClass                 || expectedResponse
+            'dmi service exception'        |  DmiException.class             || HttpStatus.INTERNAL_SERVER_ERROR.value()
+            'no modules found'             |  ModulesNotFoundException.class || HttpStatus.NOT_FOUND.value()
+            'any other runtime exception'  |  RuntimeException.class         || HttpStatus.INTERNAL_SERVER_ERROR.value()
     }
 
     def 'Register given list of cm handles.'() {
