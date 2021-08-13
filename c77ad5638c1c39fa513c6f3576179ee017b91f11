@@ -22,6 +22,30 @@
       "revId": "c77ad5638c1c39fa513c6f3576179ee017b91f11",
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "33adf781_80f62c93",
+        "filename": "src/main/java/org/onap/cps/ncmp/dmi/rest/controller/DmiRestController.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 109,
+      "author": {
+        "id": 6841
+      },
+      "writtenOn": "2021-08-13T11:16:48Z",
+      "side": 1,
+      "message": "this is a mistake. will fix in new patch",
+      "parentUuid": "007fd4e0_8fd29eee",
+      "range": {
+        "startLine": 109,
+        "startChar": 35,
+        "endLine": 109,
+        "endChar": 68
+      },
+      "revId": "c77ad5638c1c39fa513c6f3576179ee017b91f11",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
     }
   ]
 }
