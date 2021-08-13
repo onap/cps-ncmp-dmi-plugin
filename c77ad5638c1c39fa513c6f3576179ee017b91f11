@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "007fd4e0_8fd29eee",
+        "filename": "src/main/java/org/onap/cps/ncmp/dmi/rest/controller/DmiRestController.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 109,
+      "author": {
+        "id": 7486
+      },
+      "writtenOn": "2021-08-13T10:18:47Z",
+      "side": 1,
+      "message": "nb: is this name supposed to be like this? Just curious",
+      "range": {
+        "startLine": 109,
+        "startChar": 35,
+        "endLine": 109,
+        "endChar": 68
+      },
+      "revId": "c77ad5638c1c39fa513c6f3576179ee017b91f11",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    }
+  ]
+}
