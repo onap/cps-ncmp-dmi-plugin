@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "22c8a836_c4a5bf1e",
+        "filename": "src/main/java/org/onap/cps/ncmp/dmi/service/DmiServiceImpl.java",
+        "patchSetId": 6
+      },
+      "lineNbr": 152,
+      "author": {
+        "id": 7486
+      },
+      "writtenOn": "2021-08-13T10:02:16Z",
+      "side": 1,
+      "message": "nb: Typo: prepare",
+      "range": {
+        "startLine": 152,
+        "startChar": 19,
+        "endLine": 152,
+        "endChar": 25
+      },
+      "revId": "aa5cb12ae8f13094158a79729f594c7022e6cb5a",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    }
+  ]
+}
