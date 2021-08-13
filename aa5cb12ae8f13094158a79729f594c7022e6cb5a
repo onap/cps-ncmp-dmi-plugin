@@ -2,6 +2,57 @@
   "comments": [
     {
       "key": {
+        "uuid": "98076810_050b47b6",
+        "filename": "docs/openapi/openapi.yml",
+        "patchSetId": 6
+      },
+      "lineNbr": 136,
+      "author": {
+        "id": 7744
+      },
+      "writtenOn": "2021-08-13T10:18:10Z",
+      "side": 1,
+      "message": "Does it not make sense to put in a ref tag here too and define these within the parameter in components.yml.",
+      "revId": "aa5cb12ae8f13094158a79729f594c7022e6cb5a",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "270e895b_8a43f66f",
+        "filename": "src/main/java/org/onap/cps/ncmp/dmi/service/DmiServiceImpl.java",
+        "patchSetId": 6
+      },
+      "lineNbr": 67,
+      "author": {
+        "id": 7744
+      },
+      "writtenOn": "2021-08-13T10:18:10Z",
+      "side": 1,
+      "message": "We shouldn\u0027t need this autowired tag if we are injecting the dependencies through a constructor like this",
+      "revId": "aa5cb12ae8f13094158a79729f594c7022e6cb5a",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "6b127a15_249a36c7",
+        "filename": "src/main/java/org/onap/cps/ncmp/dmi/service/DmiServiceImpl.java",
+        "patchSetId": 6
+      },
+      "lineNbr": 142,
+      "author": {
+        "id": 7744
+      },
+      "writtenOn": "2021-08-13T10:18:10Z",
+      "side": 1,
+      "message": "I feel like we should still not include this. Even if other dmi impl might use it. It\u0027s not being used here currently.",
+      "revId": "aa5cb12ae8f13094158a79729f594c7022e6cb5a",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "22c8a836_c4a5bf1e",
         "filename": "src/main/java/org/onap/cps/ncmp/dmi/service/DmiServiceImpl.java",
         "patchSetId": 6
@@ -19,6 +70,57 @@
         "endLine": 152,
         "endChar": 25
       },
+      "revId": "aa5cb12ae8f13094158a79729f594c7022e6cb5a",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "9fe0ba14_940b5ea6",
+        "filename": "src/main/java/org/onap/cps/ncmp/dmi/service/DmiServiceImpl.java",
+        "patchSetId": 6
+      },
+      "lineNbr": 152,
+      "author": {
+        "id": 7744
+      },
+      "writtenOn": "2021-08-13T10:18:10Z",
+      "side": 1,
+      "message": "Typo here, should be prepare",
+      "revId": "aa5cb12ae8f13094158a79729f594c7022e6cb5a",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "79239cb1_9abf299d",
+        "filename": "src/main/java/org/onap/cps/ncmp/dmi/service/client/SdncRestconfClient.java",
+        "patchSetId": 6
+      },
+      "lineNbr": 52,
+      "author": {
+        "id": 7744
+      },
+      "writtenOn": "2021-08-13T10:18:10Z",
+      "side": 1,
+      "message": "Whitespace here",
+      "revId": "aa5cb12ae8f13094158a79729f594c7022e6cb5a",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "07f39f98_a49b7e50",
+        "filename": "src/test/groovy/org/onap/cps/ncmp/dmi/service/operation/SdncOperationsSpec.groovy",
+        "patchSetId": 6
+      },
+      "lineNbr": 64,
+      "author": {
+        "id": 7744
+      },
+      "writtenOn": "2021-08-13T10:18:10Z",
+      "side": 1,
+      "message": "Could we assign this a global static variable, or for the groovy test a global def. Just to make it more readable in the context of the test.",
       "revId": "aa5cb12ae8f13094158a79729f594c7022e6cb5a",
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
       "unresolved": true
