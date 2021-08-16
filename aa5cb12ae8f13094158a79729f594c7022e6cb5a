@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "b98d6c22_723064f5",
+        "filename": "docs/openapi/openapi.yml",
+        "patchSetId": 6
+      },
+      "lineNbr": 136,
+      "author": {
+        "id": 5006
+      },
+      "writtenOn": "2021-08-16T09:31:38Z",
+      "side": 1,
+      "message": "as these parameters will be in use in future apis, they will be extracted to ref params.",
+      "parentUuid": "98076810_050b47b6",
+      "revId": "aa5cb12ae8f13094158a79729f594c7022e6cb5a",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "270e895b_8a43f66f",
         "filename": "src/main/java/org/onap/cps/ncmp/dmi/service/DmiServiceImpl.java",
         "patchSetId": 6
@@ -36,6 +54,24 @@
     },
     {
       "key": {
+        "uuid": "8eb110ba_5f105a11",
+        "filename": "src/main/java/org/onap/cps/ncmp/dmi/service/DmiServiceImpl.java",
+        "patchSetId": 6
+      },
+      "lineNbr": 67,
+      "author": {
+        "id": 5006
+      },
+      "writtenOn": "2021-08-16T09:31:38Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "270e895b_8a43f66f",
+      "revId": "aa5cb12ae8f13094158a79729f594c7022e6cb5a",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "6b127a15_249a36c7",
         "filename": "src/main/java/org/onap/cps/ncmp/dmi/service/DmiServiceImpl.java",
         "patchSetId": 6
@@ -47,6 +83,24 @@
       "writtenOn": "2021-08-13T10:18:10Z",
       "side": 1,
       "message": "I feel like we should still not include this. Even if other dmi impl might use it. It\u0027s not being used here currently.",
+      "revId": "aa5cb12ae8f13094158a79729f594c7022e6cb5a",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "66ed49c3_0f068416",
+        "filename": "src/main/java/org/onap/cps/ncmp/dmi/service/DmiServiceImpl.java",
+        "patchSetId": 6
+      },
+      "lineNbr": 142,
+      "author": {
+        "id": 5006
+      },
+      "writtenOn": "2021-08-16T09:31:38Z",
+      "side": 1,
+      "message": "prepared this contract on the basis of wiki page. If this needed any change than it needs a discussion at requirement change level.",
+      "parentUuid": "6b127a15_249a36c7",
       "revId": "aa5cb12ae8f13094158a79729f594c7022e6cb5a",
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
       "unresolved": true
@@ -93,6 +147,48 @@
     },
     {
       "key": {
+        "uuid": "8eab4b05_76b9b58b",
+        "filename": "src/main/java/org/onap/cps/ncmp/dmi/service/DmiServiceImpl.java",
+        "patchSetId": 6
+      },
+      "lineNbr": 152,
+      "author": {
+        "id": 5006
+      },
+      "writtenOn": "2021-08-16T09:31:38Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9fe0ba14_940b5ea6",
+      "revId": "aa5cb12ae8f13094158a79729f594c7022e6cb5a",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "452ed58f_8c060f59",
+        "filename": "src/main/java/org/onap/cps/ncmp/dmi/service/DmiServiceImpl.java",
+        "patchSetId": 6
+      },
+      "lineNbr": 152,
+      "author": {
+        "id": 5006
+      },
+      "writtenOn": "2021-08-16T09:31:38Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "22c8a836_c4a5bf1e",
+      "range": {
+        "startLine": 152,
+        "startChar": 19,
+        "endLine": 152,
+        "endChar": 25
+      },
+      "revId": "aa5cb12ae8f13094158a79729f594c7022e6cb5a",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "79239cb1_9abf299d",
         "filename": "src/main/java/org/onap/cps/ncmp/dmi/service/client/SdncRestconfClient.java",
         "patchSetId": 6
@@ -110,6 +206,24 @@
     },
     {
       "key": {
+        "uuid": "ab7e2cec_df330f2b",
+        "filename": "src/main/java/org/onap/cps/ncmp/dmi/service/client/SdncRestconfClient.java",
+        "patchSetId": 6
+      },
+      "lineNbr": 52,
+      "author": {
+        "id": 5006
+      },
+      "writtenOn": "2021-08-16T09:31:38Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "79239cb1_9abf299d",
+      "revId": "aa5cb12ae8f13094158a79729f594c7022e6cb5a",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "07f39f98_a49b7e50",
         "filename": "src/test/groovy/org/onap/cps/ncmp/dmi/service/operation/SdncOperationsSpec.groovy",
         "patchSetId": 6
@@ -121,6 +235,24 @@
       "writtenOn": "2021-08-13T10:18:10Z",
       "side": 1,
       "message": "Could we assign this a global static variable, or for the groovy test a global def. Just to make it more readable in the context of the test.",
+      "revId": "aa5cb12ae8f13094158a79729f594c7022e6cb5a",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "cc44b20d_f6d5d2d9",
+        "filename": "src/test/groovy/org/onap/cps/ncmp/dmi/service/operation/SdncOperationsSpec.groovy",
+        "patchSetId": 6
+      },
+      "lineNbr": 64,
+      "author": {
+        "id": 5006
+      },
+      "writtenOn": "2021-08-16T09:31:38Z",
+      "side": 1,
+      "message": "This is only used in this test. So IMO it should be in local scope of the test. Pulling it to global scope will not be of use for other tests.",
+      "parentUuid": "07f39f98_a49b7e50",
       "revId": "aa5cb12ae8f13094158a79729f594c7022e6cb5a",
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
       "unresolved": true
