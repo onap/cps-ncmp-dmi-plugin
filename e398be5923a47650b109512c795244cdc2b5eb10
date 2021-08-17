@@ -22,6 +22,30 @@
       "revId": "e398be5923a47650b109512c795244cdc2b5eb10",
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "bf48004e_65892dce",
+        "filename": "src/main/java/org/onap/cps/ncmp/dmi/service/operation/SdncOperations.java",
+        "patchSetId": 8
+      },
+      "lineNbr": 106,
+      "author": {
+        "id": 5006
+      },
+      "writtenOn": "2021-08-17T14:35:04Z",
+      "side": 1,
+      "message": "https://jira.onap.org/browse/CPS-569 added here.",
+      "parentUuid": "6fec8ddf_c700f9ad",
+      "range": {
+        "startLine": 106,
+        "startChar": 13,
+        "endLine": 106,
+        "endChar": 24
+      },
+      "revId": "e398be5923a47650b109512c795244cdc2b5eb10",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
     }
   ]
 }
