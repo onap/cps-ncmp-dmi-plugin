@@ -137,6 +137,23 @@
       "revId": "1abffe448c1f865ecae6c0227d244dadd3c8fe2e",
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "a25c9fde_6178c6ad",
+        "filename": "src/test/groovy/org/onap/cps/ncmp/dmi/rest/controller/DmiRestControllerSpec.groovy",
+        "patchSetId": 7
+      },
+      "lineNbr": 160,
+      "author": {
+        "id": 7744
+      },
+      "writtenOn": "2021-08-17T10:23:48Z",
+      "side": 1,
+      "message": "Non Blocker - Why are concatenating these two strings here? Why not just have a full, or assign the resource identifier to a def.",
+      "revId": "1abffe448c1f865ecae6c0227d244dadd3c8fe2e",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
     }
   ]
 }
