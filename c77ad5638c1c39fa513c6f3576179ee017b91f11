@@ -2,6 +2,144 @@
   "comments": [
     {
       "key": {
+        "uuid": "3f51182c_e4559215",
+        "filename": "docs/openapi/components.yml",
+        "patchSetId": 2
+      },
+      "lineNbr": 49,
+      "author": {
+        "id": 7680
+      },
+      "writtenOn": "2021-08-17T02:08:18Z",
+      "side": 1,
+      "message": "it start with lowercase.",
+      "range": {
+        "startLine": 49,
+        "startChar": 8,
+        "endLine": 49,
+        "endChar": 15
+      },
+      "revId": "c77ad5638c1c39fa513c6f3576179ee017b91f11",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "52930313_0e5317ad",
+        "filename": "docs/openapi/openapi.yml",
+        "patchSetId": 2
+      },
+      "lineNbr": 54,
+      "author": {
+        "id": 7680
+      },
+      "writtenOn": "2021-08-17T02:08:18Z",
+      "side": 1,
+      "message": "why the response has Request in the name?",
+      "range": {
+        "startLine": 54,
+        "startChar": 58,
+        "endLine": 54,
+        "endChar": 69
+      },
+      "revId": "c77ad5638c1c39fa513c6f3576179ee017b91f11",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "87b0a258_b4203790",
+        "filename": "docs/openapi/openapi.yml",
+        "patchSetId": 2
+      },
+      "lineNbr": 56,
+      "author": {
+        "id": 7680
+      },
+      "writtenOn": "2021-08-17T02:08:18Z",
+      "side": 1,
+      "message": "lowercase",
+      "range": {
+        "startLine": 56,
+        "startChar": 19,
+        "endLine": 56,
+        "endChar": 26
+      },
+      "revId": "c77ad5638c1c39fa513c6f3576179ee017b91f11",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "e2019292_7cd437e6",
+        "filename": "src/main/java/org/onap/cps/ncmp/dmi/model/NodeSchema.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 7680
+      },
+      "writtenOn": "2021-08-17T02:08:18Z",
+      "side": 1,
+      "message": "Name is a little confusing. NodeSchema (singular) has a property called NodeSchemas ( plural)",
+      "range": {
+        "startLine": 31,
+        "startChar": 13,
+        "endLine": 31,
+        "endChar": 23
+      },
+      "revId": "c77ad5638c1c39fa513c6f3576179ee017b91f11",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "5c60d9aa_198b8102",
+        "filename": "src/main/java/org/onap/cps/ncmp/dmi/model/NodeSchemaProperties.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 7680
+      },
+      "writtenOn": "2021-08-17T02:08:18Z",
+      "side": 1,
+      "message": "Can this class be named a little differently. It is generic name and does not tell much about the class.",
+      "range": {
+        "startLine": 32,
+        "startChar": 13,
+        "endLine": 32,
+        "endChar": 33
+      },
+      "revId": "c77ad5638c1c39fa513c6f3576179ee017b91f11",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "436c7915_cbaa2188",
+        "filename": "src/main/java/org/onap/cps/ncmp/dmi/rest/controller/DmiRestController.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 62,
+      "author": {
+        "id": 7680
+      },
+      "writtenOn": "2021-08-17T02:08:18Z",
+      "side": 1,
+      "message": "dmiService.getModulesForCmHandle json response conversion should be handled at the service layer instead of controller.",
+      "range": {
+        "startLine": 62,
+        "startChar": 38,
+        "endLine": 62,
+        "endChar": 80
+      },
+      "revId": "c77ad5638c1c39fa513c6f3576179ee017b91f11",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "007fd4e0_8fd29eee",
         "filename": "src/main/java/org/onap/cps/ncmp/dmi/rest/controller/DmiRestController.java",
         "patchSetId": 2
