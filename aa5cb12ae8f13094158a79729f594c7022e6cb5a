@@ -37,6 +37,24 @@
     },
     {
       "key": {
+        "uuid": "bf771ea2_3e4a30e1",
+        "filename": "docs/openapi/openapi.yml",
+        "patchSetId": 6
+      },
+      "lineNbr": 136,
+      "author": {
+        "id": 7744
+      },
+      "writtenOn": "2021-08-17T10:27:10Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "b98d6c22_723064f5",
+      "revId": "aa5cb12ae8f13094158a79729f594c7022e6cb5a",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "270e895b_8a43f66f",
         "filename": "src/main/java/org/onap/cps/ncmp/dmi/service/DmiServiceImpl.java",
         "patchSetId": 6
@@ -104,6 +122,24 @@
       "revId": "aa5cb12ae8f13094158a79729f594c7022e6cb5a",
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "f2c8a2de_d8265bc9",
+        "filename": "src/main/java/org/onap/cps/ncmp/dmi/service/DmiServiceImpl.java",
+        "patchSetId": 6
+      },
+      "lineNbr": 142,
+      "author": {
+        "id": 7744
+      },
+      "writtenOn": "2021-08-17T10:27:10Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "66ed49c3_0f068416",
+      "revId": "aa5cb12ae8f13094158a79729f594c7022e6cb5a",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
     },
     {
       "key": {
@@ -256,6 +292,24 @@
       "revId": "aa5cb12ae8f13094158a79729f594c7022e6cb5a",
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "bf3e60ad_e638e8fa",
+        "filename": "src/test/groovy/org/onap/cps/ncmp/dmi/service/operation/SdncOperationsSpec.groovy",
+        "patchSetId": 6
+      },
+      "lineNbr": 64,
+      "author": {
+        "id": 7744
+      },
+      "writtenOn": "2021-08-17T10:27:10Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "cc44b20d_f6d5d2d9",
+      "revId": "aa5cb12ae8f13094158a79729f594c7022e6cb5a",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
     }
   ]
 }
