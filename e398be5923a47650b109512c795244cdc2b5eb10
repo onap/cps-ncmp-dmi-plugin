@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "6fec8ddf_c700f9ad",
+        "filename": "src/main/java/org/onap/cps/ncmp/dmi/service/operation/SdncOperations.java",
+        "patchSetId": 8
+      },
+      "lineNbr": 106,
+      "author": {
+        "id": 7680
+      },
+      "writtenOn": "2021-08-17T14:01:37Z",
+      "side": 1,
+      "message": "nb but important: We have used StringUtils from apache in most of the places. This class is from antlr4 and I am not sure if we have use case to be dependent on antlr in ncmp.",
+      "range": {
+        "startLine": 106,
+        "startChar": 13,
+        "endLine": 106,
+        "endChar": 24
+      },
+      "revId": "e398be5923a47650b109512c795244cdc2b5eb10",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    }
+  ]
+}

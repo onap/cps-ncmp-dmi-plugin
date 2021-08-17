@@ -49,6 +49,30 @@
     },
     {
       "key": {
+        "uuid": "368c9963_01203f3f",
+        "filename": "src/main/java/org/onap/cps/ncmp/dmi/rest/controller/DmiRestController.java",
+        "patchSetId": 7
+      },
+      "lineNbr": 106,
+      "author": {
+        "id": 7680
+      },
+      "writtenOn": "2021-08-17T14:01:37Z",
+      "side": 1,
+      "message": "nb: This is how body is defined and currently we have operation defined as enum with only one value. So, it is okay to ignore for now, but we are not handling when operation is sent as null. \n\nOperationalRequest:\n      type: object\n      properties:\n        operation:\n          type: string\n          enum: [ read ]\n        cmHandleProperties:\n          type: object\n          additionalProperties:\n            type: string",
+      "parentUuid": "5ec87585_d77a7b70",
+      "range": {
+        "startLine": 106,
+        "startChar": 104,
+        "endLine": 106,
+        "endChar": 108
+      },
+      "revId": "1abffe448c1f865ecae6c0227d244dadd3c8fe2e",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "57123ea0_3677291d",
         "filename": "src/main/java/org/onap/cps/ncmp/dmi/rest/controller/DmiRestController.java",
         "patchSetId": 7
