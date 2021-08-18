@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "198ecc7c_d5b2fbc2",
+        "filename": "src/main/java/org/onap/cps/ncmp/dmi/rest/controller/DmiRestController.java",
+        "patchSetId": 5
+      },
+      "lineNbr": 58,
+      "author": {
+        "id": 7680
+      },
+      "writtenOn": "2021-08-18T10:04:22Z",
+      "side": 1,
+      "message": "nb:\nsuggestion: I think it makes code more readable.\nreturn ResponseEntity.ok(moduleSet)",
+      "range": {
+        "startLine": 58,
+        "startChar": 15,
+        "endLine": 58,
+        "endChar": 71
+      },
+      "revId": "577efb09a39282c608b53a3099b7edc95954f9c2",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "b85f8ee4_3d93a61e",
+        "filename": "src/main/java/org/onap/cps/ncmp/dmi/service/DmiServiceImpl.java",
+        "patchSetId": 5
+      },
+      "lineNbr": 156,
+      "author": {
+        "id": 7680
+      },
+      "writtenOn": "2021-08-18T10:04:22Z",
+      "side": 1,
+      "message": "nb: it also has nodeschema in the name.",
+      "range": {
+        "startLine": 156,
+        "startChar": 26,
+        "endLine": 156,
+        "endChar": 52
+      },
+      "revId": "577efb09a39282c608b53a3099b7edc95954f9c2",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    }
+  ]
+}
