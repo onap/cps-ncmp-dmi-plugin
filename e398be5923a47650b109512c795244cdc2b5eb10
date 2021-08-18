@@ -1,0 +1,9 @@
+Verified+1: ONAP Jobbuilder <onap-jobbuilder@jenkins.onap.org>
+Code-Review+1: Renu Kumari <renu.kumari@bell.ca>
+Code-Review+1: Dylan Byrne <dylan.byrne@est.tech>
+Code-Review+2: Niamh Core <niamh.core@est.tech>
+Submitted-by: Niamh Core <niamh.core@est.tech>
+Submitted-at: Wed, 18 Aug 2021 09:08:38 +0000
+Reviewed-on: https://gerrit.onap.org/r/c/cps/ncmp-dmi-plugin/+/123169
+Project: cps/ncmp-dmi-plugin
+Branch: refs/heads/master
