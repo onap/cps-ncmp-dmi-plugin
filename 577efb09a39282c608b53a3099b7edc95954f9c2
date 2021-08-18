@@ -25,6 +25,29 @@
     },
     {
       "key": {
+        "uuid": "1f048dbb_a219d848",
+        "filename": "src/main/java/org/onap/cps/ncmp/dmi/service/DmiServiceImpl.java",
+        "patchSetId": 5
+      },
+      "lineNbr": 45,
+      "author": {
+        "id": 6738
+      },
+      "writtenOn": "2021-08-18T10:30:27Z",
+      "side": 1,
+      "message": "what is the difference between this class and ModuleSchemas imported in line 43",
+      "range": {
+        "startLine": 45,
+        "startChar": 0,
+        "endLine": 45,
+        "endChar": 52
+      },
+      "revId": "577efb09a39282c608b53a3099b7edc95954f9c2",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "b85f8ee4_3d93a61e",
         "filename": "src/main/java/org/onap/cps/ncmp/dmi/service/DmiServiceImpl.java",
         "patchSetId": 5
