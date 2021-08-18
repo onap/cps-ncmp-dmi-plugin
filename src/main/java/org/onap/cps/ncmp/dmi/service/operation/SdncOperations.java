@@ -127,8 +127,7 @@ public class SdncOperations {
 
     @NotNull
     private String prepareGetSchemaUrl(final String nodeId) {
-        final var getSchemaUrl = addResource(addTopologyDataUrlwithNode(nodeId), GET_SCHEMA_URL);
-        return getSchemaUrl;
+        return addResource(addTopologyDataUrlwithNode(nodeId), GET_SCHEMA_URL);
     }
 
     private String prepareGetOperationSchemaUrl(final String nodeId) {
@@ -141,8 +140,7 @@ public class SdncOperations {
     private String prepareResourceDataUrl(final String nodeId,
                                           final String resourceId,
                                           final List<String> queryList) {
-        final var resourceDataUrl = addQuery(addResource(addTopologyDataUrlwithNode(nodeId), resourceId), queryList);
-        return resourceDataUrl;
+        return addQuery(addResource(addTopologyDataUrlwithNode(nodeId), resourceId), queryList);
     }
 
     @NotNull

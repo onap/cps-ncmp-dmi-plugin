@@ -73,7 +73,6 @@ public class DmiServiceImpl implements DmiService {
         this.ncmpRestClient = ncmpRestClient;
         this.objectMapper = objectMapper;
         this.sdncOperations = sdncOperations;
-        this.objectMapper = objectMapper;
     }
 
     @Override
@@ -84,8 +83,7 @@ public class DmiServiceImpl implements DmiService {
             if (StringUtils.isEmpty(responseBody)) {
                 throw new ModulesNotFoundException(cmHandle, "SDNC returned no modules for given cm-handle.");
             }
-            final ModuleSet moduleSet = createModuleSchema(responseBody);
-            return moduleSet;
+            return createModuleSchema(responseBody);
         } else {
             throw new DmiException("SDNC is not able to process request.",
                     "response code : " + responseEntity.getStatusCode() + " message : " + responseEntity.getBody());
@@ -129,7 +127,7 @@ public class DmiServiceImpl implements DmiService {
                     "Parsing error occurred while converting given cm-handles object list to JSON ");
         }
         final ResponseEntity<String> responseEntity = ncmpRestClient.registerCmHandlesWithNcmp(cmHandlesJson);
-        if (!(responseEntity.getStatusCode() == HttpStatus.CREATED)) {
+        if ((responseEntity.getStatusCode() != HttpStatus.CREATED)) {
             throw new CmHandleRegistrationException(responseEntity.getBody());
         }
     }
