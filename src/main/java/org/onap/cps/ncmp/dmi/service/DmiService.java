@@ -60,7 +60,7 @@ public interface DmiService {
 
     /**
      * This method use to fetch the resource data from cm handle
-     * for given datasource and Identifier. Fields and depths query
+     * for datastore pass-through operational and resource Identifier. Fields and depths query
      * parameter are used to filter the response from network resource.
      *
      * @param cmHandle cm handle identifier
@@ -78,4 +78,25 @@ public interface DmiService {
                                       String fieldsQuery,
                                       Integer depthQuery,
                                       Map<String, String> cmHandlePropertyMap);
+
+    /**
+     * This method use to fetch the resource data from cm handle
+     * for datastore pass-through running and resource Identifier. Fields and depths query
+     * parameter are used to filter the response from network resource.
+     *
+     * @param cmHandle cm handle identifier
+     * @param resourceIdentifier resource identifier
+     * @param acceptParam accept header parameter
+     * @param fieldsQuery fields query parameter
+     * @param depthQuery depth query parameter
+     * @param cmHandlePropertyMap cm handle properties
+     *
+     * @return {@code Object} response from network function
+     */
+    Object getResourceDataPassThroughRunningForCmHandle(@NotNull String cmHandle,
+                                                 @NotNull String resourceIdentifier,
+                                                 String acceptParam,
+                                                 String fieldsQuery,
+                                                 Integer depthQuery,
+                                                 Map<String, String> cmHandlePropertyMap);
 }

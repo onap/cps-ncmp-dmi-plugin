@@ -24,6 +24,7 @@ import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import java.util.List;
 import javax.validation.Valid;
+import javax.validation.constraints.Min;
 import lombok.extern.slf4j.Slf4j;
 import org.onap.cps.ncmp.dmi.model.CmHandles;
 import org.onap.cps.ncmp.dmi.model.ModuleReference;
@@ -89,7 +90,7 @@ public class DmiRestController implements DmiPluginApi, DmiPluginInternalApi {
 
     /**
      * This method fetches the resource for given cm handle using pass
-     * through option. It filters the response on the basis of depth and field
+     * through operational. It filters the response on the basis of depth and field
      * query parameters and returns response.
      *
      * @param cmHandle cm handle identifier
@@ -106,8 +107,37 @@ public class DmiRestController implements DmiPluginApi, DmiPluginInternalApi {
                                                                         final @Valid OperationalRequest body,
                                                                         final String accept,
                                                                         final @Valid String fields,
-                                                                        final @Valid Integer depth) {
+                                                                        final @Min(1) @Valid Integer depth) {
         final var modulesListAsJson = dmiService.getResourceDataOperationalForCmHandle(cmHandle,
+                resourceIdentifier,
+                accept,
+                fields,
+                depth,
+                body.getCmHandleProperties());
+        return ResponseEntity.ok(modulesListAsJson);
+    }
+
+    /**
+     * This method fetches the resource for given cm handle using pass
+     * through running. It filters the response on the basis of depth and field
+     * query parameters and returns response.
+     *
+     * @param cmHandle cm handle identifier
+     * @param resourceIdentifier resource identifier to fetch data
+     * @param body operational body
+     * @param accept accept header parameter
+     * @param fields fields to filter the response data
+     * @param depth depth parameter for the response
+     * @return {@code ResponseEntity} response entity
+     */
+    @Override
+    public ResponseEntity<Object> getResourceDataPassthroughRunningForCmHandle(final String cmHandle,
+                                                                               final String resourceIdentifier,
+                                                                               final @Valid OperationalRequest body,
+                                                                               final String accept,
+                                                                               final @Valid String fields,
+                                                                               final @Min(1) @Valid Integer depth) {
+        final var modulesListAsJson = dmiService.getResourceDataPassThroughRunningForCmHandle(cmHandle,
                 resourceIdentifier,
                 accept,
                 fields,

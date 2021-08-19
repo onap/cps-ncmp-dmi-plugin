@@ -30,8 +30,6 @@ import org.onap.cps.ncmp.dmi.exception.ModuleResourceNotFoundException
 import org.onap.cps.ncmp.dmi.exception.ModulesNotFoundException
 import org.onap.cps.ncmp.dmi.exception.ResourceDataNotFound
 import org.onap.cps.ncmp.dmi.model.ModuleReference
-import org.onap.cps.ncmp.dmi.model.ModuleSchemaList
-import org.onap.cps.ncmp.dmi.model.ModuleSchemas
 import org.onap.cps.ncmp.dmi.service.client.NcmpRestClient
 import org.onap.cps.ncmp.dmi.service.operation.SdncOperations
 import org.springframework.http.HttpStatus
@@ -166,15 +164,17 @@ class DmiServiceImplSpec extends Specification {
             thrown(ModuleResourceNotFoundException)
     }
 
-    def 'Get resource data from cm handle.'() {
+    def 'Get resource data for pass through operational from cm handle.'() {
         given: 'cm-handle, pass through parameter, resourceId, accept header, fields, depth'
             def cmHandle = 'testCmHandle'
             def resourceId = 'testResourceId'
             def acceptHeaderParam = 'testAcceptParam'
             def fieldsParam = 'testFields'
             def depthParam = 10
+            def contentQuery = 'content=all'
         and: 'sdnc operation returns OK response'
-            mockSdncOperations.getResouceDataForOperational(cmHandle, resourceId, fieldsParam, depthParam, acceptHeaderParam ) >> new ResponseEntity<>('response json', HttpStatus.OK)
+            mockSdncOperations.getResouceDataForOperationalAndRunning(cmHandle, resourceId, fieldsParam,
+                    depthParam, acceptHeaderParam,  contentQuery) >> new ResponseEntity<>('response json', HttpStatus.OK)
         when: 'get resource data from cm handles service method invoked'
             def response = objectUnderTest.getResourceDataOperationalForCmHandle(cmHandle,
                     resourceId, acceptHeaderParam,
@@ -191,13 +191,32 @@ class DmiServiceImplSpec extends Specification {
             def fieldsParam = 'testFields'
             def depthParam = 10
         and: 'sdnc operation returns "NOT_FOUND" response'
-            mockSdncOperations.getResouceDataForOperational(cmHandle, resourceId, fieldsParam, depthParam, acceptHeaderParam )
-                    >> new ResponseEntity<>(HttpStatus.NOT_FOUND)
+            mockSdncOperations.getResouceDataForOperationalAndRunning(cmHandle, resourceId, fieldsParam,
+                    depthParam, acceptHeaderParam, _ as String) >> new ResponseEntity<>(HttpStatus.NOT_FOUND)
         when: 'get resource data from cm handles service method invoked'
             objectUnderTest.getResourceDataOperationalForCmHandle(cmHandle,
                     resourceId, acceptHeaderParam,
                     fieldsParam, depthParam, null)
         then: 'resource data not found'
             thrown(ResourceDataNotFound.class)
+    }
+
+    def 'Get resource data for pass through running from cm handle.'() {
+        given: 'cm-handle, pass through parameter, resourceId, accept header, fields, depth'
+            def cmHandle = 'testCmHandle'
+            def resourceId = 'testResourceId'
+            def acceptHeaderParam = 'testAcceptParam'
+            def fieldsParam = 'testFields'
+            def depthParam = 10
+            def contentQuery = 'content=config'
+        and: 'sdnc operation returns OK response'
+            mockSdncOperations.getResouceDataForOperationalAndRunning(cmHandle, resourceId, fieldsParam,
+                    depthParam, acceptHeaderParam,  contentQuery) >> new ResponseEntity<>('response json', HttpStatus.OK)
+        when: 'get resource data from cm handles service method invoked'
+            def response = objectUnderTest.getResourceDataPassThroughRunningForCmHandle(cmHandle,
+                    resourceId, acceptHeaderParam,
+                    fieldsParam, depthParam, null)
+        then: 'response have expected json'
+            response == 'response json'
     }
 }

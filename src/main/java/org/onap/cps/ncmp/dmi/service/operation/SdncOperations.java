@@ -94,14 +94,15 @@ public class SdncOperations {
      * @param acceptParam accept parameter
      * @return {@code ResponseEntity} response entity
      */
-    public ResponseEntity<String> getResouceDataForOperational(final String nodeId,
-                                                               final String resourceId,
-                                                               final String fieldsValue,
-                                                               final Integer depthValue,
-                                                               final String acceptParam) {
+    public ResponseEntity<String> getResouceDataForOperationalAndRunning(final String nodeId,
+                                                                         final String resourceId,
+                                                                         final String fieldsValue,
+                                                                         final Integer depthValue,
+                                                                         final String acceptParam,
+                                                                         final String contentQuery) {
         final String getResourceDataUrl = prepareResourceDataUrl(nodeId,
                 resourceId,
-                getQueryList(fieldsValue, depthValue, "content=all"));
+                getQueryList(fieldsValue, depthValue, contentQuery));
         final HttpHeaders httpHeaders = new HttpHeaders();
         if (!StringUtils.isEmpty(acceptParam)) {
             httpHeaders.set(HttpHeaders.ACCEPT, acceptParam);
