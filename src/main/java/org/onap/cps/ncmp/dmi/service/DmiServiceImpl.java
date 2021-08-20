@@ -69,8 +69,8 @@ public class DmiServiceImpl implements DmiService {
      * @param objectMapper        objectMapper
      */
     public DmiServiceImpl(final DmiPluginProperties dmiPluginProperties,
-                          final NcmpRestClient ncmpRestClient,
-                          final SdncOperations sdncOperations, final ObjectMapper objectMapper) {
+        final NcmpRestClient ncmpRestClient,
+        final SdncOperations sdncOperations, final ObjectMapper objectMapper) {
         this.dmiPluginProperties = dmiPluginProperties;
         this.ncmpRestClient = ncmpRestClient;
         this.objectMapper = objectMapper;
@@ -88,7 +88,7 @@ public class DmiServiceImpl implements DmiService {
             return createModuleSchema(responseBody);
         } else {
             throw new DmiException("SDNC is not able to process request.",
-                    "response code : " + responseEntity.getStatusCode() + " message : " + responseEntity.getBody());
+                "response code : " + responseEntity.getStatusCode() + " message : " + responseEntity.getBody());
         }
     }
 
@@ -103,7 +103,7 @@ public class DmiServiceImpl implements DmiService {
             } else {
                 log.error("SDNC did not return a module resource for the given cmHandle {}", cmHandle);
                 throw new ModuleResourceNotFoundException(cmHandle,
-                        "SDNC did not return a module resource for the given cmHandle.");
+                    "SDNC did not return a module resource for the given cmHandle.");
             }
         }
         return getModuleResponses.toJSONString();
@@ -126,7 +126,7 @@ public class DmiServiceImpl implements DmiService {
         } catch (final JsonProcessingException e) {
             log.error("Parsing error occurred while converting cm-handles to JSON {}", cmHandles);
             throw new DmiException("Internal Server Error.",
-                    "Parsing error occurred while converting given cm-handles object list to JSON ");
+                "Parsing error occurred while converting given cm-handles object list to JSON ");
         }
         final ResponseEntity<String> responseEntity = ncmpRestClient.registerCmHandlesWithNcmp(cmHandlesJson);
         if ((responseEntity.getStatusCode() != HttpStatus.CREATED)) {
@@ -166,36 +166,58 @@ public class DmiServiceImpl implements DmiService {
 
     @Override
     public Object getResourceDataOperationalForCmHandle(final @NotNull String cmHandle,
-                                             final @NotNull String resourceIdentifier,
-                                             final String acceptParam,
-                                             final String fieldsQuery,
-                                             final Integer depthQuery,
-                                             final Map<String, String> cmHandlePropertyMap) {
+        final @NotNull String resourceIdentifier,
+        final String acceptParam,
+        final String fieldsQuery,
+        final Integer depthQuery,
+        final Map<String, String> cmHandlePropertyMap) {
         // not using cmHandlePropertyMap of onap dmi impl , other dmi impl might use this.
         final ResponseEntity<String> responseEntity = sdncOperations.getResouceDataForOperationalAndRunning(cmHandle,
-                resourceIdentifier,
-                fieldsQuery,
-                depthQuery,
-                acceptParam,
+            resourceIdentifier,
+            fieldsQuery,
+            depthQuery,
+            acceptParam,
                 CONTENT_QUERY_PASSTHROUGH_OPERATIONAL);
         return prepareAndSendResponse(responseEntity, cmHandle);
     }
 
     @Override
     public Object getResourceDataPassThroughRunningForCmHandle(final @NotNull String cmHandle,
-                                                               final @NotNull String resourceIdentifier,
-                                                               final String acceptParam,
-                                                               final String fieldsQuery,
-                                                               final Integer depthQuery,
-                                                               final Map<String, String> cmHandlePropertyMap) {
+        final @NotNull String resourceIdentifier,
+        final String acceptParam,
+        final String fieldsQuery,
+        final Integer depthQuery,
+        final Map<String, String> cmHandlePropertyMap) {
         // not using cmHandlePropertyMap of onap dmi impl , other dmi impl might use this.
         final ResponseEntity<String> responseEntity = sdncOperations.getResouceDataForOperationalAndRunning(cmHandle,
-                resourceIdentifier,
-                fieldsQuery,
-                depthQuery,
-                acceptParam,
-                CONTENT_QUERY_PASSTHROUGH_RUNNING);
+            resourceIdentifier,
+            fieldsQuery,
+            depthQuery,
+            acceptParam,
+            CONTENT_QUERY_PASSTHROUGH_RUNNING);
         return prepareAndSendResponse(responseEntity, cmHandle);
+    }
+
+    @Override
+    public String writeResourceDataPassthroughForCmHandle(final String cmHandle, final String resourceIdentifier,
+        final String dataType, final Object data) {
+        final String jsonData;
+        try {
+            jsonData = objectMapper.writeValueAsString(data);
+        } catch (final JsonProcessingException e) {
+            log.error("JSON exception occurred when processing pass through request data for the given cmHandle {}",
+                cmHandle);
+            throw new DmiException("Unable to process incoming JSON from the request body.",
+                "JSON exception occurred when writing data for the given cmHandle " + cmHandle, e);
+        }
+        final ResponseEntity<String> responseEntity =
+            sdncOperations.writeResourceDataPassthroughRunning(cmHandle, resourceIdentifier, dataType, jsonData);
+        if (responseEntity.getStatusCode() == HttpStatus.CREATED) {
+            return responseEntity.getBody();
+        } else {
+            throw new DmiException(cmHandle,
+                "response code : " + responseEntity.getStatusCode() + " message : " + responseEntity.getBody());
+        }
     }
 
     private String prepareAndSendResponse(final ResponseEntity<String> responseEntity, final String cmHandle) {
@@ -203,7 +225,7 @@ public class DmiServiceImpl implements DmiService {
             return responseEntity.getBody();
         } else {
             throw new ResourceDataNotFound(cmHandle,
-                    "response code : " + responseEntity.getStatusCode() + " message : " + responseEntity.getBody());
+                "response code : " + responseEntity.getStatusCode() + " message : " + responseEntity.getBody());
         }
     }
 
@@ -217,9 +239,9 @@ public class DmiServiceImpl implements DmiService {
             moduleRequest = writer.writeValueAsString(ietfNetconfModuleReferences);
         } catch (final JsonProcessingException e) {
             log.error("JSON exception occurred when creating the module request for the given module reference {}",
-                    moduleReference.getName());
+                moduleReference.getName());
             throw new DmiException("Unable to process JSON.",
-                    "JSON exception occurred when creating the module request.", e);
+                "JSON exception occurred when creating the module request.", e);
         }
         return moduleRequest;
     }
