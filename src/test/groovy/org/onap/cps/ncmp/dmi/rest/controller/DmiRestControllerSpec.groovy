@@ -186,12 +186,12 @@ class DmiRestControllerSpec extends Specification {
             response.status == HttpStatus.NOT_FOUND.value()
     }
 
-    def 'Get resource data for cm handle.'() {
+    def 'Get resource data for pass-through operational from cm handle.'() {
         given: 'Get resource data url'
             def getResourceDataForCmHandleUrl = "${basePathV1}/ch/some-cmHandle/data/ds/ncmp-datastore:passthrough-operational" +
                     "/resourceIdentifier?fields=myfields&depth=5"
             def json = '{"cmHandleProperties" : { "prop1" : "value1", "prop2" : "value2"}}'
-        when: 'get resource data GET api is invoked'
+        when: 'get resource data PUT api is invoked'
             def response = mvc.perform(
                     put(getResourceDataForCmHandleUrl).contentType(MediaType.APPLICATION_JSON)
                             .accept(MediaType.APPLICATION_JSON).content(json)
@@ -203,6 +203,27 @@ class DmiRestControllerSpec extends Specification {
                     'resourceIdentifier',
                     'application/json',
                     'myfields',
+                    5,
+                    ['prop1':'value1', 'prop2':'value2'])
+    }
+
+    def 'Get resource data for pass-through running from cm handle.'() {
+        given: 'Get resource data url'
+            def getResourceDataForCmHandleUrl = "${basePathV1}/ch/some-cmHandle/data/ds/ncmp-datastore:passthrough-running" +
+                     "/testResourceIdentifier?fields=testFields&depth=5"
+            def json = '{"cmHandleProperties" : { "prop1" : "value1", "prop2" : "value2"}}'
+        when: 'get resource data PUT api is invoked'
+            def response = mvc.perform(
+                    put(getResourceDataForCmHandleUrl).contentType(MediaType.APPLICATION_JSON)
+                            .accept(MediaType.APPLICATION_JSON).content(json)
+            ).andReturn().response
+        then: 'response status is ok'
+            response.status == HttpStatus.OK.value()
+        and: 'dmi service called with get resource data for cm handle'
+            1 * mockDmiService.getResourceDataPassThroughRunningForCmHandle('some-cmHandle',
+                    'testResourceIdentifier',
+                    'application/json',
+                    'testFields',
                     5,
                     ['prop1':'value1', 'prop2':'value2'])
     }
