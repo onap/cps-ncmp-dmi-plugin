@@ -31,6 +31,7 @@ import org.onap.cps.ncmp.dmi.model.ModuleReference;
 import org.onap.cps.ncmp.dmi.model.ModuleRequestParent;
 import org.onap.cps.ncmp.dmi.model.ModuleSet;
 import org.onap.cps.ncmp.dmi.model.OperationalRequest;
+import org.onap.cps.ncmp.dmi.model.PassthroughRequest;
 import org.onap.cps.ncmp.dmi.rest.api.DmiPluginApi;
 import org.onap.cps.ncmp.dmi.rest.api.DmiPluginInternalApi;
 import org.onap.cps.ncmp.dmi.service.DmiService;
@@ -61,7 +62,7 @@ public class DmiRestController implements DmiPluginApi, DmiPluginInternalApi {
 
     @Override
     public ResponseEntity<Object> retrieveModuleResources(@Valid final ModuleRequestParent moduleRequestParent,
-                                                          final String cmHandle) {
+        final String cmHandle) {
         if (moduleRequestParent.getOperation().toString().equals("read")) {
             final var moduleReferenceList = convertRestObjectToJavaApiObject(moduleRequestParent);
             final var response = dmiService.getModuleResources(cmHandle, moduleReferenceList);
@@ -71,6 +72,17 @@ public class DmiRestController implements DmiPluginApi, DmiPluginInternalApi {
             return new ResponseEntity<>(response, HttpStatus.OK);
         }
         return new ResponseEntity<>("Unsupported operation", HttpStatus.CONFLICT);
+    }
+
+    @Override
+    public ResponseEntity<Object> writeDataByPassthroughRunningForCmHandle(final PassthroughRequest passthroughRequest,
+        final String cmHandle,
+        final String resourceIdentifier) {
+        final String response = dmiService.writeResourceDataPassthroughForCmHandle(cmHandle,
+            resourceIdentifier,
+            passthroughRequest.getDataType(),
+            passthroughRequest.getData());
+        return ResponseEntity.ok(response);
     }
 
     /**
@@ -89,60 +101,58 @@ public class DmiRestController implements DmiPluginApi, DmiPluginInternalApi {
     }
 
     /**
-     * This method fetches the resource for given cm handle using pass
-     * through operational. It filters the response on the basis of depth and field
-     * query parameters and returns response.
+     * This method fetches the resource for given cm handle using pass through operational. It filters the response on
+     * the basis of depth and field query parameters and returns response.
      *
-     * @param cmHandle cm handle identifier
+     * @param cmHandle           cm handle identifier
      * @param resourceIdentifier resource identifier to fetch data
-     * @param body operational body
-     * @param accept accept header parameter
-     * @param fields fields to filter the response data
-     * @param depth depth parameter for the response
+     * @param body               operational body
+     * @param accept             accept header parameter
+     * @param fields             fields to filter the response data
+     * @param depth              depth parameter for the response
      * @return {@code ResponseEntity} response entity
      */
     @Override
     public ResponseEntity<Object> getResourceDataOperationalForCmHandle(final String cmHandle,
-                                                                        final String resourceIdentifier,
-                                                                        final @Valid OperationalRequest body,
-                                                                        final String accept,
-                                                                        final @Valid String fields,
-                                                                        final @Min(1) @Valid Integer depth) {
+        final String resourceIdentifier,
+        final @Valid OperationalRequest body,
+        final String accept,
+        final @Valid String fields,
+        final @Min(1) @Valid Integer depth) {
         final var modulesListAsJson = dmiService.getResourceDataOperationalForCmHandle(cmHandle,
-                resourceIdentifier,
-                accept,
-                fields,
-                depth,
-                body.getCmHandleProperties());
+            resourceIdentifier,
+            accept,
+            fields,
+            depth,
+            body.getCmHandleProperties());
         return ResponseEntity.ok(modulesListAsJson);
     }
 
     /**
-     * This method fetches the resource for given cm handle using pass
-     * through running. It filters the response on the basis of depth and field
-     * query parameters and returns response.
+     * This method fetches the resource for given cm handle using pass through running. It filters the response on the
+     * basis of depth and field query parameters and returns response.
      *
-     * @param cmHandle cm handle identifier
+     * @param cmHandle           cm handle identifier
      * @param resourceIdentifier resource identifier to fetch data
-     * @param body operational body
-     * @param accept accept header parameter
-     * @param fields fields to filter the response data
-     * @param depth depth parameter for the response
+     * @param body               operational body
+     * @param accept             accept header parameter
+     * @param fields             fields to filter the response data
+     * @param depth              depth parameter for the response
      * @return {@code ResponseEntity} response entity
      */
     @Override
     public ResponseEntity<Object> getResourceDataPassthroughRunningForCmHandle(final String cmHandle,
-                                                                               final String resourceIdentifier,
-                                                                               final @Valid OperationalRequest body,
-                                                                               final String accept,
-                                                                               final @Valid String fields,
-                                                                               final @Min(1) @Valid Integer depth) {
+        final String resourceIdentifier,
+        final @Valid OperationalRequest body,
+        final String accept,
+        final @Valid String fields,
+        final @Min(1) @Valid Integer depth) {
         final var modulesListAsJson = dmiService.getResourceDataPassThroughRunningForCmHandle(cmHandle,
-                resourceIdentifier,
-                accept,
-                fields,
-                depth,
-                body.getCmHandleProperties());
+            resourceIdentifier,
+            accept,
+            fields,
+            depth,
+            body.getCmHandleProperties());
         return ResponseEntity.ok(modulesListAsJson);
     }
 

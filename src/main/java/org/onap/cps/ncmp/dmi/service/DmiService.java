@@ -42,8 +42,8 @@ public interface DmiService {
     ModuleSet getModulesForCmHandle(String cmHandle) throws DmiException;
 
     /**
-     * This method used to register the given {@code CmHandles}
-     * which contains list of {@code CmHandle} to cps repository.
+     * This method used to register the given {@code CmHandles} which contains list of {@code CmHandle} to cps
+     * repository.
      *
      * @param cmHandles list of cm-handles
      */
@@ -53,50 +53,58 @@ public interface DmiService {
      * Get module resources for the given cm handle and modules.
      *
      * @param cmHandle cmHandle
-     * @param modules a list of module data
+     * @param modules  a list of module data
      * @return returns all module resources
      */
     String getModuleResources(String cmHandle, List<ModuleReference> modules);
 
     /**
-     * This method use to fetch the resource data from cm handle
-     * for datastore pass-through operational and resource Identifier. Fields and depths query
-     * parameter are used to filter the response from network resource.
+     * This method use to fetch the resource data from cm handle for datastore pass-through operational and resource
+     * Identifier. Fields and depths query parameter are used to filter the response from network resource.
      *
-     * @param cmHandle cm handle identifier
-     * @param resourceIdentifier resource identifier
-     * @param acceptParam accept header parameter
-     * @param fieldsQuery fields query parameter
-     * @param depthQuery depth query parameter
+     * @param cmHandle            cm handle identifier
+     * @param resourceIdentifier  resource identifier
+     * @param acceptParam         accept header parameter
+     * @param fieldsQuery         fields query parameter
+     * @param depthQuery          depth query parameter
      * @param cmHandlePropertyMap cm handle properties
-     *
      * @return {@code Object} response from network function
      */
     Object getResourceDataOperationalForCmHandle(@NotNull String cmHandle,
-                                      @NotNull String resourceIdentifier,
-                                      String acceptParam,
-                                      String fieldsQuery,
-                                      Integer depthQuery,
-                                      Map<String, String> cmHandlePropertyMap);
+        @NotNull String resourceIdentifier,
+        String acceptParam,
+        String fieldsQuery,
+        Integer depthQuery,
+        Map<String, String> cmHandlePropertyMap);
 
     /**
-     * This method use to fetch the resource data from cm handle
-     * for datastore pass-through running and resource Identifier. Fields and depths query
-     * parameter are used to filter the response from network resource.
+     * This method use to fetch the resource data from cm handle for datastore pass-through running and resource
+     * Identifier. Fields and depths query parameter are used to filter the response from network resource.
      *
-     * @param cmHandle cm handle identifier
-     * @param resourceIdentifier resource identifier
-     * @param acceptParam accept header parameter
-     * @param fieldsQuery fields query parameter
-     * @param depthQuery depth query parameter
+     * @param cmHandle            cm handle identifier
+     * @param resourceIdentifier  resource identifier
+     * @param acceptParam         accept header parameter
+     * @param fieldsQuery         fields query parameter
+     * @param depthQuery          depth query parameter
      * @param cmHandlePropertyMap cm handle properties
-     *
      * @return {@code Object} response from network function
      */
     Object getResourceDataPassThroughRunningForCmHandle(@NotNull String cmHandle,
-                                                 @NotNull String resourceIdentifier,
-                                                 String acceptParam,
-                                                 String fieldsQuery,
-                                                 Integer depthQuery,
-                                                 Map<String, String> cmHandlePropertyMap);
+        @NotNull String resourceIdentifier,
+        String acceptParam,
+        String fieldsQuery,
+        Integer depthQuery,
+        Map<String, String> cmHandlePropertyMap);
+
+    /**
+     * Write resource data to sdnc using passthrough running.
+     *
+     * @param cmHandle           cmHandle
+     * @param resourceIdentifier resource identifier
+     * @param dataType           accept header parameter
+     * @param data               request data
+     * @return response from sdnc
+     */
+    String writeResourceDataPassthroughForCmHandle(String cmHandle, String resourceIdentifier, String dataType,
+        Object data);
 }

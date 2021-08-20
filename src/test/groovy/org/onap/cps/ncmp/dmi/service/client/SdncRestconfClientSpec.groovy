@@ -57,7 +57,7 @@ class SdncRestconfClientSpec extends Specification {
         and: 'the rest template returns a valid response entity'
             def mockResponseEntity = Mock(ResponseEntity)
         when: 'get module resources is invoked'
-            def result = objectUnderTest.postOperationWithJsonData(getModuleResourceUrl, jsonData)
+            def result = objectUnderTest.postOperationWithJsonData(getModuleResourceUrl, jsonData, 'application/json')
         then: 'the rest template is called with the correct uri and json in the body'
             1 * mockRestTemplate.postForEntity({ it.toString() == 'http://some-uri/getModuleResourceUrl' },
                     { it.body.contains(jsonData) }, String.class) >> mockResponseEntity

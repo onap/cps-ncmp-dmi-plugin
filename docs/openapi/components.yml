@@ -69,6 +69,19 @@ components:
           additionalProperties:
             type: string
 
+    PassthroughRequest:
+      type: object
+      properties:
+        operation:
+          type: string
+          enum: [ create ]
+        dataType:
+          type: string
+        data:
+          type: object
+        cmHandleProperties:
+          type: object
+
   responses:
     NotFound:
       description: The specified resource was not found

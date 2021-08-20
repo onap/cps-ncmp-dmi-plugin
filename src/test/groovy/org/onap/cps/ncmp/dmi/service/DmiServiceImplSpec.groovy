@@ -24,11 +24,7 @@ import com.fasterxml.jackson.core.JsonProcessingException
 import com.fasterxml.jackson.databind.ObjectMapper
 import org.onap.cps.ncmp.dmi.TestUtils
 import org.onap.cps.ncmp.dmi.config.DmiPluginConfig
-import org.onap.cps.ncmp.dmi.exception.CmHandleRegistrationException
-import org.onap.cps.ncmp.dmi.exception.DmiException
-import org.onap.cps.ncmp.dmi.exception.ModuleResourceNotFoundException
-import org.onap.cps.ncmp.dmi.exception.ModulesNotFoundException
-import org.onap.cps.ncmp.dmi.exception.ResourceDataNotFound
+import org.onap.cps.ncmp.dmi.exception.*
 import org.onap.cps.ncmp.dmi.model.ModuleReference
 import org.onap.cps.ncmp.dmi.service.client.NcmpRestClient
 import org.onap.cps.ncmp.dmi.service.operation.SdncOperations
@@ -149,8 +145,8 @@ class DmiServiceImplSpec extends Specification {
         when: 'get module resources is invoked with the given cm handle and a module list'
             def response = objectUnderTest.getModuleResources(cmHandle, moduleList)
         then: 'then get modules resources called correctly'
-            1 * mockSdncOperations.getModuleResource(cmHandle,excpectedModulesJson1) >> new ResponseEntity<String>('response-body1', HttpStatus.OK)
-            1 * mockSdncOperations.getModuleResource(cmHandle,excpectedModulesJson2) >> new ResponseEntity<String>('response-body2', HttpStatus.OK)
+            1 * mockSdncOperations.getModuleResource(cmHandle, excpectedModulesJson1) >> new ResponseEntity<String>('response-body1', HttpStatus.OK)
+            1 * mockSdncOperations.getModuleResource(cmHandle, excpectedModulesJson2) >> new ResponseEntity<String>('response-body2', HttpStatus.OK)
         and: 'the response equals to the expected response body'
             response == '["response-body1","response-body2"]'
     }
@@ -159,7 +155,7 @@ class DmiServiceImplSpec extends Specification {
         given: 'get module schema is invoked and returns not found'
             mockSdncOperations.getModuleResource(_ as String, _ as String) >> new ResponseEntity<String>('some-response-body', HttpStatus.BAD_REQUEST)
         when: 'get module resources is invoked with the given cm handle and a module list'
-            objectUnderTest.getModuleResources('some-cmHandle', [new ModuleReference()] as LinkedList<ModuleReference> )
+            objectUnderTest.getModuleResources('some-cmHandle', [new ModuleReference()] as LinkedList<ModuleReference>)
         then: 'ModuleResourceNotFoundException is thrown'
             thrown(ModuleResourceNotFoundException)
     }
@@ -173,8 +169,7 @@ class DmiServiceImplSpec extends Specification {
             def depthParam = 10
             def contentQuery = 'content=all'
         and: 'sdnc operation returns OK response'
-            mockSdncOperations.getResouceDataForOperationalAndRunning(cmHandle, resourceId, fieldsParam,
-                    depthParam, acceptHeaderParam,  contentQuery) >> new ResponseEntity<>('response json', HttpStatus.OK)
+            mockSdncOperations.getResouceDataForOperationalAndRunning(cmHandle, resourceId, fieldsParam, depthParam, acceptHeaderParam,  contentQuery) >> new ResponseEntity<>('response json', HttpStatus.OK)
         when: 'get resource data from cm handles service method invoked'
             def response = objectUnderTest.getResourceDataOperationalForCmHandle(cmHandle,
                     resourceId, acceptHeaderParam,
@@ -191,8 +186,7 @@ class DmiServiceImplSpec extends Specification {
             def fieldsParam = 'testFields'
             def depthParam = 10
         and: 'sdnc operation returns "NOT_FOUND" response'
-            mockSdncOperations.getResouceDataForOperationalAndRunning(cmHandle, resourceId, fieldsParam,
-                    depthParam, acceptHeaderParam, _ as String) >> new ResponseEntity<>(HttpStatus.NOT_FOUND)
+            mockSdncOperations.getResouceDataForOperationalAndRunning(cmHandle, resourceId, fieldsParam, depthParam, acceptHeaderParam, _ as String) >> new ResponseEntity<>(HttpStatus.NOT_FOUND)
         when: 'get resource data from cm handles service method invoked'
             objectUnderTest.getResourceDataOperationalForCmHandle(cmHandle,
                     resourceId, acceptHeaderParam,
@@ -218,5 +212,26 @@ class DmiServiceImplSpec extends Specification {
                     fieldsParam, depthParam, null)
         then: 'response have expected json'
             response == 'response json'
+    }
+
+    def 'Write resource data from cm handle.'() {
+        given: 'sdnc returns a OK response'
+            mockSdncOperations.writeResourceDataPassthroughRunnng(_, _, _, _) >> new ResponseEntity<String>('response json', HttpStatus.CREATED)
+        when: 'write resource data from cm handles service method invoked'
+            def response = objectUnderTest.writeResourceDataPassthroughForCmHandle('some-cmHandle',
+                    'some-resourceIdentifier', 'some-dataType', '{some-data}')
+        then: 'response have expected json'
+            response == 'response json'
+    }
+
+    def 'Write resource data with wrong data.'() {
+        given: 'objectMapper returns "JsonProcessingException"'
+            objectUnderTest.objectMapper = mockObjectMapper
+            mockObjectMapper.writeValueAsString(_) >> { throw new JsonProcessingException('some error.') }
+        when: 'write resource data for pass through method is invoked'
+            objectUnderTest.writeResourceDataPassthroughForCmHandle('some-cmHandle',
+                    'some-resourceIdentifier', 'some-dataType', new Object())
+        then: 'a dmi exception is thrown'
+            thrown(DmiException.class)
     }
 }
