@@ -1,0 +1,8 @@
+distribution_type: container
+container_release_tag: 0.0.1
+project: cps/ncmp-dmi-plugin
+log_dir: cps-ncmp-dmi-plugin-maven-docker-stage-master/88
+ref: eb26379d71b67c9e76f366665549c92d6f05b1eb
+containers:
+  - name: 'ncmp-dmi-plugin'
+    version: '0.0.1-20210820T131402Z'
