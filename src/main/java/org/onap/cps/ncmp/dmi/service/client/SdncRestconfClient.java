@@ -23,7 +23,6 @@ package org.onap.cps.ncmp.dmi.service.client;
 import org.onap.cps.ncmp.dmi.config.DmiConfiguration.SdncProperties;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpHeaders;
-import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Component;
 import org.springframework.web.client.RestTemplate;
@@ -43,7 +42,6 @@ public class SdncRestconfClient {
      * restconf get operation on sdnc.
      *
      * @param getResourceUrl sdnc get url
-     *
      * @return the response entity
      */
     public ResponseEntity<String> getOperation(final String getResourceUrl) {
@@ -54,8 +52,7 @@ public class SdncRestconfClient {
      * Overloaded restconf get operation on sdnc with http headers.
      *
      * @param getResourceUrl sdnc get url
-     * @param httpHeaders http headers
-     *
+     * @param httpHeaders    http headers
      * @return the response entity
      */
     public ResponseEntity<String> getOperation(final String getResourceUrl, final HttpHeaders httpHeaders) {
@@ -71,20 +68,15 @@ public class SdncRestconfClient {
      *
      * @param postResourceUrl sdnc post resource url
      * @param jsonData        json data
+     * @param httpHeaders     HTTP headers
      * @return the response entity
      */
     public ResponseEntity<String> postOperationWithJsonData(final String postResourceUrl,
-                                                            final String jsonData) {
+        final String jsonData, final HttpHeaders httpHeaders) {
         final var sdncBaseUrl = sdncProperties.getBaseUrl();
         final var sdncRestconfUrl = sdncBaseUrl.concat(postResourceUrl);
-        final var httpEntity = new HttpEntity<>(jsonData, configureHttpHeaders());
-        return restTemplate.postForEntity(sdncRestconfUrl, httpEntity, String.class);
-    }
-
-    private HttpHeaders configureHttpHeaders() {
-        final var httpHeaders = new HttpHeaders();
         httpHeaders.setBasicAuth(sdncProperties.getAuthUsername(), sdncProperties.getAuthPassword());
-        httpHeaders.set(HttpHeaders.CONTENT_TYPE, MediaType.APPLICATION_JSON_VALUE);
-        return httpHeaders;
+        final var httpEntity = new HttpEntity<>(jsonData, httpHeaders);
+        return restTemplate.postForEntity(sdncRestconfUrl, httpEntity, String.class);
     }
 }
