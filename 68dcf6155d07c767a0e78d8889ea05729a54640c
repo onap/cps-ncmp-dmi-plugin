@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "8eb4adfe_3da37e3c",
+        "filename": "releases/0.0.1-container.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 6738
+      },
+      "writtenOn": "2021-08-20T14:16:32Z",
+      "side": 1,
+      "message": "query: the reference used here is SHA for the maven release. Shouldnt this be the SHA of the commit where the stage-release is performed?",
+      "range": {
+        "startLine": 5,
+        "startChar": 0,
+        "endLine": 5,
+        "endChar": 45
+      },
+      "revId": "68dcf6155d07c767a0e78d8889ea05729a54640c",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    }
+  ]
+}
