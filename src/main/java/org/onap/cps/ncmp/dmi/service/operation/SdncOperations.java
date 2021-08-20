@@ -27,6 +27,7 @@ import org.jetbrains.annotations.NotNull;
 import org.onap.cps.ncmp.dmi.config.DmiConfiguration.SdncProperties;
 import org.onap.cps.ncmp.dmi.service.client.SdncRestconfClient;
 import org.springframework.http.HttpHeaders;
+import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Component;
 
@@ -34,9 +35,9 @@ import org.springframework.stereotype.Component;
 public class SdncOperations {
 
     private static final String TOPOLOGY_URL_TEMPLATE_DATA =
-            "/rests/data/network-topology:network-topology/topology={topologyId}";
+        "/rests/data/network-topology:network-topology/topology={topologyId}";
     private static final String TOPOLOGY_URL_TEMPLATE_OPERATIONAL =
-            "/rests/operations/network-topology:network-topology/topology={topologyId}";
+        "/rests/operations/network-topology:network-topology/topology={topologyId}";
     private static final String MOUNT_URL_TEMPLATE = "/node={nodeId}/yang-ext:mount";
     private static final String GET_SCHEMA_URL = "/ietf-netconf-monitoring:netconf-state/schemas";
     private static final String GET_SCHEMA_SOURCES_URL = "/ietf-netconf-monitoring:get-schema";
@@ -56,7 +57,7 @@ public class SdncOperations {
         this.sdncProperties = sdncProperties;
         this.sdncRestconfClient = sdncRestconfClient;
         topologyUrlOperational =
-                TOPOLOGY_URL_TEMPLATE_OPERATIONAL.replace("{topologyId}", this.sdncProperties.getTopologyId());
+            TOPOLOGY_URL_TEMPLATE_OPERATIONAL.replace("{topologyId}", this.sdncProperties.getTopologyId());
         topologyUrlData = TOPOLOGY_URL_TEMPLATE_DATA.replace("{topologyId}", this.sdncProperties.getTopologyId());
     }
 
@@ -80,34 +81,52 @@ public class SdncOperations {
      */
     public ResponseEntity<String> getModuleResource(final String nodeId, final String moduleProperties) {
         final String getYangResourceUrl = prepareGetOperationSchemaUrl(nodeId);
-        return sdncRestconfClient.postOperationWithJsonData(getYangResourceUrl, moduleProperties);
+        return sdncRestconfClient
+            .postOperationWithJsonData(getYangResourceUrl, moduleProperties, new HttpHeaders());
     }
 
     /**
-     * This method fetches the resource data for given node identifier on given resource
-     * using sdnc client.
+     * This method fetches the resource data for given node identifier on given resource using sdnc client.
      *
-     * @param nodeId network resource identifier
-     * @param resourceId resource identifier
+     * @param nodeId      network resource identifier
+     * @param resourceId  resource identifier
      * @param fieldsValue fields query
-     * @param depthValue depth query
+     * @param depthValue  depth query
      * @param acceptParam accept parameter
      * @return {@code ResponseEntity} response entity
      */
     public ResponseEntity<String> getResouceDataForOperationalAndRunning(final String nodeId,
-                                                                         final String resourceId,
-                                                                         final String fieldsValue,
-                                                                         final Integer depthValue,
-                                                                         final String acceptParam,
+        final String resourceId,
+        final String fieldsValue,
+        final Integer depthValue,
+        final String acceptParam,
                                                                          final String contentQuery) {
         final String getResourceDataUrl = prepareResourceDataUrl(nodeId,
-                resourceId,
-                getQueryList(fieldsValue, depthValue, contentQuery));
+            resourceId,
+            getQueryList(fieldsValue, depthValue, contentQuery));
         final HttpHeaders httpHeaders = new HttpHeaders();
         if (!StringUtils.isEmpty(acceptParam)) {
             httpHeaders.set(HttpHeaders.ACCEPT, acceptParam);
         }
         return sdncRestconfClient.getOperation(getResourceDataUrl, httpHeaders);
+    }
+
+    /**
+     * Write resource data using passthrough running.
+     *
+     * @param nodeId      network resource identifier
+     * @param resourceId  resource identifier
+     * @param contentType http content type
+     * @param requestData request data
+     * @return {@code ResponseEntity} response entity
+     */
+    public ResponseEntity<String> writeResourceDataPassthroughRunnng(final String nodeId,
+        final String resourceId, final String contentType, final String requestData) {
+        final String getResourceDataUrl = preparePassthroughRunningUrl(nodeId, resourceId);
+        final MediaType mediaType = MediaType.parseMediaType(contentType);
+        final HttpHeaders httpHeaders = new HttpHeaders();
+        httpHeaders.setContentType(mediaType);
+        return sdncRestconfClient.postOperationWithJsonData(getResourceDataUrl, requestData, httpHeaders);
     }
 
     @NotNull
@@ -131,6 +150,10 @@ public class SdncOperations {
         return addResource(addTopologyDataUrlwithNode(nodeId), GET_SCHEMA_URL);
     }
 
+    private String preparePassthroughRunningUrl(final String nodeId, final String resourceId) {
+        return addResource(addTopologyDataUrlwithNode(nodeId), "/" + resourceId);
+    }
+
     private String prepareGetOperationSchemaUrl(final String nodeId) {
         final var topologyMountUrl = topologyUrlOperational + MOUNT_URL_TEMPLATE;
         final var topologyMountUrlWithNodeId = topologyMountUrl.replace("{nodeId}", nodeId);
@@ -139,8 +162,8 @@ public class SdncOperations {
 
     @NotNull
     private String prepareResourceDataUrl(final String nodeId,
-                                          final String resourceId,
-                                          final List<String> queryList) {
+        final String resourceId,
+        final List<String> queryList) {
         return addQuery(addResource(addTopologyDataUrlwithNode(nodeId), resourceId), queryList);
     }
 
@@ -152,7 +175,7 @@ public class SdncOperations {
             return url.concat("/" + resourceId);
         }
     }
-    
+
     @NotNull
     private String addQuery(final String url, final List<String> queryList) {
         if (queryList.isEmpty()) {
@@ -173,5 +196,4 @@ public class SdncOperations {
         final String topologyMountUrl = topologyUrlData + MOUNT_URL_TEMPLATE;
         return topologyMountUrl.replace("{nodeId}", nodeId);
     }
-
 }

@@ -56,7 +56,7 @@ class SdncOperationsSpec extends Specification {
         when: 'get module resources is called with the expected parameters'
             objectUnderTest.getModuleResource(nodeId, 'some-json-data')
         then: 'the SDNC Rest client is invoked with the correct URL and json data'
-            1 * mockSdncRestClient.postOperationWithJsonData(expectedUrl, 'some-json-data')
+            1 * mockSdncRestClient.postOperationWithJsonData(expectedUrl, 'some-json-data', new HttpHeaders())
     }
 
     def 'Get resource data from node to SDNC.'() {
@@ -67,5 +67,14 @@ class SdncOperationsSpec extends Specification {
                     'testFields', 10, 'testAcceptParam', 'content=testContent')
         then: 'the get operation is executed with the correct URL'
             1 * mockSdncRestClient.getOperation(expectedUrl, _ as HttpHeaders)
+    }
+
+    def 'Write resource data to SDNC.'() {
+        given: 'excpected url, topology-id, sdncOperation object'
+            def expectedUrl = '/rests/data/network-topology:network-topology/topology=test-topology/node=node1/yang-ext:mount/testResourceId'
+        when: 'write resource data for pass through running is called'
+            objectUnderTest.writeResourceDataPassthroughRunnng('node1', 'testResourceId', 'application/json' ,'testData')
+        then: 'the post operation is executed with the correct URL'
+            1 * mockSdncRestClient.postOperationWithJsonData(expectedUrl, _ as String, _ as HttpHeaders)
     }
 }
