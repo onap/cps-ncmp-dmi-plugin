@@ -22,6 +22,30 @@
       "revId": "68dcf6155d07c767a0e78d8889ea05729a54640c",
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "af634625_7191ab55",
+        "filename": "releases/0.0.1-container.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 7486
+      },
+      "writtenOn": "2021-08-20T14:52:09Z",
+      "side": 1,
+      "message": "This should be SHA of the commit where the stage-release is performed. I must have copied down the wrong SHA. Fix will be up in the next patch",
+      "parentUuid": "8eb4adfe_3da37e3c",
+      "range": {
+        "startLine": 5,
+        "startChar": 0,
+        "endLine": 5,
+        "endChar": 45
+      },
+      "revId": "68dcf6155d07c767a0e78d8889ea05729a54640c",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
     }
   ]
 }
