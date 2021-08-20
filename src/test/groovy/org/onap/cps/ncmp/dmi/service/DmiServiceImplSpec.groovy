@@ -68,7 +68,7 @@ class DmiServiceImplSpec extends Specification {
         when: 'get modules for cm-handle is called'
             def result = objectUnderTest.getModulesForCmHandle(cmHandle)
         then: 'a dmi exception is thrown'
-           thrown(DmiException)
+            thrown(DmiException)
     }
 
     def 'Call get modules for cm-handle and SDNC returns "bad request" status.'() {
@@ -149,8 +149,8 @@ class DmiServiceImplSpec extends Specification {
         when: 'get module resources is invoked with the given cm handle and a module list'
             def response = objectUnderTest.getModuleResources(cmHandle, moduleList)
         then: 'then get modules resources called correctly'
-            1 * mockSdncOperations.getModuleResource(cmHandle,excpectedModulesJson1) >> new ResponseEntity<String>('response-body1', HttpStatus.OK)
-            1 * mockSdncOperations.getModuleResource(cmHandle,excpectedModulesJson2) >> new ResponseEntity<String>('response-body2', HttpStatus.OK)
+            1 * mockSdncOperations.getModuleResource(cmHandle, excpectedModulesJson1) >> new ResponseEntity<String>('response-body1', HttpStatus.OK)
+            1 * mockSdncOperations.getModuleResource(cmHandle, excpectedModulesJson2) >> new ResponseEntity<String>('response-body2', HttpStatus.OK)
         and: 'the response equals to the expected response body'
             response == '["response-body1","response-body2"]'
     }
@@ -159,7 +159,7 @@ class DmiServiceImplSpec extends Specification {
         given: 'get module schema is invoked and returns not found'
             mockSdncOperations.getModuleResource(_ as String, _ as String) >> new ResponseEntity<String>('some-response-body', HttpStatus.BAD_REQUEST)
         when: 'get module resources is invoked with the given cm handle and a module list'
-            objectUnderTest.getModuleResources('some-cmHandle', [new ModuleReference()] as LinkedList<ModuleReference> )
+            objectUnderTest.getModuleResources('some-cmHandle', [new ModuleReference()] as LinkedList<ModuleReference>)
         then: 'ModuleResourceNotFoundException is thrown'
             thrown(ModuleResourceNotFoundException)
     }
@@ -173,8 +173,7 @@ class DmiServiceImplSpec extends Specification {
             def depthParam = 10
             def contentQuery = 'content=all'
         and: 'sdnc operation returns OK response'
-            mockSdncOperations.getResouceDataForOperationalAndRunning(cmHandle, resourceId, fieldsParam,
-                    depthParam, acceptHeaderParam,  contentQuery) >> new ResponseEntity<>('response json', HttpStatus.OK)
+            mockSdncOperations.getResouceDataForOperationalAndRunning(cmHandle, resourceId, fieldsParam, depthParam, acceptHeaderParam, contentQuery) >> new ResponseEntity<>('response json', HttpStatus.OK)
         when: 'get resource data from cm handles service method invoked'
             def response = objectUnderTest.getResourceDataOperationalForCmHandle(cmHandle,
                     resourceId, acceptHeaderParam,
@@ -191,8 +190,7 @@ class DmiServiceImplSpec extends Specification {
             def fieldsParam = 'testFields'
             def depthParam = 10
         and: 'sdnc operation returns "NOT_FOUND" response'
-            mockSdncOperations.getResouceDataForOperationalAndRunning(cmHandle, resourceId, fieldsParam,
-                    depthParam, acceptHeaderParam, _ as String) >> new ResponseEntity<>(HttpStatus.NOT_FOUND)
+            mockSdncOperations.getResouceDataForOperationalAndRunning(cmHandle, resourceId, fieldsParam, depthParam, acceptHeaderParam, _ as String) >> new ResponseEntity<>(HttpStatus.NOT_FOUND)
         when: 'get resource data from cm handles service method invoked'
             objectUnderTest.getResourceDataOperationalForCmHandle(cmHandle,
                     resourceId, acceptHeaderParam,
@@ -211,12 +209,39 @@ class DmiServiceImplSpec extends Specification {
             def contentQuery = 'content=config'
         and: 'sdnc operation returns OK response'
             mockSdncOperations.getResouceDataForOperationalAndRunning(cmHandle, resourceId, fieldsParam,
-                    depthParam, acceptHeaderParam,  contentQuery) >> new ResponseEntity<>('response json', HttpStatus.OK)
+                    depthParam, acceptHeaderParam, contentQuery) >> new ResponseEntity<>('response json', HttpStatus.OK)
         when: 'get resource data from cm handles service method invoked'
             def response = objectUnderTest.getResourceDataPassThroughRunningForCmHandle(cmHandle,
                     resourceId, acceptHeaderParam,
                     fieldsParam, depthParam, null)
         then: 'response have expected json'
             response == 'response json'
+    }
+
+    def 'Write resource data using for passthrough running for the given cm handle.'() {
+        given: 'sdnc returns a OK response'
+            mockSdncOperations.writeResourceDataPassthroughRunnng(_, _, _, _) >> new ResponseEntity<String>('response json', HttpStatus.CREATED)
+        when: 'write resource data from cm handles service method invoked'
+            def response = objectUnderTest.writeResourceDataPassthroughForCmHandle('some-cmHandle',
+                    'some-resourceIdentifier', 'some-dataType', '{some-data}')
+        then: 'response have expected json'
+            response == 'response json'
+    }
+
+    def 'Write resource data for passthrough running with a #scenario.'() {
+        given: 'sdnc returns a response for the write operation'
+            mockSdncOperations.writeResourceDataPassthroughRunnng(_, _, _, _) >> new ResponseEntity<String>('response json', httpStatus)
+        and: 'the data provided in the request body is written as a string'
+            objectUnderTest.objectMapper = mockObjectMapper
+            mockObjectMapper.writeValueAsString(_) >> jsonString
+        when: 'write resource data for pass through method is invoked'
+            objectUnderTest.writeResourceDataPassthroughForCmHandle('some-cmHandle',
+                    'some-resourceIdentifier', 'some-dataType', new Object())
+        then: 'a dmi exception is thrown'
+            thrown(DmiException.class)
+        where: 'the following combinations are tested'
+            scenario                     | httpStatus                       | jsonString
+            '500 response from sdnc'     | HttpStatus.INTERNAL_SERVER_ERROR | '{some-json-data}'
+            'json processing exception ' | HttpStatus.OK                    | { throw new JsonProcessingException('some error.') }
     }
 }
