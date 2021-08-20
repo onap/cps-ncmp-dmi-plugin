@@ -58,12 +58,18 @@ components:
               namespace:
                 type: string
 
-    OperationalRequest:
+    DataAccessRequest:
       type: object
       properties:
         operation:
           type: string
-          enum: [ read ]
+          enum:
+            - read
+            - create
+        dataType:
+          type: string
+        data:
+          type: object
         cmHandleProperties:
           type: object
           additionalProperties:

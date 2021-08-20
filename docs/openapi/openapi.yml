@@ -136,7 +136,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: 'components.yml#/components/schemas/OperationalRequest'
+              $ref: 'components.yml#/components/schemas/DataAccessRequest'
       responses:
         '200':
           $ref: 'components.yml#/components/responses/Ok'
@@ -165,7 +165,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: 'components.yml#/components/schemas/OperationalRequest'
+              $ref: 'components.yml#/components/schemas/DataAccessRequest'
       responses:
         '200':
           $ref: 'components.yml#/components/responses/Ok'
@@ -175,3 +175,29 @@ paths:
           $ref: 'components.yml#/components/responses/Unauthorized'
         '403':
           $ref: 'components.yml#/components/responses/Forbidden'
+
+    post:
+      description: Write data for a cmHandle using passthrough-running
+      tags:
+        - dmi-plugin
+      summary: Write data for a cmHandle
+      operationId: writeDataByPassthroughRunningForCmHandle
+      parameters:
+        - $ref: 'components.yml#/components/parameters/cmHandleInPath'
+        - $ref: 'components.yml#/components/parameters/resourceIdentifierInPath'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: 'components.yml#/components/schemas/DataAccessRequest'
+      responses:
+        '201':
+          $ref: 'components.yml#/components/responses/Created'
+        '400':
+          $ref: 'components.yml#/components/responses/BadRequest'
+        '401':
+          $ref: 'components.yml#/components/responses/Unauthorized'
+        '403':
+          $ref: 'components.yml#/components/responses/Forbidden'
+
