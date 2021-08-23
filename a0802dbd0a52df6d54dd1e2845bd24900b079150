@@ -1,0 +1,142 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3fac4d39_d0327c13",
+        "filename": "docs/openapi/openapi.yml",
+        "patchSetId": 3
+      },
+      "lineNbr": 195,
+      "author": {
+        "id": 5006
+      },
+      "writtenOn": "2021-08-23T15:38:22Z",
+      "side": 1,
+      "message": "201, created, when you will do that then your post method will return ResponseEntity\u003cVoid\u003e which comes to your service layer and it will return void or exception if failed.",
+      "range": {
+        "startLine": 195,
+        "startChar": 9,
+        "endLine": 195,
+        "endChar": 13
+      },
+      "revId": "a0802dbd0a52df6d54dd1e2845bd24900b079150",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "167a2a6f_078490ae",
+        "filename": "src/main/java/org/onap/cps/ncmp/dmi/rest/controller/DmiRestController.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 85,
+      "author": {
+        "id": 5006
+      },
+      "writtenOn": "2021-08-23T15:38:22Z",
+      "side": 1,
+      "message": "nb:dataAccessRequest or body",
+      "range": {
+        "startLine": 85,
+        "startChar": 99,
+        "endLine": 85,
+        "endChar": 117
+      },
+      "revId": "a0802dbd0a52df6d54dd1e2845bd24900b079150",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "1ef9915d_430887d7",
+        "filename": "src/main/java/org/onap/cps/ncmp/dmi/service/operation/SdncOperations.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 85,
+      "author": {
+        "id": 5006
+      },
+      "writtenOn": "2021-08-23T15:38:22Z",
+      "side": 1,
+      "message": "this is broken, should add this param type in header and then pass it.",
+      "range": {
+        "startLine": 85,
+        "startChar": 78,
+        "endLine": 85,
+        "endChar": 89
+      },
+      "revId": "a0802dbd0a52df6d54dd1e2845bd24900b079150",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "2ca7c2f3_d56513ea",
+        "filename": "src/main/java/org/onap/cps/ncmp/dmi/service/operation/SdncOperations.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 126,
+      "author": {
+        "id": 5006
+      },
+      "writtenOn": "2021-08-23T15:38:22Z",
+      "side": 1,
+      "message": "content type",
+      "range": {
+        "startLine": 126,
+        "startChar": 24,
+        "endLine": 126,
+        "endChar": 33
+      },
+      "revId": "a0802dbd0a52df6d54dd1e2845bd24900b079150",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "5ba620f4_b7cf43e1",
+        "filename": "src/test/groovy/org/onap/cps/ncmp/dmi/rest/controller/DmiRestControllerSpec.groovy",
+        "patchSetId": 3
+      },
+      "lineNbr": 209,
+      "author": {
+        "id": 5006
+      },
+      "writtenOn": "2021-08-23T15:38:22Z",
+      "side": 1,
+      "message": "passthrough",
+      "range": {
+        "startLine": 209,
+        "startChar": 26,
+        "endLine": 209,
+        "endChar": 37
+      },
+      "revId": "a0802dbd0a52df6d54dd1e2845bd24900b079150",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "fa866f98_2083c90b",
+        "filename": "src/test/groovy/org/onap/cps/ncmp/dmi/service/operation/SdncOperationsSpec.groovy",
+        "patchSetId": 3
+      },
+      "lineNbr": 76,
+      "author": {
+        "id": 5006
+      },
+      "writtenOn": "2021-08-23T15:38:22Z",
+      "side": 1,
+      "message": ",ws",
+      "range": {
+        "startLine": 76,
+        "startChar": 108,
+        "endLine": 76,
+        "endChar": 110
+      },
+      "revId": "a0802dbd0a52df6d54dd1e2845bd24900b079150",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    }
+  ]
+}
