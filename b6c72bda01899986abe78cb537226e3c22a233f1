@@ -2,6 +2,29 @@
   "comments": [
     {
       "key": {
+        "uuid": "d79bc885_a0ebf60c",
+        "filename": "docs/openapi/components.yml",
+        "patchSetId": 4
+      },
+      "lineNbr": 61,
+      "author": {
+        "id": 7680
+      },
+      "writtenOn": "2021-08-23T16:38:46Z",
+      "side": 1,
+      "message": "It is being used by two http methods\n- PUT -\u003e for read\n- POST -\u003e for write\n\nDo we expect \u0027read\u0027 and \u0027create\u0027 operation to be supported by both PUT and POST?",
+      "range": {
+        "startLine": 61,
+        "startChar": 4,
+        "endLine": 61,
+        "endChar": 21
+      },
+      "revId": "b6c72bda01899986abe78cb537226e3c22a233f1",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "a0ed83a3_c0ba0589",
         "filename": "docs/openapi/components.yml",
         "patchSetId": 4
@@ -18,6 +41,98 @@
         "startChar": 11,
         "endLine": 120,
         "endChar": 24
+      },
+      "revId": "b6c72bda01899986abe78cb537226e3c22a233f1",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "e2616b8c_6ba32384",
+        "filename": "docs/openapi/openapi.yml",
+        "patchSetId": 4
+      },
+      "lineNbr": 193,
+      "author": {
+        "id": 7680
+      },
+      "writtenOn": "2021-08-23T16:38:46Z",
+      "side": 1,
+      "message": "why we decided to use same request for both put (read) and post (write)?",
+      "range": {
+        "startLine": 193,
+        "startChar": 56,
+        "endLine": 193,
+        "endChar": 73
+      },
+      "revId": "b6c72bda01899986abe78cb537226e3c22a233f1",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "5b1566a0_78ba9340",
+        "filename": "src/main/java/org/onap/cps/ncmp/dmi/rest/controller/DmiRestController.java",
+        "patchSetId": 4
+      },
+      "lineNbr": 89,
+      "author": {
+        "id": 7680
+      },
+      "writtenOn": "2021-08-23T16:38:46Z",
+      "side": 1,
+      "message": "nb but important: We should add validation in the controller itself and pass actual object ( MediaType ) to service layer.",
+      "range": {
+        "startLine": 89,
+        "startChar": 9,
+        "endLine": 89,
+        "endChar": 31
+      },
+      "revId": "b6c72bda01899986abe78cb537226e3c22a233f1",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "26985060_c0f04a54",
+        "filename": "src/test/groovy/org/onap/cps/ncmp/dmi/service/DmiServiceImplSpec.groovy",
+        "patchSetId": 4
+      },
+      "lineNbr": 219,
+      "author": {
+        "id": 7680
+      },
+      "writtenOn": "2021-08-23T16:38:46Z",
+      "side": 1,
+      "message": "nb: We are not mocking with the input arguments and hence not validating that sdnc operation is called with correct input.",
+      "range": {
+        "startLine": 219,
+        "startChar": 108,
+        "endLine": 219,
+        "endChar": 144
+      },
+      "revId": "b6c72bda01899986abe78cb537226e3c22a233f1",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "035b9f52_47d67f89",
+        "filename": "src/test/groovy/org/onap/cps/ncmp/dmi/service/DmiServiceImplSpec.groovy",
+        "patchSetId": 4
+      },
+      "lineNbr": 222,
+      "author": {
+        "id": 7680
+      },
+      "writtenOn": "2021-08-23T16:38:46Z",
+      "side": 1,
+      "message": "testing with the string but in the next test we are testing with Object.",
+      "range": {
+        "startLine": 222,
+        "startChar": 65,
+        "endLine": 222,
+        "endChar": 77
       },
       "revId": "b6c72bda01899986abe78cb537226e3c22a233f1",
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
