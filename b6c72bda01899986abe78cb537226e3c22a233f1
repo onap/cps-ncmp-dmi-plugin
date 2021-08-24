@@ -73,6 +73,30 @@
     },
     {
       "key": {
+        "uuid": "2235ec70_62242a2b",
+        "filename": "docs/openapi/components.yml",
+        "patchSetId": 4
+      },
+      "lineNbr": 61,
+      "author": {
+        "id": 7680
+      },
+      "writtenOn": "2021-08-24T10:10:51Z",
+      "side": 1,
+      "message": "We should have correct open api spec but in this case we are adding enums which are never to be supported by each operations and returning an error from implementation. \nWe need to discuss it in the daily.",
+      "parentUuid": "08edcaa1_a7aed025",
+      "range": {
+        "startLine": 61,
+        "startChar": 4,
+        "endLine": 61,
+        "endChar": 21
+      },
+      "revId": "b6c72bda01899986abe78cb537226e3c22a233f1",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "a0ed83a3_c0ba0589",
         "filename": "docs/openapi/components.yml",
         "patchSetId": 4
@@ -226,6 +250,30 @@
       "side": 1,
       "message": "It might be possible that datatype is custom and not supported in Mediatype enum , how would that be handled?",
       "parentUuid": "5b1566a0_78ba9340",
+      "range": {
+        "startLine": 89,
+        "startChar": 9,
+        "endLine": 89,
+        "endChar": 31
+      },
+      "revId": "b6c72bda01899986abe78cb537226e3c22a233f1",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "bf485401_9e19592d",
+        "filename": "src/main/java/org/onap/cps/ncmp/dmi/rest/controller/DmiRestController.java",
+        "patchSetId": 4
+      },
+      "lineNbr": 89,
+      "author": {
+        "id": 7680
+      },
+      "writtenOn": "2021-08-24T10:10:51Z",
+      "side": 1,
+      "message": "We are converting dataType to MediaType in SDNCOperation class, so, we do have an assumption that it is a supported MediaType enum.\n\nIf the intention is different, then we need to revisit the existing implementation.",
+      "parentUuid": "9b57581d_704338d3",
       "range": {
         "startLine": 89,
         "startChar": 9,
