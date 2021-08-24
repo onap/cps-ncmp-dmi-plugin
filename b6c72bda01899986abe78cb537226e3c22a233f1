@@ -167,6 +167,30 @@
     },
     {
       "key": {
+        "uuid": "3eea7ad2_5edb056d",
+        "filename": "docs/openapi/openapi.yml",
+        "patchSetId": 4
+      },
+      "lineNbr": 193,
+      "author": {
+        "id": 5006
+      },
+      "writtenOn": "2021-08-24T09:24:13Z",
+      "side": 1,
+      "message": "they are distinguished by operation : read or write,update,delete in the request body",
+      "parentUuid": "8b19f9b5_93869f47",
+      "range": {
+        "startLine": 193,
+        "startChar": 56,
+        "endLine": 193,
+        "endChar": 73
+      },
+      "revId": "b6c72bda01899986abe78cb537226e3c22a233f1",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "5b1566a0_78ba9340",
         "filename": "src/main/java/org/onap/cps/ncmp/dmi/rest/controller/DmiRestController.java",
         "patchSetId": 4
