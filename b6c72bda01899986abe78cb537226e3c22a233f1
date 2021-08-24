@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "5fd82e35_b880c6ae",
+        "filename": "docs/openapi/components.yml",
+        "patchSetId": 4
+      },
+      "lineNbr": 61,
+      "author": {
+        "id": 6841
+      },
+      "writtenOn": "2021-08-24T08:26:13Z",
+      "side": 1,
+      "message": "yes, write can be done using post, put , patch and delete.",
+      "parentUuid": "d79bc885_a0ebf60c",
+      "range": {
+        "startLine": 61,
+        "startChar": 4,
+        "endLine": 61,
+        "endChar": 21
+      },
+      "revId": "b6c72bda01899986abe78cb537226e3c22a233f1",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "a0ed83a3_c0ba0589",
         "filename": "docs/openapi/components.yml",
         "patchSetId": 4
@@ -48,6 +72,30 @@
     },
     {
       "key": {
+        "uuid": "4c8f8132_c2b2d1d3",
+        "filename": "docs/openapi/components.yml",
+        "patchSetId": 4
+      },
+      "lineNbr": 120,
+      "author": {
+        "id": 6841
+      },
+      "writtenOn": "2021-08-24T08:26:13Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "a0ed83a3_c0ba0589",
+      "range": {
+        "startLine": 120,
+        "startChar": 11,
+        "endLine": 120,
+        "endChar": 24
+      },
+      "revId": "b6c72bda01899986abe78cb537226e3c22a233f1",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "e2616b8c_6ba32384",
         "filename": "docs/openapi/openapi.yml",
         "patchSetId": 4
@@ -59,6 +107,30 @@
       "writtenOn": "2021-08-23T16:38:46Z",
       "side": 1,
       "message": "why we decided to use same request for both put (read) and post (write)?",
+      "range": {
+        "startLine": 193,
+        "startChar": 56,
+        "endLine": 193,
+        "endChar": 73
+      },
+      "revId": "b6c72bda01899986abe78cb537226e3c22a233f1",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "8b19f9b5_93869f47",
+        "filename": "docs/openapi/openapi.yml",
+        "patchSetId": 4
+      },
+      "lineNbr": 193,
+      "author": {
+        "id": 6841
+      },
+      "writtenOn": "2021-08-24T08:26:13Z",
+      "side": 1,
+      "message": "originally they used separate schemas. I changed this as per previous review comment to combine them.",
+      "parentUuid": "e2616b8c_6ba32384",
       "range": {
         "startLine": 193,
         "startChar": 56,
