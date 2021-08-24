@@ -1,0 +1,280 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "cdfcc86d_ad9cb208",
+        "filename": "src/main/java/org/onap/cps/ncmp/dmi/rest/controller/DmiRestController.java",
+        "patchSetId": 6
+      },
+      "lineNbr": 87,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2021-08-24T15:16:52Z",
+      "side": 1,
+      "message": "use className ?",
+      "range": {
+        "startLine": 87,
+        "startChar": 104,
+        "endLine": 87,
+        "endChar": 108
+      },
+      "revId": "8224ee1dd741d2aca0bfdb408e9cac4b1a90f49d",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "35dae91a_2d7fbf90",
+        "filename": "src/main/java/org/onap/cps/ncmp/dmi/rest/controller/DmiRestController.java",
+        "patchSetId": 6
+      },
+      "lineNbr": 126,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2021-08-24T15:16:52Z",
+      "side": 1,
+      "message": "use className",
+      "range": {
+        "startLine": 126,
+        "startChar": 43,
+        "endLine": 126,
+        "endChar": 47
+      },
+      "revId": "8224ee1dd741d2aca0bfdb408e9cac4b1a90f49d",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "ea6e452d_10cb9216",
+        "filename": "src/main/java/org/onap/cps/ncmp/dmi/rest/controller/DmiRestController.java",
+        "patchSetId": 6
+      },
+      "lineNbr": 132,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2021-08-24T15:16:52Z",
+      "side": 1,
+      "message": "not really need but is OK to pass on (for future use)",
+      "range": {
+        "startLine": 132,
+        "startChar": 12,
+        "endLine": 132,
+        "endChar": 18
+      },
+      "revId": "8224ee1dd741d2aca0bfdb408e9cac4b1a90f49d",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "75539540_1377e9b0",
+        "filename": "src/main/java/org/onap/cps/ncmp/dmi/rest/controller/DmiRestController.java",
+        "patchSetId": 6
+      },
+      "lineNbr": 154,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2021-08-24T15:16:52Z",
+      "side": 1,
+      "message": "use classname",
+      "range": {
+        "startLine": 154,
+        "startChar": 43,
+        "endLine": 154,
+        "endChar": 47
+      },
+      "revId": "8224ee1dd741d2aca0bfdb408e9cac4b1a90f49d",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "544e4e82_58302a35",
+        "filename": "src/main/java/org/onap/cps/ncmp/dmi/service/DmiService.java",
+        "patchSetId": 6
+      },
+      "lineNbr": 77,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2021-08-24T15:16:52Z",
+      "side": 1,
+      "message": "not surer about the naming convention here but this was probably already set by Rahul...",
+      "range": {
+        "startLine": 75,
+        "startChar": 1,
+        "endLine": 77,
+        "endChar": 27
+      },
+      "revId": "8224ee1dd741d2aca0bfdb408e9cac4b1a90f49d",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "8b731b61_78d4d93c",
+        "filename": "src/main/java/org/onap/cps/ncmp/dmi/service/DmiServiceImpl.java",
+        "patchSetId": 6
+      },
+      "lineNbr": 179,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2021-08-24T15:16:52Z",
+      "side": 1,
+      "message": "as discussed, I think this could be hardcoded. \nBut maybe its OK as it is it just mean the client NOW needs to know the correct value for this. Maybe that is actually better....\n(so if cleint supplies wrong value you might get an error form node/SDN-C ?)",
+      "range": {
+        "startLine": 179,
+        "startChar": 12,
+        "endLine": 179,
+        "endChar": 23
+      },
+      "revId": "8224ee1dd741d2aca0bfdb408e9cac4b1a90f49d",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "1282022c_ebd07b13",
+        "filename": "src/main/java/org/onap/cps/ncmp/dmi/service/DmiServiceImpl.java",
+        "patchSetId": 6
+      },
+      "lineNbr": 210,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2021-08-24T15:16:52Z",
+      "side": 1,
+      "message": "what JSON, json received from Node or incoming JSON?! Coudl you be clearer in this message?",
+      "range": {
+        "startLine": 210,
+        "startChar": 54,
+        "endLine": 210,
+        "endChar": 58
+      },
+      "revId": "8224ee1dd741d2aca0bfdb408e9cac4b1a90f49d",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "e505ee86_45cdf117",
+        "filename": "src/test/groovy/org/onap/cps/ncmp/dmi/service/DmiServiceImplSpec.groovy",
+        "patchSetId": 6
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2021-08-24T15:16:52Z",
+      "side": 1,
+      "message": "should have individual import (check your IDE settings)",
+      "range": {
+        "startLine": 27,
+        "startChar": 39,
+        "endLine": 27,
+        "endChar": 40
+      },
+      "revId": "8224ee1dd741d2aca0bfdb408e9cac4b1a90f49d",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "79d2b145_d0f83e8a",
+        "filename": "src/test/groovy/org/onap/cps/ncmp/dmi/service/DmiServiceImplSpec.groovy",
+        "patchSetId": 6
+      },
+      "lineNbr": 227,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2021-08-24T15:16:52Z",
+      "side": 1,
+      "message": "json exception",
+      "range": {
+        "startLine": 227,
+        "startChar": 58,
+        "endLine": 227,
+        "endChar": 69
+      },
+      "revId": "8224ee1dd741d2aca0bfdb408e9cac4b1a90f49d",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "5d5b957a_bc6e9a3d",
+        "filename": "src/test/groovy/org/onap/cps/ncmp/dmi/service/DmiServiceImplSpec.groovy",
+        "patchSetId": 6
+      },
+      "lineNbr": 247,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2021-08-24T15:16:52Z",
+      "side": 1,
+      "message": "can this easily be combined with prev test?!",
+      "range": {
+        "startLine": 238,
+        "startChar": 4,
+        "endLine": 247,
+        "endChar": 1
+      },
+      "revId": "8224ee1dd741d2aca0bfdb408e9cac4b1a90f49d",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "e10e0a16_59acbf2c",
+        "filename": "src/test/groovy/org/onap/cps/ncmp/dmi/service/operation/SdncOperationsSpec.groovy",
+        "patchSetId": 6
+      },
+      "lineNbr": 73,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2021-08-24T15:16:52Z",
+      "side": 1,
+      "message": "looks like copy\u0026paste of badly define prev test :-(\n\nI think the expected URL could just be a string literal (its annoying that it cannot be defined in then block)\n\nMaybe an improvement Jira to clean up bad test-labels in this repo?",
+      "range": {
+        "startLine": 73,
+        "startChar": 16,
+        "endLine": 73,
+        "endChar": 65
+      },
+      "revId": "8224ee1dd741d2aca0bfdb408e9cac4b1a90f49d",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "dbd0f965_1c82cafb",
+        "filename": "src/test/resources/WriteDataForCmHandle.json",
+        "patchSetId": 6
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2021-08-24T15:16:52Z",
+      "side": 1,
+      "message": "maybe different values then those on line 5\n\"some-property\": \"some-property-value\"",
+      "range": {
+        "startLine": 8,
+        "startChar": 4,
+        "endLine": 8,
+        "endChar": 29
+      },
+      "revId": "8224ee1dd741d2aca0bfdb408e9cac4b1a90f49d",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    }
+  ]
+}
