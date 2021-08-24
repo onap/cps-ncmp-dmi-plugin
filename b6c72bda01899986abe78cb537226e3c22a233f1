@@ -49,6 +49,30 @@
     },
     {
       "key": {
+        "uuid": "08edcaa1_a7aed025",
+        "filename": "docs/openapi/components.yml",
+        "patchSetId": 4
+      },
+      "lineNbr": 61,
+      "author": {
+        "id": 5006
+      },
+      "writtenOn": "2021-08-24T08:40:19Z",
+      "side": 1,
+      "message": "put can support read, update\npost can support read, create\npatch -\u003e update\ndelete -\u003e delete\n\nso rather than writing operation object for each method , i think its better to combine them and throw error in controller if any ops disjunction appear there.",
+      "parentUuid": "5fd82e35_b880c6ae",
+      "range": {
+        "startLine": 61,
+        "startChar": 4,
+        "endLine": 61,
+        "endChar": 21
+      },
+      "revId": "b6c72bda01899986abe78cb537226e3c22a233f1",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "a0ed83a3_c0ba0589",
         "filename": "docs/openapi/components.yml",
         "patchSetId": 4
@@ -154,6 +178,30 @@
       "writtenOn": "2021-08-23T16:38:46Z",
       "side": 1,
       "message": "nb but important: We should add validation in the controller itself and pass actual object ( MediaType ) to service layer.",
+      "range": {
+        "startLine": 89,
+        "startChar": 9,
+        "endLine": 89,
+        "endChar": 31
+      },
+      "revId": "b6c72bda01899986abe78cb537226e3c22a233f1",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "9b57581d_704338d3",
+        "filename": "src/main/java/org/onap/cps/ncmp/dmi/rest/controller/DmiRestController.java",
+        "patchSetId": 4
+      },
+      "lineNbr": 89,
+      "author": {
+        "id": 5006
+      },
+      "writtenOn": "2021-08-24T08:40:19Z",
+      "side": 1,
+      "message": "It might be possible that datatype is custom and not supported in Mediatype enum , how would that be handled?",
+      "parentUuid": "5b1566a0_78ba9340",
       "range": {
         "startLine": 89,
         "startChar": 9,
