@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "0eeb7431_07f51643",
+        "filename": "docs/openapi/openapi.yml",
+        "patchSetId": 7
+      },
+      "lineNbr": 195,
+      "author": {
+        "id": 5006
+      },
+      "writtenOn": "2021-08-25T08:44:38Z",
+      "side": 1,
+      "message": "this post is to create, to update and patch there are tasks inline for put and patch.",
+      "parentUuid": "0b78d1aa_5b4e2dd4",
+      "range": {
+        "startLine": 195,
+        "startChar": 9,
+        "endLine": 195,
+        "endChar": 12
+      },
+      "revId": "aa2eee33e46fceb9ff326fb609bf305760b07150",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "ba15f152_355d60ba",
         "filename": "src/main/java/org/onap/cps/ncmp/dmi/service/DmiServiceImpl.java",
         "patchSetId": 7
@@ -36,6 +60,30 @@
       "writtenOn": "2021-08-24T21:38:06Z",
       "side": 1,
       "message": "Is there any reason to expose sdnc http reponse here ? Does DmiService care about this implementation detail ? It should be only interested in the result of the operation: returns successfully or exception.\n \nThen, http response can be kept hidden within SdncOperations, SdncOperation has to deal with its http response and throws a business exception if needed.\n\nIn general. the less a component knows about its dependencies, better are the chances to be able to change or refactor these dependencies internally without impacting the components that are using them.",
+      "range": {
+        "startLine": 213,
+        "startChar": 14,
+        "endLine": 213,
+        "endChar": 53
+      },
+      "revId": "aa2eee33e46fceb9ff326fb609bf305760b07150",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "7a92f51c_5245eba5",
+        "filename": "src/main/java/org/onap/cps/ncmp/dmi/service/DmiServiceImpl.java",
+        "patchSetId": 7
+      },
+      "lineNbr": 213,
+      "author": {
+        "id": 5006
+      },
+      "writtenOn": "2021-08-25T08:44:38Z",
+      "side": 1,
+      "message": "As i can see this is done in almost all methods, we can take it as code refactoring task for all the methods in this class and take responseentity handling to operation class.",
+      "parentUuid": "ba15f152_355d60ba",
       "range": {
         "startLine": 213,
         "startChar": 14,
