@@ -49,6 +49,30 @@
     },
     {
       "key": {
+        "uuid": "af87e600_f6026a8e",
+        "filename": "docs/openapi/openapi.yml",
+        "patchSetId": 7
+      },
+      "lineNbr": 195,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2021-08-25T09:42:02Z",
+      "side": 1,
+      "message": "although it is only create NOW this rest endpoint is supporting other write operations soon too so I agree with Bruno 200 is a better response (we need to try to stable API def in this release)",
+      "parentUuid": "0eeb7431_07f51643",
+      "range": {
+        "startLine": 195,
+        "startChar": 9,
+        "endLine": 195,
+        "endChar": 12
+      },
+      "revId": "aa2eee33e46fceb9ff326fb609bf305760b07150",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "ba15f152_355d60ba",
         "filename": "src/main/java/org/onap/cps/ncmp/dmi/service/DmiServiceImpl.java",
         "patchSetId": 7
@@ -89,6 +113,53 @@
         "startChar": 14,
         "endLine": 213,
         "endChar": 53
+      },
+      "revId": "aa2eee33e46fceb9ff326fb609bf305760b07150",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "4411b279_fa131f97",
+        "filename": "src/main/java/org/onap/cps/ncmp/dmi/service/DmiServiceImpl.java",
+        "patchSetId": 7
+      },
+      "lineNbr": 213,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2021-08-25T09:42:02Z",
+      "side": 1,
+      "message": "agreed, lets take this as an improvement task post release.",
+      "parentUuid": "7a92f51c_5245eba5",
+      "range": {
+        "startLine": 213,
+        "startChar": 14,
+        "endLine": 213,
+        "endChar": 53
+      },
+      "revId": "aa2eee33e46fceb9ff326fb609bf305760b07150",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "a981d806_2a34175a",
+        "filename": "src/main/java/org/onap/cps/ncmp/dmi/service/DmiServiceImpl.java",
+        "patchSetId": 7
+      },
+      "lineNbr": 214,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2021-08-25T09:42:02Z",
+      "side": 1,
+      "message": "typo, fix (later if no there changes)",
+      "range": {
+        "startLine": 214,
+        "startChar": 55,
+        "endLine": 214,
+        "endChar": 61
       },
       "revId": "aa2eee33e46fceb9ff326fb609bf305760b07150",
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
