@@ -191,6 +191,30 @@
     },
     {
       "key": {
+        "uuid": "eb6ec0ab_79bf3eda",
+        "filename": "src/main/java/org/onap/cps/ncmp/dmi/service/DmiServiceImpl.java",
+        "patchSetId": 7
+      },
+      "lineNbr": 214,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2021-08-25T12:06:06Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "a981d806_2a34175a",
+      "range": {
+        "startLine": 214,
+        "startChar": 55,
+        "endLine": 214,
+        "endChar": 61
+      },
+      "revId": "aa2eee33e46fceb9ff326fb609bf305760b07150",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "06cbd8c8_742b9d5f",
         "filename": "src/main/java/org/onap/cps/ncmp/dmi/service/operation/SdncOperations.java",
         "patchSetId": 7
