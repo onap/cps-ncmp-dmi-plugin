@@ -134,34 +134,47 @@ class DmiServiceImplSpec extends Specification {
             thrown(DmiException.class)
     }
 
-    def 'Get module resources.'() {
-        given: 'cmHandle, expected jsons and module reference list'
+    def 'Get a single module resource.'() {
+        given: 'a cmHandle and module reference list'
             def cmHandle = 'some-cmHandle'
-            def excpectedModulesJson1 = '{"ietf-netconf-monitoring:input":{"ietf-netconf-monitoring:identifier":"mRef1","ietf-netconf-monitoring:version":"mRefV1"}}'
-            def excpectedModulesJson2 = '{"ietf-netconf-monitoring:input":{"ietf-netconf-monitoring:identifier":"mRef2","ietf-netconf-monitoring:version":"mRefV2"}}'
-            def mRef1 = Mock(ModuleReference.class)
-            def mRef2 = Mock(ModuleReference.class)
-            mRef1.getName() >> 'mRef1'
-            mRef1.getRevision() >> 'mRefV1'
-            mRef2.getName() >> 'mRef2'
-            mRef2.getRevision() >> 'mRefV2'
-            def moduleList = [mRef1, mRef2] as LinkedList<ModuleReference>
+            def moduleReference = new ModuleReference(name: 'NAME',revision: 'REVISION')
+            def moduleList = [moduleReference]
+        and: 'the sdnc request body contains the correct name and revision'
+            def expectedRequestBody = '{"ietf-netconf-monitoring:input":{"ietf-netconf-monitoring:identifier":"NAME","ietf-netconf-monitoring:version":"REVISION"}}'
         when: 'get module resources is invoked with the given cm handle and a module list'
-            def response = objectUnderTest.getModuleResources(cmHandle, moduleList)
-        then: 'then get modules resources called correctly'
-            1 * mockSdncOperations.getModuleResource(cmHandle, excpectedModulesJson1) >> new ResponseEntity<String>('response-body1', HttpStatus.OK)
-            1 * mockSdncOperations.getModuleResource(cmHandle, excpectedModulesJson2) >> new ResponseEntity<String>('response-body2', HttpStatus.OK)
-        and: 'the response equals to the expected response body'
-            response == '["response-body1","response-body2"]'
+            def result = objectUnderTest.getModuleResources(cmHandle, moduleList)
+        then: 'get modules resources is called once with the expected request body'
+            1 * mockSdncOperations.getModuleResource(cmHandle, expectedRequestBody) >> new ResponseEntity<String>('sdnc-response-body', HttpStatus.OK)
+        and: 'the result is a sdnc response wrapped inside an array'
+            assert result == '["sdnc-response-body"]'
     }
 
-    def 'Get module resources for a failed get module schema request.'() {
-        given: 'get module schema is invoked and returns not found'
-            mockSdncOperations.getModuleResource(_ as String, _ as String) >> new ResponseEntity<String>('some-response-body', HttpStatus.BAD_REQUEST)
+    def 'Get multiple module resources.'() {
+        given: 'a cmHandle and module reference list'
+            def cmHandle = 'some-cmHandle'
+            def moduleReference1 = new ModuleReference(name: 'name-1',revision: 'revision-1')
+            def moduleReference2 = new ModuleReference(name: 'name-2',revision: 'revision-2')
+            def moduleList = [moduleReference1, moduleReference2]
+        when: 'get module resources is invoked with the given cm handle and a module list'
+            def result = objectUnderTest.getModuleResources(cmHandle, moduleList)
+        then: 'get modules resources is called twice with the expected request body'
+            2 * mockSdncOperations.getModuleResource(cmHandle, _) >>> [new ResponseEntity<String>('sdnc-response-body1', HttpStatus.OK),
+                                                                   new ResponseEntity<String>('sdnc-response-body2', HttpStatus.OK)]
+        and: 'the response is the combination of the responses from sdnc'
+            assert result == '["sdnc-response-body1","sdnc-response-body2"]'
+    }
+
+    def 'Get module resources when sdnc returns #scenario response.'() {
+        given: 'get module schema is invoked and returns a response from sdnc'
+            mockSdncOperations.getModuleResource(_ as String, _ as String) >> new ResponseEntity<String>('some-response-body', httpResponse)
         when: 'get module resources is invoked with the given cm handle and a module list'
             objectUnderTest.getModuleResources('some-cmHandle', [new ModuleReference()] as LinkedList<ModuleReference>)
         then: 'ModuleResourceNotFoundException is thrown'
-            thrown(ModuleResourceNotFoundException)
+            thrown(exception)
+        where: 'the following values are returned'
+            scenario            | httpResponse                     || exception
+            'not found'         | HttpStatus.NOT_FOUND             || ModuleResourceNotFoundException
+            'a internal server' | HttpStatus.INTERNAL_SERVER_ERROR || DmiException
     }
 
     def 'Get resource data for pass through operational from cm handle.'() {

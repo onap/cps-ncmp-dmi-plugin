@@ -29,8 +29,8 @@ import lombok.extern.slf4j.Slf4j;
 import org.onap.cps.ncmp.dmi.model.CmHandles;
 import org.onap.cps.ncmp.dmi.model.DataAccessReadRequest;
 import org.onap.cps.ncmp.dmi.model.DataAccessWriteRequest;
+import org.onap.cps.ncmp.dmi.model.DmiReadRequestBody;
 import org.onap.cps.ncmp.dmi.model.ModuleReference;
-import org.onap.cps.ncmp.dmi.model.ModuleRequestParent;
 import org.onap.cps.ncmp.dmi.model.ModuleSet;
 import org.onap.cps.ncmp.dmi.rest.api.DmiPluginApi;
 import org.onap.cps.ncmp.dmi.rest.api.DmiPluginInternalApi;
@@ -62,10 +62,10 @@ public class DmiRestController implements DmiPluginApi, DmiPluginInternalApi {
     }
 
     @Override
-    public ResponseEntity<Object> retrieveModuleResources(@Valid final ModuleRequestParent moduleRequestParent,
+    public ResponseEntity<Object> retrieveModuleResources(@Valid final DmiReadRequestBody dmiReadRequestBody,
         final String cmHandle) {
-        if (moduleRequestParent.getOperation().toString().equals("read")) {
-            final var moduleReferenceList = convertRestObjectToJavaApiObject(moduleRequestParent);
+        if (dmiReadRequestBody.getOperation().toString().equals("read")) {
+            final var moduleReferenceList = convertRestObjectToJavaApiObject(dmiReadRequestBody);
             final var response = dmiService.getModuleResources(cmHandle, moduleReferenceList);
             if (response.isEmpty()) {
                 return new ResponseEntity<>(response, HttpStatus.NOT_FOUND);
@@ -165,9 +165,9 @@ public class DmiRestController implements DmiPluginApi, DmiPluginInternalApi {
         return ResponseEntity.ok(modulesListAsJson);
     }
 
-    private List<ModuleReference> convertRestObjectToJavaApiObject(final ModuleRequestParent moduleRequestParent) {
+    private List<ModuleReference> convertRestObjectToJavaApiObject(final DmiReadRequestBody dmiReadRequestBody) {
         return objectMapper
-            .convertValue(moduleRequestParent.getData().getModules(), new TypeReference<List<ModuleReference>>() {
+            .convertValue(dmiReadRequestBody.getData().getModules(), new TypeReference<List<ModuleReference>>() {
             });
     }
 }
