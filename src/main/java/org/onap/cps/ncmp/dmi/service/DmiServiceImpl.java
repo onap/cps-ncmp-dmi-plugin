@@ -100,10 +100,14 @@ public class DmiServiceImpl implements DmiService {
             final var responseEntity = sdncOperations.getModuleResource(cmHandle, moduleRequest);
             if (responseEntity.getStatusCode() == HttpStatus.OK) {
                 getModuleResponses.add(responseEntity.getBody());
-            } else {
+            } else if (responseEntity.getStatusCode() == HttpStatus.NOT_FOUND) {
                 log.error("SDNC did not return a module resource for the given cmHandle {}", cmHandle);
                 throw new ModuleResourceNotFoundException(cmHandle,
                     "SDNC did not return a module resource for the given cmHandle.");
+            } else {
+                log.error("SDNC did not return a module resource for the given cmHandle {}", cmHandle);
+                throw new DmiException(cmHandle,
+                    "response code : " + responseEntity.getStatusCode() + " message : " + responseEntity.getBody());
             }
         }
         return getModuleResponses.toJSONString();
