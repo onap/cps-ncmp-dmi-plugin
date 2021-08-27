@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "2629eed6_366e7f80",
+        "filename": "src/main/java/org/onap/cps/ncmp/dmi/service/DmiServiceImpl.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 108,
+      "author": {
+        "id": 6738
+      },
+      "writtenOn": "2021-08-27T10:47:44Z",
+      "side": 1,
+      "message": "change the error message to cover all other exceptions other than NOT_FOUND.",
+      "range": {
+        "startLine": 108,
+        "startChar": 27,
+        "endLine": 108,
+        "endChar": 90
+      },
+      "revId": "7b944af507a531c87e2cc12982af1957a9c4246a",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    }
+  ]
+}
