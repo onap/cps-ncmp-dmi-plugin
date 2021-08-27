@@ -1,5 +1,5 @@
 {
-  "schemas": {
+  "ietf-netconf-monitoring:schemas": {
     "schema": [
       {
         "identifier": "example-identifier",
