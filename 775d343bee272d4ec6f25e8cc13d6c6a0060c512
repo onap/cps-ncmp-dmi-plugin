@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "2456818e_332a98e4",
+        "filename": "src/test/groovy/org/onap/cps/ncmp/dmi/service/DmiServiceImplSpec.groovy",
+        "patchSetId": 3
+      },
+      "lineNbr": 163,
+      "author": {
+        "id": 5006
+      },
+      "writtenOn": "2021-08-27T12:30:20Z",
+      "side": 1,
+      "message": "list of all modules resource schema returned by sdnc",
+      "range": {
+        "startLine": 163,
+        "startChar": 34,
+        "endLine": 163,
+        "endChar": 72
+      },
+      "revId": "775d343bee272d4ec6f25e8cc13d6c6a0060c512",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "601cf361_49b9cbb1",
+        "filename": "src/test/groovy/org/onap/cps/ncmp/dmi/service/DmiServiceImplSpec.groovy",
+        "patchSetId": 3
+      },
+      "lineNbr": 164,
+      "author": {
+        "id": 5006
+      },
+      "writtenOn": "2021-08-27T12:30:20Z",
+      "side": 1,
+      "message": "is it needed? this pattern not followed in other tests",
+      "range": {
+        "startLine": 164,
+        "startChar": 12,
+        "endLine": 164,
+        "endChar": 18
+      },
+      "revId": "775d343bee272d4ec6f25e8cc13d6c6a0060c512",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    }
+  ]
+}
