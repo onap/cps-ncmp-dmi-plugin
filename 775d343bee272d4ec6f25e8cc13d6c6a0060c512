@@ -45,6 +45,30 @@
       "revId": "775d343bee272d4ec6f25e8cc13d6c6a0060c512",
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "cfb3a92a_1a5009c2",
+        "filename": "src/test/groovy/org/onap/cps/ncmp/dmi/service/DmiServiceImplSpec.groovy",
+        "patchSetId": 3
+      },
+      "lineNbr": 164,
+      "author": {
+        "id": 6841
+      },
+      "writtenOn": "2021-08-27T14:07:08Z",
+      "side": 1,
+      "message": "no it is not needed. it is only added as a matter of improving readability https://wiki.onap.org/pages/viewpage.action?pageId\u003d92998161",
+      "parentUuid": "601cf361_49b9cbb1",
+      "range": {
+        "startLine": 164,
+        "startChar": 12,
+        "endLine": 164,
+        "endChar": 18
+      },
+      "revId": "775d343bee272d4ec6f25e8cc13d6c6a0060c512",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
     }
   ]
 }
