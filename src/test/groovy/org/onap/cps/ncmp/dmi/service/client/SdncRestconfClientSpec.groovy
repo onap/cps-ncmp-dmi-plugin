@@ -23,6 +23,7 @@ package org.onap.cps.ncmp.dmi.service.client
 import org.onap.cps.ncmp.dmi.config.DmiConfiguration
 import org.springframework.http.HttpEntity
 import org.springframework.http.HttpHeaders
+import org.springframework.http.HttpMethod
 import org.springframework.http.ResponseEntity
 import org.springframework.web.client.RestTemplate
 import spock.lang.Specification
@@ -40,7 +41,8 @@ class SdncRestconfClientSpec extends Specification {
             setupTestConfigurationData()
         and: 'the rest template returns a valid response entity'
             def mockResponseEntity = Mock(ResponseEntity)
-            mockRestTemplate.getForEntity({ it.toString() == 'http://some-uri/getResourceUrl' }, String.class, _ as HttpEntity) >> mockResponseEntity
+            mockRestTemplate.exchange({ it.toString() == 'http://some-uri/getResourceUrl' },
+                    HttpMethod.GET, _ as HttpEntity, String.class) >> mockResponseEntity
         when: 'GET operation is invoked'
             def result = objectUnderTest.getOperation(getResourceUrl)
         then: 'the output of the method is equal to the output from the test template'
@@ -72,7 +74,8 @@ class SdncRestconfClientSpec extends Specification {
             setupTestConfigurationData()
         and: 'the rest template returns a valid response entity'
             def mockResponseEntity = Mock(ResponseEntity)
-            mockRestTemplate.getForEntity({ it.toString() == 'http://some-uri/getResourceUrl' }, String.class, _ as HttpEntity) >> mockResponseEntity
+            mockRestTemplate.exchange({ it.toString() == 'http://some-uri/getResourceUrl' },
+                    HttpMethod.GET, _ as HttpEntity, String.class) >> mockResponseEntity
         when: 'GET operation is invoked'
             def result = objectUnderTest.getOperation(getResourceUrl, new HttpHeaders())
         then: 'the output of the method is equal to the output from the test template'
