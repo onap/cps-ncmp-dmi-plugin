@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "b491b470_4a7dd72c",
+        "filename": "src/main/java/org/onap/cps/ncmp/dmi/service/client/SdncRestconfClient.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 65,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2021-08-27T15:35:40Z",
+      "side": 1,
+      "message": "non-blocking: coulf be one line",
+      "range": {
+        "startLine": 64,
+        "startChar": 36,
+        "endLine": 65,
+        "endChar": 58
+      },
+      "revId": "11e9f72aa953516053d867e09a0e95c77d7d1a88",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    }
+  ]
+}
