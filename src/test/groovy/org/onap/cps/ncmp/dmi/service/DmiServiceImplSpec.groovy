@@ -145,8 +145,8 @@ class DmiServiceImplSpec extends Specification {
             def result = objectUnderTest.getModuleResources(cmHandle, moduleList)
         then: 'get modules resources is called once with the expected cm handle and request body'
             1 * mockSdncOperations.getModuleResource(cmHandle, expectedRequestBody) >> new ResponseEntity<String>('sdnc-response-body', HttpStatus.OK)
-        and: 'the result is a sdnc response wrapped inside an array'
-            assert result == '["sdnc-response-body"]'
+        and: 'the result is an array containing one json object with the expected name, revision and yang-source'
+            assert result == '[{"yang-source":"sdnc-response-body","name":"NAME","revision":"REVISION"}]'
     }
 
     def 'Get multiple module resources.'() {
@@ -160,8 +160,8 @@ class DmiServiceImplSpec extends Specification {
         then: 'get modules resources is called twice'
             2 * mockSdncOperations.getModuleResource(cmHandle, _) >>> [new ResponseEntity<String>('sdnc-response-body1', HttpStatus.OK),
                                                                    new ResponseEntity<String>('sdnc-response-body2', HttpStatus.OK)]
-        and: 'the response is the list of all module resource schemas returned by sdnc'
-            assert result == '["sdnc-response-body1","sdnc-response-body2"]'
+        and: 'the result is an array containing json objects with the expected name, revision and yang-source'
+            assert result == '[{"yang-source":"sdnc-response-body1","name":"name-1","revision":"revision-1"},{"yang-source":"sdnc-response-body2","name":"name-2","revision":"revision-2"}]'
     }
 
     def 'Get module resources when sdnc returns #scenario response.'() {

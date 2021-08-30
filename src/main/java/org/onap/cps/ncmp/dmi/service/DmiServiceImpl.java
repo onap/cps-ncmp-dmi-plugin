@@ -29,6 +29,7 @@ import java.util.Map;
 import javax.validation.constraints.NotNull;
 import lombok.extern.slf4j.Slf4j;
 import net.minidev.json.JSONArray;
+import net.minidev.json.JSONObject;
 import org.apache.groovy.parser.antlr4.util.StringUtils;
 import org.onap.cps.ncmp.dmi.config.DmiPluginConfig.DmiPluginProperties;
 import org.onap.cps.ncmp.dmi.exception.CmHandleRegistrationException;
@@ -94,12 +95,12 @@ public class DmiServiceImpl implements DmiService {
 
     @Override
     public String getModuleResources(final String cmHandle, final List<ModuleReference> moduleReferences) {
-        final JSONArray getModuleResponses = new JSONArray();
+        final var getModuleResponses = new JSONArray();
         for (final var moduleReference : moduleReferences) {
             final var moduleRequest = createModuleRequest(moduleReference);
-            final var responseEntity = sdncOperations.getModuleResource(cmHandle, moduleRequest);
+            final ResponseEntity responseEntity = sdncOperations.getModuleResource(cmHandle, moduleRequest);
             if (responseEntity.getStatusCode() == HttpStatus.OK) {
-                getModuleResponses.add(responseEntity.getBody());
+                getModuleResponses.add(toJsonObject(moduleReference, responseEntity));
             } else if (responseEntity.getStatusCode() == HttpStatus.NOT_FOUND) {
                 log.error("SDNC did not return a module resource for the given cmHandle {}", cmHandle);
                 throw new ModuleResourceNotFoundException(cmHandle,
@@ -248,5 +249,14 @@ public class DmiServiceImpl implements DmiService {
                 "JSON exception occurred when creating the module request.", e);
         }
         return moduleRequest;
+    }
+
+    private JSONObject toJsonObject(final ModuleReference moduleReference,
+        final ResponseEntity<String> responseEntity) {
+        final var jsonObject = new JSONObject();
+        jsonObject.put("name", moduleReference.getName());
+        jsonObject.put("revision", moduleReference.getRevision());
+        jsonObject.put("yang-source", responseEntity.getBody());
+        return jsonObject;
     }
 }
