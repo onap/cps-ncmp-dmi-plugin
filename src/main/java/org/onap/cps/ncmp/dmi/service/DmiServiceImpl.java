@@ -22,6 +22,8 @@ package org.onap.cps.ncmp.dmi.service;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.google.gson.Gson;
+import com.google.gson.JsonObject;
 import java.util.ArrayList;
 import java.util.LinkedHashMap;
 import java.util.List;
@@ -29,6 +31,7 @@ import java.util.Map;
 import javax.validation.constraints.NotNull;
 import lombok.extern.slf4j.Slf4j;
 import net.minidev.json.JSONArray;
+import net.minidev.json.JSONObject;
 import org.apache.groovy.parser.antlr4.util.StringUtils;
 import org.onap.cps.ncmp.dmi.config.DmiPluginConfig.DmiPluginProperties;
 import org.onap.cps.ncmp.dmi.exception.CmHandleRegistrationException;
@@ -94,12 +97,12 @@ public class DmiServiceImpl implements DmiService {
 
     @Override
     public String getModuleResources(final String cmHandle, final List<ModuleReference> moduleReferences) {
-        final JSONArray getModuleResponses = new JSONArray();
+        final var getModuleResponses = new JSONArray();
         for (final var moduleReference : moduleReferences) {
             final var moduleRequest = createModuleRequest(moduleReference);
-            final var responseEntity = sdncOperations.getModuleResource(cmHandle, moduleRequest);
+            final ResponseEntity responseEntity = sdncOperations.getModuleResource(cmHandle, moduleRequest);
             if (responseEntity.getStatusCode() == HttpStatus.OK) {
-                getModuleResponses.add(responseEntity.getBody());
+                getModuleResponses.add(toJsonObject(moduleReference, responseEntity));
             } else if (responseEntity.getStatusCode() == HttpStatus.NOT_FOUND) {
                 log.error("SDNC did not return a module resource for the given cmHandle {}", cmHandle);
                 throw new ModuleResourceNotFoundException(cmHandle,
@@ -248,5 +251,24 @@ public class DmiServiceImpl implements DmiService {
                 "JSON exception occurred when creating the module request.", e);
         }
         return moduleRequest;
+    }
+
+    private JSONObject toJsonObject(final ModuleReference moduleReference,
+        final ResponseEntity<String> response) {
+        final var jsonObject = new JSONObject();
+        jsonObject.put("moduleName", moduleReference.getName());
+        jsonObject.put("revision", moduleReference.getRevision());
+        final var parentJsonDataObject = new Gson().fromJson(response.getBody(), JsonObject.class);
+        if (parentJsonDataObject.getAsJsonObject("ietf-netconf-monitoring:output") == null
+            || parentJsonDataObject.getAsJsonObject("ietf-netconf-monitoring:output")
+                .getAsJsonPrimitive("data") == null) {
+            log.error("Error occurred when trying to parse the response body from sdnc {}", response.getBody());
+            throw new ModuleResourceNotFoundException(response.getBody(),
+                "Error occurred when trying to parse the response body from sdnc.");
+        }
+        final var moduleReferenceData =
+            parentJsonDataObject.getAsJsonObject("ietf-netconf-monitoring:output").getAsJsonPrimitive("data");
+        jsonObject.put("yangSource", moduleReferenceData.toString());
+        return jsonObject;
     }
 }
