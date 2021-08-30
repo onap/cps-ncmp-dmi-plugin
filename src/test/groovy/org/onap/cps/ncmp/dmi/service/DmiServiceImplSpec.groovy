@@ -144,9 +144,9 @@ class DmiServiceImplSpec extends Specification {
         when: 'get module resources is invoked with the given cm handle and a module list'
             def result = objectUnderTest.getModuleResources(cmHandle, moduleList)
         then: 'get modules resources is called once with the expected cm handle and request body'
-            1 * mockSdncOperations.getModuleResource(cmHandle, expectedRequestBody) >> new ResponseEntity<String>('sdnc-response-body', HttpStatus.OK)
-        and: 'the result is a sdnc response wrapped inside an array'
-            assert result == '["sdnc-response-body"]'
+            1 * mockSdncOperations.getModuleResource(cmHandle, expectedRequestBody) >> new ResponseEntity<String>('{"ietf-netconf-monitoring:output": {"data": "some-data"}}', HttpStatus.OK)
+        and: 'the result is an array containing one json object with the expected name, revision and yang-source'
+            assert result == '[{"yangSource":"\\"some-data\\"","moduleName":"NAME","revision":"REVISION"}]'
     }
 
     def 'Get multiple module resources.'() {
@@ -158,10 +158,27 @@ class DmiServiceImplSpec extends Specification {
         when: 'get module resources is invoked with the given cm handle and a module list'
             def result = objectUnderTest.getModuleResources(cmHandle, moduleList)
         then: 'get modules resources is called twice'
-            2 * mockSdncOperations.getModuleResource(cmHandle, _) >>> [new ResponseEntity<String>('sdnc-response-body1', HttpStatus.OK),
-                                                                   new ResponseEntity<String>('sdnc-response-body2', HttpStatus.OK)]
-        and: 'the response is the list of all module resource schemas returned by sdnc'
-            assert result == '["sdnc-response-body1","sdnc-response-body2"]'
+            2 * mockSdncOperations.getModuleResource(cmHandle, _) >>> [new ResponseEntity<String>('{"ietf-netconf-monitoring:output": {"data": "some-data1"}}', HttpStatus.OK),
+                                                                   new ResponseEntity<String>('{"ietf-netconf-monitoring:output": {"data": "some-data2"}}', HttpStatus.OK)]
+        and: 'the result is an array containing json objects with the expected name, revision and yang-source'
+            assert result == '[{"yangSource":"\\"some-data1\\"","moduleName":"name-1","revision":"revision-1"},{"yangSource":"\\"some-data2\\"","moduleName":"name-2","revision":"revision-2"}]'
+    }
+
+    def 'Get a module resource with module resource not found exception for #scenario.'() {
+        given: 'a cmHandle and module reference list'
+            def cmHandle = 'some-cmHandle'
+            def moduleReference = new ModuleReference(name: 'NAME',revision: 'REVISION')
+            def moduleList = [moduleReference]
+        when: 'get module resources is invoked with the given cm handle and a module list'
+             objectUnderTest.getModuleResources(cmHandle, moduleList)
+        then: 'get modules resources is called once with a response body that contains no data'
+            1 * mockSdncOperations.getModuleResource(cmHandle, _) >> new ResponseEntity<String>(responseBody, HttpStatus.OK)
+        and: 'a module resource not found exception is thrown'
+            thrown(ModuleResourceNotFoundException)
+        where: 'the following values are returned'
+            scenario                                                              | responseBody
+            'a response body containing no data object'                           | '{"ietf-netconf-monitoring:output": {"null": "some-data"}}'
+            'a response body containing no ietf-netconf-monitoring:output object' | '{"null": {"data": "some-data"}}'
     }
 
     def 'Get module resources when sdnc returns #scenario response.'() {
