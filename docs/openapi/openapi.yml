@@ -31,7 +31,7 @@ tags:
 
 
 paths:
-  /v1/ch/{cmHandle}/modules :
+  /v1/ch/{cmHandle}/modules:
     post:
       tags:
         - dmi-plugin

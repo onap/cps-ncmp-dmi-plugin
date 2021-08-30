@@ -23,6 +23,7 @@ package org.onap.cps.ncmp.dmi.service.client;
 import org.onap.cps.ncmp.dmi.config.DmiConfiguration.SdncProperties;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpHeaders;
+import org.springframework.http.HttpMethod;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Component;
 import org.springframework.web.client.RestTemplate;
@@ -60,7 +61,8 @@ public class SdncRestconfClient {
         final String sdncRestconfUrl = sdncBaseUrl.concat(getResourceUrl);
         httpHeaders.setBasicAuth(sdncProperties.getAuthUsername(), sdncProperties.getAuthPassword());
         final var httpEntity = new HttpEntity<>(httpHeaders);
-        return restTemplate.getForEntity(sdncRestconfUrl, String.class, httpEntity);
+        return restTemplate.exchange(sdncRestconfUrl,
+                HttpMethod.GET, httpEntity, String.class);
     }
 
     /**

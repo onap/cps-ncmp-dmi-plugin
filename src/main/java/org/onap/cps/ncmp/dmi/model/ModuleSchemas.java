@@ -20,6 +20,7 @@
 
 package org.onap.cps.ncmp.dmi.model;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -30,5 +31,6 @@ import lombok.Setter;
 @Setter
 public class ModuleSchemas {
 
+    @JsonProperty("ietf-netconf-monitoring:schemas")
     private ModuleSchemaList schemas;
 }
