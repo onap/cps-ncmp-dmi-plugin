@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "4bda7804_ff9952cf",
+        "filename": "src/test/groovy/org/onap/cps/ncmp/dmi/service/DmiServiceImplSpec.groovy",
+        "patchSetId": 5
+      },
+      "lineNbr": 180,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2021-08-31T12:00:10Z",
+      "side": 1,
+      "message": "commend string part could b hardcode on line 167",
+      "range": {
+        "startLine": 180,
+        "startChar": 13,
+        "endLine": 180,
+        "endChar": 39
+      },
+      "revId": "6d7e304474717735610f02941900f780a8c93862",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "294e32d5_aa10531e",
+        "filename": "src/test/groovy/org/onap/cps/ncmp/dmi/service/DmiServiceImplSpec.groovy",
+        "patchSetId": 5
+      },
+      "lineNbr": 181,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2021-08-31T12:00:10Z",
+      "side": 1,
+      "message": "mot necessary for this test",
+      "range": {
+        "startLine": 181,
+        "startChar": 94,
+        "endLine": 181,
+        "endChar": 115
+      },
+      "revId": "6d7e304474717735610f02941900f780a8c93862",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    }
+  ]
+}
