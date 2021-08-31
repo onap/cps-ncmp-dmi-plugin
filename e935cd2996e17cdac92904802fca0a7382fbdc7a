@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "d2b627b7_20b20379",
+        "filename": "src/main/resources/application.yml",
+        "patchSetId": 1
+      },
+      "lineNbr": 76,
+      "author": {
+        "id": 7680
+      },
+      "writtenOn": "2021-08-31T18:29:18Z",
+      "side": 1,
+      "message": "unrelated: \n\nWe are using logback in the cps and cps-temporal but I don\u0027t see it in ncmp-dmi-plugin repo. \n\nIn cps, this logback is in cps-service which seems a little odd.",
+      "range": {
+        "startLine": 69,
+        "startChar": 0,
+        "endLine": 76,
+        "endChar": 15
+      },
+      "revId": "e935cd2996e17cdac92904802fca0a7382fbdc7a",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "4a2d52c2_e8f17d92",
+        "filename": "src/test/resources/application.yml",
+        "patchSetId": 1
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 7680
+      },
+      "writtenOn": "2021-08-31T18:29:18Z",
+      "side": 1,
+      "message": "When running springBootTest or WebMvcTest, spring first look for property file in the test/resources. If it is not found, it considers the application.yml in the src folder. \n\nWe need a a different property file for test because there are different values related to security and sdnc. Due to this, spring will pick this file and we need to mention all the properties explicitly in the test application.yml even though the value is same as defined in application.yml.\n\n\nTest profile is something we can explore to reduce it.",
+      "range": {
+        "startLine": 19,
+        "startChar": 0,
+        "endLine": 19,
+        "endChar": 4
+      },
+      "revId": "e935cd2996e17cdac92904802fca0a7382fbdc7a",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    }
+  ]
+}
