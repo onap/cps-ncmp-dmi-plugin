@@ -18,7 +18,7 @@
 
 rest:
   api:
-    dmi-base-path: /dmi/api
+    dmi-base-path: /dmi
 
 security:
   auth:
