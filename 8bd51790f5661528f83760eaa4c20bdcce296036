@@ -1,0 +1,119 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "c40b7214_2a2d0f18",
+        "filename": "src/main/java/org/onap/cps/ncmp/dmi/service/DmiServiceImpl.java",
+        "patchSetId": 4
+      },
+      "lineNbr": 261,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2021-08-31T10:08:50Z",
+      "side": 1,
+      "message": "responseBodyAsJsonObject  (I hate that using var hides the type :-()",
+      "range": {
+        "startLine": 261,
+        "startChar": 18,
+        "endLine": 261,
+        "endChar": 39
+      },
+      "revId": "8bd51790f5661528f83760eaa4c20bdcce296036",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "f0c41fa2_3bf31b0c",
+        "filename": "src/main/java/org/onap/cps/ncmp/dmi/service/DmiServiceImpl.java",
+        "patchSetId": 4
+      },
+      "lineNbr": 269,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2021-08-31T10:08:50Z",
+      "side": 1,
+      "message": "yangSourceAsJson\n(the tag in json aren\u0027t great names so lets use our own better names)",
+      "range": {
+        "startLine": 269,
+        "startChar": 18,
+        "endLine": 269,
+        "endChar": 38
+      },
+      "revId": "8bd51790f5661528f83760eaa4c20bdcce296036",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "6fcce1fc_ff63a658",
+        "filename": "src/main/java/org/onap/cps/ncmp/dmi/service/DmiServiceImpl.java",
+        "patchSetId": 4
+      },
+      "lineNbr": 270,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2021-08-31T10:08:50Z",
+      "side": 1,
+      "message": "extract method getYangSourceFromBody or extractYangSourceFromBody\ninput \u0027response\u0027\noutput String yangSource  or yangSourceAsString (to be very clear)",
+      "range": {
+        "startLine": 261,
+        "startChar": 8,
+        "endLine": 270,
+        "endChar": 110
+      },
+      "revId": "8bd51790f5661528f83760eaa4c20bdcce296036",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "8af2ff16_5e0c2b08",
+        "filename": "src/test/groovy/org/onap/cps/ncmp/dmi/service/DmiServiceImplSpec.groovy",
+        "patchSetId": 4
+      },
+      "lineNbr": 164,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2021-08-31T10:08:50Z",
+      "side": 1,
+      "message": "test show clearly what is happening, good!",
+      "range": {
+        "startLine": 161,
+        "startChar": 98,
+        "endLine": 164,
+        "endChar": 163
+      },
+      "revId": "8bd51790f5661528f83760eaa4c20bdcce296036",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "4a40e1d8_e14ff515",
+        "filename": "src/test/groovy/org/onap/cps/ncmp/dmi/service/DmiServiceImplSpec.groovy",
+        "patchSetId": 4
+      },
+      "lineNbr": 167,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2021-08-31T10:08:50Z",
+      "side": 1,
+      "message": "this is the affect (should not be in test def but is defined -already- on line 176).\n multiple causes (scenario) really (add where clause)\n\u0027no ietf-netconf-monitoring:output object\u0027\n\u0027no data object\u0027",
+      "range": {
+        "startLine": 167,
+        "startChar": 50,
+        "endLine": 167,
+        "endChar": 79
+      },
+      "revId": "8bd51790f5661528f83760eaa4c20bdcce296036",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    }
+  ]
+}
