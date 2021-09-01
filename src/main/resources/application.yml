@@ -26,7 +26,7 @@ dmi:
 
 rest:
   api:
-    dmi-base-path: /dmi/api
+    dmi-base-path: /dmi
 
 security:
   permit-uri: /manage/**,/swagger-ui/**,/swagger-resources/**,/v3/api-docs
