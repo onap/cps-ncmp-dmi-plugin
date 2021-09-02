@@ -207,7 +207,7 @@ public class DmiServiceImpl implements DmiService {
 
     @Override
     public String writeResourceDataPassthroughForCmHandle(final String cmHandle, final String resourceIdentifier,
-        final String dataType, final Object data) {
+        final String dataType, final String data) {
         final String jsonData;
         try {
             jsonData = objectMapper.writeValueAsString(data);
