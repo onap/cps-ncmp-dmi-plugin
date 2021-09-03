@@ -70,6 +70,30 @@
       "revId": "aa2232b37bfa53573d5567b441233575b689816b",
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "a5d70d41_cd275d45",
+        "filename": "src/main/java/org/onap/cps/ncmp/dmi/service/DmiServiceImpl.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 219,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2021-09-03T15:30:07Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "27e80283_450ad271",
+      "range": {
+        "startLine": 212,
+        "startChar": 8,
+        "endLine": 219,
+        "endChar": 9
+      },
+      "revId": "aa2232b37bfa53573d5567b441233575b689816b",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
     }
   ]
 }
