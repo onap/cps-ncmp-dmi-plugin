@@ -1,0 +1,9 @@
+Verified+1: ONAP Jobbuilder <onap-jobbuilder@jenkins.onap.org>
+Code-Review+1: Dylan Byrne <dylan.byrne@est.tech>
+Code-Review+1: Niamh Core <niamh.core@est.tech>
+Code-Review+2: aditya puthuparambil <aditya.puthuparambil@bell.ca>
+Submitted-by: aditya puthuparambil <aditya.puthuparambil@bell.ca>
+Submitted-at: Mon, 06 Sep 2021 12:53:20 +0000
+Reviewed-on: https://gerrit.onap.org/r/c/cps/ncmp-dmi-plugin/+/123885
+Project: cps/ncmp-dmi-plugin
+Branch: refs/heads/master
