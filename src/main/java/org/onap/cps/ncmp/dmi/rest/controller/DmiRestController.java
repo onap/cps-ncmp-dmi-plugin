@@ -58,7 +58,7 @@ public class DmiRestController implements DmiPluginApi, DmiPluginInternalApi {
     @Override
     public ResponseEntity<ModuleSet> getModulesForCmHandle(final String cmHandle) {
         final var moduleSet = dmiService.getModulesForCmHandle(cmHandle);
-        return new ResponseEntity<ModuleSet>(moduleSet, HttpStatus.OK);
+        return new ResponseEntity<>(moduleSet, HttpStatus.OK);
     }
 
     @Override

@@ -62,6 +62,10 @@ public class DmiServiceImpl implements DmiService {
     private DmiPluginProperties dmiPluginProperties;
     private static final String CONTENT_QUERY_PASSTHROUGH_OPERATIONAL = "content=all";
     private static final String CONTENT_QUERY_PASSTHROUGH_RUNNING = "content=config";
+    private static final String RESPONSE_CODE = "response code : ";
+    private static final String MESSAGE = " message : ";
+    private static final String IETF_NETCONF_MONITORING_OUTPUT = "ietf-netconf-monitoring:output";
+
 
     /**
      * Constructor.
@@ -91,7 +95,7 @@ public class DmiServiceImpl implements DmiService {
             return createModuleSchema(responseBody);
         } else {
             throw new DmiException("SDNC is not able to process request.",
-                "response code : " + responseEntity.getStatusCode() + " message : " + responseEntity.getBody());
+                RESPONSE_CODE + responseEntity.getStatusCode() + MESSAGE + responseEntity.getBody());
         }
     }
 
@@ -100,7 +104,7 @@ public class DmiServiceImpl implements DmiService {
         final var getModuleResponses = new JSONArray();
         for (final var moduleReference : moduleReferences) {
             final var moduleRequest = createModuleRequest(moduleReference);
-            final ResponseEntity responseEntity = sdncOperations.getModuleResource(cmHandle, moduleRequest);
+            final ResponseEntity<String> responseEntity = sdncOperations.getModuleResource(cmHandle, moduleRequest);
             if (responseEntity.getStatusCode() == HttpStatus.OK) {
                 getModuleResponses.add(toJsonObject(moduleReference, responseEntity));
             } else if (responseEntity.getStatusCode() == HttpStatus.NOT_FOUND) {
@@ -110,7 +114,7 @@ public class DmiServiceImpl implements DmiService {
             } else {
                 log.error("Error occurred when getting module resources from SDNC for the given cmHandle {}", cmHandle);
                 throw new DmiException(cmHandle,
-                    "response code : " + responseEntity.getStatusCode() + " message : " + responseEntity.getBody());
+                    RESPONSE_CODE + responseEntity.getStatusCode() + MESSAGE + responseEntity.getBody());
             }
         }
         return getModuleResponses.toJSONString();
@@ -214,7 +218,7 @@ public class DmiServiceImpl implements DmiService {
             return responseEntity.getBody();
         } else {
             throw new DmiException(cmHandle,
-                "response code : " + responseEntity.getStatusCode() + " message : " + responseEntity.getBody());
+                RESPONSE_CODE + responseEntity.getStatusCode() + MESSAGE + responseEntity.getBody());
         }
     }
 
@@ -223,7 +227,7 @@ public class DmiServiceImpl implements DmiService {
             return responseEntity.getBody();
         } else {
             throw new ResourceDataNotFound(cmHandle,
-                "response code : " + responseEntity.getStatusCode() + " message : " + responseEntity.getBody());
+                RESPONSE_CODE + responseEntity.getStatusCode() + MESSAGE + responseEntity.getBody());
         }
     }
 
@@ -255,14 +259,14 @@ public class DmiServiceImpl implements DmiService {
 
     private String extractYangSourceFromBody(final ResponseEntity<String> responseEntity) {
         final var responseBodyAsJsonObject = new Gson().fromJson(responseEntity.getBody(), JsonObject.class);
-        if (responseBodyAsJsonObject.getAsJsonObject("ietf-netconf-monitoring:output") == null
-            || responseBodyAsJsonObject.getAsJsonObject("ietf-netconf-monitoring:output")
+        if (responseBodyAsJsonObject.getAsJsonObject(IETF_NETCONF_MONITORING_OUTPUT) == null
+            || responseBodyAsJsonObject.getAsJsonObject(IETF_NETCONF_MONITORING_OUTPUT)
                 .getAsJsonPrimitive("data") == null) {
             log.error("Error occurred when trying to parse the response body from sdnc {}", responseEntity.getBody());
             throw new ModuleResourceNotFoundException(responseEntity.getBody(),
                 "Error occurred when trying to parse the response body from sdnc.");
         }
-        return responseBodyAsJsonObject.getAsJsonObject("ietf-netconf-monitoring:output").getAsJsonPrimitive("data")
+        return responseBodyAsJsonObject.getAsJsonObject(IETF_NETCONF_MONITORING_OUTPUT).getAsJsonPrimitive("data")
             .toString();
     }
 }
