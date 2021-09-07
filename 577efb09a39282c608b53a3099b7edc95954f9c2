@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "a77a9ad3_76bc8e3a",
+        "filename": "src/main/java/org/onap/cps/ncmp/dmi/rest/controller/DmiRestController.java",
+        "patchSetId": 5
+      },
+      "lineNbr": 58,
+      "author": {
+        "id": 7744
+      },
+      "writtenOn": "2021-09-07T10:15:11Z",
+      "side": 1,
+      "message": "Done as part of Luke\u0027s commit here\n\nhttps://gerrit.onap.org/r/c/cps/ncmp-dmi-plugin/+/123885/1/src/main/java/org/onap/cps/ncmp/dmi/rest/controller/DmiRestController.java",
+      "parentUuid": "198ecc7c_d5b2fbc2",
+      "range": {
+        "startLine": 58,
+        "startChar": 15,
+        "endLine": 58,
+        "endChar": 71
+      },
+      "revId": "577efb09a39282c608b53a3099b7edc95954f9c2",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1f048dbb_a219d848",
         "filename": "src/main/java/org/onap/cps/ncmp/dmi/service/DmiServiceImpl.java",
         "patchSetId": 5
