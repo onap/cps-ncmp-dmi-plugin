@@ -79,6 +79,6 @@ public class SdncRestconfClient {
         final var sdncRestconfUrl = sdncBaseUrl.concat(postResourceUrl);
         httpHeaders.setBasicAuth(sdncProperties.getAuthUsername(), sdncProperties.getAuthPassword());
         final var httpEntity = new HttpEntity<>(jsonData, httpHeaders);
-        return restTemplate.postForEntity(sdncRestconfUrl, httpEntity, String.class);
+        return restTemplate.exchange(sdncRestconfUrl, HttpMethod.POST, httpEntity, String.class);
     }
 }
