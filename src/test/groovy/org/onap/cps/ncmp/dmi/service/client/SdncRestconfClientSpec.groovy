@@ -61,8 +61,8 @@ class SdncRestconfClientSpec extends Specification {
         when: 'get module resources is invoked'
             def result = objectUnderTest.postOperationWithJsonData(getModuleResourceUrl, jsonData, new HttpHeaders())
         then: 'the rest template is called with the correct uri and json in the body'
-            1 * mockRestTemplate.postForEntity({ it.toString() == 'http://some-uri/getModuleResourceUrl' },
-                    { it.body.contains(jsonData) }, String.class) >> mockResponseEntity
+            1 * mockRestTemplate.exchange({ it.toString() == 'http://some-uri/getModuleResourceUrl' },
+                    HttpMethod.POST, { it.body.contains(jsonData) }, String.class) >> mockResponseEntity
         and: 'the output of the method is the same as the output from the test template'
             result == mockResponseEntity
     }

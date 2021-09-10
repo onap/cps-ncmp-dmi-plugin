@@ -21,6 +21,7 @@
 package org.onap.cps.ncmp.dmi.service.client
 
 import org.onap.cps.ncmp.dmi.config.DmiConfiguration
+import org.springframework.http.HttpMethod
 import org.springframework.http.ResponseEntity
 import org.springframework.web.client.RestTemplate
 import spock.lang.Specification
@@ -48,8 +49,8 @@ class NcmpRestClientSpec extends Specification {
         when: 'register cm-handle with ncmp is invoked'
             def result = objectUnderTest.registerCmHandlesWithNcmp(jsonData)
         then: 'the rest template is called with the correct uri and json in the body'
-            1 * mockRestTemplate.postForEntity({ it.toString() == 'http://some-uri/some-url' },
-                    { it.body.contains(jsonData) }, String.class) >> mockResponseEntity
+            1 * mockRestTemplate.exchange({ it.toString() == 'http://some-uri/some-url' },
+                    HttpMethod.POST, { it.body.contains(jsonData) }, String.class) >> mockResponseEntity
         and: 'the output of the method is equal to the output from the test template'
             result == mockResponseEntity
     }

@@ -266,7 +266,7 @@ class DmiServiceImplSpec extends Specification {
             mockObjectMapper.writeValueAsString(_) >> jsonString
         when: 'write resource data for pass through method is invoked'
             objectUnderTest.writeResourceDataPassthroughForCmHandle('some-cmHandle',
-                    'some-resourceIdentifier', 'some-dataType', 'some-json-data')
+                    'some-resourceIdentifier', 'some-dataType', new Object())
         then: 'a dmi exception is thrown'
             thrown(DmiException.class)
         where: 'the following combinations are tested'

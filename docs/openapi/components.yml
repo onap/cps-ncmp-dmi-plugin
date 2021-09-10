@@ -78,7 +78,7 @@ components:
         dataType:
           type: string
         data:
-          type: string
+          type: object
         cmHandleProperties:
           type: object
           additionalProperties:
