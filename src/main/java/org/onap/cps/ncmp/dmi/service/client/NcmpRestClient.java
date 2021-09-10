@@ -23,6 +23,7 @@ package org.onap.cps.ncmp.dmi.service.client;
 import org.onap.cps.ncmp.dmi.config.DmiConfiguration.CpsProperties;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpHeaders;
+import org.springframework.http.HttpMethod;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Component;
@@ -51,7 +52,7 @@ public class NcmpRestClient {
         httpHeaders.setBasicAuth(cpsProperties.getAuthUsername(), cpsProperties.getAuthPassword());
         httpHeaders.set(HttpHeaders.CONTENT_TYPE, MediaType.APPLICATION_JSON_VALUE);
         final var httpEntity = new HttpEntity<>(jsonData, httpHeaders);
-        return restTemplate.postForEntity(ncmpRegistrationUrl, httpEntity, String.class);
+        return restTemplate.exchange(ncmpRegistrationUrl, HttpMethod.POST, httpEntity, String.class);
     }
 
     private String buildNcmpRegistrationUrl() {

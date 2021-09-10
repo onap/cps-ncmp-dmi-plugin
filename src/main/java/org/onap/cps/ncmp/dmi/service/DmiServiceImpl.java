@@ -211,14 +211,23 @@ public class DmiServiceImpl implements DmiService {
 
     @Override
     public String writeResourceDataPassthroughForCmHandle(final String cmHandle, final String resourceIdentifier,
-        final String dataType, final String data) {
+        final String dataType, final Object data) {
+        final String jsonData;
+        try {
+            jsonData = objectMapper.writeValueAsString(data);
+        } catch (final JsonProcessingException e) {
+            log.error("JSON exception occurred when processing pass through request data for the given cmHandle {}",
+                    cmHandle);
+            throw new DmiException("Unable to process incoming JSON from the request body.",
+                    "JSON exception occurred when writing data for the given cmHandle " + cmHandle, e);
+        }
         final ResponseEntity<String> responseEntity =
-            sdncOperations.writeResourceDataPassthroughRunning(cmHandle, resourceIdentifier, dataType, data);
+                sdncOperations.writeResourceDataPassthroughRunning(cmHandle, resourceIdentifier, dataType, jsonData);
         if (responseEntity.getStatusCode() == HttpStatus.CREATED) {
             return responseEntity.getBody();
         } else {
             throw new DmiException(cmHandle,
-                RESPONSE_CODE + responseEntity.getStatusCode() + MESSAGE + responseEntity.getBody());
+                    RESPONSE_CODE + responseEntity.getStatusCode() + MESSAGE + responseEntity.getBody());
         }
     }
 
