@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "0e7e1396_c2135380",
+        "filename": "docs/conf.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 7486
+      },
+      "writtenOn": "2021-09-13T15:45:42Z",
+      "side": 1,
+      "message": "Dylan has removed the unnecessary lines from the master to shorten the length of this file other than that it is inline with the master copy of this file",
+      "parentUuid": "880b25e8_c4a4da36",
+      "revId": "5aee50d5840b71861206ba83afd5affe097425b2",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "a4731d60_2e7c044c",
         "filename": "docs/design.rst",
         "patchSetId": 5
@@ -39,6 +57,30 @@
       "revId": "5aee50d5840b71861206ba83afd5affe097425b2",
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "49b5f504_d0e3de31",
+        "filename": "docs/design.rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 7486
+      },
+      "writtenOn": "2021-09-13T15:45:42Z",
+      "side": 1,
+      "message": "It should be dmi-plugin-docket, changed in the next PS",
+      "parentUuid": "a4731d60_2e7c044c",
+      "range": {
+        "startLine": 34,
+        "startChar": 46,
+        "endLine": 34,
+        "endChar": 56
+      },
+      "revId": "5aee50d5840b71861206ba83afd5affe097425b2",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
     },
     {
       "key": {
@@ -65,6 +107,30 @@
     },
     {
       "key": {
+        "uuid": "18ebca7c_ff7bb697",
+        "filename": "docs/index.rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 7486
+      },
+      "writtenOn": "2021-09-13T15:45:42Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3e709920_fbd8aa33",
+      "range": {
+        "startLine": 25,
+        "startChar": 3,
+        "endLine": 25,
+        "endChar": 17
+      },
+      "revId": "5aee50d5840b71861206ba83afd5affe097425b2",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "b537adb0_9987adf7",
         "filename": "docs/release-notes.rst",
         "patchSetId": 5
@@ -85,6 +151,30 @@
       "revId": "5aee50d5840b71861206ba83afd5affe097425b2",
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "e7a0f33a_84781a38",
+        "filename": "docs/release-notes.rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 7486
+      },
+      "writtenOn": "2021-09-13T15:45:42Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "b537adb0_9987adf7",
+      "range": {
+        "startLine": 23,
+        "startChar": 9,
+        "endLine": 23,
+        "endChar": 14
+      },
+      "revId": "5aee50d5840b71861206ba83afd5affe097425b2",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
     },
     {
       "key": {
@@ -111,6 +201,30 @@
     },
     {
       "key": {
+        "uuid": "d5185e4c_4eceb3ad",
+        "filename": "docs/release-notes.rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 7486
+      },
+      "writtenOn": "2021-09-13T15:45:42Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "d19eba7f_e2d74d0e",
+      "range": {
+        "startLine": 41,
+        "startChar": 41,
+        "endLine": 41,
+        "endChar": 42
+      },
+      "revId": "5aee50d5840b71861206ba83afd5affe097425b2",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "f0fcdf23_b83e3d08",
         "filename": "docs/user-guide.rst",
         "patchSetId": 5
@@ -125,6 +239,24 @@
       "revId": "5aee50d5840b71861206ba83afd5affe097425b2",
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "3fb15d7c_e2506595",
+        "filename": "docs/user-guide.rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 7486
+      },
+      "writtenOn": "2021-09-13T15:45:42Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "f0fcdf23_b83e3d08",
+      "revId": "5aee50d5840b71861206ba83afd5affe097425b2",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
     }
   ]
 }
