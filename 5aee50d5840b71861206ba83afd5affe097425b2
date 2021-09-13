@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "880b25e8_c4a4da36",
+        "filename": "docs/conf.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2021-09-13T14:51:11Z",
+      "side": 1,
+      "message": "apparently there are updates in the master copy of this file: https://github.com/onap/doc/blob/master/docs/conf.py \n\n(Bruno applied same in CPS temporal, maybe check there)",
+      "revId": "5aee50d5840b71861206ba83afd5affe097425b2",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "a4731d60_2e7c044c",
         "filename": "docs/design.rst",
         "patchSetId": 5
