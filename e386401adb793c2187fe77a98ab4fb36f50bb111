@@ -1,0 +1,44 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "a7c72acc_563eba3b",
+        "filename": "docs/dmi-plugin-cm-handle.rst",
+        "patchSetId": 6
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2021-09-13T16:25:46Z",
+      "side": 1,
+      "message": "sorry should have spotted earlier. There is no need for a detailed file on cmHanlde parameter (cpsPath parameter was 1000x more complex and did need it)",
+      "revId": "e386401adb793c2187fe77a98ab4fb36f50bb111",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "5b48f8e3_d0c29935",
+        "filename": "docs/index.rst",
+        "patchSetId": 6
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2021-09-13T16:25:46Z",
+      "side": 1,
+      "message": "no needed, see comment on file itself",
+      "range": {
+        "startLine": 24,
+        "startChar": 3,
+        "endLine": 24,
+        "endChar": 27
+      },
+      "revId": "e386401adb793c2187fe77a98ab4fb36f50bb111",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    }
+  ]
+}
