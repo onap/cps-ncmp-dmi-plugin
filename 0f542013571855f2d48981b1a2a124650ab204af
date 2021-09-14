@@ -1,0 +1,96 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ed496257_57570f72",
+        "filename": "src/test/groovy/org/onap/cps/ncmp/dmi/rest/controller/DmiRestControllerSpec.groovy",
+        "patchSetId": 1
+      },
+      "lineNbr": 215,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2021-09-14T14:27:29Z",
+      "side": 1,
+      "message": "\"pass through string\" \n\nSee comment on WriteDataForCmHandle.json",
+      "range": {
+        "startLine": 215,
+        "startChar": 132,
+        "endLine": 215,
+        "endChar": 161
+      },
+      "revId": "0f542013571855f2d48981b1a2a124650ab204af",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "19472f2c_ab91717b",
+        "filename": "src/test/groovy/org/onap/cps/ncmp/dmi/service/DmiServiceImplSpec.groovy",
+        "patchSetId": 1
+      },
+      "lineNbr": 256,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2021-09-14T14:27:29Z",
+      "side": 1,
+      "message": "see comment on previous test",
+      "range": {
+        "startLine": 254,
+        "startChar": 0,
+        "endLine": 256,
+        "endChar": 96
+      },
+      "revId": "0f542013571855f2d48981b1a2a124650ab204af",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "3492707a_a3c6fa51",
+        "filename": "src/test/groovy/org/onap/cps/ncmp/dmi/service/operation/SdncOperationsSpec.groovy",
+        "patchSetId": 1
+      },
+      "lineNbr": 76,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2021-09-14T14:27:29Z",
+      "side": 1,
+      "message": "see previous comment",
+      "range": {
+        "startLine": 76,
+        "startChar": 110,
+        "endLine": 76,
+        "endChar": 142
+      },
+      "revId": "0f542013571855f2d48981b1a2a124650ab204af",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "8e76f4f3_b26c76f4",
+        "filename": "src/test/resources/WriteDataForCmHandle.json",
+        "patchSetId": 1
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2021-09-14T14:27:29Z",
+      "side": 1,
+      "message": "\"pass through string\"  \n\n(current test dat implies it has to be Json)",
+      "range": {
+        "startLine": 4,
+        "startChar": 11,
+        "endLine": 4,
+        "endChar": 44
+      },
+      "revId": "0f542013571855f2d48981b1a2a124650ab204af",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    }
+  ]
+}
