@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "f314a1cd_25be0b3e",
+        "filename": "releases/1.0.0-container.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 7680
+      },
+      "writtenOn": "2021-09-14T12:30:20Z",
+      "side": 1,
+      "message": "tag taken from https://jenkins.onap.org/view/cps-ncmp-dmi-plugin/job/cps-ncmp-dmi-plugin-maven-docker-stage-master/114/console",
+      "range": {
+        "startLine": 9,
+        "startChar": 13,
+        "endLine": 9,
+        "endChar": 37
+      },
+      "revId": "7b5fa209dcb5a525174ff69a6ea9ec81cdf4890a",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    }
+  ]
+}
