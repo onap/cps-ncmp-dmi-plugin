@@ -73,7 +73,7 @@ class SdncOperationsSpec extends Specification {
         given: 'excpected url, topology-id, sdncOperation object'
             def expectedUrl = '/rests/data/network-topology:network-topology/topology=test-topology/node=node1/yang-ext:mount/testResourceId'
         when: 'write resource data for pass through running is called'
-            objectUnderTest.writeResourceDataPassthroughRunning('node1', 'testResourceId', 'application/json','testData')
+            objectUnderTest.writeResourceDataPassthroughRunning('node1', 'testResourceId', 'application/json','{ "some-data": "some-value" }')
         then: 'the post operation is executed with the correct URL'
             1 * mockSdncRestClient.postOperationWithJsonData(expectedUrl, _ as String, _ as HttpHeaders)
     }

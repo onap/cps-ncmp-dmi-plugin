@@ -1,9 +1,7 @@
 {
   "operation": "create",
   "dataType": "application/json",
-  "data": {
-    "some-data": "some-value"
-  },
+  "data": "{ \"some-data\": \"some-value\" }",
   "cmHandleProperties": {
     "some-property": "some-property-value"
   }
