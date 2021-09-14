@@ -106,5 +106,5 @@ public interface DmiService {
      * @return response from sdnc
      */
     String writeResourceDataPassthroughForCmHandle(String cmHandle, String resourceIdentifier, String dataType,
-        Object data);
+        String data);
 }
