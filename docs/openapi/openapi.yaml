@@ -398,7 +398,7 @@ components:
         dataType:
           type: string
         data:
-          type: object
+          type: string
         cmHandleProperties:
           type: object
           additionalProperties:
