@@ -17,7 +17,108 @@
 
   SPDX-License-Identifier: Apache-2.0
   ============LICENSE_END=========================================================
--->
+--><!DOCTYPE project [
+        <!ELEMENT project (modelVersion|parent|organization|groupId|artifactId|version|name|description|properties|dependencyManagement|dependencies|build|pluginManagement)*>
+        <!ATTLIST project
+                xmlns CDATA #REQUIRED
+                xmlns:xsi CDATA #REQUIRED
+                xsi:schemaLocation CDATA #REQUIRED>
+        <!ELEMENT modelVersion (#PCDATA)>
+        <!ELEMENT parent (groupId|artifactId|version|relativePath)*>
+        <!ELEMENT groupId (#PCDATA)>
+        <!ELEMENT artifactId (#PCDATA)>
+        <!ELEMENT version (#PCDATA)>
+        <!ELEMENT relativePath (#PCDATA)>
+        <!ELEMENT organization (name|url)*>
+        <!ELEMENT name (#PCDATA)>
+        <!ELEMENT url (#PCDATA)>
+        <!ELEMENT description (#PCDATA)>
+        <!ELEMENT properties (app|base.image|cps.version|image.tag|jacoco.minimum.coverage|maven.build.timestamp.format|project.build.sourceEncoding|image.name)*>
+        <!ELEMENT app (#PCDATA)>
+        <!ELEMENT base.image (#PCDATA)>
+        <!ELEMENT cps.version (#PCDATA)>
+        <!ELEMENT image.tag (#PCDATA)>
+        <!ELEMENT jacoco.minimum.coverage (#PCDATA)>
+        <!ELEMENT maven.build.timestamp.format (#PCDATA)>
+        <!ELEMENT project.build.sourceEncoding (#PCDATA)>
+        <!ELEMENT dependencyManagement (dependencies)*>
+        <!ELEMENT dependencies (dependency)*>
+        <!ELEMENT dependency (groupId|artifactId|version|type|scope|exclusions)*>
+        <!ELEMENT type (#PCDATA)>
+        <!ELEMENT scope (#PCDATA)>
+        <!ELEMENT exclusions (exclusion)*>
+        <!ELEMENT exclusion (groupId|artifactId)*>
+        <!ELEMENT build (resources|plugins|plugin)*>
+        <!ELEMENT resources (resource)*>
+        <!ELEMENT resource (directory|filtering|includes|targetPath)*>
+        <!ELEMENT directory (#PCDATA)>
+        <!ELEMENT filtering (#PCDATA)>
+        <!ELEMENT includes (include)*>
+        <!ELEMENT include (#PCDATA)>
+        <!ELEMENT targetPath (#PCDATA)>
+        <!ELEMENT plugins (plugin)*>
+        <!ELEMENT plugin (groupId|artifactId|version|executions|configuration|dependencies)*>
+        <!ELEMENT executions (execution)*>
+        <!ELEMENT execution (goals|configuration|id|phase)*>
+        <!ELEMENT goals (goal)*>
+        <!ELEMENT goal (#PCDATA)>
+        <!ELEMENT configuration (inputSpec|language|generateSupportingFiles|apiPackage|modelPackage|configOptions|argLine|includes|excludes|configLocation|includeResources|includeTestSourceDirectory|includeTestResources|sourceDirectories|consoleOutput|violationSeverity|failOnViolation|plugins|effort|threshold|failOnError|excludeFilterFile|xmlOutput|xmlOutputDirectory|dataFile|rules|dataFileIncludes|container|from|to)*>
+        <!ELEMENT inputSpec (#PCDATA)>
+        <!ELEMENT language (#PCDATA)>
+        <!ELEMENT generateSupportingFiles (#PCDATA)>
+        <!ELEMENT apiPackage (#PCDATA)>
+        <!ELEMENT modelPackage (#PCDATA)>
+        <!ELEMENT configOptions (sourceFolder|dateLibrary|interfaceOnly|useTags)*>
+        <!ELEMENT sourceFolder (#PCDATA)>
+        <!ELEMENT dateLibrary (#PCDATA)>
+        <!ELEMENT interfaceOnly (#PCDATA)>
+        <!ELEMENT useTags (#PCDATA)>
+        <!ELEMENT id (#PCDATA)>
+        <!ELEMENT phase (#PCDATA)>
+        <!ELEMENT argLine (#PCDATA)>
+        <!ELEMENT excludes (exclude)*>
+        <!ELEMENT exclude (#PCDATA)>
+        <!ELEMENT configLocation (#PCDATA)>
+        <!ELEMENT includeResources (#PCDATA)>
+        <!ELEMENT includeTestSourceDirectory (#PCDATA)>
+        <!ELEMENT includeTestResources (#PCDATA)>
+        <!ELEMENT sourceDirectories (sourceDirectory)*>
+        <!ELEMENT sourceDirectory (#PCDATA)>
+        <!ELEMENT consoleOutput (#PCDATA)>
+        <!ELEMENT violationSeverity (#PCDATA)>
+        <!ELEMENT failOnViolation (#PCDATA)>
+        <!ELEMENT effort (#PCDATA)>
+        <!ELEMENT threshold (#PCDATA)>
+        <!ELEMENT failOnError (#PCDATA)>
+        <!ELEMENT excludeFilterFile (#PCDATA)>
+        <!ELEMENT xmlOutput (#PCDATA)>
+        <!ELEMENT xmlOutputDirectory (#PCDATA)>
+        <!ELEMENT dataFile (#PCDATA)>
+        <!ELEMENT rules (rule)*>
+        <!ELEMENT rule (element|limits)*>
+        <!ELEMENT element (#PCDATA)>
+        <!ELEMENT limits (limit)*>
+        <!ELEMENT limit (counter|value|minimum)*>
+        <!ELEMENT counter (#PCDATA)>
+        <!ELEMENT value (#PCDATA)>
+        <!ELEMENT minimum (#PCDATA)>
+        <!ELEMENT dataFileIncludes (fileInclude)*>
+        <!ELEMENT fileInclude (#PCDATA)>
+        <!ELEMENT pluginManagement (plugins)*>
+        <!ELEMENT container (mainClass|creationTime)*>
+        <!ELEMENT mainClass (#PCDATA)>
+        <!ELEMENT creationTime (#PCDATA)>
+        <!ELEMENT from (image)*>
+        <!ELEMENT image (#PCDATA)>
+        <!ELEMENT to (tags|image)*>
+        <!ELEMENT tags (tag)*>
+        <!ELEMENT tag (#PCDATA)>
+        <!ELEMENT profiles (profile)*>
+        <!ELEMENT profile (id|activation|properties|build)*>
+        <!ELEMENT activation (activeByDefault)*>
+        <!ELEMENT activeByDefault (#PCDATA)>
+        <!ELEMENT image.name (#PCDATA)>
+        ]>
 <project xmlns="http://maven.apache.org/POM/4.0.0"
   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
@@ -175,6 +276,17 @@
                                 <interfaceOnly>true</interfaceOnly>
                                 <useTags>true</useTags>
                             </configOptions>
+                        </configuration>
+                    </execution>
+                    <execution>
+                        <id>openapi-yaml-gen</id>
+                        <goals>
+                            <goal>generate</goal>
+                        </goals>
+                        <phase>compile</phase>
+                        <configuration>
+                            <inputSpec>${project.basedir}/docs/openapi/openapi.yml</inputSpec>
+                            <language>openapi-yaml</language>
                         </configuration>
                     </execution>
                 </executions>
@@ -411,6 +523,29 @@
                             <goals>
                                 <goal>build</goal>
                             </goals>
+                        </execution>
+                    </executions>
+                </plugin>
+                <plugin>
+                    <artifactId>maven-resources-plugin</artifactId>
+                    <executions>
+                        <execution>
+                            <id>copy-resources</id>
+                            <phase>compile</phase>
+                            <goals>
+                                <goal>copy-resources</goal>
+                            </goals>
+                            <configuration>
+                                <outputDirectory>${project.basedir}/docs/openapi/</outputDirectory>
+                                <resources>
+                                    <resource>
+                                        <directory>${project.basedir}/target/generated-sources/swagger/</directory>
+                                        <includes>
+                                            <include>openapi.yaml</include>
+                                        </includes>
+                                    </resource>
+                                </resources>
+                            </configuration>
                         </execution>
                     </executions>
                 </plugin>
