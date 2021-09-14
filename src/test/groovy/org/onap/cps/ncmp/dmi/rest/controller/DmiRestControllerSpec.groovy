@@ -210,9 +210,9 @@ class DmiRestControllerSpec extends Specification {
     def 'Write data using passthrough running for a cm handle.'() {
         given: 'write data for cmHandle url and jsonData'
             def writeDataforCmHandlePassthroughRunning = "${basePathV1}/ch/some-cmHandle/data/ds/ncmp-datastore:passthrough-running/some-resourceIdentifier"
-            def jsonData = TestUtils.getResourceFileContent('WriteDataForCmHandle.json')
+            def jsonData = TestUtils.getResourceFileContent('passtroughWriteRequest.json')
         and: 'dmi service is called'
-            mockDmiService.writeResourceDataPassthroughForCmHandle('some-cmHandle', 'some-resourceIdentifier', 'application/json',  ['some-data': 'some-value']) >> '{some-json}'
+            mockDmiService.writeResourceDataPassthroughForCmHandle('some-cmHandle', 'some-resourceIdentifier', 'application/json', 'passthrough data') >> '{some-json}'
         when: 'write cmHandle passthrough running post api is invoked with json data'
             def response = mvc.perform(
                     post(writeDataforCmHandlePassthroughRunning).contentType(MediaType.APPLICATION_JSON)

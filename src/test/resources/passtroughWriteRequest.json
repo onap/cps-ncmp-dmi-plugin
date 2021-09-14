@@ -1,9 +1,7 @@
 {
   "operation": "create",
   "dataType": "application/json",
-  "data": {
-    "some-data": "some-value"
-  },
+  "data": "passthrough data",
   "cmHandleProperties": {
     "some-property": "some-property-value"
   }
