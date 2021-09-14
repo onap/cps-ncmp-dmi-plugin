@@ -2,6 +2,52 @@
   "comments": [
     {
       "key": {
+        "uuid": "c7aa533c_e259cc0e",
+        "filename": "docs/openapi/components.yml",
+        "patchSetId": 1
+      },
+      "lineNbr": 79,
+      "author": {
+        "id": 7680
+      },
+      "writtenOn": "2021-09-14T17:21:03Z",
+      "side": 1,
+      "message": "Suggestion: This value is assumed as application/json, so it would be good to add a comment here that this field will be ignored and has been added to avoid future interface changes.",
+      "range": {
+        "startLine": 78,
+        "startChar": 8,
+        "endLine": 79,
+        "endChar": 22
+      },
+      "revId": "0f542013571855f2d48981b1a2a124650ab204af",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "6fcd7732_568c6704",
+        "filename": "src/main/java/org/onap/cps/ncmp/dmi/service/DmiService.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 109,
+      "author": {
+        "id": 7680
+      },
+      "writtenOn": "2021-09-14T17:21:03Z",
+      "side": 1,
+      "message": "Suggestion: As data is expected to be a valid json as per controller layer code, it would be good to add a check at the control layer to ensure that.",
+      "range": {
+        "startLine": 109,
+        "startChar": 15,
+        "endLine": 109,
+        "endChar": 19
+      },
+      "revId": "0f542013571855f2d48981b1a2a124650ab204af",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "ed496257_57570f72",
         "filename": "src/test/groovy/org/onap/cps/ncmp/dmi/rest/controller/DmiRestControllerSpec.groovy",
         "patchSetId": 1
