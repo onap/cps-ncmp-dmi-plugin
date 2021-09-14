@@ -248,14 +248,19 @@ class DmiServiceImplSpec extends Specification {
             response == 'response json'
     }
 
-    def 'Write resource data using for passthrough running for the given cm handle.'() {
+    def 'Write resource data using for passthrough running for the given cm handle with #scenario.'() {
         given: 'sdnc returns a created response'
-            mockSdncOperations.writeResourceDataPassthroughRunning(_, _, _, _) >> new ResponseEntity<String>('response json', HttpStatus.CREATED)
+            mockSdncOperations.writeResourceDataPassthroughRunning('some-cmHandle',
+                    'some-resourceIdentifier', 'some-dataType', requestBody) >> new ResponseEntity<String>('response json', HttpStatus.CREATED)
         when: 'write resource data from cm handles service method invoked'
             def response = objectUnderTest.writeResourceDataPassthroughForCmHandle('some-cmHandle',
-                    'some-resourceIdentifier', 'some-dataType', '{some-data}')
+                    'some-resourceIdentifier', 'some-dataType', requestBody)
         then: 'response have expected json'
             response == 'response json'
+        where: 'given request body'
+            scenario                            |            requestBody
+            'data contains quote and new line'  |            'data with quote " and \n new line'
+            'data contains normal char'         |            'normal char string'
     }
 
     def 'Write resource data for passthrough running with a #scenario.'() {
@@ -266,7 +271,7 @@ class DmiServiceImplSpec extends Specification {
             mockObjectMapper.writeValueAsString(_) >> jsonString
         when: 'write resource data for pass through method is invoked'
             objectUnderTest.writeResourceDataPassthroughForCmHandle('some-cmHandle',
-                    'some-resourceIdentifier', 'some-dataType', new Object())
+                    'some-resourceIdentifier', 'some-dataType', _ as String)
         then: 'a dmi exception is thrown'
             thrown(DmiException.class)
         where: 'the following combinations are tested'

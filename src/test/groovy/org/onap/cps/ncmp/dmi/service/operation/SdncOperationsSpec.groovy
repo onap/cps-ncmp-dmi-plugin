@@ -69,12 +69,16 @@ class SdncOperationsSpec extends Specification {
             1 * mockSdncRestClient.getOperation(expectedUrl, _ as HttpHeaders)
     }
 
-    def 'Write resource data to SDNC.'() {
+    def 'Write resource data to SDNC with #scenario.'() {
         given: 'excpected url, topology-id, sdncOperation object'
             def expectedUrl = '/rests/data/network-topology:network-topology/topology=test-topology/node=node1/yang-ext:mount/testResourceId'
         when: 'write resource data for pass through running is called'
-            objectUnderTest.writeResourceDataPassthroughRunning('node1', 'testResourceId', 'application/json','testData')
+            objectUnderTest.writeResourceDataPassthroughRunning('node1','testResourceId','application/json', requestBody)
         then: 'the post operation is executed with the correct URL'
-            1 * mockSdncRestClient.postOperationWithJsonData(expectedUrl, _ as String, _ as HttpHeaders)
+            1 * mockSdncRestClient.postOperationWithJsonData(expectedUrl, requestBody, _ as HttpHeaders)
+        where: 'request body is given'
+            scenario                            |                     requestBody
+            'data contains quote and new line'  |                     'data with " quote and \n new line'
+            'data contains normal chars'        |                     'data with normal chars'
     }
 }

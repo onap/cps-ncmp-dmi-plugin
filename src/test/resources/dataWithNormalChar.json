@@ -1,0 +1,8 @@
+{
+  "operation": "create",
+  "dataType": "application/json",
+  "data": "normal data body",
+  "cmHandleProperties": {
+    "some-property": "some-property-value"
+  }
+}
