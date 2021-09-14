@@ -1,9 +1,7 @@
 {
   "operation": "create",
   "dataType": "application/json",
-  "data": {
-    "some-data": "some-value"
-  },
+  "data": "data with quote \" and new line \n",
   "cmHandleProperties": {
     "some-property": "some-property-value"
   }
