@@ -98,7 +98,7 @@ class DmiServiceImplSpec extends Specification {
             def givenCmHandlesList = ['node1', 'node2']
             def expectedJson = '{"dmiPlugin":"test-dmi-service","createdCmHandles":[{"cmHandle":"node1"},{"cmHandle":"node2"}]}'
         and: 'mockDmiPluginProperties returns test-dmi-service'
-            mockDmiPluginProperties.getDmiServiceName() >> 'test-dmi-service'
+            mockDmiPluginProperties.getDmiServiceUrl() >> 'test-dmi-service'
         when: 'register cm handles service method with the given cm handles'
             objectUnderTest.registerCmHandles(givenCmHandlesList)
         then: 'register cm handle with ncmp called once and return "created" status'
@@ -109,7 +109,7 @@ class DmiServiceImplSpec extends Specification {
         given: 'cm-handle list'
             def cmHandlesList = ['node1', 'node2']
         and: 'dmi plugin service name is "test-dmi-service"'
-            mockDmiPluginProperties.getDmiServiceName() >> 'test-dmi-service'
+            mockDmiPluginProperties.getDmiServiceUrl() >> 'test-dmi-service'
         and: 'ncmp rest client returns #responseEntity'
             mockNcmpRestClient.registerCmHandlesWithNcmp(_ as String) >> responseEntity
         when: 'register cm handles service method called'
@@ -170,7 +170,7 @@ class DmiServiceImplSpec extends Specification {
             def moduleReference = new ModuleReference(name: 'NAME',revision: 'REVISION')
             def moduleList = [moduleReference]
         when: 'get module resources is invoked with the given cm handle and a module list'
-             objectUnderTest.getModuleResources(cmHandle, moduleList)
+            objectUnderTest.getModuleResources(cmHandle, moduleList)
         then: 'get modules resources is called once with a response body that contains no data'
             1 * mockSdncOperations.getModuleResource(cmHandle, _) >> new ResponseEntity<String>(responseBody, HttpStatus.OK)
         and: 'a module resource not found exception is thrown'
@@ -249,7 +249,7 @@ class DmiServiceImplSpec extends Specification {
     }
 
     def 'Write resource data for passthrough running for the given cm handle with a #scenario from sdnc.'() {
-        given: 'sdnc returns a response'
+        given: 'sdnc returns a response with #scenario'
             mockSdncOperations.writeResourceDataPassthroughRunning(_, _, _, _) >> new ResponseEntity<String>('response json', httpResponse)
         when: 'write resource data for cm handle method invoked'
             def response = objectUnderTest.writeResourceDataPassthroughForCmHandle('some-cmHandle',
@@ -262,25 +262,27 @@ class DmiServiceImplSpec extends Specification {
             '201 CREATED response' | HttpStatus.CREATED
     }
 
+    def 'Write resource data using for passthrough running for the given cm handle with #scenario.'() {
+        given: 'sdnc returns a created response'
+            mockSdncOperations.writeResourceDataPassthroughRunning('some-cmHandle',
+                    'some-resourceIdentifier', 'some-dataType', requestBody) >> new ResponseEntity<String>('response json', HttpStatus.CREATED)
+        when: 'write resource data from cm handles service method invoked'
+            def response = objectUnderTest.writeResourceDataPassthroughForCmHandle('some-cmHandle',
+                    'some-resourceIdentifier', 'some-dataType', requestBody)
+        then: 'response have expected json'
+            response == 'response json'
+        where: 'given request body'
+            scenario                           | requestBody
+            'data contains normal char'        | 'normal char string'
+            'data contains quote and new line' | 'data with quote " and \n new line'
+    }
+
     def 'Write resource data for passthrough running with a 500 response from sdnc.'() {
         given: 'sdnc returns a 500 response for the write operation'
             mockSdncOperations.writeResourceDataPassthroughRunning(_, _, _, _) >> new ResponseEntity<String>('response json', HttpStatus.INTERNAL_SERVER_ERROR)
         when: 'write resource data for pass through method is invoked'
             objectUnderTest.writeResourceDataPassthroughForCmHandle('some-cmHandle',
-                    'some-resourceIdentifier', 'some-dataType', new Object())
-        then: 'a dmi exception is thrown'
-            thrown(DmiException.class)
-    }
-
-    def 'Write resource data for passthrough running with a json processing exception.'() {
-        given: 'sdnc returns a 200 response for the write operation'
-            mockSdncOperations.writeResourceDataPassthroughRunning(_, _, _, _) >> new ResponseEntity<String>('response json', HttpStatus.OK)
-        and: 'a json processing exception is thrown'
-            objectUnderTest.objectMapper = mockObjectMapper
-            mockObjectMapper.writeValueAsString(_) >> { throw new JsonProcessingException('some-exception') }
-        when: 'write resource data for pass through method is invoked'
-            objectUnderTest.writeResourceDataPassthroughForCmHandle('some-cmHandle',
-                    'some-resourceIdentifier', 'some-dataType', new Object())
+                    'some-resourceIdentifier', 'some-dataType', _ as String)
         then: 'a dmi exception is thrown'
             thrown(DmiException.class)
     }

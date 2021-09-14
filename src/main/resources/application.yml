@@ -22,7 +22,7 @@ server:
 
 dmi:
   service:
-    name: onap-dmi-plugin
+    url: ${DMI_SERVICE_URL}
 
 rest:
   api:
@@ -31,8 +31,8 @@ rest:
 security:
   permit-uri: /manage/**,/swagger-ui/**,/swagger-resources/**,/v3/api-docs
   auth:
-    username: ${CPS_USERNAME}
-    password: ${CPS_PASSWORD}
+    username: ${DMI_USERNAME}
+    password: ${DMI_PASSWORD}
 
 # Actuator
 management:

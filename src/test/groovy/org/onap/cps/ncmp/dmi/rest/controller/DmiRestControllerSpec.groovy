@@ -26,12 +26,8 @@ import org.onap.cps.ncmp.dmi.TestUtils
 import org.onap.cps.ncmp.dmi.exception.DmiException
 import org.onap.cps.ncmp.dmi.exception.ModuleResourceNotFoundException
 import org.onap.cps.ncmp.dmi.exception.ModulesNotFoundException
-import org.onap.cps.ncmp.dmi.model.DataAccessReadRequest
-import org.onap.cps.ncmp.dmi.model.DataAccessWriteRequest
 import org.onap.cps.ncmp.dmi.model.ModuleReference
 import org.onap.cps.ncmp.dmi.model.ModuleSchemaList
-import org.onap.cps.ncmp.dmi.model.ModuleSchemaProperties
-import org.onap.cps.ncmp.dmi.model.ModuleSchemas
 import org.onap.cps.ncmp.dmi.model.ModuleSet
 import org.onap.cps.ncmp.dmi.model.ModuleSetSchemas
 import org.onap.cps.ncmp.dmi.service.DmiService
@@ -207,12 +203,14 @@ class DmiRestControllerSpec extends Specification {
                     ['prop1': 'value1', 'prop2': 'value2'])
     }
 
-    def 'Write data using passthrough running for a cm handle.'() {
+    def 'Write data using passthrough running for a cm handle using #scenario.'() {
         given: 'write data for cmHandle url and jsonData'
             def writeDataforCmHandlePassthroughRunning = "${basePathV1}/ch/some-cmHandle/data/ds/ncmp-datastore:passthrough-running/some-resourceIdentifier"
-            def jsonData = TestUtils.getResourceFileContent('WriteDataForCmHandle.json')
+            def jsonData = TestUtils.getResourceFileContent(requestBodyFile)
         and: 'dmi service is called'
-            mockDmiService.writeResourceDataPassthroughForCmHandle('some-cmHandle', 'some-resourceIdentifier', 'application/json',  ['some-data': 'some-value']) >> '{some-json}'
+            mockDmiService.writeResourceDataPassthroughForCmHandle('some-cmHandle',
+                    'some-resourceIdentifier', 'application/json',
+                    expectedRequestData) >> '{some-json}'
         when: 'write cmHandle passthrough running post api is invoked with json data'
             def response = mvc.perform(
                     post(writeDataforCmHandlePassthroughRunning).contentType(MediaType.APPLICATION_JSON)
@@ -222,6 +220,10 @@ class DmiRestControllerSpec extends Specification {
             response.status == HttpStatus.CREATED.value()
         and: 'the data in the request body is as expected'
             response.getContentAsString() == '{some-json}'
+        where: 'given request body and data'
+            scenario                  | requestBodyFile           || expectedRequestData
+            'data with normal chars'  | 'dataWithNormalChar.json' || 'normal request body'
+            'data with special chars' | 'dataWithSpecialChar.json'|| 'data with quote \" and new line \n'
     }
 
     def 'Get resource data for pass-through running from cm handle.'() {

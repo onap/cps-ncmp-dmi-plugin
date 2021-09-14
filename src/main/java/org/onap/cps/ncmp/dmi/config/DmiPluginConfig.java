@@ -50,8 +50,8 @@ public class DmiPluginConfig {
     @Component
     public static class DmiPluginProperties {
 
-        @Value("${dmi.service.name}")
-        private String dmiServiceName;
+        @Value("${dmi.service.url}")
+        private String dmiServiceUrl;
     }
 }
 
