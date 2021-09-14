@@ -253,7 +253,7 @@ class DmiServiceImplSpec extends Specification {
             mockSdncOperations.writeResourceDataPassthroughRunning(_, _, _, _) >> new ResponseEntity<String>('response json', HttpStatus.CREATED)
         when: 'write resource data from cm handles service method invoked'
             def response = objectUnderTest.writeResourceDataPassthroughForCmHandle('some-cmHandle',
-                    'some-resourceIdentifier', 'some-dataType', '{some-data}')
+                    'some-resourceIdentifier', 'some-dataType', 'passthrough data')
         then: 'response have expected json'
             response == 'response json'
     }
@@ -266,7 +266,7 @@ class DmiServiceImplSpec extends Specification {
             mockObjectMapper.writeValueAsString(_) >> jsonString
         when: 'write resource data for pass through method is invoked'
             objectUnderTest.writeResourceDataPassthroughForCmHandle('some-cmHandle',
-                    'some-resourceIdentifier', 'some-dataType', new Object())
+                    'some-resourceIdentifier', 'some-dataType', _ as String)
         then: 'a dmi exception is thrown'
             thrown(DmiException.class)
         where: 'the following combinations are tested'
