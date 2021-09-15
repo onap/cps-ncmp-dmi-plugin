@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3be2a00f_ddccabbc",
+        "filename": "src/test/groovy/org/onap/cps/ncmp/dmi/rest/controller/DmiRestControllerSpec.groovy",
+        "patchSetId": 3
+      },
+      "lineNbr": 213,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2021-09-15T16:21:16Z",
+      "side": 1,
+      "message": "as discussed add a new scenario to handle a sample file with some special characters in the data but don\u0027t imply it is valid json json\n\ne.g. passthroughWriteRequestBodyWithSpecialCharacters.gjon\n...\ndata: \"special characters \\\" \\n\"",
+      "range": {
+        "startLine": 213,
+        "startChar": 61,
+        "endLine": 213,
+        "endChar": 94
+      },
+      "revId": "54c94068b5758a361253dc5907a654c51a7d9d81",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    }
+  ]
+}
