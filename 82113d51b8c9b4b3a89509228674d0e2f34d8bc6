@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "6f034806_038c03da",
+        "filename": "src/main/java/org/onap/cps/ncmp/dmi/service/DmiServiceImpl.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 226,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2021-09-15T13:06:14Z",
+      "side": 1,
+      "message": "ideal :-D",
+      "range": {
+        "startLine": 226,
+        "startChar": 43,
+        "endLine": 226,
+        "endChar": 60
+      },
+      "revId": "82113d51b8c9b4b3a89509228674d0e2f34d8bc6",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "2fec4a95_dda323c8",
+        "filename": "src/test/groovy/org/onap/cps/ncmp/dmi/service/DmiServiceImplSpec.groovy",
+        "patchSetId": 1
+      },
+      "lineNbr": 273,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2021-09-15T13:06:14Z",
+      "side": 1,
+      "message": "can you create table to tets with bot 200 and 201 from sdnc ?",
+      "range": {
+        "startLine": 273,
+        "startChar": 126,
+        "endLine": 273,
+        "endChar": 139
+      },
+      "revId": "82113d51b8c9b4b3a89509228674d0e2f34d8bc6",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    }
+  ]
+}
