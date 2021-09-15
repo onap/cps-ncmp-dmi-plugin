@@ -218,8 +218,8 @@ class DmiRestControllerSpec extends Specification {
                     post(writeDataforCmHandlePassthroughRunning).contentType(MediaType.APPLICATION_JSON)
                             .content(jsonData)
             ).andReturn().response
-       then: 'response status is ok'
-            response.status == HttpStatus.OK.value()
+       then: 'response status is 201 CREATED'
+            response.status == HttpStatus.CREATED.value()
         and: 'the data in the request body is as expected'
             response.getContentAsString() == '{some-json}'
     }

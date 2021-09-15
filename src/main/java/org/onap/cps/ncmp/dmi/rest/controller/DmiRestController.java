@@ -91,7 +91,7 @@ public class DmiRestController implements DmiPluginApi, DmiPluginInternalApi {
             resourceIdentifier,
             MediaType.APPLICATION_JSON_VALUE,
             dataAccessWriteRequest.getData());
-        return new ResponseEntity<>(response, HttpStatus.OK);
+        return new ResponseEntity<>(response, HttpStatus.CREATED);
     }
 
     /**
