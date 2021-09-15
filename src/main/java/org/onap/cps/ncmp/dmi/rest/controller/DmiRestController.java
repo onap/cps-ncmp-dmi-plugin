@@ -84,14 +84,14 @@ public class DmiRestController implements DmiPluginApi, DmiPluginInternalApi {
      * @return (@ code ResponseEntity) response entity
      */
     @Override
-    public ResponseEntity<Object> writeDataByPassthroughRunningForCmHandle(
+    public ResponseEntity<String> writeDataByPassthroughRunningForCmHandle(
         final DataAccessWriteRequest dataAccessWriteRequest,
         final String cmHandle, final String resourceIdentifier) {
         final String response = dmiService.writeResourceDataPassthroughForCmHandle(cmHandle,
             resourceIdentifier,
             MediaType.APPLICATION_JSON_VALUE,
             dataAccessWriteRequest.getData());
-        return new ResponseEntity<>(response, HttpStatus.OK);
+        return new ResponseEntity<>(response, HttpStatus.CREATED);
     }
 
     /**

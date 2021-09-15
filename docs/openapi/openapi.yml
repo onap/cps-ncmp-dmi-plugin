@@ -192,8 +192,8 @@ paths:
             schema:
               $ref: 'components.yml#/components/schemas/DataAccessWriteRequest'
       responses:
-        '200':
-          $ref: 'components.yml#/components/responses/Ok'
+        '201':
+          $ref: 'components.yml#/components/responses/Created'
         '400':
           $ref: 'components.yml#/components/responses/BadRequest'
         '401':

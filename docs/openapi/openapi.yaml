@@ -313,12 +313,12 @@ paths:
               $ref: '#/components/schemas/DataAccessWriteRequest'
         required: true
       responses:
-        "200":
-          description: OK
+        "201":
+          description: Created
           content:
-            application/json:
+            text/plain:
               schema:
-                type: object
+                type: string
         "400":
           description: Bad Request
           content:

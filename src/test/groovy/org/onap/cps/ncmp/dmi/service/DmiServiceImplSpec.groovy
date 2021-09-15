@@ -248,30 +248,40 @@ class DmiServiceImplSpec extends Specification {
             response == 'response json'
     }
 
-    def 'Write resource data using for passthrough running for the given cm handle.'() {
-        given: 'sdnc returns a created response'
-            mockSdncOperations.writeResourceDataPassthroughRunning(_, _, _, _) >> new ResponseEntity<String>('response json', HttpStatus.CREATED)
-        when: 'write resource data from cm handles service method invoked'
+    def 'Write resource data for passthrough running for the given cm handle with a #scenario from sdnc.'() {
+        given: 'sdnc returns a response'
+            mockSdncOperations.writeResourceDataPassthroughRunning(_, _, _, _) >> new ResponseEntity<String>('response json', httpResponse)
+        when: 'write resource data for cm handle method invoked'
             def response = objectUnderTest.writeResourceDataPassthroughForCmHandle('some-cmHandle',
                     'some-resourceIdentifier', 'some-dataType', '{some-data}')
-        then: 'response have expected json'
+        then: 'the response contains the expected json data from sdnc'
             response == 'response json'
+        where: 'the following values are used'
+            scenario               | httpResponse
+            '200 OK response'      | HttpStatus.OK
+            '201 CREATED response' | HttpStatus.CREATED
     }
 
-    def 'Write resource data for passthrough running with a #scenario.'() {
-        given: 'sdnc returns a response for the write operation'
-            mockSdncOperations.writeResourceDataPassthroughRunning(_, _, _, _) >> new ResponseEntity<String>('response json', httpStatus)
-        and: 'the data provided in the request body is written as a string'
-            objectUnderTest.objectMapper = mockObjectMapper
-            mockObjectMapper.writeValueAsString(_) >> jsonString
+    def 'Write resource data for passthrough running with a 500 response from sdnc.'() {
+        given: 'sdnc returns a 500 response for the write operation'
+            mockSdncOperations.writeResourceDataPassthroughRunning(_, _, _, _) >> new ResponseEntity<String>('response json', HttpStatus.INTERNAL_SERVER_ERROR)
         when: 'write resource data for pass through method is invoked'
             objectUnderTest.writeResourceDataPassthroughForCmHandle('some-cmHandle',
                     'some-resourceIdentifier', 'some-dataType', new Object())
         then: 'a dmi exception is thrown'
             thrown(DmiException.class)
-        where: 'the following combinations are tested'
-            scenario                     | httpStatus                       | jsonString
-            '500 response from sdnc'     | HttpStatus.INTERNAL_SERVER_ERROR | '{some-json-data}'
-            'json processing exception ' | HttpStatus.OK                    | { throw new JsonProcessingException('some error.') }
+    }
+
+    def 'Write resource data for passthrough running with a json processing exception.'() {
+        given: 'sdnc returns a 200 response for the write operation'
+            mockSdncOperations.writeResourceDataPassthroughRunning(_, _, _, _) >> new ResponseEntity<String>('response json', HttpStatus.OK)
+        and: 'a json processing exception is thrown'
+            objectUnderTest.objectMapper = mockObjectMapper
+            mockObjectMapper.writeValueAsString(_) >> { throw new JsonProcessingException('some-exception') }
+        when: 'write resource data for pass through method is invoked'
+            objectUnderTest.writeResourceDataPassthroughForCmHandle('some-cmHandle',
+                    'some-resourceIdentifier', 'some-dataType', new Object())
+        then: 'a dmi exception is thrown'
+            thrown(DmiException.class)
     }
 }

@@ -223,7 +223,7 @@ public class DmiServiceImpl implements DmiService {
         }
         final ResponseEntity<String> responseEntity =
                 sdncOperations.writeResourceDataPassthroughRunning(cmHandle, resourceIdentifier, dataType, jsonData);
-        if (responseEntity.getStatusCode() == HttpStatus.CREATED) {
+        if (responseEntity.getStatusCode().is2xxSuccessful()) {
             return responseEntity.getBody();
         } else {
             throw new DmiException(cmHandle,
