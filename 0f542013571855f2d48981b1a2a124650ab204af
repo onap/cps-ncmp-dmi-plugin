@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "bda24bf4_47448392",
+        "filename": "docs/openapi/components.yml",
+        "patchSetId": 1
+      },
+      "lineNbr": 79,
+      "author": {
+        "id": 5006
+      },
+      "writtenOn": "2021-09-15T12:35:40Z",
+      "side": 1,
+      "message": "Irrespective of onap-dmi-plugin impl this represents the dataType of  below data given at line 80. \n\nin current scenario from ncmp it can be application/json or application/yang-data+json. \n\nbut imo dmi should not care detail of that.",
+      "parentUuid": "c7aa533c_e259cc0e",
+      "range": {
+        "startLine": 78,
+        "startChar": 8,
+        "endLine": 79,
+        "endChar": 22
+      },
+      "revId": "0f542013571855f2d48981b1a2a124650ab204af",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "6fcd7732_568c6704",
         "filename": "src/main/java/org/onap/cps/ncmp/dmi/service/DmiService.java",
         "patchSetId": 1
@@ -36,6 +60,30 @@
       "writtenOn": "2021-09-14T17:21:03Z",
       "side": 1,
       "message": "Suggestion: As data is expected to be a valid json as per controller layer code, it would be good to add a check at the control layer to ensure that.",
+      "range": {
+        "startLine": 109,
+        "startChar": 15,
+        "endLine": 109,
+        "endChar": 19
+      },
+      "revId": "0f542013571855f2d48981b1a2a124650ab204af",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "abbee50a_278f0246",
+        "filename": "src/main/java/org/onap/cps/ncmp/dmi/service/DmiService.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 109,
+      "author": {
+        "id": 5006
+      },
+      "writtenOn": "2021-09-15T12:35:40Z",
+      "side": 1,
+      "message": "this data can be any string as per type coming in dataType.",
+      "parentUuid": "6fcd7732_568c6704",
       "range": {
         "startLine": 109,
         "startChar": 15,
@@ -71,6 +119,30 @@
     },
     {
       "key": {
+        "uuid": "0c6fdcb9_abe4445a",
+        "filename": "src/test/groovy/org/onap/cps/ncmp/dmi/rest/controller/DmiRestControllerSpec.groovy",
+        "patchSetId": 1
+      },
+      "lineNbr": 215,
+      "author": {
+        "id": 5006
+      },
+      "writtenOn": "2021-09-15T12:35:40Z",
+      "side": 1,
+      "message": "this kind of test string was not able to edge case i.e. special chars like \" or new line in string and it failed. for reference check prev fix of bug here \n\nhttps://gerrit.onap.org/r/c/cps/ncmp-dmi-plugin/+/123807",
+      "parentUuid": "ed496257_57570f72",
+      "range": {
+        "startLine": 215,
+        "startChar": 132,
+        "endLine": 215,
+        "endChar": 161
+      },
+      "revId": "0f542013571855f2d48981b1a2a124650ab204af",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "19472f2c_ab91717b",
         "filename": "src/test/groovy/org/onap/cps/ncmp/dmi/service/DmiServiceImplSpec.groovy",
         "patchSetId": 1
@@ -82,6 +154,30 @@
       "writtenOn": "2021-09-14T14:27:29Z",
       "side": 1,
       "message": "see comment on previous test",
+      "range": {
+        "startLine": 254,
+        "startChar": 0,
+        "endLine": 256,
+        "endChar": 96
+      },
+      "revId": "0f542013571855f2d48981b1a2a124650ab204af",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "1a5b2702_53d2448d",
+        "filename": "src/test/groovy/org/onap/cps/ncmp/dmi/service/DmiServiceImplSpec.groovy",
+        "patchSetId": 1
+      },
+      "lineNbr": 256,
+      "author": {
+        "id": 5006
+      },
+      "writtenOn": "2021-09-15T12:35:40Z",
+      "side": 1,
+      "message": "this kind of test string was not able to edge case i.e. special chars like \" or new line in string and it failed. for reference check prev fix of bug here \n\nhttps://gerrit.onap.org/r/c/cps/ncmp-dmi-plugin/+/123807",
+      "parentUuid": "19472f2c_ab91717b",
       "range": {
         "startLine": 254,
         "startChar": 0,
@@ -117,6 +213,30 @@
     },
     {
       "key": {
+        "uuid": "b557a37e_bbb2893a",
+        "filename": "src/test/groovy/org/onap/cps/ncmp/dmi/service/operation/SdncOperationsSpec.groovy",
+        "patchSetId": 1
+      },
+      "lineNbr": 76,
+      "author": {
+        "id": 5006
+      },
+      "writtenOn": "2021-09-15T12:35:40Z",
+      "side": 1,
+      "message": "this kind of test string was not able to edge case i.e. special chars like \" or new line in string and it failed. for reference check prev fix of bug here \n\nhttps://gerrit.onap.org/r/c/cps/ncmp-dmi-plugin/+/123807",
+      "parentUuid": "3492707a_a3c6fa51",
+      "range": {
+        "startLine": 76,
+        "startChar": 110,
+        "endLine": 76,
+        "endChar": 142
+      },
+      "revId": "0f542013571855f2d48981b1a2a124650ab204af",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "8e76f4f3_b26c76f4",
         "filename": "src/test/resources/WriteDataForCmHandle.json",
         "patchSetId": 1
@@ -128,6 +248,30 @@
       "writtenOn": "2021-09-14T14:27:29Z",
       "side": 1,
       "message": "\"pass through string\"  \n\n(current test dat implies it has to be Json)",
+      "range": {
+        "startLine": 4,
+        "startChar": 11,
+        "endLine": 4,
+        "endChar": 44
+      },
+      "revId": "0f542013571855f2d48981b1a2a124650ab204af",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "5d20049e_e7ac679f",
+        "filename": "src/test/resources/WriteDataForCmHandle.json",
+        "patchSetId": 1
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 5006
+      },
+      "writtenOn": "2021-09-15T12:35:40Z",
+      "side": 1,
+      "message": "this kind of test string was not able to edge case i.e. special chars like \" or new line in string and it failed. for reference check prev fix of bug here \n\nhttps://gerrit.onap.org/r/c/cps/ncmp-dmi-plugin/+/123807",
+      "parentUuid": "8e76f4f3_b26c76f4",
       "range": {
         "startLine": 4,
         "startChar": 11,
