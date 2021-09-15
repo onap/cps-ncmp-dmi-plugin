@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9e4df01b_5c094f34",
+        "filename": "src/test/groovy/org/onap/cps/ncmp/dmi/service/DmiServiceImplSpec.groovy",
+        "patchSetId": 2
+      },
+      "lineNbr": 252,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2021-09-15T16:27:45Z",
+      "side": 1,
+      "message": "you can insert #scenario here too",
+      "range": {
+        "startLine": 252,
+        "startChar": 29,
+        "endLine": 252,
+        "endChar": 39
+      },
+      "revId": "accefb1c6f1fbb2ab904acbf7d5f4eb33ef51cee",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    }
+  ]
+}
