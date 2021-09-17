@@ -1,0 +1,188 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "d103afec_7cc4c2ed",
+        "filename": "src/test/groovy/org/onap/cps/ncmp/dmi/rest/controller/DmiRestControllerSpec.groovy",
+        "patchSetId": 4
+      },
+      "lineNbr": 228,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2021-09-17T16:21:18Z",
+      "side": 1,
+      "message": "bit borderline (sine it is assert in a mock interaction) but i would teast this as \u0027expected\u0027 data\n\neg. || expectedRequestData",
+      "range": {
+        "startLine": 228,
+        "startChar": 74,
+        "endLine": 228,
+        "endChar": 89
+      },
+      "revId": "1bc199f3168cb3fec8dc97891ab7c8cdf8be67ed",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "0fc63b64_90f7c490",
+        "filename": "src/test/groovy/org/onap/cps/ncmp/dmi/rest/controller/DmiRestControllerSpec.groovy",
+        "patchSetId": 4
+      },
+      "lineNbr": 228,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2021-09-17T16:21:18Z",
+      "side": 1,
+      "message": "requestBodyFile",
+      "range": {
+        "startLine": 228,
+        "startChar": 47,
+        "endLine": 228,
+        "endChar": 74
+      },
+      "revId": "1bc199f3168cb3fec8dc97891ab7c8cdf8be67ed",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "e58cd4da_ef75ae10",
+        "filename": "src/test/groovy/org/onap/cps/ncmp/dmi/rest/controller/DmiRestControllerSpec.groovy",
+        "patchSetId": 4
+      },
+      "lineNbr": 229,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2021-09-17T16:21:18Z",
+      "side": 1,
+      "message": "remove additional spaces",
+      "range": {
+        "startLine": 229,
+        "startChar": 73,
+        "endLine": 229,
+        "endChar": 78
+      },
+      "revId": "1bc199f3168cb3fec8dc97891ab7c8cdf8be67ed",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "f6ff5a9a_59fac4f9",
+        "filename": "src/test/groovy/org/onap/cps/ncmp/dmi/rest/controller/DmiRestControllerSpec.groovy",
+        "patchSetId": 4
+      },
+      "lineNbr": 229,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2021-09-17T16:21:18Z",
+      "side": 1,
+      "message": "remove additional spaces",
+      "range": {
+        "startLine": 229,
+        "startChar": 37,
+        "endLine": 229,
+        "endChar": 47
+      },
+      "revId": "1bc199f3168cb3fec8dc97891ab7c8cdf8be67ed",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "31dfa55d_508fada8",
+        "filename": "src/test/groovy/org/onap/cps/ncmp/dmi/rest/controller/DmiRestControllerSpec.groovy",
+        "patchSetId": 4
+      },
+      "lineNbr": 230,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2021-09-17T16:21:18Z",
+      "side": 1,
+      "message": "Please swap lines 229 and 230\nstandard testing pattern e.g.\n1) normal happy flow\n2) special case/ additional conditions compared to normal case\n3) negative flows/erro scnearios",
+      "range": {
+        "startLine": 230,
+        "startChar": 13,
+        "endLine": 230,
+        "endChar": 95
+      },
+      "revId": "1bc199f3168cb3fec8dc97891ab7c8cdf8be67ed",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "fe4db18b_4f49461a",
+        "filename": "src/test/groovy/org/onap/cps/ncmp/dmi/service/DmiServiceImplSpec.groovy",
+        "patchSetId": 4
+      },
+      "lineNbr": 261,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2021-09-17T16:21:18Z",
+      "side": 1,
+      "message": "remove redundant spaces",
+      "range": {
+        "startLine": 261,
+        "startChar": 46,
+        "endLine": 261,
+        "endChar": 60
+      },
+      "revId": "1bc199f3168cb3fec8dc97891ab7c8cdf8be67ed",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "3b9cd272_f54fa137",
+        "filename": "src/test/groovy/org/onap/cps/ncmp/dmi/service/operation/SdncOperationsSpec.groovy",
+        "patchSetId": 4
+      },
+      "lineNbr": 82,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2021-09-17T16:21:18Z",
+      "side": 1,
+      "message": "don\u0027t think this needs to be tested here as there is no production code being covered here that could manipulate the requestBody",
+      "range": {
+        "startLine": 79,
+        "startChar": 0,
+        "endLine": 82,
+        "endChar": 94
+      },
+      "revId": "1bc199f3168cb3fec8dc97891ab7c8cdf8be67ed",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "619ec2c9_6d2a1f80",
+        "filename": "src/test/resources/dataWithNormalChar.json",
+        "patchSetId": 4
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2021-09-17T16:21:18Z",
+      "side": 1,
+      "message": "normal request data\n\n(it already inside a different \u0027body\u0027 so using that term could be confusing",
+      "range": {
+        "startLine": 4,
+        "startChar": 11,
+        "endLine": 4,
+        "endChar": 27
+      },
+      "revId": "1bc199f3168cb3fec8dc97891ab7c8cdf8be67ed",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    }
+  ]
+}
