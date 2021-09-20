@@ -120,6 +120,30 @@
     },
     {
       "key": {
+        "uuid": "1825b417_11b81848",
+        "filename": "src/main/java/org/onap/cps/ncmp/dmi/service/DmiService.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 109,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2021-09-20T14:03:05Z",
+      "side": 1,
+      "message": "agreed with Rahul the idea for NCMP is that this data can be of any \u0027type\u0027 different plugins wil interpret and validate it as necessary for their implementation. NCMP cannot verify and just passes on whatever the content is\n@Rahul it might be good to show Renu the diagram you made to explain this",
+      "parentUuid": "abbee50a_278f0246",
+      "range": {
+        "startLine": 109,
+        "startChar": 15,
+        "endLine": 109,
+        "endChar": 19
+      },
+      "revId": "0f542013571855f2d48981b1a2a124650ab204af",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "ed496257_57570f72",
         "filename": "src/test/groovy/org/onap/cps/ncmp/dmi/rest/controller/DmiRestControllerSpec.groovy",
         "patchSetId": 1

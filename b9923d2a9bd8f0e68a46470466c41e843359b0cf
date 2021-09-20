@@ -22,6 +22,29 @@
       "revId": "b9923d2a9bd8f0e68a46470466c41e843359b0cf",
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "c222430b_1b8dcd7f",
+        "filename": "src/test/groovy/org/onap/cps/ncmp/dmi/service/DmiServiceImplSpec.groovy",
+        "patchSetId": 5
+      },
+      "lineNbr": 263,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2021-09-20T14:03:05Z",
+      "side": 1,
+      "message": "no blocking | and || are normally surrounded by a single space minimum ie. for the longest tabel \u0027cell\u0027 entry",
+      "range": {
+        "startLine": 263,
+        "startChar": 45,
+        "endLine": 263,
+        "endChar": 47
+      },
+      "revId": "b9923d2a9bd8f0e68a46470466c41e843359b0cf",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
     }
   ]
 }
