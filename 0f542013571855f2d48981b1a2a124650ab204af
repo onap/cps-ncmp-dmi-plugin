@@ -49,6 +49,30 @@
     },
     {
       "key": {
+        "uuid": "bf9963c0_e93cde7d",
+        "filename": "docs/openapi/components.yml",
+        "patchSetId": 1
+      },
+      "lineNbr": 79,
+      "author": {
+        "id": 7680
+      },
+      "writtenOn": "2021-09-20T12:36:14Z",
+      "side": 1,
+      "message": "the existing ncmp controller code does not use \u0027dataType\u0027. If we are planning to keep it the same in the Instanbul release, then we should mention it somewhere. \n\nPlease have a look at line 92 of the DmiRestController.java\n\nhttps://gerrit.onap.org/r/gitweb?p\u003dcps/ncmp-dmi-plugin.git;a\u003dblob;f\u003dsrc/main/java/org/onap/cps/ncmp/dmi/rest/controller/DmiRestController.java;h\u003d37381fb1fab57129951a92f8353963441d0fd146;hb\u003drefs/heads/master\n\n\n@Override\n  87     public ResponseEntity\u003cString\u003e writeDataByPassthroughRunningForCmHandle(\n  88         final DataAccessWriteRequest dataAccessWriteRequest,\n  89         final String cmHandle, final String resourceIdentifier) {\n  90         final String response \u003d dmiService.writeResourceDataPassthroughForCmHandle(cmHandle,\n  91             resourceIdentifier,\n  92             MediaType.APPLICATION_JSON_VALUE,\n  93             dataAccessWriteRequest.getData());\n  94         return new ResponseEntity\u003c\u003e(response, HttpStatus.CREATED);\n  95     }\n  96",
+      "parentUuid": "bda24bf4_47448392",
+      "range": {
+        "startLine": 78,
+        "startChar": 8,
+        "endLine": 79,
+        "endChar": 22
+      },
+      "revId": "0f542013571855f2d48981b1a2a124650ab204af",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "6fcd7732_568c6704",
         "filename": "src/main/java/org/onap/cps/ncmp/dmi/service/DmiService.java",
         "patchSetId": 1
