@@ -144,6 +144,30 @@
     },
     {
       "key": {
+        "uuid": "eeae6a99_8f3fb99e",
+        "filename": "src/main/java/org/onap/cps/ncmp/dmi/service/DmiService.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 109,
+      "author": {
+        "id": 7680
+      },
+      "writtenOn": "2021-09-20T18:06:38Z",
+      "side": 1,
+      "message": "@Toine, @Rahul,\n\nAck.\nIn the service later we can keep it flexible to support it later. The controller is restrictive and ignores dataType. We can discuss it in the other comment thread. https://gerrit.onap.org/r/c/cps/ncmp-dmi-plugin/+/124150/1/docs/openapi/components.yml#79",
+      "parentUuid": "1825b417_11b81848",
+      "range": {
+        "startLine": 109,
+        "startChar": 15,
+        "endLine": 109,
+        "endChar": 19
+      },
+      "revId": "0f542013571855f2d48981b1a2a124650ab204af",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ed496257_57570f72",
         "filename": "src/test/groovy/org/onap/cps/ncmp/dmi/rest/controller/DmiRestControllerSpec.groovy",
         "patchSetId": 1
