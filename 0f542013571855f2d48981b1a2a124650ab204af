@@ -73,6 +73,30 @@
     },
     {
       "key": {
+        "uuid": "f61a4843_69174284",
+        "filename": "docs/openapi/components.yml",
+        "patchSetId": 1
+      },
+      "lineNbr": 79,
+      "author": {
+        "id": 7680
+      },
+      "writtenOn": "2021-09-20T18:10:46Z",
+      "side": 1,
+      "message": "@Rahul, I understand what you are trying to highlight in the comment, but the controller does not support it. If it is already documented, can you please share the link here.",
+      "parentUuid": "bf9963c0_e93cde7d",
+      "range": {
+        "startLine": 78,
+        "startChar": 8,
+        "endLine": 79,
+        "endChar": 22
+      },
+      "revId": "0f542013571855f2d48981b1a2a124650ab204af",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "6fcd7732_568c6704",
         "filename": "src/main/java/org/onap/cps/ncmp/dmi/service/DmiService.java",
         "patchSetId": 1
