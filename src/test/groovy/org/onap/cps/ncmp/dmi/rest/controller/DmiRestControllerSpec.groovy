@@ -30,6 +30,8 @@ import org.onap.cps.ncmp.dmi.model.ModuleReference
 import org.onap.cps.ncmp.dmi.model.ModuleSchemaList
 import org.onap.cps.ncmp.dmi.model.ModuleSet
 import org.onap.cps.ncmp.dmi.model.ModuleSetSchemas
+import org.onap.cps.ncmp.dmi.model.YangResource
+import org.onap.cps.ncmp.dmi.model.YangResources
 import org.onap.cps.ncmp.dmi.service.DmiService
 import org.spockframework.spring.SpringBean
 import org.springframework.beans.factory.annotation.Autowired
@@ -149,15 +151,14 @@ class DmiRestControllerSpec extends Specification {
         given: 'an endpoint and json data'
             def getModulesEndpoint = "$basePathV1/ch/some-cm-handle/moduleResources"
             def jsonData = TestUtils.getResourceFileContent('GetModules.json')
-        and: 'the DMI service returns some json data'
-            ModuleReference moduleReference1 = new ModuleReference()
-            moduleReference1.name = 'ietf-yang-library'
-            moduleReference1.revision = '2016-06-21'
-            ModuleReference moduleReference2 = new ModuleReference()
-            moduleReference2.name = 'nc-notifications'
-            moduleReference2.revision = '2008-07-14'
+        and: 'the DMI service returns the yang resources'
+            ModuleReference moduleReference1 = new ModuleReference(name: 'ietf-yang-library', revision: '2016-06-21')
+            ModuleReference moduleReference2 = new ModuleReference(name: 'nc-notifications', revision: '2008-07-14')
             def moduleReferences = [moduleReference1, moduleReference2]
-            mockDmiService.getModuleResources('some-cm-handle', moduleReferences) >> '{some-json}'
+            def yangResources = new YangResources()
+            def yangResource = new YangResource(yangSource: '"some-data"', moduleName: 'NAME', revision: 'REVISION')
+            yangResources.add(yangResource)
+            mockDmiService.getModuleResources('some-cm-handle', moduleReferences) >> yangResources
         when: 'get module resource api is invoked'
             def response = mvc.perform(post(getModulesEndpoint)
                     .contentType(MediaType.APPLICATION_JSON)
@@ -165,7 +166,7 @@ class DmiRestControllerSpec extends Specification {
         then: 'a OK status is returned'
             response.status == HttpStatus.OK.value()
         and: 'the expected response is returned'
-            response.getContentAsString() == '{some-json}'
+            response.getContentAsString() == '[{"yangSource":"\\"some-data\\"","moduleName":"NAME","revision":"REVISION"}]'
     }
 
     def 'Retrieve module resources with exception handling.'() {

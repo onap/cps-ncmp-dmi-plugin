@@ -26,6 +26,7 @@ import javax.validation.constraints.NotNull;
 import org.onap.cps.ncmp.dmi.exception.DmiException;
 import org.onap.cps.ncmp.dmi.model.ModuleReference;
 import org.onap.cps.ncmp.dmi.model.ModuleSet;
+import org.onap.cps.ncmp.dmi.model.YangResources;
 
 /**
  * Interface for handling Dmi plugin Data.
@@ -54,9 +55,9 @@ public interface DmiService {
      *
      * @param cmHandle cmHandle
      * @param modules  a list of module data
-     * @return returns all module resources
+     * @return returns all yang resources
      */
-    String getModuleResources(String cmHandle, List<ModuleReference> modules);
+    YangResources getModuleResources(String cmHandle, List<ModuleReference> modules);
 
     /**
      * This method use to fetch the resource data from cm handle for datastore pass-through operational and resource

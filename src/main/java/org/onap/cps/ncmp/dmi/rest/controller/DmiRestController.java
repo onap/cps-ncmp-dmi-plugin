@@ -32,6 +32,7 @@ import org.onap.cps.ncmp.dmi.model.DataAccessWriteRequest;
 import org.onap.cps.ncmp.dmi.model.DmiReadRequestBody;
 import org.onap.cps.ncmp.dmi.model.ModuleReference;
 import org.onap.cps.ncmp.dmi.model.ModuleSet;
+import org.onap.cps.ncmp.dmi.model.YangResources;
 import org.onap.cps.ncmp.dmi.rest.api.DmiPluginApi;
 import org.onap.cps.ncmp.dmi.rest.api.DmiPluginInternalApi;
 import org.onap.cps.ncmp.dmi.service.DmiService;
@@ -62,17 +63,14 @@ public class DmiRestController implements DmiPluginApi, DmiPluginInternalApi {
     }
 
     @Override
-    public ResponseEntity<Object> retrieveModuleResources(@Valid final DmiReadRequestBody dmiReadRequestBody,
+    public ResponseEntity<YangResources> retrieveModuleResources(@Valid final DmiReadRequestBody dmiReadRequestBody,
         final String cmHandle) {
         if (dmiReadRequestBody.getOperation().toString().equals("read")) {
             final var moduleReferenceList = convertRestObjectToJavaApiObject(dmiReadRequestBody);
             final var response = dmiService.getModuleResources(cmHandle, moduleReferenceList);
-            if (response.isEmpty()) {
-                return new ResponseEntity<>(response, HttpStatus.NOT_FOUND);
-            }
             return new ResponseEntity<>(response, HttpStatus.OK);
         }
-        return new ResponseEntity<>("Unsupported operation", HttpStatus.CONFLICT);
+        return new ResponseEntity<>(HttpStatus.CONFLICT);
     }
 
     /**
