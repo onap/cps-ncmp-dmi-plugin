@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "4bea753e_ec3739e6",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 7
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2021-09-21T11:00:08Z",
+      "side": 1,
+      "message": "non blocking: should have added explanatory text in this message about this fix too",
+      "range": {
+        "startLine": 9,
+        "startChar": 0,
+        "endLine": 9,
+        "endChar": 17
+      },
+      "revId": "3e7700223bc10d597a850a9644156aa54f59f25e",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "8b97b2f7_97595ab0",
+        "filename": "src/main/resources/application.yml",
+        "patchSetId": 7
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2021-09-21T11:00:08Z",
+      "side": 1,
+      "message": "non blocking: the changes should have be mentioned in commit message as well",
+      "range": {
+        "startLine": 25,
+        "startChar": 1,
+        "endLine": 35,
+        "endChar": 29
+      },
+      "revId": "3e7700223bc10d597a850a9644156aa54f59f25e",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    }
+  ]
+}
