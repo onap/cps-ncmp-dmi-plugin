@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "6cdfd8ab_a041b422",
+        "filename": "src/main/resources/application.yml",
+        "patchSetId": 8
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 5658
+      },
+      "writtenOn": "2021-09-21T13:24:04Z",
+      "side": 1,
+      "message": "Also use `dmi.service.url` for the property name to be consistent.",
+      "revId": "04416bf7fda0bc388db77151498442cab38dd86e",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    }
+  ]
+}
