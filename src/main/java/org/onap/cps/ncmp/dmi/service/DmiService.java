@@ -25,6 +25,7 @@ import java.util.Map;
 import javax.validation.constraints.NotNull;
 import org.onap.cps.ncmp.dmi.exception.DmiException;
 import org.onap.cps.ncmp.dmi.model.ModuleReference;
+import org.onap.cps.ncmp.dmi.model.ModuleResources;
 import org.onap.cps.ncmp.dmi.model.ModuleSet;
 
 /**
@@ -56,7 +57,7 @@ public interface DmiService {
      * @param modules  a list of module data
      * @return returns all module resources
      */
-    String getModuleResources(String cmHandle, List<ModuleReference> modules);
+    ModuleResources getModuleResources(String cmHandle, List<ModuleReference> modules);
 
     /**
      * This method use to fetch the resource data from cm handle for datastore pass-through operational and resource

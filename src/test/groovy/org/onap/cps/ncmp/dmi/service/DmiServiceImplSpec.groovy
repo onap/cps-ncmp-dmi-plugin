@@ -30,6 +30,8 @@ import org.onap.cps.ncmp.dmi.exception.ModuleResourceNotFoundException
 import org.onap.cps.ncmp.dmi.exception.ModulesNotFoundException
 import org.onap.cps.ncmp.dmi.exception.ResourceDataNotFound
 import org.onap.cps.ncmp.dmi.model.ModuleReference
+import org.onap.cps.ncmp.dmi.model.ModuleResources
+import org.onap.cps.ncmp.dmi.model.ModuleResourcesInner
 import org.onap.cps.ncmp.dmi.service.client.NcmpRestClient
 import org.onap.cps.ncmp.dmi.service.operation.SdncOperations
 import org.springframework.http.HttpStatus
@@ -145,8 +147,11 @@ class DmiServiceImplSpec extends Specification {
             def result = objectUnderTest.getModuleResources(cmHandle, moduleList)
         then: 'get modules resources is called once with the expected cm handle and request body'
             1 * mockSdncOperations.getModuleResource(cmHandle, expectedRequestBody) >> new ResponseEntity<String>('{"ietf-netconf-monitoring:output": {"data": "some-data"}}', HttpStatus.OK)
-        and: 'the result is an array containing one json object with the expected name, revision and yang-source'
-            assert result == '[{"yangSource":"\\"some-data\\"","moduleName":"NAME","revision":"REVISION"}]'
+        and: 'the result is an one module resources object with the expected name, revision and yang-source'
+            def moduleResource = new ModuleResources()
+            def moduleResourceInner = new ModuleResourcesInner(yangSource: '"some-data"', moduleName: 'NAME', revision: 'REVISION')
+            moduleResource.add(moduleResourceInner)
+            assert result == moduleResource
     }
 
     def 'Get multiple module resources.'() {
@@ -160,8 +165,13 @@ class DmiServiceImplSpec extends Specification {
         then: 'get modules resources is called twice'
             2 * mockSdncOperations.getModuleResource(cmHandle, _) >>> [new ResponseEntity<String>('{"ietf-netconf-monitoring:output": {"data": "some-data1"}}', HttpStatus.OK),
                                                                    new ResponseEntity<String>('{"ietf-netconf-monitoring:output": {"data": "some-data2"}}', HttpStatus.OK)]
-        and: 'the result is an array containing json objects with the expected name, revision and yang-source'
-            assert result == '[{"yangSource":"\\"some-data1\\"","moduleName":"name-1","revision":"revision-1"},{"yangSource":"\\"some-data2\\"","moduleName":"name-2","revision":"revision-2"}]'
+        and: 'the result is a module resources object with the expected names, revisions and yang-sources'
+            def moduleResource = new ModuleResources()
+            def moduleResourceInner1 = new ModuleResourcesInner(yangSource: '"some-data1"', moduleName: 'name-1', revision: 'revision-1')
+            def moduleResourceInner2 = new ModuleResourcesInner(yangSource: '"some-data2"', moduleName: 'name-2', revision: 'revision-2')
+            moduleResource.add(moduleResourceInner1)
+            moduleResource.add(moduleResourceInner2)
+            assert result == moduleResource
     }
 
     def 'Get a module resource with module resource not found exception for #scenario.'() {

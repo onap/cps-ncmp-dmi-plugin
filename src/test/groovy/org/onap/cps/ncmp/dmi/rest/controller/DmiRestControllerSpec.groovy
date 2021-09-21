@@ -29,6 +29,8 @@ import org.onap.cps.ncmp.dmi.exception.ModulesNotFoundException
 import org.onap.cps.ncmp.dmi.model.DataAccessReadRequest
 import org.onap.cps.ncmp.dmi.model.DataAccessWriteRequest
 import org.onap.cps.ncmp.dmi.model.ModuleReference
+import org.onap.cps.ncmp.dmi.model.ModuleResources
+import org.onap.cps.ncmp.dmi.model.ModuleResourcesInner
 import org.onap.cps.ncmp.dmi.model.ModuleSchemaList
 import org.onap.cps.ncmp.dmi.model.ModuleSchemaProperties
 import org.onap.cps.ncmp.dmi.model.ModuleSchemas
@@ -153,7 +155,7 @@ class DmiRestControllerSpec extends Specification {
         given: 'an endpoint and json data'
             def getModulesEndpoint = "$basePathV1/ch/some-cm-handle/moduleResources"
             def jsonData = TestUtils.getResourceFileContent('GetModules.json')
-        and: 'the DMI service returns some json data'
+        and: 'the DMI service returns the module resources'
             ModuleReference moduleReference1 = new ModuleReference()
             moduleReference1.name = 'ietf-yang-library'
             moduleReference1.revision = '2016-06-21'
@@ -161,7 +163,10 @@ class DmiRestControllerSpec extends Specification {
             moduleReference2.name = 'nc-notifications'
             moduleReference2.revision = '2008-07-14'
             def moduleReferences = [moduleReference1, moduleReference2]
-            mockDmiService.getModuleResources('some-cm-handle', moduleReferences) >> '{some-json}'
+            def moduleResources = new ModuleResources()
+            def moduleResourceInner = new ModuleResourcesInner(yangSource: '"some-data"', moduleName: 'NAME', revision: 'REVISION')
+            moduleResources.add(moduleResourceInner)
+            mockDmiService.getModuleResources('some-cm-handle', moduleReferences) >> moduleResources
         when: 'get module resource api is invoked'
             def response = mvc.perform(post(getModulesEndpoint)
                     .contentType(MediaType.APPLICATION_JSON)
@@ -169,7 +174,7 @@ class DmiRestControllerSpec extends Specification {
         then: 'a OK status is returned'
             response.status == HttpStatus.OK.value()
         and: 'the expected response is returned'
-            response.getContentAsString() == '{some-json}'
+            response.getContentAsString() == '[{"yangSource":"\\"some-data\\"","moduleName":"NAME","revision":"REVISION"}]'
     }
 
     def 'Retrieve module resources with exception handling.'() {

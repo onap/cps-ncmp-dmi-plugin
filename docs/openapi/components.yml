@@ -58,6 +58,18 @@ components:
               namespace:
                 type: string
 
+    ModuleResources:
+      type: array
+      items:
+        type: object
+        properties:
+          yangSource:
+            type: string
+          moduleName:
+            type: string
+          revision:
+            type: string
+
     DataAccessReadRequest:
       type: object
       properties:

@@ -431,6 +431,7 @@
                     <threshold>Low</threshold>
                     <failOnError>true</failOnError>
                     <excludeFilterFile>spotbugs-exclude.xml</excludeFilterFile>
+                    <addSourceDirs>true</addSourceDirs>
                     <xmlOutput>true</xmlOutput>
                     <xmlOutputDirectory>${basedir}/target/spotbugs</xmlOutputDirectory>
                 </configuration>

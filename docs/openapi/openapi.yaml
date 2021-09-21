@@ -119,7 +119,7 @@ paths:
           content:
             application/json:
               schema:
-                type: object
+                $ref: '#/components/schemas/ModuleResources'
         "400":
           description: Bad Request
           content:
@@ -377,6 +377,10 @@ components:
           additionalProperties:
             type: string
             example: system-001
+    ModuleResources:
+      type: array
+      items:
+        $ref: '#/components/schemas/ModuleResources_inner'
     DataAccessReadRequest:
       type: object
       properties:
@@ -426,3 +430,12 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/DmiReadRequestBody_data_modules'
+    ModuleResources_inner:
+      type: object
+      properties:
+        yangSource:
+          type: string
+        moduleName:
+          type: string
+        revision:
+          type: string
