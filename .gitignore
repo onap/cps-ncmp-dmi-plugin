@@ -6,6 +6,7 @@
 
 target/
 log/
+docs/openapi/openapi.yaml
 
 .idea/
 .idea_modules/
