@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7f61dba3_aaaf4cfe",
+        "filename": "docs/openapi/openapi.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 5006
+      },
+      "writtenOn": "2021-09-22T14:28:49Z",
+      "side": 0,
+      "message": "I am not sure how this file came up in repo, need to check history",
+      "revId": "fa11e9cb799b9738d2295abd4690c142639b9250",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    }
+  ]
+}
