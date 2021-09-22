@@ -19,12 +19,14 @@ components:
           items:
             type: string
 
-    DmiReadRequestBody:
+    DmiModuleReadRequestBody:
       type: object
       properties:
         operation:
           type: string
           enum: [read]
+        dataType:
+          type: string
         data:
           type: object
           properties:
