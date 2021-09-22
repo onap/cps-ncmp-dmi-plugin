@@ -1,0 +1,44 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "299733d6_e87b8e0a",
+        "filename": "docs/openapi/openapi.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2021-09-22T12:13:24Z",
+      "side": 1,
+      "message": "why do we same(?) .yaml and yml of the files?!",
+      "revId": "196e873e282d026865b4c8f846b8d4691e44c080",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "b5548d7d_41b1feca",
+        "filename": "docs/openapi/openapi.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 122,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2021-09-22T12:13:24Z",
+      "side": 1,
+      "message": "can you not use $ref: \u0027#/components/schemas/YangsResources\u0027  (the array you have defined now?)",
+      "range": {
+        "startLine": 122,
+        "startChar": 16,
+        "endLine": 122,
+        "endChar": 28
+      },
+      "revId": "196e873e282d026865b4c8f846b8d4691e44c080",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    }
+  ]
+}
