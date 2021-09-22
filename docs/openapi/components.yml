@@ -19,7 +19,7 @@ components:
           items:
             type: string
 
-    DmiReadRequestBody:
+    DmiModuleSchemaReadRequestBody:
       type: object
       properties:
         operation:
