@@ -37,6 +37,24 @@
     },
     {
       "key": {
+        "uuid": "b9308a74_a4c9d0c7",
+        "filename": "docs/openapi/openapi.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 6841
+      },
+      "writtenOn": "2021-09-22T12:32:47Z",
+      "side": 1,
+      "message": "https://gerrit.onap.org/r/c/cps/ncmp-dmi-plugin/+/124385",
+      "parentUuid": "548f0d58_b57cf373",
+      "revId": "196e873e282d026865b4c8f846b8d4691e44c080",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "b5548d7d_41b1feca",
         "filename": "docs/openapi/openapi.yaml",
         "patchSetId": 2
