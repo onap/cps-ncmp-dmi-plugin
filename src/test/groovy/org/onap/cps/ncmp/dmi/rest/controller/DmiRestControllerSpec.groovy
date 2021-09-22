@@ -64,6 +64,7 @@ class DmiRestControllerSpec extends Specification {
         given: 'REST endpoint for getting all modules'
             def getModuleUrl = "$basePathV1/ch/node1/modules"
         and: 'get modules for cm-handle returns a json'
+            def json = '{"operation" : "read", "cmHandleProperties" : { "prop1" : "value1", "prop2" : "value2"}}'
             def moduleSetSchema = new ModuleSetSchemas()
             moduleSetSchema.namespace('some-namespace')
             moduleSetSchema.moduleName('some-moduleName')
@@ -74,7 +75,7 @@ class DmiRestControllerSpec extends Specification {
             mockDmiService.getModulesForCmHandle('node1') >> moduleSet
         when: 'post is being called'
             def response = mvc.perform(post(getModuleUrl)
-                    .contentType(MediaType.APPLICATION_JSON))
+                    .contentType(MediaType.APPLICATION_JSON).content(json))
                     .andReturn().response
         then: 'status is OK'
             response.status == HttpStatus.OK.value()
@@ -99,11 +100,12 @@ class DmiRestControllerSpec extends Specification {
     def 'Get all modules for given cm handle with exception handling of #scenario.'() {
         given: 'REST endpoint for getting all modules'
             def getModuleUrl = "$basePathV1/ch/node1/modules"
-        and: 'get modules for cm-handle throws #exceptionClass'
+        and: 'given request body and get modules for cm-handle throws #exceptionClass'
+            def json = '{"operation" : "read", "cmHandleProperties" : { "prop1" : "value1", "prop2" : "value2"}}'
             mockDmiService.getModulesForCmHandle('node1') >> { throw Mock(exceptionClass) }
         when: 'post is invoked'
             def response = mvc.perform( post(getModuleUrl)
-                    .contentType(MediaType.APPLICATION_JSON))
+                    .contentType(MediaType.APPLICATION_JSON).content(json))
                     .andReturn().response
         then: 'response status is #expectedResponse'
             response.status == expectedResponse

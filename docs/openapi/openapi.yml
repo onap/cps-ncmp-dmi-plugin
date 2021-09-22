@@ -45,6 +45,12 @@ paths:
           required: true
           schema:
             type: string
+      requestBody:
+        description: Operational body
+        content:
+          application/json:
+            schema:
+              $ref: 'components.yml#/components/schemas/DataAccessReadRequest'
       responses:
         '200':
           description: OK
@@ -107,7 +113,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: 'components.yml#/components/schemas/DmiReadRequestBody'
+              $ref: 'components.yml#/components/schemas/DmiModuleSchemaReadRequestBody'
       responses:
         '200':
           $ref: 'components.yml#/components/responses/Ok'
