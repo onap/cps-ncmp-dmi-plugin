@@ -16,6 +16,24 @@
       "revId": "fa11e9cb799b9738d2295abd4690c142639b9250",
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "6528c06f_9faa99bc",
+        "filename": "docs/openapi/openapi.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2021-09-22T15:42:24Z",
+      "side": 0,
+      "message": "we have a bug and Dylan is working on this,  https://jira.onap.org/browse/CPS-674",
+      "parentUuid": "7f61dba3_aaaf4cfe",
+      "revId": "fa11e9cb799b9738d2295abd4690c142639b9250",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
     }
   ]
 }

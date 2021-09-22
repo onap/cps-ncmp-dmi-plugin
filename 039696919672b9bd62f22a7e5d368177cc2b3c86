@@ -1,0 +1,96 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "31456f24_40126649",
+        "filename": "docs/openapi/components.yml",
+        "patchSetId": 2
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2021-09-22T15:42:24Z",
+      "side": 1,
+      "message": "just \u0027Modules\u0027 is better \u0026 consistent with the variable names in the code",
+      "range": {
+        "startLine": 22,
+        "startChar": 7,
+        "endLine": 22,
+        "endChar": 19
+      },
+      "revId": "039696919672b9bd62f22a7e5d368177cc2b3c86",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "fd34a963_0b4d9683",
+        "filename": "src/test/groovy/org/onap/cps/ncmp/dmi/rest/controller/DmiRestControllerSpec.groovy",
+        "patchSetId": 2
+      },
+      "lineNbr": 67,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2021-09-22T15:42:24Z",
+      "side": 1,
+      "message": "does this need to be populated for this test.\nIn general tests should not be burdened with additional data that is not required and does not affect any asserts in the test",
+      "range": {
+        "startLine": 67,
+        "startChar": 70,
+        "endLine": 67,
+        "endChar": 111
+      },
+      "revId": "039696919672b9bd62f22a7e5d368177cc2b3c86",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "11a7c491_bd888cc3",
+        "filename": "src/test/groovy/org/onap/cps/ncmp/dmi/rest/controller/DmiRestControllerSpec.groovy",
+        "patchSetId": 2
+      },
+      "lineNbr": 71,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2021-09-22T15:42:24Z",
+      "side": 1,
+      "message": "suggest you can use some groovy magic:\ndef moduleSetSchemas \u003d new ModuleSetSchemas(namespace:\u0027some namsepace\u0027,\n                                            moduleName:\u0027some module\u0027,\n                                           revision:\u0027some revision\u0027)",
+      "range": {
+        "startLine": 68,
+        "startChar": 1,
+        "endLine": 71,
+        "endChar": 53
+      },
+      "revId": "039696919672b9bd62f22a7e5d368177cc2b3c86",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "d9ec4e7e_869d7985",
+        "filename": "src/test/groovy/org/onap/cps/ncmp/dmi/rest/controller/DmiRestControllerSpec.groovy",
+        "patchSetId": 2
+      },
+      "lineNbr": 104,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2021-09-22T15:42:24Z",
+      "side": 1,
+      "message": "does this need to be populated for this test.\nIn general tests should not be burdened with additional data that is not required and does not affect any asserts in the test",
+      "range": {
+        "startLine": 104,
+        "startChar": 72,
+        "endLine": 104,
+        "endChar": 111
+      },
+      "revId": "039696919672b9bd62f22a7e5d368177cc2b3c86",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    }
+  ]
+}
