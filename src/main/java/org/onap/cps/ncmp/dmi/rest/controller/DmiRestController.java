@@ -29,7 +29,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.onap.cps.ncmp.dmi.model.CmHandles;
 import org.onap.cps.ncmp.dmi.model.DataAccessReadRequest;
 import org.onap.cps.ncmp.dmi.model.DataAccessWriteRequest;
-import org.onap.cps.ncmp.dmi.model.DmiReadRequestBody;
+import org.onap.cps.ncmp.dmi.model.DmiModuleReadRequestBody;
 import org.onap.cps.ncmp.dmi.model.ModuleReference;
 import org.onap.cps.ncmp.dmi.model.ModuleSet;
 import org.onap.cps.ncmp.dmi.model.YangResources;
@@ -57,16 +57,19 @@ public class DmiRestController implements DmiPluginApi, DmiPluginInternalApi {
     }
 
     @Override
-    public ResponseEntity<ModuleSet> getModulesForCmHandle(final String cmHandle) {
+    public ResponseEntity<ModuleSet> getModulesForCmHandle(final String cmHandle,
+                                                           final @Valid DataAccessReadRequest body) {
+        // For onap-dmi-plugin we don't need cmHandleProperties, so DataAccessReadRequest is not used.
         final var moduleSet = dmiService.getModulesForCmHandle(cmHandle);
-        return new ResponseEntity<>(moduleSet, HttpStatus.OK);
+        return ResponseEntity.ok(moduleSet);
     }
 
     @Override
-    public ResponseEntity<YangResources> retrieveModuleResources(@Valid final DmiReadRequestBody dmiReadRequestBody,
-        final String cmHandle) {
-        if (dmiReadRequestBody.getOperation().toString().equals("read")) {
-            final var moduleReferenceList = convertRestObjectToJavaApiObject(dmiReadRequestBody);
+    public ResponseEntity<YangResources> retrieveModuleResources(
+            final @Valid DmiModuleReadRequestBody dmiModuleReadRequestBody,
+            final String cmHandle) {
+        if (dmiModuleReadRequestBody.getOperation().toString().equals("read")) {
+            final var moduleReferenceList = convertRestObjectToJavaApiObject(dmiModuleReadRequestBody);
             final var response = dmiService.getModuleResources(cmHandle, moduleReferenceList);
             return new ResponseEntity<>(response, HttpStatus.OK);
         }
@@ -163,9 +166,10 @@ public class DmiRestController implements DmiPluginApi, DmiPluginInternalApi {
         return ResponseEntity.ok(modulesListAsJson);
     }
 
-    private List<ModuleReference> convertRestObjectToJavaApiObject(final DmiReadRequestBody dmiReadRequestBody) {
+    private List<ModuleReference> convertRestObjectToJavaApiObject(
+            final DmiModuleReadRequestBody dmiModuleSchemaReadRequestBody) {
         return objectMapper
-            .convertValue(dmiReadRequestBody.getData().getModules(), new TypeReference<List<ModuleReference>>() {
-            });
+            .convertValue(dmiModuleSchemaReadRequestBody.getData().getModules(),
+                          new TypeReference<List<ModuleReference>>() {});
     }
 }
