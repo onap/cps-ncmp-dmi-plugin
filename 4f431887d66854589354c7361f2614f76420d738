@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "a89f7c51_f21d869e",
+        "filename": "src/test/groovy/org/onap/cps/ncmp/dmi/service/DmiServiceImplSpec.groovy",
+        "patchSetId": 3
+      },
+      "lineNbr": 139,
+      "author": {
+        "id": 7744
+      },
+      "writtenOn": "2021-09-23T09:44:11Z",
+      "side": 1,
+      "message": "NB - Feel like this can be renamed now to just \u0027Get Module Resources\u0027 as we have removed the previous test for get single module resource",
+      "range": {
+        "startLine": 139,
+        "startChar": 9,
+        "endLine": 139,
+        "endChar": 39
+      },
+      "revId": "4f431887d66854589354c7361f2614f76420d738",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    }
+  ]
+}
