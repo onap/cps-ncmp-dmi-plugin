@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "6fdf0b89_e58da451",
+        "filename": "pom.xml",
+        "patchSetId": 3
+      },
+      "lineNbr": 281,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2021-09-23T15:12:17Z",
+      "side": 1,
+      "message": "I think this is still need this is NOT a copy to docs. If you look at CPS Core we have mvn plugin that generate this file (in target folders) and a separate mvn plugin to COPY the file. We might need to discuss....",
+      "range": {
+        "startLine": 280,
+        "startChar": 12,
+        "endLine": 281,
+        "endChar": 29
+      },
+      "revId": "958444f019f540635e5c2f7be16ea8decf0bd82e",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    }
+  ]
+}
