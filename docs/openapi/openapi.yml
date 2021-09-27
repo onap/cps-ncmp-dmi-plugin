@@ -110,7 +110,11 @@ paths:
               $ref: 'components.yml#/components/schemas/DmiReadRequestBody'
       responses:
         '200':
-          $ref: 'components.yml#/components/responses/Ok'
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: 'components.yml#/components/schemas/YangResources'
         '400':
           $ref: 'components.yml#/components/responses/BadRequest'
         '401':

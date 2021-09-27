@@ -30,8 +30,6 @@ import java.util.List;
 import java.util.Map;
 import javax.validation.constraints.NotNull;
 import lombok.extern.slf4j.Slf4j;
-import net.minidev.json.JSONArray;
-import net.minidev.json.JSONObject;
 import org.apache.groovy.parser.antlr4.util.StringUtils;
 import org.onap.cps.ncmp.dmi.config.DmiPluginConfig.DmiPluginProperties;
 import org.onap.cps.ncmp.dmi.exception.CmHandleRegistrationException;
@@ -46,6 +44,8 @@ import org.onap.cps.ncmp.dmi.model.ModuleSchemaProperties;
 import org.onap.cps.ncmp.dmi.model.ModuleSchemas;
 import org.onap.cps.ncmp.dmi.model.ModuleSet;
 import org.onap.cps.ncmp.dmi.model.ModuleSetSchemas;
+import org.onap.cps.ncmp.dmi.model.YangResource;
+import org.onap.cps.ncmp.dmi.model.YangResources;
 import org.onap.cps.ncmp.dmi.service.client.NcmpRestClient;
 import org.onap.cps.ncmp.dmi.service.operation.SdncOperations;
 import org.springframework.http.HttpStatus;
@@ -100,13 +100,13 @@ public class DmiServiceImpl implements DmiService {
     }
 
     @Override
-    public String getModuleResources(final String cmHandle, final List<ModuleReference> moduleReferences) {
-        final var getModuleResponses = new JSONArray();
+    public YangResources getModuleResources(final String cmHandle, final List<ModuleReference> moduleReferences) {
+        final YangResources yangResources = new YangResources();
         for (final var moduleReference : moduleReferences) {
             final var moduleRequest = createModuleRequest(moduleReference);
             final ResponseEntity<String> responseEntity = sdncOperations.getModuleResource(cmHandle, moduleRequest);
             if (responseEntity.getStatusCode() == HttpStatus.OK) {
-                getModuleResponses.add(toJsonObject(moduleReference, responseEntity));
+                yangResources.add(toYangResource(moduleReference, responseEntity));
             } else if (responseEntity.getStatusCode() == HttpStatus.NOT_FOUND) {
                 log.error("SDNC did not return a module resource for the given cmHandle {}", cmHandle);
                 throw new ModuleResourceNotFoundException(cmHandle,
@@ -117,7 +117,7 @@ public class DmiServiceImpl implements DmiService {
                         RESPONSE_CODE + responseEntity.getStatusCode() + MESSAGE + responseEntity.getBody());
             }
         }
-        return getModuleResponses.toJSONString();
+        return yangResources;
     }
 
     @Override
@@ -248,13 +248,13 @@ public class DmiServiceImpl implements DmiService {
         return moduleRequest;
     }
 
-    private JSONObject toJsonObject(final ModuleReference moduleReference,
+    private YangResource toYangResource(final ModuleReference moduleReference,
                                     final ResponseEntity<String> response) {
-        final var jsonObject = new JSONObject();
-        jsonObject.put("moduleName", moduleReference.getName());
-        jsonObject.put("revision", moduleReference.getRevision());
-        jsonObject.put("yangSource", extractYangSourceFromBody(response));
-        return jsonObject;
+        final YangResource yangResource = new YangResource();
+        yangResource.setModuleName(moduleReference.getName());
+        yangResource.setRevision(moduleReference.getRevision());
+        yangResource.setYangSource(extractYangSourceFromBody(response));
+        return yangResource;
     }
 
     private String extractYangSourceFromBody(final ResponseEntity<String> responseEntity) {

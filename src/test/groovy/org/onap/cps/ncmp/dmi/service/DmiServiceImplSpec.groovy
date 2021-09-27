@@ -30,6 +30,8 @@ import org.onap.cps.ncmp.dmi.exception.ModuleResourceNotFoundException
 import org.onap.cps.ncmp.dmi.exception.ModulesNotFoundException
 import org.onap.cps.ncmp.dmi.exception.ResourceDataNotFound
 import org.onap.cps.ncmp.dmi.model.ModuleReference
+import org.onap.cps.ncmp.dmi.model.YangResource
+import org.onap.cps.ncmp.dmi.model.YangResources
 import org.onap.cps.ncmp.dmi.service.client.NcmpRestClient
 import org.onap.cps.ncmp.dmi.service.operation.SdncOperations
 import org.springframework.http.HttpStatus
@@ -134,21 +136,6 @@ class DmiServiceImplSpec extends Specification {
             thrown(DmiException.class)
     }
 
-    def 'Get a single module resource.'() {
-        given: 'a cmHandle and module reference list'
-            def cmHandle = 'some-cmHandle'
-            def moduleReference = new ModuleReference(name: 'NAME',revision: 'REVISION')
-            def moduleList = [moduleReference]
-        and: 'the sdnc request body contains the correct name and revision'
-            def expectedRequestBody = '{"ietf-netconf-monitoring:input":{"ietf-netconf-monitoring:identifier":"NAME","ietf-netconf-monitoring:version":"REVISION"}}'
-        when: 'get module resources is invoked with the given cm handle and a module list'
-            def result = objectUnderTest.getModuleResources(cmHandle, moduleList)
-        then: 'get modules resources is called once with the expected cm handle and request body'
-            1 * mockSdncOperations.getModuleResource(cmHandle, expectedRequestBody) >> new ResponseEntity<String>('{"ietf-netconf-monitoring:output": {"data": "some-data"}}', HttpStatus.OK)
-        and: 'the result is an array containing one json object with the expected name, revision and yang-source'
-            assert result == '[{"yangSource":"\\"some-data\\"","moduleName":"NAME","revision":"REVISION"}]'
-    }
-
     def 'Get multiple module resources.'() {
         given: 'a cmHandle and module reference list'
             def cmHandle = 'some-cmHandle'
@@ -160,8 +147,13 @@ class DmiServiceImplSpec extends Specification {
         then: 'get modules resources is called twice'
             2 * mockSdncOperations.getModuleResource(cmHandle, _) >>> [new ResponseEntity<String>('{"ietf-netconf-monitoring:output": {"data": "some-data1"}}', HttpStatus.OK),
                                                                    new ResponseEntity<String>('{"ietf-netconf-monitoring:output": {"data": "some-data2"}}', HttpStatus.OK)]
-        and: 'the result is an array containing json objects with the expected name, revision and yang-source'
-            assert result == '[{"yangSource":"\\"some-data1\\"","moduleName":"name-1","revision":"revision-1"},{"yangSource":"\\"some-data2\\"","moduleName":"name-2","revision":"revision-2"}]'
+        and: 'the result is a yang resources object with the expected names, revisions and yang-sources'
+            def yangResources = new YangResources()
+            def yangResource1 = new YangResource(yangSource: '"some-data1"', moduleName: 'name-1', revision: 'revision-1')
+            def yangResource2 = new YangResource(yangSource: '"some-data2"', moduleName: 'name-2', revision: 'revision-2')
+            yangResources.add(yangResource1)
+            yangResources.add(yangResource2)
+            assert result == yangResources
     }
 
     def 'Get a module resource with module resource not found exception for #scenario.'() {

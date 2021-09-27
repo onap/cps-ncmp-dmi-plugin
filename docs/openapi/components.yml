@@ -58,6 +58,21 @@ components:
               namespace:
                 type: string
 
+    YangResources:
+      type: array
+      items:
+        type: object
+        $ref: '#/components/schemas/YangResource'
+
+    YangResource:
+      properties:
+        yangSource:
+          type: string
+        moduleName:
+          type: string
+        revision:
+          type: string
+
     DataAccessReadRequest:
       type: object
       properties:
