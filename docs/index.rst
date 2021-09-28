@@ -3,7 +3,7 @@
 .. Copyright (C) 2021 Nordix Foundation
 
 .. DO NOT CHANGE THIS LABEL FOR RELEASE NOTES - EVEN THOUGH IT GIVES A WARNING
-.. _dmi:
+.. _master_index:
 
 .. THIS IS USED INTERNALLY IN CPS ONLY
 .. _dmi-framework-doc:
