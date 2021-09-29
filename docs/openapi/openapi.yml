@@ -128,7 +128,7 @@ paths:
         '403':
           $ref: 'components.yml#/components/responses/Forbidden'
 
-  /v1/ch/{cmHandle}/data/ds/ncmp-datastore:passthrough-operational/{resourceIdentifier}:
+  /v1/ch/{cmHandle}/data/ds/ncmp-datastore:passthrough-operational:
     put:
       tags:
         - dmi-plugin
@@ -137,7 +137,7 @@ paths:
       operationId: getResourceDataOperationalForCmHandle
       parameters:
         - $ref: 'components.yml#/components/parameters/cmHandleInPath'
-        - $ref: 'components.yml#/components/parameters/resourceIdentifierInPath'
+        - $ref: 'components.yml#/components/parameters/resourceIdentifierInQuery'
         - $ref: 'components.yml#/components/parameters/acceptParamInHeader'
         - $ref: 'components.yml#/components/parameters/fieldsParamInQuery'
         - $ref: 'components.yml#/components/parameters/depthParamInQuery'
@@ -157,7 +157,7 @@ paths:
         '403':
           $ref: 'components.yml#/components/responses/Forbidden'
 
-  /v1/ch/{cmHandle}/data/ds/ncmp-datastore:passthrough-running/{resourceIdentifier}:
+  /v1/ch/{cmHandle}/data/ds/ncmp-datastore:passthrough-running:
     put:
       tags:
         - dmi-plugin
@@ -166,7 +166,7 @@ paths:
       operationId: getResourceDataPassthroughRunningForCmHandle
       parameters:
         - $ref: 'components.yml#/components/parameters/cmHandleInPath'
-        - $ref: 'components.yml#/components/parameters/resourceIdentifierInPath'
+        - $ref: 'components.yml#/components/parameters/resourceIdentifierInQuery'
         - $ref: 'components.yml#/components/parameters/acceptParamInHeader'
         - $ref: 'components.yml#/components/parameters/fieldsParamInQuery'
         - $ref: 'components.yml#/components/parameters/depthParamInQuery'
@@ -194,7 +194,7 @@ paths:
       operationId: writeDataByPassthroughRunningForCmHandle
       parameters:
         - $ref: 'components.yml#/components/parameters/cmHandleInPath'
-        - $ref: 'components.yml#/components/parameters/resourceIdentifierInPath'
+        - $ref: 'components.yml#/components/parameters/resourceIdentifierInQuery'
       requestBody:
         required: true
         content:

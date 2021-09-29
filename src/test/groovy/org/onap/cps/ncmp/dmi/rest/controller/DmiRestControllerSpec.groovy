@@ -20,18 +20,12 @@
 
 package org.onap.cps.ncmp.dmi.rest.controller
 
-
 import com.fasterxml.jackson.databind.ObjectMapper
 import org.onap.cps.ncmp.dmi.TestUtils
 import org.onap.cps.ncmp.dmi.exception.DmiException
 import org.onap.cps.ncmp.dmi.exception.ModuleResourceNotFoundException
 import org.onap.cps.ncmp.dmi.exception.ModulesNotFoundException
-import org.onap.cps.ncmp.dmi.model.ModuleReference
-import org.onap.cps.ncmp.dmi.model.ModuleSchemaList
-import org.onap.cps.ncmp.dmi.model.ModuleSet
-import org.onap.cps.ncmp.dmi.model.ModuleSetSchemas
-import org.onap.cps.ncmp.dmi.model.YangResource
-import org.onap.cps.ncmp.dmi.model.YangResources
+import org.onap.cps.ncmp.dmi.model.*
 import org.onap.cps.ncmp.dmi.service.DmiService
 import org.spockframework.spring.SpringBean
 import org.springframework.beans.factory.annotation.Autowired
@@ -187,7 +181,7 @@ class DmiRestControllerSpec extends Specification {
     def 'Get resource data for pass-through operational from cm handle.'() {
         given: 'Get resource data url'
             def getResourceDataForCmHandleUrl = "${basePathV1}/ch/some-cmHandle/data/ds/ncmp-datastore:passthrough-operational" +
-                    "/resourceIdentifier?fields=myfields&depth=5"
+                    "?resourceIdentifier=abc/xyz&fields=myfields&depth=5"
             def json = '{"cmHandleProperties" : { "prop1" : "value1", "prop2" : "value2"}}'
         when: 'get resource data PUT api is invoked'
             def response = mvc.perform(
@@ -198,7 +192,7 @@ class DmiRestControllerSpec extends Specification {
             response.status == HttpStatus.OK.value()
         and: 'dmi service called with get resource data for cm handle'
             1 * mockDmiService.getResourceDataOperationalForCmHandle('some-cmHandle',
-                    'resourceIdentifier',
+                    'abc/xyz',
                     'application/json',
                     'myfields',
                     5,
@@ -207,7 +201,8 @@ class DmiRestControllerSpec extends Specification {
 
     def 'Write data using passthrough running for a cm handle using #scenario.'() {
         given: 'write data for cmHandle url and jsonData'
-            def writeDataforCmHandlePassthroughRunning = "${basePathV1}/ch/some-cmHandle/data/ds/ncmp-datastore:passthrough-running/some-resourceIdentifier"
+            def writeDataforCmHandlePassthroughRunning = "${basePathV1}/ch/some-cmHandle/data/ds/ncmp-datastore:passthrough-running" +
+                    "?resourceIdentifier=some-resourceIdentifier"
             def jsonData = TestUtils.getResourceFileContent(requestBodyFile)
         and: 'dmi service is called'
             mockDmiService.writeResourceDataPassthroughForCmHandle('some-cmHandle',
@@ -231,7 +226,7 @@ class DmiRestControllerSpec extends Specification {
     def 'Get resource data for pass-through running from cm handle.'() {
         given: 'Get resource data url'
             def getResourceDataForCmHandleUrl = "${basePathV1}/ch/some-cmHandle/data/ds/ncmp-datastore:passthrough-running" +
-                     "/testResourceIdentifier?fields=testFields&depth=5"
+                    "?resourceIdentifier="+resourceIdentifier+"&fields=testFields&depth=5"
             def json = '{"cmHandleProperties" : { "prop1" : "value1", "prop2" : "value2"}}'
         when: 'get resource data PUT api is invoked'
             def response = mvc.perform(
@@ -242,10 +237,19 @@ class DmiRestControllerSpec extends Specification {
             response.status == HttpStatus.OK.value()
         and: 'dmi service called with get resource data for cm handle'
             1 * mockDmiService.getResourceDataPassThroughRunningForCmHandle('some-cmHandle',
-                    'testResourceIdentifier',
+                    resourceIdentifier,
                     'application/json',
                     'testFields',
                     5,
                     ['prop1':'value1', 'prop2':'value2'])
+        where: '#scenario tokens are used in the resource identifier parameter'
+            scenario                       | resourceIdentifier
+            '/'                            | 'testResourceIdentifier1/testResourceIdentifier2'
+            '?'                            | '?testResourceIdentifier'
+            ','                            | ',testResourceIdentifier'
+            '='                            | '=testResourceIdentifier'
+            '[]'                           | 'testResourceIdentifier[]'
+            '? needs to be encoded as %3F' | 'testResourceIdentifier%3F'
+
     }
 }
