@@ -80,14 +80,14 @@ public class DmiRestController implements DmiPluginApi, DmiPluginInternalApi {
      * Write data using passthrough for the given cmHandle.
      *
      * @param dataAccessWriteRequest pass through request
-     * @param cmHandle               cmHandle
      * @param resourceIdentifier     resource identifier
+     * @param cmHandle               cmHandle
      * @return (@ code ResponseEntity) response entity
      */
     @Override
     public ResponseEntity<String> writeDataByPassthroughRunningForCmHandle(
         final DataAccessWriteRequest dataAccessWriteRequest,
-        final String cmHandle, final String resourceIdentifier) {
+        final String resourceIdentifier, final String cmHandle) {
         final String response = dmiService.writeResourceDataPassthroughForCmHandle(cmHandle,
             resourceIdentifier,
             MediaType.APPLICATION_JSON_VALUE,
@@ -114,8 +114,8 @@ public class DmiRestController implements DmiPluginApi, DmiPluginInternalApi {
      * This method fetches the resource for given cm handle using pass through operational. It filters the response on
      * the basis of depth and field query parameters and returns response.
      *
-     * @param cmHandle              cm handle identifier
      * @param resourceIdentifier    resource identifier to fetch data
+     * @param cmHandle              cm handle identifier
      * @param dataAccessReadRequest data Access Read Request
      * @param accept                accept header parameter
      * @param fields                fields to filter the response data
@@ -123,8 +123,8 @@ public class DmiRestController implements DmiPluginApi, DmiPluginInternalApi {
      * @return {@code ResponseEntity} response entity
      */
     @Override
-    public ResponseEntity<Object> getResourceDataOperationalForCmHandle(final String cmHandle,
-        final String resourceIdentifier,
+    public ResponseEntity<Object> getResourceDataOperationalForCmHandle(final String resourceIdentifier,
+        final String cmHandle,
         final @Valid DataAccessReadRequest dataAccessReadRequest,
         final String accept,
         final @Valid String fields,
@@ -142,8 +142,8 @@ public class DmiRestController implements DmiPluginApi, DmiPluginInternalApi {
      * This method fetches the resource for given cm handle using pass through running. It filters the response on the
      * basis of depth and field query parameters and returns response.
      *
-     * @param cmHandle              cm handle identifier
      * @param resourceIdentifier    resource identifier to fetch data
+     * @param cmHandle              cm handle identifier
      * @param dataAccessReadRequest data Access Read Request
      * @param accept                accept header parameter
      * @param fields                fields to filter the response data
@@ -151,8 +151,8 @@ public class DmiRestController implements DmiPluginApi, DmiPluginInternalApi {
      * @return {@code ResponseEntity} response entity
      */
     @Override
-    public ResponseEntity<Object> getResourceDataPassthroughRunningForCmHandle(final String cmHandle,
-        final String resourceIdentifier,
+    public ResponseEntity<Object> getResourceDataPassthroughRunningForCmHandle(final String resourceIdentifier,
+        final String cmHandle,
         final @Valid DataAccessReadRequest dataAccessReadRequest,
         final String accept,
         final @Valid String fields,
