@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "a8eb8527_6f1ee36d",
+        "filename": "pom.xml",
+        "patchSetId": 4
+      },
+      "lineNbr": 530,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2021-09-29T12:33:56Z",
+      "side": 1,
+      "message": "this whol plugin is no loner ned, remove lies 530 and 531 as well please",
+      "range": {
+        "startLine": 530,
+        "startChar": 18,
+        "endLine": 530,
+        "endChar": 67
+      },
+      "revId": "7c01713fd364a09dcd8317854f3051601e55c7c4",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    }
+  ]
+}
