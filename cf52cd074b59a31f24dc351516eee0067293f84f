@@ -49,6 +49,30 @@
     },
     {
       "key": {
+        "uuid": "e012db5d_8012f3ea",
+        "filename": "docs/openapi/components.yml",
+        "patchSetId": 1
+      },
+      "lineNbr": 166,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2021-09-30T09:49:45Z",
+      "side": 1,
+      "message": "well caught, forgot about that...",
+      "parentUuid": "cfd9a99e_689f90b6",
+      "range": {
+        "startLine": 166,
+        "startChar": 2,
+        "endLine": 166,
+        "endChar": 5
+      },
+      "revId": "cf52cd074b59a31f24dc351516eee0067293f84f",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "c6cf848e_ab01d5ad",
         "filename": "pom.xml",
         "patchSetId": 1

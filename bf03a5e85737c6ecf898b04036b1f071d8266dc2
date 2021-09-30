@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "10fa599e_cd07a3df",
+        "filename": "src/test/groovy/org/onap/cps/ncmp/dmi/rest/controller/DmiRestControllerSpec.groovy",
+        "patchSetId": 2
+      },
+      "lineNbr": 235,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2021-09-30T09:49:45Z",
+      "side": 1,
+      "message": "Make sure to test with at least 1 slash in the value",
+      "range": {
+        "startLine": 235,
+        "startChar": 41,
+        "endLine": 235,
+        "endChar": 63
+      },
+      "revId": "bf03a5e85737c6ecf898b04036b1f071d8266dc2",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    }
+  ]
+}
