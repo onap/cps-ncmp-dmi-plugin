@@ -2,6 +2,29 @@
   "comments": [
     {
       "key": {
+        "uuid": "c9682555_c3082c4c",
+        "filename": "docs/openapi/components.yml",
+        "patchSetId": 1
+      },
+      "lineNbr": 166,
+      "author": {
+        "id": 5006
+      },
+      "writtenOn": "2021-09-30T08:56:07Z",
+      "side": 1,
+      "message": "blocking: do you need to use allowReserved : true under schema\n\nhttps://swagger.io/docs/specification/serialization/\n\nread this spec",
+      "range": {
+        "startLine": 166,
+        "startChar": 2,
+        "endLine": 166,
+        "endChar": 5
+      },
+      "revId": "cf52cd074b59a31f24dc351516eee0067293f84f",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "c6cf848e_ab01d5ad",
         "filename": "pom.xml",
         "patchSetId": 1
@@ -18,6 +41,29 @@
         "startChar": 29,
         "endLine": 497,
         "endChar": 34
+      },
+      "revId": "cf52cd074b59a31f24dc351516eee0067293f84f",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "576ceff5_eeb1ecb3",
+        "filename": "src/test/groovy/org/onap/cps/ncmp/dmi/rest/controller/DmiRestControllerSpec.groovy",
+        "patchSetId": 1
+      },
+      "lineNbr": 234,
+      "author": {
+        "id": 5006
+      },
+      "writtenOn": "2021-09-30T08:56:07Z",
+      "side": 1,
+      "message": "take ? mark to next line.",
+      "range": {
+        "startLine": 234,
+        "startChar": 122,
+        "endLine": 234,
+        "endChar": 123
       },
       "revId": "cf52cd074b59a31f24dc351516eee0067293f84f",
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
