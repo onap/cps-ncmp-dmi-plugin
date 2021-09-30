@@ -38,7 +38,7 @@ Release Data
 | **Docker images**                    |  placeholder                                           |
 |                                      |                                                        |
 +--------------------------------------+--------------------------------------------------------+
-| **Release designation**              | 1.0.0 Istanbul                                         |
+| **Release designation**              | 1.0.1 Istanbul                                         |
 |                                      |                                                        |
 +--------------------------------------+--------------------------------------------------------+
 | **Release date**                     | 2021-14-10                                             |
@@ -48,8 +48,10 @@ Release Data
 Features
 --------
 * Implement plugin registration.
-* Retrieve data from cmHandles using ncmp-datastores passthorugh.
-* Retrieve Yang Resources from one or more modules of a  CM Handle.
+* Retrieve data from CM-Handles using ncmp-datastores passthrough.
+* Retrieve Yang Resources from one or more modules of a CM Handle.
+* Retrieve Yang Modules for for a cm-handle.
+
 
 .. _istanbul_deliverable:
 
@@ -62,10 +64,13 @@ Software Deliverables
    :header: "Repository", "SubModules", "Version & Docker Image (if applicable)"
    :widths: auto
 
-   "cps/ncmp-dmi-plugin", "", "placeholder"
+   "ncmp-dmi-plugin", "", "onap/ncmp-dmi-plugin:1.0.1"
 
 Bug Fixes
 ---------
+   - `CPS-589 <https://jira.onap.org/browse/CPS-589>`_ Json for Yang Resources does not contain name and revision tags
+   - `CPS-617 <https://jira.onap.org/browse/CPS-617>`_ DMI base path does not conform to agreed API URL
+   - `CPS-669 <https://jira.onap.org/browse/CPS-669>`_ Improvements in the NCMP-DMI plugin OOM charts
 
 This document provides the release notes for Istanbul release.
 
@@ -77,11 +82,15 @@ Following DMI plugin components are available with default ONAP/DMI-plugin insta
 
     * Platform components
 
+        - NCMP DMI Plugin (Helm Charts)
+
     * Service components
 
-    * Additional resources that CPS utilizes deployed using ONAP common charts
+        - DMI Plugin
 
 Below service components (mS) are available to be deployed on-demand.
+
+    - CPS-TBDMT
 
 Under OOM (Kubernetes) all CPS component containers are deployed as Kubernetes Pods/Deployments/Services into Kubernetes cluster.
 
@@ -89,6 +98,8 @@ Known Limitations, Issues and Workarounds
 -----------------------------------------
 
 *System Limitations*
+
+None
 
 *Known Vulnerabilities*
 
@@ -101,11 +112,11 @@ Security Notes
 
 *Fixed Security Issues*
 
+None
+
 *Known Security Issues*
 
-Test Results
-------------
-    * `Integration tests`
+None
 
 References
 ----------
@@ -124,6 +135,6 @@ For more information on the ONAP Honolulu release, please see:
 .. _`ONAP Release Downloads`: https://git.onap.org
 
 Quick Links:
-
+        - `CPS project page <https://wiki.onap.org/pages/viewpage.action?pageId=71834216>`_
         - `Dmi Plugin implementation page <https://wiki.onap.org/display/DW/CPS-390+Spike%3A+Define+and+Agree+DMI+Plugin+REST+Interface>`_
         - `Passing Badge information for CPS <https://bestpractices.coreinfrastructure.org/en/projects/4398>`_
