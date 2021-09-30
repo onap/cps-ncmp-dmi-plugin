@@ -10,8 +10,6 @@
 DMI Plugin Release Notes
 ========================
 
-.. warning:: draft
-
 .. contents::
     :depth: 2
 ..
@@ -19,6 +17,62 @@ DMI Plugin Release Notes
 ..      ========================
 ..      * * *   ISTANBUL   * * *
 ..      ========================
+
+Version: 1.0.1
+==============
+
+Abstract
+--------
+
+This document provides the release notes for Istanbul release.
+
+Release Data
+------------
+
++--------------------------------------+--------------------------------------------------------+
+| **CPS Project**                      |                                                        |
+|                                      |                                                        |
++--------------------------------------+--------------------------------------------------------+
+| **Docker images**                    |  placeholder                                           |
+|                                      |                                                        |
++--------------------------------------+--------------------------------------------------------+
+| **Release designation**              | 1.0.1 Istanbul                                         |
+|                                      |                                                        |
++--------------------------------------+--------------------------------------------------------+
+| **Release date**                     | 2021-14-10                                             |
+|                                      |                                                        |
++--------------------------------------+--------------------------------------------------------+
+
+Bug Fixes
+---------
+
+   - `CPS-653 <https://jira.onap.org/browse/CPS-653>`_ cmHandleProperties not supported by dmi in fetch modules
+   - `CPS-659 <https://jira.onap.org/browse/CPS-659>`_ DMI does not set CREATE Response code for passthrough-running create use-case
+   - `CPS-669 <https://jira.onap.org/browse/CPS-669>`_ Improvements in the NCMP-DMI plugin OOM charts
+   - `CPS-678 <https://jira.onap.org/browse/CPS-678>`_ Passthrough read only supports known parameters (depth&field)
+   - `CPS-679 <https://jira.onap.org/browse/CPS-679>`_ Passthrough does not support resourceIdentifier with / tokens
+
+Known Limitations, Issues and Workarounds
+-----------------------------------------
+
+*System Limitations*
+
+None
+
+*Known Vulnerabilities*
+
+None
+
+*Workarounds*
+
+None
+
+Security Notes
+--------------
+
+*Fixed Security Issues*
+
+*Known Security Issues*
 
 Version: 1.0.0
 ==============
@@ -41,14 +95,14 @@ Release Data
 | **Release designation**              | 1.0.0 Istanbul                                         |
 |                                      |                                                        |
 +--------------------------------------+--------------------------------------------------------+
-| **Release date**                     | 2021-14-10                                             |
+| **Release date**                     | 2021-14-09                                             |
 |                                      |                                                        |
 +--------------------------------------+--------------------------------------------------------+
 
 Features
 --------
 * Implement plugin registration.
-* Retrieve data from cmHandles using ncmp-datastores passthorugh.
+* Retrieve data from cmHandles using ncmp-datastores passthrough.
 * Retrieve Yang Resources from one or more modules of a  CM Handle.
 
 .. _istanbul_deliverable:
@@ -67,7 +121,9 @@ Software Deliverables
 Bug Fixes
 ---------
 
-This document provides the release notes for Istanbul release.
+   - `CPS-504 <https://jira.onap.org/browse/CPS-504>`_ Checkstyle rules are not enforced for cps-ncmp-dmi-plugin
+   - `CPS-589 <https://jira.onap.org/browse/CPS-589>`_ Json for Yang Resources does not contain name and revision tags
+   - `CPS-617 <https://jira.onap.org/browse/CPS-617>`_ DMI base path does not conform to agreed API URL
 
 Summary
 -------
@@ -90,11 +146,16 @@ Known Limitations, Issues and Workarounds
 
 *System Limitations*
 
-*Known Vulnerabilities*
-
 None
 
+*Known Vulnerabilities*
+
+   - `CPS-653 <https://jira.onap.org/browse/CPS-653>`_ cmHandleProperties not supported by dmi in fetch modules
+   - `CPS-659 <https://jira.onap.org/browse/CPS-659>`_ DMI does not set CREATE Response code for passthrough-running create use-case
+
 *Workarounds*
+
+None
 
 Security Notes
 --------------
@@ -102,10 +163,6 @@ Security Notes
 *Fixed Security Issues*
 
 *Known Security Issues*
-
-Test Results
-------------
-    * `Integration tests`
 
 References
 ----------
