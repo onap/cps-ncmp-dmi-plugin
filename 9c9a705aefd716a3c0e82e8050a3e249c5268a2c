@@ -2,6 +2,29 @@
   "comments": [
     {
       "key": {
+        "uuid": "e5927fe0_61d4a63f",
+        "filename": "pom.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 344,
+      "author": {
+        "id": 6841
+      },
+      "writtenOn": "2021-09-30T16:35:16Z",
+      "side": 1,
+      "message": "should this be gen\\java\\org\\onap\\cps\\ncmp\\dmi\\model?",
+      "range": {
+        "startLine": 344,
+        "startChar": 0,
+        "endLine": 344,
+        "endChar": 72
+      },
+      "revId": "9c9a705aefd716a3c0e82e8050a3e249c5268a2c",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "1ded6482_215cc06b",
         "filename": "src/main/java/org/onap/cps/ncmp/dmi/rest/controller/DmiRestController.java",
         "patchSetId": 1
@@ -41,6 +64,52 @@
         "startChar": 0,
         "endLine": 39,
         "endChar": 60
+      },
+      "revId": "9c9a705aefd716a3c0e82e8050a3e249c5268a2c",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "13bc9358_f4bdc2ea",
+        "filename": "src/test/groovy/org/onap/cps/ncmp/dmi/rest/controller/DmiRestControllerSpec.groovy",
+        "patchSetId": 1
+      },
+      "lineNbr": 176,
+      "author": {
+        "id": 6841
+      },
+      "writtenOn": "2021-09-30T16:35:16Z",
+      "side": 1,
+      "message": "why doesn\u0027t def work?",
+      "range": {
+        "startLine": 176,
+        "startChar": 12,
+        "endLine": 176,
+        "endChar": 18
+      },
+      "revId": "9c9a705aefd716a3c0e82e8050a3e249c5268a2c",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "0bec867f_902e3d59",
+        "filename": "src/test/groovy/org/onap/cps/ncmp/dmi/service/DmiServiceImplSpec.groovy",
+        "patchSetId": 1
+      },
+      "lineNbr": 190,
+      "author": {
+        "id": 6841
+      },
+      "writtenOn": "2021-09-30T16:35:16Z",
+      "side": 1,
+      "message": "could this and the above test be combined?",
+      "range": {
+        "startLine": 190,
+        "startChar": 0,
+        "endLine": 190,
+        "endChar": 66
       },
       "revId": "9c9a705aefd716a3c0e82e8050a3e249c5268a2c",
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
