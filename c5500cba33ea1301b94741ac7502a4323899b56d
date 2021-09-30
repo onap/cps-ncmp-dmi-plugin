@@ -1,0 +1,119 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "120988c9_013c398e",
+        "filename": "src/test/groovy/org/onap/cps/ncmp/dmi/rest/controller/DmiRestControllerSpec.groovy",
+        "patchSetId": 3
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2021-09-30T16:31:35Z",
+      "side": 1,
+      "message": "please revert (check your IDE settings)",
+      "range": {
+        "startLine": 28,
+        "startChar": 34,
+        "endLine": 28,
+        "endChar": 36
+      },
+      "revId": "c5500cba33ea1301b94741ac7502a4323899b56d",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "948511ca_a6a6085a",
+        "filename": "src/test/groovy/org/onap/cps/ncmp/dmi/rest/controller/DmiRestControllerSpec.groovy",
+        "patchSetId": 3
+      },
+      "lineNbr": 226,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2021-09-30T16:31:35Z",
+      "side": 1,
+      "message": "add has #scenario here",
+      "range": {
+        "startLine": 226,
+        "startChar": 66,
+        "endLine": 226,
+        "endChar": 67
+      },
+      "revId": "c5500cba33ea1301b94741ac7502a4323899b56d",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "e75e79c5_13854eb2",
+        "filename": "src/test/groovy/org/onap/cps/ncmp/dmi/rest/controller/DmiRestControllerSpec.groovy",
+        "patchSetId": 3
+      },
+      "lineNbr": 245,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2021-09-30T16:31:35Z",
+      "side": 1,
+      "message": "unusual but I suppose it works...",
+      "range": {
+        "startLine": 245,
+        "startChar": 16,
+        "endLine": 245,
+        "endChar": 25
+      },
+      "revId": "c5500cba33ea1301b94741ac7502a4323899b56d",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "8241ccc9_0aab4f7c",
+        "filename": "src/test/groovy/org/onap/cps/ncmp/dmi/rest/controller/DmiRestControllerSpec.groovy",
+        "patchSetId": 3
+      },
+      "lineNbr": 247,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2021-09-30T16:31:35Z",
+      "side": 1,
+      "message": "I think this string is distracting and somewhat misleading.\nJust use somethign like\n\u0027id/with/slashes\u0027\n\u0027idWith?\u0027\n\u0027idWith\u003d\u0027\n\netc.",
+      "range": {
+        "startLine": 247,
+        "startChar": 46,
+        "endLine": 247,
+        "endChar": 68
+      },
+      "revId": "c5500cba33ea1301b94741ac7502a4323899b56d",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "d6af53d7_bd4e66aa",
+        "filename": "src/test/groovy/org/onap/cps/ncmp/dmi/rest/controller/DmiRestControllerSpec.groovy",
+        "patchSetId": 3
+      },
+      "lineNbr": 252,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2021-09-30T16:31:35Z",
+      "side": 1,
+      "message": "Good to have all of these tested here!\nbut can you add similar test in other repo too please (maybe after we agreed on the exact format here)",
+      "range": {
+        "startLine": 248,
+        "startChar": 0,
+        "endLine": 252,
+        "endChar": 72
+      },
+      "revId": "c5500cba33ea1301b94741ac7502a4323899b56d",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    }
+  ]
+}
