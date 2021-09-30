@@ -1,5 +1,5 @@
 {
-  "operation": "read",
+  "operation": "${operation-for-test}",
   "data": {
     "modules": [
       {

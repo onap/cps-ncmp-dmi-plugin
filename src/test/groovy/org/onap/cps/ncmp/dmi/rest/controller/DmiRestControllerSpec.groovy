@@ -26,8 +26,8 @@ import org.onap.cps.ncmp.dmi.TestUtils
 import org.onap.cps.ncmp.dmi.exception.DmiException
 import org.onap.cps.ncmp.dmi.exception.ModuleResourceNotFoundException
 import org.onap.cps.ncmp.dmi.exception.ModulesNotFoundException
-import org.onap.cps.ncmp.dmi.model.ModuleReference
-import org.onap.cps.ncmp.dmi.model.ModuleSchemaList
+import org.onap.cps.ncmp.dmi.service.model.ModuleReference
+import org.onap.cps.ncmp.dmi.service.model.ModuleSchemaList
 import org.onap.cps.ncmp.dmi.model.ModuleSet
 import org.onap.cps.ncmp.dmi.model.ModuleSetSchemas
 import org.onap.cps.ncmp.dmi.model.YangResource
@@ -151,7 +151,7 @@ class DmiRestControllerSpec extends Specification {
     def 'Retrieve module resources.'() {
         given: 'an endpoint and json data'
             def getModulesEndpoint = "$basePathV1/ch/some-cm-handle/moduleResources"
-            def jsonData = TestUtils.getResourceFileContent('GetModules.json')
+            String jsonData = getJsonDataForGetModules('read')
         and: 'the DMI service returns the yang resources'
             ModuleReference moduleReference1 = new ModuleReference(name: 'ietf-yang-library', revision: '2016-06-21')
             ModuleReference moduleReference2 = new ModuleReference(name: 'nc-notifications', revision: '2008-07-14')
@@ -170,10 +170,22 @@ class DmiRestControllerSpec extends Specification {
             response.getContentAsString() == '[{"yangSource":"\\"some-data\\"","moduleName":"NAME","revision":"REVISION"}]'
     }
 
+    def 'Retrieve module resources with invalid operation.'() {
+        given: 'an endpoint and json data with invalid operation value'
+            def getModulesEndpoint = "$basePathV1/ch/some-cm-handle/moduleResources"
+            def jsonData = getJsonDataForGetModules('invalid operation')
+        when: 'get module resource api is invoked'
+            def response = mvc.perform(post(getModulesEndpoint)
+                .contentType(MediaType.APPLICATION_JSON)
+                .content(jsonData)).andReturn().response
+        then: 'a conflict status is returned'
+            response.status == HttpStatus.CONFLICT.value()
+    }
+
     def 'Retrieve module resources with exception handling.'() {
         given: 'an endpoint and json data'
             def getModulesEndpoint = "$basePathV1/ch/some-cm-handle/moduleResources"
-            def jsonData = TestUtils.getResourceFileContent('GetModules.json')
+            String jsonData = getJsonDataForGetModules('read')
         and: 'the service method is invoked to get module resources and throws an exception'
             mockDmiService.getModuleResources('some-cm-handle', _) >> { throw Mock(ModuleResourceNotFoundException.class) }
         when: 'get module resource api is invoked'
@@ -248,4 +260,10 @@ class DmiRestControllerSpec extends Specification {
                     5,
                     ['prop1':'value1', 'prop2':'value2'])
     }
+
+    def getJsonDataForGetModules(operation) {
+        def jsonData = TestUtils.getResourceFileContent('GetModules.json')
+        return jsonData.replace('${operation-for-test}', operation)
+    }
+
 }
