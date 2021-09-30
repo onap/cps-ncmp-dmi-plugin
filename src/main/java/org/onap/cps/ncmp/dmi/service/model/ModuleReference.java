@@ -18,19 +18,20 @@
  *  ============LICENSE_END=========================================================
  */
 
-package org.onap.cps.ncmp.dmi.model;
+package org.onap.cps.ncmp.dmi.service.model;
 
-import com.fasterxml.jackson.annotation.JsonProperty;
+import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.Setter;
 
 /**
- * ModuleSchemas.
+ * Module Reference.
  */
 @Getter
 @Setter
-public class ModuleSchemas {
+@EqualsAndHashCode
+public class ModuleReference {
 
-    @JsonProperty("ietf-netconf-monitoring:schemas")
-    private ModuleSchemaList schemas;
+    private String name;
+    private String revision;
 }

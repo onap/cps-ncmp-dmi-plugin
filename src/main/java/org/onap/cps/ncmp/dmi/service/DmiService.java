@@ -24,9 +24,9 @@ import java.util.List;
 import java.util.Map;
 import javax.validation.constraints.NotNull;
 import org.onap.cps.ncmp.dmi.exception.DmiException;
-import org.onap.cps.ncmp.dmi.model.ModuleReference;
 import org.onap.cps.ncmp.dmi.model.ModuleSet;
 import org.onap.cps.ncmp.dmi.model.YangResources;
+import org.onap.cps.ncmp.dmi.service.model.ModuleReference;
 
 /**
  * Interface for handling Dmi plugin Data.
