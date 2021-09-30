@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "dda2f0de_598a904b",
+        "filename": "pom.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 121,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2021-09-30T16:20:02Z",
+      "side": 0,
+      "message": "Does anybody know where this came from\nI checked with git blame which said it was added by Shiva but the date did not match any existing commit?!",
+      "range": {
+        "startLine": 20,
+        "startChar": 3,
+        "endLine": 121,
+        "endChar": 10
+      },
+      "revId": "7e148f8eda2c5741d5c08ae37c6fd36f8d861659",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "35dd3065_0b1f33ad",
+        "filename": "pom.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 446,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2021-09-30T16:20:02Z",
+      "side": 0,
+      "message": "there IS manually grafted production code here that Sonar Qube expects to be covered (and it already was for a high percentage)\nBut the same folder/package was used for swagger generated Rest API models, hence my reason for the move of the crafted code.",
+      "range": {
+        "startLine": 446,
+        "startChar": 23,
+        "endLine": 446,
+        "endChar": 73
+      },
+      "revId": "7e148f8eda2c5741d5c08ae37c6fd36f8d861659",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    }
+  ]
+}

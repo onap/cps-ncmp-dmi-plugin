@@ -1,0 +1,73 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1ded6482_215cc06b",
+        "filename": "src/main/java/org/onap/cps/ncmp/dmi/rest/controller/DmiRestController.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 73,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2021-09-30T16:20:02Z",
+      "side": 1,
+      "message": "groovy test actually showed that the original productioncode did NOT work here!",
+      "range": {
+        "startLine": 73,
+        "startChar": 12,
+        "endLine": 73,
+        "endChar": 23
+      },
+      "revId": "9c9a705aefd716a3c0e82e8050a3e249c5268a2c",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "b5e0ffc7_c82f1728",
+        "filename": "src/test/groovy/org/onap/cps/ncmp/dmi/model/ModuleSchemaPropertiesSpec.groovy",
+        "patchSetId": 1
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2021-09-30T16:20:02Z",
+      "side": 1,
+      "message": "some of these properties are NOT used in our production code hence the need for this separate very simple test to get high code coverage anyhow",
+      "range": {
+        "startLine": 35,
+        "startChar": 0,
+        "endLine": 39,
+        "endChar": 60
+      },
+      "revId": "9c9a705aefd716a3c0e82e8050a3e249c5268a2c",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "8a16d985_c2837af9",
+        "filename": "src/test/resources/GetModules.json",
+        "patchSetId": 1
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2021-09-30T16:20:02Z",
+      "side": 1,
+      "message": "just a suggested method (see corresponding test changes) to have \u0027macro substitution\u0027 in our own test files to prevent creating many files or craft json in the testcode...",
+      "range": {
+        "startLine": 2,
+        "startChar": 16,
+        "endLine": 2,
+        "endChar": 37
+      },
+      "revId": "9c9a705aefd716a3c0e82e8050a3e249c5268a2c",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    }
+  ]
+}
