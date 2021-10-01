@@ -9,8 +9,6 @@
 DMI Plugin Design
 #################
 
-.. warning:: draft
-
 .. toctree::
    :maxdepth: 1
 
@@ -19,10 +17,10 @@ Offered APIs
 
 The DMI Plugin supports the public APIs listed in the link below:
 
-:download:`DMI Rest OpenApi Specification <openapi/openapi.yml>`
+:download:`DMI Rest OpenApi Specification <openapi/openapi.yaml>`
 
-Exposed API
------------
+View Offered APIs
+-----------------
 
 The standard for API definition in the RESTful API world is the OpenAPI Specification (OAS).
 The OAS 3, which is based on the original "Swagger Specification", is being widely used in API developments.
@@ -31,10 +29,16 @@ Specification can be accessed using following URI:
 
 .. code-block:: bash
 
-  “http://<hostname>:<port>/v3/api-docs?group=dmi-plugin-docket”
+  http://<hostname>:<port>/v3/api-docs?group=dmi-plugin-docket
 
-DMI Plugin CM Handles
-=====================
+Additionally, the Swagger User Interface can be found at the following URI. The component may be changed between CPS-Core
+and CPS-NCMP using the drop down table in the top right:
 
-Several DMI Plugin APIs use the cm-handle parameter.
-The DMI Plugin CM Handles are described in detail in :doc:`dmi-plugin-cm-handle`.
+.. code-block:: bash
+
+  http://<hostname>:<port>/swagger-ui/index.html?configUrl=/v3/api-docs/swagger-config#/
+
+Consumed APIs
+=============
+
+- SDNC: REST based interface exposed by the SDNC client. This is used to retrieve the yang resources and modules for CPS.
