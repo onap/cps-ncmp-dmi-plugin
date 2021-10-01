@@ -11,13 +11,12 @@
 DMI Plugin Documentation for the Istanbul-R9 Release
 ----------------------------------------------------
 
-.. warning:: draft
-
 .. toctree::
    :maxdepth: 1
 
    overview.rst
    architecture.rst
+   admin-guide.rst
    design.rst
    modeling.rst
    deployment.rst
@@ -30,7 +29,7 @@ CPS-Core Documentation for the Istanbul-R9 Release
 .. toctree::
    :maxdepth: 3
 
-* `CPS Core(placeholder)  `_
+* `CPS Core <https://docs.onap.org/projects/onap-cps/en/latest/index.html>`_
 
 CPS-Temporal Documentation for the Istanbul-R9 Release
 ------------------------------------------------------
@@ -38,4 +37,4 @@ CPS-Temporal Documentation for the Istanbul-R9 Release
 .. toctree::
    :maxdepth: 1
 
-* `CPS Temporal(placeholder)  `_
+* `CPS Temporal <https://docs.onap.org/projects/onap-cps-cps-temporal/en/latest/index.html>`_
