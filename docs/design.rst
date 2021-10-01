@@ -31,10 +31,11 @@ Specification can be accessed using following URI:
 
 .. code-block:: bash
 
-  “http://<hostname>:<port>/v3/api-docs?group=dmi-plugin-docket”
+  "http://<hostname>:<port>/v3/api-docs?group=dmi-plugin-docket"
 
-DMI Plugin CM Handles
-=====================
+Additionally, the Swagger User Interface can be found at the following URI. The component may be changed between CPS-Core
+and CPS-NCMP using the drop down table in the top right:
 
-Several DMI Plugin APIs use the cm-handle parameter.
-The DMI Plugin CM Handles are described in detail in :doc:`dmi-plugin-cm-handle`.
+.. code-block:: bash
+
+  "http://<hostname>:<port>/swagger-ui/index.html?configUrl=/v3/api-docs/swagger-config#/"
