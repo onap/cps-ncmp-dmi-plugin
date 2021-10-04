@@ -60,12 +60,11 @@ public class DmiServiceImpl implements DmiService {
     private NcmpRestClient ncmpRestClient;
     private ObjectMapper objectMapper;
     private DmiPluginProperties dmiPluginProperties;
-    private static final String CONTENT_QUERY_PASSTHROUGH_OPERATIONAL = "content=all";
-    private static final String CONTENT_QUERY_PASSTHROUGH_RUNNING = "content=config";
+    private static final String RESTCONF_CONTENT_PASSTHROUGH_OPERATIONAL_QUERY_PARAM = "content=all";
+    private static final String REST_CONF_CONTENT_PASSTHROUGH_RUNNING_QUERY_PARAM = "content=config";
     private static final String RESPONSE_CODE = "response code : ";
     private static final String MESSAGE = " message : ";
     private static final String IETF_NETCONF_MONITORING_OUTPUT = "ietf-netconf-monitoring:output";
-
 
     /**
      * Constructor.
@@ -178,34 +177,30 @@ public class DmiServiceImpl implements DmiService {
     @Override
     public Object getResourceDataOperationalForCmHandle(final @NotNull String cmHandle,
                                                         final @NotNull String resourceIdentifier,
-                                                        final String acceptParam,
-                                                        final String fieldsQuery,
-                                                        final Integer depthQuery,
+                                                        final String acceptParamInHeader,
+                                                        final String optionsParamInQuery,
                                                         final Map<String, String> cmHandlePropertyMap) {
         // not using cmHandlePropertyMap of onap dmi impl , other dmi impl might use this.
         final ResponseEntity<String> responseEntity = sdncOperations.getResouceDataForOperationalAndRunning(cmHandle,
                 resourceIdentifier,
-                fieldsQuery,
-                depthQuery,
-                acceptParam,
-                CONTENT_QUERY_PASSTHROUGH_OPERATIONAL);
+                optionsParamInQuery,
+                acceptParamInHeader,
+                RESTCONF_CONTENT_PASSTHROUGH_OPERATIONAL_QUERY_PARAM);
         return prepareAndSendResponse(responseEntity, cmHandle);
     }
 
     @Override
     public Object getResourceDataPassThroughRunningForCmHandle(final @NotNull String cmHandle,
                                                                final @NotNull String resourceIdentifier,
-                                                               final String acceptParam,
-                                                               final String fieldsQuery,
-                                                               final Integer depthQuery,
+                                                               final String acceptParamInHeader,
+                                                               final String optionsParamInQuery,
                                                                final Map<String, String> cmHandlePropertyMap) {
         // not using cmHandlePropertyMap of onap dmi impl , other dmi impl might use this.
         final ResponseEntity<String> responseEntity = sdncOperations.getResouceDataForOperationalAndRunning(cmHandle,
                 resourceIdentifier,
-                fieldsQuery,
-                depthQuery,
-                acceptParam,
-                CONTENT_QUERY_PASSTHROUGH_RUNNING);
+                optionsParamInQuery,
+                acceptParamInHeader,
+                REST_CONF_CONTENT_PASSTHROUGH_RUNNING_QUERY_PARAM);
         return prepareAndSendResponse(responseEntity, cmHandle);
     }
 
