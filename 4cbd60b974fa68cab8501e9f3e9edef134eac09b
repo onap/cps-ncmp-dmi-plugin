@@ -16,6 +16,24 @@
       "revId": "4cbd60b974fa68cab8501e9f3e9edef134eac09b",
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "8be8abc6_154abb57",
+        "filename": "pom.xml",
+        "patchSetId": 2
+      },
+      "lineNbr": 45,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2021-10-04T16:41:54Z",
+      "side": 1,
+      "message": "I think it is better to keep it high to prevent accidental slippage, all new/modified code should come with tests. We can always lower it if for some reason test need to be postponed or cannot be done on something  but this should be the exception rather then the rule! \nSo to keep it safe have the limit as high as possible for each module!",
+      "parentUuid": "5fd4d4a6_428913e9",
+      "revId": "4cbd60b974fa68cab8501e9f3e9edef134eac09b",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
     }
   ]
 }

@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "e4f7c7fb_567d453e",
+        "filename": "pom.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 344,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2021-10-04T16:41:54Z",
+      "side": 1,
+      "message": "no (i tried) for Jacoco it has to be lik this",
+      "parentUuid": "e5927fe0_61d4a63f",
+      "range": {
+        "startLine": 344,
+        "startChar": 0,
+        "endLine": 344,
+        "endChar": 72
+      },
+      "revId": "9c9a705aefd716a3c0e82e8050a3e249c5268a2c",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "1ded6482_215cc06b",
         "filename": "src/main/java/org/onap/cps/ncmp/dmi/rest/controller/DmiRestController.java",
         "patchSetId": 1
@@ -94,6 +118,30 @@
     },
     {
       "key": {
+        "uuid": "9a629b05_f9ef3419",
+        "filename": "src/test/groovy/org/onap/cps/ncmp/dmi/rest/controller/DmiRestControllerSpec.groovy",
+        "patchSetId": 1
+      },
+      "lineNbr": 176,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2021-10-04T16:41:54Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "13bc9358_f4bdc2ea",
+      "range": {
+        "startLine": 176,
+        "startChar": 12,
+        "endLine": 176,
+        "endChar": 18
+      },
+      "revId": "9c9a705aefd716a3c0e82e8050a3e249c5268a2c",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "0bec867f_902e3d59",
         "filename": "src/test/groovy/org/onap/cps/ncmp/dmi/service/DmiServiceImplSpec.groovy",
         "patchSetId": 1
@@ -114,6 +162,30 @@
       "revId": "9c9a705aefd716a3c0e82e8050a3e249c5268a2c",
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "28c6bec8_645aaca1",
+        "filename": "src/test/groovy/org/onap/cps/ncmp/dmi/service/DmiServiceImplSpec.groovy",
+        "patchSetId": 1
+      },
+      "lineNbr": 190,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2021-10-04T16:41:54Z",
+      "side": 1,
+      "message": "I deliberately dind\u0027t because of the mocking blocks are quiet different.\nI see I can do up some more cleaning and the 2nd method is even be less like the first now",
+      "parentUuid": "0bec867f_902e3d59",
+      "range": {
+        "startLine": 190,
+        "startChar": 0,
+        "endLine": 190,
+        "endChar": 66
+      },
+      "revId": "9c9a705aefd716a3c0e82e8050a3e249c5268a2c",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
     },
     {
       "key": {
