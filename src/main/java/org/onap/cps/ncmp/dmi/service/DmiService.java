@@ -61,40 +61,36 @@ public interface DmiService {
 
     /**
      * This method use to fetch the resource data from cm handle for datastore pass-through operational and resource
-     * Identifier. Fields and depths query parameter are used to filter the response from network resource.
+     * Identifier. Options query parameter are used to filter the response from network resource.
      *
      * @param cmHandle            cm handle identifier
      * @param resourceIdentifier  resource identifier
-     * @param acceptParam         accept header parameter
-     * @param fieldsQuery         fields query parameter
-     * @param depthQuery          depth query parameter
+     * @param acceptParamInHeader accept header parameter
+     * @param optionsParamInQuery options query parameter
      * @param cmHandlePropertyMap cm handle properties
      * @return {@code Object} response from network function
      */
     Object getResourceDataOperationalForCmHandle(@NotNull String cmHandle,
         @NotNull String resourceIdentifier,
-        String acceptParam,
-        String fieldsQuery,
-        Integer depthQuery,
+        String acceptParamInHeader,
+        String optionsParamInQuery,
         Map<String, String> cmHandlePropertyMap);
 
     /**
      * This method use to fetch the resource data from cm handle for datastore pass-through running and resource
-     * Identifier. Fields and depths query parameter are used to filter the response from network resource.
+     * Identifier. Options query parameter are used to filter the response from network resource.
      *
      * @param cmHandle            cm handle identifier
      * @param resourceIdentifier  resource identifier
-     * @param acceptParam         accept header parameter
-     * @param fieldsQuery         fields query parameter
-     * @param depthQuery          depth query parameter
+     * @param acceptParamInHeader accept header parameter
+     * @param optionsParamInQuery options query parameter
      * @param cmHandlePropertyMap cm handle properties
      * @return {@code Object} response from network function
      */
     Object getResourceDataPassThroughRunningForCmHandle(@NotNull String cmHandle,
         @NotNull String resourceIdentifier,
-        String acceptParam,
-        String fieldsQuery,
-        Integer depthQuery,
+        String acceptParamInHeader,
+        String optionsParamInQuery,
         Map<String, String> cmHandlePropertyMap);
 
     /**

@@ -61,10 +61,10 @@ class SdncOperationsSpec extends Specification {
 
     def 'Get resource data from node to SDNC.'() {
         given: 'expected url, topology-id, sdncOperation object'
-            def expectedUrl = '/rests/data/network-topology:network-topology/topology=test-topology/node=node1/yang-ext:mount/testResourceId?fields=testFields&depth=10&content=testContent'
+            def expectedUrl = '/rests/data/network-topology:network-topology/topology=test-topology/node=node1/yang-ext:mount/testResourceId?a=1&b=2&content=testContent'
         when: 'called get modules from node'
             objectUnderTest.getResouceDataForOperationalAndRunning('node1', 'testResourceId',
-                    'testFields', 10, 'testAcceptParam', 'content=testContent')
+                    '(a=1,b=2)', 'testAcceptParam', 'content=testContent')
         then: 'the get operation is executed with the correct URL'
             1 * mockSdncRestClient.getOperation(expectedUrl, _ as HttpHeaders)
     }
@@ -76,5 +76,21 @@ class SdncOperationsSpec extends Specification {
             objectUnderTest.writeResourceDataPassthroughRunning('node1','testResourceId','application/json','requestData')
         then: 'the post operation is executed with the correct URL and data'
             1 * mockSdncRestClient.postOperationWithJsonData(expectedUrl, 'requestData', _ as HttpHeaders)
+    }
+
+    def 'build query param list for SDNC where options contains a #scenario'() {
+        when: 'build query param list is called with #scenario'
+            def result = objectUnderTest.buildQueryParamList(optionsParamInQuery,'d=4')
+        then:
+            result == expectedResult
+        where: '#scenario is given'
+            scenario                  | optionsParamInQuery || expectedResult
+            'single key-value pair'   | '(a=x)'             || ['a=x','d=4']
+            'multiple key-value pairs'| '(a=x,b=y,c=z)'     || ['a=x','b=y','c=z','d=4']
+            '/ as special char'       | '(a=x,b=y,c=t/z)'   || ['a=x','b=y','c=t/z','d=4']
+            '" as special char'       | '(a=x,b=y,c="z")'   || ['a=x','b=y','c="z"','d=4']
+            '[] as special char'      | '(a=x,b=y,c=[z])'   || ['a=x','b=y','c=[z]','d=4']
+            '= in value'              | '(a=(x=y),b=x=y)'   || ['a=(x=y)','b=x=y','d=4']
+//            ', in value'              | '(a=(x,y),b=y)'     || ['a=(x,y)','b=y','d=4']
     }
 }
