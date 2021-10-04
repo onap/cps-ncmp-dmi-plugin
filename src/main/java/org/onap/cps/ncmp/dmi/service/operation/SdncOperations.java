@@ -20,6 +20,7 @@
 
 package org.onap.cps.ncmp.dmi.service.operation;
 
+import java.util.Arrays;
 import java.util.LinkedList;
 import java.util.List;
 import org.apache.groovy.parser.antlr4.util.StringUtils;
@@ -92,23 +93,22 @@ public class SdncOperations {
      *
      * @param nodeId      network resource identifier
      * @param resourceId  resource identifier
-     * @param fieldsValue fields query
-     * @param depthValue  depth query
-     * @param acceptParam accept parameter
+     * @param optionsParamInQuery fields query
+     * @param acceptParamInHeader accept parameter
+     * @param restconfContentQueryParam restconf content query param
      * @return {@code ResponseEntity} response entity
      */
     public ResponseEntity<String> getResouceDataForOperationalAndRunning(final String nodeId,
         final String resourceId,
-        final String fieldsValue,
-        final Integer depthValue,
-        final String acceptParam,
-                                                                         final String contentQuery) {
+        final String optionsParamInQuery,
+        final String acceptParamInHeader,
+        final String restconfContentQueryParam) {
         final String getResourceDataUrl = prepareResourceDataUrl(nodeId,
             resourceId,
-            getQueryList(fieldsValue, depthValue, contentQuery));
+            buildQueryParamList(optionsParamInQuery, restconfContentQueryParam));
         final HttpHeaders httpHeaders = new HttpHeaders();
-        if (!StringUtils.isEmpty(acceptParam)) {
-            httpHeaders.set(HttpHeaders.ACCEPT, acceptParam);
+        if (!StringUtils.isEmpty(acceptParamInHeader)) {
+            httpHeaders.set(HttpHeaders.ACCEPT, acceptParamInHeader);
         }
         return sdncRestconfClient.getOperation(getResourceDataUrl, httpHeaders);
     }
@@ -131,20 +131,25 @@ public class SdncOperations {
     }
 
     @NotNull
-    private List<String> getQueryList(final String fieldsValue, final Integer depthValue, final String contentQuery) {
-        final List<String> queryList = new LinkedList<>();
-        if (!StringUtils.isEmpty(fieldsValue)) {
-            queryList.add("fields=" + fieldsValue);
-        }
-        if (depthValue != null) {
-            queryList.add("depth=" + depthValue);
-        }
-        if (!StringUtils.isEmpty(contentQuery)) {
-            queryList.add(contentQuery);
-        }
-        return queryList;
+    private List<String> buildQueryParamList(final String optionsParamInQuery, final String restconfContentQueryParam) {
+        final List<String> queryParamAsList = getOptionsParamAsList(optionsParamInQuery);
+        queryParamAsList.add(restconfContentQueryParam);
+        return queryParamAsList;
     }
 
+    private List<String> getOptionsParamAsList(final String optionsParamInQuery) {
+        final List<String> queryParamAsList = new LinkedList<>();
+        if (!StringUtils.isEmpty(optionsParamInQuery)) {
+            final String tempQuery = stripParenthesisFromOptionsQuery(optionsParamInQuery);
+            queryParamAsList.addAll(Arrays.asList(tempQuery.split(",")));
+        }
+        return queryParamAsList;
+    }
+
+    @NotNull
+    private String stripParenthesisFromOptionsQuery(final String optionsParamInQuery) {
+        return optionsParamInQuery.substring(1, optionsParamInQuery.length() - 1);
+    }
 
     @NotNull
     private String prepareGetSchemaUrl(final String nodeId) {
