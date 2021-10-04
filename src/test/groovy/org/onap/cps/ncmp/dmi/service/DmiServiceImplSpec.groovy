@@ -210,15 +210,14 @@ class DmiServiceImplSpec extends Specification {
             def cmHandle = 'testCmHandle'
             def resourceId = 'testResourceId'
             def acceptHeaderParam = 'testAcceptParam'
-            def fieldsParam = 'testFields'
-            def depthParam = 10
+            def optionsParam = '(fields=x/y/z,depth=10,test=abc)'
             def contentQuery = 'content=all'
         and: 'sdnc operation returns OK response'
-            mockSdncOperations.getResouceDataForOperationalAndRunning(cmHandle, resourceId, fieldsParam, depthParam, acceptHeaderParam, contentQuery) >> new ResponseEntity<>('response json', HttpStatus.OK)
+            mockSdncOperations.getResouceDataForOperationalAndRunning(cmHandle, resourceId, optionsParam, acceptHeaderParam, contentQuery) >> new ResponseEntity<>('response json', HttpStatus.OK)
         when: 'get resource data from cm handles service method invoked'
             def response = objectUnderTest.getResourceDataOperationalForCmHandle(cmHandle,
                     resourceId, acceptHeaderParam,
-                    fieldsParam, depthParam, null)
+                    optionsParam, null)
         then: 'response have expected json'
             response == 'response json'
     }
@@ -228,14 +227,13 @@ class DmiServiceImplSpec extends Specification {
             def cmHandle = 'testCmHandle'
             def resourceId = 'testResourceId'
             def acceptHeaderParam = 'testAcceptParam'
-            def fieldsParam = 'testFields'
-            def depthParam = 10
+            def optionsParam = '(fields=x/y/z,depth=10,test=abc)'
         and: 'sdnc operation returns "NOT_FOUND" response'
-            mockSdncOperations.getResouceDataForOperationalAndRunning(cmHandle, resourceId, fieldsParam, depthParam, acceptHeaderParam, _ as String) >> new ResponseEntity<>(HttpStatus.NOT_FOUND)
+            mockSdncOperations.getResouceDataForOperationalAndRunning(cmHandle, resourceId, optionsParam, acceptHeaderParam, _ as String) >> new ResponseEntity<>(HttpStatus.NOT_FOUND)
         when: 'get resource data from cm handles service method invoked'
             objectUnderTest.getResourceDataOperationalForCmHandle(cmHandle,
                     resourceId, acceptHeaderParam,
-                    fieldsParam, depthParam, null)
+                    optionsParam, null)
         then: 'resource data not found'
             thrown(ResourceDataNotFound.class)
     }
@@ -245,16 +243,15 @@ class DmiServiceImplSpec extends Specification {
             def cmHandle = 'testCmHandle'
             def resourceId = 'testResourceId'
             def acceptHeaderParam = 'testAcceptParam'
-            def fieldsParam = 'testFields'
-            def depthParam = 10
+            def optionsParam = '(fields=x/y/z,depth=10,test=abc)'
             def contentQuery = 'content=config'
         and: 'sdnc operation returns OK response'
-            mockSdncOperations.getResouceDataForOperationalAndRunning(cmHandle, resourceId, fieldsParam,
-                    depthParam, acceptHeaderParam, contentQuery) >> new ResponseEntity<>('response json', HttpStatus.OK)
+            mockSdncOperations.getResouceDataForOperationalAndRunning(cmHandle, resourceId, optionsParam,
+                    acceptHeaderParam, contentQuery) >> new ResponseEntity<>('response json', HttpStatus.OK)
         when: 'get resource data from cm handles service method invoked'
             def response = objectUnderTest.getResourceDataPassThroughRunningForCmHandle(cmHandle,
                     resourceId, acceptHeaderParam,
-                    fieldsParam, depthParam, null)
+                    optionsParam, null)
         then: 'response have expected json'
             response == 'response json'
     }
