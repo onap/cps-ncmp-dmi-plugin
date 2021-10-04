@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5fd4d4a6_428913e9",
+        "filename": "pom.xml",
+        "patchSetId": 2
+      },
+      "lineNbr": 45,
+      "author": {
+        "id": 5658
+      },
+      "writtenOn": "2021-10-04T15:12:49Z",
+      "side": 1,
+      "message": "NB comment:\n\nNice, this percentage is really impressive 😊\n\nI also questioning myself about setting the minimum coverage at this amazing maximum value we are currently at.\nDon\u0027t we need some slight flexibility buffer for the minimum to prevent any potential blocking situation for a specific change ?\nIdeally actual coverage should few percentage above minimum and it takes discipline to keep it above all the time. If ever it actual comes down to the minimum, there is no flexibility and security anymore.\n\nWhat are your thoughts ?",
+      "revId": "4cbd60b974fa68cab8501e9f3e9edef134eac09b",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    }
+  ]
+}
