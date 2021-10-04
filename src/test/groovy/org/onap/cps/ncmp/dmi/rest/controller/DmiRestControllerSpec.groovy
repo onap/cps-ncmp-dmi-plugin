@@ -186,7 +186,7 @@ class DmiRestControllerSpec extends Specification {
     def 'Get resource data for pass-through operational from cm handle.'() {
         given: 'Get resource data url'
             def getResourceDataForCmHandleUrl = "${basePathV1}/ch/some-cmHandle/data/ds/ncmp-datastore:passthrough-operational" +
-                    "?resourceIdentifier=abc/xyz&fields=myfields&depth=5"
+                    "?resourceIdentifier=abc/xyz&options=(fields=myfields,depth=5)"
             def json = '{"cmHandleProperties" : { "prop1" : "value1", "prop2" : "value2"}}'
         when: 'get resource data PUT api is invoked'
             def response = mvc.perform(
@@ -199,8 +199,7 @@ class DmiRestControllerSpec extends Specification {
             1 * mockDmiService.getResourceDataOperationalForCmHandle('some-cmHandle',
                     'abc/xyz',
                     'application/json',
-                    'myfields',
-                    5,
+                    '(fields=myfields,depth=5)',
                     ['prop1': 'value1', 'prop2': 'value2'])
     }
 
@@ -231,7 +230,7 @@ class DmiRestControllerSpec extends Specification {
     def 'Get resource data for pass-through running from cm handle with #scenario value in resource identifier param.'() {
         given: 'Get resource data url'
             def getResourceDataForCmHandleUrl = "${basePathV1}/ch/some-cmHandle/data/ds/ncmp-datastore:passthrough-running" +
-                    "?resourceIdentifier="+resourceIdentifier+"&fields=testFields&depth=5"
+                    "?resourceIdentifier="+resourceIdentifier+"&options=(fields=myfields,depth=5)"
             def json = '{"cmHandleProperties" : { "prop1" : "value1", "prop2" : "value2"}}'
         when: 'get resource data PUT api is invoked'
             def response = mvc.perform(
@@ -244,8 +243,7 @@ class DmiRestControllerSpec extends Specification {
             1 * mockDmiService.getResourceDataPassThroughRunningForCmHandle('some-cmHandle',
                     resourceIdentifier,
                     'application/json',
-                    'testFields',
-                    5,
+                    '(fields=myfields,depth=5)',
                     ['prop1':'value1', 'prop2':'value2'])
         where: 'tokens are used in the resource identifier parameter'
             scenario                       | resourceIdentifier

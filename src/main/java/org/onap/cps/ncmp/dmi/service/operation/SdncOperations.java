@@ -20,6 +20,7 @@
 
 package org.onap.cps.ncmp.dmi.service.operation;
 
+import java.util.Arrays;
 import java.util.LinkedList;
 import java.util.List;
 import org.apache.groovy.parser.antlr4.util.StringUtils;
@@ -92,20 +93,18 @@ public class SdncOperations {
      *
      * @param nodeId      network resource identifier
      * @param resourceId  resource identifier
-     * @param fieldsValue fields query
-     * @param depthValue  depth query
+     * @param optionsQuery fields query
      * @param acceptParam accept parameter
      * @return {@code ResponseEntity} response entity
      */
     public ResponseEntity<String> getResouceDataForOperationalAndRunning(final String nodeId,
         final String resourceId,
-        final String fieldsValue,
-        final Integer depthValue,
+        final String optionsQuery,
         final String acceptParam,
-                                                                         final String contentQuery) {
+        final String contentQuery) {
         final String getResourceDataUrl = prepareResourceDataUrl(nodeId,
             resourceId,
-            getQueryList(fieldsValue, depthValue, contentQuery));
+            getQueryList(optionsQuery, contentQuery));
         final HttpHeaders httpHeaders = new HttpHeaders();
         if (!StringUtils.isEmpty(acceptParam)) {
             httpHeaders.set(HttpHeaders.ACCEPT, acceptParam);
@@ -131,13 +130,11 @@ public class SdncOperations {
     }
 
     @NotNull
-    private List<String> getQueryList(final String fieldsValue, final Integer depthValue, final String contentQuery) {
+    private List<String> getQueryList(final String optionsQuery, final String contentQuery) {
         final List<String> queryList = new LinkedList<>();
-        if (!StringUtils.isEmpty(fieldsValue)) {
-            queryList.add("fields=" + fieldsValue);
-        }
-        if (depthValue != null) {
-            queryList.add("depth=" + depthValue);
+        if (!StringUtils.isEmpty(optionsQuery)) {
+            final String tempQuery = optionsQuery.substring(1, optionsQuery.length() - 1);
+            queryList.addAll(Arrays.asList(tempQuery.split(",")));
         }
         if (!StringUtils.isEmpty(contentQuery)) {
             queryList.add(contentQuery);

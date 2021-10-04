@@ -139,8 +139,7 @@ paths:
         - $ref: 'components.yml#/components/parameters/cmHandleInPath'
         - $ref: 'components.yml#/components/parameters/resourceIdentifierInQuery'
         - $ref: 'components.yml#/components/parameters/acceptParamInHeader'
-        - $ref: 'components.yml#/components/parameters/fieldsParamInQuery'
-        - $ref: 'components.yml#/components/parameters/depthParamInQuery'
+        - $ref: 'components.yml#/components/parameters/optionsParamInQuery'
       requestBody:
         description: Operational body
         content:
@@ -168,8 +167,7 @@ paths:
         - $ref: 'components.yml#/components/parameters/cmHandleInPath'
         - $ref: 'components.yml#/components/parameters/resourceIdentifierInQuery'
         - $ref: 'components.yml#/components/parameters/acceptParamInHeader'
-        - $ref: 'components.yml#/components/parameters/fieldsParamInQuery'
-        - $ref: 'components.yml#/components/parameters/depthParamInQuery'
+        - $ref: 'components.yml#/components/parameters/optionsParamInQuery'
       requestBody:
         description: Operational body
         content:

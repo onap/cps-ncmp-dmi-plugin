@@ -179,14 +179,12 @@ public class DmiServiceImpl implements DmiService {
     public Object getResourceDataOperationalForCmHandle(final @NotNull String cmHandle,
                                                         final @NotNull String resourceIdentifier,
                                                         final String acceptParam,
-                                                        final String fieldsQuery,
-                                                        final Integer depthQuery,
+                                                        final String optionsQuery,
                                                         final Map<String, String> cmHandlePropertyMap) {
         // not using cmHandlePropertyMap of onap dmi impl , other dmi impl might use this.
         final ResponseEntity<String> responseEntity = sdncOperations.getResouceDataForOperationalAndRunning(cmHandle,
                 resourceIdentifier,
-                fieldsQuery,
-                depthQuery,
+                optionsQuery,
                 acceptParam,
                 CONTENT_QUERY_PASSTHROUGH_OPERATIONAL);
         return prepareAndSendResponse(responseEntity, cmHandle);
@@ -196,14 +194,12 @@ public class DmiServiceImpl implements DmiService {
     public Object getResourceDataPassThroughRunningForCmHandle(final @NotNull String cmHandle,
                                                                final @NotNull String resourceIdentifier,
                                                                final String acceptParam,
-                                                               final String fieldsQuery,
-                                                               final Integer depthQuery,
+                                                               final String optionsQuery,
                                                                final Map<String, String> cmHandlePropertyMap) {
         // not using cmHandlePropertyMap of onap dmi impl , other dmi impl might use this.
         final ResponseEntity<String> responseEntity = sdncOperations.getResouceDataForOperationalAndRunning(cmHandle,
                 resourceIdentifier,
-                fieldsQuery,
-                depthQuery,
+                optionsQuery,
                 acceptParam,
                 CONTENT_QUERY_PASSTHROUGH_RUNNING);
         return prepareAndSendResponse(responseEntity, cmHandle);

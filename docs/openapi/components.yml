@@ -182,11 +182,11 @@ components:
       schema:
         type: string
 
-    depthParamInQuery:
-      name: depth
+    optionsParamInQuery:
+      name: options
       in: query
-      description: Depth parameter for response
+      description: options parameter in query
       required: false
       schema:
-        type: integer
-        minimum: 1
+        type: string
+      allowReserved: true

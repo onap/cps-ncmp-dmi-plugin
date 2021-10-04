@@ -61,10 +61,10 @@ class SdncOperationsSpec extends Specification {
 
     def 'Get resource data from node to SDNC.'() {
         given: 'expected url, topology-id, sdncOperation object'
-            def expectedUrl = '/rests/data/network-topology:network-topology/topology=test-topology/node=node1/yang-ext:mount/testResourceId?fields=testFields&depth=10&content=testContent'
+            def expectedUrl = '/rests/data/network-topology:network-topology/topology=test-topology/node=node1/yang-ext:mount/testResourceId?a=x/y/z&b=10&c=zxy&content=testContent'
         when: 'called get modules from node'
             objectUnderTest.getResouceDataForOperationalAndRunning('node1', 'testResourceId',
-                    'testFields', 10, 'testAcceptParam', 'content=testContent')
+                    '{a=x/y/z,b=10,c=zxy}', 'testAcceptParam', 'content=testContent')
         then: 'the get operation is executed with the correct URL'
             1 * mockSdncRestClient.getOperation(expectedUrl, _ as HttpHeaders)
     }

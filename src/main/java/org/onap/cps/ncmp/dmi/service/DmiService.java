@@ -66,16 +66,14 @@ public interface DmiService {
      * @param cmHandle            cm handle identifier
      * @param resourceIdentifier  resource identifier
      * @param acceptParam         accept header parameter
-     * @param fieldsQuery         fields query parameter
-     * @param depthQuery          depth query parameter
+     * @param optionsQuery         options query parameter
      * @param cmHandlePropertyMap cm handle properties
      * @return {@code Object} response from network function
      */
     Object getResourceDataOperationalForCmHandle(@NotNull String cmHandle,
         @NotNull String resourceIdentifier,
         String acceptParam,
-        String fieldsQuery,
-        Integer depthQuery,
+        String optionsQuery,
         Map<String, String> cmHandlePropertyMap);
 
     /**
@@ -85,16 +83,14 @@ public interface DmiService {
      * @param cmHandle            cm handle identifier
      * @param resourceIdentifier  resource identifier
      * @param acceptParam         accept header parameter
-     * @param fieldsQuery         fields query parameter
-     * @param depthQuery          depth query parameter
+     * @param optionsQuery         options query parameter
      * @param cmHandlePropertyMap cm handle properties
      * @return {@code Object} response from network function
      */
     Object getResourceDataPassThroughRunningForCmHandle(@NotNull String cmHandle,
         @NotNull String resourceIdentifier,
         String acceptParam,
-        String fieldsQuery,
-        Integer depthQuery,
+        String optionsQuery,
         Map<String, String> cmHandlePropertyMap);
 
     /**
