@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ad0313f5_89c5aa1c",
+        "filename": "docs/design.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 7830
+      },
+      "writtenOn": "2021-10-05T10:59:52Z",
+      "side": 1,
+      "message": "Include both urls with description:\nhttp://:/v3/api-docs?group\u003dcps-docket\nhttp:///swagger-ui/index.html?configUrl\u003d/v3/api-docs/swagger-config#/",
+      "range": {
+        "startLine": 34,
+        "startChar": 2,
+        "endLine": 34,
+        "endChar": 62
+      },
+      "revId": "8fa9c38cbb0c93f4dd0ce9c9fd230812e3cda26a",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    }
+  ]
+}
