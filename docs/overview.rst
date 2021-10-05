@@ -6,14 +6,7 @@
 DMI Plugin Overview
 ===================
 
-.. warning:: draft
-
-The DMI Plugin is used to allow the DMI API's access to the corresponding NCMP API's.
-
-DMI Plugin Interface
---------------------
-
-Implementation Proposal: `DMI Plugin Interface <https://wiki.onap.org/display/DW/CPS-390+Spike%3A+Define+and+Agree+DMI+Plugin+REST+Interface>`_
+The DMI Plugin is used to allow the DMI API's access to the corresponding NCMP API's. For offered API's please refer to the :doc:`design` page.
 
 Contact Information
 -------------------
