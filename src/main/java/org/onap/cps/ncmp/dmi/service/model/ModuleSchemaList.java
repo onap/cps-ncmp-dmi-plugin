@@ -18,19 +18,19 @@
  *  ============LICENSE_END=========================================================
  */
 
-package org.onap.cps.ncmp.dmi.model;
+package org.onap.cps.ncmp.dmi.service.model;
 
-import com.fasterxml.jackson.annotation.JsonInclude;
-import java.util.Map;
+import java.util.List;
 import lombok.Getter;
 import lombok.Setter;
 
-@JsonInclude(JsonInclude.Include.NON_NULL)
+/**
+ * ModuleSchemaList.
+ */
 @Getter
 @Setter
-public class CreatedCmHandle {
+public class ModuleSchemaList {
 
-    private String cmHandle;
-    private Map<String, String> cmHandleProperties;
+    private List<ModuleSchemaProperties> schema;
 
 }

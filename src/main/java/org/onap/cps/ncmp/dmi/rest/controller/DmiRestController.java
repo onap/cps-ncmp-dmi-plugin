@@ -20,6 +20,8 @@
 
 package org.onap.cps.ncmp.dmi.rest.controller;
 
+import static org.onap.cps.ncmp.dmi.model.DmiModuleReadRequestBody.OperationEnum.READ;
+
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import java.util.List;
@@ -30,12 +32,12 @@ import org.onap.cps.ncmp.dmi.model.CmHandles;
 import org.onap.cps.ncmp.dmi.model.DataAccessReadRequest;
 import org.onap.cps.ncmp.dmi.model.DataAccessWriteRequest;
 import org.onap.cps.ncmp.dmi.model.DmiModuleReadRequestBody;
-import org.onap.cps.ncmp.dmi.model.ModuleReference;
 import org.onap.cps.ncmp.dmi.model.ModuleSet;
 import org.onap.cps.ncmp.dmi.model.YangResources;
 import org.onap.cps.ncmp.dmi.rest.api.DmiPluginApi;
 import org.onap.cps.ncmp.dmi.rest.api.DmiPluginInternalApi;
 import org.onap.cps.ncmp.dmi.service.DmiService;
+import org.onap.cps.ncmp.dmi.service.model.ModuleReference;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
@@ -68,7 +70,7 @@ public class DmiRestController implements DmiPluginApi, DmiPluginInternalApi {
     public ResponseEntity<YangResources> retrieveModuleResources(
             final @Valid DmiModuleReadRequestBody dmiModuleReadRequestBody,
             final String cmHandle) {
-        if (dmiModuleReadRequestBody.getOperation().toString().equals("read")) {
+        if (READ.equals(dmiModuleReadRequestBody.getOperation())) {
             final var moduleReferenceList = convertRestObjectToJavaApiObject(dmiModuleReadRequestBody);
             final var response = dmiService.getModuleResources(cmHandle, moduleReferenceList);
             return new ResponseEntity<>(response, HttpStatus.OK);

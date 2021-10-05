@@ -31,3 +31,15 @@ sdnc:
   auth:
     username: test
     password: test
+
+cps-core:
+  baseUrl: some url for cps
+  dmiRegistrationUrl: some registration url
+  auth:
+    username: some cps core user
+    password: some cps core password
+
+dmi:
+  service:
+    url: some url for the dmi service
+

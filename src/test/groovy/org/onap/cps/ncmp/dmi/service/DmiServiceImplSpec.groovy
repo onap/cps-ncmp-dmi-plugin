@@ -22,6 +22,7 @@ package org.onap.cps.ncmp.dmi.service
 
 import com.fasterxml.jackson.core.JsonProcessingException
 import com.fasterxml.jackson.databind.ObjectMapper
+import com.fasterxml.jackson.databind.ObjectWriter
 import org.onap.cps.ncmp.dmi.TestUtils
 import org.onap.cps.ncmp.dmi.config.DmiPluginConfig
 import org.onap.cps.ncmp.dmi.exception.CmHandleRegistrationException
@@ -29,7 +30,7 @@ import org.onap.cps.ncmp.dmi.exception.DmiException
 import org.onap.cps.ncmp.dmi.exception.ModuleResourceNotFoundException
 import org.onap.cps.ncmp.dmi.exception.ModulesNotFoundException
 import org.onap.cps.ncmp.dmi.exception.ResourceDataNotFound
-import org.onap.cps.ncmp.dmi.model.ModuleReference
+import org.onap.cps.ncmp.dmi.service.model.ModuleReference
 import org.onap.cps.ncmp.dmi.model.YangResource
 import org.onap.cps.ncmp.dmi.model.YangResources
 import org.onap.cps.ncmp.dmi.service.client.NcmpRestClient
@@ -43,10 +44,10 @@ class DmiServiceImplSpec extends Specification {
 
     def mockNcmpRestClient = Mock(NcmpRestClient)
     def mockDmiPluginProperties = Mock(DmiPluginConfig.DmiPluginProperties)
-    def objectMapper = new ObjectMapper()
+    def spyObjectMapper = Spy(ObjectMapper)
     def mockObjectMapper = Mock(ObjectMapper)
     def mockSdncOperations = Mock(SdncOperations)
-    def objectUnderTest = new DmiServiceImpl(mockDmiPluginProperties, mockNcmpRestClient, mockSdncOperations, objectMapper)
+    def objectUnderTest = new DmiServiceImpl(mockDmiPluginProperties, mockNcmpRestClient, mockSdncOperations, spyObjectMapper)
 
     def 'Call get modules for cm-handle on dmi Service.'() {
         given: 'cm handle id'
@@ -175,15 +176,33 @@ class DmiServiceImplSpec extends Specification {
 
     def 'Get module resources when sdnc returns #scenario response.'() {
         given: 'get module schema is invoked and returns a response from sdnc'
-            mockSdncOperations.getModuleResource(_ as String, _ as String) >> new ResponseEntity<String>('some-response-body', httpResponse)
+            mockSdncOperations.getModuleResource(_ as String, _ as String) >> new ResponseEntity<String>('some-response-body', httpStatus)
         when: 'get module resources is invoked with the given cm handle and a module list'
             objectUnderTest.getModuleResources('some-cmHandle', [new ModuleReference()] as LinkedList<ModuleReference>)
-        then: 'ModuleResourceNotFoundException is thrown'
-            thrown(exception)
+        then: '#expectedException is thrown'
+            thrown(expectedException)
         where: 'the following values are returned'
-            scenario            | httpResponse                     || exception
+            scenario            | httpStatus                       || expectedException
             'not found'         | HttpStatus.NOT_FOUND             || ModuleResourceNotFoundException
             'a internal server' | HttpStatus.INTERNAL_SERVER_ERROR || DmiException
+    }
+
+    def 'Get module resources with JSON processing exception.'() {
+        given: 'a json processing exception during conversion'
+            def mockObjectWriter = Mock(ObjectWriter)
+            spyObjectMapper.writer() >> mockObjectWriter
+            mockObjectWriter.withRootName(_) >> mockObjectWriter
+            def jsonProcessingException = new JsonProcessingException('')
+            mockObjectWriter.writeValueAsString(_) >> { throw jsonProcessingException }
+        when: 'get module resources is invoked with the given cm handle and a module list'
+            objectUnderTest.getModuleResources('some-cmHandle', [new ModuleReference()] as LinkedList<ModuleReference>)
+        then: 'a DMI exception is thrown'
+            def thrownException = thrown(DmiException.class)
+        and: 'the exception has the expected message and details'
+            thrownException.message == 'Unable to process JSON.'
+            thrownException.details == 'JSON exception occurred when creating the module request.'
+        and: 'the cause is the original json processing exception'
+            thrownException.cause == jsonProcessingException
     }
 
     def 'Get resource data for pass through operational from cm handle.'() {

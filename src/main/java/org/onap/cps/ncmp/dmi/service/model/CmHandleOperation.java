@@ -18,7 +18,7 @@
  *  ============LICENSE_END=========================================================
  */
 
-package org.onap.cps.ncmp.dmi.model;
+package org.onap.cps.ncmp.dmi.service.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import java.util.List;
