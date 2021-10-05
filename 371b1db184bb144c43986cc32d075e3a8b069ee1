@@ -1,0 +1,458 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "dd11ef4a_487cf0fc",
+        "filename": "docs/openapi/components.yml",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2021-10-05T10:11:01Z",
+      "side": 1,
+      "message": "need separate task to add all examples",
+      "revId": "371b1db184bb144c43986cc32d075e3a8b069ee1",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "a91bd59a_3bb3a719",
+        "filename": "docs/openapi/components.yml",
+        "patchSetId": 1
+      },
+      "lineNbr": 183,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2021-10-05T10:11:01Z",
+      "side": 1,
+      "message": "should this not be remove now?!",
+      "range": {
+        "startLine": 177,
+        "startChar": 1,
+        "endLine": 183,
+        "endChar": 20
+      },
+      "revId": "371b1db184bb144c43986cc32d075e3a8b069ee1",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "9172c263_d5df6387",
+        "filename": "docs/openapi/components.yml",
+        "patchSetId": 1
+      },
+      "lineNbr": 185,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2021-10-05T10:11:01Z",
+      "side": 1,
+      "message": "as discussed, no regex (validation for now, possible later improvement)\nDO add an example and specific expected structure using round brackets",
+      "range": {
+        "startLine": 185,
+        "startChar": 4,
+        "endLine": 185,
+        "endChar": 23
+      },
+      "revId": "371b1db184bb144c43986cc32d075e3a8b069ee1",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "5949584c_8cc0cc22",
+        "filename": "src/main/java/org/onap/cps/ncmp/dmi/rest/controller/DmiRestController.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 127,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2021-10-05T10:11:01Z",
+      "side": 1,
+      "message": "acceptParamInHeader (for Consistency)",
+      "range": {
+        "startLine": 127,
+        "startChar": 21,
+        "endLine": 127,
+        "endChar": 27
+      },
+      "revId": "371b1db184bb144c43986cc32d075e3a8b069ee1",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "d4e58a44_0a92b460",
+        "filename": "src/main/java/org/onap/cps/ncmp/dmi/rest/controller/DmiRestController.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 128,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2021-10-05T10:11:01Z",
+      "side": 1,
+      "message": "later you call this optionsQuery I think name should remain consistent while string content is same\nsuggestions\n1) options (unless you need this later if it ever gets converted to a map or something)\n2) optionsAsString\n3) optionsParamInQuery  (in line with openApi)\n4) optionsInQuery (inspired by open API)\n5) optionsParam\n6) optionsQueryParam\n\nPrefer 3 as discussed",
+      "range": {
+        "startLine": 128,
+        "startChar": 28,
+        "endLine": 128,
+        "endChar": 35
+      },
+      "revId": "371b1db184bb144c43986cc32d075e3a8b069ee1",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "4c56ccd7_258a2346",
+        "filename": "src/main/java/org/onap/cps/ncmp/dmi/service/DmiService.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 64,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2021-10-05T10:11:01Z",
+      "side": 1,
+      "message": "updated javadoc accordingly",
+      "range": {
+        "startLine": 64,
+        "startChar": 19,
+        "endLine": 64,
+        "endChar": 107
+      },
+      "revId": "371b1db184bb144c43986cc32d075e3a8b069ee1",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "5ee8e706_3f626e41",
+        "filename": "src/main/java/org/onap/cps/ncmp/dmi/service/DmiService.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 76,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2021-10-05T10:11:01Z",
+      "side": 1,
+      "message": "see earlier comment naming consistency",
+      "range": {
+        "startLine": 76,
+        "startChar": 15,
+        "endLine": 76,
+        "endChar": 27
+      },
+      "revId": "371b1db184bb144c43986cc32d075e3a8b069ee1",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "9f8e8caa_a8f380bf",
+        "filename": "src/main/java/org/onap/cps/ncmp/dmi/service/DmiService.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 81,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2021-10-05T10:11:01Z",
+      "side": 1,
+      "message": "update javadoc accordingly",
+      "range": {
+        "startLine": 81,
+        "startChar": 19,
+        "endLine": 81,
+        "endChar": 107
+      },
+      "revId": "371b1db184bb144c43986cc32d075e3a8b069ee1",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "a3875dc4_3df9a8e1",
+        "filename": "src/main/java/org/onap/cps/ncmp/dmi/service/DmiServiceImpl.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 63,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2021-10-05T10:11:01Z",
+      "side": 1,
+      "message": "REST_CONF_CONTENT_PASSTHROUGH_OPERATIONAL_QUERY_PARM",
+      "range": {
+        "startLine": 63,
+        "startChar": 32,
+        "endLine": 63,
+        "endChar": 45
+      },
+      "revId": "371b1db184bb144c43986cc32d075e3a8b069ee1",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "b9d82ef9_6bd67276",
+        "filename": "src/main/java/org/onap/cps/ncmp/dmi/service/DmiServiceImpl.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 64,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2021-10-05T10:11:01Z",
+      "side": 1,
+      "message": "like above",
+      "range": {
+        "startLine": 64,
+        "startChar": 32,
+        "endLine": 64,
+        "endChar": 45
+      },
+      "revId": "371b1db184bb144c43986cc32d075e3a8b069ee1",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "c7c06db4_b408e90b",
+        "filename": "src/main/java/org/onap/cps/ncmp/dmi/service/operation/SdncOperations.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 104,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2021-10-05T10:11:01Z",
+      "side": 1,
+      "message": "not in javadoc \nrename to restConfContentQueryParam",
+      "range": {
+        "startLine": 104,
+        "startChar": 21,
+        "endLine": 104,
+        "endChar": 33
+      },
+      "revId": "371b1db184bb144c43986cc32d075e3a8b069ee1",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "d954d6f9_4dcf4ac7",
+        "filename": "src/main/java/org/onap/cps/ncmp/dmi/service/operation/SdncOperations.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 133,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2021-10-05T10:11:01Z",
+      "side": 1,
+      "message": "follow prev agreed names for consistency",
+      "range": {
+        "startLine": 133,
+        "startChar": 51,
+        "endLine": 133,
+        "endChar": 63
+      },
+      "revId": "371b1db184bb144c43986cc32d075e3a8b069ee1",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "53dec445_b331285f",
+        "filename": "src/main/java/org/onap/cps/ncmp/dmi/service/operation/SdncOperations.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 133,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2021-10-05T10:11:01Z",
+      "side": 1,
+      "message": "buildQueryParameterList\nBTW can be test using Groovy even if it remains a private method in this class like so:\n\n    def \u0027test\u0027() {\n        when:\n            def result \u003d objectUnderTest.getQueryList(\u0027(a\u003d1,b\u003d2,c\u003d\"3\")\u0027,\u0027d\u003d4\u0027)\n        then:\n            result \u003d\u003d [\u0027a\u003d1\u0027,\u0027b\u003d2\u0027,\u0027c\u003d\"3\"\u0027,\u0027d\u003d4\u0027]\n    }",
+      "range": {
+        "startLine": 133,
+        "startChar": 25,
+        "endLine": 133,
+        "endChar": 37
+      },
+      "revId": "371b1db184bb144c43986cc32d075e3a8b069ee1",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "4b09e717_ef1aa129",
+        "filename": "src/main/java/org/onap/cps/ncmp/dmi/service/operation/SdncOperations.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 133,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2021-10-05T10:11:01Z",
+      "side": 1,
+      "message": "restConfContentParam\n\nOR\n\nrestConfContentQueryParam",
+      "range": {
+        "startLine": 133,
+        "startChar": 78,
+        "endLine": 133,
+        "endChar": 90
+      },
+      "revId": "371b1db184bb144c43986cc32d075e3a8b069ee1",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "0c0157c1_9cb3e7f5",
+        "filename": "src/main/java/org/onap/cps/ncmp/dmi/service/operation/SdncOperations.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 134,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2021-10-05T10:11:01Z",
+      "side": 1,
+      "message": "queryParameters",
+      "range": {
+        "startLine": 134,
+        "startChar": 27,
+        "endLine": 134,
+        "endChar": 37
+      },
+      "revId": "371b1db184bb144c43986cc32d075e3a8b069ee1",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "3a5c5e26_c6a96c0c",
+        "filename": "src/main/java/org/onap/cps/ncmp/dmi/service/operation/SdncOperations.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 136,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2021-10-05T10:11:01Z",
+      "side": 1,
+      "message": "extract out optionParametersAsList \u003d removeSurroundingBrackets(...)",
+      "range": {
+        "startLine": 136,
+        "startChar": 12,
+        "endLine": 136,
+        "endChar": 90
+      },
+      "revId": "371b1db184bb144c43986cc32d075e3a8b069ee1",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "609a2ff2_542805b2",
+        "filename": "src/main/java/org/onap/cps/ncmp/dmi/service/operation/SdncOperations.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 141,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2021-10-05T10:11:01Z",
+      "side": 1,
+      "message": "never called with an empty String or null! no need for this check",
+      "range": {
+        "startLine": 139,
+        "startChar": 1,
+        "endLine": 141,
+        "endChar": 9
+      },
+      "revId": "371b1db184bb144c43986cc32d075e3a8b069ee1",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "82286b37_39c201fc",
+        "filename": "src/main/java/org/onap/cps/ncmp/dmi/service/operation/SdncOperations.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 144,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2021-10-05T10:11:01Z",
+      "side": 1,
+      "message": "as mentioned in email it might be better to do and tets this in a separate utility class",
+      "range": {
+        "startLine": 132,
+        "startChar": 1,
+        "endLine": 144,
+        "endChar": 0
+      },
+      "revId": "371b1db184bb144c43986cc32d075e3a8b069ee1",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "6a2db630_53cff423",
+        "filename": "src/test/groovy/org/onap/cps/ncmp/dmi/rest/controller/DmiRestControllerSpec.groovy",
+        "patchSetId": 1
+      },
+      "lineNbr": 189,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2021-10-05T10:11:01Z",
+      "side": 1,
+      "message": "parent/child",
+      "range": {
+        "startLine": 189,
+        "startChar": 41,
+        "endLine": 189,
+        "endChar": 48
+      },
+      "revId": "371b1db184bb144c43986cc32d075e3a8b069ee1",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "e62f3072_4f88e759",
+        "filename": "src/test/groovy/org/onap/cps/ncmp/dmi/service/operation/SdncOperationsSpec.groovy",
+        "patchSetId": 1
+      },
+      "lineNbr": 67,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2021-10-05T10:11:01Z",
+      "side": 1,
+      "message": "given we have a separate unit test on the private method for complex combinations\nmaybe keep it simpel here like (a\u003d1,b\u003d2)",
+      "range": {
+        "startLine": 67,
+        "startChar": 21,
+        "endLine": 67,
+        "endChar": 41
+      },
+      "revId": "371b1db184bb144c43986cc32d075e3a8b069ee1",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    }
+  ]
+}
