@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "c6cbb3e9_ef428e95",
+        "filename": "docs/admin-guide.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2021-10-05T14:54:52Z",
+      "side": 1,
+      "message": "This page can simply refer to the \u0027istanbul\u0027 version of CPS-Core for the same.\n(maybe temporary to \u0027latest\u0027 until branch is created using a separate task to update them later",
+      "revId": "0221c58d7d9ca9e6683c34fef226ee8b7f143d56",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    }
+  ]
+}
