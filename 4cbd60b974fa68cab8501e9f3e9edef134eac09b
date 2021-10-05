@@ -1,0 +1,9 @@
+Verified+1: ONAP Jobbuilder <onap-jobbuilder@jenkins.onap.org>
+Code-Review+1: Luke Gleeson <luke.gleeson@est.tech>
+Code-Review+1: Bruno Sakoto <bruno.sakoto@bell.ca>
+Code-Review+2: Niamh Core <niamh.core@est.tech>
+Submitted-by: Niamh Core <niamh.core@est.tech>
+Submitted-at: Tue, 05 Oct 2021 08:35:06 +0000
+Reviewed-on: https://gerrit.onap.org/r/c/cps/ncmp-dmi-plugin/+/124634
+Project: cps/ncmp-dmi-plugin
+Branch: refs/heads/master
