@@ -8,7 +8,8 @@ DMI Plugin Overview
 
 .. warning:: draft
 
-The DMI Plugin is used to allow the DMI API's access to the corresponding NCMP API's.
+The Data-Model-Inventory (DMI) Plugin is a rest interface used to synchronize CM-Handles data between CPS and DMI through the DMI Plugin.
+This is built previously from the CPS-NF-Proxy component.
 
 DMI Plugin Interface
 --------------------
