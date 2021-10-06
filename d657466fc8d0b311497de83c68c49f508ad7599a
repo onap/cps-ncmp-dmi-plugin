@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "733e6599_e0eda23e",
+        "filename": "docs/openapi/components.yml",
+        "patchSetId": 5
+      },
+      "lineNbr": 101,
+      "author": {
+        "id": 6841
+      },
+      "writtenOn": "2021-10-06T14:17:15Z",
+      "side": 1,
+      "message": "{\"prop1\":\"value1\",\"prop2\":\"value2\"}",
+      "range": {
+        "startLine": 101,
+        "startChar": 17,
+        "endLine": 101,
+        "endChar": 27
+      },
+      "revId": "d657466fc8d0b311497de83c68c49f508ad7599a",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    }
+  ]
+}
