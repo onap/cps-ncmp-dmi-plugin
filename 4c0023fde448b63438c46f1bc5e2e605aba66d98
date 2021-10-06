@@ -1,0 +1,165 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "8f80d685_f7a1c067",
+        "filename": "src/main/java/org/onap/cps/ncmp/dmi/service/operation/SdncOperations.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 135,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2021-10-06T10:00:37Z",
+      "side": 1,
+      "message": "this should be done in the method below",
+      "range": {
+        "startLine": 135,
+        "startChar": 8,
+        "endLine": 135,
+        "endChar": 65
+      },
+      "revId": "4c0023fde448b63438c46f1bc5e2e605aba66d98",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "9d399f7e_60ceefa7",
+        "filename": "src/main/java/org/onap/cps/ncmp/dmi/service/operation/SdncOperations.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 141,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2021-10-06T10:00:37Z",
+      "side": 1,
+      "message": "a void get ?!\n#See previous comment, create the list INSIDE this method and return it instead",
+      "range": {
+        "startLine": 141,
+        "startChar": 12,
+        "endLine": 141,
+        "endChar": 20
+      },
+      "revId": "4c0023fde448b63438c46f1bc5e2e605aba66d98",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "adde0299_34ae02fe",
+        "filename": "src/main/java/org/onap/cps/ncmp/dmi/service/operation/SdncOperations.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 143,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2021-10-06T10:00:37Z",
+      "side": 1,
+      "message": "as discussed extract method to reflect this comment",
+      "range": {
+        "startLine": 143,
+        "startChar": 14,
+        "endLine": 143,
+        "endChar": 61
+      },
+      "revId": "4c0023fde448b63438c46f1bc5e2e605aba66d98",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "c62e1b74_20056295",
+        "filename": "src/test/groovy/org/onap/cps/ncmp/dmi/service/operation/SdncOperationsSpec.groovy",
+        "patchSetId": 2
+      },
+      "lineNbr": 81,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2021-10-06T10:00:37Z",
+      "side": 1,
+      "message": "\"where options contains a\"",
+      "range": {
+        "startLine": 81,
+        "startChar": 40,
+        "endLine": 81,
+        "endChar": 63
+      },
+      "revId": "4c0023fde448b63438c46f1bc5e2e605aba66d98",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "561ae950_75576620",
+        "filename": "src/test/groovy/org/onap/cps/ncmp/dmi/service/operation/SdncOperationsSpec.groovy",
+        "patchSetId": 2
+      },
+      "lineNbr": 87,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2021-10-06T10:00:37Z",
+      "side": 1,
+      "message": "teher are 2 special cases I woudl liek to see tested\n\u0027(a\u003d\"value with \u003d\")\u0027\n\u0027(a\u003d\"value with ,\")\u0027\n\nIf these fail to resolve properly don\u0027t try to fix it, just describe the error/failure and we can record this as limitations",
+      "range": {
+        "startLine": 87,
+        "startChar": 12,
+        "endLine": 87,
+        "endChar": 20
+      },
+      "revId": "4c0023fde448b63438c46f1bc5e2e605aba66d98",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "846b1734_c3baffc0",
+        "filename": "src/test/groovy/org/onap/cps/ncmp/dmi/service/operation/SdncOperationsSpec.groovy",
+        "patchSetId": 2
+      },
+      "lineNbr": 88,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2021-10-06T10:00:37Z",
+      "side": 1,
+      "message": "name-value pair",
+      "range": {
+        "startLine": 88,
+        "startChar": 20,
+        "endLine": 88,
+        "endChar": 25
+      },
+      "revId": "4c0023fde448b63438c46f1bc5e2e605aba66d98",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "de719db7_780be3f8",
+        "filename": "src/test/groovy/org/onap/cps/ncmp/dmi/service/operation/SdncOperationsSpec.groovy",
+        "patchSetId": 2
+      },
+      "lineNbr": 89,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2021-10-06T10:00:37Z",
+      "side": 1,
+      "message": "name-value pairs",
+      "range": {
+        "startLine": 89,
+        "startChar": 22,
+        "endLine": 89,
+        "endChar": 39
+      },
+      "revId": "4c0023fde448b63438c46f1bc5e2e605aba66d98",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    }
+  ]
+}
