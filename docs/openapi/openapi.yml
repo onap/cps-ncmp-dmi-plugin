@@ -37,7 +37,7 @@ paths:
         - dmi-plugin
       summary: Get all modules for cm handle
       description: Get all modules for given cm handle
-      operationId: getModulesForCmHandle
+      operationId: getModuleReferences
       parameters:
         - name: cmHandle
           in: path
@@ -50,7 +50,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: 'components.yml#/components/schemas/DataAccessReadRequest'
+              $ref: 'components.yml#/components/schemas/ModuleReferencesRequest'
       responses:
         '200':
           description: OK
@@ -113,7 +113,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: 'components.yml#/components/schemas/DmiModuleReadRequestBody'
+              $ref: 'components.yml#/components/schemas/ModuleResourcesReadRequest'
       responses:
         '200':
           description: OK

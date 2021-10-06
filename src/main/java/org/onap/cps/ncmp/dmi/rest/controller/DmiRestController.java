@@ -20,8 +20,6 @@
 
 package org.onap.cps.ncmp.dmi.rest.controller;
 
-import static org.onap.cps.ncmp.dmi.model.DmiModuleReadRequestBody.OperationEnum.READ;
-
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import java.util.List;
@@ -30,7 +28,8 @@ import lombok.extern.slf4j.Slf4j;
 import org.onap.cps.ncmp.dmi.model.CmHandles;
 import org.onap.cps.ncmp.dmi.model.DataAccessReadRequest;
 import org.onap.cps.ncmp.dmi.model.DataAccessWriteRequest;
-import org.onap.cps.ncmp.dmi.model.DmiModuleReadRequestBody;
+import org.onap.cps.ncmp.dmi.model.ModuleReferencesRequest;
+import org.onap.cps.ncmp.dmi.model.ModuleResourcesReadRequest;
 import org.onap.cps.ncmp.dmi.model.ModuleSet;
 import org.onap.cps.ncmp.dmi.model.YangResources;
 import org.onap.cps.ncmp.dmi.rest.api.DmiPluginApi;
@@ -58,8 +57,8 @@ public class DmiRestController implements DmiPluginApi, DmiPluginInternalApi {
     }
 
     @Override
-    public ResponseEntity<ModuleSet> getModulesForCmHandle(final String cmHandle,
-                                                           final @Valid DataAccessReadRequest body) {
+    public ResponseEntity<ModuleSet> getModuleReferences(final String cmHandle,
+                                                           final @Valid ModuleReferencesRequest body) {
         // For onap-dmi-plugin we don't need cmHandleProperties, so DataAccessReadRequest is not used.
         final var moduleSet = dmiService.getModulesForCmHandle(cmHandle);
         return ResponseEntity.ok(moduleSet);
@@ -67,14 +66,11 @@ public class DmiRestController implements DmiPluginApi, DmiPluginInternalApi {
 
     @Override
     public ResponseEntity<YangResources> retrieveModuleResources(
-            final @Valid DmiModuleReadRequestBody dmiModuleReadRequestBody,
-            final String cmHandle) {
-        if (READ.equals(dmiModuleReadRequestBody.getOperation())) {
-            final var moduleReferenceList = convertRestObjectToJavaApiObject(dmiModuleReadRequestBody);
-            final var response = dmiService.getModuleResources(cmHandle, moduleReferenceList);
-            return new ResponseEntity<>(response, HttpStatus.OK);
-        }
-        return new ResponseEntity<>(HttpStatus.CONFLICT);
+        final @Valid ModuleResourcesReadRequest moduleResourcesReadRequest,
+        final String cmHandle) {
+        final List<ModuleReference> moduleReferences = convertRestObjectToJavaApiObject(moduleResourcesReadRequest);
+        final YangResources yangResources = dmiService.getModuleResources(cmHandle, moduleReferences);
+        return new ResponseEntity<>(yangResources, HttpStatus.OK);
     }
 
     /**
@@ -162,9 +158,9 @@ public class DmiRestController implements DmiPluginApi, DmiPluginInternalApi {
     }
 
     private List<ModuleReference> convertRestObjectToJavaApiObject(
-            final DmiModuleReadRequestBody dmiModuleSchemaReadRequestBody) {
+            final ModuleResourcesReadRequest moduleResourcesReadRequest) {
         return objectMapper
-            .convertValue(dmiModuleSchemaReadRequestBody.getData().getModules(),
+            .convertValue(moduleResourcesReadRequest.getData().getModules(),
                           new TypeReference<List<ModuleReference>>() {});
     }
 }
