@@ -237,6 +237,30 @@
     },
     {
       "key": {
+        "uuid": "d6ab945a_d23cf138",
+        "filename": "src/test/groovy/org/onap/cps/ncmp/dmi/service/operation/SdncOperationsSpec.groovy",
+        "patchSetId": 2
+      },
+      "lineNbr": 87,
+      "author": {
+        "id": 5006
+      },
+      "writtenOn": "2021-10-06T13:40:51Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "f6f4492d_4853efc7",
+      "range": {
+        "startLine": 87,
+        "startChar": 12,
+        "endLine": 87,
+        "endChar": 20
+      },
+      "revId": "4c0023fde448b63438c46f1bc5e2e605aba66d98",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "846b1734_c3baffc0",
         "filename": "src/test/groovy/org/onap/cps/ncmp/dmi/service/operation/SdncOperationsSpec.groovy",
         "patchSetId": 2
