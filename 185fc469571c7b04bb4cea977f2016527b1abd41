@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "cebb0355_904989c7",
+        "filename": "src/main/java/org/onap/cps/ncmp/dmi/service/operation/SdncOperations.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 151,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2021-10-06T11:54:04Z",
+      "side": 1,
+      "message": "just return here (will remove need for tricky variable naam too)",
+      "range": {
+        "startLine": 151,
+        "startChar": 8,
+        "endLine": 151,
+        "endChar": 33
+      },
+      "revId": "185fc469571c7b04bb4cea977f2016527b1abd41",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "96b1933b_f577e0dd",
+        "filename": "src/test/groovy/org/onap/cps/ncmp/dmi/service/operation/SdncOperationsSpec.groovy",
+        "patchSetId": 3
+      },
+      "lineNbr": 94,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2021-10-06T11:54:04Z",
+      "side": 1,
+      "message": "I suspect you have another patch?! Make sure to include reference to https://jira.onap.org/browse/CPS-719 as a comment in teh test we wrote together",
+      "range": {
+        "startLine": 94,
+        "startChar": 0,
+        "endLine": 94,
+        "endChar": 88
+      },
+      "revId": "185fc469571c7b04bb4cea977f2016527b1abd41",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    }
+  ]
+}
