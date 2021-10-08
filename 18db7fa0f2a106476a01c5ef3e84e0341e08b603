@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "dc58d47b_a781064f",
+        "filename": "docs/design.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2021-10-08T10:03:01Z",
+      "side": 1,
+      "message": "this name is confusing (the similarity of .rst heading levels is not helping either)\n\nsuggested name: \u0027View Offered APIs\u0027 (need to do consistently across other components)",
+      "range": {
+        "startLine": 22,
+        "startChar": 0,
+        "endLine": 22,
+        "endChar": 11
+      },
+      "revId": "18db7fa0f2a106476a01c5ef3e84e0341e08b603",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    }
+  ]
+}
