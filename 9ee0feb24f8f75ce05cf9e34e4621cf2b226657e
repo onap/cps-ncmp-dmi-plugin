@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "61dd400c_a3114ac5",
+        "filename": "docs/architecture.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2021-10-08T13:50:38Z",
+      "side": 0,
+      "message": "nb: did you remove this file?",
+      "range": {
+        "startLine": 25,
+        "startChar": 19,
+        "endLine": 25,
+        "endChar": 49
+      },
+      "revId": "9ee0feb24f8f75ce05cf9e34e4621cf2b226657e",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    }
+  ]
+}
