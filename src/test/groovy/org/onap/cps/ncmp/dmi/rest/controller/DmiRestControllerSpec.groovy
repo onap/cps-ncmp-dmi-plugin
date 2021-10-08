@@ -77,7 +77,7 @@ class DmiRestControllerSpec extends Specification {
             def response = mvc.perform(post(getModuleUrl)
                     .contentType(MediaType.APPLICATION_JSON).content(json))
                     .andReturn().response
-        then: 'status is OK'
+        then: 'the status is OK'
             response.status == HttpStatus.OK.value()
         and: 'the response content matches the result from the DMI service'
             response.getContentAsString() == '{"schemas":[{"moduleName":"some-moduleName","revision":"some-revision","namespace":"some-namespace"}]}'
