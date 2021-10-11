@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "73924863_121a0c49",
+        "filename": "docs/release-notes.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 60,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2021-10-11T09:11:37Z",
+      "side": 1,
+      "message": "insert this limitation: https://jira.onap.org/browse/CPS-719",
+      "range": {
+        "startLine": 60,
+        "startChar": 0,
+        "endLine": 60,
+        "endChar": 4
+      },
+      "revId": "ed8630ce31bcdbd5a8ceecb3dace674e727cbdb6",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    }
+  ]
+}
