@@ -6,8 +6,6 @@
 DMI Plugin Architecture
 #######################
 
-.. warning:: draft
-
 .. toctree::
    :maxdepth: 1
 
@@ -15,14 +13,9 @@ DMI Plugin Architecture
 High Level Component Definition and Architectural Relationships
 ===============================================================
 
-The DMI plugin provides a gateway for registration of CM Handles within CPS
+The DMI plugin provides a gateway for registration and syncing of CM Handles within CPS.
 
-Project implementation proposal page describing scope is here:
-`CPS-390 Spike: Define and Agree DMI Plugin REST Interface <https://wiki.onap.org/display/DW/CPS-390+Spike%3A+Define+and+Agree+DMI+Plugin+REST+Interface>`_
-
-This page reflects the state for Istanbul-R9 release.
-
-.. image:: _static/dmi-plugin-r9-arch-diagram.PNG
+.. image:: _static/cps-r9-ncmp-dmi-plugin-interface-diagram.png
 
 API definitions
 ===============
@@ -30,11 +23,33 @@ API definitions
 The DMI plugin provides following interfaces.
 
 .. list-table::
-   :header-rows: 0
+   :header-rows: 1
 
    * - Interface name
      - Interface definition
      - Interface capabilities
      - Protocol
+   * - CPS-E-05
+     - Provides external clients with  xNF data access and module information
+     - - Create data
+       - Delete data
+       - Update data
+       - Read data
+       - Query data
+       - Query module references
+     - REST
+   * - CPS-NCMP-I-01
+     - DMI Plugin Inventory
+     - - Register Plug-in CM-Handles
+     - REST
+   * - DMI-I-01
+     - Provides NCMP with  xNF data access and module information
+     - - Create data
+       - Delete data
+       - Update data
+       - Read data
+       - Query data
+       - Query module references
+     - REST
 
-The DMI plugin Basic Concepts are described in :doc:`modeling`.
+More details on the CPS interface CPS-E-05 which is responsible for the DMI Plugin can be found on the `CPS Architecture Page <https://docs.onap.org/projects/onap-cps/en/latest/architecture.html>`_.
