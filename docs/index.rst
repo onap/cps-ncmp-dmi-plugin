@@ -8,34 +8,27 @@
 .. THIS IS USED INTERNALLY IN CPS ONLY
 .. _dmi-framework-doc:
 
-DMI Plugin Documentation for the Istanbul-R9 Release
+DMI-Plugin Documentation for the Istanbul-R9 Release
 ----------------------------------------------------
-
-.. warning:: draft
 
 .. toctree::
    :maxdepth: 1
 
    overview.rst
    architecture.rst
+   admin-guide.rst
    design.rst
    modeling.rst
    deployment.rst
    release-notes.rst
 
 
-CPS-Core Documentation for the Istanbul-R9 Release
+CPS-NCMP Documentation for the Istanbul-R9 Release
 ---------------------------------------------------------
 
-.. toctree::
-   :maxdepth: 3
-
-* `CPS Core(placeholder)  `_
+* `CPS-NCMP <https://docs.onap.org/projects/onap-cps/en/latest/index.html>`_
 
 CPS-Temporal Documentation for the Istanbul-R9 Release
 ------------------------------------------------------
 
-.. toctree::
-   :maxdepth: 1
-
-* `CPS Temporal(placeholder)  `_
+* `CPS-Temporal <https://docs.onap.org/projects/onap-cps-cps-temporal/en/latest/index.html>`_
