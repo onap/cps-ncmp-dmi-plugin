@@ -7,10 +7,8 @@
 
 
 ========================
-DMI Plugin Release Notes
+DMI-Plugin Release Notes
 ========================
-
-.. warning:: draft
 
 .. contents::
     :depth: 2
@@ -20,35 +18,86 @@ DMI Plugin Release Notes
 ..      * * *   ISTANBUL   * * *
 ..      ========================
 
-Version: 1.0.0
+Version: 1.0.1
 ==============
-
-Abstract
---------
-
-This document provides the release notes for Istanbul release.
 
 Release Data
 ------------
 
 +--------------------------------------+--------------------------------------------------------+
-| **CPS Project**                      |                                                        |
+| **CPS Project**                      |  DMI-Plugin                                            |
 |                                      |                                                        |
 +--------------------------------------+--------------------------------------------------------+
-| **Docker images**                    |  placeholder                                           |
+| **Docker images**                    |  onap/ncmp-dmi-plugin:1.0.1                            |
 |                                      |                                                        |
 +--------------------------------------+--------------------------------------------------------+
-| **Release designation**              | 1.0.0 Istanbul                                         |
+| **Release designation**              | 1.0.1 Istanbul                                         |
 |                                      |                                                        |
 +--------------------------------------+--------------------------------------------------------+
 | **Release date**                     | 2021-14-10                                             |
 |                                      |                                                        |
 +--------------------------------------+--------------------------------------------------------+
 
+Bug Fixes
+---------
+
+   - `CPS-653 <https://jira.onap.org/browse/CPS-653>`_ cmHandleProperties not supported by dmi in fetch modules
+   - `CPS-659 <https://jira.onap.org/browse/CPS-659>`_ DMI does not set CREATE Response code for passthrough-running create use-case
+   - `CPS-669 <https://jira.onap.org/browse/CPS-669>`_ Improvements in the NCMP-DMI plugin OOM charts
+   - `CPS-678 <https://jira.onap.org/browse/CPS-678>`_ Passthrough read only supports known parameters (depth&field)
+   - `CPS-679 <https://jira.onap.org/browse/CPS-679>`_ Passthrough does not support resourceIdentifier with / tokens
+   - `CPS-706 <https://jira.onap.org/browse/CPS-706>`_ get moduleschema/yangresouce endpoint not working
+
+Known Limitations, Issues and Workarounds
+-----------------------------------------
+
+*System Limitations*
+
+  - `CPS-719 <https://jira.onap.org/browse/CPS-719>`_ Passthrough query options do not support comma (,) token in values
+
+*Known Vulnerabilities*
+
+None
+
+*Workarounds*
+
+None
+
+Security Notes
+--------------
+
+*Fixed Security Issues*
+
+None
+
+*Known Security Issues*
+
+None
+
+Version: 1.0.0
+==============
+
+Release Data
+------------
+
++--------------------------------------+--------------------------------------------------------+
+| **CPS Project**                      |  DMI-Plugin                                            |
+|                                      |                                                        |
++--------------------------------------+--------------------------------------------------------+
+| **Docker images**                    |  onap/ncmp-dmi-plugin:1.0.0                            |
+|                                      |                                                        |
++--------------------------------------+--------------------------------------------------------+
+| **Release designation**              | 1.0.0 Istanbul                                         |
+|                                      |                                                        |
++--------------------------------------+--------------------------------------------------------+
+| **Release date**                     | 2021-14-09                                             |
+|                                      |                                                        |
++--------------------------------------+--------------------------------------------------------+
+
 Features
 --------
 * Implement plugin registration.
-* Retrieve data from cmHandles using ncmp-datastores passthorugh.
+* Retrieve data from cmHandles using ncmp-datastores passthrough.
 * Retrieve Yang Resources from one or more modules of a  CM Handle.
 
 .. _istanbul_deliverable:
@@ -62,18 +111,19 @@ Software Deliverables
    :header: "Repository", "SubModules", "Version & Docker Image (if applicable)"
    :widths: auto
 
-   "cps/ncmp-dmi-plugin", "", "placeholder"
+   "cps/ncmp-dmi-plugin", "", "onap/ncmp-dmi-plugin:1.0.0"
 
 Bug Fixes
 ---------
 
-This document provides the release notes for Istanbul release.
+   - `CPS-504 <https://jira.onap.org/browse/CPS-504>`_ Checkstyle rules are not enforced for cps-ncmp-dmi-plugin
+   - `CPS-589 <https://jira.onap.org/browse/CPS-589>`_ Json for Yang Resources does not contain name and revision tags
+   - `CPS-617 <https://jira.onap.org/browse/CPS-617>`_ DMI base path does not conform to agreed API URL
 
 Summary
 -------
 
-Following DMI plugin components are available with default ONAP/DMI-plugin installation.
-
+Following DMI-Plugin components are available with default ONAP/DMI-plugin installation.
 
     * Platform components
 
@@ -90,27 +140,32 @@ Known Limitations, Issues and Workarounds
 
 *System Limitations*
 
-*Known Vulnerabilities*
-
 None
 
+*Known Vulnerabilities*
+
+   - `CPS-653 <https://jira.onap.org/browse/CPS-653>`_ cmHandleProperties not supported by dmi in fetch modules
+   - `CPS-659 <https://jira.onap.org/browse/CPS-659>`_ DMI does not set CREATE Response code for passthrough-running create use-case
+
 *Workarounds*
+
+None
 
 Security Notes
 --------------
 
 *Fixed Security Issues*
 
+None
+
 *Known Security Issues*
 
-Test Results
-------------
-    * `Integration tests`
+None
 
 References
 ----------
 
-For more information on the ONAP Honolulu release, please see:
+For more information on the ONAP Istanbul release, please see:
 
 #. `ONAP Home Page`_
 #. `ONAP Documentation`_
@@ -125,5 +180,5 @@ For more information on the ONAP Honolulu release, please see:
 
 Quick Links:
 
-        - `Dmi Plugin implementation page <https://wiki.onap.org/display/DW/CPS-390+Spike%3A+Define+and+Agree+DMI+Plugin+REST+Interface>`_
+        - `CPS project page <https://wiki.onap.org/pages/viewpage.action?pageId=71834216>`_
         - `Passing Badge information for CPS <https://bestpractices.coreinfrastructure.org/en/projects/4398>`_
