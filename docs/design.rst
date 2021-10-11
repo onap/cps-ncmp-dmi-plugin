@@ -6,7 +6,7 @@
 .. _design:
 
 
-DMI Plugin Design
+DMI-Plugin Design
 #################
 
 .. toctree::
@@ -15,7 +15,7 @@ DMI Plugin Design
 Offered APIs
 ============
 
-The DMI Plugin supports the public APIs listed in the link below:
+The DMI-Plugin supports the public APIs listed in the link below:
 
 :download:`DMI Rest OpenApi Specification <openapi/openapi.yaml>`
 

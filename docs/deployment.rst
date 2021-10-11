@@ -6,7 +6,7 @@
 .. _deployment:
 
 
-DMI Plugin Deployment
+DMI-Plugin Deployment
 #####################
 
 .. toctree::
@@ -16,9 +16,9 @@ Deployment
 ==========
 
 Refer to `CPS Deployment <https://docs.onap.org/projects/onap-cps/en/latest/deployment.html>`_
-page for deployment documentation related to DMI Plugin and all CPS components.
+page for deployment documentation related to DMI-Plugin and all CPS components.
 
-Additional DMI Plugin Core Customisations
+Additional DMI-Plugin Core Customisations
 =========================================
 
 Application Properties
@@ -51,7 +51,7 @@ values to configure for the application being deployed. This list is not exhaust
 | config.sdnc.topologyId                | SDNC topology Id.                                                                                           | ``topology-netconf``                            |
 +---------------------------------------+-------------------------------------------------------------------------------------------------------------+-------------------------------------------------+
 
-DMI Plugin Docker Installation
+DMI-Plugin Docker Installation
 ==============================
 
 DMI-Plugin can also be installed in a docker environment. Latest `docker-compose <https://github.com/onap/cps-ncmp-dmi-plugin/blob/master/docker-compose/docker-compose.yml>`_ is included in the repo to start all the relevant

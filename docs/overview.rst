@@ -3,10 +3,10 @@
 .. Copyright (C) 2021 Nordix Foundation
 .. _overview:
 
-DMI Plugin Overview
+DMI-Plugin Overview
 ===================
 
-The DMI Plugin is used to allow the DMI API's access to the corresponding NCMP API's. For offered API's please refer to the :doc:`design` page.
+The DMI-Plugin is used to allow the DMI API's access to the corresponding NCMP API's. For offered API's please refer to the :doc:`design` page.
 
 Contact Information
 -------------------

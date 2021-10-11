@@ -3,7 +3,7 @@
 .. Copyright (C) 2021 Nordix Foundation
 .. _architecture:
 
-DMI Plugin Architecture
+DMI-Plugin Architecture
 #######################
 
 .. toctree::
@@ -13,14 +13,14 @@ DMI Plugin Architecture
 High Level Component Definition and Architectural Relationships
 ===============================================================
 
-The DMI plugin provides a gateway for registration and syncing of CM Handles within CPS.
+The DMI-Plugin provides a gateway for registration and syncing of CM Handles within CPS.
 
 .. image:: _static/cps-r9-ncmp-dmi-plugin-interface-diagram.png
 
 API definitions
 ===============
 
-The DMI plugin provides following interfaces.
+The DMI-Plugin provides following interfaces.
 
 .. list-table::
    :header-rows: 1
@@ -39,7 +39,7 @@ The DMI plugin provides following interfaces.
        - Query module references
      - REST
    * - CPS-NCMP-I-01
-     - DMI Plugin Inventory
+     - DMI-Plugin Inventory
      - - Register Plug-in CM-Handles
      - REST
    * - DMI-I-01
@@ -52,4 +52,4 @@ The DMI plugin provides following interfaces.
        - Query module references
      - REST
 
-More details on the CPS interface CPS-E-05 which is responsible for the DMI Plugin can be found on the `CPS Architecture Page <https://docs.onap.org/projects/onap-cps/en/latest/architecture.html>`_.
+More details on the CPS interface CPS-E-05 which is responsible for the DMI-Plugin can be found on the `CPS Architecture Page <https://docs.onap.org/projects/onap-cps/en/latest/architecture.html>`_.
