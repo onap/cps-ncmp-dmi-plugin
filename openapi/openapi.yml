@@ -22,7 +22,7 @@ info:
   description: Adds Data Model Inventory Registry capability for ONAP
   version: "1.0.0"
 servers:
-  - url: //localhost:8088/
+  - url: /dmi
 tags:
   - name: dmi-plugin-internal
     description: DMI plugin internal rest apis

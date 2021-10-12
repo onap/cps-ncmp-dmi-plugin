@@ -1,0 +1,464 @@
+openapi: 3.0.1
+info:
+  title: NCMP DMI Plugin
+  description: Adds Data Model Inventory Registry capability for ONAP
+  version: 1.0.0
+servers:
+- url: /dmi
+tags:
+- name: dmi-plugin-internal
+  description: DMI plugin internal rest apis
+- name: dmi-plugin
+  description: DMI plugin rest apis
+paths:
+  /v1/ch/{cmHandle}/modules:
+    post:
+      tags:
+      - dmi-plugin
+      summary: Get all modules for cm handle
+      description: Get all modules for given cm handle
+      operationId: getModuleReferences
+      parameters:
+      - name: cmHandle
+        in: path
+        description: The cm handle to fetch all the modules
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: string
+      requestBody:
+        description: Operational body
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ModuleReferencesRequest'
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ModuleSet'
+        "400":
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorMessage'
+        "401":
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorMessage'
+        "403":
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorMessage'
+  /v1/inventory/cmHandles:
+    post:
+      tags:
+      - dmi-plugin-internal
+      summary: register given list of cm handles (internal use only)
+      description: register given list of cm handles (internal use only)
+      operationId: registerCmHandles
+      requestBody:
+        description: list of cm handles
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CmHandles'
+        required: true
+      responses:
+        "201":
+          description: Created
+          content:
+            text/plain:
+              schema:
+                type: string
+        "400":
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorMessage'
+        "401":
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorMessage'
+        "403":
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorMessage'
+      x-api-audience: component-internal
+  /v1/ch/{cmHandle}/moduleResources:
+    post:
+      tags:
+      - dmi-plugin
+      summary: Retrieve module resources
+      description: Retrieve module resources for one or more modules
+      operationId: retrieveModuleResources
+      parameters:
+      - name: cmHandle
+        in: path
+        description: The identifier for a network function, network element, subnetwork,
+          or any other cm object by managed Network CM Proxy
+        required: true
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ModuleResourcesReadRequest'
+        required: true
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/YangResources'
+        "400":
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorMessage'
+        "401":
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorMessage'
+        "403":
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorMessage'
+  /v1/ch/{cmHandle}/data/ds/ncmp-datastore:passthrough-operational:
+    put:
+      tags:
+      - dmi-plugin
+      summary: Get resource data from passthrough-operational for cm handle
+      description: Get resource data from passthrough-operational for cm handle
+      operationId: getResourceDataOperationalForCmHandle
+      parameters:
+      - name: cmHandle
+        in: path
+        description: The identifier for a network function, network element, subnetwork,
+          or any other cm object by managed Network CM Proxy
+        required: true
+        schema:
+          type: string
+      - name: resourceIdentifier
+        in: query
+        description: Resource identifier to get/set the resource data
+        required: true
+        allowReserved: true
+        schema:
+          type: string
+      - name: accept
+        in: header
+        description: Accept parameter for response, if accept parameter is null, that
+          means client can accept any format.
+        schema:
+          type: string
+          enum:
+          - application/json
+          - application/yang-data+json
+      - name: options
+        in: query
+        description: options parameter in query, it is mandatory to wrap key(s)=value(s)
+          in parenthesis'()'.
+        required: false
+        allowReserved: true
+        schema:
+          type: string
+        examples:
+          sample1:
+            value:
+              options: (key1=value1,key2=value2)
+          sample2:
+            value:
+              options: (key1=value1,key2=value1/value2)
+          sample3:
+            value:
+              options: (key1=10,key2=value2,key3=[val31,val32])
+      requestBody:
+        description: Operational body
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/DataAccessReadRequest'
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+        "400":
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorMessage'
+        "401":
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorMessage'
+        "403":
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorMessage'
+  /v1/ch/{cmHandle}/data/ds/ncmp-datastore:passthrough-running:
+    put:
+      tags:
+      - dmi-plugin
+      summary: Get resource data from passthrough-running for cm handle
+      description: Get resource data from passthrough-running for cm handle
+      operationId: getResourceDataPassthroughRunningForCmHandle
+      parameters:
+      - name: cmHandle
+        in: path
+        description: The identifier for a network function, network element, subnetwork,
+          or any other cm object by managed Network CM Proxy
+        required: true
+        schema:
+          type: string
+      - name: resourceIdentifier
+        in: query
+        description: Resource identifier to get/set the resource data
+        required: true
+        allowReserved: true
+        schema:
+          type: string
+      - name: accept
+        in: header
+        description: Accept parameter for response, if accept parameter is null, that
+          means client can accept any format.
+        schema:
+          type: string
+          enum:
+          - application/json
+          - application/yang-data+json
+      - name: options
+        in: query
+        description: options parameter in query, it is mandatory to wrap key(s)=value(s)
+          in parenthesis'()'.
+        required: false
+        allowReserved: true
+        schema:
+          type: string
+        examples:
+          sample1:
+            value:
+              options: (key1=value1,key2=value2)
+          sample2:
+            value:
+              options: (key1=value1,key2=value1/value2)
+          sample3:
+            value:
+              options: (key1=10,key2=value2,key3=[val31,val32])
+      requestBody:
+        description: Operational body
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/DataAccessReadRequest'
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+        "400":
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorMessage'
+        "401":
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorMessage'
+        "403":
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorMessage'
+    post:
+      tags:
+      - dmi-plugin
+      summary: Write data for a cmHandle
+      description: Write data for a cmHandle using passthrough-running
+      operationId: writeDataByPassthroughRunningForCmHandle
+      parameters:
+      - name: cmHandle
+        in: path
+        description: The identifier for a network function, network element, subnetwork,
+          or any other cm object by managed Network CM Proxy
+        required: true
+        schema:
+          type: string
+      - name: resourceIdentifier
+        in: query
+        description: Resource identifier to get/set the resource data
+        required: true
+        allowReserved: true
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/DataAccessWriteRequest'
+        required: true
+      responses:
+        "201":
+          description: Created
+          content:
+            text/plain:
+              schema:
+                type: string
+        "400":
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorMessage'
+        "401":
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorMessage'
+        "403":
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorMessage'
+components:
+  schemas:
+    ModuleReferencesRequest:
+      type: object
+      properties:
+        cmHandleProperties:
+          $ref: '#/components/schemas/cmHandleProperties'
+    cmHandleProperties:
+      type: object
+      additionalProperties:
+        type: string
+        example: '{"prop1":"value1","prop2":"value2"}'
+    ModuleSet:
+      type: object
+      properties:
+        schemas:
+          type: array
+          items:
+            $ref: '#/components/schemas/ModuleSet_schemas'
+    revision:
+      type: string
+      example: someRevision
+    ErrorMessage:
+      title: Error
+      type: object
+      properties:
+        status:
+          type: string
+        message:
+          type: string
+        details:
+          type: string
+    CmHandles:
+      type: object
+      properties:
+        cmHandles:
+          type: array
+          items:
+            type: string
+    ModuleResourcesReadRequest:
+      type: object
+      properties:
+        data:
+          $ref: '#/components/schemas/ModuleResourcesReadRequest_data'
+        cmHandleProperties:
+          $ref: '#/components/schemas/cmHandleProperties'
+    name:
+      type: string
+      example: someName
+    YangResources:
+      type: array
+      items:
+        $ref: '#/components/schemas/YangResource'
+    YangResource:
+      properties:
+        yangSource:
+          type: string
+        moduleName:
+          type: string
+        revision:
+          $ref: '#/components/schemas/revision'
+    DataAccessReadRequest:
+      type: object
+      properties:
+        operation:
+          type: string
+          enum:
+          - read
+        cmHandleProperties:
+          $ref: '#/components/schemas/cmHandleProperties'
+    DataAccessWriteRequest:
+      type: object
+      properties:
+        operation:
+          type: string
+          enum:
+          - create
+        dataType:
+          type: string
+        data:
+          type: string
+        cmHandleProperties:
+          $ref: '#/components/schemas/cmHandleProperties'
+    ModuleSet_schemas:
+      type: object
+      properties:
+        moduleName:
+          type: string
+        revision:
+          $ref: '#/components/schemas/revision'
+        namespace:
+          type: string
+    ModuleResourcesReadRequest_data_modules:
+      type: object
+      properties:
+        name:
+          $ref: '#/components/schemas/name'
+        revision:
+          $ref: '#/components/schemas/revision'
+    ModuleResourcesReadRequest_data:
+      type: object
+      properties:
+        modules:
+          type: array
+          items:
+            $ref: '#/components/schemas/ModuleResourcesReadRequest_data_modules'
