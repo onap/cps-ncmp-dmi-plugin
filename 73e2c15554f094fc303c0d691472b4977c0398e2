@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "f13ef80a_d12bb1c5",
+        "filename": "docs/_static/dmi-plugin-r9-arch-diagram.PNG",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 6738
+      },
+      "writtenOn": "2021-10-12T12:56:07Z",
+      "side": 1,
+      "message": "I hope this image was not being linked anywhere inthe document.",
+      "revId": "73e2c15554f094fc303c0d691472b4977c0398e2",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    }
+  ]
+}
