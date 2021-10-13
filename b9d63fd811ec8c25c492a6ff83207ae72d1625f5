@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7f70c6ed_7b856033",
+        "filename": "releases/1.0.1.yaml",
+        "patchSetId": 3
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2021-10-13T14:18:41Z",
+      "side": 1,
+      "message": "should not be there as we are to release this...",
+      "range": {
+        "startLine": 5,
+        "startChar": 0,
+        "endLine": 5,
+        "endChar": 18
+      },
+      "revId": "b9d63fd811ec8c25c492a6ff83207ae72d1625f5",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    }
+  ]
+}
