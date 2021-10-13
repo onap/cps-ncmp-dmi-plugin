@@ -1,0 +1,5 @@
+distribution_type: maven
+log_dir: cps-ncmp-dmi-plugin-maven-stage-master/144/
+project: cps/ncmp-dmi-plugin
+version: 1.0.1
+tag_release: false
