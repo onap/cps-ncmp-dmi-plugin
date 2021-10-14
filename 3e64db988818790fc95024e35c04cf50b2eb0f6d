@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "c92f62aa_004d9132",
+        "filename": "pom.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2021-10-14T09:22:55Z",
+      "side": 1,
+      "message": "1.0.3-SNAPSHOT",
+      "range": {
+        "startLine": 37,
+        "startChar": 15,
+        "endLine": 37,
+        "endChar": 18
+      },
+      "revId": "3e64db988818790fc95024e35c04cf50b2eb0f6d",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    }
+  ]
+}
