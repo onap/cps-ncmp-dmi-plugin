@@ -9,4 +9,4 @@
 DMI-Plugin Admin Guide
 ######################
 
-For DMI-Plugin Admin Guide, please refer to the `CPS Admin Guide. <https://docs.onap.org/projects/onap-cps/en/latest/admin-guide.html>`_
+Please refer to the common :ref:`CPS Admin Guide<onap-cps:adminGuide>`
