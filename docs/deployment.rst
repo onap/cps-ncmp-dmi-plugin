@@ -15,7 +15,7 @@ DMI-Plugin Deployment
 Deployment
 ==========
 
-Refer to `CPS Deployment <https://docs.onap.org/projects/onap-cps/en/latest/deployment.html>`_
+Refer to :ref:`CPS-Deployment<onap-cps:deployment>`
 page for deployment documentation related to DMI-Plugin and all CPS components.
 
 Additional DMI-Plugin Core Customisations
@@ -34,7 +34,7 @@ values to configure for the application being deployed. This list is not exhaust
 +---------------------------------------+-------------------------------------------------------------------------------------------------------------+-------------------------------------------------+
 | config.appUserPassword                | Password used by the DMI-Plugin to authenticate users for the REST APIs that it exposes.                    | Not defined                                     |
 |                                       | If not defined, the password is generated when deploying the application.                                   |                                                 |
-|                                       | See also `Credentials Retrieval <https://docs.onap.org/projects/onap-cps/en/latest/deployment.html>`_       |                                                 |
+|                                       | See also :ref:`CPS Credentials Retrieval<onap-cps:cps_common_credentials_retrieval>`                        |                                                 |
 +---------------------------------------+-------------------------------------------------------------------------------------------------------------+-------------------------------------------------+
 | config.dmiServiceName                 | DMI-Plugin hostname and port.                                                                               | Not defined                                     |
 +---------------------------------------+-------------------------------------------------------------------------------------------------------------+-------------------------------------------------+
