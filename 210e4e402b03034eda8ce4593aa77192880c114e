@@ -46,6 +46,30 @@
       "revId": "210e4e402b03034eda8ce4593aa77192880c114e",
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "9e1baa3b_ad5fca5c",
+        "filename": "docs/modeling.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2021-10-22T08:10:17Z",
+      "side": 1,
+      "message": "needs CPS commit to be merge first I will fix the typo (in text only, label not important and would require fix in 2 repos",
+      "parentUuid": "71d6c369_a7631625",
+      "range": {
+        "startLine": 13,
+        "startChar": 55,
+        "endLine": 13,
+        "endChar": 95
+      },
+      "revId": "210e4e402b03034eda8ce4593aa77192880c114e",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
     }
   ]
 }
