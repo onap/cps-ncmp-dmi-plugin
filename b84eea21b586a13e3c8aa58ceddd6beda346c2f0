@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "40e06ab9_6c5aa182",
+        "filename": "docs/index.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 7680
+      },
+      "writtenOn": "2021-10-22T03:41:49Z",
+      "side": 1,
+      "message": "What is the reason for all components documentation to refer each other?",
+      "range": {
+        "startLine": 26,
+        "startChar": 0,
+        "endLine": 34,
+        "endChar": 57
+      },
+      "revId": "b84eea21b586a13e3c8aa58ceddd6beda346c2f0",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    }
+  ]
+}
