@@ -1,6 +1,7 @@
 /*
  *  ============LICENSE_START=======================================================
  *  Copyright (C) 2021 Nordix Foundation
+ *  Modifications Copyright (C) 2021 Bell Canada
  *  ================================================================================
  *  Licensed under the Apache License, Version 2.0 (the "License");
  *  you may not use this file except in compliance with the License.
@@ -20,13 +21,24 @@
 
 package org.onap.cps.ncmp.dmi.service.operation;
 
+import com.jayway.jsonpath.Configuration;
+import com.jayway.jsonpath.JsonPath;
+import com.jayway.jsonpath.JsonPathException;
+import com.jayway.jsonpath.TypeRef;
+import com.jayway.jsonpath.spi.json.JacksonJsonProvider;
+import com.jayway.jsonpath.spi.mapper.JacksonMappingProvider;
 import java.util.Arrays;
+import java.util.Collection;
+import java.util.Collections;
 import java.util.LinkedList;
 import java.util.List;
 import org.apache.groovy.parser.antlr4.util.StringUtils;
 import org.onap.cps.ncmp.dmi.config.DmiConfiguration.SdncProperties;
+import org.onap.cps.ncmp.dmi.exception.SdncException;
 import org.onap.cps.ncmp.dmi.service.client.SdncRestconfClient;
+import org.onap.cps.ncmp.dmi.service.model.ModuleSchema;
 import org.springframework.http.HttpHeaders;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Component;
@@ -41,11 +53,17 @@ public class SdncOperations {
     private static final String MOUNT_URL_TEMPLATE = "/node={nodeId}/yang-ext:mount";
     private static final String GET_SCHEMA_URL = "/ietf-netconf-monitoring:netconf-state/schemas";
     private static final String GET_SCHEMA_SOURCES_URL = "/ietf-netconf-monitoring:get-schema";
+    private static final String PATH_TO_MODULE_SCHEMAS = "$.ietf-netconf-monitoring:schemas.schema";
 
     private SdncProperties sdncProperties;
     private SdncRestconfClient sdncRestconfClient;
     private final String topologyUrlData;
     private final String topologyUrlOperational;
+
+    private Configuration jsonPathConfiguration = Configuration.builder()
+        .mappingProvider(new JacksonMappingProvider())
+        .jsonProvider(new JacksonJsonProvider())
+        .build();
 
     /**
      * Constructor for {@code SdncOperations}. This method also manipulates url properties.
@@ -65,11 +83,20 @@ public class SdncOperations {
      * This method fetches list of modules usind sdnc client.
      *
      * @param nodeId node id for node
-     * @return returns {@code ResponseEntity} which contains list of modules
+     * @return a collection of module schemas
      */
-    public ResponseEntity<String> getModulesFromNode(final String nodeId) {
+    public Collection<ModuleSchema> getModuleSchemasFromNode(final String nodeId) {
         final String urlWithNodeId = prepareGetSchemaUrl(nodeId);
-        return sdncRestconfClient.getOperation(urlWithNodeId);
+        final ResponseEntity<String> modulesResponseEntity = sdncRestconfClient.getOperation(urlWithNodeId);
+        if (modulesResponseEntity.getStatusCode() == HttpStatus.OK) {
+            final String modulesResponseBody = modulesResponseEntity.getBody();
+            return (StringUtils.isEmpty(modulesResponseBody)) ? Collections.emptyList()
+                : convertToModuleSchemas(modulesResponseBody);
+        } else {
+            throw new SdncException(
+                String.format("SDNC failed to get Modules Schema for node %s", nodeId),
+                modulesResponseEntity.getStatusCode(), modulesResponseEntity.getBody());
+        }
     }
 
     /**
@@ -90,10 +117,10 @@ public class SdncOperations {
     /**
      * This method fetches the resource data for given node identifier on given resource using sdnc client.
      *
-     * @param nodeId      network resource identifier
-     * @param resourceId  resource identifier
-     * @param optionsParamInQuery fields query
-     * @param acceptParamInHeader accept parameter
+     * @param nodeId                    network resource identifier
+     * @param resourceId                resource identifier
+     * @param optionsParamInQuery       fields query
+     * @param acceptParamInHeader       accept parameter
      * @param restconfContentQueryParam restconf content query param
      * @return {@code ResponseEntity} response entity
      */
@@ -194,4 +221,16 @@ public class SdncOperations {
         final String topologyMountUrl = topologyUrlData + MOUNT_URL_TEMPLATE;
         return topologyMountUrl.replace("{nodeId}", nodeId);
     }
+
+    private List<ModuleSchema> convertToModuleSchemas(final String modulesListAsJson) {
+        try {
+            return JsonPath.using(jsonPathConfiguration).parse(modulesListAsJson).read(
+                PATH_TO_MODULE_SCHEMAS, new TypeRef<>() {
+                });
+        } catch (final JsonPathException jsonPathException) {
+            throw new SdncException("SDNC Response processing failed",
+                "SDNC response is not in the expected format.", jsonPathException);
+        }
+    }
+
 }
