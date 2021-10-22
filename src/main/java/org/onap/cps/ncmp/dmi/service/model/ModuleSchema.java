@@ -1,6 +1,7 @@
 /*
  *  ============LICENSE_START=======================================================
  *  Copyright (C) 2021 Nordix Foundation
+ *  Modifications Copyright (C) 2021 Bell Canada
  *  ================================================================================
  *  Licensed under the Apache License, Version 2.0 (the "License");
  *  you may not use this file except in compliance with the License.
@@ -21,16 +22,15 @@
 package org.onap.cps.ncmp.dmi.service.model;
 
 import java.util.List;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.Data;
 
-/**
- * ModuleSchemaList.
- */
-@Getter
-@Setter
-public class ModuleSchemaList {
+@Data
+public class ModuleSchema {
 
-    private List<ModuleSchemaProperties> schema;
+    private String identifier;
+    private String version;
+    private String format;
+    private String namespace;
+    private List<String> location;
 
 }
