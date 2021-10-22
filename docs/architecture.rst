@@ -52,4 +52,4 @@ The DMI-Plugin provides following interfaces.
        - Query module references
      - REST
 
-More details on the CPS interface CPS-E-05 which is responsible for the DMI-Plugin can be found on the `CPS Architecture Page <https://docs.onap.org/projects/onap-cps/en/latest/architecture.html>`_.
+More details on the CPS interface CPS-E-05 which is responsible for the DMI-Plugin can be found on the :ref:`CPS Architecture page<onap-cps:architecture>`
