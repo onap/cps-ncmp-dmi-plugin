@@ -1,6 +1,7 @@
 /*
  *  ============LICENSE_START=======================================================
  *  Copyright (C) 2021 Nordix Foundation
+ *  Modifications Copyright (C) 2021 Bell Canada
  *  ================================================================================
  *  Licensed under the Apache License, Version 2.0 (the "License");
  *  you may not use this file except in compliance with the License.
@@ -30,7 +31,6 @@ import java.util.List;
 import java.util.Map;
 import javax.validation.constraints.NotNull;
 import lombok.extern.slf4j.Slf4j;
-import org.apache.groovy.parser.antlr4.util.StringUtils;
 import org.onap.cps.ncmp.dmi.config.DmiPluginConfig.DmiPluginProperties;
 import org.onap.cps.ncmp.dmi.exception.CmHandleRegistrationException;
 import org.onap.cps.ncmp.dmi.exception.DmiException;
@@ -45,8 +45,7 @@ import org.onap.cps.ncmp.dmi.service.client.NcmpRestClient;
 import org.onap.cps.ncmp.dmi.service.model.CmHandleOperation;
 import org.onap.cps.ncmp.dmi.service.model.CreatedCmHandle;
 import org.onap.cps.ncmp.dmi.service.model.ModuleReference;
-import org.onap.cps.ncmp.dmi.service.model.ModuleSchemaProperties;
-import org.onap.cps.ncmp.dmi.service.model.ModuleSchemas;
+import org.onap.cps.ncmp.dmi.service.model.ModuleSchema;
 import org.onap.cps.ncmp.dmi.service.operation.SdncOperations;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -75,8 +74,8 @@ public class DmiServiceImpl implements DmiService {
      * @param objectMapper        objectMapper
      */
     public DmiServiceImpl(final DmiPluginProperties dmiPluginProperties,
-                          final NcmpRestClient ncmpRestClient,
-                          final SdncOperations sdncOperations, final ObjectMapper objectMapper) {
+        final NcmpRestClient ncmpRestClient,
+        final SdncOperations sdncOperations, final ObjectMapper objectMapper) {
         this.dmiPluginProperties = dmiPluginProperties;
         this.ncmpRestClient = ncmpRestClient;
         this.objectMapper = objectMapper;
@@ -85,16 +84,14 @@ public class DmiServiceImpl implements DmiService {
 
     @Override
     public ModuleSet getModulesForCmHandle(final String cmHandle) throws DmiException {
-        final ResponseEntity<String> responseEntity = sdncOperations.getModulesFromNode(cmHandle);
-        if (responseEntity.getStatusCode() == HttpStatus.OK) {
-            final String responseBody = responseEntity.getBody();
-            if (StringUtils.isEmpty(responseBody)) {
-                throw new ModulesNotFoundException(cmHandle, "SDNC returned no modules for given cm-handle.");
-            }
-            return createModuleSchema(responseBody);
+        final List<ModuleSchema> moduleSchemas = sdncOperations.getModuleSchemasFromNode(cmHandle);
+        if (moduleSchemas.isEmpty()) {
+            throw new ModulesNotFoundException(cmHandle, "SDNC returned no modules for given cm-handle.");
         } else {
-            throw new DmiException("SDNC is not able to process request.",
-                    RESPONSE_CODE + responseEntity.getStatusCode() + MESSAGE + responseEntity.getBody());
+            final var moduleSet = new ModuleSet();
+            moduleSchemas.forEach(moduleSchema ->
+                moduleSet.addSchemasItem(toModuleSetSchemas(moduleSchema)));
+            return moduleSet;
         }
     }
 
@@ -109,11 +106,11 @@ public class DmiServiceImpl implements DmiService {
             } else if (responseEntity.getStatusCode() == HttpStatus.NOT_FOUND) {
                 log.error("SDNC did not return a module resource for the given cmHandle {}", cmHandle);
                 throw new ModuleResourceNotFoundException(cmHandle,
-                        "SDNC did not return a module resource for the given cmHandle.");
+                    "SDNC did not return a module resource for the given cmHandle.");
             } else {
                 log.error("Error occurred when getting module resources from SDNC for the given cmHandle {}", cmHandle);
                 throw new DmiException(cmHandle,
-                        RESPONSE_CODE + responseEntity.getStatusCode() + MESSAGE + responseEntity.getBody());
+                    RESPONSE_CODE + responseEntity.getStatusCode() + MESSAGE + responseEntity.getBody());
             }
         }
         return yangResources;
@@ -136,7 +133,7 @@ public class DmiServiceImpl implements DmiService {
         } catch (final JsonProcessingException e) {
             log.error("Parsing error occurred while converting cm-handles to JSON {}", cmHandles);
             throw new DmiException("Internal Server Error.",
-                    "Parsing error occurred while converting given cm-handles object list to JSON ");
+                "Parsing error occurred while converting given cm-handles object list to JSON ");
         }
         final ResponseEntity<String> responseEntity = ncmpRestClient.registerCmHandlesWithNcmp(cmHandlesJson);
         if ((responseEntity.getStatusCode() != HttpStatus.CREATED)) {
@@ -144,76 +141,54 @@ public class DmiServiceImpl implements DmiService {
         }
     }
 
-    private ModuleSet createModuleSchema(final String responseBody) {
-        final var moduleSchemas = convertModulesToNodeSchema(responseBody);
-        final List<ModuleSetSchemas> moduleSetSchemas = new ArrayList<>();
-        for (final ModuleSchemaProperties schemaProperties : moduleSchemas.getSchemas().getSchema()) {
-            moduleSetSchemas.add(convertModulesToModuleSchemas(schemaProperties));
-        }
-        final var moduleSet = new ModuleSet();
-        moduleSet.setSchemas(moduleSetSchemas);
-        return moduleSet;
-    }
-
-    private ModuleSetSchemas convertModulesToModuleSchemas(final ModuleSchemaProperties moduleSchemaProperties) {
+    private ModuleSetSchemas toModuleSetSchemas(final ModuleSchema moduleSchema) {
         final var moduleSetSchemas = new ModuleSetSchemas();
-        moduleSetSchemas.setModuleName(moduleSchemaProperties.getIdentifier());
-        moduleSetSchemas.setNamespace(moduleSchemaProperties.getNamespace());
-        moduleSetSchemas.setRevision(moduleSchemaProperties.getVersion());
+        moduleSetSchemas.setModuleName(moduleSchema.getIdentifier());
+        moduleSetSchemas.setNamespace(moduleSchema.getNamespace());
+        moduleSetSchemas.setRevision(moduleSchema.getVersion());
         return moduleSetSchemas;
-    }
-
-    private ModuleSchemas convertModulesToNodeSchema(final String modulesListAsJson) {
-        try {
-            return objectMapper.readValue(modulesListAsJson, ModuleSchemas.class);
-        } catch (final JsonProcessingException e) {
-            log.error("JSON exception occurred when converting the following modules to node schema "
-                    + "{}", modulesListAsJson);
-            throw new DmiException("Unable to process JSON.",
-                    "JSON exception occurred when mapping modules.", e);
-        }
     }
 
     @Override
     public Object getResourceDataOperationalForCmHandle(final @NotNull String cmHandle,
-                                                        final @NotNull String resourceIdentifier,
-                                                        final String acceptParamInHeader,
-                                                        final String optionsParamInQuery,
-                                                        final Map<String, String> cmHandlePropertyMap) {
+        final @NotNull String resourceIdentifier,
+        final String acceptParamInHeader,
+        final String optionsParamInQuery,
+        final Map<String, String> cmHandlePropertyMap) {
         // not using cmHandlePropertyMap of onap dmi impl , other dmi impl might use this.
         final ResponseEntity<String> responseEntity = sdncOperations.getResouceDataForOperationalAndRunning(cmHandle,
-                resourceIdentifier,
-                optionsParamInQuery,
-                acceptParamInHeader,
-                RESTCONF_CONTENT_PASSTHROUGH_OPERATIONAL_QUERY_PARAM);
+            resourceIdentifier,
+            optionsParamInQuery,
+            acceptParamInHeader,
+            RESTCONF_CONTENT_PASSTHROUGH_OPERATIONAL_QUERY_PARAM);
         return prepareAndSendResponse(responseEntity, cmHandle);
     }
 
     @Override
     public Object getResourceDataPassThroughRunningForCmHandle(final @NotNull String cmHandle,
-                                                               final @NotNull String resourceIdentifier,
-                                                               final String acceptParamInHeader,
-                                                               final String optionsParamInQuery,
-                                                               final Map<String, String> cmHandlePropertyMap) {
+        final @NotNull String resourceIdentifier,
+        final String acceptParamInHeader,
+        final String optionsParamInQuery,
+        final Map<String, String> cmHandlePropertyMap) {
         // not using cmHandlePropertyMap of onap dmi impl , other dmi impl might use this.
         final ResponseEntity<String> responseEntity = sdncOperations.getResouceDataForOperationalAndRunning(cmHandle,
-                resourceIdentifier,
-                optionsParamInQuery,
-                acceptParamInHeader,
-                REST_CONF_CONTENT_PASSTHROUGH_RUNNING_QUERY_PARAM);
+            resourceIdentifier,
+            optionsParamInQuery,
+            acceptParamInHeader,
+            REST_CONF_CONTENT_PASSTHROUGH_RUNNING_QUERY_PARAM);
         return prepareAndSendResponse(responseEntity, cmHandle);
     }
 
     @Override
     public String writeResourceDataPassthroughForCmHandle(final String cmHandle, final String resourceIdentifier,
-                                                          final String dataType, final String data) {
+        final String dataType, final String data) {
         final ResponseEntity<String> responseEntity =
-                sdncOperations.writeResourceDataPassthroughRunning(cmHandle, resourceIdentifier, dataType, data);
+            sdncOperations.writeResourceDataPassthroughRunning(cmHandle, resourceIdentifier, dataType, data);
         if (responseEntity.getStatusCode().is2xxSuccessful()) {
             return responseEntity.getBody();
         } else {
             throw new DmiException(cmHandle,
-                    RESPONSE_CODE + responseEntity.getStatusCode() + MESSAGE + responseEntity.getBody());
+                RESPONSE_CODE + responseEntity.getStatusCode() + MESSAGE + responseEntity.getBody());
         }
     }
 
@@ -222,7 +197,7 @@ public class DmiServiceImpl implements DmiService {
             return responseEntity.getBody();
         } else {
             throw new ResourceDataNotFound(cmHandle,
-                    RESPONSE_CODE + responseEntity.getStatusCode() + MESSAGE + responseEntity.getBody());
+                RESPONSE_CODE + responseEntity.getStatusCode() + MESSAGE + responseEntity.getBody());
         }
     }
 
@@ -236,15 +211,15 @@ public class DmiServiceImpl implements DmiService {
             moduleRequest = writer.writeValueAsString(ietfNetconfModuleReferences);
         } catch (final JsonProcessingException e) {
             log.error("JSON exception occurred when creating the module request for the given module reference {}",
-                    moduleReference.getName());
+                moduleReference.getName());
             throw new DmiException("Unable to process JSON.",
-                    "JSON exception occurred when creating the module request.", e);
+                "JSON exception occurred when creating the module request.", e);
         }
         return moduleRequest;
     }
 
     private YangResource toYangResource(final ModuleReference moduleReference,
-                                    final ResponseEntity<String> response) {
+        final ResponseEntity<String> response) {
         final YangResource yangResource = new YangResource();
         yangResource.setModuleName(moduleReference.getName());
         yangResource.setRevision(moduleReference.getRevision());
@@ -255,13 +230,13 @@ public class DmiServiceImpl implements DmiService {
     private String extractYangSourceFromBody(final ResponseEntity<String> responseEntity) {
         final var responseBodyAsJsonObject = new Gson().fromJson(responseEntity.getBody(), JsonObject.class);
         if (responseBodyAsJsonObject.getAsJsonObject(IETF_NETCONF_MONITORING_OUTPUT) == null
-                || responseBodyAsJsonObject.getAsJsonObject(IETF_NETCONF_MONITORING_OUTPUT)
-                .getAsJsonPrimitive("data") == null) {
+            || responseBodyAsJsonObject.getAsJsonObject(IETF_NETCONF_MONITORING_OUTPUT)
+            .getAsJsonPrimitive("data") == null) {
             log.error("Error occurred when trying to parse the response body from sdnc {}", responseEntity.getBody());
             throw new ModuleResourceNotFoundException(responseEntity.getBody(),
-                    "Error occurred when trying to parse the response body from sdnc.");
+                "Error occurred when trying to parse the response body from sdnc.");
         }
         return responseBodyAsJsonObject.getAsJsonObject(IETF_NETCONF_MONITORING_OUTPUT).getAsJsonPrimitive("data")
-                .toString();
+            .toString();
     }
 }

@@ -1,6 +1,6 @@
 /*
  *  ============LICENSE_START=======================================================
- *  Copyright (C) 2021 Nordix Foundation
+ *  Copyright (C) 2021 Bell Canada
  *  ================================================================================
  *  Licensed under the Apache License, Version 2.0 (the "License");
  *  you may not use this file except in compliance with the License.
@@ -18,19 +18,23 @@
  *  ============LICENSE_END=========================================================
  */
 
-package org.onap.cps.ncmp.dmi.service.model;
+package org.onap.cps.ncmp.dmi.exception;
 
-import java.util.List;
-import lombok.Getter;
-import lombok.Setter;
+import org.springframework.http.HttpStatus;
 
-/**
- * ModuleSchemaList.
+/*
+Use this exception when SDNC contract fails
  */
-@Getter
-@Setter
-public class ModuleSchemaList {
+public class SdncException extends DmiException {
 
-    private List<ModuleSchemaProperties> schema;
+    private static final String HTTP_RESPONSE_DETAILS_FORMAT = "sdnc http status: %s, response body : %s ";
+
+    public SdncException(final String message, final HttpStatus httpStatus, final String responseBody) {
+        super(message, String.format(HTTP_RESPONSE_DETAILS_FORMAT, httpStatus.toString(), responseBody));
+    }
+
+    public SdncException(final String message, final String details, final Throwable cause) {
+        super(message, details, cause);
+    }
 
 }
