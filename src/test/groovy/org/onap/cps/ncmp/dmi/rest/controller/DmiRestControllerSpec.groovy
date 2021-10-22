@@ -26,12 +26,13 @@ import org.onap.cps.ncmp.dmi.exception.DmiException
 import org.onap.cps.ncmp.dmi.exception.ModuleResourceNotFoundException
 import org.onap.cps.ncmp.dmi.exception.ModulesNotFoundException
 import org.onap.cps.ncmp.dmi.service.model.ModuleReference
-import org.onap.cps.ncmp.dmi.service.model.ModuleSchemaList
+
 import org.onap.cps.ncmp.dmi.model.ModuleSet
 import org.onap.cps.ncmp.dmi.model.ModuleSetSchemas
 import org.onap.cps.ncmp.dmi.model.YangResource
 import org.onap.cps.ncmp.dmi.model.YangResources
 import org.onap.cps.ncmp.dmi.service.DmiService
+
 import org.spockframework.spring.SpringBean
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.beans.factory.annotation.Value
@@ -81,20 +82,6 @@ class DmiRestControllerSpec extends Specification {
             response.status == HttpStatus.OK.value()
         and: 'the response content matches the result from the DMI service'
             response.getContentAsString() == '{"schemas":[{"moduleName":"some-moduleName","revision":"some-revision","namespace":"some-namespace"}]}'
-    }
-
-    def 'Get all modules for given cm handle with invalid json.'() {
-        given: 'REST endpoint for getting all modules'
-            def getModuleUrl = "$basePathV1/ch/node1/modules"
-        and: 'get modules for cmHandle throws an exception'
-            mockObjectMapper.readValue(_ as String, _ as ModuleSchemaList) >> { throw Mock(DmiException.class) }
-            mockDmiService.getModulesForCmHandle('node1') >> 'some-value'
-        when: 'post is being called'
-            def response = mvc.perform(post(getModuleUrl)
-                    .contentType(MediaType.APPLICATION_JSON))
-                    .andReturn().response
-        then: 'the status is as expected'
-            response.status == HttpStatus.INTERNAL_SERVER_ERROR.value()
     }
 
     def 'Get all modules for given cm handle with exception handling of #scenario.'() {

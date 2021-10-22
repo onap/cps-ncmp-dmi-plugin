@@ -21,15 +21,10 @@
 package org.onap.cps.ncmp.dmi.service.model;
 
 import java.util.List;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.Data;
 
-/**
- * ModuleSchemaProperties.
- */
-@Getter
-@Setter
-public class ModuleSchemaProperties {
+@Data
+public class ModuleSchema {
 
     private String identifier;
     private String version;

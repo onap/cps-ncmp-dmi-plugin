@@ -20,14 +20,24 @@
 
 package org.onap.cps.ncmp.dmi.service.operation;
 
+import com.google.gson.JsonSyntaxException;
+import com.jayway.jsonpath.Configuration;
+import com.jayway.jsonpath.JsonPath;
+import com.jayway.jsonpath.TypeRef;
+import com.jayway.jsonpath.spi.json.JacksonJsonProvider;
+import com.jayway.jsonpath.spi.mapper.JacksonMappingProvider;
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.LinkedList;
 import java.util.List;
 import org.apache.groovy.parser.antlr4.util.StringUtils;
 import org.jetbrains.annotations.NotNull;
 import org.onap.cps.ncmp.dmi.config.DmiConfiguration.SdncProperties;
+import org.onap.cps.ncmp.dmi.exception.DmiException;
 import org.onap.cps.ncmp.dmi.service.client.SdncRestconfClient;
+import org.onap.cps.ncmp.dmi.service.model.ModuleSchema;
 import org.springframework.http.HttpHeaders;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Component;
@@ -47,6 +57,11 @@ public class SdncOperations {
     private SdncRestconfClient sdncRestconfClient;
     private final String topologyUrlData;
     private final String topologyUrlOperational;
+
+    private Configuration jsonPathConfiguration = Configuration.builder()
+        .mappingProvider(new JacksonMappingProvider())
+        .jsonProvider(new JacksonJsonProvider())
+        .build();
 
     /**
      * Constructor for {@code SdncOperations}. This method also manipulates url properties.
@@ -68,9 +83,17 @@ public class SdncOperations {
      * @param nodeId node id for node
      * @return returns {@code ResponseEntity} which contains list of modules
      */
-    public ResponseEntity<String> getModulesFromNode(final String nodeId) {
+    public List<ModuleSchema> getModuleSchemasFromNode(final String nodeId) {
         final String urlWithNodeId = prepareGetSchemaUrl(nodeId);
-        return sdncRestconfClient.getOperation(urlWithNodeId);
+        final ResponseEntity<String> modulesResponseEntity = sdncRestconfClient.getOperation(urlWithNodeId);
+        if (modulesResponseEntity.getStatusCode() == HttpStatus.OK) {
+            final String modulesResponseBody = modulesResponseEntity.getBody();
+            return (StringUtils.isEmpty(modulesResponseBody)) ? Collections.emptyList()
+                : convertToModuleSchemas(modulesResponseBody);
+        } else {
+            throw new DmiException("SDNC is not able to process request.",
+                modulesResponseEntity.getStatusCode() + modulesResponseEntity.getBody());
+        }
     }
 
     /**
@@ -202,4 +225,17 @@ public class SdncOperations {
         final String topologyMountUrl = topologyUrlData + MOUNT_URL_TEMPLATE;
         return topologyMountUrl.replace("{nodeId}", nodeId);
     }
+
+    private List<ModuleSchema> convertToModuleSchemas(final String modulesListAsJson) {
+
+        try {
+            return JsonPath.using(jsonPathConfiguration).parse(modulesListAsJson).read(
+                "$.ietf-netconf-monitoring:schemas.schema", new TypeRef<>() {
+                });
+        } catch (final JsonSyntaxException jsonSyntaxException) {
+            throw new DmiException("SDNC get.",
+                "JSON exception occurred when mapping modules.", jsonSyntaxException);
+        }
+    }
+
 }
