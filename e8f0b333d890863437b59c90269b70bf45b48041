@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "d5f3a77a_c0c732db",
+        "filename": "src/main/java/org/onap/cps/ncmp/dmi/exception/SdncException.java",
+        "patchSetId": 6
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 7680
+      },
+      "writtenOn": "2021-10-27T14:25:01Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "6223ca8f_e5afdfce",
+      "revId": "e8f0b333d890863437b59c90269b70bf45b48041",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7bbb93fc_875ba52d",
         "filename": "src/main/java/org/onap/cps/ncmp/dmi/service/DmiServiceImpl.java",
         "patchSetId": 6
@@ -39,6 +57,30 @@
       "revId": "e8f0b333d890863437b59c90269b70bf45b48041",
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "8e4a0c64_2b30bae0",
+        "filename": "src/main/java/org/onap/cps/ncmp/dmi/service/DmiServiceImpl.java",
+        "patchSetId": 6
+      },
+      "lineNbr": 87,
+      "author": {
+        "id": 7680
+      },
+      "writtenOn": "2021-10-27T14:25:01Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7bbb93fc_875ba52d",
+      "range": {
+        "startLine": 87,
+        "startChar": 8,
+        "endLine": 87,
+        "endChar": 46
+      },
+      "revId": "e8f0b333d890863437b59c90269b70bf45b48041",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
     },
     {
       "key": {
@@ -65,6 +107,30 @@
     },
     {
       "key": {
+        "uuid": "3ad24853_e80b67a1",
+        "filename": "src/main/java/org/onap/cps/ncmp/dmi/service/DmiServiceImpl.java",
+        "patchSetId": 6
+      },
+      "lineNbr": 91,
+      "author": {
+        "id": 7680
+      },
+      "writtenOn": "2021-10-27T14:25:01Z",
+      "side": 1,
+      "message": "I have changed it, but I believe when we are using new with the class name on the right-hand side, var does not compromise readability.",
+      "parentUuid": "8f7d2d78_82c1fcb0",
+      "range": {
+        "startLine": 91,
+        "startChar": 18,
+        "endLine": 91,
+        "endChar": 22
+      },
+      "revId": "e8f0b333d890863437b59c90269b70bf45b48041",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "822475c3_c84c3c40",
         "filename": "src/main/java/org/onap/cps/ncmp/dmi/service/model/ModuleSchema.java",
         "patchSetId": 6
@@ -85,6 +151,30 @@
       "revId": "e8f0b333d890863437b59c90269b70bf45b48041",
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "748f708a_a1eb2b91",
+        "filename": "src/main/java/org/onap/cps/ncmp/dmi/service/model/ModuleSchema.java",
+        "patchSetId": 6
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 7680
+      },
+      "writtenOn": "2021-10-27T14:25:01Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "822475c3_c84c3c40",
+      "range": {
+        "startLine": 3,
+        "startChar": 3,
+        "endLine": 3,
+        "endChar": 34
+      },
+      "revId": "e8f0b333d890863437b59c90269b70bf45b48041",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
     },
     {
       "key": {
@@ -111,6 +201,30 @@
     },
     {
       "key": {
+        "uuid": "43945082_3f447465",
+        "filename": "src/main/java/org/onap/cps/ncmp/dmi/service/operation/SdncOperations.java",
+        "patchSetId": 6
+      },
+      "lineNbr": 87,
+      "author": {
+        "id": 7680
+      },
+      "writtenOn": "2021-10-27T14:25:01Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "986e7305_6abdf010",
+      "range": {
+        "startLine": 87,
+        "startChar": 11,
+        "endLine": 87,
+        "endChar": 29
+      },
+      "revId": "e8f0b333d890863437b59c90269b70bf45b48041",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "b9281ffd_c598775b",
         "filename": "src/test/groovy/org/onap/cps/ncmp/dmi/rest/controller/DmiRestControllerSpec.groovy",
         "patchSetId": 6
@@ -122,6 +236,30 @@
       "writtenOn": "2021-10-27T10:30:47Z",
       "side": 1,
       "message": "why do we need this here?",
+      "range": {
+        "startLine": 50,
+        "startChar": 1,
+        "endLine": 50,
+        "endChar": 13
+      },
+      "revId": "e8f0b333d890863437b59c90269b70bf45b48041",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "61d59b82_30b2735d",
+        "filename": "src/test/groovy/org/onap/cps/ncmp/dmi/rest/controller/DmiRestControllerSpec.groovy",
+        "patchSetId": 6
+      },
+      "lineNbr": 50,
+      "author": {
+        "id": 7680
+      },
+      "writtenOn": "2021-10-27T14:25:01Z",
+      "side": 1,
+      "message": "We were disabling all the filters to avoid security validation when calling controllers. This can have side effects as we are disabling all the filters.\nThe recommended way is to add a MockUser using the annotation.",
+      "parentUuid": "b9281ffd_c598775b",
       "range": {
         "startLine": 50,
         "startChar": 1,
