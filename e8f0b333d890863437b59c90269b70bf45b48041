@@ -2,6 +2,46 @@
   "comments": [
     {
       "key": {
+        "uuid": "6223ca8f_e5afdfce",
+        "filename": "src/main/java/org/onap/cps/ncmp/dmi/exception/SdncException.java",
+        "patchSetId": 6
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 7744
+      },
+      "writtenOn": "2021-10-27T12:10:10Z",
+      "side": 1,
+      "message": "Should we include a serialVersionId within this file, like we do in most other files which handle exceptions?",
+      "revId": "e8f0b333d890863437b59c90269b70bf45b48041",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "7bbb93fc_875ba52d",
+        "filename": "src/main/java/org/onap/cps/ncmp/dmi/service/DmiServiceImpl.java",
+        "patchSetId": 6
+      },
+      "lineNbr": 87,
+      "author": {
+        "id": 7744
+      },
+      "writtenOn": "2021-10-27T12:10:10Z",
+      "side": 1,
+      "message": "See other comment in SdncOperations.java",
+      "range": {
+        "startLine": 87,
+        "startChar": 8,
+        "endLine": 87,
+        "endChar": 46
+      },
+      "revId": "e8f0b333d890863437b59c90269b70bf45b48041",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "8f7d2d78_82c1fcb0",
         "filename": "src/main/java/org/onap/cps/ncmp/dmi/service/DmiServiceImpl.java",
         "patchSetId": 6
@@ -18,6 +58,29 @@
         "startChar": 18,
         "endLine": 91,
         "endChar": 22
+      },
+      "revId": "e8f0b333d890863437b59c90269b70bf45b48041",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "822475c3_c84c3c40",
+        "filename": "src/main/java/org/onap/cps/ncmp/dmi/service/model/ModuleSchema.java",
+        "patchSetId": 6
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 7744
+      },
+      "writtenOn": "2021-10-27T12:10:10Z",
+      "side": 1,
+      "message": "Should this not be modification instead? I know the file name was changed, but the file has still been created by the nordix team.",
+      "range": {
+        "startLine": 3,
+        "startChar": 3,
+        "endLine": 3,
+        "endChar": 34
       },
       "revId": "e8f0b333d890863437b59c90269b70bf45b48041",
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
