@@ -24,7 +24,6 @@ import java.util.Arrays;
 import java.util.LinkedList;
 import java.util.List;
 import org.apache.groovy.parser.antlr4.util.StringUtils;
-import org.jetbrains.annotations.NotNull;
 import org.onap.cps.ncmp.dmi.config.DmiConfiguration.SdncProperties;
 import org.onap.cps.ncmp.dmi.service.client.SdncRestconfClient;
 import org.springframework.http.HttpHeaders;
@@ -130,7 +129,6 @@ public class SdncOperations {
         return sdncRestconfClient.postOperationWithJsonData(getResourceDataUrl, requestData, httpHeaders);
     }
 
-    @NotNull
     private List<String> buildQueryParamList(final String optionsParamInQuery, final String restconfContentQueryParam) {
         final List<String> queryParamAsList = getOptionsParamAsList(optionsParamInQuery);
         queryParamAsList.add(restconfContentQueryParam);
@@ -146,12 +144,10 @@ public class SdncOperations {
         return queryParamAsList;
     }
 
-    @NotNull
     private String stripParenthesisFromOptionsQuery(final String optionsParamInQuery) {
         return optionsParamInQuery.substring(1, optionsParamInQuery.length() - 1);
     }
 
-    @NotNull
     private String prepareGetSchemaUrl(final String nodeId) {
         return addResource(addTopologyDataUrlwithNode(nodeId), GET_SCHEMA_URL);
     }
@@ -166,14 +162,12 @@ public class SdncOperations {
         return topologyMountUrlWithNodeId.concat(GET_SCHEMA_SOURCES_URL);
     }
 
-    @NotNull
     private String prepareResourceDataUrl(final String nodeId,
         final String resourceId,
         final List<String> queryList) {
         return addQuery(addResource(addTopologyDataUrlwithNode(nodeId), resourceId), queryList);
     }
 
-    @NotNull
     private String addResource(final String url, final String resourceId) {
         if (resourceId.startsWith("/")) {
             return url.concat(resourceId);
@@ -182,7 +176,6 @@ public class SdncOperations {
         }
     }
 
-    @NotNull
     private String addQuery(final String url, final List<String> queryList) {
         if (queryList.isEmpty()) {
             return url;
@@ -197,7 +190,6 @@ public class SdncOperations {
         return urlBuilder.toString();
     }
 
-    @NotNull
     private String addTopologyDataUrlwithNode(final String nodeId) {
         final String topologyMountUrl = topologyUrlData + MOUNT_URL_TEMPLATE;
         return topologyMountUrl.replace("{nodeId}", nodeId);
