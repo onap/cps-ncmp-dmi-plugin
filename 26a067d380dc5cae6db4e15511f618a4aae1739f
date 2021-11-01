@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "11420905_c823140b",
+        "filename": ".gitreview",
+        "patchSetId": 6
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2021-11-01T10:17:58Z",
+      "side": 0,
+      "message": "this should NOT have changed on masterbranch?!",
+      "range": {
+        "startLine": 6,
+        "startChar": 22,
+        "endLine": 6,
+        "endChar": 30
+      },
+      "revId": "26a067d380dc5cae6db4e15511f618a4aae1739f",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "916a00dd_c02a1b59",
+        "filename": "src/test/groovy/org/onap/cps/ncmp/dmi/rest/controller/DmiRestControllerSpec.groovy",
+        "patchSetId": 7
+      },
+      "lineNbr": 99,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2021-11-01T10:17:58Z",
+      "side": 0,
+      "message": "restore this test but update the wording it about testing a DMIException is converted to a 500 response.\nThe cause of the exception is irrelevant to the class under test (this is often misunderstood when tets like this are written)",
+      "range": {
+        "startLine": 86,
+        "startChar": 4,
+        "endLine": 99,
+        "endChar": 0
+      },
+      "revId": "26a067d380dc5cae6db4e15511f618a4aae1739f",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    }
+  ]
+}

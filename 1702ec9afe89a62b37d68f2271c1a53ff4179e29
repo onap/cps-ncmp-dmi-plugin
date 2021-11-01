@@ -1,0 +1,228 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9046b286_821931d1",
+        "filename": "src/main/java/org/onap/cps/ncmp/dmi/exception/SdncException.java",
+        "patchSetId": 7
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2021-11-01T10:17:58Z",
+      "side": 1,
+      "message": "Non blocking: no need for constant in my opinion",
+      "range": {
+        "startLine": 35,
+        "startChar": 37,
+        "endLine": 35,
+        "endChar": 65
+      },
+      "revId": "1702ec9afe89a62b37d68f2271c1a53ff4179e29",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "7c9fcc5b_1fcb77bd",
+        "filename": "src/main/java/org/onap/cps/ncmp/dmi/service/DmiServiceImpl.java",
+        "patchSetId": 7
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2021-11-01T10:17:58Z",
+      "side": 1,
+      "message": "Can you please configure your IDE to only format changed code. There are a lot of non-changed lines in this class where different formatting has been applied which is distracting during review :-(",
+      "revId": "1702ec9afe89a62b37d68f2271c1a53ff4179e29",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "ceaf5567_6b445ce2",
+        "filename": "src/main/java/org/onap/cps/ncmp/dmi/service/operation/SdncOperations.java",
+        "patchSetId": 7
+      },
+      "lineNbr": 86,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2021-11-01T10:17:58Z",
+      "side": 1,
+      "message": "update javadoc (incl new exception thrown)",
+      "range": {
+        "startLine": 85,
+        "startChar": 0,
+        "endLine": 86,
+        "endChar": 76
+      },
+      "revId": "1702ec9afe89a62b37d68f2271c1a53ff4179e29",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "1d2814bd_3e141b87",
+        "filename": "src/main/java/org/onap/cps/ncmp/dmi/service/operation/SdncOperations.java",
+        "patchSetId": 7
+      },
+      "lineNbr": 235,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2021-11-01T10:17:58Z",
+      "side": 1,
+      "message": "this might be a case where I would use (private) constant to add meaning e.g. \nPATH_TO_SCHEMA",
+      "range": {
+        "startLine": 235,
+        "startChar": 16,
+        "endLine": 235,
+        "endChar": 59
+      },
+      "revId": "1702ec9afe89a62b37d68f2271c1a53ff4179e29",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "9e360804_32723cdb",
+        "filename": "src/test/groovy/org/onap/cps/ncmp/dmi/service/DmiServiceImplSpec.groovy",
+        "patchSetId": 7
+      },
+      "lineNbr": 60,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2021-11-01T10:17:58Z",
+      "side": 1,
+      "message": "groovy allows you to write this like so:\n\n         def moduleSchema \u003d new ModuleSchema(identifier:\"example-identifier\",\n                namespace:\"example:namespace\",\n                version:\"example-version\")",
+      "range": {
+        "startLine": 57,
+        "startChar": 0,
+        "endLine": 60,
+        "endChar": 52
+      },
+      "revId": "1702ec9afe89a62b37d68f2271c1a53ff4179e29",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "e8d35b66_8e4015f6",
+        "filename": "src/test/groovy/org/onap/cps/ncmp/dmi/service/DmiServiceImplSpec.groovy",
+        "patchSetId": 7
+      },
+      "lineNbr": 65,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2021-11-01T10:17:58Z",
+      "side": 1,
+      "message": "groovy can bypass getters, (and I prefer it for readability) liek so:\n\nresult.schemas.size() \u003d\u003d 1",
+      "range": {
+        "startLine": 65,
+        "startChar": 12,
+        "endLine": 65,
+        "endChar": 43
+      },
+      "revId": "1702ec9afe89a62b37d68f2271c1a53ff4179e29",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "74de8fa3_af89455e",
+        "filename": "src/test/groovy/org/onap/cps/ncmp/dmi/service/DmiServiceImplSpec.groovy",
+        "patchSetId": 7
+      },
+      "lineNbr": 67,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2021-11-01T10:17:58Z",
+      "side": 1,
+      "message": "if you bypass the getter Groovy also allows you to treat the collection as an array like so:\n\nresult.schemas[0]",
+      "range": {
+        "startLine": 67,
+        "startChar": 17,
+        "endLine": 67,
+        "endChar": 43
+      },
+      "revId": "1702ec9afe89a62b37d68f2271c1a53ff4179e29",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "3d8805dd_4cfaea75",
+        "filename": "src/test/groovy/org/onap/cps/ncmp/dmi/service/DmiServiceImplSpec.groovy",
+        "patchSetId": 7
+      },
+      "lineNbr": 136,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2021-11-01T10:17:58Z",
+      "side": 1,
+      "message": "please note my previous comment on stopping your IDE to update all file.\nNO need to revert but please prevent in future",
+      "range": {
+        "startLine": 129,
+        "startChar": 0,
+        "endLine": 136,
+        "endChar": 175
+      },
+      "revId": "1702ec9afe89a62b37d68f2271c1a53ff4179e29",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "61bcea62_63122070",
+        "filename": "src/test/groovy/org/onap/cps/ncmp/dmi/service/operation/SdncOperationsSpec.groovy",
+        "patchSetId": 7
+      },
+      "lineNbr": 59,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2021-11-01T10:17:58Z",
+      "side": 1,
+      "message": "moduleSchemas[0]",
+      "range": {
+        "startLine": 59,
+        "startChar": 17,
+        "endLine": 59,
+        "endChar": 37
+      },
+      "revId": "1702ec9afe89a62b37d68f2271c1a53ff4179e29",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "3d9691c2_ffe5d92b",
+        "filename": "src/test/groovy/org/onap/cps/ncmp/dmi/service/operation/SdncOperationsSpec.groovy",
+        "patchSetId": 7
+      },
+      "lineNbr": 96,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2021-11-01T10:17:58Z",
+      "side": 1,
+      "message": "i would be good to verify (relevant part of) the content off the \nexception details, somethign like this:\n\n           def thrownException \u003d thrown(SdncException)\n            assert thrownException.details.contains(expectedExceptionDetails)\n        where:\n            scenario                            | sdncHttpStatus         | sdncResponseBody             || expectedExceptionDetails\n            \u0027failed response from SDNC\u0027         | HttpStatus.BAD_REQUEST | \u0027sdnc response body\u0027         || \u0027sdnc response body\u0027\n            \u0027invalid json response\u0027             | HttpStatus.OK          | \u0027invalid-json\u0027               || \u0027not in the expected format\u0027\n            \u0027response in incorrect json schema\u0027 | HttpStatus.OK          | \u0027{ \"schema\" : \"incorrect\" }\u0027 || \u0027not in the expected format\u0027",
+      "range": {
+        "startLine": 96,
+        "startChar": 78,
+        "endLine": 96,
+        "endChar": 113
+      },
+      "revId": "1702ec9afe89a62b37d68f2271c1a53ff4179e29",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    }
+  ]
+}
