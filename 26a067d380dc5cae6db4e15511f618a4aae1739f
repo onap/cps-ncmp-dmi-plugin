@@ -45,6 +45,30 @@
       "revId": "26a067d380dc5cae6db4e15511f618a4aae1739f",
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "915147c1_54232b2b",
+        "filename": "src/test/groovy/org/onap/cps/ncmp/dmi/rest/controller/DmiRestControllerSpec.groovy",
+        "patchSetId": 7
+      },
+      "lineNbr": 99,
+      "author": {
+        "id": 7680
+      },
+      "writtenOn": "2021-11-02T14:04:49Z",
+      "side": 0,
+      "message": "Invalid json scenario is being tested in the SDNCOperationSpec. And, Exception to correct HTTP Status mapping is tested in the next test case \u0027Get all modules for given cm handle with exception handling of #scenario.\u0027\n\nLet me know if I missed anything.",
+      "parentUuid": "916a00dd_c02a1b59",
+      "range": {
+        "startLine": 86,
+        "startChar": 4,
+        "endLine": 99,
+        "endChar": 0
+      },
+      "revId": "26a067d380dc5cae6db4e15511f618a4aae1739f",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
     }
   ]
 }
