@@ -54,6 +54,6 @@ values to configure for the application being deployed. This list is not exhaust
 DMI-Plugin Docker Installation
 ==============================
 
-DMI-Plugin can also be installed in a docker environment. Latest `docker-compose <https://github.com/onap/cps-ncmp-dmi-plugin/blob/master/docker-compose/docker-compose.yml>`_ is included in the repo to start all the relevant
+DMI-Plugin can also be installed in a docker environment. Istanbul `docker-compose <https://github.com/onap/cps-ncmp-dmi-plugin/blob/istanbul/docker-compose/docker-compose.yml>`_ is included in the repo to start all the relevant
 services.
-Latest instructions are covered in the `README <https://github.com/onap/cps-ncmp-dmi-plugin/blob/master/docker-compose/README.md>`_
+Istanbul instructions are covered in the `README <https://github.com/onap/cps-ncmp-dmi-plugin/blob/istanbul/docker-compose/README.md>`_.
