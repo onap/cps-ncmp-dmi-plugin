@@ -66,6 +66,24 @@
     },
     {
       "key": {
+        "uuid": "c3b15cfc_45fbf049",
+        "filename": "src/main/java/org/onap/cps/ncmp/dmi/service/DmiServiceImpl.java",
+        "patchSetId": 7
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 7680
+      },
+      "writtenOn": "2021-11-02T14:17:27Z",
+      "side": 1,
+      "message": "I agree. I will verify my settings too.",
+      "parentUuid": "7c9fcc5b_1fcb77bd",
+      "revId": "1702ec9afe89a62b37d68f2271c1a53ff4179e29",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "ceaf5567_6b445ce2",
         "filename": "src/main/java/org/onap/cps/ncmp/dmi/service/operation/SdncOperations.java",
         "patchSetId": 7
