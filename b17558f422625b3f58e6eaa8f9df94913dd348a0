@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fe05090a_cb607b87",
+        "filename": "docs/deployment.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 59,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2021-11-02T17:44:17Z",
+      "side": 1,
+      "message": "I think we might have deliberately used \u0027Latest\u0027 in the wording here to pint out where to get the latest version of these files. But maybe it is OK to point to Istanbul specific version too which would be consistent with all other links in this documentation",
+      "range": {
+        "startLine": 57,
+        "startChar": 58,
+        "endLine": 59,
+        "endChar": 136
+      },
+      "revId": "b17558f422625b3f58e6eaa8f9df94913dd348a0",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    }
+  ]
+}
