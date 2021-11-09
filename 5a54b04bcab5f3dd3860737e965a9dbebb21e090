@@ -1,0 +1,165 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "c2f803d6_27a91a8d",
+        "filename": "openapi/openapi.yml",
+        "patchSetId": 3
+      },
+      "lineNbr": 164,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2021-11-09T17:42:56Z",
+      "side": 1,
+      "message": "add a line like\n\"since all requests need to include additional information in a request body HTTP Post is use for all and the actual operation is defined in the request body instead\"",
+      "range": {
+        "startLine": 164,
+        "startChar": 19,
+        "endLine": 164,
+        "endChar": 89
+      },
+      "revId": "5a54b04bcab5f3dd3860737e965a9dbebb21e090",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "a81ae730_f4a4cce1",
+        "filename": "openapi/openapi.yml",
+        "patchSetId": 3
+      },
+      "lineNbr": 176,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2021-11-09T17:42:56Z",
+      "side": 1,
+      "message": "not sure if \u0027access\u0027 is needed here. whatever you choose should be consistent with operation id on line 165",
+      "range": {
+        "startLine": 176,
+        "startChar": 60,
+        "endLine": 176,
+        "endChar": 66
+      },
+      "revId": "5a54b04bcab5f3dd3860737e965a9dbebb21e090",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "cc300cf8_185e945f",
+        "filename": "src/main/java/org/onap/cps/ncmp/dmi/service/DmiService.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 91,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2021-11-09T17:42:56Z",
+      "side": 1,
+      "message": "not sure if need separate method heer. It was agreed that operation \"read\" (in request body) is allowed (even though its the default) so I don\u0027t thin we need separate get(read) from write methods",
+      "range": {
+        "startLine": 91,
+        "startChar": 11,
+        "endLine": 91,
+        "endChar": 56
+      },
+      "revId": "5a54b04bcab5f3dd3860737e965a9dbebb21e090",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "2ae63012_8054da50",
+        "filename": "src/main/java/org/onap/cps/ncmp/dmi/service/DmiService.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 91,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2021-11-09T17:42:56Z",
+      "side": 1,
+      "message": "this is important change?! Can you explain why you changes this please",
+      "range": {
+        "startLine": 91,
+        "startChar": 4,
+        "endLine": 91,
+        "endChar": 10
+      },
+      "revId": "5a54b04bcab5f3dd3860737e965a9dbebb21e090",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "76b212f4_e61d0bf3",
+        "filename": "src/main/java/org/onap/cps/ncmp/dmi/service/DmiServiceImpl.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 177,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2021-11-09T17:42:56Z",
+      "side": 1,
+      "message": "need to look at this together in more detail",
+      "range": {
+        "startLine": 176,
+        "startChar": 69,
+        "endLine": 177,
+        "endChar": 31
+      },
+      "revId": "5a54b04bcab5f3dd3860737e965a9dbebb21e090",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "8ec29299_9f2dd553",
+        "filename": "src/main/java/org/onap/cps/ncmp/dmi/service/client/SdncRestconfClient.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 102,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2021-11-09T17:42:56Z",
+      "side": 1,
+      "message": "no need for javadoc on private methods",
+      "range": {
+        "startLine": 94,
+        "startChar": 1,
+        "endLine": 102,
+        "endChar": 7
+      },
+      "revId": "5a54b04bcab5f3dd3860737e965a9dbebb21e090",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "f5826f04_ab849693",
+        "filename": "src/main/java/org/onap/cps/ncmp/dmi/service/operation/SdncOperations.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 165,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2021-11-09T17:42:56Z",
+      "side": 1,
+      "message": "i think this can easily be extended to cover \u0027read\u0027 as well",
+      "range": {
+        "startLine": 161,
+        "startChar": 2,
+        "endLine": 165,
+        "endChar": 9
+      },
+      "revId": "5a54b04bcab5f3dd3860737e965a9dbebb21e090",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    }
+  ]
+}
