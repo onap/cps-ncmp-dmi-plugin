@@ -43,6 +43,7 @@ import org.springframework.security.test.context.support.WithMockUser
 import org.springframework.test.web.servlet.MockMvc
 import spock.lang.Specification
 
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.delete
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.put
 
@@ -239,5 +240,15 @@ class DmiRestControllerSpec extends Specification {
             '[]'                           | 'idWith[]'
             '? needs to be encoded as %3F' | 'idWith%3F'
 
+    }
+
+    def 'Delete resource data in passthrough-running datastore.' () {
+        given: 'update resource data url'
+            def deleteUrl = "${basePathV1}/ch/some-cmHandle/data/ds/ncmp-datastore:passthrough-running" +
+                    "?resourceIdentifier=some-resourceIdentifier"
+        when: 'update data resource request is performed'
+            def response = mvc.perform(delete(deleteUrl)).andReturn().response
+        then: 'the response status is not implemented'
+            response.status == HttpStatus.NOT_IMPLEMENTED.value()
     }
 }

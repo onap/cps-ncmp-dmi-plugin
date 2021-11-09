@@ -157,6 +157,19 @@ public class DmiRestController implements DmiPluginApi, DmiPluginInternalApi {
         return ResponseEntity.ok(modulesListAsJson);
     }
 
+    /**
+     * Delete data using passthrough for the given cmHandle.
+     *
+     * @param resourceIdentifier     resource identifier
+     * @param cmHandle               cmHandle
+     * @return (@ code ResponseEntity) response entity
+     */
+    @Override
+    public ResponseEntity<Void> deleteDataByPassthroughRunningForCmHandle(final String cmHandle,
+        final String resourceIdentifier) {
+        return new ResponseEntity<>(HttpStatus.NOT_IMPLEMENTED);
+    }
+
     private List<ModuleReference> convertRestObjectToJavaApiObject(
             final ModuleResourcesReadRequest moduleResourcesReadRequest) {
         return objectMapper
