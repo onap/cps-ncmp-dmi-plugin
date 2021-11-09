@@ -26,8 +26,7 @@ import java.util.List;
 import javax.validation.Valid;
 import lombok.extern.slf4j.Slf4j;
 import org.onap.cps.ncmp.dmi.model.CmHandles;
-import org.onap.cps.ncmp.dmi.model.DataAccessReadRequest;
-import org.onap.cps.ncmp.dmi.model.DataAccessWriteRequest;
+import org.onap.cps.ncmp.dmi.model.DataAccessRequest;
 import org.onap.cps.ncmp.dmi.model.ModuleReferencesRequest;
 import org.onap.cps.ncmp.dmi.model.ModuleResourcesReadRequest;
 import org.onap.cps.ncmp.dmi.model.ModuleSet;
@@ -74,25 +73,6 @@ public class DmiRestController implements DmiPluginApi, DmiPluginInternalApi {
     }
 
     /**
-     * Write data using passthrough for the given cmHandle.
-     *
-     * @param dataAccessWriteRequest pass through request
-     * @param resourceIdentifier     resource identifier
-     * @param cmHandle               cmHandle
-     * @return (@ code ResponseEntity) response entity
-     */
-    @Override
-    public ResponseEntity<String> writeDataByPassthroughRunningForCmHandle(
-        final DataAccessWriteRequest dataAccessWriteRequest,
-        final String resourceIdentifier, final String cmHandle) {
-        final String response = dmiService.writeResourceDataPassthroughForCmHandle(cmHandle,
-            resourceIdentifier,
-            MediaType.APPLICATION_JSON_VALUE,
-            dataAccessWriteRequest.getData());
-        return new ResponseEntity<>(response, HttpStatus.CREATED);
-    }
-
-    /**
      * This method register given list of cm-handles to ncmp.
      *
      * @param cmHandles list of cm-handles
@@ -113,48 +93,55 @@ public class DmiRestController implements DmiPluginApi, DmiPluginInternalApi {
      *
      * @param resourceIdentifier    resource identifier to fetch data
      * @param cmHandle              cm handle identifier
-     * @param dataAccessReadRequest data Access Read Request
+     * @param dataAccessRequest     data Access Request
      * @param acceptParamInHeader   accept header parameter
      * @param optionsParamInQuery   options query parameter
      * @return {@code ResponseEntity} response entity
      */
     @Override
     public ResponseEntity<Object> getResourceDataOperationalForCmHandle(final String resourceIdentifier,
-        final String cmHandle,
-        final @Valid DataAccessReadRequest dataAccessReadRequest,
-        final String acceptParamInHeader,
-        final @Valid String optionsParamInQuery) {
+                                                                        final String cmHandle,
+                                                                        final @Valid DataAccessRequest
+                                                                                dataAccessRequest,
+                                                                        final String acceptParamInHeader,
+                                                                        final @Valid String optionsParamInQuery) {
         final var modulesListAsJson = dmiService.getResourceDataOperationalForCmHandle(cmHandle,
             resourceIdentifier,
             acceptParamInHeader,
             optionsParamInQuery,
-            dataAccessReadRequest.getCmHandleProperties());
+            dataAccessRequest.getCmHandleProperties());
         return ResponseEntity.ok(modulesListAsJson);
     }
 
-    /**
-     * This method fetches the resource for given cm handle using pass through running. It filters the response on the
-     * basis of options query parameters and returns response.
-     *
-     * @param resourceIdentifier    resource identifier to fetch data
-     * @param cmHandle              cm handle identifier
-     * @param dataAccessReadRequest data Access Read Request
-     * @param acceptParamInHeader   accept header parameter
-     * @param optionsParamInQuery   options query parameter
-     * @return {@code ResponseEntity} response entity
-     */
     @Override
-    public ResponseEntity<Object> getResourceDataPassthroughRunningForCmHandle(final String resourceIdentifier,
-        final String cmHandle,
-        final @Valid DataAccessReadRequest dataAccessReadRequest,
-        final String acceptParamInHeader,
-        final @Valid String optionsParamInQuery) {
-        final var modulesListAsJson = dmiService.getResourceDataPassThroughRunningForCmHandle(cmHandle,
-            resourceIdentifier,
-            acceptParamInHeader,
-            optionsParamInQuery,
-            dataAccessReadRequest.getCmHandleProperties());
-        return ResponseEntity.ok(modulesListAsJson);
+    public ResponseEntity<String> dataPassthroughRunningForCmHandle(final DataAccessRequest
+                                                                                dataAccessRequest,
+                                                                        final String resourceIdentifier,
+                                                                        final String cmHandle,
+                                                                        final String acceptParamInHeader,
+                                                                        final String optionsParamInQuery) {
+        final boolean operationIsNullOrRead = ((dataAccessRequest.getOperation() == null)
+            || dataAccessRequest.getOperation().equals(DataAccessRequest.OperationEnum.READ));
+        if (operationIsNullOrRead) {
+            final String modulesListAsJson = dmiService.getResourceDataPassThroughRunningForCmHandle(cmHandle,
+                resourceIdentifier,
+                acceptParamInHeader,
+                optionsParamInQuery,
+                dataAccessRequest.getCmHandleProperties());
+            return ResponseEntity.ok(modulesListAsJson);
+        } else {
+            final String response = dmiService.writeOrUpdateResourceDataPassthroughForCmHandle(
+                dataAccessRequest.getOperation(),
+                cmHandle,
+                resourceIdentifier,
+                MediaType.APPLICATION_JSON_VALUE,
+                dataAccessRequest.getData());
+            if (dataAccessRequest.getOperation().equals(DataAccessRequest.OperationEnum.CREATE)) {
+                return new ResponseEntity<>(response, HttpStatus.CREATED);
+            } else {
+                return new ResponseEntity<>(response, HttpStatus.OK);
+            }
+        }
     }
 
     private List<ModuleReference> convertRestObjectToJavaApiObject(

@@ -35,6 +35,7 @@ import java.util.List;
 import org.apache.groovy.parser.antlr4.util.StringUtils;
 import org.onap.cps.ncmp.dmi.config.DmiConfiguration.SdncProperties;
 import org.onap.cps.ncmp.dmi.exception.SdncException;
+import org.onap.cps.ncmp.dmi.model.DataAccessRequest;
 import org.onap.cps.ncmp.dmi.service.client.SdncRestconfClient;
 import org.onap.cps.ncmp.dmi.service.model.ModuleSchema;
 import org.springframework.http.HttpHeaders;
@@ -148,12 +149,20 @@ public class SdncOperations {
      * @param requestData request data
      * @return {@code ResponseEntity} response entity
      */
-    public ResponseEntity<String> writeResourceDataPassthroughRunning(final String nodeId,
-        final String resourceId, final String contentType, final String requestData) {
+    public ResponseEntity<String> writeOrUpdateResourceDataPassthroughRunning(final DataAccessRequest.OperationEnum
+                                                                                  operation,
+                                                                              final String nodeId,
+                                                                              final String resourceId,
+                                                                              final String contentType,
+                                                                              final String requestData) {
         final var getResourceDataUrl = preparePassthroughRunningUrl(nodeId, resourceId);
         final var httpHeaders = new HttpHeaders();
         httpHeaders.setContentType(MediaType.parseMediaType(contentType));
-        return sdncRestconfClient.postOperationWithJsonData(getResourceDataUrl, requestData, httpHeaders);
+        if (operation == DataAccessRequest.OperationEnum.CREATE) {
+            return sdncRestconfClient.postOperationWithJsonData(getResourceDataUrl, requestData, httpHeaders);
+        } else {
+            return sdncRestconfClient.putOperationWithJsonData(getResourceDataUrl, requestData, httpHeaders);
+        }
     }
 
     private List<String> buildQueryParamList(final String optionsParamInQuery, final String restconfContentQueryParam) {

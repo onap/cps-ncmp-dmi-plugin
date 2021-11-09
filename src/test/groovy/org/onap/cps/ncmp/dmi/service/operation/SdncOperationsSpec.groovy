@@ -24,6 +24,7 @@ package org.onap.cps.ncmp.dmi.service.operation
 import org.onap.cps.ncmp.dmi.TestUtils
 import org.onap.cps.ncmp.dmi.config.DmiConfiguration
 import org.onap.cps.ncmp.dmi.exception.SdncException
+import org.onap.cps.ncmp.dmi.model.DataAccessRequest
 import org.onap.cps.ncmp.dmi.service.client.SdncRestconfClient
 import org.spockframework.spring.SpringBean
 import org.springframework.beans.factory.annotation.Autowired
@@ -119,13 +120,19 @@ class SdncOperationsSpec extends Specification {
             1 * mockSdncRestClient.getOperation(expectedUrl, _ as HttpHeaders)
     }
 
-    def 'Write resource data to SDNC.'() {
+    def '#scenario resource data to SDNC.'() {
         given: 'expected url, topology-id, sdncOperation object'
             def expectedUrl = '/rests/data/network-topology:network-topology/topology=test-topology/node=node1/yang-ext:mount/testResourceId'
         when: 'write resource data for pass through running is called'
-            objectUnderTest.writeResourceDataPassthroughRunning('node1', 'testResourceId', 'application/json', 'requestData')
+            objectUnderTest.writeOrUpdateResourceDataPassthroughRunning(operationEnum, 'node1', 'testResourceId', 'application/json', 'requestData')
         then: 'the post operation is executed with the correct URL and data'
-            1 * mockSdncRestClient.postOperationWithJsonData(expectedUrl, 'requestData', _ as HttpHeaders)
+            expectedCallsToPost * mockSdncRestClient.postOperationWithJsonData(expectedUrl, 'requestData', _ as HttpHeaders)
+        and: 'the put operation is executed with the correct URL and data'
+            expectedCallsToPut * mockSdncRestClient.putOperationWithJsonData(expectedUrl, 'requestData', _ as HttpHeaders)
+        where: 'the following values are used'
+            scenario  | operationEnum                            || expectedCallsToPost | expectedCallsToPut
+            'Write'   | DataAccessRequest.OperationEnum.CREATE   || 1                   | 0
+            'Update'  | DataAccessRequest.OperationEnum.UPDATE   || 0                   | 1
     }
 
     def 'build query param list for SDNC where options contains a #scenario'() {
