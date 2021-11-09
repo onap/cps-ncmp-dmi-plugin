@@ -26,8 +26,7 @@ import java.util.List;
 import javax.validation.Valid;
 import lombok.extern.slf4j.Slf4j;
 import org.onap.cps.ncmp.dmi.model.CmHandles;
-import org.onap.cps.ncmp.dmi.model.DataAccessReadRequest;
-import org.onap.cps.ncmp.dmi.model.DataAccessWriteRequest;
+import org.onap.cps.ncmp.dmi.model.DataAccessRequest;
 import org.onap.cps.ncmp.dmi.model.ModuleReferencesRequest;
 import org.onap.cps.ncmp.dmi.model.ModuleResourcesReadRequest;
 import org.onap.cps.ncmp.dmi.model.ModuleSet;
@@ -74,25 +73,6 @@ public class DmiRestController implements DmiPluginApi, DmiPluginInternalApi {
     }
 
     /**
-     * Write data using passthrough for the given cmHandle.
-     *
-     * @param dataAccessWriteRequest pass through request
-     * @param resourceIdentifier     resource identifier
-     * @param cmHandle               cmHandle
-     * @return (@ code ResponseEntity) response entity
-     */
-    @Override
-    public ResponseEntity<String> writeDataByPassthroughRunningForCmHandle(
-        final DataAccessWriteRequest dataAccessWriteRequest,
-        final String resourceIdentifier, final String cmHandle) {
-        final String response = dmiService.writeResourceDataPassthroughForCmHandle(cmHandle,
-            resourceIdentifier,
-            MediaType.APPLICATION_JSON_VALUE,
-            dataAccessWriteRequest.getData());
-        return new ResponseEntity<>(response, HttpStatus.CREATED);
-    }
-
-    /**
      * This method register given list of cm-handles to ncmp.
      *
      * @param cmHandles list of cm-handles
@@ -109,52 +89,84 @@ public class DmiRestController implements DmiPluginApi, DmiPluginInternalApi {
 
     /**
      * This method fetches the resource for given cm handle using pass through operational. It filters the response on
-     * the basis of options query parameters and returns response.
+     * the basis of options query parameters and returns response. Does not support write operations.
      *
      * @param resourceIdentifier    resource identifier to fetch data
      * @param cmHandle              cm handle identifier
-     * @param dataAccessReadRequest data Access Read Request
+     * @param dataAccessRequest     data Access Request
      * @param acceptParamInHeader   accept header parameter
      * @param optionsParamInQuery   options query parameter
      * @return {@code ResponseEntity} response entity
      */
     @Override
-    public ResponseEntity<Object> getResourceDataOperationalForCmHandle(final String resourceIdentifier,
-        final String cmHandle,
-        final @Valid DataAccessReadRequest dataAccessReadRequest,
-        final String acceptParamInHeader,
-        final @Valid String optionsParamInQuery) {
-        final var modulesListAsJson = dmiService.getResourceDataOperationalForCmHandle(cmHandle,
-            resourceIdentifier,
-            acceptParamInHeader,
-            optionsParamInQuery,
-            dataAccessReadRequest.getCmHandleProperties());
-        return ResponseEntity.ok(modulesListAsJson);
+    public ResponseEntity<Object> dataAccessPassthroughOperational(final String resourceIdentifier,
+                                                                   final String cmHandle,
+                                                                   final @Valid DataAccessRequest
+                                                                                dataAccessRequest,
+                                                                   final String acceptParamInHeader,
+                                                                   final @Valid String optionsParamInQuery) {
+        if (isReadOperation(dataAccessRequest)) {
+            final String resourceDataAsJson = dmiService.getResourceData(cmHandle,
+                resourceIdentifier,
+                acceptParamInHeader,
+                optionsParamInQuery,
+                DmiService.RESTCONF_CONTENT_PASSTHROUGH_OPERATIONAL_QUERY_PARAM);
+            return ResponseEntity.ok(resourceDataAsJson);
+        }
+        return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
     }
 
-    /**
-     * This method fetches the resource for given cm handle using pass through running. It filters the response on the
-     * basis of options query parameters and returns response.
-     *
-     * @param resourceIdentifier    resource identifier to fetch data
-     * @param cmHandle              cm handle identifier
-     * @param dataAccessReadRequest data Access Read Request
-     * @param acceptParamInHeader   accept header parameter
-     * @param optionsParamInQuery   options query parameter
-     * @return {@code ResponseEntity} response entity
-     */
     @Override
-    public ResponseEntity<Object> getResourceDataPassthroughRunningForCmHandle(final String resourceIdentifier,
-        final String cmHandle,
-        final @Valid DataAccessReadRequest dataAccessReadRequest,
-        final String acceptParamInHeader,
-        final @Valid String optionsParamInQuery) {
-        final var modulesListAsJson = dmiService.getResourceDataPassThroughRunningForCmHandle(cmHandle,
-            resourceIdentifier,
-            acceptParamInHeader,
-            optionsParamInQuery,
-            dataAccessReadRequest.getCmHandleProperties());
-        return ResponseEntity.ok(modulesListAsJson);
+    public ResponseEntity<String> dataAccessPassthroughRunning(final String resourceIdentifier,
+                                                               final String cmHandle,
+                                                               final @Valid DataAccessRequest
+                                                                       dataAccessRequest,
+                                                               final String acceptParamInHeader,
+                                                               final @Valid String optionsParamInQuery) {
+        final String sdncResponse;
+        if (isReadOperation(dataAccessRequest)) {
+            sdncResponse = dmiService.getResourceData(cmHandle,
+                resourceIdentifier,
+                acceptParamInHeader,
+                optionsParamInQuery,
+                DmiService.RESTCONF_CONTENT_PASSTHROUGH_RUNNING_QUERY_PARAM);
+        } else {
+            sdncResponse = dmiService.writeData(
+                dataAccessRequest.getOperation(),
+                cmHandle,
+                resourceIdentifier,
+                MediaType.APPLICATION_JSON_VALUE,
+                dataAccessRequest.getData());
+        }
+        return new ResponseEntity<>(sdncResponse, getHttpStatus(dataAccessRequest));
+    }
+
+    private boolean isReadOperation(final @Valid DataAccessRequest dataAccessRequest) {
+        return dataAccessRequest.getOperation() == null
+            || dataAccessRequest.getOperation().equals(DataAccessRequest.OperationEnum.READ);
+    }
+
+    private HttpStatus getHttpStatus(final DataAccessRequest dataAccessRequest) {
+        final HttpStatus httpStatus;
+        if (dataAccessRequest.getOperation() == null) {
+            httpStatus = HttpStatus.OK;
+        } else {
+            switch (dataAccessRequest.getOperation()) {
+                case CREATE:
+                    httpStatus = HttpStatus.CREATED;
+                    break;
+                case READ:
+                case UPDATE:
+                    httpStatus = HttpStatus.OK;
+                    break;
+                case DELETE:
+                    httpStatus = HttpStatus.NO_CONTENT;
+                    break;
+                default:
+                    httpStatus = HttpStatus.BAD_REQUEST;
+            }
+        }
+        return httpStatus;
     }
 
     private List<ModuleReference> convertRestObjectToJavaApiObject(
