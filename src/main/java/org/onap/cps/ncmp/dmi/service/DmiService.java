@@ -21,17 +21,22 @@
 package org.onap.cps.ncmp.dmi.service;
 
 import java.util.List;
-import java.util.Map;
 import javax.validation.constraints.NotNull;
 import org.onap.cps.ncmp.dmi.exception.DmiException;
+import org.onap.cps.ncmp.dmi.model.DataAccessRequest;
 import org.onap.cps.ncmp.dmi.model.ModuleSet;
 import org.onap.cps.ncmp.dmi.model.YangResources;
 import org.onap.cps.ncmp.dmi.service.model.ModuleReference;
+
+
 
 /**
  * Interface for handling Dmi plugin Data.
  */
 public interface DmiService {
+
+    String RESTCONF_CONTENT_PASSTHROUGH_OPERATIONAL_QUERY_PARAM = "content=all";
+    String RESTCONF_CONTENT_PASSTHROUGH_RUNNING_QUERY_PARAM = "content=config";
 
     /**
      * This method fetches all modules for given Cm Handle.
@@ -60,41 +65,24 @@ public interface DmiService {
     YangResources getModuleResources(String cmHandle, List<ModuleReference> modules);
 
     /**
-     * This method use to fetch the resource data from cm handle for datastore pass-through operational and resource
+     * This method use to fetch the resource data from cm handle for the given datastore and resource
      * Identifier. Options query parameter are used to filter the response from network resource.
      *
-     * @param cmHandle            cm handle identifier
-     * @param resourceIdentifier  resource identifier
-     * @param acceptParamInHeader accept header parameter
-     * @param optionsParamInQuery options query parameter
-     * @param cmHandlePropertyMap cm handle properties
+     * @param cmHandle                  cm handle identifier
+     * @param resourceIdentifier        resource identifier
+     * @param acceptParamInHeader       accept header parameter
+     * @param optionsParamInQuery       options query parameter
+     * @param restconfContentQueryParam restconf content i.e. datastore to use
      * @return {@code Object} response from network function
      */
-    Object getResourceDataOperationalForCmHandle(@NotNull String cmHandle,
+    String getResourceData(@NotNull String cmHandle,
         @NotNull String resourceIdentifier,
         String acceptParamInHeader,
         String optionsParamInQuery,
-        Map<String, String> cmHandlePropertyMap);
+        String restconfContentQueryParam);
 
     /**
-     * This method use to fetch the resource data from cm handle for datastore pass-through running and resource
-     * Identifier. Options query parameter are used to filter the response from network resource.
-     *
-     * @param cmHandle            cm handle identifier
-     * @param resourceIdentifier  resource identifier
-     * @param acceptParamInHeader accept header parameter
-     * @param optionsParamInQuery options query parameter
-     * @param cmHandlePropertyMap cm handle properties
-     * @return {@code Object} response from network function
-     */
-    Object getResourceDataPassThroughRunningForCmHandle(@NotNull String cmHandle,
-        @NotNull String resourceIdentifier,
-        String acceptParamInHeader,
-        String optionsParamInQuery,
-        Map<String, String> cmHandlePropertyMap);
-
-    /**
-     * Write resource data to sdnc using passthrough running.
+     * Write resource data to sdnc (will default to 'content=config', does not need to be specified).
      *
      * @param cmHandle           cmHandle
      * @param resourceIdentifier resource identifier
@@ -102,6 +90,7 @@ public interface DmiService {
      * @param data               request data
      * @return response from sdnc
      */
-    String writeResourceDataPassthroughForCmHandle(String cmHandle, String resourceIdentifier, String dataType,
-        String data);
+    String writeData(DataAccessRequest.OperationEnum operation, String cmHandle,
+                     String resourceIdentifier, String dataType,
+                     String data);
 }

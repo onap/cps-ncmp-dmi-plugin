@@ -43,8 +43,15 @@ import org.springframework.security.test.context.support.WithMockUser
 import org.springframework.test.web.servlet.MockMvc
 import spock.lang.Specification
 
+import static org.onap.cps.ncmp.dmi.model.DataAccessRequest.OperationEnum.DELETE
+import static org.onap.cps.ncmp.dmi.model.DataAccessRequest.OperationEnum.READ
+import static org.springframework.http.HttpStatus.BAD_REQUEST
+import static org.springframework.http.HttpStatus.NO_CONTENT
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post
-import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.put
+import static org.onap.cps.ncmp.dmi.model.DataAccessRequest.OperationEnum.CREATE
+import static org.onap.cps.ncmp.dmi.model.DataAccessRequest.OperationEnum.UPDATE
+import static org.springframework.http.HttpStatus.CREATED
+import static org.springframework.http.HttpStatus.OK
 
 @WebMvcTest(DmiRestController)
 @WithMockUser
@@ -60,7 +67,7 @@ class DmiRestControllerSpec extends Specification {
     @Value('${rest.api.dmi-base-path}/v1')
     def basePathV1
 
-    def 'Get all modules for given cm handle.'() {
+    def 'Get all modules.'() {
         given: 'REST endpoint for getting all modules'
             def getModuleUrl = "$basePathV1/ch/node1/modules"
         and: 'get modules for cm-handle returns a json'
@@ -77,12 +84,12 @@ class DmiRestControllerSpec extends Specification {
                     .contentType(MediaType.APPLICATION_JSON).content(json))
                     .andReturn().response
         then: 'status is OK'
-            response.status == HttpStatus.OK.value()
+            response.status == OK.value()
         and: 'the response content matches the result from the DMI service'
             response.getContentAsString() == '{"schemas":[{"moduleName":"some-moduleName","revision":"some-revision","namespace":"some-namespace"}]}'
     }
 
-    def 'Get all modules for given cm handle with exception handling of #scenario.'() {
+    def 'Get all modules with exception handling of #scenario.'() {
         given: 'REST endpoint for getting all modules'
             def getModuleUrl = "$basePathV1/ch/node1/modules"
         and: 'given request body and get modules for cm-handle throws #exceptionClass'
@@ -101,20 +108,20 @@ class DmiRestControllerSpec extends Specification {
             'any other runtime exception'  |  RuntimeException.class         || HttpStatus.INTERNAL_SERVER_ERROR.value()
     }
 
-    def 'Register given list of cm handles.'() {
+    def 'Register given list.'() {
         given: 'register cm handle url and cm handles json'
             def registerCmhandlesPost = "${basePathV1}/inventory/cmHandles"
             def cmHandleJson = '{"cmHandles":["node1", "node2"]}'
-        when: 'post register cm handles api is invoked'
+        when: 'register cm handles api is invoked with POST'
             def response = mvc.perform(
                     post(registerCmhandlesPost)
                             .contentType(MediaType.APPLICATION_JSON)
                             .content(cmHandleJson)
             ).andReturn().response
-        then: 'register cm handles in dmi service is called once'
+        then: 'register cm handles in dmi service is invoked with correct parameters'
             1 * mockDmiService.registerCmHandles(_ as List<String>)
         and: 'response status is created'
-            response.status == HttpStatus.CREATED.value()
+            response.status == CREATED.value()
     }
 
     def 'register cm handles called with empty content.'() {
@@ -127,7 +134,7 @@ class DmiRestControllerSpec extends Specification {
                             .content(emptyJson)
             ).andReturn().response
         then: 'response status is "bad request"'
-            response.status == HttpStatus.BAD_REQUEST.value()
+            response.status == BAD_REQUEST.value()
         and: 'dmi service is not called'
             0 * mockDmiService.registerCmHandles(_)
     }
@@ -149,7 +156,7 @@ class DmiRestControllerSpec extends Specification {
                     .contentType(MediaType.APPLICATION_JSON)
                     .content(jsonData)).andReturn().response
         then: 'a OK status is returned'
-            response.status == HttpStatus.OK.value()
+            response.status == OK.value()
         and: 'the expected response is returned'
             response.getContentAsString() == '[{"yangSource":"\\"some-data\\"","moduleName":"NAME","revision":"REVISION"}]'
     }
@@ -168,68 +175,109 @@ class DmiRestControllerSpec extends Specification {
             response.status == HttpStatus.NOT_FOUND.value()
     }
 
-    def 'Get resource data for pass-through operational from cm handle.'() {
+    def 'Get resource data for pass-through operational.'() {
         given: 'Get resource data url'
             def getResourceDataForCmHandleUrl = "${basePathV1}/ch/some-cmHandle/data/ds/ncmp-datastore:passthrough-operational" +
                     "?resourceIdentifier=parent/child&options=(fields=myfields,depth=5)"
             def json = '{"cmHandleProperties" : { "prop1" : "value1", "prop2" : "value2"}}'
-        when: 'get resource data PUT api is invoked'
+        when: 'get resource data POST api is invoked'
             def response = mvc.perform(
-                    put(getResourceDataForCmHandleUrl).contentType(MediaType.APPLICATION_JSON)
+                    post(getResourceDataForCmHandleUrl).contentType(MediaType.APPLICATION_JSON)
                             .accept(MediaType.APPLICATION_JSON).content(json)
             ).andReturn().response
         then: 'response status is ok'
-            response.status == HttpStatus.OK.value()
-        and: 'dmi service called with get resource data for cm handle'
-            1 * mockDmiService.getResourceDataOperationalForCmHandle('some-cmHandle',
+            response.status == OK.value()
+        and: 'dmi service called with get resource data'
+            1 * mockDmiService.getResourceData('some-cmHandle',
                     'parent/child',
                     'application/json',
                     '(fields=myfields,depth=5)',
-                    ['prop1': 'value1', 'prop2': 'value2'])
+                    'content=all')
     }
 
-    def 'Write data using passthrough running for a cm handle using #scenario.'() {
-        given: 'write data for cmHandle url and jsonData'
-            def writeDataforCmHandlePassthroughRunning = "${basePathV1}/ch/some-cmHandle/data/ds/ncmp-datastore:passthrough-running" +
+    def 'Get resource data for pass-through operational with bad request.'() {
+        given: 'Get resource data url'
+            def getResourceDataForCmHandleUrl = "${basePathV1}/ch/some-cmHandle/data/ds/ncmp-datastore:passthrough-operational" +
+                "?resourceIdentifier=parent/child&options=(fields=myfields,depth=5)"
+            def jsonData = TestUtils.getResourceFileContent('createDataWithNormalChar.json')
+        when: 'get resource data POST api is invoked'
+            def response = mvc.perform(
+                post(getResourceDataForCmHandleUrl).contentType(MediaType.APPLICATION_JSON)
+                    .accept(MediaType.APPLICATION_JSON).content(jsonData)
+            ).andReturn().response
+        then: 'response status is bad request'
+            response.status == BAD_REQUEST.value()
+        and: 'dmi service is not invoked'
+            0 * mockDmiService.getResourceData('some-cmHandle',
+                'parent/child',
+                'application/json',
+                '(fields=myfields,depth=5)',
+                'content=all')
+    }
+
+    def 'write data with #scenario operation using passthrough running.'() {
+        given: 'write data for passthrough running url and jsonData'
+            def writeDataForPassthroughRunning = "${basePathV1}/ch/some-cmHandle/data/ds/ncmp-datastore:passthrough-running" +
                     "?resourceIdentifier=some-resourceIdentifier"
             def jsonData = TestUtils.getResourceFileContent(requestBodyFile)
         and: 'dmi service is called'
-            mockDmiService.writeResourceDataPassthroughForCmHandle('some-cmHandle',
+            mockDmiService.writeData(operationEnum, 'some-cmHandle',
                     'some-resourceIdentifier', 'application/json',
-                    expectedRequestData) >> '{some-json}'
-        when: 'write cmHandle passthrough running post api is invoked with json data'
+                    'normal request body' ) >> '{some-json}'
+        when: 'write data for passthrough running post api is invoked with json data'
             def response = mvc.perform(
-                    post(writeDataforCmHandlePassthroughRunning).contentType(MediaType.APPLICATION_JSON)
+                    post(writeDataForPassthroughRunning).contentType(MediaType.APPLICATION_JSON)
                             .content(jsonData)
             ).andReturn().response
-       then: 'response status is 201 CREATED'
-            response.status == HttpStatus.CREATED.value()
+       then: 'response status is #expectedResponseStatus'
+            response.status == expectedResponseStatus
         and: 'the data in the request body is as expected'
-            response.getContentAsString() == '{some-json}'
+            response.getContentAsString() == expectedJsonResponse
         where: 'given request body and data'
-            scenario                  | requestBodyFile           || expectedRequestData
-            'data with normal chars'  | 'dataWithNormalChar.json' || 'normal request body'
-            'data with special chars' | 'dataWithSpecialChar.json'|| 'data with quote \" and new line \n'
+            scenario   | requestBodyFile                 | operationEnum                                  || expectedResponseStatus | expectedJsonResponse
+            'Create'   | 'createDataWithNormalChar.json' | CREATE                                         || CREATED.value()        | '{some-json}'
+            'Update'   | 'updateData.json'               | UPDATE                                         || OK.value()             | '{some-json}'
+            'Delete'   | 'deleteData.json'               | DELETE                                         || NO_CONTENT.value()     | '{some-json}'
+            'Read'     | 'readData.json'                 | READ                                           || OK.value()             | ''
     }
 
-    def 'Get resource data for pass-through running from cm handle with #scenario value in resource identifier param.'() {
+    def 'Create data using passthrough for special characters.'(){
+         given: 'create data for cmHandle url and JsonData'
+            def writeDataForCmHandlePassthroughRunning = "${basePathV1}/ch/some-cmHandle/data/ds/ncmp-datastore:passthrough-running" +
+             "?resourceIdentifier=some-resourceIdentifier"
+            def jsonData = TestUtils.getResourceFileContent('createDataWithSpecialChar.json')
+         and: 'dmi service is called'
+            mockDmiService.writeData(CREATE, 'some-cmHandle', 'some-resourceIdentifier', 'application/json',
+                'data with quote \" and new line \n') >> '{some-json}'
+         when: 'create cmHandle passthrough running post api is invoked with json data with special chars'
+            def response = mvc.perform(
+                post(writeDataForCmHandlePassthroughRunning).contentType(MediaType.APPLICATION_JSON).content(jsonData)
+            ).andReturn().response
+         then: 'response status is CREATED'
+            response.status == CREATED.value()
+         and: 'the data in the request body is as expected'
+            response.getContentAsString() == '{some-json}'
+    }
+
+
+    def 'Get resource data for pass-through running with #scenario value in resource identifier param.'() {
         given: 'Get resource data url'
             def getResourceDataForCmHandleUrl = "${basePathV1}/ch/some-cmHandle/data/ds/ncmp-datastore:passthrough-running" +
                     "?resourceIdentifier="+resourceIdentifier+"&options=(fields=myfields,depth=5)"
             def json = '{"cmHandleProperties" : { "prop1" : "value1", "prop2" : "value2"}}'
-        when: 'get resource data PUT api is invoked'
+        when: 'get resource data POST api is invoked'
             def response = mvc.perform(
-                    put(getResourceDataForCmHandleUrl).contentType(MediaType.APPLICATION_JSON)
+                    post(getResourceDataForCmHandleUrl).contentType(MediaType.APPLICATION_JSON)
                             .accept(MediaType.APPLICATION_JSON).content(json)
             ).andReturn().response
         then: 'response status is ok'
-            response.status == HttpStatus.OK.value()
-        and: 'dmi service called with get resource data for cm handle'
-            1 * mockDmiService.getResourceDataPassThroughRunningForCmHandle('some-cmHandle',
+            response.status == OK.value()
+        and: 'dmi service called with get resource data for a cm handle'
+            1 * mockDmiService.getResourceData('some-cmHandle',
                     resourceIdentifier,
                     'application/json',
                     '(fields=myfields,depth=5)',
-                    ['prop1':'value1', 'prop2':'value2'])
+                    'content=config')
         where: 'tokens are used in the resource identifier parameter'
             scenario                       | resourceIdentifier
             '/'                            | 'id/with/slashes'
