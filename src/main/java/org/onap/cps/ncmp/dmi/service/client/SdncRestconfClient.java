@@ -57,28 +57,30 @@ public class SdncRestconfClient {
      * @return the response entity
      */
     public ResponseEntity<String> getOperation(final String getResourceUrl, final HttpHeaders httpHeaders) {
-        final String sdncBaseUrl = sdncProperties.getBaseUrl();
-        final String sdncRestconfUrl = sdncBaseUrl.concat(getResourceUrl);
-        httpHeaders.setBasicAuth(sdncProperties.getAuthUsername(), sdncProperties.getAuthPassword());
-        final var httpEntity = new HttpEntity<>(httpHeaders);
-        return restTemplate.exchange(sdncRestconfUrl,
-                HttpMethod.GET, httpEntity, String.class);
+        return  httpOperationWithJsonData(HttpMethod.GET, getResourceUrl, null, httpHeaders);
     }
 
     /**
-     * restconf post operation on sdnc.
+     * restconf http operations on sdnc.
      *
-     * @param postResourceUrl sdnc post resource url
-     * @param jsonData        json data
-     * @param httpHeaders     HTTP headers
-     * @return the response entity
+     * @param httpMethod HTTP Method
+     * @param resourceUrl sdnc resource url
+     * @param jsonData json data
+     * @param httpHeaders HTTP Headers
+     * @return response entity
      */
-    public ResponseEntity<String> postOperationWithJsonData(final String postResourceUrl,
-        final String jsonData, final HttpHeaders httpHeaders) {
-        final var sdncBaseUrl = sdncProperties.getBaseUrl();
-        final var sdncRestconfUrl = sdncBaseUrl.concat(postResourceUrl);
+    public ResponseEntity<String> httpOperationWithJsonData(final HttpMethod httpMethod, final String resourceUrl,
+                                                             final String jsonData,
+                                                             final HttpHeaders httpHeaders) {
+        final String sdncBaseUrl = sdncProperties.getBaseUrl();
+        final String sdncRestconfUrl = sdncBaseUrl.concat(resourceUrl);
         httpHeaders.setBasicAuth(sdncProperties.getAuthUsername(), sdncProperties.getAuthPassword());
-        final var httpEntity = new HttpEntity<>(jsonData, httpHeaders);
-        return restTemplate.exchange(sdncRestconfUrl, HttpMethod.POST, httpEntity, String.class);
+        final HttpEntity<String> httpEntity;
+        if (jsonData == null) {
+            httpEntity = new HttpEntity<>(httpHeaders);
+        } else {
+            httpEntity = new HttpEntity<>(jsonData, httpHeaders);
+        }
+        return restTemplate.exchange(sdncRestconfUrl, httpMethod, httpEntity, String.class);
     }
 }

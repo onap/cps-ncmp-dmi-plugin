@@ -29,8 +29,6 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.LinkedHashMap;
 import java.util.List;
-import java.util.Map;
-import javax.validation.constraints.NotNull;
 import lombok.extern.slf4j.Slf4j;
 import org.onap.cps.ncmp.dmi.config.DmiPluginConfig.DmiPluginProperties;
 import org.onap.cps.ncmp.dmi.exception.CmHandleRegistrationException;
@@ -38,6 +36,7 @@ import org.onap.cps.ncmp.dmi.exception.DmiException;
 import org.onap.cps.ncmp.dmi.exception.ModuleResourceNotFoundException;
 import org.onap.cps.ncmp.dmi.exception.ModulesNotFoundException;
 import org.onap.cps.ncmp.dmi.exception.ResourceDataNotFound;
+import org.onap.cps.ncmp.dmi.model.DataAccessRequest;
 import org.onap.cps.ncmp.dmi.model.ModuleSet;
 import org.onap.cps.ncmp.dmi.model.ModuleSetSchemas;
 import org.onap.cps.ncmp.dmi.model.YangResource;
@@ -60,8 +59,6 @@ public class DmiServiceImpl implements DmiService {
     private NcmpRestClient ncmpRestClient;
     private ObjectMapper objectMapper;
     private DmiPluginProperties dmiPluginProperties;
-    private static final String RESTCONF_CONTENT_PASSTHROUGH_OPERATIONAL_QUERY_PARAM = "content=all";
-    private static final String REST_CONF_CONTENT_PASSTHROUGH_RUNNING_QUERY_PARAM = "content=config";
     private static final String RESPONSE_CODE = "response code : ";
     private static final String MESSAGE = " message : ";
     private static final String IETF_NETCONF_MONITORING_OUTPUT = "ietf-netconf-monitoring:output";
@@ -151,40 +148,26 @@ public class DmiServiceImpl implements DmiService {
     }
 
     @Override
-    public Object getResourceDataOperationalForCmHandle(final @NotNull String cmHandle,
-        final @NotNull String resourceIdentifier,
+    public String getResourceData(final String cmHandle,
+        final String resourceIdentifier,
         final String acceptParamInHeader,
         final String optionsParamInQuery,
-        final Map<String, String> cmHandlePropertyMap) {
-        // not using cmHandlePropertyMap of onap dmi impl , other dmi impl might use this.
+        final String restconfContentQueryParam) {
         final ResponseEntity<String> responseEntity = sdncOperations.getResouceDataForOperationalAndRunning(cmHandle,
             resourceIdentifier,
             optionsParamInQuery,
             acceptParamInHeader,
-            RESTCONF_CONTENT_PASSTHROUGH_OPERATIONAL_QUERY_PARAM);
+            restconfContentQueryParam);
         return prepareAndSendResponse(responseEntity, cmHandle);
     }
 
     @Override
-    public Object getResourceDataPassThroughRunningForCmHandle(final @NotNull String cmHandle,
-        final @NotNull String resourceIdentifier,
-        final String acceptParamInHeader,
-        final String optionsParamInQuery,
-        final Map<String, String> cmHandlePropertyMap) {
-        // not using cmHandlePropertyMap of onap dmi impl , other dmi impl might use this.
-        final ResponseEntity<String> responseEntity = sdncOperations.getResouceDataForOperationalAndRunning(cmHandle,
-            resourceIdentifier,
-            optionsParamInQuery,
-            acceptParamInHeader,
-            REST_CONF_CONTENT_PASSTHROUGH_RUNNING_QUERY_PARAM);
-        return prepareAndSendResponse(responseEntity, cmHandle);
-    }
-
-    @Override
-    public String writeResourceDataPassthroughForCmHandle(final String cmHandle, final String resourceIdentifier,
-        final String dataType, final String data) {
+    public String writeData(final DataAccessRequest.OperationEnum operation,
+                            final String cmHandle,
+                            final String resourceIdentifier,
+                            final String dataType, final String data) {
         final ResponseEntity<String> responseEntity =
-            sdncOperations.writeResourceDataPassthroughRunning(cmHandle, resourceIdentifier, dataType, data);
+            sdncOperations.writeData(operation, cmHandle, resourceIdentifier, dataType, data);
         if (responseEntity.getStatusCode().is2xxSuccessful()) {
             return responseEntity.getBody();
         } else {
