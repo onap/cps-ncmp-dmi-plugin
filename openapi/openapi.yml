@@ -209,3 +209,22 @@ paths:
         '403':
           $ref: 'components.yml#/components/responses/Forbidden'
 
+    delete:
+      description: delete data for a cmHandle using passthrough-running
+      tags:
+        - dmi-plugin
+      summary: delete data for a cmHandle
+      operationId: deleteDataByPassthroughRunningForCmHandle
+      parameters:
+        - $ref: 'components.yml#/components/parameters/cmHandleInPath'
+        - $ref: 'components.yml#/components/parameters/resourceIdentifierInQuery'
+      responses:
+        '204':
+          $ref: 'components.yml#/components/responses/NoContent'
+        '400':
+          $ref: 'components.yml#/components/responses/BadRequest'
+        '401':
+          $ref: 'components.yml#/components/responses/Unauthorized'
+        '403':
+          $ref: 'components.yml#/components/responses/Forbidden'
+
