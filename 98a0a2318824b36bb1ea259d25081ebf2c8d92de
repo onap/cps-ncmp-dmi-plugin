@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "04c5a669_868e58e5",
+        "filename": "openapi/openapi.yml",
+        "patchSetId": 2
+      },
+      "lineNbr": 212,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2021-11-09T17:46:34Z",
+      "side": 1,
+      "message": "Sorry Aditya you probably weren\u0027t involved much in the discussion around this all Data operations towards  DMI PLugin wil be using the POST method, see this diagram: https://wiki.onap.org/display/DW/CPS-577%3A+Prepare+the+request+from+client+and+send+write+request+to+dmi-plugin\n\nMaybe we DO need a bit of grooming?!",
+      "range": {
+        "startLine": 212,
+        "startChar": 3,
+        "endLine": 212,
+        "endChar": 11
+      },
+      "revId": "98a0a2318824b36bb1ea259d25081ebf2c8d92de",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    }
+  ]
+}
