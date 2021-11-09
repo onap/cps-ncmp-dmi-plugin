@@ -41,6 +41,7 @@ import org.springframework.http.HttpStatus
 import org.springframework.http.MediaType
 import org.springframework.security.test.context.support.WithMockUser
 import org.springframework.test.web.servlet.MockMvc
+import spock.lang.Ignore
 import spock.lang.Specification
 
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post
@@ -194,7 +195,7 @@ class DmiRestControllerSpec extends Specification {
                     "?resourceIdentifier=some-resourceIdentifier"
             def jsonData = TestUtils.getResourceFileContent(requestBodyFile)
         and: 'dmi service is called'
-            mockDmiService.writeResourceDataPassthroughForCmHandle('some-cmHandle',
+            mockDmiService.writeOrUpdateResourceDataPassthroughForCmHandle('some-cmHandle',
                     'some-resourceIdentifier', 'application/json',
                     expectedRequestData) >> '{some-json}'
         when: 'write cmHandle passthrough running post api is invoked with json data'
@@ -219,7 +220,7 @@ class DmiRestControllerSpec extends Specification {
             def json = '{"cmHandleProperties" : { "prop1" : "value1", "prop2" : "value2"}}'
         when: 'get resource data PUT api is invoked'
             def response = mvc.perform(
-                    put(getResourceDataForCmHandleUrl).contentType(MediaType.APPLICATION_JSON)
+                    post(getResourceDataForCmHandleUrl).contentType(MediaType.APPLICATION_JSON)
                             .accept(MediaType.APPLICATION_JSON).content(json)
             ).andReturn().response
         then: 'response status is ok'
