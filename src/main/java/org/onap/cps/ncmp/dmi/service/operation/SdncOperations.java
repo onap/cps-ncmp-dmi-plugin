@@ -35,9 +35,11 @@ import java.util.List;
 import org.apache.groovy.parser.antlr4.util.StringUtils;
 import org.onap.cps.ncmp.dmi.config.DmiConfiguration.SdncProperties;
 import org.onap.cps.ncmp.dmi.exception.SdncException;
+import org.onap.cps.ncmp.dmi.model.DataAccessRequest;
 import org.onap.cps.ncmp.dmi.service.client.SdncRestconfClient;
 import org.onap.cps.ncmp.dmi.service.model.ModuleSchema;
 import org.springframework.http.HttpHeaders;
+import org.springframework.http.HttpMethod;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
@@ -110,8 +112,8 @@ public class SdncOperations {
         final var getYangResourceUrl = prepareGetOperationSchemaUrl(nodeId);
         final var httpHeaders = new HttpHeaders();
         httpHeaders.setContentType(MediaType.APPLICATION_JSON);
-        return sdncRestconfClient
-            .postOperationWithJsonData(getYangResourceUrl, moduleProperties, httpHeaders);
+        return sdncRestconfClient.httpOperationWithJsonData(
+            HttpMethod.POST, getYangResourceUrl, moduleProperties, httpHeaders);
     }
 
     /**
@@ -140,7 +142,7 @@ public class SdncOperations {
     }
 
     /**
-     * Write resource data using passthrough running.
+     * Write resource data.
      *
      * @param nodeId      network resource identifier
      * @param resourceId  resource identifier
@@ -148,12 +150,16 @@ public class SdncOperations {
      * @param requestData request data
      * @return {@code ResponseEntity} response entity
      */
-    public ResponseEntity<String> writeResourceDataPassthroughRunning(final String nodeId,
-        final String resourceId, final String contentType, final String requestData) {
-        final var getResourceDataUrl = preparePassthroughRunningUrl(nodeId, resourceId);
+    public ResponseEntity<String> writeData(final DataAccessRequest.OperationEnum operation,
+                                            final String nodeId,
+                                            final String resourceId,
+                                            final String contentType,
+                                            final String requestData) {
+        final var getResourceDataUrl = prepareWriteUrl(nodeId, resourceId);
         final var httpHeaders = new HttpHeaders();
         httpHeaders.setContentType(MediaType.parseMediaType(contentType));
-        return sdncRestconfClient.postOperationWithJsonData(getResourceDataUrl, requestData, httpHeaders);
+        final HttpMethod httpMethod = getHttpMethod(operation);
+        return sdncRestconfClient.httpOperationWithJsonData(httpMethod, getResourceDataUrl, requestData, httpHeaders);
     }
 
     private List<String> buildQueryParamList(final String optionsParamInQuery, final String restconfContentQueryParam) {
@@ -179,7 +185,7 @@ public class SdncOperations {
         return addResource(addTopologyDataUrlwithNode(nodeId), GET_SCHEMA_URL);
     }
 
-    private String preparePassthroughRunningUrl(final String nodeId, final String resourceId) {
+    private String prepareWriteUrl(final String nodeId, final String resourceId) {
         return addResource(addTopologyDataUrlwithNode(nodeId), "/" + resourceId);
     }
 
@@ -231,6 +237,27 @@ public class SdncOperations {
             throw new SdncException("SDNC Response processing failed",
                 "SDNC response is not in the expected format.", jsonPathException);
         }
+    }
+
+    private HttpMethod getHttpMethod(final DataAccessRequest.OperationEnum operation) {
+        HttpMethod httpMethod = null;
+        switch (operation) {
+            case READ:
+                httpMethod = HttpMethod.GET;
+                break;
+            case CREATE:
+                httpMethod = HttpMethod.POST;
+                break;
+            case UPDATE:
+                httpMethod = HttpMethod.PUT;
+                break;
+            case DELETE:
+                httpMethod = HttpMethod.DELETE;
+                break;
+            default:
+                //unreachable code but checkstyle made me do this!
+        }
+        return httpMethod;
     }
 
 }

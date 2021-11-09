@@ -74,31 +74,6 @@ paths:
         '403':
           $ref: 'components.yml#/components/responses/Forbidden'
 
-  /v1/inventory/cmHandles:
-    post:
-      tags:
-        - dmi-plugin-internal
-      summary: register given list of cm handles (internal use only)
-      description: register given list of cm handles (internal use only)
-      x-api-audience: component-internal
-      operationId: registerCmHandles
-      requestBody:
-        description: list of cm handles
-        content:
-          application/json:
-            schema:
-                $ref: 'components.yml#/components/schemas/CmHandles'
-        required: true
-      responses:
-        '201':
-          $ref: 'components.yml#/components/responses/Created'
-        '400':
-          $ref: 'components.yml#/components/responses/BadRequest'
-        '401':
-          $ref: 'components.yml#/components/responses/Unauthorized'
-        '403':
-          $ref: 'components.yml#/components/responses/Forbidden'
-
   /v1/ch/{cmHandle}/moduleResources:
     post:
       description: Retrieve module resources for one or more modules
@@ -128,13 +103,38 @@ paths:
         '403':
           $ref: 'components.yml#/components/responses/Forbidden'
 
+  /v1/inventory/cmHandles:
+    post:
+      tags:
+        - dmi-plugin-internal
+      summary: register given list of cm handles (internal use only)
+      description: register given list of cm handles (internal use only)
+      x-api-audience: component-internal
+      operationId: registerCmHandles
+      requestBody:
+        description: list of cm handles
+        content:
+          application/json:
+            schema:
+                $ref: 'components.yml#/components/schemas/CmHandles'
+        required: true
+      responses:
+        '201':
+          $ref: 'components.yml#/components/responses/Created'
+        '400':
+          $ref: 'components.yml#/components/responses/BadRequest'
+        '401':
+          $ref: 'components.yml#/components/responses/Unauthorized'
+        '403':
+          $ref: 'components.yml#/components/responses/Forbidden'
+
   /v1/ch/{cmHandle}/data/ds/ncmp-datastore:passthrough-operational:
-    put:
+    post:
       tags:
         - dmi-plugin
       summary: Get resource data from passthrough-operational for cm handle
-      description: Get resource data from passthrough-operational for cm handle
-      operationId: getResourceDataOperationalForCmHandle
+      description: Get resource data from passthrough-operational for cm handle. Will support read operations only.
+      operationId: dataAccessPassthroughOperational
       parameters:
         - $ref: 'components.yml#/components/parameters/cmHandleInPath'
         - $ref: 'components.yml#/components/parameters/resourceIdentifierInQuery'
@@ -145,7 +145,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: 'components.yml#/components/schemas/DataAccessReadRequest'
+              $ref: 'components.yml#/components/schemas/DataAccessRequest'
       responses:
         '200':
           $ref: 'components.yml#/components/responses/Ok'
@@ -157,48 +157,22 @@ paths:
           $ref: 'components.yml#/components/responses/Forbidden'
 
   /v1/ch/{cmHandle}/data/ds/ncmp-datastore:passthrough-running:
-    put:
+    post:
       tags:
         - dmi-plugin
-      summary: Get resource data from passthrough-running for cm handle
-      description: Get resource data from passthrough-running for cm handle
-      operationId: getResourceDataPassthroughRunningForCmHandle
+      summary: Get, Create or Update request for data passthrough-running for a cm-handle
+      description: Post request to Get, Create or to Update resource data for a cm-handle. Since all requests need to include additional information in a request body HTTP Post is used for all use cases and the actual operation is defined in the request body instead.
+      operationId: dataAccessPassthroughRunning
       parameters:
         - $ref: 'components.yml#/components/parameters/cmHandleInPath'
         - $ref: 'components.yml#/components/parameters/resourceIdentifierInQuery'
         - $ref: 'components.yml#/components/parameters/acceptParamInHeader'
         - $ref: 'components.yml#/components/parameters/optionsParamInQuery'
       requestBody:
-        description: Operational body
         content:
           application/json:
             schema:
-              $ref: 'components.yml#/components/schemas/DataAccessReadRequest'
-      responses:
-        '200':
-          $ref: 'components.yml#/components/responses/Ok'
-        '400':
-          $ref: 'components.yml#/components/responses/BadRequest'
-        '401':
-          $ref: 'components.yml#/components/responses/Unauthorized'
-        '403':
-          $ref: 'components.yml#/components/responses/Forbidden'
-
-    post:
-      description: Write data for a cmHandle using passthrough-running
-      tags:
-        - dmi-plugin
-      summary: Write data for a cmHandle
-      operationId: writeDataByPassthroughRunningForCmHandle
-      parameters:
-        - $ref: 'components.yml#/components/parameters/cmHandleInPath'
-        - $ref: 'components.yml#/components/parameters/resourceIdentifierInQuery'
-      requestBody:
-        required: true
-        content:
-          application/json:
-            schema:
-              $ref: 'components.yml#/components/schemas/DataAccessWriteRequest'
+              $ref: 'components.yml#/components/schemas/DataAccessRequest'
       responses:
         '201':
           $ref: 'components.yml#/components/responses/Created'
@@ -208,4 +182,3 @@ paths:
           $ref: 'components.yml#/components/responses/Unauthorized'
         '403':
           $ref: 'components.yml#/components/responses/Forbidden'
-
