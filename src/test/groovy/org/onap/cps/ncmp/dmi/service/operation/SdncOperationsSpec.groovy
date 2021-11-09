@@ -29,10 +29,16 @@ import org.spockframework.spring.SpringBean
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.boot.test.context.SpringBootTest
 import org.springframework.http.HttpHeaders
+import org.springframework.http.HttpMethod
 import org.springframework.http.HttpStatus
 import org.springframework.http.ResponseEntity
 import org.springframework.test.context.ContextConfiguration
 import spock.lang.Specification
+
+import static org.onap.cps.ncmp.dmi.model.DataAccessRequest.OperationEnum.CREATE
+import static org.onap.cps.ncmp.dmi.model.DataAccessRequest.OperationEnum.DELETE
+import static org.onap.cps.ncmp.dmi.model.DataAccessRequest.OperationEnum.UPDATE
+import static org.onap.cps.ncmp.dmi.model.DataAccessRequest.OperationEnum.READ
 
 @SpringBootTest
 @ContextConfiguration(classes = [DmiConfiguration.SdncProperties, SdncOperations])
@@ -106,7 +112,7 @@ class SdncOperationsSpec extends Specification {
         when: 'get module resources is called with the expected parameters'
             objectUnderTest.getModuleResource(nodeId, 'some-json-data')
         then: 'the SDNC Rest client is invoked with the correct URL and json data'
-            1 * mockSdncRestClient.postOperationWithJsonData(expectedUrl, 'some-json-data', _ as HttpHeaders)
+            1 * mockSdncRestClient.httpOperationWithJsonData(HttpMethod.POST, expectedUrl, 'some-json-data', _ as HttpHeaders)
     }
 
     def 'Get resource data from node to SDNC.'() {
@@ -119,13 +125,19 @@ class SdncOperationsSpec extends Specification {
             1 * mockSdncRestClient.getOperation(expectedUrl, _ as HttpHeaders)
     }
 
-    def 'Write resource data to SDNC.'() {
+    def 'Write resource data with #scenario operation to SDNC.'() {
         given: 'expected url, topology-id, sdncOperation object'
             def expectedUrl = '/rests/data/network-topology:network-topology/topology=test-topology/node=node1/yang-ext:mount/testResourceId'
-        when: 'write resource data for pass through running is called'
-            objectUnderTest.writeResourceDataPassthroughRunning('node1', 'testResourceId', 'application/json', 'requestData')
-        then: 'the post operation is executed with the correct URL and data'
-            1 * mockSdncRestClient.postOperationWithJsonData(expectedUrl, 'requestData', _ as HttpHeaders)
+        when: 'write resource data for passthrough running is called'
+            objectUnderTest.writeData(operationEnum, 'node1', 'testResourceId', 'application/json', 'requestData')
+        then: 'the #expectedHttpMethod operation is executed with the correct URL and data'
+            1 * mockSdncRestClient.httpOperationWithJsonData(expectedHttpMethod, expectedUrl, 'requestData', _ as HttpHeaders)
+        where: 'the following values are used'
+            scenario  | operationEnum  || expectedHttpMethod
+            'Create'  | CREATE         || HttpMethod.POST
+            'Update'  | UPDATE         || HttpMethod.PUT
+            'Read'    | READ           || HttpMethod.GET
+            'Delete'  | DELETE         || HttpMethod.DELETE
     }
 
     def 'build query param list for SDNC where options contains a #scenario'() {

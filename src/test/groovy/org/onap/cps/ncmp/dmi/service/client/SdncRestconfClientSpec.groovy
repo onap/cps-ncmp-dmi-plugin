@@ -49,7 +49,7 @@ class SdncRestconfClientSpec extends Specification {
             result == mockResponseEntity
     }
 
-    def 'SDNC POST operation called.'() {
+    def 'SDNC #scenario operation called.'() {
         given: 'json data'
             def jsonData = 'some-json'
         and: 'a url for get module resources'
@@ -59,12 +59,18 @@ class SdncRestconfClientSpec extends Specification {
         and: 'the rest template returns a valid response entity'
             def mockResponseEntity = Mock(ResponseEntity)
         when: 'get module resources is invoked'
-            def result = objectUnderTest.postOperationWithJsonData(getModuleResourceUrl, jsonData, new HttpHeaders())
+            def result = objectUnderTest.httpOperationWithJsonData(expectedHttpMethod, getModuleResourceUrl, jsonData, new HttpHeaders())
         then: 'the rest template is called with the correct uri and json in the body'
             1 * mockRestTemplate.exchange({ it.toString() == 'http://some-uri/getModuleResourceUrl' },
-                    HttpMethod.POST, { it.body.contains(jsonData) }, String.class) >> mockResponseEntity
+                    expectedHttpMethod, { it.body.contains(jsonData) }, String.class) >> mockResponseEntity
         and: 'the output of the method is the same as the output from the test template'
             result == mockResponseEntity
+        where: 'the following values are used'
+            scenario || expectedHttpMethod
+            'POST'   || HttpMethod.POST
+            'PUT'    || HttpMethod.PUT
+            'GET'    || HttpMethod.GET
+            'DELETE' || HttpMethod.DELETE
     }
 
     def 'SDNC GET operation with header.'() {

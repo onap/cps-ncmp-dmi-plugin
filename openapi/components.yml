@@ -73,21 +73,12 @@ components:
         revision:
           $ref: '#/components/schemas/revision'
 
-    DataAccessReadRequest:
+    DataAccessRequest:
       type: object
       properties:
         operation:
           type: string
-          enum: [ read ]
-        cmHandleProperties:
-          $ref: '#/components/schemas/cmHandleProperties'
-
-    DataAccessWriteRequest:
-      type: object
-      properties:
-        operation:
-          type: string
-          enum: [ create ]
+          enum: [ read, create, update, delete ]
         dataType:
           type: string
         data:
