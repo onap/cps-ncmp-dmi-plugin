@@ -26,6 +26,7 @@ import org.onap.cps.ncmp.dmi.TestUtils
 import org.onap.cps.ncmp.dmi.exception.DmiException
 import org.onap.cps.ncmp.dmi.exception.ModuleResourceNotFoundException
 import org.onap.cps.ncmp.dmi.exception.ModulesNotFoundException
+import org.onap.cps.ncmp.dmi.model.DataAccessRequest
 import org.onap.cps.ncmp.dmi.service.model.ModuleReference
 import org.onap.cps.ncmp.dmi.model.ModuleSet
 import org.onap.cps.ncmp.dmi.model.ModuleSetSchemas
@@ -188,28 +189,30 @@ class DmiRestControllerSpec extends Specification {
                     ['prop1': 'value1', 'prop2': 'value2'])
     }
 
-    def 'Write data using passthrough running for a cm handle using #scenario.'() {
-        given: 'write data for cmHandle url and jsonData'
+    def '#scenario using passthrough running for a cm handle.'() {
+        given: 'write or update data for cmHandle url and jsonData'
             def writeDataforCmHandlePassthroughRunning = "${basePathV1}/ch/some-cmHandle/data/ds/ncmp-datastore:passthrough-running" +
                     "?resourceIdentifier=some-resourceIdentifier"
             def jsonData = TestUtils.getResourceFileContent(requestBodyFile)
         and: 'dmi service is called'
-            mockDmiService.writeResourceDataPassthroughForCmHandle('some-cmHandle',
+            mockDmiService.writeOrUpdateResourceDataPassthroughForCmHandle(operationEnum, 'some-cmHandle',
                     'some-resourceIdentifier', 'application/json',
                     expectedRequestData) >> '{some-json}'
-        when: 'write cmHandle passthrough running post api is invoked with json data'
+        when: 'write or update cmHandle passthrough running post api is invoked with json data'
             def response = mvc.perform(
                     post(writeDataforCmHandlePassthroughRunning).contentType(MediaType.APPLICATION_JSON)
                             .content(jsonData)
             ).andReturn().response
-       then: 'response status is 201 CREATED'
-            response.status == HttpStatus.CREATED.value()
+       then: 'response status is #expectedResponse'
+            response.status == expectedResponse
         and: 'the data in the request body is as expected'
             response.getContentAsString() == '{some-json}'
         where: 'given request body and data'
-            scenario                  | requestBodyFile           || expectedRequestData
-            'data with normal chars'  | 'dataWithNormalChar.json' || 'normal request body'
-            'data with special chars' | 'dataWithSpecialChar.json'|| 'data with quote \" and new line \n'
+            scenario                         | requestBodyFile                 | operationEnum                          || expectedRequestData                  | expectedResponse
+            'write data with normal chars'   | 'createDataWithNormalChar.json' | DataAccessRequest.OperationEnum.CREATE || 'normal request body'                | HttpStatus.CREATED.value()
+            'write data with special chars'  | 'createDataWithSpecialChar.json'| DataAccessRequest.OperationEnum.CREATE || 'data with quote \" and new line \n' | HttpStatus.CREATED.value()
+            'update data with normal chars'  | 'updateDataWithNormalChar.json' | DataAccessRequest.OperationEnum.UPDATE || 'normal request body'                | HttpStatus.OK.value()
+            'update data with special chars' | 'updateDataWithSpecialChar.json'| DataAccessRequest.OperationEnum.UPDATE || 'data with quote \" and new line \n' | HttpStatus.OK.value()
     }
 
     def 'Get resource data for pass-through running from cm handle with #scenario value in resource identifier param.'() {
@@ -219,7 +222,7 @@ class DmiRestControllerSpec extends Specification {
             def json = '{"cmHandleProperties" : { "prop1" : "value1", "prop2" : "value2"}}'
         when: 'get resource data PUT api is invoked'
             def response = mvc.perform(
-                    put(getResourceDataForCmHandleUrl).contentType(MediaType.APPLICATION_JSON)
+                    post(getResourceDataForCmHandleUrl).contentType(MediaType.APPLICATION_JSON)
                             .accept(MediaType.APPLICATION_JSON).content(json)
             ).andReturn().response
         then: 'response status is ok'

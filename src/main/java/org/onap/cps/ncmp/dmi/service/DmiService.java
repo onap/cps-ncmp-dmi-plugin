@@ -24,6 +24,7 @@ import java.util.List;
 import java.util.Map;
 import javax.validation.constraints.NotNull;
 import org.onap.cps.ncmp.dmi.exception.DmiException;
+import org.onap.cps.ncmp.dmi.model.DataAccessRequest;
 import org.onap.cps.ncmp.dmi.model.ModuleSet;
 import org.onap.cps.ncmp.dmi.model.YangResources;
 import org.onap.cps.ncmp.dmi.service.model.ModuleReference;
@@ -87,14 +88,14 @@ public interface DmiService {
      * @param cmHandlePropertyMap cm handle properties
      * @return {@code Object} response from network function
      */
-    Object getResourceDataPassThroughRunningForCmHandle(@NotNull String cmHandle,
+    String getResourceDataPassThroughRunningForCmHandle(@NotNull String cmHandle,
         @NotNull String resourceIdentifier,
         String acceptParamInHeader,
         String optionsParamInQuery,
         Map<String, String> cmHandlePropertyMap);
 
     /**
-     * Write resource data to sdnc using passthrough running.
+     * Write or update resource data to sdnc using passthrough running.
      *
      * @param cmHandle           cmHandle
      * @param resourceIdentifier resource identifier
@@ -102,6 +103,7 @@ public interface DmiService {
      * @param data               request data
      * @return response from sdnc
      */
-    String writeResourceDataPassthroughForCmHandle(String cmHandle, String resourceIdentifier, String dataType,
-        String data);
+    String writeOrUpdateResourceDataPassthroughForCmHandle(DataAccessRequest.OperationEnum operation, String cmHandle,
+                                                           String resourceIdentifier, String dataType,
+                                                           String data);
 }

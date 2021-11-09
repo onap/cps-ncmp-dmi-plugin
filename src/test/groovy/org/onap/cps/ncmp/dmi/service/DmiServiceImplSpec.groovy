@@ -30,6 +30,7 @@ import org.onap.cps.ncmp.dmi.exception.DmiException
 import org.onap.cps.ncmp.dmi.exception.ModuleResourceNotFoundException
 import org.onap.cps.ncmp.dmi.exception.ModulesNotFoundException
 import org.onap.cps.ncmp.dmi.exception.ResourceDataNotFound
+import org.onap.cps.ncmp.dmi.model.DataAccessRequest
 import org.onap.cps.ncmp.dmi.service.model.ModuleReference
 import org.onap.cps.ncmp.dmi.model.YangResource
 import org.onap.cps.ncmp.dmi.model.YangResources
@@ -242,42 +243,46 @@ class DmiServiceImplSpec extends Specification {
             response == 'response json'
     }
 
-    def 'Write resource data for passthrough running for the given cm handle with a #scenario from sdnc.'() {
+    def 'Write or update resource data for passthrough running for the given cm handle with a #scenario from sdnc.'() {
         given: 'sdnc returns a response with #scenario'
-            mockSdncOperations.writeResourceDataPassthroughRunning(_, _, _, _) >> new ResponseEntity<String>('response json', httpResponse)
+            mockSdncOperations.writeOrUpdateResourceDataPassthroughRunning(operationEnum, _, _, _, _) >> new ResponseEntity<String>('response json', httpResponse)
         when: 'write resource data for cm handle method invoked'
-            def response = objectUnderTest.writeResourceDataPassthroughForCmHandle('some-cmHandle',
+            def response = objectUnderTest.writeOrUpdateResourceDataPassthroughForCmHandle(operationEnum,'some-cmHandle',
                 'some-resourceIdentifier', 'some-dataType', '{some-data}')
         then: 'the response contains the expected json data from sdnc'
             response == 'response json'
         where: 'the following values are used'
-            scenario               | httpResponse
-            '200 OK response'      | HttpStatus.OK
-            '201 CREATED response' | HttpStatus.CREATED
+            scenario                            | httpResponse       | operationEnum
+            '200 OK with an update request'     | HttpStatus.OK      | DataAccessRequest.OperationEnum.UPDATE
+            '201 CREATED with a create request' | HttpStatus.CREATED | DataAccessRequest.OperationEnum.CREATE
     }
 
-    def 'Write resource data using for passthrough running for the given cm handle with #scenario.'() {
+    def 'Write or update resource data using for passthrough running for the given cm handle with #scenario.'() {
         given: 'sdnc returns a created response'
-            mockSdncOperations.writeResourceDataPassthroughRunning('some-cmHandle',
+            mockSdncOperations.writeOrUpdateResourceDataPassthroughRunning(operationEnum, 'some-cmHandle',
                 'some-resourceIdentifier', 'some-dataType', requestBody) >> new ResponseEntity<String>('response json', HttpStatus.CREATED)
         when: 'write resource data from cm handles service method invoked'
-            def response = objectUnderTest.writeResourceDataPassthroughForCmHandle('some-cmHandle',
+            def response = objectUnderTest.writeOrUpdateResourceDataPassthroughForCmHandle(operationEnum, 'some-cmHandle',
                 'some-resourceIdentifier', 'some-dataType', requestBody)
         then: 'response have expected json'
             response == 'response json'
         where: 'given request body'
-            scenario                           | requestBody
-            'data contains normal char'        | 'normal char string'
-            'data contains quote and new line' | 'data with quote " and \n new line'
+            scenario                           | requestBody                         | operationEnum
+            'data contains normal char'        | 'normal char string'                | DataAccessRequest.OperationEnum.CREATE
+            'data contains quote and new line' | 'data with quote " and \n new line' | DataAccessRequest.OperationEnum.UPDATE
     }
 
-    def 'Write resource data for passthrough running with a 500 response from sdnc.'() {
+    def '#scenario resource data for passthrough running with a 500 response from sdnc.'() {
         given: 'sdnc returns a 500 response for the write operation'
-            mockSdncOperations.writeResourceDataPassthroughRunning(_, _, _, _) >> new ResponseEntity<String>('response json', HttpStatus.INTERNAL_SERVER_ERROR)
+            mockSdncOperations.writeOrUpdateResourceDataPassthroughRunning(operationEnum, _, _, _, _) >> new ResponseEntity<String>('response json', HttpStatus.INTERNAL_SERVER_ERROR)
         when: 'write resource data for pass through method is invoked'
-            objectUnderTest.writeResourceDataPassthroughForCmHandle('some-cmHandle',
+            objectUnderTest.writeOrUpdateResourceDataPassthroughForCmHandle(operationEnum, 'some-cmHandle',
                 'some-resourceIdentifier', 'some-dataType', _ as String)
         then: 'a dmi exception is thrown'
             thrown(DmiException.class)
+        where: 'the following values are used'
+            scenario  | operationEnum
+            'Write'   | DataAccessRequest.OperationEnum.CREATE
+            'Update'  | DataAccessRequest.OperationEnum.UPDATE
     }
 }

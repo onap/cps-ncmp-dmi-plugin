@@ -67,6 +67,24 @@ class SdncRestconfClientSpec extends Specification {
             result == mockResponseEntity
     }
 
+    def 'SDNC PUT operation called'() {
+        given: 'json data'
+            def jsonData = 'some json'
+        and: 'a url for get module resources'
+            def putModuleResourcesUrl = '/putModuleResourcesUrl'
+        and: 'configuration data'
+            setupTestConfigurationData()
+        and: 'the rest template returns a valid response entity'
+            def mockResponseEntity = Mock(ResponseEntity)
+        when: 'put module resources is invoked'
+            def result = objectUnderTest.putOperationWithJsonData(putModuleResourcesUrl, jsonData, new HttpHeaders())
+        then: 'the rest template is called with the correct uri and json body'
+            1 * mockRestTemplate.exchange({ it.toString() == 'http://some-uri/putModuleResourcesUrl' },
+                HttpMethod.PUT, { it.body.contains(jsonData) }, String.class) >> mockResponseEntity
+        and: 'the method output is the same as the test template output'
+            result == mockResponseEntity
+    }
+
     def 'SDNC GET operation with header.'() {
         given: 'a get url'
             def getResourceUrl = '/getResourceUrl'

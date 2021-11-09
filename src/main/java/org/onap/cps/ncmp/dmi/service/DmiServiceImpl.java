@@ -38,6 +38,7 @@ import org.onap.cps.ncmp.dmi.exception.DmiException;
 import org.onap.cps.ncmp.dmi.exception.ModuleResourceNotFoundException;
 import org.onap.cps.ncmp.dmi.exception.ModulesNotFoundException;
 import org.onap.cps.ncmp.dmi.exception.ResourceDataNotFound;
+import org.onap.cps.ncmp.dmi.model.DataAccessRequest;
 import org.onap.cps.ncmp.dmi.model.ModuleSet;
 import org.onap.cps.ncmp.dmi.model.ModuleSetSchemas;
 import org.onap.cps.ncmp.dmi.model.YangResource;
@@ -166,7 +167,7 @@ public class DmiServiceImpl implements DmiService {
     }
 
     @Override
-    public Object getResourceDataPassThroughRunningForCmHandle(final @NotNull String cmHandle,
+    public String getResourceDataPassThroughRunningForCmHandle(final @NotNull String cmHandle,
         final @NotNull String resourceIdentifier,
         final String acceptParamInHeader,
         final String optionsParamInQuery,
@@ -181,10 +182,13 @@ public class DmiServiceImpl implements DmiService {
     }
 
     @Override
-    public String writeResourceDataPassthroughForCmHandle(final String cmHandle, final String resourceIdentifier,
-        final String dataType, final String data) {
+    public String writeOrUpdateResourceDataPassthroughForCmHandle(final DataAccessRequest.OperationEnum operation,
+                                                                  final String cmHandle,
+                                                                  final String resourceIdentifier,
+                                                                  final String dataType, final String data) {
         final ResponseEntity<String> responseEntity =
-            sdncOperations.writeResourceDataPassthroughRunning(cmHandle, resourceIdentifier, dataType, data);
+            sdncOperations.writeOrUpdateResourceDataPassthroughRunning(operation, cmHandle, resourceIdentifier,
+                dataType, data);
         if (responseEntity.getStatusCode().is2xxSuccessful()) {
             return responseEntity.getBody();
         } else {
