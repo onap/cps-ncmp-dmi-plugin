@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "130244fc_fbe456eb",
+        "filename": "src/main/java/org/onap/cps/ncmp/dmi/rest/controller/DmiRestController.java",
+        "patchSetId": 5
+      },
+      "lineNbr": 158,
+      "author": {
+        "id": 6738
+      },
+      "writtenOn": "2021-11-11T15:33:40Z",
+      "side": 1,
+      "message": "question: why the httpStatus is not being assigned to HTTStatus.OK in READ? There is no default value assigned to the variable httpStatus.",
+      "range": {
+        "startLine": 158,
+        "startChar": 0,
+        "endLine": 158,
+        "endChar": 26
+      },
+      "revId": "6fa43d58c467a8d26dd6a6f76873114a82cb7191",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "d37a42f5_566de8e9",
+        "filename": "src/test/groovy/org/onap/cps/ncmp/dmi/rest/controller/DmiRestControllerSpec.groovy",
+        "patchSetId": 5
+      },
+      "lineNbr": 237,
+      "author": {
+        "id": 6738
+      },
+      "writtenOn": "2021-11-11T15:33:40Z",
+      "side": 1,
+      "message": "READ scenario missing .\nAlso scenario with no \u0027operation value\u0027 should also be included",
+      "range": {
+        "startLine": 237,
+        "startChar": 12,
+        "endLine": 237,
+        "endChar": 20
+      },
+      "revId": "6fa43d58c467a8d26dd6a6f76873114a82cb7191",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    }
+  ]
+}
