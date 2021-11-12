@@ -94,6 +94,54 @@
     },
     {
       "key": {
+        "uuid": "9727b76f_40d5e0c4",
+        "filename": "src/main/java/org/onap/cps/ncmp/dmi/service/DmiService.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 91,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2021-11-12T13:26:27Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "cc300cf8_185e945f",
+      "range": {
+        "startLine": 91,
+        "startChar": 11,
+        "endLine": 91,
+        "endChar": 56
+      },
+      "revId": "5a54b04bcab5f3dd3860737e965a9dbebb21e090",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7e9aef74_6b5fffc6",
+        "filename": "src/main/java/org/onap/cps/ncmp/dmi/service/DmiService.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 91,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2021-11-12T13:26:27Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "2ae63012_8054da50",
+      "range": {
+        "startLine": 91,
+        "startChar": 4,
+        "endLine": 91,
+        "endChar": 10
+      },
+      "revId": "5a54b04bcab5f3dd3860737e965a9dbebb21e090",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "76b212f4_e61d0bf3",
         "filename": "src/main/java/org/onap/cps/ncmp/dmi/service/DmiServiceImpl.java",
         "patchSetId": 3
@@ -160,6 +208,30 @@
       "revId": "5a54b04bcab5f3dd3860737e965a9dbebb21e090",
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "a57bcdf4_6e214ad4",
+        "filename": "src/main/java/org/onap/cps/ncmp/dmi/service/operation/SdncOperations.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 165,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2021-11-12T13:26:27Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "f5826f04_ab849693",
+      "range": {
+        "startLine": 161,
+        "startChar": 2,
+        "endLine": 165,
+        "endChar": 9
+      },
+      "revId": "5a54b04bcab5f3dd3860737e965a9dbebb21e090",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
     }
   ]
 }
