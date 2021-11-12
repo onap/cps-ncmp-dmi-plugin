@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "69ab99f0_54c1619b",
+        "filename": "src/main/java/org/onap/cps/ncmp/dmi/rest/controller/DmiRestController.java",
+        "patchSetId": 6
+      },
+      "lineNbr": 152,
+      "author": {
+        "id": 7744
+      },
+      "writtenOn": "2021-11-12T11:30:50Z",
+      "side": 1,
+      "message": "Yes, because if you don\u0027t specify the operation it defaults to READ, which returns an OK status",
+      "parentUuid": "7d17a2a4_0c1d3c00",
+      "range": {
+        "startLine": 151,
+        "startChar": 9,
+        "endLine": 152,
+        "endChar": 39
+      },
+      "revId": "5ded93d2d44793a47120ffb6de34b380a007ca8e",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "70903228_6aaa36e7",
         "filename": "src/main/java/org/onap/cps/ncmp/dmi/service/DmiService.java",
         "patchSetId": 6
@@ -36,6 +60,30 @@
       "writtenOn": "2021-11-12T11:21:18Z",
       "side": 1,
       "message": "Are finals missing from this or is this ok?",
+      "range": {
+        "startLine": 93,
+        "startChar": 21,
+        "endLine": 95,
+        "endChar": 34
+      },
+      "revId": "5ded93d2d44793a47120ffb6de34b380a007ca8e",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "ddc7a037_4c286174",
+        "filename": "src/main/java/org/onap/cps/ncmp/dmi/service/DmiService.java",
+        "patchSetId": 6
+      },
+      "lineNbr": 95,
+      "author": {
+        "id": 7744
+      },
+      "writtenOn": "2021-11-12T11:30:50Z",
+      "side": 1,
+      "message": "It\u0027s okay, none of the other interfaces have final defined on the parameters.",
+      "parentUuid": "70903228_6aaa36e7",
       "range": {
         "startLine": 93,
         "startChar": 21,
