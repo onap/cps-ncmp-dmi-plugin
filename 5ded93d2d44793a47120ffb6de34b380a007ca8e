@@ -167,6 +167,30 @@
     },
     {
       "key": {
+        "uuid": "f374b01f_bcdf97ca",
+        "filename": "src/main/java/org/onap/cps/ncmp/dmi/service/operation/SdncOperations.java",
+        "patchSetId": 6
+      },
+      "lineNbr": 258,
+      "author": {
+        "id": 7744
+      },
+      "writtenOn": "2021-11-12T14:08:53Z",
+      "side": 1,
+      "message": "No, but we need a default block in the switch statement. I wasn\u0027t sure if there was another value that would work better here",
+      "parentUuid": "9d8e88ad_4048ff2e",
+      "range": {
+        "startLine": 257,
+        "startChar": 12,
+        "endLine": 258,
+        "endChar": 34
+      },
+      "revId": "5ded93d2d44793a47120ffb6de34b380a007ca8e",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "564f5a2a_2b78e5c1",
         "filename": "src/test/groovy/org/onap/cps/ncmp/dmi/rest/controller/DmiRestControllerSpec.groovy",
         "patchSetId": 6
@@ -187,6 +211,30 @@
       "revId": "5ded93d2d44793a47120ffb6de34b380a007ca8e",
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "852a0b7d_49b47534",
+        "filename": "src/test/groovy/org/onap/cps/ncmp/dmi/rest/controller/DmiRestControllerSpec.groovy",
+        "patchSetId": 6
+      },
+      "lineNbr": 215,
+      "author": {
+        "id": 7744
+      },
+      "writtenOn": "2021-11-12T14:08:53Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "564f5a2a_2b78e5c1",
+      "range": {
+        "startLine": 211,
+        "startChar": 47,
+        "endLine": 215,
+        "endChar": 29
+      },
+      "revId": "5ded93d2d44793a47120ffb6de34b380a007ca8e",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
     },
     {
       "key": {
@@ -213,6 +261,30 @@
     },
     {
       "key": {
+        "uuid": "433109f6_1bc751c6",
+        "filename": "src/test/groovy/org/onap/cps/ncmp/dmi/service/DmiServiceImplSpec.groovy",
+        "patchSetId": 6
+      },
+      "lineNbr": 231,
+      "author": {
+        "id": 7744
+      },
+      "writtenOn": "2021-11-12T14:08:53Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "02aef2ae_1f9a7701",
+      "range": {
+        "startLine": 231,
+        "startChar": 31,
+        "endLine": 231,
+        "endChar": 43
+      },
+      "revId": "5ded93d2d44793a47120ffb6de34b380a007ca8e",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "f7a1f5d6_cb2ee137",
         "filename": "src/test/groovy/org/onap/cps/ncmp/dmi/service/DmiServiceImplSpec.groovy",
         "patchSetId": 6
@@ -233,6 +305,30 @@
       "revId": "5ded93d2d44793a47120ffb6de34b380a007ca8e",
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "815d767d_a4aa9fa4",
+        "filename": "src/test/groovy/org/onap/cps/ncmp/dmi/service/DmiServiceImplSpec.groovy",
+        "patchSetId": 6
+      },
+      "lineNbr": 263,
+      "author": {
+        "id": 7744
+      },
+      "writtenOn": "2021-11-12T14:08:53Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "f7a1f5d6_cb2ee137",
+      "range": {
+        "startLine": 263,
+        "startChar": 52,
+        "endLine": 263,
+        "endChar": 76
+      },
+      "revId": "5ded93d2d44793a47120ffb6de34b380a007ca8e",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
     },
     {
       "key": {
@@ -259,6 +355,30 @@
     },
     {
       "key": {
+        "uuid": "b57fc791_df032ba4",
+        "filename": "src/test/groovy/org/onap/cps/ncmp/dmi/service/client/SdncRestconfClientSpec.groovy",
+        "patchSetId": 6
+      },
+      "lineNbr": 71,
+      "author": {
+        "id": 7744
+      },
+      "writtenOn": "2021-11-12T14:08:53Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "d1fbfc8a_7d251065",
+      "range": {
+        "startLine": 71,
+        "startChar": 12,
+        "endLine": 71,
+        "endChar": 38
+      },
+      "revId": "5ded93d2d44793a47120ffb6de34b380a007ca8e",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "b679b933_74190f37",
         "filename": "src/test/groovy/org/onap/cps/ncmp/dmi/service/operation/SdncOperationsSpec.groovy",
         "patchSetId": 6
@@ -270,6 +390,30 @@
       "writtenOn": "2021-11-12T13:26:27Z",
       "side": 1,
       "message": "NB: Might want to use static imports so you can drop the HttpMethod bit",
+      "range": {
+        "startLine": 138,
+        "startChar": 42,
+        "endLine": 141,
+        "endChar": 58
+      },
+      "revId": "5ded93d2d44793a47120ffb6de34b380a007ca8e",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "7906ccee_ec3b72fe",
+        "filename": "src/test/groovy/org/onap/cps/ncmp/dmi/service/operation/SdncOperationsSpec.groovy",
+        "patchSetId": 6
+      },
+      "lineNbr": 141,
+      "author": {
+        "id": 7744
+      },
+      "writtenOn": "2021-11-12T14:08:53Z",
+      "side": 1,
+      "message": "I can for everything besides delete. Because DELETE has the same name as the OperationEnum, both can\u0027t be shortened to DELETE. So I decided to just keep HttpMethod as the full reference across all of them to keep it consistent.",
+      "parentUuid": "b679b933_74190f37",
       "range": {
         "startLine": 138,
         "startChar": 42,
