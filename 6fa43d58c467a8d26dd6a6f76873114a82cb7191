@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "097d950c_d5dcc7ed",
+        "filename": "src/main/java/org/onap/cps/ncmp/dmi/rest/controller/DmiRestController.java",
+        "patchSetId": 5
+      },
+      "lineNbr": 158,
+      "author": {
+        "id": 7744
+      },
+      "writtenOn": "2021-11-12T10:07:41Z",
+      "side": 1,
+      "message": "READ is assigned to HttpStatus.OK here Aditya. Both cases UPDATE and READ are because they come before the break.\n\nAnd the default value is HttpsStatus.BAD_REQUEST.",
+      "parentUuid": "130244fc_fbe456eb",
+      "range": {
+        "startLine": 158,
+        "startChar": 0,
+        "endLine": 158,
+        "endChar": 26
+      },
+      "revId": "6fa43d58c467a8d26dd6a6f76873114a82cb7191",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "d37a42f5_566de8e9",
         "filename": "src/test/groovy/org/onap/cps/ncmp/dmi/rest/controller/DmiRestControllerSpec.groovy",
         "patchSetId": 5
@@ -45,6 +69,30 @@
       "revId": "6fa43d58c467a8d26dd6a6f76873114a82cb7191",
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "d89df957_60a1f9bd",
+        "filename": "src/test/groovy/org/onap/cps/ncmp/dmi/rest/controller/DmiRestControllerSpec.groovy",
+        "patchSetId": 5
+      },
+      "lineNbr": 237,
+      "author": {
+        "id": 7744
+      },
+      "writtenOn": "2021-11-12T10:07:41Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "d37a42f5_566de8e9",
+      "range": {
+        "startLine": 237,
+        "startChar": 12,
+        "endLine": 237,
+        "endChar": 20
+      },
+      "revId": "6fa43d58c467a8d26dd6a6f76873114a82cb7191",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
     }
   ]
 }
