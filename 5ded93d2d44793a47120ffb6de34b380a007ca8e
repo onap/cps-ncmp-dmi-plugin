@@ -191,6 +191,30 @@
     },
     {
       "key": {
+        "uuid": "bb1626bc_4ecbf177",
+        "filename": "src/main/java/org/onap/cps/ncmp/dmi/service/operation/SdncOperations.java",
+        "patchSetId": 6
+      },
+      "lineNbr": 258,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2021-11-12T15:13:59Z",
+      "side": 1,
+      "message": "OK, just initalize the variable with null so",
+      "parentUuid": "f374b01f_bcdf97ca",
+      "range": {
+        "startLine": 257,
+        "startChar": 12,
+        "endLine": 258,
+        "endChar": 34
+      },
+      "revId": "5ded93d2d44793a47120ffb6de34b380a007ca8e",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "564f5a2a_2b78e5c1",
         "filename": "src/test/groovy/org/onap/cps/ncmp/dmi/rest/controller/DmiRestControllerSpec.groovy",
         "patchSetId": 6
