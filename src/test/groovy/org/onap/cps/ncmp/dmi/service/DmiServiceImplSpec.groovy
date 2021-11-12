@@ -40,6 +40,9 @@ import org.springframework.http.HttpStatus
 import org.springframework.http.ResponseEntity
 import spock.lang.Specification
 
+import static org.onap.cps.ncmp.dmi.model.DataAccessRequest.OperationEnum.CREATE
+import static org.onap.cps.ncmp.dmi.model.DataAccessRequest.OperationEnum.UPDATE
+
 class DmiServiceImplSpec extends Specification {
 
 
@@ -191,8 +194,8 @@ class DmiServiceImplSpec extends Specification {
             thrownException.cause == jsonProcessingException
     }
 
-    def 'Get resource data for pass through operational from cm handle.'() {
-        given: 'cm-handle, pass through parameter, resourceId, accept header, fields, depth'
+    def 'Get resource data for passthrough operational.'() {
+        given: 'cm-handle, passthrough parameter, resourceId, accept header, fields, depth'
             def cmHandle = 'testCmHandle'
             def resourceId = 'testResourceId'
             def acceptHeaderParam = 'testAcceptParam'
@@ -201,31 +204,32 @@ class DmiServiceImplSpec extends Specification {
         and: 'sdnc operation returns OK response'
             mockSdncOperations.getResouceDataForOperationalAndRunning(cmHandle, resourceId, optionsParam, acceptHeaderParam, contentQuery) >> new ResponseEntity<>('response json', HttpStatus.OK)
         when: 'get resource data from cm handles service method invoked'
-            def response = objectUnderTest.getResourceDataOperationalForCmHandle(cmHandle,
+            def response = objectUnderTest.getResourceData(cmHandle,
                 resourceId, acceptHeaderParam,
-                optionsParam, null)
+                optionsParam, contentQuery)
         then: 'response have expected json'
             response == 'response json'
     }
 
-    def 'Get resource data from cm handle with exception.'() {
-        given: 'cm-handle, pass through parameter, resourceId, accept header, fields, depth'
+    def 'Get resource data with not found exception.'() {
+        given: 'cm-handle, passthrough parameter, resourceId, accept header, fields, depth, query param'
             def cmHandle = 'testCmHandle'
             def resourceId = 'testResourceId'
             def acceptHeaderParam = 'testAcceptParam'
             def optionsParam = '(fields=x/y/z,depth=10,test=abc)'
+            def restConfQueryParam = 'content=config'
         and: 'sdnc operation returns "NOT_FOUND" response'
             mockSdncOperations.getResouceDataForOperationalAndRunning(cmHandle, resourceId, optionsParam, acceptHeaderParam, _ as String) >> new ResponseEntity<>(HttpStatus.NOT_FOUND)
         when: 'get resource data from cm handles service method invoked'
-            objectUnderTest.getResourceDataOperationalForCmHandle(cmHandle,
+            objectUnderTest.getResourceData(cmHandle,
                 resourceId, acceptHeaderParam,
-                optionsParam, null)
+                optionsParam, restConfQueryParam)
         then: 'resource data not found'
             thrown(ResourceDataNotFound.class)
     }
 
-    def 'Get resource data for pass through running from cm handle.'() {
-        given: 'cm-handle, pass through parameter, resourceId, accept header, fields, depth'
+    def 'Get resource data for passthrough running.'() {
+        given: 'cm-handle, passthrough parameter, resourceId, accept header, fields, depth'
             def cmHandle = 'testCmHandle'
             def resourceId = 'testResourceId'
             def acceptHeaderParam = 'testAcceptParam'
@@ -235,47 +239,43 @@ class DmiServiceImplSpec extends Specification {
             mockSdncOperations.getResouceDataForOperationalAndRunning(cmHandle, resourceId, optionsParam,
                 acceptHeaderParam, contentQuery) >> new ResponseEntity<>('response json', HttpStatus.OK)
         when: 'get resource data from cm handles service method invoked'
-            def response = objectUnderTest.getResourceDataPassThroughRunningForCmHandle(cmHandle,
+            def response = objectUnderTest.getResourceData(cmHandle,
                 resourceId, acceptHeaderParam,
-                optionsParam, null)
+                optionsParam, contentQuery)
         then: 'response have expected json'
             response == 'response json'
     }
 
-    def 'Write resource data for passthrough running for the given cm handle with a #scenario from sdnc.'() {
+    def 'Write resource data for passthrough running with a #scenario from sdnc.'() {
         given: 'sdnc returns a response with #scenario'
-            mockSdncOperations.writeResourceDataPassthroughRunning(_, _, _, _) >> new ResponseEntity<String>('response json', httpResponse)
+            mockSdncOperations.writeData(operationEnum, _, _, _, _) >> new ResponseEntity<String>('response json', httpResponse)
         when: 'write resource data for cm handle method invoked'
-            def response = objectUnderTest.writeResourceDataPassthroughForCmHandle('some-cmHandle',
+            def response = objectUnderTest.writeData(operationEnum,'some-cmHandle',
                 'some-resourceIdentifier', 'some-dataType', '{some-data}')
         then: 'the response contains the expected json data from sdnc'
             response == 'response json'
         where: 'the following values are used'
-            scenario               | httpResponse
-            '200 OK response'      | HttpStatus.OK
-            '201 CREATED response' | HttpStatus.CREATED
+            scenario                              | httpResponse       | operationEnum
+            '200 OK with an update operation'     | HttpStatus.OK      | UPDATE
+            '201 CREATED with a create operation' | HttpStatus.CREATED | CREATE
     }
 
-    def 'Write resource data using for passthrough running for the given cm handle with #scenario.'() {
+    def 'Write resource data with special characters.'() {
         given: 'sdnc returns a created response'
-            mockSdncOperations.writeResourceDataPassthroughRunning('some-cmHandle',
-                'some-resourceIdentifier', 'some-dataType', requestBody) >> new ResponseEntity<String>('response json', HttpStatus.CREATED)
+            mockSdncOperations.writeData(CREATE, 'some-cmHandle',
+                'some-resourceIdentifier', 'some-dataType', 'data with quote " and \n new line') >> new ResponseEntity<String>('response json', HttpStatus.CREATED)
         when: 'write resource data from cm handles service method invoked'
-            def response = objectUnderTest.writeResourceDataPassthroughForCmHandle('some-cmHandle',
-                'some-resourceIdentifier', 'some-dataType', requestBody)
+            def response = objectUnderTest.writeData(CREATE, 'some-cmHandle',
+                'some-resourceIdentifier', 'some-dataType', 'data with quote " and \n new line')
         then: 'response have expected json'
             response == 'response json'
-        where: 'given request body'
-            scenario                           | requestBody
-            'data contains normal char'        | 'normal char string'
-            'data contains quote and new line' | 'data with quote " and \n new line'
     }
 
     def 'Write resource data for passthrough running with a 500 response from sdnc.'() {
         given: 'sdnc returns a 500 response for the write operation'
-            mockSdncOperations.writeResourceDataPassthroughRunning(_, _, _, _) >> new ResponseEntity<String>('response json', HttpStatus.INTERNAL_SERVER_ERROR)
-        when: 'write resource data for pass through method is invoked'
-            objectUnderTest.writeResourceDataPassthroughForCmHandle('some-cmHandle',
+            mockSdncOperations.writeData(CREATE, _, _, _, _) >> new ResponseEntity<String>('response json', HttpStatus.INTERNAL_SERVER_ERROR)
+        when: 'write resource data for passthrough method is invoked'
+            objectUnderTest.writeData(CREATE, 'some-cmHandle',
                 'some-resourceIdentifier', 'some-dataType', _ as String)
         then: 'a dmi exception is thrown'
             thrown(DmiException.class)
