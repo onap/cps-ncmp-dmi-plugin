@@ -15,6 +15,65 @@ DMI-Plugin Release Notes
 ..
 
 ..      ========================
+..      * * *   JAKARTA   * * *
+..      ========================
+
+Version: 1.0.1-SNAPSHOT
+=======================
+
+Release Data
+------------
+
++--------------------------------------+--------------------------------------------------------+
+| **CPS Project**                      |                                                        |
+|                                      |                                                        |
++--------------------------------------+--------------------------------------------------------+
+| **Docker images**                    | onap/ncmp-dmi-plugin:1.0.1-SNAPSHOT                    |
+|                                      |                                                        |
++--------------------------------------+--------------------------------------------------------+
+| **Release designation**              |                                                        |
+|                                      |                                                        |
++--------------------------------------+--------------------------------------------------------+
+| **Release date**                     |                                                        |
+|                                      |                                                        |
++--------------------------------------+--------------------------------------------------------+
+
+Features
+--------
+   - `CPS-637 <https://jira.onap.org/browse/CPS-637>`_  Update operation for datastore pass through running
+
+Bug Fixes
+---------
+
+None
+
+Known Limitations, Issues and Workarounds
+-----------------------------------------
+
+*System Limitations*
+
+  - `CPS-719 <https://jira.onap.org/browse/CPS-719>`_ Passthrough query options do not support comma (,) token in values
+
+*Known Vulnerabilities*
+
+None
+
+*Workarounds*
+
+None
+
+Security Notes
+--------------
+
+*Fixed Security Issues*
+
+None
+
+*Known Security Issues*
+
+None
+
+..      ========================
 ..      * * *   ISTANBUL   * * *
 ..      ========================
 
