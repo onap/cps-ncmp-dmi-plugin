@@ -15,6 +15,50 @@ DMI-Plugin Release Notes
 ..
 
 ..      ========================
+..      * * *   JAKARTA   * * *
+..      ========================
+
+Version: 1.0.1-SNAPSHOT
+=======================
+
+This section lists the main changes & fixes merged into master (snapshot) version of NCMP-DMI-Plugin. This information is here to assist developers that want experiment/test using our latest code bases directly. Stability of this is not guaranteed.
+
+Features
+--------
+   - `CPS-637 <https://jira.onap.org/browse/CPS-637>`_  Update operation for datastore pass through running
+
+Bug Fixes
+---------
+
+None
+
+Known Limitations, Issues and Workarounds
+-----------------------------------------
+
+*System Limitations*
+
+None
+
+*Known Vulnerabilities*
+
+None
+
+*Workarounds*
+
+None
+
+Security Notes
+--------------
+
+*Fixed Security Issues*
+
+None
+
+*Known Security Issues*
+
+None
+
+..      ========================
 ..      * * *   ISTANBUL   * * *
 ..      ========================
 
