@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "e67cfe20_1f2068a2",
+        "filename": "docs/release-notes.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 6841
+      },
+      "writtenOn": "2021-11-18T09:44:19Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "03c6479c_5a044796",
+      "range": {
+        "startLine": 24,
+        "startChar": 0,
+        "endLine": 39,
+        "endChar": 97
+      },
+      "revId": "41c5cae6533d11b41e140d3a0c80ad57b1165188",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "c0a4d1e9_a930ec94",
         "filename": "docs/release-notes.rst",
         "patchSetId": 1
@@ -48,6 +72,30 @@
     },
     {
       "key": {
+        "uuid": "29dbead6_649668d9",
+        "filename": "docs/release-notes.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 55,
+      "author": {
+        "id": 6841
+      },
+      "writtenOn": "2021-11-18T09:44:19Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "c0a4d1e9_a930ec94",
+      "range": {
+        "startLine": 55,
+        "startChar": 0,
+        "endLine": 55,
+        "endChar": 120
+      },
+      "revId": "41c5cae6533d11b41e140d3a0c80ad57b1165188",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "2d5fceca_205226f9",
         "filename": "docs/release-notes.rst",
         "patchSetId": 1
@@ -68,6 +116,30 @@
       "revId": "41c5cae6533d11b41e140d3a0c80ad57b1165188",
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "cd92bea5_4160e980",
+        "filename": "docs/release-notes.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 61,
+      "author": {
+        "id": 6841
+      },
+      "writtenOn": "2021-11-18T09:44:19Z",
+      "side": 1,
+      "message": "Added to cps-ncmp release notes",
+      "parentUuid": "2d5fceca_205226f9",
+      "range": {
+        "startLine": 61,
+        "startChar": 0,
+        "endLine": 61,
+        "endChar": 13
+      },
+      "revId": "41c5cae6533d11b41e140d3a0c80ad57b1165188",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
     }
   ]
 }
