@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "33c7c4d2_4bf6b19a",
+        "filename": "docs/release-notes.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 7680
+      },
+      "writtenOn": "2021-11-18T14:16:34Z",
+      "side": 1,
+      "message": "Should we provide Jira ticket number for features? I have seen it for bugs but not sure of features. The same comment is given in the NCMP release notes patch",
+      "range": {
+        "startLine": 28,
+        "startChar": 3,
+        "endLine": 28,
+        "endChar": 107
+      },
+      "revId": "3b592bf4fcb7da84d096bc0d23120895972d9142",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    }
+  ]
+}
