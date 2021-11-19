@@ -22,6 +22,30 @@
       "revId": "3b592bf4fcb7da84d096bc0d23120895972d9142",
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "b1d5b7ea_481cf681",
+        "filename": "docs/release-notes.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2021-11-19T09:38:44Z",
+      "side": 1,
+      "message": "Ericsson will take drop (snapshot) releases and need to know exactly what is in it hence the need for those Jira\u0027s.\nWe\u0027ll remove them for the final Jakarta Release",
+      "parentUuid": "33c7c4d2_4bf6b19a",
+      "range": {
+        "startLine": 28,
+        "startChar": 3,
+        "endLine": 28,
+        "endChar": 107
+      },
+      "revId": "3b592bf4fcb7da84d096bc0d23120895972d9142",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
     }
   ]
 }
