@@ -74,3 +74,11 @@ logging:
     console: "%d{HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n"
     file: "%d %p %c{1.} [%t] %m%n"
   file: dmi.log
+
+springdoc:
+  swagger-ui:
+    disable-swagger-default-url: true
+    urlsPrimaryName: query
+    urls:
+      - name: query
+        url: /api-docs/openapi.yaml
