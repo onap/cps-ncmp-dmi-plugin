@@ -18,7 +18,7 @@ DMI-Plugin Release Notes
 ..      * * *   JAKARTA   * * *
 ..      ========================
 
-Version: 1.0.1-SNAPSHOT
+Version: 1.1.0-SNAPSHOT
 =======================
 
 This section lists the main changes & fixes merged into master (snapshot) version of NCMP-DMI-Plugin. This information is here to assist developers that want experiment/test using our latest code bases directly. Stability of this is not guaranteed.
