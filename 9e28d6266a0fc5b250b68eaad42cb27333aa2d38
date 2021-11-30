@@ -1,0 +1,73 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "78aa2460_16b3c103",
+        "filename": "openapi/components.yml",
+        "patchSetId": 1
+      },
+      "lineNbr": 101,
+      "author": {
+        "id": 7830
+      },
+      "writtenOn": "2021-11-30T17:36:18Z",
+      "side": 1,
+      "message": "For get resource data from passthrough-operational for cm handle the operation is the only variable read. Do we want to keep the example as:\n{\noperation: read\ndataType: someDatatype\ndata: someData\ncmHandleProperties: { \"someProperties\":\"Properties\" }\n}\nbecause we could just have:\n{\noperation: read\n}",
+      "range": {
+        "startLine": 99,
+        "startChar": 0,
+        "endLine": 101,
+        "endChar": 61
+      },
+      "revId": "9e28d6266a0fc5b250b68eaad42cb27333aa2d38",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "4a0ae976_54ac4c40",
+        "filename": "openapi/components.yml",
+        "patchSetId": 1
+      },
+      "lineNbr": 209,
+      "author": {
+        "id": 7830
+      },
+      "writtenOn": "2021-11-30T17:36:18Z",
+      "side": 1,
+      "message": "See Comment on Base",
+      "range": {
+        "startLine": 209,
+        "startChar": 21,
+        "endLine": 209,
+        "endChar": 59
+      },
+      "revId": "9e28d6266a0fc5b250b68eaad42cb27333aa2d38",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "a908e052_7f3f3e99",
+        "filename": "openapi/openapi.yml",
+        "patchSetId": 1
+      },
+      "lineNbr": 48,
+      "author": {
+        "id": 7830
+      },
+      "writtenOn": "2021-11-30T17:36:18Z",
+      "side": 1,
+      "message": "Can this be removed? The request body is not used for the method getModuleReferences. Would involve editing getModuleReferences in DmiRestController.java",
+      "range": {
+        "startLine": 43,
+        "startChar": 6,
+        "endLine": 48,
+        "endChar": 80
+      },
+      "revId": "9e28d6266a0fc5b250b68eaad42cb27333aa2d38",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    }
+  ]
+}

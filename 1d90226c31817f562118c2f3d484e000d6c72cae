@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "c86b7ba4_11811464",
+        "filename": "openapi/components.yml",
+        "patchSetId": 1
+      },
+      "lineNbr": 193,
+      "author": {
+        "id": 7830
+      },
+      "writtenOn": "2021-11-30T17:36:18Z",
+      "side": 0,
+      "message": "When I attempted to run this example with the square brackets I get:\njava.lang.IllegalArgumentException: Invalid character found in the request target [/dmi/v1/ch/somCmHandle/data/ds/ncmp-datastore:passthrough-operational?resourceIdentifier\u003dResourceIdentifier\u0026options\u003d%7B%0A%20%20%22options%22:%20%22(key1\u003d10,key2\u003dvalue2,key3\u003d[val31,val32])%22%0A%7D ]. The valid characters are defined in RFC 7230 and RFC 3986\n\nHence I removed them, Is there a character that these should be instead?",
+      "range": {
+        "startLine": 193,
+        "startChar": 47,
+        "endLine": 193,
+        "endChar": 60
+      },
+      "revId": "1d90226c31817f562118c2f3d484e000d6c72cae",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    }
+  ]
+}
