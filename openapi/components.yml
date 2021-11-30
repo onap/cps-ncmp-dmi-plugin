@@ -16,6 +16,7 @@ components:
       properties:
         cmHandles:
           type: array
+          example: ["cmHandleId1","cmHandleId2","cmHandleId3"]
           items:
             type: string
 
@@ -53,10 +54,12 @@ components:
             properties:
               moduleName:
                 type: string
+                example: my-module-name
               revision:
                 $ref: '#/components/schemas/revision'
               namespace:
                 type: string
+                example: my-namespace
 
     YangResources:
       type: array
@@ -68,8 +71,10 @@ components:
       properties:
         yangSource:
           type: string
+          example: my-yang-source
         moduleName:
           type: string
+          example: my-module-name
         revision:
           $ref: '#/components/schemas/revision'
 
@@ -79,10 +84,13 @@ components:
         operation:
           type: string
           enum: [ read, create, update, delete ]
+          example: read
         dataType:
           type: string
+          example: my-data-type
         data:
           type: string
+          example: my-data
         cmHandleProperties:
           $ref: '#/components/schemas/cmHandleProperties'
 
@@ -94,11 +102,11 @@ components:
 
     name:
       type: string
-      example: someName
+      example: my-name
 
     revision:
       type: string
-      example: someRevision
+      example: my-revision
 
   responses:
     NotFound:
@@ -107,42 +115,64 @@ components:
         application/json:
           schema:
             $ref: '#/components/schemas/ErrorMessage'
+          example:
+            status: 404
+            message: Resource Not Found
+            details: The requested resource is not found
     Unauthorized:
       description: Unauthorized
       content:
         application/json:
           schema:
             $ref: '#/components/schemas/ErrorMessage'
+          example:
+            status: 401
+            message: Unauthorized request
+            details: This request is unauthorized
     Forbidden:
       description: Forbidden
       content:
         application/json:
           schema:
             $ref: '#/components/schemas/ErrorMessage'
+          example:
+            status: 403
+            message: Request Forbidden
+            details: This request is forbidden
     BadRequest:
       description: Bad Request
       content:
         application/json:
           schema:
             $ref: '#/components/schemas/ErrorMessage'
+          example:
+            status: 400
+            message: Bad Request
+            details: The provided request is not valid
     Conflict:
       description: Conflict
       content:
         application/json:
           schema:
             $ref: '#/components/schemas/ErrorMessage'
+          example:
+            status: 409
+            message: Conflicting request
+            details: The request cannot be processed as the resource is in use.
     Ok:
       description: OK
       content:
         application/json:
           schema:
             type: object
+            example: 200 OK
     Created:
       description: Created
       content:
         text/plain:
           schema:
             type: string
+            example: 201 Created
     NoContent:
       description: No Content
       content: {}
@@ -155,6 +185,7 @@ components:
       required: true
       schema:
         type: string
+        example: my-cm-handle
 
     resourceIdentifierInQuery:
       name: resourceIdentifier
@@ -190,4 +221,4 @@ components:
             options: (key1=value1,key2=value1/value2)
         sample3:
           value:
-            options: (key1=10,key2=value2,key3=[val31,val32])
+            options: (key1=10,key2=value2,key3=val31,val32)

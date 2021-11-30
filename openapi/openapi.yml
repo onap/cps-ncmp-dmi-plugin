@@ -39,12 +39,7 @@ paths:
       description: Get all modules for given cm handle
       operationId: getModuleReferences
       parameters:
-        - name: cmHandle
-          in: path
-          description: The cm handle to fetch all the modules
-          required: true
-          schema:
-            type: string
+        - $ref: 'components.yml#/components/parameters/cmHandleInPath'
       requestBody:
         description: Operational body
         content:
