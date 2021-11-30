@@ -16,6 +16,7 @@ components:
       properties:
         cmHandles:
           type: array
+          example: ["cmHandleId1","cmHandleId2","cmHandleId3"]
           items:
             type: string
 
@@ -37,11 +38,14 @@ components:
                 type: object
                 properties:
                   name:
-                    $ref: '#/components/schemas/name'
+                    type: string
+                    example: my-name
                   revision:
-                    $ref: '#/components/schemas/revision'
+                    type: string
+                    example: my-revision
         cmHandleProperties:
           $ref: '#/components/schemas/cmHandleProperties'
+
 
     ModuleSet:
       type: object
@@ -53,10 +57,13 @@ components:
             properties:
               moduleName:
                 type: string
+                example: my-module-name
               revision:
-                $ref: '#/components/schemas/revision'
+                type: string
+                example: my-revision
               namespace:
                 type: string
+                example: my-namespace
 
     YangResources:
       type: array
@@ -68,10 +75,13 @@ components:
       properties:
         yangSource:
           type: string
+          example: my-yang-source
         moduleName:
           type: string
+          example: my-module-name
         revision:
-          $ref: '#/components/schemas/revision'
+          type: string
+          example: my-revision
 
     DataAccessRequest:
       type: object
@@ -79,12 +89,16 @@ components:
         operation:
           type: string
           enum: [ read, create, update, delete ]
+          example: read
         dataType:
           type: string
+          example: my-data-type
         data:
           type: string
+          example: my-data
         cmHandleProperties:
           $ref: '#/components/schemas/cmHandleProperties'
+
 
     cmHandleProperties:
       type: object
@@ -92,60 +106,60 @@ components:
         type: string
         example: {"prop1":"value1","prop2":"value2"}
 
-    name:
-      type: string
-      example: someName
-
-    revision:
-      type: string
-      example: someRevision
-
   responses:
+    NoContent:
+      description: No Content
+      content: {}
     NotFound:
       description: The specified resource was not found
       content:
         application/json:
           schema:
             $ref: '#/components/schemas/ErrorMessage'
+          example:
+            status: 404
+            message: Resource Not Found
+            details: The requested resource is not found
     Unauthorized:
       description: Unauthorized
       content:
         application/json:
           schema:
             $ref: '#/components/schemas/ErrorMessage'
+          example:
+            status: 401
+            message: Unauthorized request
+            details: This request is unauthorized
     Forbidden:
       description: Forbidden
       content:
         application/json:
           schema:
             $ref: '#/components/schemas/ErrorMessage'
+          example:
+            status: 403
+            message: Request Forbidden
+            details: This request is forbidden
     BadRequest:
       description: Bad Request
       content:
         application/json:
           schema:
             $ref: '#/components/schemas/ErrorMessage'
+          example:
+            status: 400
+            message: Bad Request
+            details: The provided request is not valid
     Conflict:
       description: Conflict
       content:
         application/json:
           schema:
             $ref: '#/components/schemas/ErrorMessage'
-    Ok:
-      description: OK
-      content:
-        application/json:
-          schema:
-            type: object
-    Created:
-      description: Created
-      content:
-        text/plain:
-          schema:
-            type: string
-    NoContent:
-      description: No Content
-      content: {}
+          example:
+            status: 409
+            message: Conflicting request
+            details: The request cannot be processed as the resource is in use.
 
   parameters:
     cmHandleInPath:
@@ -155,6 +169,7 @@ components:
       required: true
       schema:
         type: string
+        example: my-cm-handle
 
     resourceIdentifierInQuery:
       name: resourceIdentifier
@@ -164,6 +179,7 @@ components:
       allowReserved: true
       schema:
         type: string
+        example: my-schema:my-node
 
     acceptParamInHeader:
       name: accept
@@ -190,4 +206,4 @@ components:
             options: (key1=value1,key2=value1/value2)
         sample3:
           value:
-            options: (key1=10,key2=value2,key3=[val31,val32])
+            options: (key1=10,key2=value2,key3=val31,val32)

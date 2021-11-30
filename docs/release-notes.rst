@@ -26,6 +26,7 @@ This section lists the main changes & fixes merged into master (snapshot) versio
 Features
 --------
    - `CPS-637 <https://jira.onap.org/browse/CPS-637>`_  Update operation for datastore pass through running
+   - `CPS-784 <https://jira.onap.org/browse/CPS-784>`_  Add examples to DMI-Plugin API Spec
 
 Bug Fixes
 ---------
