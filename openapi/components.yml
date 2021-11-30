@@ -6,16 +6,20 @@ components:
       properties:
         status:
           type: string
+          example: 4XX
         message:
           type: string
+          example: someMessage
         details:
           type: string
+          example: someDetails
 
     CmHandles:
       type: object
       properties:
         cmHandles:
           type: array
+          example: ["cmHandleId1","cmHandleId2","cmHandleId3"]
           items:
             type: string
 
@@ -40,8 +44,6 @@ components:
                     $ref: '#/components/schemas/name'
                   revision:
                     $ref: '#/components/schemas/revision'
-        cmHandleProperties:
-          $ref: '#/components/schemas/cmHandleProperties'
 
     ModuleSet:
       type: object
@@ -53,10 +55,12 @@ components:
             properties:
               moduleName:
                 type: string
+                example: someModuleName
               revision:
                 $ref: '#/components/schemas/revision'
               namespace:
                 type: string
+                example: someNamespace
 
     YangResources:
       type: array
@@ -68,8 +72,10 @@ components:
       properties:
         yangSource:
           type: string
+          example: someYangSource
         moduleName:
           type: string
+          example: someModuleName
         revision:
           $ref: '#/components/schemas/revision'
 
@@ -79,12 +85,20 @@ components:
         operation:
           type: string
           enum: [ read, create, update, delete ]
+          example: read
         dataType:
           type: string
+          example: someDataType
         data:
           type: string
+          example: someData
         cmHandleProperties:
           $ref: '#/components/schemas/cmHandleProperties'
+      example:
+        operation: read
+        dataType: someDatatype
+        data: someData
+        cmHandleProperties: { "someProperties":"Properties" }
 
     cmHandleProperties:
       type: object
@@ -137,12 +151,14 @@ components:
         application/json:
           schema:
             type: object
+            example: 200 OK
     Created:
       description: Created
       content:
         text/plain:
           schema:
             type: string
+            example: 201 Created
     NoContent:
       description: No Content
       content: {}
@@ -190,4 +206,4 @@ components:
             options: (key1=value1,key2=value1/value2)
         sample3:
           value:
-            options: (key1=10,key2=value2,key3=[val31,val32])
+            options: (key1=10,key2=value2,key3=val31,val32)
