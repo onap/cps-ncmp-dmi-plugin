@@ -27,6 +27,7 @@ Features
 --------
    - `CPS-637 <https://jira.onap.org/browse/CPS-637>`_  Support Update operation for datastore pass-through running
    - `CPS-639 <https://jira.onap.org/browse/CPS-639>`_  Support Delete operation for datastore pass-through running
+   - `CPS-784 <https://jira.onap.org/browse/CPS-784>`_  Add examples to DMI-Plugin API Spec
 
 Bug Fixes
 ---------
