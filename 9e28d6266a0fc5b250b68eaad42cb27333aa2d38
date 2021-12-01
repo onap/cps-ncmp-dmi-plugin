@@ -2,6 +2,52 @@
   "comments": [
     {
       "key": {
+        "uuid": "1bc4a8ab_9421449c",
+        "filename": "openapi/components.yml",
+        "patchSetId": 1
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 6738
+      },
+      "writtenOn": "2021-12-01T16:22:19Z",
+      "side": 1,
+      "message": "add examples for diferent error code",
+      "range": {
+        "startLine": 9,
+        "startChar": 0,
+        "endLine": 9,
+        "endChar": 22
+      },
+      "revId": "9e28d6266a0fc5b250b68eaad42cb27333aa2d38",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "5dc1c05a_8c830de4",
+        "filename": "openapi/components.yml",
+        "patchSetId": 1
+      },
+      "lineNbr": 97,
+      "author": {
+        "id": 6738
+      },
+      "writtenOn": "2021-12-01T16:22:19Z",
+      "side": 1,
+      "message": "this is not required as examples are added for each property",
+      "range": {
+        "startLine": 97,
+        "startChar": 0,
+        "endLine": 97,
+        "endChar": 14
+      },
+      "revId": "9e28d6266a0fc5b250b68eaad42cb27333aa2d38",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "78aa2460_16b3c103",
         "filename": "openapi/components.yml",
         "patchSetId": 1
@@ -18,6 +64,29 @@
         "startChar": 0,
         "endLine": 101,
         "endChar": 61
+      },
+      "revId": "9e28d6266a0fc5b250b68eaad42cb27333aa2d38",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "e58a739a_27741731",
+        "filename": "openapi/components.yml",
+        "patchSetId": 1
+      },
+      "lineNbr": 167,
+      "author": {
+        "id": 6738
+      },
+      "writtenOn": "2021-12-01T16:22:19Z",
+      "side": 1,
+      "message": "No example added... are these parameters no more used?",
+      "range": {
+        "startLine": 167,
+        "startChar": 4,
+        "endLine": 167,
+        "endChar": 18
       },
       "revId": "9e28d6266a0fc5b250b68eaad42cb27333aa2d38",
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
@@ -59,6 +128,30 @@
       "writtenOn": "2021-11-30T17:36:18Z",
       "side": 1,
       "message": "Can this be removed? The request body is not used for the method getModuleReferences. Would involve editing getModuleReferences in DmiRestController.java",
+      "range": {
+        "startLine": 43,
+        "startChar": 6,
+        "endLine": 48,
+        "endChar": 80
+      },
+      "revId": "9e28d6266a0fc5b250b68eaad42cb27333aa2d38",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "88493509_ce1c6209",
+        "filename": "openapi/openapi.yml",
+        "patchSetId": 1
+      },
+      "lineNbr": 48,
+      "author": {
+        "id": 6738
+      },
+      "writtenOn": "2021-12-01T16:22:19Z",
+      "side": 1,
+      "message": "Removing this and making related changes should be taken as a different task. You can probably ensure that an example is added for ModuleReferencesRequest",
+      "parentUuid": "a908e052_7f3f3e99",
       "range": {
         "startLine": 43,
         "startChar": 6,
