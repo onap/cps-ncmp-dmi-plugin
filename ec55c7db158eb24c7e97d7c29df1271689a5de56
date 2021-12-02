@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1ea67131_8ff48caf",
+        "filename": "openapi/components.yml",
+        "patchSetId": 3
+      },
+      "lineNbr": 111,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2021-12-02T14:43:55Z",
+      "side": 1,
+      "message": "NB: maybe order then according to the HTTP code ie 200 first...",
+      "range": {
+        "startLine": 111,
+        "startChar": 2,
+        "endLine": 111,
+        "endChar": 12
+      },
+      "revId": "ec55c7db158eb24c7e97d7c29df1271689a5de56",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    }
+  ]
+}
