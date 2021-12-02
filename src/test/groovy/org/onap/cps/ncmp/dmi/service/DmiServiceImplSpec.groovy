@@ -139,8 +139,8 @@ class DmiServiceImplSpec extends Specification {
                                                                        new ResponseEntity<String>('{"ietf-netconf-monitoring:output": {"data": "some-data2"}}', HttpStatus.OK)]
         and: 'the result is a yang resources object with the expected names, revisions and yang-sources'
             def yangResources = new YangResources()
-            def yangResource1 = new YangResource(yangSource: '"some-data1"', moduleName: 'name-1', revision: 'revision-1')
-            def yangResource2 = new YangResource(yangSource: '"some-data2"', moduleName: 'name-2', revision: 'revision-2')
+            def yangResource1 = new YangResource(yangSource: 'some-data1', moduleName: 'name-1', revision: 'revision-1')
+            def yangResource2 = new YangResource(yangSource: 'some-data2', moduleName: 'name-2', revision: 'revision-2')
             yangResources.add(yangResource1)
             yangResources.add(yangResource2)
             assert result == yangResources

@@ -61,7 +61,6 @@ public class DmiServiceImpl implements DmiService {
     private DmiPluginProperties dmiPluginProperties;
     private static final String RESPONSE_CODE = "response code : ";
     private static final String MESSAGE = " message : ";
-    private static final String IETF_NETCONF_MONITORING_OUTPUT = "ietf-netconf-monitoring:output";
 
     /**
      * Constructor.
@@ -212,15 +211,15 @@ public class DmiServiceImpl implements DmiService {
     }
 
     private String extractYangSourceFromBody(final ResponseEntity<String> responseEntity) {
-        final var responseBodyAsJsonObject = new Gson().fromJson(responseEntity.getBody(), JsonObject.class);
-        if (responseBodyAsJsonObject.getAsJsonObject(IETF_NETCONF_MONITORING_OUTPUT) == null
-            || responseBodyAsJsonObject.getAsJsonObject(IETF_NETCONF_MONITORING_OUTPUT)
-            .getAsJsonPrimitive("data") == null) {
+        final JsonObject responseBodyAsJsonObject = new Gson().fromJson(responseEntity.getBody(), JsonObject.class);
+        final JsonObject monitoringOutputAsJsonObject =
+            responseBodyAsJsonObject.getAsJsonObject("ietf-netconf-monitoring:output");
+        if (monitoringOutputAsJsonObject == null
+            || monitoringOutputAsJsonObject.getAsJsonPrimitive("data") == null) {
             log.error("Error occurred when trying to parse the response body from sdnc {}", responseEntity.getBody());
             throw new ModuleResourceNotFoundException(responseEntity.getBody(),
                 "Error occurred when trying to parse the response body from sdnc.");
         }
-        return responseBodyAsJsonObject.getAsJsonObject(IETF_NETCONF_MONITORING_OUTPUT).getAsJsonPrimitive("data")
-            .toString();
+        return monitoringOutputAsJsonObject.getAsJsonPrimitive("data").getAsString();
     }
 }
