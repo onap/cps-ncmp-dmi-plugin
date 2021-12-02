@@ -23,12 +23,12 @@ package org.onap.cps.ncmp.dmi.service;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.google.gson.Gson;
-import com.google.gson.JsonObject;
+import com.fasterxml.jackson.databind.ObjectWriter;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.LinkedHashMap;
 import java.util.List;
+import java.util.Map;
 import lombok.extern.slf4j.Slf4j;
 import org.onap.cps.ncmp.dmi.config.DmiPluginConfig.DmiPluginProperties;
 import org.onap.cps.ncmp.dmi.exception.CmHandleRegistrationException;
@@ -61,7 +61,6 @@ public class DmiServiceImpl implements DmiService {
     private DmiPluginProperties dmiPluginProperties;
     private static final String RESPONSE_CODE = "response code : ";
     private static final String MESSAGE = " message : ";
-    private static final String IETF_NETCONF_MONITORING_OUTPUT = "ietf-netconf-monitoring:output";
 
     /**
      * Constructor.
@@ -96,11 +95,12 @@ public class DmiServiceImpl implements DmiService {
     @Override
     public YangResources getModuleResources(final String cmHandle, final List<ModuleReference> moduleReferences) {
         final YangResources yangResources = new YangResources();
-        for (final var moduleReference : moduleReferences) {
-            final var moduleRequest = createModuleRequest(moduleReference);
+        for (final ModuleReference moduleReference : moduleReferences) {
+            final String moduleRequest = createModuleRequest(moduleReference);
             final ResponseEntity<String> responseEntity = sdncOperations.getModuleResource(cmHandle, moduleRequest);
             if (responseEntity.getStatusCode() == HttpStatus.OK) {
-                yangResources.add(toYangResource(moduleReference, responseEntity));
+                final YangResource yangResource = YangResourceExtractor.toYangResource(moduleReference, responseEntity);
+                yangResources.add(yangResource);
             } else if (responseEntity.getStatusCode() == HttpStatus.NOT_FOUND) {
                 log.error("SDNC did not return a module resource for the given cmHandle {}", cmHandle);
                 throw new ModuleResourceNotFoundException(cmHandle,
@@ -140,7 +140,7 @@ public class DmiServiceImpl implements DmiService {
     }
 
     private ModuleSetSchemas toModuleSetSchemas(final ModuleSchema moduleSchema) {
-        final var moduleSetSchemas = new ModuleSetSchemas();
+        final ModuleSetSchemas moduleSetSchemas = new ModuleSetSchemas();
         moduleSetSchemas.setModuleName(moduleSchema.getIdentifier());
         moduleSetSchemas.setNamespace(moduleSchema.getNamespace());
         moduleSetSchemas.setRevision(moduleSchema.getVersion());
@@ -186,13 +186,13 @@ public class DmiServiceImpl implements DmiService {
     }
 
     private String createModuleRequest(final ModuleReference moduleReference) {
-        final var ietfNetconfModuleReferences = new LinkedHashMap<>();
+        final Map ietfNetconfModuleReferences = new LinkedHashMap<String, String>();
         ietfNetconfModuleReferences.put("ietf-netconf-monitoring:identifier", moduleReference.getName());
         ietfNetconfModuleReferences.put("ietf-netconf-monitoring:version", moduleReference.getRevision());
-        final var writer = objectMapper.writer().withRootName("ietf-netconf-monitoring:input");
+        final ObjectWriter objectWriter = objectMapper.writer().withRootName("ietf-netconf-monitoring:input");
         final String moduleRequest;
         try {
-            moduleRequest = writer.writeValueAsString(ietfNetconfModuleReferences);
+            moduleRequest = objectWriter.writeValueAsString(ietfNetconfModuleReferences);
         } catch (final JsonProcessingException e) {
             log.error("JSON exception occurred when creating the module request for the given module reference {}",
                 moduleReference.getName());
@@ -202,25 +202,4 @@ public class DmiServiceImpl implements DmiService {
         return moduleRequest;
     }
 
-    private YangResource toYangResource(final ModuleReference moduleReference,
-        final ResponseEntity<String> response) {
-        final YangResource yangResource = new YangResource();
-        yangResource.setModuleName(moduleReference.getName());
-        yangResource.setRevision(moduleReference.getRevision());
-        yangResource.setYangSource(extractYangSourceFromBody(response));
-        return yangResource;
-    }
-
-    private String extractYangSourceFromBody(final ResponseEntity<String> responseEntity) {
-        final var responseBodyAsJsonObject = new Gson().fromJson(responseEntity.getBody(), JsonObject.class);
-        if (responseBodyAsJsonObject.getAsJsonObject(IETF_NETCONF_MONITORING_OUTPUT) == null
-            || responseBodyAsJsonObject.getAsJsonObject(IETF_NETCONF_MONITORING_OUTPUT)
-            .getAsJsonPrimitive("data") == null) {
-            log.error("Error occurred when trying to parse the response body from sdnc {}", responseEntity.getBody());
-            throw new ModuleResourceNotFoundException(responseEntity.getBody(),
-                "Error occurred when trying to parse the response body from sdnc.");
-        }
-        return responseBodyAsJsonObject.getAsJsonObject(IETF_NETCONF_MONITORING_OUTPUT).getAsJsonPrimitive("data")
-            .toString();
-    }
 }
