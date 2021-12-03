@@ -2,6 +2,52 @@
   "comments": [
     {
       "key": {
+        "uuid": "d19e761b_2be016e8",
+        "filename": "openapi/components.yml",
+        "patchSetId": 3
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 6738
+      },
+      "writtenOn": "2021-12-03T11:38:16Z",
+      "side": 1,
+      "message": "better have the example defined after the type. Just good to have",
+      "range": {
+        "startLine": 19,
+        "startChar": 0,
+        "endLine": 19,
+        "endChar": 62
+      },
+      "revId": "ec55c7db158eb24c7e97d7c29df1271689a5de56",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "41525db8_63588856",
+        "filename": "openapi/components.yml",
+        "patchSetId": 3
+      },
+      "lineNbr": 103,
+      "author": {
+        "id": 6738
+      },
+      "writtenOn": "2021-12-03T11:38:16Z",
+      "side": 1,
+      "message": "quite misleading.. If this is used only in 1 or 2 places , would be better have then inline instead of separating them as a schema\nSame for revision.",
+      "range": {
+        "startLine": 103,
+        "startChar": 4,
+        "endLine": 103,
+        "endChar": 8
+      },
+      "revId": "ec55c7db158eb24c7e97d7c29df1271689a5de56",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "1ea67131_8ff48caf",
         "filename": "openapi/components.yml",
         "patchSetId": 3
@@ -18,6 +64,98 @@
         "startChar": 2,
         "endLine": 111,
         "endChar": 12
+      },
+      "revId": "ec55c7db158eb24c7e97d7c29df1271689a5de56",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "7ba1b8d0_fc0bd8ba",
+        "filename": "openapi/components.yml",
+        "patchSetId": 3
+      },
+      "lineNbr": 168,
+      "author": {
+        "id": 6738
+      },
+      "writtenOn": "2021-12-03T11:38:16Z",
+      "side": 1,
+      "message": "For 200, its ResponseEntity\u003cObject\u003e that is returned.\nFor apis like \u0027Get resource data from passthrough-operational\u0027 , its the data(json) that is returned. Could add a json sample here depending on the usage of this schema.",
+      "range": {
+        "startLine": 168,
+        "startChar": 0,
+        "endLine": 168,
+        "endChar": 27
+      },
+      "revId": "ec55c7db158eb24c7e97d7c29df1271689a5de56",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "016e4a6a_70d2954f",
+        "filename": "openapi/components.yml",
+        "patchSetId": 3
+      },
+      "lineNbr": 175,
+      "author": {
+        "id": 6738
+      },
+      "writtenOn": "2021-12-03T11:38:16Z",
+      "side": 1,
+      "message": "Its the created resource name thats returned.",
+      "range": {
+        "startLine": 175,
+        "startChar": 0,
+        "endLine": 175,
+        "endChar": 32
+      },
+      "revId": "ec55c7db158eb24c7e97d7c29df1271689a5de56",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "1727d015_0151cd40",
+        "filename": "openapi/components.yml",
+        "patchSetId": 3
+      },
+      "lineNbr": 190,
+      "author": {
+        "id": 6738
+      },
+      "writtenOn": "2021-12-03T11:38:16Z",
+      "side": 1,
+      "message": "example missing",
+      "range": {
+        "startLine": 190,
+        "startChar": 0,
+        "endLine": 190,
+        "endChar": 30
+      },
+      "revId": "ec55c7db158eb24c7e97d7c29df1271689a5de56",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "833c1a5f_70856182",
+        "filename": "openapi/openapi.yml",
+        "patchSetId": 3
+      },
+      "lineNbr": 64,
+      "author": {
+        "id": 6738
+      },
+      "writtenOn": "2021-12-03T11:38:16Z",
+      "side": 1,
+      "message": "not sure if schemas is expected as a part of response.\nAlso we could define this json in the yaml format.. so that the resulting json is well formatted.\nRefer cps-core example : https://gerrit.onap.org/r/c/cps/+/125869/8/cps-rest/docs/openapi/components.yml#98",
+      "range": {
+        "startLine": 56,
+        "startChar": 25,
+        "endLine": 64,
+        "endChar": 17
       },
       "revId": "ec55c7db158eb24c7e97d7c29df1271689a5de56",
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
