@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "5b44c597_25559473",
+        "filename": "openapi/components.yml",
+        "patchSetId": 1
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 7830
+      },
+      "writtenOn": "2021-12-03T11:18:13Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1bc4a8ab_9421449c",
+      "range": {
+        "startLine": 9,
+        "startChar": 0,
+        "endLine": 9,
+        "endChar": 22
+      },
+      "revId": "9e28d6266a0fc5b250b68eaad42cb27333aa2d38",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5dc1c05a_8c830de4",
         "filename": "openapi/components.yml",
         "patchSetId": 1
@@ -45,6 +69,30 @@
       "revId": "9e28d6266a0fc5b250b68eaad42cb27333aa2d38",
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "27e7f882_81568143",
+        "filename": "openapi/components.yml",
+        "patchSetId": 1
+      },
+      "lineNbr": 97,
+      "author": {
+        "id": 7830
+      },
+      "writtenOn": "2021-12-03T11:18:13Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5dc1c05a_8c830de4",
+      "range": {
+        "startLine": 97,
+        "startChar": 0,
+        "endLine": 97,
+        "endChar": 14
+      },
+      "revId": "9e28d6266a0fc5b250b68eaad42cb27333aa2d38",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
     },
     {
       "key": {
@@ -94,6 +142,30 @@
     },
     {
       "key": {
+        "uuid": "3cb72e2c_65ca4331",
+        "filename": "openapi/components.yml",
+        "patchSetId": 1
+      },
+      "lineNbr": 167,
+      "author": {
+        "id": 7830
+      },
+      "writtenOn": "2021-12-03T11:18:13Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "e58a739a_27741731",
+      "range": {
+        "startLine": 167,
+        "startChar": 4,
+        "endLine": 167,
+        "endChar": 18
+      },
+      "revId": "9e28d6266a0fc5b250b68eaad42cb27333aa2d38",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "4a0ae976_54ac4c40",
         "filename": "openapi/components.yml",
         "patchSetId": 1
@@ -114,6 +186,30 @@
       "revId": "9e28d6266a0fc5b250b68eaad42cb27333aa2d38",
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "e7044066_6fa0215b",
+        "filename": "openapi/components.yml",
+        "patchSetId": 1
+      },
+      "lineNbr": 209,
+      "author": {
+        "id": 7830
+      },
+      "writtenOn": "2021-12-03T11:18:13Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "4a0ae976_54ac4c40",
+      "range": {
+        "startLine": 209,
+        "startChar": 21,
+        "endLine": 209,
+        "endChar": 59
+      },
+      "revId": "9e28d6266a0fc5b250b68eaad42cb27333aa2d38",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
     },
     {
       "key": {
@@ -161,6 +257,30 @@
       "revId": "9e28d6266a0fc5b250b68eaad42cb27333aa2d38",
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "3a141e72_68c11676",
+        "filename": "openapi/openapi.yml",
+        "patchSetId": 1
+      },
+      "lineNbr": 48,
+      "author": {
+        "id": 7830
+      },
+      "writtenOn": "2021-12-03T11:18:13Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "88493509_ce1c6209",
+      "range": {
+        "startLine": 43,
+        "startChar": 6,
+        "endLine": 48,
+        "endChar": 80
+      },
+      "revId": "9e28d6266a0fc5b250b68eaad42cb27333aa2d38",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
     }
   ]
 }
