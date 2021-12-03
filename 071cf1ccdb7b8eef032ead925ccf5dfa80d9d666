@@ -1,0 +1,73 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "67e21e5b_8437e55a",
+        "filename": "src/main/java/org/onap/cps/ncmp/dmi/service/YangResourceExtractor.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 7744
+      },
+      "writtenOn": "2021-12-03T09:51:12Z",
+      "side": 1,
+      "message": "nb - indentation here.",
+      "range": {
+        "startLine": 34,
+        "startChar": 39,
+        "endLine": 34,
+        "endChar": 40
+      },
+      "revId": "071cf1ccdb7b8eef032ead925ccf5dfa80d9d666",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "ebdf804c_e77d9cbb",
+        "filename": "src/main/java/org/onap/cps/ncmp/dmi/service/YangResourceExtractor.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 43,
+      "author": {
+        "id": 7744
+      },
+      "writtenOn": "2021-12-03T09:51:12Z",
+      "side": 1,
+      "message": "Haven\u0027t we decided as a team to use the Jackson parser across CPS instead?",
+      "range": {
+        "startLine": 43,
+        "startChar": 52,
+        "endLine": 43,
+        "endChar": 116
+      },
+      "revId": "071cf1ccdb7b8eef032ead925ccf5dfa80d9d666",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "bf5890ba_b0d31b76",
+        "filename": "src/test/groovy/org/onap/cps/ncmp/dmi/service/YangResourceExtractorSpec.groovy",
+        "patchSetId": 2
+      },
+      "lineNbr": 61,
+      "author": {
+        "id": 7744
+      },
+      "writtenOn": "2021-12-03T09:51:12Z",
+      "side": 1,
+      "message": "Could this be extracted out into its own static variable? Maybe just resource identifier, because it isn\u0027t clear what this is exactly within the context of the response body.",
+      "range": {
+        "startLine": 61,
+        "startChar": 43,
+        "endLine": 61,
+        "endChar": 73
+      },
+      "revId": "071cf1ccdb7b8eef032ead925ccf5dfa80d9d666",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    }
+  ]
+}
