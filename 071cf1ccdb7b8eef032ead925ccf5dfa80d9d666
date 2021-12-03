@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "77c45e72_9546a8d7",
+        "filename": "src/main/java/org/onap/cps/ncmp/dmi/service/YangResourceExtractor.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2021-12-03T10:17:27Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "67e21e5b_8437e55a",
+      "range": {
+        "startLine": 34,
+        "startChar": 39,
+        "endLine": 34,
+        "endChar": 40
+      },
+      "revId": "071cf1ccdb7b8eef032ead925ccf5dfa80d9d666",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ebdf804c_e77d9cbb",
         "filename": "src/main/java/org/onap/cps/ncmp/dmi/service/YangResourceExtractor.java",
         "patchSetId": 2
@@ -48,6 +72,30 @@
     },
     {
       "key": {
+        "uuid": "cb33ece4_432791c3",
+        "filename": "src/main/java/org/onap/cps/ncmp/dmi/service/YangResourceExtractor.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 43,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2021-12-03T10:17:27Z",
+      "side": 1,
+      "message": "agrred but will be done in another user story (I did discuss with Luke)",
+      "parentUuid": "ebdf804c_e77d9cbb",
+      "range": {
+        "startLine": 43,
+        "startChar": 52,
+        "endLine": 43,
+        "endChar": 116
+      },
+      "revId": "071cf1ccdb7b8eef032ead925ccf5dfa80d9d666",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "bf5890ba_b0d31b76",
         "filename": "src/test/groovy/org/onap/cps/ncmp/dmi/service/YangResourceExtractorSpec.groovy",
         "patchSetId": 2
@@ -68,6 +116,30 @@
       "revId": "071cf1ccdb7b8eef032ead925ccf5dfa80d9d666",
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "f91f7f6a_30079360",
+        "filename": "src/test/groovy/org/onap/cps/ncmp/dmi/service/YangResourceExtractorSpec.groovy",
+        "patchSetId": 2
+      },
+      "lineNbr": 61,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2021-12-03T10:17:27Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "bf5890ba_b0d31b76",
+      "range": {
+        "startLine": 61,
+        "startChar": 43,
+        "endLine": 61,
+        "endChar": 73
+      },
+      "revId": "071cf1ccdb7b8eef032ead925ccf5dfa80d9d666",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
     }
   ]
 }
