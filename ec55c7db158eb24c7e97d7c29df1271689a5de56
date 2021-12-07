@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "b492b5ad_341a6534",
+        "filename": "openapi/components.yml",
+        "patchSetId": 3
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 7830
+      },
+      "writtenOn": "2021-12-07T18:11:56Z",
+      "side": 1,
+      "message": "I tried having it defined after the string type below but it would only let me give one example. I thought it would be better to have the array of examples",
+      "parentUuid": "d19e761b_2be016e8",
+      "range": {
+        "startLine": 19,
+        "startChar": 0,
+        "endLine": 19,
+        "endChar": 62
+      },
+      "revId": "ec55c7db158eb24c7e97d7c29df1271689a5de56",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "41525db8_63588856",
         "filename": "openapi/components.yml",
         "patchSetId": 3
@@ -45,6 +69,30 @@
       "revId": "ec55c7db158eb24c7e97d7c29df1271689a5de56",
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "ce5c72e0_afb32f75",
+        "filename": "openapi/components.yml",
+        "patchSetId": 3
+      },
+      "lineNbr": 103,
+      "author": {
+        "id": 7830
+      },
+      "writtenOn": "2021-12-07T18:11:56Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "41525db8_63588856",
+      "range": {
+        "startLine": 103,
+        "startChar": 4,
+        "endLine": 103,
+        "endChar": 8
+      },
+      "revId": "ec55c7db158eb24c7e97d7c29df1271689a5de56",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
     },
     {
       "key": {
@@ -71,6 +119,30 @@
     },
     {
       "key": {
+        "uuid": "48a4a08c_cc092c23",
+        "filename": "openapi/components.yml",
+        "patchSetId": 3
+      },
+      "lineNbr": 111,
+      "author": {
+        "id": 7830
+      },
+      "writtenOn": "2021-12-07T18:11:56Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1ea67131_8ff48caf",
+      "range": {
+        "startLine": 111,
+        "startChar": 2,
+        "endLine": 111,
+        "endChar": 12
+      },
+      "revId": "ec55c7db158eb24c7e97d7c29df1271689a5de56",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7ba1b8d0_fc0bd8ba",
         "filename": "openapi/components.yml",
         "patchSetId": 3
@@ -91,6 +163,30 @@
       "revId": "ec55c7db158eb24c7e97d7c29df1271689a5de56",
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "db0f3952_f4757133",
+        "filename": "openapi/components.yml",
+        "patchSetId": 3
+      },
+      "lineNbr": 168,
+      "author": {
+        "id": 7830
+      },
+      "writtenOn": "2021-12-07T18:11:56Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7ba1b8d0_fc0bd8ba",
+      "range": {
+        "startLine": 168,
+        "startChar": 0,
+        "endLine": 168,
+        "endChar": 27
+      },
+      "revId": "ec55c7db158eb24c7e97d7c29df1271689a5de56",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
     },
     {
       "key": {
@@ -117,6 +213,30 @@
     },
     {
       "key": {
+        "uuid": "5a3ea3ec_874e3a3e",
+        "filename": "openapi/components.yml",
+        "patchSetId": 3
+      },
+      "lineNbr": 175,
+      "author": {
+        "id": 7830
+      },
+      "writtenOn": "2021-12-07T18:11:56Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "016e4a6a_70d2954f",
+      "range": {
+        "startLine": 175,
+        "startChar": 0,
+        "endLine": 175,
+        "endChar": 32
+      },
+      "revId": "ec55c7db158eb24c7e97d7c29df1271689a5de56",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1727d015_0151cd40",
         "filename": "openapi/components.yml",
         "patchSetId": 3
@@ -140,6 +260,30 @@
     },
     {
       "key": {
+        "uuid": "07ba7705_8adf1a5b",
+        "filename": "openapi/components.yml",
+        "patchSetId": 3
+      },
+      "lineNbr": 190,
+      "author": {
+        "id": 7830
+      },
+      "writtenOn": "2021-12-07T18:11:56Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1727d015_0151cd40",
+      "range": {
+        "startLine": 190,
+        "startChar": 0,
+        "endLine": 190,
+        "endChar": 30
+      },
+      "revId": "ec55c7db158eb24c7e97d7c29df1271689a5de56",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "833c1a5f_70856182",
         "filename": "openapi/openapi.yml",
         "patchSetId": 3
@@ -151,6 +295,30 @@
       "writtenOn": "2021-12-03T11:38:16Z",
       "side": 1,
       "message": "not sure if schemas is expected as a part of response.\nAlso we could define this json in the yaml format.. so that the resulting json is well formatted.\nRefer cps-core example : https://gerrit.onap.org/r/c/cps/+/125869/8/cps-rest/docs/openapi/components.yml#98",
+      "range": {
+        "startLine": 56,
+        "startChar": 25,
+        "endLine": 64,
+        "endChar": 17
+      },
+      "revId": "ec55c7db158eb24c7e97d7c29df1271689a5de56",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "db70130f_cc179c6c",
+        "filename": "openapi/openapi.yml",
+        "patchSetId": 3
+      },
+      "lineNbr": 64,
+      "author": {
+        "id": 7830
+      },
+      "writtenOn": "2021-12-07T18:11:56Z",
+      "side": 1,
+      "message": "Schemas currently comes as part of the response",
+      "parentUuid": "833c1a5f_70856182",
       "range": {
         "startLine": 56,
         "startChar": 25,
