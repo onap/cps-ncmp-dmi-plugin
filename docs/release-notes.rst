@@ -25,7 +25,8 @@ This section lists the main changes & fixes merged into master (snapshot) versio
 
 Features
 --------
-   - `CPS-637 <https://jira.onap.org/browse/CPS-637>`_  Update operation for datastore pass through running
+   - `CPS-637 <https://jira.onap.org/browse/CPS-637>`_  Support Update operation for datastore pass-through running
+   - `CPS-639 <https://jira.onap.org/browse/CPS-639>`_  Support Delete operation for datastore pass-through running
 
 Bug Fixes
 ---------
