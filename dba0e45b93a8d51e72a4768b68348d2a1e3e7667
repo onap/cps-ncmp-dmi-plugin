@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a4d36c9_066fc754",
+        "filename": "openapi/openapi.yml",
+        "patchSetId": 6
+      },
+      "lineNbr": 202,
+      "author": {
+        "id": 6738
+      },
+      "writtenOn": "2021-12-08T17:05:19Z",
+      "side": 1,
+      "message": "this could also be better defined in yang as below :\nvalue:\n  - yangSource: my-yang-source\n    moduleName: my-module-name\n    revision: my-revision\n\nSame for the example added in line 156.",
+      "range": {
+        "startLine": 196,
+        "startChar": 25,
+        "endLine": 202,
+        "endChar": 25
+      },
+      "revId": "dba0e45b93a8d51e72a4768b68348d2a1e3e7667",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    }
+  ]
+}
