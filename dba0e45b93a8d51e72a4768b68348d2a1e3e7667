@@ -2,6 +2,75 @@
   "comments": [
     {
       "key": {
+        "uuid": "fc3483d6_2850172b",
+        "filename": "openapi/components.yml",
+        "patchSetId": 6
+      },
+      "lineNbr": 48,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2021-12-09T13:42:16Z",
+      "side": 1,
+      "message": "NB: redundant second blank line",
+      "range": {
+        "startLine": 48,
+        "startChar": 0,
+        "endLine": 48,
+        "endChar": 0
+      },
+      "revId": "dba0e45b93a8d51e72a4768b68348d2a1e3e7667",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "825f1d11_fec42e0a",
+        "filename": "openapi/components.yml",
+        "patchSetId": 6
+      },
+      "lineNbr": 101,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2021-12-09T13:42:16Z",
+      "side": 1,
+      "message": "2 blank lines",
+      "range": {
+        "startLine": 101,
+        "startChar": 0,
+        "endLine": 101,
+        "endChar": 0
+      },
+      "revId": "dba0e45b93a8d51e72a4768b68348d2a1e3e7667",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "cc41cac7_581cc491",
+        "filename": "openapi/components.yml",
+        "patchSetId": 6
+      },
+      "lineNbr": 163,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2021-12-09T13:42:16Z",
+      "side": 1,
+      "message": "please order according to status code",
+      "range": {
+        "startLine": 113,
+        "startChar": 5,
+        "endLine": 163,
+        "endChar": 0
+      },
+      "revId": "dba0e45b93a8d51e72a4768b68348d2a1e3e7667",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "3a4d36c9_066fc754",
         "filename": "openapi/openapi.yml",
         "patchSetId": 6
