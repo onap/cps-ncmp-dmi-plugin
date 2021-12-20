@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "68b63fdb_46d1f3c4",
+        "filename": "src/main/java/org/onap/cps/ncmp/dmi/service/YangResourceExtractor.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 7743
+      },
+      "writtenOn": "2021-12-20T17:03:08Z",
+      "side": 1,
+      "message": "NB: Do we need to set the access level as we have no fields to encapsulate?",
+      "range": {
+        "startLine": 34,
+        "startChar": 19,
+        "endLine": 34,
+        "endChar": 47
+      },
+      "revId": "034d38a9d24797f981a48304bb9f2afa4e5c1963",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    }
+  ]
+}
