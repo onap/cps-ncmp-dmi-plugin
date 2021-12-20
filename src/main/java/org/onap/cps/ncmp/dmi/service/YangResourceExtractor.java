@@ -30,6 +30,10 @@ import org.springframework.http.ResponseEntity;
 
 @Slf4j
 public class YangResourceExtractor {
+
+    private YangResourceExtractor() {
+    }
+
     static YangResource toYangResource(final ModuleReference moduleReference,
                                        final ResponseEntity<String> responseEntity) {
         final YangResource yangResource = new YangResource();
