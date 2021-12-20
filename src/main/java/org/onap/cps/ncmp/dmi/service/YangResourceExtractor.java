@@ -22,6 +22,8 @@ package org.onap.cps.ncmp.dmi.service;
 
 import com.google.gson.Gson;
 import com.google.gson.JsonObject;
+import lombok.AccessLevel;
+import lombok.NoArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.onap.cps.ncmp.dmi.exception.ModuleResourceNotFoundException;
 import org.onap.cps.ncmp.dmi.model.YangResource;
@@ -29,7 +31,9 @@ import org.onap.cps.ncmp.dmi.service.model.ModuleReference;
 import org.springframework.http.ResponseEntity;
 
 @Slf4j
+@NoArgsConstructor(access = AccessLevel.PRIVATE)
 public class YangResourceExtractor {
+
     static YangResource toYangResource(final ModuleReference moduleReference,
                                        final ResponseEntity<String> responseEntity) {
         final YangResource yangResource = new YangResource();
