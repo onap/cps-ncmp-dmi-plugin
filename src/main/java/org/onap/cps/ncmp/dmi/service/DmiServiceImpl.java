@@ -186,7 +186,7 @@ public class DmiServiceImpl implements DmiService {
     }
 
     private String createModuleRequest(final ModuleReference moduleReference) {
-        final Map ietfNetconfModuleReferences = new LinkedHashMap<String, String>();
+        final Map<String, String> ietfNetconfModuleReferences = new LinkedHashMap<>();
         ietfNetconfModuleReferences.put("ietf-netconf-monitoring:identifier", moduleReference.getName());
         ietfNetconfModuleReferences.put("ietf-netconf-monitoring:version", moduleReference.getRevision());
         final ObjectWriter objectWriter = objectMapper.writer().withRootName("ietf-netconf-monitoring:input");
