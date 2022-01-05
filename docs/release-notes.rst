@@ -28,6 +28,7 @@ Features
    - `CPS-637 <https://jira.onap.org/browse/CPS-637>`_  Support Update operation for datastore pass-through running
    - `CPS-639 <https://jira.onap.org/browse/CPS-639>`_  Support Delete operation for datastore pass-through running
    - `CPS-784 <https://jira.onap.org/browse/CPS-784>`_  Add examples to DMI-Plugin API Spec
+   - `CPS-841 <https://jira.onap.org/browse/CPS-841>`_  Upgrade log4j to 2.17.1 as recommended by ONAP SECCOM
 
 Bug Fixes
 ---------
