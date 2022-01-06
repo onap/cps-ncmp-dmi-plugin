@@ -1,0 +1,9 @@
+Verified+1: ONAP Jobbuilder <onap-jobbuilder@jenkins.onap.org>
+Code-Review+1: Luke Gleeson <luke.gleeson@est.tech>
+Code-Review+2: Toine Siebelink <toine.siebelink@est.tech>
+Code-Review+1: Bruno Sakoto <bruno.sakoto@bell.ca>
+Submitted-by: Toine Siebelink <toine.siebelink@est.tech>
+Submitted-at: Thu, 06 Jan 2022 09:57:01 +0000
+Reviewed-on: https://gerrit.onap.org/r/c/cps/ncmp-dmi-plugin/+/126443
+Project: cps/ncmp-dmi-plugin
+Branch: refs/heads/istanbul
