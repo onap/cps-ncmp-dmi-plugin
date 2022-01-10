@@ -44,6 +44,7 @@ import org.springframework.test.web.servlet.MockMvc
 import spock.lang.Specification
 
 import static org.onap.cps.ncmp.dmi.model.DataAccessRequest.OperationEnum.DELETE
+import static org.onap.cps.ncmp.dmi.model.DataAccessRequest.OperationEnum.PATCH
 import static org.onap.cps.ncmp.dmi.model.DataAccessRequest.OperationEnum.READ
 import static org.springframework.http.HttpStatus.BAD_REQUEST
 import static org.springframework.http.HttpStatus.NO_CONTENT
@@ -211,14 +212,14 @@ class DmiRestControllerSpec extends Specification {
             0 * mockDmiService.getResourceData(*_)
     }
 
-    def 'write data with #scenario operation using passthrough running.'() {
+    def 'data with #scenario operation using passthrough running.'() {
         given: 'write data for passthrough running url and jsonData'
             def writeDataForPassthroughRunning = "${basePathV1}/ch/some-cmHandle/data/ds/ncmp-datastore:passthrough-running" +
                     "?resourceIdentifier=some-resourceIdentifier"
             def jsonData = TestUtils.getResourceFileContent(requestBodyFile)
         and: 'dmi service is called'
             mockDmiService.writeData(operationEnum, 'some-cmHandle',
-                    'some-resourceIdentifier', 'application/json',
+                    'some-resourceIdentifier', dataType,
                     'normal request body' ) >> '{some-json}'
         when: 'write data for passthrough running post api is invoked with json data'
             def response = mvc.perform(
@@ -230,11 +231,12 @@ class DmiRestControllerSpec extends Specification {
         and: 'the data in the request body is as expected'
             response.getContentAsString() == expectedJsonResponse
         where: 'given request body and data'
-            scenario   | requestBodyFile                 | operationEnum                                  || expectedResponseStatus | expectedJsonResponse
-            'Create'   | 'createDataWithNormalChar.json' | CREATE                                         || CREATED.value()        | '{some-json}'
-            'Update'   | 'updateData.json'               | UPDATE                                         || OK.value()             | '{some-json}'
-            'Delete'   | 'deleteData.json'               | DELETE                                         || NO_CONTENT.value()     | '{some-json}'
-            'Read'     | 'readData.json'                 | READ                                           || OK.value()             | ''
+            scenario   | requestBodyFile                 | operationEnum     | dataType                      || expectedResponseStatus | expectedJsonResponse
+            'Create'   | 'createDataWithNormalChar.json' | CREATE            | 'application/json'            || CREATED.value()        | '{some-json}'
+            'Update'   | 'updateData.json'               | UPDATE            | 'application/json'            || OK.value()             | '{some-json}'
+            'Delete'   | 'deleteData.json'               | DELETE            | 'application/json'            || NO_CONTENT.value()     | '{some-json}'
+            'Read'     | 'readData.json'                 | READ              | 'application/json'            || OK.value()             | ''
+            'Patch'    | 'patchData.json'                | PATCH             | 'application/yang.patch+json' || OK.value()             | '{some-json}'
     }
 
     def 'Create data using passthrough for special characters.'(){

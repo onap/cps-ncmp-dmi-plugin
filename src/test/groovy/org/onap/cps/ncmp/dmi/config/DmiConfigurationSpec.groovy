@@ -56,7 +56,7 @@ class DmiConfigurationSpec extends Specification {
         given: 'a DMI configuration'
             DmiConfiguration objectUnderTest = new DmiConfiguration()
         and: 'a rest template builder'
-            RestTemplateBuilder mockRestTemplateBuilder = Mock(RestTemplateBuilder)
+            RestTemplateBuilder mockRestTemplateBuilder = Spy(RestTemplateBuilder)
         when: 'rest template method is invoked'
             objectUnderTest.restTemplate(mockRestTemplateBuilder)
         then: 'DMI configuration uses the build method on the template builder'
