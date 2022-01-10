@@ -1,0 +1,8 @@
+{
+  "operation": "patch",
+  "dataType": "application/yang.patch+json",
+  "data": "normal request body",
+  "cmHandleProperties": {
+    "some-property": "some-property-value"
+  }
+}

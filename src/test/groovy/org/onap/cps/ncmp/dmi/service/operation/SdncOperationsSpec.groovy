@@ -37,6 +37,7 @@ import spock.lang.Specification
 
 import static org.onap.cps.ncmp.dmi.model.DataAccessRequest.OperationEnum.CREATE
 import static org.onap.cps.ncmp.dmi.model.DataAccessRequest.OperationEnum.DELETE
+import static org.onap.cps.ncmp.dmi.model.DataAccessRequest.OperationEnum.PATCH
 import static org.onap.cps.ncmp.dmi.model.DataAccessRequest.OperationEnum.UPDATE
 import static org.onap.cps.ncmp.dmi.model.DataAccessRequest.OperationEnum.READ
 
@@ -138,6 +139,7 @@ class SdncOperationsSpec extends Specification {
             'Update'  | UPDATE         || HttpMethod.PUT
             'Read'    | READ           || HttpMethod.GET
             'Delete'  | DELETE         || HttpMethod.DELETE
+            'Patch'   | PATCH          || HttpMethod.PATCH
     }
 
     def 'build query param list for SDNC where options contains a #scenario'() {

@@ -25,6 +25,7 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.web.client.RestTemplateBuilder;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.http.client.HttpComponentsClientHttpRequestFactory;
 import org.springframework.stereotype.Component;
 import org.springframework.web.client.RestTemplate;
 
@@ -33,6 +34,8 @@ import org.springframework.web.client.RestTemplate;
  */
 @Configuration
 public class DmiConfiguration {
+
+    private static final int TIMEOUT = 5000;
 
     @Getter
     @Component
@@ -62,8 +65,23 @@ public class DmiConfiguration {
         public String topologyId;
     }
 
+    /**
+     * Returns restTemplate bean for the spring context.
+     *
+     * @param restTemplateBuilder   restTemplate builder
+     * @return {@code RestTemplate} rest template
+     */
     @Bean
     public RestTemplate restTemplate(final RestTemplateBuilder restTemplateBuilder) {
-        return restTemplateBuilder.build();
+        final RestTemplate restTemplate =  restTemplateBuilder.build();
+        setCustmRequestFactoryToSupportPatch(restTemplate);
+        return restTemplate;
+    }
+
+    private void setCustmRequestFactoryToSupportPatch(final RestTemplate restTemplate) {
+        final HttpComponentsClientHttpRequestFactory requestFactory = new HttpComponentsClientHttpRequestFactory();
+        requestFactory.setConnectTimeout(TIMEOUT);
+        requestFactory.setReadTimeout(TIMEOUT);
+        restTemplate.setRequestFactory(requestFactory);
     }
 }

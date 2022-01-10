@@ -87,7 +87,7 @@ components:
       properties:
         operation:
           type: string
-          enum: [ read, create, update, delete ]
+          enum: [ read, create, update, patch, delete ]
           example: read
         dataType:
           type: string

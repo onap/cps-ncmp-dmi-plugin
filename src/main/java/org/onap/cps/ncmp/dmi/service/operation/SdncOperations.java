@@ -248,6 +248,9 @@ public class SdncOperations {
             case CREATE:
                 httpMethod = HttpMethod.POST;
                 break;
+            case PATCH:
+                httpMethod = HttpMethod.PATCH;
+                break;
             case UPDATE:
                 httpMethod = HttpMethod.PUT;
                 break;
