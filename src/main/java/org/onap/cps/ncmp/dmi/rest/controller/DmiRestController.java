@@ -36,7 +36,6 @@ import org.onap.cps.ncmp.dmi.rest.api.DmiPluginInternalApi;
 import org.onap.cps.ncmp.dmi.service.DmiService;
 import org.onap.cps.ncmp.dmi.service.model.ModuleReference;
 import org.springframework.http.HttpStatus;
-import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -135,7 +134,7 @@ public class DmiRestController implements DmiPluginApi, DmiPluginInternalApi {
                 dataAccessRequest.getOperation(),
                 cmHandle,
                 resourceIdentifier,
-                MediaType.APPLICATION_JSON_VALUE,
+                dataAccessRequest.getDataType(),
                 dataAccessRequest.getData());
         }
         return new ResponseEntity<>(sdncResponse, getHttpStatus(dataAccessRequest));
@@ -157,6 +156,7 @@ public class DmiRestController implements DmiPluginApi, DmiPluginInternalApi {
                     break;
                 case READ:
                 case UPDATE:
+                case PATCH:
                     httpStatus = HttpStatus.OK;
                     break;
                 case DELETE:

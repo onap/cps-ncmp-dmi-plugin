@@ -162,6 +162,7 @@ public class SdncOperations {
         return sdncRestconfClient.httpOperationWithJsonData(httpMethod, getResourceDataUrl, requestData, httpHeaders);
     }
 
+
     private List<String> buildQueryParamList(final String optionsParamInQuery, final String restconfContentQueryParam) {
         final List<String> queryParamAsList = getOptionsParamAsList(optionsParamInQuery);
         queryParamAsList.add(restconfContentQueryParam);
@@ -247,6 +248,9 @@ public class SdncOperations {
                 break;
             case CREATE:
                 httpMethod = HttpMethod.POST;
+                break;
+            case PATCH:
+                httpMethod = HttpMethod.PATCH;
                 break;
             case UPDATE:
                 httpMethod = HttpMethod.PUT;
