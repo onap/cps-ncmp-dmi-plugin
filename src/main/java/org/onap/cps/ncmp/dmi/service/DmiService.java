@@ -93,4 +93,17 @@ public interface DmiService {
     String writeData(DataAccessRequest.OperationEnum operation, String cmHandle,
                      String resourceIdentifier, String dataType,
                      String data);
+
+    /**
+     * Patch resource data to sdnc (will default to 'content=config', does not need to be specified).
+     *
+     * @param cmHandle           cmHandle
+     * @param resourceIdentifier resource identifier
+     * @param dataType           accept header parameter
+     * @param data               request data
+     * @return response from sdnc
+     */
+    String patchData(DataAccessRequest.OperationEnum operation, String cmHandle,
+                     String resourceIdentifier, String dataType,
+                     String data);
 }

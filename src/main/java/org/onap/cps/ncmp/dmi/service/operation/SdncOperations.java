@@ -162,6 +162,27 @@ public class SdncOperations {
         return sdncRestconfClient.httpOperationWithJsonData(httpMethod, getResourceDataUrl, requestData, httpHeaders);
     }
 
+    /**
+     * Patch resource data.
+     *
+     * @param nodeId      network resource identifier
+     * @param resourceId  resource identifier
+     * @param contentType http content type
+     * @param requestData request data
+     * @return {@code ResponseEntity} response entity
+     */
+    public ResponseEntity<String> patchData(final DataAccessRequest.OperationEnum operation,
+                                            final String nodeId,
+                                            final String resourceId,
+                                            final String contentType,
+                                            final String requestData) {
+        final var getResourceDataUrl = prepareWriteUrl(nodeId, resourceId);
+        final var httpHeaders = new HttpHeaders();
+        httpHeaders.setContentType(MediaType.parseMediaType(contentType));
+        final HttpMethod httpMethod = getHttpMethod(operation);
+        return sdncRestconfClient.httpOperationWithJsonData(httpMethod, getResourceDataUrl, requestData, httpHeaders);
+    }
+
     private List<String> buildQueryParamList(final String optionsParamInQuery, final String restconfContentQueryParam) {
         final List<String> queryParamAsList = getOptionsParamAsList(optionsParamInQuery);
         queryParamAsList.add(restconfContentQueryParam);
@@ -253,6 +274,9 @@ public class SdncOperations {
                 break;
             case DELETE:
                 httpMethod = HttpMethod.DELETE;
+                break;
+            case PATCH:
+                httpMethod = HttpMethod.PATCH;
                 break;
             default:
                 //unreachable code but checkstyle made me do this!

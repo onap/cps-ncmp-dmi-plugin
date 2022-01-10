@@ -130,6 +130,13 @@ public class DmiRestController implements DmiPluginApi, DmiPluginInternalApi {
                 acceptParamInHeader,
                 optionsParamInQuery,
                 DmiService.RESTCONF_CONTENT_PASSTHROUGH_RUNNING_QUERY_PARAM);
+        } else if (isPatchOperation(dataAccessRequest)) {
+            sdncResponse = dmiService.patchData(
+                    dataAccessRequest.getOperation(),
+                    cmHandle,
+                    resourceIdentifier,
+                    MediaType.APPLICATION_JSON_VALUE,
+                    dataAccessRequest.getData());
         } else {
             sdncResponse = dmiService.writeData(
                 dataAccessRequest.getOperation(),
@@ -144,6 +151,11 @@ public class DmiRestController implements DmiPluginApi, DmiPluginInternalApi {
     private boolean isReadOperation(final @Valid DataAccessRequest dataAccessRequest) {
         return dataAccessRequest.getOperation() == null
             || dataAccessRequest.getOperation().equals(DataAccessRequest.OperationEnum.READ);
+    }
+
+    private boolean isPatchOperation(final @Valid DataAccessRequest dataAccessRequest) {
+        return dataAccessRequest.getOperation() == null
+                || dataAccessRequest.getOperation().equals(DataAccessRequest.OperationEnum.PATCH);
     }
 
     private HttpStatus getHttpStatus(final DataAccessRequest dataAccessRequest) {

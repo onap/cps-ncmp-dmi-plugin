@@ -176,6 +176,21 @@ public class DmiServiceImpl implements DmiService {
         }
     }
 
+    @Override
+    public String patchData(final DataAccessRequest.OperationEnum operation,
+                            final String cmHandle,
+                            final String resourceIdentifier,
+                            final String dataType, final String data) {
+        final ResponseEntity<String> responseEntity =
+                sdncOperations.patchData(operation, cmHandle, resourceIdentifier, dataType, data);
+        if (responseEntity.getStatusCode().is2xxSuccessful()) {
+            return responseEntity.getBody();
+        } else {
+            throw new DmiException(cmHandle,
+                    RESPONSE_CODE + responseEntity.getStatusCode() + MESSAGE + responseEntity.getBody());
+        }
+    }
+
     private String prepareAndSendResponse(final ResponseEntity<String> responseEntity, final String cmHandle) {
         if (responseEntity.getStatusCode() == HttpStatus.OK) {
             return responseEntity.getBody();
