@@ -1,0 +1,90 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5485fda4_e310dab3",
+        "filename": "pom.xml",
+        "patchSetId": 3
+      },
+      "lineNbr": 162,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2022-01-13T14:35:07Z",
+      "side": 1,
+      "message": "add to version managment instead",
+      "range": {
+        "startLine": 162,
+        "startChar": 12,
+        "endLine": 162,
+        "endChar": 36
+      },
+      "revId": "d4b94a07657f07d4e2ad5382763ae72272b069b9",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "54bba5ba_1c726695",
+        "filename": "src/main/java/org/onap/cps/ncmp/dmi/config/DmiConfiguration.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 81,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2022-01-13T14:35:07Z",
+      "side": 1,
+      "message": "i presume this is the \u0027workaround\u0027 you mentioned\nmight be good to extarct out just to convey purpose in method name e.g. \n\nsetCustmRequestFactoryToSupportPatch()",
+      "range": {
+        "startLine": 77,
+        "startChar": 0,
+        "endLine": 81,
+        "endChar": 55
+      },
+      "revId": "d4b94a07657f07d4e2ad5382763ae72272b069b9",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "6090189c_f107b962",
+        "filename": "src/test/groovy/org/onap/cps/ncmp/dmi/rest/controller/DmiRestControllerSpec.groovy",
+        "patchSetId": 3
+      },
+      "lineNbr": 215,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2022-01-13T14:35:07Z",
+      "side": 1,
+      "message": "legacy: this test includes both read and write, maybe that is intended and correct just update the title to reflect taht if so...",
+      "range": {
+        "startLine": 215,
+        "startChar": 9,
+        "endLine": 215,
+        "endChar": 15
+      },
+      "revId": "d4b94a07657f07d4e2ad5382763ae72272b069b9",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "942f3ebd_cfa6688b",
+        "filename": "src/test/resources/patchData.json",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2022-01-13T14:35:07Z",
+      "side": 1,
+      "message": "is this use I dont see it being used?!",
+      "revId": "d4b94a07657f07d4e2ad5382763ae72272b069b9",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    }
+  ]
+}
