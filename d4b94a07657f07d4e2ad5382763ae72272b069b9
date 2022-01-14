@@ -25,6 +25,29 @@
     },
     {
       "key": {
+        "uuid": "6c971e5e_9be83539",
+        "filename": "src/main/java/org/onap/cps/ncmp/dmi/config/DmiConfiguration.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 7830
+      },
+      "writtenOn": "2022-01-14T09:50:09Z",
+      "side": 1,
+      "message": "Need to be extended 2021-2022 for all files",
+      "range": {
+        "startLine": 3,
+        "startChar": 18,
+        "endLine": 3,
+        "endChar": 23
+      },
+      "revId": "d4b94a07657f07d4e2ad5382763ae72272b069b9",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "54bba5ba_1c726695",
         "filename": "src/main/java/org/onap/cps/ncmp/dmi/config/DmiConfiguration.java",
         "patchSetId": 3
