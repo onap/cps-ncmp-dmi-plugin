@@ -2,6 +2,29 @@
   "comments": [
     {
       "key": {
+        "uuid": "2c660b10_0d4ddfd7",
+        "filename": "src/main/java/org/onap/cps/ncmp/dmi/config/DmiConfiguration.java",
+        "patchSetId": 4
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2022-01-18T17:53:31Z",
+      "side": 1,
+      "message": "was this rally needed?!",
+      "range": {
+        "startLine": 38,
+        "startChar": 39,
+        "endLine": 38,
+        "endChar": 44
+      },
+      "revId": "e9a0af2773fecaf15a6e7ec16ddaef75930322f9",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "c6ac40bd_fdf9ff5e",
         "filename": "src/main/java/org/onap/cps/ncmp/dmi/config/DmiConfiguration.java",
         "patchSetId": 4

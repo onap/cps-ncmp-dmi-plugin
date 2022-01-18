@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "01a38464_1e57bdd1",
+        "filename": "pom.xml",
+        "patchSetId": 3
+      },
+      "lineNbr": 162,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2022-01-18T17:53:31Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5485fda4_e310dab3",
+      "range": {
+        "startLine": 162,
+        "startChar": 12,
+        "endLine": 162,
+        "endChar": 36
+      },
+      "revId": "d4b94a07657f07d4e2ad5382763ae72272b069b9",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "6c971e5e_9be83539",
         "filename": "src/main/java/org/onap/cps/ncmp/dmi/config/DmiConfiguration.java",
         "patchSetId": 3
@@ -71,6 +95,30 @@
     },
     {
       "key": {
+        "uuid": "fd0b33e9_af7a6dd1",
+        "filename": "src/main/java/org/onap/cps/ncmp/dmi/config/DmiConfiguration.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 81,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2022-01-18T17:53:31Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "54bba5ba_1c726695",
+      "range": {
+        "startLine": 77,
+        "startChar": 0,
+        "endLine": 81,
+        "endChar": 55
+      },
+      "revId": "d4b94a07657f07d4e2ad5382763ae72272b069b9",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "6090189c_f107b962",
         "filename": "src/test/groovy/org/onap/cps/ncmp/dmi/rest/controller/DmiRestControllerSpec.groovy",
         "patchSetId": 3
@@ -91,6 +139,30 @@
       "revId": "d4b94a07657f07d4e2ad5382763ae72272b069b9",
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "d3180186_26aa1f1d",
+        "filename": "src/test/groovy/org/onap/cps/ncmp/dmi/rest/controller/DmiRestControllerSpec.groovy",
+        "patchSetId": 3
+      },
+      "lineNbr": 215,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2022-01-18T17:53:31Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "6090189c_f107b962",
+      "range": {
+        "startLine": 215,
+        "startChar": 9,
+        "endLine": 215,
+        "endChar": 15
+      },
+      "revId": "d4b94a07657f07d4e2ad5382763ae72272b069b9",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
     },
     {
       "key": {
@@ -144,6 +216,24 @@
       "revId": "d4b94a07657f07d4e2ad5382763ae72272b069b9",
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "3ab4e3bf_036bafdd",
+        "filename": "src/test/resources/patchData.json",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2022-01-18T17:53:31Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1a6b4ed5_8bfd4fa3",
+      "revId": "d4b94a07657f07d4e2ad5382763ae72272b069b9",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
     }
   ]
 }
