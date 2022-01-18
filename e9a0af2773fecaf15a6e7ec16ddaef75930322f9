@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "c6ac40bd_fdf9ff5e",
+        "filename": "src/main/java/org/onap/cps/ncmp/dmi/config/DmiConfiguration.java",
+        "patchSetId": 4
+      },
+      "lineNbr": 81,
+      "author": {
+        "id": 7830
+      },
+      "writtenOn": "2022-01-18T09:15:59Z",
+      "side": 1,
+      "message": "small typo non blocking",
+      "range": {
+        "startLine": 81,
+        "startChar": 23,
+        "endLine": 81,
+        "endChar": 25
+      },
+      "revId": "e9a0af2773fecaf15a6e7ec16ddaef75930322f9",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    }
+  ]
+}
