@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "c5f37068_01ce7873",
+        "filename": "src/main/java/org/onap/cps/ncmp/dmi/config/DmiConfiguration.java",
+        "patchSetId": 5
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2022-01-20T13:39:57Z",
+      "side": 1,
+      "message": "can you please comment on this increase?!",
+      "range": {
+        "startLine": 38,
+        "startChar": 39,
+        "endLine": 38,
+        "endChar": 44
+      },
+      "revId": "dffff5df568b0f7654dcf019cee2333b29db09e2",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    }
+  ]
+}
