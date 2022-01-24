@@ -116,7 +116,7 @@ public class DmiRestController implements DmiPluginApi, DmiPluginInternalApi {
     }
 
     @Override
-    public ResponseEntity<String> dataAccessPassthroughRunning(final String resourceIdentifier,
+    public ResponseEntity<Object> dataAccessPassthroughRunning(final String resourceIdentifier,
                                                                final String cmHandle,
                                                                final @Valid DataAccessRequest
                                                                        dataAccessRequest,

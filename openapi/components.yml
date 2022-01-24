@@ -118,26 +118,6 @@ components:
             status: 400
             message: Bad Request
             details: The provided request is not valid
-    Unauthorized:
-      description: Unauthorized
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/ErrorMessage'
-          example:
-            status: 401
-            message: Unauthorized request
-            details: This request is unauthorized
-    Forbidden:
-      description: Forbidden
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/ErrorMessage'
-          example:
-            status: 403
-            message: Request Forbidden
-            details: This request is forbidden
     NotFound:
       description: The specified resource was not found
       content:
@@ -148,17 +128,16 @@ components:
             status: 404
             message: Resource Not Found
             details: The requested resource is not found
-    Conflict:
-      description: Conflict
+    ServerError:
+      description: Internal Server Error
       content:
         application/json:
           schema:
             $ref: '#/components/schemas/ErrorMessage'
           example:
-            status: 409
-            message: Conflicting request
-            details: The request cannot be processed as the resource is in use.
-
+            status: 500
+            message: Internal Server Error
+            details: Internal Server Error occured
   parameters:
     cmHandleInPath:
       name: cmHandle
