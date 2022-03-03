@@ -1,6 +1,6 @@
 /*
  *  ============LICENSE_START=======================================================
- *  Copyright (C) 2021 Nordix Foundation
+ *  Copyright (C) 2021-2022 Nordix Foundation
  *  Modifications Copyright (C) 2021 Bell Canada
  *  ================================================================================
  *  Licensed under the Apache License, Version 2.0 (the "License");
@@ -144,27 +144,28 @@ class SdncOperationsSpec extends Specification {
 
     def 'build query param list for SDNC where options contains a #scenario'() {
         when: 'build query param list is called with #scenario'
-            def result = objectUnderTest.buildQueryParamList(optionsParamInQuery, 'd=4')
+            def result = objectUnderTest.buildQueryParamMap(optionsParamInQuery, 'd=4')
+                    .toSingleValueMap().toString()
         then: 'result equals to expected result'
             result == expectedResult
         where: 'following parameters are used'
             scenario                   | optionsParamInQuery || expectedResult
-            'single key-value pair'    | '(a=x)'             || ['a=x', 'd=4']
-            'multiple key-value pairs' | '(a=x,b=y,c=z)'     || ['a=x', 'b=y', 'c=z', 'd=4']
-            '/ as special char'        | '(a=x,b=y,c=t/z)'   || ['a=x', 'b=y', 'c=t/z', 'd=4']
-            '" as special char'        | '(a=x,b=y,c="z")'   || ['a=x', 'b=y', 'c="z"', 'd=4']
-            '[] as special char'       | '(a=x,b=y,c=[z])'   || ['a=x', 'b=y', 'c=[z]', 'd=4']
-            '= in value'               | '(a=(x=y),b=x=y)'   || ['a=(x=y)', 'b=x=y', 'd=4']
+            'single key-value pair'    | '(a=x)'             || '[a:x, d:4]'
+            'multiple key-value pairs' | '(a=x,b=y,c=z)'     || '[a:x, b:y, c:z, d:4]'
+            '/ as special char'        | '(a=x,b=y,c=t/z)'   || '[a:x, b:y, c:t/z, d:4]'
+            '" as special char'        | '(a=x,b=y,c="z")'   || '[a:x, b:y, c:"z", d:4]'
+            '[] as special char'       | '(a=x,b=y,c=[z])'   || '[a:x, b:y, c:[z], d:4]'
+            '= in value'               | '(a=(x=y),b=x=y)'   || '[a:(x=y), b:x=y, d:4]'
     }
 
     def 'options parameters contains a comma #scenario'() {
         // https://jira.onap.org/browse/CPS-719
         when: 'build query param list is called with #scenario'
-            def result = objectUnderTest.buildQueryParamList(optionsParamInQuery, 'd=4')
-        then: 'expect 2 elements from options +1 from content query param (2+1) = 3 elements'
+            def result = objectUnderTest.buildQueryParamMap(optionsParamInQuery, 'd=4').toSingleValueMap()
+        then: 'expect 2 elements from options where we are ignoring empty query param value +1 from content query param (2+1) = 3 elements'
             def expectedNoOfElements = 3
         and: 'results contains more elements than expected'
-            result.size() > expectedNoOfElements
+            result.size() == expectedNoOfElements
         where: 'following parameters are used'
             scenario              | optionsParamInQuery
             '"," in value'        | '(a=(x,y),b=y)'
