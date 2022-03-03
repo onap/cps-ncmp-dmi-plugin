@@ -1,6 +1,6 @@
 /*
  *  ============LICENSE_START=======================================================
- *  Copyright (C) 2021 Nordix Foundation
+ *  Copyright (C) 2021-2022 Nordix Foundation
  *  Modifications Copyright (C) 2021 Bell Canada
  *  ================================================================================
  *  Licensed under the Apache License, Version 2.0 (the "License");
@@ -30,9 +30,9 @@ import com.jayway.jsonpath.spi.mapper.JacksonMappingProvider;
 import java.util.Arrays;
 import java.util.Collection;
 import java.util.Collections;
-import java.util.LinkedList;
 import java.util.List;
-import org.apache.groovy.parser.antlr4.util.StringUtils;
+import java.util.Map;
+import java.util.stream.Collectors;
 import org.onap.cps.ncmp.dmi.config.DmiConfiguration.SdncProperties;
 import org.onap.cps.ncmp.dmi.exception.SdncException;
 import org.onap.cps.ncmp.dmi.model.DataAccessRequest;
@@ -44,21 +44,26 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Component;
+import org.springframework.util.LinkedMultiValueMap;
+import org.springframework.util.MultiValueMap;
+import org.springframework.web.util.UriComponentsBuilder;
 
 @Component
 public class SdncOperations {
 
     private static final String TOPOLOGY_URL_TEMPLATE_DATA =
-        "/rests/data/network-topology:network-topology/topology={topologyId}";
+        "/rests/data/network-topology:network-topology/";
     private static final String TOPOLOGY_URL_TEMPLATE_OPERATIONAL =
-        "/rests/operations/network-topology:network-topology/topology={topologyId}";
-    private static final String MOUNT_URL_TEMPLATE = "/node={nodeId}/yang-ext:mount";
-    private static final String GET_SCHEMA_URL = "/ietf-netconf-monitoring:netconf-state/schemas";
+        "/rests/operations/network-topology:network-topology/";
+    private static final String GET_SCHEMA_URL = "ietf-netconf-monitoring:netconf-state/schemas";
     private static final String GET_SCHEMA_SOURCES_URL = "/ietf-netconf-monitoring:get-schema";
     private static final String PATH_TO_MODULE_SCHEMAS = "$.ietf-netconf-monitoring:schemas.schema";
+    private static final int QUERY_PARAM_SPLIT_LIMIT = 2;
+    private static final int QUERY_PARAM_VALUE_INDEX = 1;
+    private static final int QUERY_PARAM_NAME_INDEX = 0;
 
-    private SdncProperties sdncProperties;
-    private SdncRestconfClient sdncRestconfClient;
+    private final SdncProperties sdncProperties;
+    private final SdncRestconfClient sdncRestconfClient;
     private final String topologyUrlData;
     private final String topologyUrlOperational;
 
@@ -76,9 +81,8 @@ public class SdncOperations {
     public SdncOperations(final SdncProperties sdncProperties, final SdncRestconfClient sdncRestconfClient) {
         this.sdncProperties = sdncProperties;
         this.sdncRestconfClient = sdncRestconfClient;
-        topologyUrlOperational =
-            TOPOLOGY_URL_TEMPLATE_OPERATIONAL.replace("{topologyId}", this.sdncProperties.getTopologyId());
-        topologyUrlData = TOPOLOGY_URL_TEMPLATE_DATA.replace("{topologyId}", this.sdncProperties.getTopologyId());
+        topologyUrlOperational = getTopologyUrlOperational();
+        topologyUrlData = getTopologyUrlData();
     }
 
     /**
@@ -92,13 +96,14 @@ public class SdncOperations {
         final ResponseEntity<String> modulesResponseEntity = sdncRestconfClient.getOperation(urlWithNodeId);
         if (modulesResponseEntity.getStatusCode() == HttpStatus.OK) {
             final String modulesResponseBody = modulesResponseEntity.getBody();
-            return (StringUtils.isEmpty(modulesResponseBody)) ? Collections.emptyList()
-                : convertToModuleSchemas(modulesResponseBody);
-        } else {
-            throw new SdncException(
+            if (modulesResponseBody == null || modulesResponseBody.isBlank()) {
+                return Collections.emptyList();
+            }
+            return convertToModuleSchemas(modulesResponseBody);
+        }
+        throw new SdncException(
                 String.format("SDNC failed to get Modules Schema for node %s", nodeId),
                 modulesResponseEntity.getStatusCode(), modulesResponseEntity.getBody());
-        }
     }
 
     /**
@@ -123,19 +128,19 @@ public class SdncOperations {
      * @param resourceId                resource identifier
      * @param optionsParamInQuery       fields query
      * @param acceptParamInHeader       accept parameter
-     * @param restconfContentQueryParam restconf content query param
+     * @param restConfContentQueryParam restConf content query param
      * @return {@code ResponseEntity} response entity
      */
     public ResponseEntity<String> getResouceDataForOperationalAndRunning(final String nodeId,
         final String resourceId,
         final String optionsParamInQuery,
         final String acceptParamInHeader,
-        final String restconfContentQueryParam) {
+        final String restConfContentQueryParam) {
         final String getResourceDataUrl = prepareResourceDataUrl(nodeId,
             resourceId,
-            buildQueryParamList(optionsParamInQuery, restconfContentQueryParam));
+                buildQueryParamMap(optionsParamInQuery, restConfContentQueryParam));
         final HttpHeaders httpHeaders = new HttpHeaders();
-        if (!StringUtils.isEmpty(acceptParamInHeader)) {
+        if (acceptParamInHeader != null && !acceptParamInHeader.isBlank()) {
             httpHeaders.set(HttpHeaders.ACCEPT, acceptParamInHeader);
         }
         return sdncRestconfClient.getOperation(getResourceDataUrl, httpHeaders);
@@ -162,19 +167,18 @@ public class SdncOperations {
         return sdncRestconfClient.httpOperationWithJsonData(httpMethod, getResourceDataUrl, requestData, httpHeaders);
     }
 
-    private List<String> buildQueryParamList(final String optionsParamInQuery, final String restconfContentQueryParam) {
-        final List<String> queryParamAsList = getOptionsParamAsList(optionsParamInQuery);
-        queryParamAsList.add(restconfContentQueryParam);
-        return queryParamAsList;
+    private MultiValueMap<String, String> buildQueryParamMap(final String optionsParamInQuery,
+                                                             final String restConfContentQueryParam) {
+        return getQueryParamsAsMap(optionsParamInQuery, restConfContentQueryParam);
     }
 
-    private List<String> getOptionsParamAsList(final String optionsParamInQuery) {
-        final List<String> queryParamAsList = new LinkedList<>();
-        if (!StringUtils.isEmpty(optionsParamInQuery)) {
-            final String tempQuery = stripParenthesisFromOptionsQuery(optionsParamInQuery);
-            queryParamAsList.addAll(Arrays.asList(tempQuery.split(",")));
+    private MultiValueMap<String, String> getQueryParamsAsMap(final String optionsParamInQuery,
+                                                              final String restConfContentQueryParam) {
+        final MultiValueMap<String, String> queryParams = new LinkedMultiValueMap<>();
+        if (optionsParamInQuery != null && !optionsParamInQuery.isBlank()) {
+            queryParams.setAll(extractQueryParams(optionsParamInQuery, restConfContentQueryParam));
         }
-        return queryParamAsList;
+        return queryParams;
     }
 
     private String stripParenthesisFromOptionsQuery(final String optionsParamInQuery) {
@@ -186,46 +190,40 @@ public class SdncOperations {
     }
 
     private String prepareWriteUrl(final String nodeId, final String resourceId) {
-        return addResource(addTopologyDataUrlwithNode(nodeId), "/" + resourceId);
+        return addResource(addTopologyDataUrlwithNode(nodeId), resourceId);
     }
 
     private String prepareGetOperationSchemaUrl(final String nodeId) {
-        final var topologyMountUrl = topologyUrlOperational + MOUNT_URL_TEMPLATE;
-        final var topologyMountUrlWithNodeId = topologyMountUrl.replace("{nodeId}", nodeId);
-        return topologyMountUrlWithNodeId.concat(GET_SCHEMA_SOURCES_URL);
+        return UriComponentsBuilder.fromUriString(topologyUrlOperational)
+                .pathSegment("node={nodeId}")
+                .pathSegment("yang-ext:mount")
+                .path(GET_SCHEMA_SOURCES_URL)
+                .buildAndExpand(nodeId).toUriString();
     }
 
     private String prepareResourceDataUrl(final String nodeId,
-        final String resourceId,
-        final List<String> queryList) {
-        return addQuery(addResource(addTopologyDataUrlwithNode(nodeId), resourceId), queryList);
+                                          final String resourceId,
+                                          final MultiValueMap<String, String> queryMap) {
+        return addQuery(addResource(addTopologyDataUrlwithNode(nodeId), resourceId), queryMap);
     }
 
     private String addResource(final String url, final String resourceId) {
-        if (resourceId.startsWith("/")) {
-            return url.concat(resourceId);
-        } else {
-            return url.concat("/" + resourceId);
-        }
+        return UriComponentsBuilder.fromUriString(url)
+                .pathSegment(resourceId)
+                .buildAndExpand().toUriString();
     }
 
-    private String addQuery(final String url, final List<String> queryList) {
-        if (queryList.isEmpty()) {
-            return url;
-        }
-        final StringBuilder urlBuilder = new StringBuilder(url);
-        urlBuilder.append("?");
-        urlBuilder.append(queryList.get(0));
-        for (int i = 1; i < queryList.size(); i++) {
-            urlBuilder.append("&");
-            urlBuilder.append(queryList.get(i));
-        }
-        return urlBuilder.toString();
+    private String addQuery(final String url, final MultiValueMap<String, String> queryMap) {
+        return UriComponentsBuilder.fromUriString(url)
+                .queryParams(queryMap)
+                .buildAndExpand().toUriString();
     }
 
     private String addTopologyDataUrlwithNode(final String nodeId) {
-        final String topologyMountUrl = topologyUrlData + MOUNT_URL_TEMPLATE;
-        return topologyMountUrl.replace("{nodeId}", nodeId);
+        return UriComponentsBuilder.fromUriString(topologyUrlData)
+                .pathSegment("node={nodeId}")
+                .pathSegment("yang-ext:mount")
+                .buildAndExpand(nodeId).toUriString();
     }
 
     private List<ModuleSchema> convertToModuleSchemas(final String modulesListAsJson) {
@@ -263,4 +261,29 @@ public class SdncOperations {
         return httpMethod;
     }
 
+    private String getTopologyUrlData() {
+        return UriComponentsBuilder.fromUriString(TOPOLOGY_URL_TEMPLATE_DATA)
+                .path("topology={topologyId}")
+                .buildAndExpand(this.sdncProperties.getTopologyId()).toUriString();
+    }
+
+    private String getTopologyUrlOperational() {
+        return UriComponentsBuilder.fromUriString(
+                        TOPOLOGY_URL_TEMPLATE_OPERATIONAL)
+                .path("topology={topologyId}")
+                .buildAndExpand(this.sdncProperties.getTopologyId()).toUriString();
+    }
+
+    private Map<String, String> extractQueryParams(final String optionsParamInQuery,
+                                                   final String restConfContentQueryParam) {
+        final String QueryParamsAsString = stripParenthesisFromOptionsQuery(optionsParamInQuery)
+                + "," + restConfContentQueryParam;
+        final String[] splitTempQueryByComma = QueryParamsAsString.split(",");
+        return Arrays.stream(splitTempQueryByComma)
+                .map(queryParamPair -> queryParamPair.split("=", QUERY_PARAM_SPLIT_LIMIT))
+                .filter(queryParam -> queryParam.length > 1)
+                .collect(Collectors.toMap(
+                        queryParam -> queryParam[QUERY_PARAM_NAME_INDEX],
+                        queryParam -> queryParam[QUERY_PARAM_VALUE_INDEX]));
+    }
 }
