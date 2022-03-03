@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "51c99ab9_9baaaf8c",
+        "filename": "src/main/java/org/onap/cps/ncmp/dmi/service/operation/SdncOperations.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 173,
+      "author": {
+        "id": 7743
+      },
+      "writtenOn": "2022-03-03T13:36:14Z",
+      "side": 1,
+      "message": "This is a little difficult to read. Could some sections be extracted with names that indicate what it\u0027s responsibility is?",
+      "revId": "ea7334045b60dd5c34167e39ae3e49afa7803f31",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    }
+  ]
+}
