@@ -2,6 +2,167 @@
   "comments": [
     {
       "key": {
+        "uuid": "8b6a7433_8c8518c8",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2022-03-03T15:18:08Z",
+      "side": 1,
+      "message": "569 included several comment I am actual not clear which you address here, please add more details\n\n(will there be more commits, using same topic?)",
+      "range": {
+        "startLine": 7,
+        "startChar": 1,
+        "endLine": 7,
+        "endChar": 41
+      },
+      "revId": "ea7334045b60dd5c34167e39ae3e49afa7803f31",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "cd162fad_0fee3301",
+        "filename": "src/main/java/org/onap/cps/ncmp/dmi/constants/DmiPluginConstants.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2022-03-03T15:18:08Z",
+      "side": 1,
+      "message": "since all these constant are used in only once class I don\u0027t see a value in moving them from that file :-(",
+      "range": {
+        "startLine": 27,
+        "startChar": 19,
+        "endLine": 27,
+        "endChar": 38
+      },
+      "revId": "ea7334045b60dd5c34167e39ae3e49afa7803f31",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "6b367dfd_ca65b0c0",
+        "filename": "src/main/java/org/onap/cps/ncmp/dmi/constants/DmiPluginConstants.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2022-03-03T15:18:08Z",
+      "side": 1,
+      "message": "hard to name correctly \u0026 no need for constant, it hides what is happening !",
+      "range": {
+        "startLine": 37,
+        "startChar": 31,
+        "endLine": 37,
+        "endChar": 69
+      },
+      "revId": "ea7334045b60dd5c34167e39ae3e49afa7803f31",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "b1af1df2_73720765",
+        "filename": "src/main/java/org/onap/cps/ncmp/dmi/constants/DmiPluginConstants.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2022-03-03T15:18:08Z",
+      "side": 1,
+      "message": "I don\u0027t think these add value or improve readability",
+      "range": {
+        "startLine": 38,
+        "startChar": 31,
+        "endLine": 39,
+        "endChar": 53
+      },
+      "revId": "ea7334045b60dd5c34167e39ae3e49afa7803f31",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "858f60db_aa6ef738",
+        "filename": "src/main/java/org/onap/cps/ncmp/dmi/constants/DmiPluginConstants.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 43,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2022-03-03T15:18:08Z",
+      "side": 1,
+      "message": "these do add value but again no need to move them in separate class",
+      "range": {
+        "startLine": 40,
+        "startChar": 2,
+        "endLine": 43,
+        "endChar": 56
+      },
+      "revId": "ea7334045b60dd5c34167e39ae3e49afa7803f31",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "b1125707_44900306",
+        "filename": "src/main/java/org/onap/cps/ncmp/dmi/constants/DmiPluginConstants.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 44,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2022-03-03T15:18:08Z",
+      "side": 1,
+      "message": "hard to name correctly \u0026 no need for constant, it hides what is happening !",
+      "range": {
+        "startLine": 44,
+        "startChar": 31,
+        "endLine": 44,
+        "endChar": 57
+      },
+      "revId": "ea7334045b60dd5c34167e39ae3e49afa7803f31",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "173ebda3_fca2a6ca",
+        "filename": "src/main/java/org/onap/cps/ncmp/dmi/constants/DmiPluginConstants.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 46,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2022-03-03T15:18:08Z",
+      "side": 1,
+      "message": "I don\u0027t think these add value or improve readability",
+      "range": {
+        "startLine": 45,
+        "startChar": 4,
+        "endLine": 46,
+        "endChar": 52
+      },
+      "revId": "ea7334045b60dd5c34167e39ae3e49afa7803f31",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "51c99ab9_9baaaf8c",
         "filename": "src/main/java/org/onap/cps/ncmp/dmi/service/operation/SdncOperations.java",
         "patchSetId": 1
@@ -13,6 +174,29 @@
       "writtenOn": "2022-03-03T13:36:14Z",
       "side": 1,
       "message": "This is a little difficult to read. Could some sections be extracted with names that indicate what it\u0027s responsibility is?",
+      "revId": "ea7334045b60dd5c34167e39ae3e49afa7803f31",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "8cdd3dd5_f1d45bcc",
+        "filename": "src/test/groovy/org/onap/cps/ncmp/dmi/service/operation/SdncOperationsSpec.groovy",
+        "patchSetId": 1
+      },
+      "lineNbr": 113,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2022-03-03T15:18:08Z",
+      "side": 1,
+      "message": "Blocking! this seems incorrect? Not compatible with old behavior?!",
+      "range": {
+        "startLine": 113,
+        "startChar": 147,
+        "endLine": 113,
+        "endChar": 149
+      },
       "revId": "ea7334045b60dd5c34167e39ae3e49afa7803f31",
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
       "unresolved": true
