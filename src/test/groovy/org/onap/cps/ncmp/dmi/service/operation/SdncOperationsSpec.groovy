@@ -1,6 +1,6 @@
 /*
  *  ============LICENSE_START=======================================================
- *  Copyright (C) 2021 Nordix Foundation
+ *  Copyright (C) 2021-2022 Nordix Foundation
  *  Modifications Copyright (C) 2021 Bell Canada
  *  ================================================================================
  *  Licensed under the Apache License, Version 2.0 (the "License");
@@ -33,6 +33,7 @@ import org.springframework.http.HttpMethod
 import org.springframework.http.HttpStatus
 import org.springframework.http.ResponseEntity
 import org.springframework.test.context.ContextConfiguration
+import org.springframework.util.MultiValueMap
 import spock.lang.Specification
 
 import static org.onap.cps.ncmp.dmi.model.DataAccessRequest.OperationEnum.CREATE
@@ -54,7 +55,7 @@ class SdncOperationsSpec extends Specification {
     def 'get modules from node.'() {
         given: 'node id and url'
             def nodeId = 'node1'
-            def expectedUrl = '/rests/data/network-topology:network-topology/topology=test-topology/node=node1/yang-ext:mount/ietf-netconf-monitoring:netconf-state/schemas'
+            def expectedUrl = '/rests/data/network-topology:network-topology/node=node1/yang-ext:mount/ietf-netconf-monitoring:netconf-state/schemas/?topology=test-topology'
         and: 'sdnc returns one module in response'
             mockSdncRestClient.getOperation(expectedUrl) >>
                 ResponseEntity.ok(TestUtils.getResourceFileContent('ModuleSchema.json'))
@@ -75,7 +76,7 @@ class SdncOperationsSpec extends Specification {
     def 'No modules from Node: SDNC Response - #scenario .'() {
         given: 'node id and url'
             def nodeId = 'node1'
-            def expectedUrl = '/rests/data/network-topology:network-topology/topology=test-topology/node=node1/yang-ext:mount/ietf-netconf-monitoring:netconf-state/schemas'
+            def expectedUrl = '/rests/data/network-topology:network-topology/node=node1/yang-ext:mount/ietf-netconf-monitoring:netconf-state/schemas/?topology=test-topology'
         and: 'sdnc operation returns #scenario'
             mockSdncRestClient.getOperation(expectedUrl) >> ResponseEntity.ok(responseBody)
         when: 'modules from node is called'
@@ -91,7 +92,7 @@ class SdncOperationsSpec extends Specification {
     def 'Error handling - modules from node: #scenario'() {
         given: 'node id and url'
             def nodeId = 'node1'
-            def expectedUrl = '/rests/data/network-topology:network-topology/topology=test-topology/node=node1/yang-ext:mount/ietf-netconf-monitoring:netconf-state/schemas'
+            def expectedUrl = '/rests/data/network-topology:network-topology/node=node1/yang-ext:mount/ietf-netconf-monitoring:netconf-state/schemas/?topology=test-topology'
         and: 'sdnc operation returns configured response'
             mockSdncRestClient.getOperation(expectedUrl) >> new ResponseEntity<>(sdncResponseBody, sdncHttpStatus)
         when: 'modules for node are fetched'
@@ -109,7 +110,7 @@ class SdncOperationsSpec extends Specification {
     def 'Get module resources from SDNC.'() {
         given: 'node id and url'
             def nodeId = 'some-node'
-            def expectedUrl = '/rests/operations/network-topology:network-topology/topology=test-topology/node=some-node/yang-ext:mount/ietf-netconf-monitoring:get-schema'
+            def expectedUrl = '/rests/operations/network-topology:network-topology/node=some-node/yang-ext:mount/ietf-netconf-monitoring:get-schema/?topology=test-topology'
         when: 'get module resources is called with the expected parameters'
             objectUnderTest.getModuleResource(nodeId, 'some-json-data')
         then: 'the SDNC Rest client is invoked with the correct URL and json data'
@@ -118,7 +119,7 @@ class SdncOperationsSpec extends Specification {
 
     def 'Get resource data from node to SDNC.'() {
         given: 'expected url, topology-id, sdncOperation object'
-            def expectedUrl = '/rests/data/network-topology:network-topology/topology=test-topology/node=node1/yang-ext:mount/testResourceId?a=1&b=2&content=testContent'
+            def expectedUrl = '/rests/data/network-topology:network-topology/node=node1/yang-ext:mount/testResourceId/?topology=test-topology&a=1&b=2&content=testContent'
         when: 'called get modules from node'
             objectUnderTest.getResouceDataForOperationalAndRunning('node1', 'testResourceId',
                 '(a=1,b=2)', 'testAcceptParam', 'content=testContent')
@@ -128,7 +129,7 @@ class SdncOperationsSpec extends Specification {
 
     def 'Write resource data with #scenario operation to SDNC.'() {
         given: 'expected url, topology-id, sdncOperation object'
-            def expectedUrl = '/rests/data/network-topology:network-topology/topology=test-topology/node=node1/yang-ext:mount/testResourceId'
+            def expectedUrl = '/rests/data/network-topology:network-topology/node=node1/yang-ext:mount/testResourceId/?topology=test-topology'
         when: 'write resource data for passthrough running is called'
             objectUnderTest.writeData(operationEnum, 'node1', 'testResourceId', 'application/json', 'requestData')
         then: 'the #expectedHttpMethod operation is executed with the correct URL and data'
@@ -144,27 +145,29 @@ class SdncOperationsSpec extends Specification {
 
     def 'build query param list for SDNC where options contains a #scenario'() {
         when: 'build query param list is called with #scenario'
-            def result = objectUnderTest.buildQueryParamList(optionsParamInQuery, 'd=4')
-        then: 'result equals to expected result'
-            result == expectedResult
+            def result = objectUnderTest.buildQueryParamMap(optionsParamInQuery, 'd=4').toSingleValueMap()
+        then: 'result size is equals to'
+            result.size() == expectedResultSize
+        and: 'result equals to expected result'
+            result.toString() == expectedResult
         where: 'following parameters are used'
-            scenario                   | optionsParamInQuery || expectedResult
-            'single key-value pair'    | '(a=x)'             || ['a=x', 'd=4']
-            'multiple key-value pairs' | '(a=x,b=y,c=z)'     || ['a=x', 'b=y', 'c=z', 'd=4']
-            '/ as special char'        | '(a=x,b=y,c=t/z)'   || ['a=x', 'b=y', 'c=t/z', 'd=4']
-            '" as special char'        | '(a=x,b=y,c="z")'   || ['a=x', 'b=y', 'c="z"', 'd=4']
-            '[] as special char'       | '(a=x,b=y,c=[z])'   || ['a=x', 'b=y', 'c=[z]', 'd=4']
-            '= in value'               | '(a=(x=y),b=x=y)'   || ['a=(x=y)', 'b=x=y', 'd=4']
+            scenario                   | optionsParamInQuery || expectedResultSize | expectedResult
+            'single key-value pair'    | '(a=x)'             || 2                  | '[a:x, d:4]'
+            'multiple key-value pairs' | '(a=x,b=y,c=z)'     || 4                  | '[a:x, b:y, c:z, d:4]'
+            '/ as special char'        | '(a=x,b=y,c=t/z)'   || 4                  | '[a:x, b:y, c:t/z, d:4]'
+            '" as special char'        | '(a=x,b=y,c="z")'   || 4                  | '[a:x, b:y, c:"z", d:4]'
+            '[] as special char'       | '(a=x,b=y,c=[z])'   || 4                  | '[a:x, b:y, c:[z], d:4]'
+            '= in value'               | '(a=(x=y),b=x=y)'   || 3                  | '[a:(x=y), b:x=y, d:4]'
     }
 
     def 'options parameters contains a comma #scenario'() {
         // https://jira.onap.org/browse/CPS-719
         when: 'build query param list is called with #scenario'
-            def result = objectUnderTest.buildQueryParamList(optionsParamInQuery, 'd=4')
-        then: 'expect 2 elements from options +1 from content query param (2+1) = 3 elements'
-            def expectedNoOfElements = 3
+            def result = objectUnderTest.buildQueryParamMap(optionsParamInQuery, 'd=4').toSingleValueMap()
+        then: 'expect 3 elements from options +1 from content query param (3+1) = 4 elements'
+            def expectedNoOfElements = 4
         and: 'results contains more elements than expected'
-            result.size() > expectedNoOfElements
+            result.size() == expectedNoOfElements
         where: 'following parameters are used'
             scenario              | optionsParamInQuery
             '"," in value'        | '(a=(x,y),b=y)'
