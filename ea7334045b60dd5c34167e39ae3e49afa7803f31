@@ -163,6 +163,52 @@
     },
     {
       "key": {
+        "uuid": "670487e1_58e0f71f",
+        "filename": "src/main/java/org/onap/cps/ncmp/dmi/service/operation/SdncOperations.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 56,
+      "author": {
+        "id": 7744
+      },
+      "writtenOn": "2022-03-04T12:40:36Z",
+      "side": 1,
+      "message": "NB - These can be made final",
+      "range": {
+        "startLine": 55,
+        "startChar": 0,
+        "endLine": 56,
+        "endChar": 50
+      },
+      "revId": "ea7334045b60dd5c34167e39ae3e49afa7803f31",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "a1e1a86f_99cd33de",
+        "filename": "src/main/java/org/onap/cps/ncmp/dmi/service/operation/SdncOperations.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 77,
+      "author": {
+        "id": 7744
+      },
+      "writtenOn": "2022-03-04T12:40:36Z",
+      "side": 1,
+      "message": "I\u0027d probably extract this and the builder below into it\u0027s own method to improve readability.",
+      "range": {
+        "startLine": 74,
+        "startChar": 33,
+        "endLine": 77,
+        "endChar": 83
+      },
+      "revId": "ea7334045b60dd5c34167e39ae3e49afa7803f31",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "51c99ab9_9baaaf8c",
         "filename": "src/main/java/org/onap/cps/ncmp/dmi/service/operation/SdncOperations.java",
         "patchSetId": 1
