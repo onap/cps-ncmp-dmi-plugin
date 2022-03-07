@@ -551,6 +551,30 @@
       "revId": "ea7334045b60dd5c34167e39ae3e49afa7803f31",
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "41df3d1b_c0df38c8",
+        "filename": "src/test/groovy/org/onap/cps/ncmp/dmi/service/operation/SdncOperationsSpec.groovy",
+        "patchSetId": 1
+      },
+      "lineNbr": 113,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2022-03-07T17:31:39Z",
+      "side": 1,
+      "message": "ok, I see it actually does seem more consistent but I am so used to NOT having a / after the last URI...\n\nI test in Jira and it doesn\u0027t seem to be compatible\n\nhttps://jira.onap.org/secure/RapidBoard.jspa?rapidView\u003d228   OK _ our JIra board :-)\nhttps://jira.onap.org/secure/RapidBoard.jspa/?rapidView\u003d228  FAIL, 404 but this is jspa or maybe I misunderstand your change",
+      "parentUuid": "9d2921f1_cda06347",
+      "range": {
+        "startLine": 113,
+        "startChar": 147,
+        "endLine": 113,
+        "endChar": 149
+      },
+      "revId": "ea7334045b60dd5c34167e39ae3e49afa7803f31",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
     }
   ]
 }
