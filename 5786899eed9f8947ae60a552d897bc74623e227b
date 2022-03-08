@@ -48,6 +48,30 @@
     },
     {
       "key": {
+        "uuid": "ae3fee1a_b9eddedb",
+        "filename": "src/main/java/org/onap/cps/ncmp/dmi/service/operation/SdncOperations.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 181,
+      "author": {
+        "id": 7957
+      },
+      "writtenOn": "2022-03-08T14:35:13Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "a593224f_567b2a96",
+      "range": {
+        "startLine": 181,
+        "startChar": 103,
+        "endLine": 181,
+        "endChar": 104
+      },
+      "revId": "5786899eed9f8947ae60a552d897bc74623e227b",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9b0ec588_c96626fd",
         "filename": "src/main/java/org/onap/cps/ncmp/dmi/service/operation/SdncOperations.java",
         "patchSetId": 2
@@ -68,6 +92,30 @@
       "revId": "5786899eed9f8947ae60a552d897bc74623e227b",
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "83a16fe3_e2eff45d",
+        "filename": "src/main/java/org/onap/cps/ncmp/dmi/service/operation/SdncOperations.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 185,
+      "author": {
+        "id": 7957
+      },
+      "writtenOn": "2022-03-08T14:35:13Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9b0ec588_c96626fd",
+      "range": {
+        "startLine": 185,
+        "startChar": 61,
+        "endLine": 185,
+        "endChar": 62
+      },
+      "revId": "5786899eed9f8947ae60a552d897bc74623e227b",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
     },
     {
       "key": {
@@ -94,6 +142,30 @@
     },
     {
       "key": {
+        "uuid": "9e92dee8_8632b76f",
+        "filename": "src/main/java/org/onap/cps/ncmp/dmi/service/operation/SdncOperations.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 186,
+      "author": {
+        "id": 7957
+      },
+      "writtenOn": "2022-03-08T14:35:13Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "4c5092c8_d6981bbd",
+      "range": {
+        "startLine": 186,
+        "startChar": 70,
+        "endLine": 186,
+        "endChar": 71
+      },
+      "revId": "5786899eed9f8947ae60a552d897bc74623e227b",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "4bcc2f70_863de0a0",
         "filename": "src/main/java/org/onap/cps/ncmp/dmi/service/operation/SdncOperations.java",
         "patchSetId": 2
@@ -114,6 +186,30 @@
       "revId": "5786899eed9f8947ae60a552d897bc74623e227b",
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "0e3443a3_0da86ae2",
+        "filename": "src/main/java/org/onap/cps/ncmp/dmi/service/operation/SdncOperations.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 187,
+      "author": {
+        "id": 7957
+      },
+      "writtenOn": "2022-03-08T14:35:13Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "4bcc2f70_863de0a0",
+      "range": {
+        "startLine": 187,
+        "startChar": 57,
+        "endLine": 187,
+        "endChar": 58
+      },
+      "revId": "5786899eed9f8947ae60a552d897bc74623e227b",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
     },
     {
       "key": {
