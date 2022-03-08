@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1aa21aae_ff1df8ef",
+        "filename": "src/test/groovy/org/onap/cps/ncmp/dmi/service/operation/SdncOperationsSpec.groovy",
+        "patchSetId": 6
+      },
+      "lineNbr": 166,
+      "author": {
+        "id": 7744
+      },
+      "writtenOn": "2022-03-08T16:14:33Z",
+      "side": 1,
+      "message": "Expect 3 now?",
+      "range": {
+        "startLine": 166,
+        "startChar": 15,
+        "endLine": 166,
+        "endChar": 24
+      },
+      "revId": "14519af3ba128172ab0c578368cd52cf01fb6a3f",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    }
+  ]
+}
