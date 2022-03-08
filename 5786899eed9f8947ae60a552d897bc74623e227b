@@ -2,6 +2,29 @@
   "comments": [
     {
       "key": {
+        "uuid": "9eff3dbb_4c38af4a",
+        "filename": "src/main/java/org/onap/cps/ncmp/dmi/service/operation/SdncOperations.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 84,
+      "author": {
+        "id": 7965
+      },
+      "writtenOn": "2022-03-08T08:58:01Z",
+      "side": 1,
+      "message": "Suggestion : can use lombok",
+      "range": {
+        "startLine": 78,
+        "startChar": 4,
+        "endLine": 84,
+        "endChar": 0
+      },
+      "revId": "5786899eed9f8947ae60a552d897bc74623e227b",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "a593224f_567b2a96",
         "filename": "src/main/java/org/onap/cps/ncmp/dmi/service/operation/SdncOperations.java",
         "patchSetId": 2
