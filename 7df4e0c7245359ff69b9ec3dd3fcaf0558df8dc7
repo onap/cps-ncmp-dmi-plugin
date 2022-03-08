@@ -1,0 +1,73 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "bcc44bad_b0079512",
+        "filename": "src/main/java/org/onap/cps/ncmp/dmi/service/operation/SdncOperations.java",
+        "patchSetId": 4
+      },
+      "lineNbr": 189,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2022-03-08T18:12:57Z",
+      "side": 1,
+      "message": "no need for comments",
+      "range": {
+        "startLine": 189,
+        "startChar": 86,
+        "endLine": 189,
+        "endChar": 117
+      },
+      "revId": "7df4e0c7245359ff69b9ec3dd3fcaf0558df8dc7",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "f4c31b7a_ab9622ae",
+        "filename": "src/main/java/org/onap/cps/ncmp/dmi/service/operation/SdncOperations.java",
+        "patchSetId": 4
+      },
+      "lineNbr": 192,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2022-03-08T18:12:57Z",
+      "side": 1,
+      "message": "extract method\ndo not support \u0027a\u003d\u0027  (without value)",
+      "range": {
+        "startLine": 184,
+        "startChar": 33,
+        "endLine": 192,
+        "endChar": 65
+      },
+      "revId": "7df4e0c7245359ff69b9ec3dd3fcaf0558df8dc7",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "2fc53466_9d058cb1",
+        "filename": "src/test/groovy/org/onap/cps/ncmp/dmi/service/operation/SdncOperationsSpec.groovy",
+        "patchSetId": 4
+      },
+      "lineNbr": 58,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2022-03-08T18:12:57Z",
+      "side": 1,
+      "message": "as agreed this is incorrect topology should be  a path parameter not a query parameter",
+      "range": {
+        "startLine": 58,
+        "startChar": 148,
+        "endLine": 58,
+        "endChar": 150
+      },
+      "revId": "7df4e0c7245359ff69b9ec3dd3fcaf0558df8dc7",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    }
+  ]
+}

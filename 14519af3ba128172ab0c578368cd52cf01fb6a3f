@@ -2,6 +2,98 @@
   "comments": [
     {
       "key": {
+        "uuid": "ddef1174_4f4eda87",
+        "filename": "src/main/java/org/onap/cps/ncmp/dmi/service/operation/SdncOperations.java",
+        "patchSetId": 6
+      },
+      "lineNbr": 179,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2022-03-08T18:12:57Z",
+      "side": 1,
+      "message": "rename to all QueryParamsAsString",
+      "range": {
+        "startLine": 179,
+        "startChar": 25,
+        "endLine": 179,
+        "endChar": 34
+      },
+      "revId": "14519af3ba128172ab0c578368cd52cf01fb6a3f",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "af644d4b_965e58e9",
+        "filename": "src/main/java/org/onap/cps/ncmp/dmi/service/operation/SdncOperations.java",
+        "patchSetId": 6
+      },
+      "lineNbr": 181,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2022-03-08T18:12:57Z",
+      "side": 1,
+      "message": "would probably do this in below method too",
+      "range": {
+        "startLine": 181,
+        "startChar": 12,
+        "endLine": 181,
+        "endChar": 72
+      },
+      "revId": "14519af3ba128172ab0c578368cd52cf01fb6a3f",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "0795ada5_8dec4598",
+        "filename": "src/main/java/org/onap/cps/ncmp/dmi/service/operation/SdncOperations.java",
+        "patchSetId": 6
+      },
+      "lineNbr": 280,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2022-03-08T18:12:57Z",
+      "side": 1,
+      "message": "see prev comment intout teh allQueryParamAsString and then split into String[] inside this method",
+      "range": {
+        "startLine": 280,
+        "startChar": 51,
+        "endLine": 280,
+        "endChar": 87
+      },
+      "revId": "14519af3ba128172ab0c578368cd52cf01fb6a3f",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "1e1d48b2_2fcdefb4",
+        "filename": "src/test/groovy/org/onap/cps/ncmp/dmi/service/operation/SdncOperationsSpec.groovy",
+        "patchSetId": 6
+      },
+      "lineNbr": 153,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2022-03-08T18:12:57Z",
+      "side": 1,
+      "message": "please remove, see suggestions above",
+      "range": {
+        "startLine": 153,
+        "startChar": 64,
+        "endLine": 153,
+        "endChar": 83
+      },
+      "revId": "14519af3ba128172ab0c578368cd52cf01fb6a3f",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "1aa21aae_ff1df8ef",
         "filename": "src/test/groovy/org/onap/cps/ncmp/dmi/service/operation/SdncOperationsSpec.groovy",
         "patchSetId": 6
@@ -18,6 +110,53 @@
         "startChar": 15,
         "endLine": 166,
         "endChar": 24
+      },
+      "revId": "14519af3ba128172ab0c578368cd52cf01fb6a3f",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "692f1134_f40e5ac7",
+        "filename": "src/test/groovy/org/onap/cps/ncmp/dmi/service/operation/SdncOperationsSpec.groovy",
+        "patchSetId": 6
+      },
+      "lineNbr": 166,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2022-03-08T18:12:57Z",
+      "side": 1,
+      "message": "agreed please update description inline with new expectations",
+      "parentUuid": "1aa21aae_ff1df8ef",
+      "range": {
+        "startLine": 166,
+        "startChar": 15,
+        "endLine": 166,
+        "endChar": 24
+      },
+      "revId": "14519af3ba128172ab0c578368cd52cf01fb6a3f",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "7eb4e3cc_dbaf580c",
+        "filename": "src/test/groovy/org/onap/cps/ncmp/dmi/service/operation/SdncOperationsSpec.groovy",
+        "patchSetId": 6
+      },
+      "lineNbr": 166,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2022-03-08T18:12:57Z",
+      "side": 1,
+      "message": "need udpating",
+      "range": {
+        "startLine": 166,
+        "startChar": 74,
+        "endLine": 166,
+        "endChar": 83
       },
       "revId": "14519af3ba128172ab0c578368cd52cf01fb6a3f",
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
