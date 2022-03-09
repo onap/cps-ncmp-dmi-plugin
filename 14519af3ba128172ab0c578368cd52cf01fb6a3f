@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "e6c26bed_6c711128",
+        "filename": "src/main/java/org/onap/cps/ncmp/dmi/service/operation/SdncOperations.java",
+        "patchSetId": 6
+      },
+      "lineNbr": 179,
+      "author": {
+        "id": 7957
+      },
+      "writtenOn": "2022-03-09T10:26:02Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ddef1174_4f4eda87",
+      "range": {
+        "startLine": 179,
+        "startChar": 25,
+        "endLine": 179,
+        "endChar": 34
+      },
+      "revId": "14519af3ba128172ab0c578368cd52cf01fb6a3f",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "af644d4b_965e58e9",
         "filename": "src/main/java/org/onap/cps/ncmp/dmi/service/operation/SdncOperations.java",
         "patchSetId": 6
@@ -45,6 +69,30 @@
       "revId": "14519af3ba128172ab0c578368cd52cf01fb6a3f",
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "961cc8df_6fa61fc8",
+        "filename": "src/main/java/org/onap/cps/ncmp/dmi/service/operation/SdncOperations.java",
+        "patchSetId": 6
+      },
+      "lineNbr": 181,
+      "author": {
+        "id": 7957
+      },
+      "writtenOn": "2022-03-09T10:26:02Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "af644d4b_965e58e9",
+      "range": {
+        "startLine": 181,
+        "startChar": 12,
+        "endLine": 181,
+        "endChar": 72
+      },
+      "revId": "14519af3ba128172ab0c578368cd52cf01fb6a3f",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
     },
     {
       "key": {
@@ -71,6 +119,30 @@
     },
     {
       "key": {
+        "uuid": "b6d6ab6a_2c48bfa0",
+        "filename": "src/main/java/org/onap/cps/ncmp/dmi/service/operation/SdncOperations.java",
+        "patchSetId": 6
+      },
+      "lineNbr": 280,
+      "author": {
+        "id": 7957
+      },
+      "writtenOn": "2022-03-09T10:26:02Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "0795ada5_8dec4598",
+      "range": {
+        "startLine": 280,
+        "startChar": 51,
+        "endLine": 280,
+        "endChar": 87
+      },
+      "revId": "14519af3ba128172ab0c578368cd52cf01fb6a3f",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1e1d48b2_2fcdefb4",
         "filename": "src/test/groovy/org/onap/cps/ncmp/dmi/service/operation/SdncOperationsSpec.groovy",
         "patchSetId": 6
@@ -91,6 +163,30 @@
       "revId": "14519af3ba128172ab0c578368cd52cf01fb6a3f",
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "85207b6d_15e9f329",
+        "filename": "src/test/groovy/org/onap/cps/ncmp/dmi/service/operation/SdncOperationsSpec.groovy",
+        "patchSetId": 6
+      },
+      "lineNbr": 153,
+      "author": {
+        "id": 7957
+      },
+      "writtenOn": "2022-03-09T10:26:02Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1e1d48b2_2fcdefb4",
+      "range": {
+        "startLine": 153,
+        "startChar": 64,
+        "endLine": 153,
+        "endChar": 83
+      },
+      "revId": "14519af3ba128172ab0c578368cd52cf01fb6a3f",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
     },
     {
       "key": {
@@ -161,6 +257,54 @@
       "revId": "14519af3ba128172ab0c578368cd52cf01fb6a3f",
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "b75ed223_5e1611f7",
+        "filename": "src/test/groovy/org/onap/cps/ncmp/dmi/service/operation/SdncOperationsSpec.groovy",
+        "patchSetId": 6
+      },
+      "lineNbr": 166,
+      "author": {
+        "id": 7957
+      },
+      "writtenOn": "2022-03-09T10:26:02Z",
+      "side": 1,
+      "message": "Now expected is 2 from options as we are not considering any blankor invalid query param value. (i.e. key\u003d , key etc)",
+      "parentUuid": "692f1134_f40e5ac7",
+      "range": {
+        "startLine": 166,
+        "startChar": 15,
+        "endLine": 166,
+        "endChar": 24
+      },
+      "revId": "14519af3ba128172ab0c578368cd52cf01fb6a3f",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "64bd5cfd_4e9c5799",
+        "filename": "src/test/groovy/org/onap/cps/ncmp/dmi/service/operation/SdncOperationsSpec.groovy",
+        "patchSetId": 6
+      },
+      "lineNbr": 166,
+      "author": {
+        "id": 7957
+      },
+      "writtenOn": "2022-03-09T10:26:02Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7eb4e3cc_dbaf580c",
+      "range": {
+        "startLine": 166,
+        "startChar": 74,
+        "endLine": 166,
+        "endChar": 83
+      },
+      "revId": "14519af3ba128172ab0c578368cd52cf01fb6a3f",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
     }
   ]
 }
