@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "27d58b71_08882ed0",
+        "filename": "src/main/java/org/onap/cps/ncmp/dmi/service/operation/SdncOperations.java",
+        "patchSetId": 13
+      },
+      "lineNbr": 101,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2022-03-09T14:26:59Z",
+      "side": 1,
+      "message": "no need for else block (as there is a return-statement at end of if-block)\n\n(I think\u003d his is a good candidate for our checklist you suggested earlier :-)",
+      "range": {
+        "startLine": 101,
+        "startChar": 14,
+        "endLine": 101,
+        "endChar": 20
+      },
+      "revId": "fd57fe310c18ca62b347af092cd6c95d34f53f99",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    }
+  ]
+}
