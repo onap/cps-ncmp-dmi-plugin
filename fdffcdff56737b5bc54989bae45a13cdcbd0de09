@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "83d339f6_2298acfe",
+        "filename": "src/main/java/org/onap/cps/ncmp/dmi/service/operation/SdncOperations.java",
+        "patchSetId": 9
+      },
+      "lineNbr": 103,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2022-03-09T11:52:40Z",
+      "side": 1,
+      "message": "let\u0027s simplify:\n\nString body \u003d modulesResponseEntity.getBody() \nif (body\u003d\u003dnull || body.isBlank) {\n... }\nelse {\n... }",
+      "range": {
+        "startLine": 100,
+        "startChar": 0,
+        "endLine": 103,
+        "endChar": 46
+      },
+      "revId": "fdffcdff56737b5bc54989bae45a13cdcbd0de09",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "49e6879f_0159a0f1",
+        "filename": "src/main/java/org/onap/cps/ncmp/dmi/service/operation/SdncOperations.java",
+        "patchSetId": 9
+      },
+      "lineNbr": 145,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2022-03-09T11:52:40Z",
+      "side": 1,
+      "message": "as before, please use simpler approach",
+      "range": {
+        "startLine": 145,
+        "startChar": 12,
+        "endLine": 145,
+        "endChar": 31
+      },
+      "revId": "fdffcdff56737b5bc54989bae45a13cdcbd0de09",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    }
+  ]
+}
