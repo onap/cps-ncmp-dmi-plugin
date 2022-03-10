@@ -46,6 +46,30 @@
       "revId": "fd57fe310c18ca62b347af092cd6c95d34f53f99",
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "88c3ece5_555e8852",
+        "filename": "src/main/java/org/onap/cps/ncmp/dmi/service/operation/SdncOperations.java",
+        "patchSetId": 13
+      },
+      "lineNbr": 101,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2022-03-10T15:04:55Z",
+      "side": 1,
+      "message": "create https://jira.onap.org/browse/CPS-921 to documents guidelines :-)",
+      "parentUuid": "6ab33642_001ec33d",
+      "range": {
+        "startLine": 101,
+        "startChar": 14,
+        "endLine": 101,
+        "endChar": 20
+      },
+      "revId": "fd57fe310c18ca62b347af092cd6c95d34f53f99",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
     }
   ]
 }
