@@ -22,6 +22,30 @@
       "revId": "fd57fe310c18ca62b347af092cd6c95d34f53f99",
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "6ab33642_001ec33d",
+        "filename": "src/main/java/org/onap/cps/ncmp/dmi/service/operation/SdncOperations.java",
+        "patchSetId": 13
+      },
+      "lineNbr": 101,
+      "author": {
+        "id": 7957
+      },
+      "writtenOn": "2022-03-10T02:07:46Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "27d58b71_08882ed0",
+      "range": {
+        "startLine": 101,
+        "startChar": 14,
+        "endLine": 101,
+        "endChar": 20
+      },
+      "revId": "fd57fe310c18ca62b347af092cd6c95d34f53f99",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
     }
   ]
 }
