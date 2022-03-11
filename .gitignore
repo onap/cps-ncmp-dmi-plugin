@@ -29,3 +29,6 @@ tmp/
 
 /docs/docs/
 /docs/.vscode/
+
+/csit/archives/
+/csit/env.properties
