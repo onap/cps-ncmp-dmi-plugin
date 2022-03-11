@@ -462,6 +462,7 @@
                         <to>
                             <tags>
                                 <tag>${project.version}-latest</tag>
+                                <tag>${project.name}-csit</tag>
                             </tags>
                             <image>${docker.push.registry}/onap/${image.name}:${image.tag}</image>
                         </to>
