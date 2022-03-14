@@ -66,6 +66,30 @@
     },
     {
       "key": {
+        "uuid": "776a6ceb_9a0bac4b",
+        "filename": "csit/plans/dmi/sdnc/sdnc_setup.sh",
+        "patchSetId": 3
+      },
+      "lineNbr": 48,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2022-03-14T14:55:17Z",
+      "side": 1,
+      "message": "well all above  output refer to SDNC starting so I assume this should also says SDNC irrespective of the underlying system that SDNC might rely on to \u0027start up\u0027",
+      "parentUuid": "968b4776_98e37765",
+      "range": {
+        "startLine": 48,
+        "startChar": 18,
+        "endLine": 48,
+        "endChar": 24
+      },
+      "revId": "7fdf51deebf20cb7b3664012d151602ca75300a5",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "ec9ca626_a3f4d656",
         "filename": "pom.xml",
         "patchSetId": 3
