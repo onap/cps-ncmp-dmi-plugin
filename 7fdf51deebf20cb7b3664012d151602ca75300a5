@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "951bb7ec_110ecebe",
+        "filename": "csit/.gitignore",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2022-03-14T15:39:30Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "c013289d_ed924649",
+      "revId": "7fdf51deebf20cb7b3664012d151602ca75300a5",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "d81975c8_70a5c011",
         "filename": "csit/plans/dmi/sdnc/sdnc_setup.sh",
         "patchSetId": 3
