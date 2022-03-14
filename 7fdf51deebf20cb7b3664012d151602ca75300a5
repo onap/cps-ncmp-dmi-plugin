@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ec9ca626_a3f4d656",
+        "filename": "pom.xml",
+        "patchSetId": 3
+      },
+      "lineNbr": 465,
+      "author": {
+        "id": 7965
+      },
+      "writtenOn": "2022-03-14T09:53:54Z",
+      "side": 1,
+      "message": "Introducing a new tag ncmp-dmi-plugin-csit specifically for the CSITs which will be used in the test.properties file to pull the latest dmi image(which will have changes from the latest commit). \nI am not using \u003ctag\u003e${project.version}-latest\u003c/tag\u003e as project.version is dynamic and we dont have it accessible in setup script.\n\nI want your opinion if I can use one of the below tags.\n1. ncmp-dmi-plugin-csit [present in commit ${project.name}-csit ]\n2. latest\n3. some other suggestion ??",
+      "range": {
+        "startLine": 465,
+        "startChar": 32,
+        "endLine": 465,
+        "endChar": 63
+      },
+      "revId": "7fdf51deebf20cb7b3664012d151602ca75300a5",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    }
+  ]
+}
