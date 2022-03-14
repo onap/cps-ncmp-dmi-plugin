@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "a42db922_a9732229",
+        "filename": "csit/README.md",
+        "patchSetId": 5
+      },
+      "lineNbr": 64,
+      "author": {
+        "id": 3813
+      },
+      "writtenOn": "2022-03-14T16:07:52Z",
+      "side": 1,
+      "message": "need to pass the image repository here? -Ddocker.repository.push\u003d",
+      "revId": "789a16f89c0daef31daffdd9b4bbe8f887e9956e",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "6f156a40_81082a97",
+        "filename": "csit/plans/dmi/pnfsim/docker-compose.yml",
+        "patchSetId": 5
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 3813
+      },
+      "writtenOn": "2022-03-14T16:07:52Z",
+      "side": 1,
+      "message": "license update?",
+      "revId": "789a16f89c0daef31daffdd9b4bbe8f887e9956e",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "8131505f_9a97ef2f",
+        "filename": "csit/plans/dmi/sdnc/docker-compose.yml",
+        "patchSetId": 5
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 3813
+      },
+      "writtenOn": "2022-03-14T16:07:52Z",
+      "side": 1,
+      "message": "environment file to have version number?",
+      "revId": "789a16f89c0daef31daffdd9b4bbe8f887e9956e",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    }
+  ]
+}
