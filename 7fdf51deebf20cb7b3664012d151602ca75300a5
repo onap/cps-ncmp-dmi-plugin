@@ -2,6 +2,46 @@
   "comments": [
     {
       "key": {
+        "uuid": "c013289d_ed924649",
+        "filename": "csit/.gitignore",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2022-03-14T12:54:04Z",
+      "side": 1,
+      "message": "CPS convention is to use only .gitignore in top level folder (it becomes a maintenance nightmare if it is done in subfolders)\n(legacy issue for CPS I see!)",
+      "revId": "7fdf51deebf20cb7b3664012d151602ca75300a5",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "d81975c8_70a5c011",
+        "filename": "csit/plans/dmi/sdnc/sdnc_setup.sh",
+        "patchSetId": 3
+      },
+      "lineNbr": 48,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2022-03-14T12:54:04Z",
+      "side": 1,
+      "message": "Kraf? Copy and paste issue (mayb wrong in CPS too?!)",
+      "range": {
+        "startLine": 48,
+        "startChar": 18,
+        "endLine": 48,
+        "endChar": 24
+      },
+      "revId": "7fdf51deebf20cb7b3664012d151602ca75300a5",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "ec9ca626_a3f4d656",
         "filename": "pom.xml",
         "patchSetId": 3
