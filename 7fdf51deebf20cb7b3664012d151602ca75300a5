@@ -42,6 +42,30 @@
     },
     {
       "key": {
+        "uuid": "968b4776_98e37765",
+        "filename": "csit/plans/dmi/sdnc/sdnc_setup.sh",
+        "patchSetId": 3
+      },
+      "lineNbr": 48,
+      "author": {
+        "id": 7965
+      },
+      "writtenOn": "2022-03-14T12:58:53Z",
+      "side": 1,
+      "message": "I think here we mean \"Apache Karaf\" webserver. I clearly remember when Rahul was giving us the KT he mentioned this server name back then.",
+      "parentUuid": "d81975c8_70a5c011",
+      "range": {
+        "startLine": 48,
+        "startChar": 18,
+        "endLine": 48,
+        "endChar": 24
+      },
+      "revId": "7fdf51deebf20cb7b3664012d151602ca75300a5",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "ec9ca626_a3f4d656",
         "filename": "pom.xml",
         "patchSetId": 3
