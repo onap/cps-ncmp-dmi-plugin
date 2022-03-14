@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "026a4154_ad3ec58c",
+        "filename": "pom.xml",
+        "patchSetId": 6
+      },
+      "lineNbr": 464,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2022-03-14T17:32:45Z",
+      "side": 1,
+      "message": "I think this should suffice, lets see what Bruno thinks",
+      "range": {
+        "startLine": 464,
+        "startChar": 32,
+        "endLine": 464,
+        "endChar": 68
+      },
+      "revId": "dbb8b552bc5723e8d4cb6e929eeda39c3d977fae",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    }
+  ]
+}
