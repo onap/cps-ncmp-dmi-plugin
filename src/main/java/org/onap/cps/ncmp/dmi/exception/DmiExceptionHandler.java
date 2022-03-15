@@ -27,6 +27,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
+import org.springframework.web.client.HttpClientErrorException;
 
 @Slf4j
 @RestControllerAdvice(assignableTypes = {DmiRestController.class})
@@ -46,8 +47,9 @@ public class DmiExceptionHandler {
         return buildErrorResponse(HttpStatus.INTERNAL_SERVER_ERROR, exception);
     }
 
-    @ExceptionHandler({ModulesNotFoundException.class, ModuleResourceNotFoundException.class})
-    public static ResponseEntity<Object> handleNotFoundExceptions(final DmiException exception) {
+    @ExceptionHandler({ModulesNotFoundException.class, ModuleResourceNotFoundException.class,
+            HttpClientErrorException.NotFound.class})
+    public static ResponseEntity<Object> handleNotFoundExceptions(final Exception exception) {
         return buildErrorResponse(HttpStatus.NOT_FOUND, exception);
     }
 
