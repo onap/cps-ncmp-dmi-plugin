@@ -38,6 +38,7 @@ import org.onap.cps.ncmp.dmi.service.model.ModuleSchema
 import org.onap.cps.ncmp.dmi.service.operation.SdncOperations
 import org.springframework.http.HttpStatus
 import org.springframework.http.ResponseEntity
+import org.springframework.web.client.HttpClientErrorException
 import spock.lang.Specification
 
 import static org.onap.cps.ncmp.dmi.model.DataAccessRequest.OperationEnum.CREATE
@@ -83,6 +84,19 @@ class DmiServiceImplSpec extends Specification {
             objectUnderTest.getModulesForCmHandle(cmHandle)
         then: 'module not found exception is thrown'
             thrown(ModulesNotFoundException)
+    }
+
+    def 'http client exception is thrown while getting module schemas.'() {
+        given: 'sdnc operations returns http client not found exception'
+            mockSdncOperations.getModuleSchemasFromNode(_) >> {
+                throw new HttpClientErrorException(HttpStatus.NOT_FOUND,
+                        'not found')
+            }
+        when: 'get modules for cm-handle is called'
+            objectUnderTest.getModulesForCmHandle('')
+        then: 'http client not found exception is thrown'
+            def clientErrorException = thrown(HttpClientErrorException)
+            clientErrorException.statusCode == HttpStatus.NOT_FOUND
     }
 
     def 'Register cm handles with ncmp.'() {
