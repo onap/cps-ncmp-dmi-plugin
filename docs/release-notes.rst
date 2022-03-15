@@ -18,10 +18,25 @@ DMI-Plugin Release Notes
 ..      * * *   JAKARTA   * * *
 ..      ========================
 
-Version: 1.1.0-SNAPSHOT
-=======================
+Version: 1.1.0
+==============
 
-This section lists the main changes & fixes merged into master (snapshot) version of NCMP-DMI-Plugin. This information is here to assist developers that want experiment/test using our latest code bases directly. Stability of this is not guaranteed.
+Release Data
+------------
+
++--------------------------------------+--------------------------------------------------------+
+| **CPS Project**                      |  DMI-Plugin                                            |
+|                                      |                                                        |
++--------------------------------------+--------------------------------------------------------+
+| **Docker images**                    |  onap/ncmp-dmi-plugin:1.1.0                            |
+|                                      |                                                        |
++--------------------------------------+--------------------------------------------------------+
+| **Release designation**              | 1.1.0 Jakarta                                          |
+|                                      |                                                        |
++--------------------------------------+--------------------------------------------------------+
+| **Release date**                     | 2022 March 15                                          |
+|                                      |                                                        |
++--------------------------------------+--------------------------------------------------------+
 
 Features
 --------
