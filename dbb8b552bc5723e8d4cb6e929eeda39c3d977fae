@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "fc65ebb8_3307989a",
+        "filename": "csit/plans/dmi/sdnc/sdnc_setup.sh",
+        "patchSetId": 6
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2022-03-15T10:45:17Z",
+      "side": 1,
+      "message": "in general it is a bad idea to mention authors We have git history instead :-)",
+      "parentUuid": "de35e2e9_0db45372",
+      "range": {
+        "startLine": 21,
+        "startChar": 2,
+        "endLine": 21,
+        "endChar": 44
+      },
+      "revId": "dbb8b552bc5723e8d4cb6e929eeda39c3d977fae",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "026a4154_ad3ec58c",
         "filename": "pom.xml",
         "patchSetId": 6
@@ -60,6 +84,30 @@
       "side": 1,
       "message": "Yes. I had a discussion with Bruno on this..",
       "parentUuid": "026a4154_ad3ec58c",
+      "range": {
+        "startLine": 464,
+        "startChar": 32,
+        "endLine": 464,
+        "endChar": 68
+      },
+      "revId": "dbb8b552bc5723e8d4cb6e929eeda39c3d977fae",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "d8dd1041_a0d19a81",
+        "filename": "pom.xml",
+        "patchSetId": 6
+      },
+      "lineNbr": 464,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2022-03-15T10:45:17Z",
+      "side": 1,
+      "message": "and I assume this is what he recommended?",
+      "parentUuid": "316297a1_35220ec0",
       "range": {
         "startLine": 464,
         "startChar": 32,
