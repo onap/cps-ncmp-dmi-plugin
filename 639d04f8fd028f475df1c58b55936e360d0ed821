@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7c3813cc_b725ad72",
+        "filename": "csit/README.md",
+        "patchSetId": 7
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 7744
+      },
+      "writtenOn": "2022-03-15T10:48:03Z",
+      "side": 1,
+      "message": "Maybe we could add a link to the wiki page created on running CSIT tests as part of this read me too?\nOr do we want links to external documentation in here?\nSame goes for the read me in CPS-NCMP\u0027s integration tests too.\nWhat does the team think.\nWiki page in question\nhttps://wiki.onap.org/display/DW/Local+Setup+Using+CSIT",
+      "revId": "639d04f8fd028f475df1c58b55936e360d0ed821",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    }
+  ]
+}
