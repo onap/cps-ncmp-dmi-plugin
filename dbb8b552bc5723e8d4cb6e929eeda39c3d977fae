@@ -49,6 +49,30 @@
     },
     {
       "key": {
+        "uuid": "04cce7f8_62ae25c0",
+        "filename": "csit/plans/dmi/sdnc/sdnc_setup.sh",
+        "patchSetId": 6
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2022-03-15T18:08:33Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "fc65ebb8_3307989a",
+      "range": {
+        "startLine": 21,
+        "startChar": 2,
+        "endLine": 21,
+        "endChar": 44
+      },
+      "revId": "dbb8b552bc5723e8d4cb6e929eeda39c3d977fae",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "026a4154_ad3ec58c",
         "filename": "pom.xml",
         "patchSetId": 6
