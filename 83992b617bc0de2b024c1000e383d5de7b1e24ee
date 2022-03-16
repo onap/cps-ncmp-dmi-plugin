@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "dea5f8e4_6b78e56f",
+        "filename": "csit/plans/dmi/testplan.txt",
+        "patchSetId": 13
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 7965
+      },
+      "writtenOn": "2022-03-16T13:22:08Z",
+      "side": 1,
+      "message": "Enabling this now as it is working fine now.\nReason for previous failure was due to SDNC unable to start as we didnt had csit/plans/dmi/sdnc/certs/keys0.zip in the SDNC infrastructure code.\nIt was missed as we were ignoring the same from .gitignore file.",
+      "revId": "83992b617bc0de2b024c1000e383d5de7b1e24ee",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    }
+  ]
+}
