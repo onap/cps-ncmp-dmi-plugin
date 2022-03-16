@@ -2,6 +2,29 @@
   "comments": [
     {
       "key": {
+        "uuid": "bfbae5be_6edcec7c",
+        "filename": "csit/plans/dmi/setup.sh",
+        "patchSetId": 11
+      },
+      "lineNbr": 48,
+      "author": {
+        "id": 7830
+      },
+      "writtenOn": "2022-03-16T09:58:12Z",
+      "side": 1,
+      "message": "NB thought I might mention this while its in this commit, I think we should change this to (ip -4 addr show docker0 | grep -Po \u0027inet \\K[\\d.]+\u0027 || hostname -I) so that the csits will run on our local. Just gets the hostname if the first hostname fails. Can be done in separate commit",
+      "range": {
+        "startLine": 48,
+        "startChar": 18,
+        "endLine": 48,
+        "endChar": 68
+      },
+      "revId": "d91f3753e3f7784247410bebde44b7981fab8f10",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "b64e805f_cdf7f749",
         "filename": "csit/plans/dmi/testplan.txt",
         "patchSetId": 11
