@@ -1,0 +1,8 @@
+Verified+1: ONAP Jobbuilder <onap-jobbuilder@jenkins.onap.org>
+Code-Review+1: Bruno Sakoto <bruno.sakoto@bell.ca>
+Code-Review+2: Renu Kumari <renu.kumari@bell.ca>
+Submitted-by: Renu Kumari <renu.kumari@bell.ca>
+Submitted-at: Thu, 17 Mar 2022 14:38:05 +0000
+Reviewed-on: https://gerrit.onap.org/r/c/cps/ncmp-dmi-plugin/+/127687
+Project: cps/ncmp-dmi-plugin
+Branch: refs/heads/master
