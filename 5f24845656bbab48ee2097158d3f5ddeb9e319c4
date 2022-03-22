@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "95739a8e_b3a62372",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 5658
+      },
+      "writtenOn": "2022-03-22T12:36:49Z",
+      "side": 1,
+      "message": "Commit message does not follow onap guidelines: https://wiki.onap.org/display/DW/Commit+Messages#CommitMessages-CommitStructure",
+      "revId": "5f24845656bbab48ee2097158d3f5ddeb9e319c4",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    }
+  ]
+}
