@@ -134,7 +134,7 @@ public class DmiServiceImpl implements DmiService {
                 "Parsing error occurred while converting given cm-handles object list to JSON ");
         }
         final ResponseEntity<String> responseEntity = ncmpRestClient.registerCmHandlesWithNcmp(cmHandlesJson);
-        if ((responseEntity.getStatusCode() != HttpStatus.CREATED)) {
+        if (!responseEntity.getStatusCode().is2xxSuccessful()) {
             throw new CmHandleRegistrationException(responseEntity.getBody());
         }
     }
