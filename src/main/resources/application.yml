@@ -34,6 +34,11 @@ security:
     username: ${DMI_USERNAME}
     password: ${DMI_PASSWORD}
 
+spring:
+  mvc:
+    pathmatch:
+      matching-strategy: ANT_PATH_MATCHER
+
 # Actuator
 management:
   server:
