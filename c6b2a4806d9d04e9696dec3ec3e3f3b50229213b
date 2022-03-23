@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "b11c397f_16d03edd",
+        "filename": "pom.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 6738
+      },
+      "writtenOn": "2022-03-23T07:21:06Z",
+      "side": 1,
+      "message": "is this change required?",
+      "range": {
+        "startLine": 22,
+        "startChar": 0,
+        "endLine": 22,
+        "endChar": 9
+      },
+      "revId": "c6b2a4806d9d04e9696dec3ec3e3f3b50229213b",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    }
+  ]
+}
