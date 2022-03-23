@@ -34,6 +34,15 @@ security:
     username: ${DMI_USERNAME}
     password: ${DMI_PASSWORD}
 
+# When updating to sprinboot 2.6.4 an exception would occur when starting the container
+# "Failed to start bean 'documentationPluginsBootstrapper'.
+# This is a known issue with springfox and springboot introduced in 2.6.x:
+# https://github.com/springfox/springfox/issues/3462
+spring:
+  mvc:
+    pathmatch:
+      matching-strategy: ANT_PATH_MATCHER
+
 # Actuator
 management:
   server:
