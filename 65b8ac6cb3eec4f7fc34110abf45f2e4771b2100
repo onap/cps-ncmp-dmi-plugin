@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ebb5215c_3a634c47",
+        "filename": "src/main/resources/application.yml",
+        "patchSetId": 5
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 7743
+      },
+      "writtenOn": "2022-03-24T14:40:32Z",
+      "side": 1,
+      "message": "Added this as I was getting an error when the container was starting up. This was the recommnded fix I could find",
+      "revId": "65b8ac6cb3eec4f7fc34110abf45f2e4771b2100",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    }
+  ]
+}
