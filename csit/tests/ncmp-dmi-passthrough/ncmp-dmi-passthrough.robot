@@ -39,3 +39,10 @@ Get all modules for given cm-handle
     ${uri}=              Set Variable       ${dmiBasePath}/v1/ch/PNFDemo/modules
     ${headers}=          Create Dictionary  Content-Type=application/json   Authorization=${auth}
     ${response}=         POST On Session    DMI_URL   ${uri}   headers=${headers}   data={}   expected_status=200
+
+Register cm handle
+    ${uri}=              Set Variable       ${dmiBasePath}/v1/inventory/cmHandles
+    ${headers}=          Create Dictionary  Content-Type=application/json   Authorization=${auth}
+    ${jsonData}=         Get Binary File    ${DATADIR}${/}cmHandleRegistration.json
+    ${response}=         POST On Session    DMI_URL   ${uri}   headers=${headers}   data=${jsonData}
+    Should Be Equal As Strings              ${response.status_code}   201
