@@ -34,6 +34,24 @@
       "revId": "65b8ac6cb3eec4f7fc34110abf45f2e4771b2100",
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "7f48558d_4d060f75",
+        "filename": "src/main/resources/application.yml",
+        "patchSetId": 5
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 7743
+      },
+      "writtenOn": "2022-03-25T11:01:09Z",
+      "side": 1,
+      "message": "When updating to sprinboot 2.6.4 an exception would occur when starting the container  \"Failed to start bean \u0027documentationPluginsBootstrapper\u0027. \n\nThis is a known issue with springfox and springboot introduced in 2.6.x:\n* https://github.com/springfox/springfox/issues/3462\n* https://stackoverflow.com/questions/40241843/failed-to-start-bean-documentationpluginsbootstrapper-in-spring-data-rest\n\nDuring the course of researching this I found a post that suggested migrate to SpringDoc as SpringFox is deprecated and abandoned (?)\nhttps://springdoc.org/migrating-from-springfox.html",
+      "parentUuid": "e30a283b_ca0b1d0a",
+      "revId": "65b8ac6cb3eec4f7fc34110abf45f2e4771b2100",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
     }
   ]
 }
