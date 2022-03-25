@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7a2c2b92_ad6b371e",
+        "filename": "csit/tests/ncmp-dmi-passthrough/ncmp-dmi-passthrough.robot",
+        "patchSetId": 1
+      },
+      "lineNbr": 43,
+      "author": {
+        "id": 7743
+      },
+      "writtenOn": "2022-03-25T12:09:08Z",
+      "side": 1,
+      "message": "You first need to register a node before you can retrieve the modules for that node however CSIT passes... it is just asserting a 200 which would happen but there would be no modules yet. Switch these tests around and perhaps assert some info on a returned module to ensure it works.",
+      "revId": "6eb1c1a4142d0c8ea434fd1b2ec1787a09612858",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    }
+  ]
+}
