@@ -16,6 +16,24 @@
       "revId": "65b8ac6cb3eec4f7fc34110abf45f2e4771b2100",
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "e30a283b_ca0b1d0a",
+        "filename": "src/main/resources/application.yml",
+        "patchSetId": 5
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2022-03-25T09:28:29Z",
+      "side": 1,
+      "message": "can you add a comment to explain why this was added in teh code itself (please refer to teh actual erro you got)",
+      "parentUuid": "ebb5215c_3a634c47",
+      "revId": "65b8ac6cb3eec4f7fc34110abf45f2e4771b2100",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
     }
   ]
 }
