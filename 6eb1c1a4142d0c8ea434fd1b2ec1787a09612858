@@ -16,6 +16,24 @@
       "revId": "6eb1c1a4142d0c8ea434fd1b2ec1787a09612858",
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "b556025d_ab5b01a8",
+        "filename": "csit/tests/ncmp-dmi-passthrough/ncmp-dmi-passthrough.robot",
+        "patchSetId": 1
+      },
+      "lineNbr": 43,
+      "author": {
+        "id": 7965
+      },
+      "writtenOn": "2022-03-25T12:28:52Z",
+      "side": 1,
+      "message": "Actually this is the continuation of https://gerrit.onap.org/r/c/cps/ncmp-dmi-plugin/+/127687\n\nSetup related code is present here.\nhttps://gerrit.onap.org/r/c/cps/ncmp-dmi-plugin/+/127687/14/csit/plans/dmi/setup.sh\n\nWere you looking for this? Or something else?",
+      "parentUuid": "7a2c2b92_ad6b371e",
+      "revId": "6eb1c1a4142d0c8ea434fd1b2ec1787a09612858",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
     }
   ]
 }
