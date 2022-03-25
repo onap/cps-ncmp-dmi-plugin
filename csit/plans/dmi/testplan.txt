@@ -17,4 +17,4 @@
 # Test suites are relative paths under csit/tests/.
 # Place the suites in run order.
 actuator
-ncmp-dmi-passthrough
+dmi-integration
