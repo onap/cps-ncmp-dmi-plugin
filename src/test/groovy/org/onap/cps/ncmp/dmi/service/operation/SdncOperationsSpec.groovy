@@ -84,6 +84,7 @@ class SdncOperationsSpec extends Specification {
             moduleSchemas.size() == 0
         where:
             scenario               | responseBody
+            'null response body'   | null
             'empty response body ' | ''
             'no module schema'     | '{ "ietf-netconf-monitoring:schemas" : { "schema" : [] } } '
     }
@@ -116,14 +117,19 @@ class SdncOperationsSpec extends Specification {
             1 * mockSdncRestClient.httpOperationWithJsonData(HttpMethod.POST, expectedUrl, 'some-json-data', _ as HttpHeaders)
     }
 
-    def 'Get resource data from node to SDNC.'() {
+    def 'Get resource data from node to SDNC. with#scenario accept header'() {
         given: 'expected url, topology-id, sdncOperation object'
             def expectedUrl = '/rests/data/network-topology:network-topology/topology=test-topology/node=node1/yang-ext:mount/testResourceId?a=1&b=2&content=testContent'
         when: 'called get modules from node'
             objectUnderTest.getResouceDataForOperationalAndRunning('node1', 'testResourceId',
-                '(a=1,b=2)', 'testAcceptParam', 'content=testContent')
-        then: 'the get operation is executed with the correct URL'
-            1 * mockSdncRestClient.getOperation(expectedUrl, _ as HttpHeaders)
+                '(a=1,b=2)', acceptParamInHeader, 'content=testContent')
+        then: 'the get operation is executed with the correct URL and Http headers'
+            1 * mockSdncRestClient.getOperation(expectedUrl, expectedHttpHeaders)
+        where:
+            scenario | acceptParamInHeader || expectedHttpHeaders
+            'test'   | 'test'              || new HttpHeaders([Accept:'test'])
+            'empty'  | ''                  || new HttpHeaders()
+            'null'   | null                || new HttpHeaders()
     }
 
     def 'Write resource data with #scenario operation to SDNC.'() {
@@ -142,20 +148,22 @@ class SdncOperationsSpec extends Specification {
             'Patch'   | PATCH          || HttpMethod.PATCH
     }
 
-    def 'build query param list for SDNC where options contains a #scenario'() {
+    def 'build query param list for SDNC where options #scenario'() {
         when: 'build query param list is called with #scenario'
             def result = objectUnderTest.buildQueryParamMap(optionsParamInQuery, 'd=4')
                     .toSingleValueMap().toString()
         then: 'result equals to expected result'
             result == expectedResult
         where: 'following parameters are used'
-            scenario                   | optionsParamInQuery || expectedResult
-            'single key-value pair'    | '(a=x)'             || '[a:x, d:4]'
-            'multiple key-value pairs' | '(a=x,b=y,c=z)'     || '[a:x, b:y, c:z, d:4]'
-            '/ as special char'        | '(a=x,b=y,c=t/z)'   || '[a:x, b:y, c:t/z, d:4]'
-            '" as special char'        | '(a=x,b=y,c="z")'   || '[a:x, b:y, c:"z", d:4]'
-            '[] as special char'       | '(a=x,b=y,c=[z])'   || '[a:x, b:y, c:[z], d:4]'
-            '= in value'               | '(a=(x=y),b=x=y)'   || '[a:(x=y), b:x=y, d:4]'
+            scenario                       | optionsParamInQuery || expectedResult
+            'is single key-value pair'     | '(a=x)'             || '[a:x, d:4]'
+            'is multiple key-value pairs'  | '(a=x,b=y,c=z)'     || '[a:x, b:y, c:z, d:4]'
+            'has / as special char'        | '(a=x,b=y,c=t/z)'   || '[a:x, b:y, c:t/z, d:4]'
+            'has " as special char'        | '(a=x,b=y,c="z")'   || '[a:x, b:y, c:"z", d:4]'
+            'has [] as special char'       | '(a=x,b=y,c=[z])'   || '[a:x, b:y, c:[z], d:4]'
+            'has = in value'               | '(a=(x=y),b=x=y)'   || '[a:(x=y), b:x=y, d:4]'
+            'is empty'                     | ''                  || '[:]'
+            'is null'                      | null                || '[:]'
     }
 
     def 'options parameters contains a comma #scenario'() {
