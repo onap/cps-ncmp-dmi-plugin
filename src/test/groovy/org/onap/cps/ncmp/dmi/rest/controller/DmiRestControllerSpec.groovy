@@ -1,7 +1,7 @@
 /*
  *  ============LICENSE_START=======================================================
  *  Copyright (C) 2021 Nordix Foundation
- *  Modifications Copyright (C) 2021 Bell Canada
+ *  Modifications Copyright (C) 2021-2022 Bell Canada
  *  ================================================================================
  *  Licensed under the Apache License, Version 2.0 (the "License");
  *  you may not use this file except in compliance with the License.
@@ -183,15 +183,13 @@ class DmiRestControllerSpec extends Specification {
             def json = '{"cmHandleProperties" : { "prop1" : "value1", "prop2" : "value2"}}'
         when: 'get resource data POST api is invoked'
             def response = mvc.perform(
-                    post(getResourceDataForCmHandleUrl).contentType(MediaType.APPLICATION_JSON)
-                            .accept(MediaType.APPLICATION_JSON).content(json)
+                    post(getResourceDataForCmHandleUrl).contentType(MediaType.APPLICATION_JSON).content(json)
             ).andReturn().response
         then: 'response status is ok'
             response.status == OK.value()
         and: 'dmi service called with get resource data'
             1 * mockDmiService.getResourceData('some-cmHandle',
                     'parent/child',
-                    'application/json',
                     '(fields=myfields,depth=5)',
                     'content=all')
     }
@@ -203,8 +201,7 @@ class DmiRestControllerSpec extends Specification {
             def jsonData = TestUtils.getResourceFileContent('createDataWithNormalChar.json')
         when: 'get resource data POST api is invoked'
             def response = mvc.perform(
-                post(getResourceDataForCmHandleUrl).contentType(MediaType.APPLICATION_JSON)
-                    .accept(MediaType.APPLICATION_JSON).content(jsonData)
+                post(getResourceDataForCmHandleUrl).contentType(MediaType.APPLICATION_JSON).content(jsonData)
             ).andReturn().response
         then: 'response status is bad request'
             response.status == BAD_REQUEST.value()
@@ -265,15 +262,13 @@ class DmiRestControllerSpec extends Specification {
             def json = '{"cmHandleProperties" : { "prop1" : "value1", "prop2" : "value2"}}'
         when: 'get resource data POST api is invoked'
             def response = mvc.perform(
-                    post(getResourceDataForCmHandleUrl).contentType(MediaType.APPLICATION_JSON)
-                            .accept(MediaType.APPLICATION_JSON).content(json)
+                    post(getResourceDataForCmHandleUrl).contentType(MediaType.APPLICATION_JSON).content(json)
             ).andReturn().response
         then: 'response status is ok'
             response.status == OK.value()
         and: 'dmi service called with get resource data for a cm handle'
             1 * mockDmiService.getResourceData('some-cmHandle',
                     resourceIdentifier,
-                    'application/json',
                     '(fields=myfields,depth=5)',
                     'content=config')
         where: 'tokens are used in the resource identifier parameter'

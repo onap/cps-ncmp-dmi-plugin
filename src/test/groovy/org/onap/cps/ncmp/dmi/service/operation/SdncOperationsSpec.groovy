@@ -1,7 +1,7 @@
 /*
  *  ============LICENSE_START=======================================================
  *  Copyright (C) 2021-2022 Nordix Foundation
- *  Modifications Copyright (C) 2021 Bell Canada
+ *  Modifications Copyright (C) 2021-2022 Bell Canada
  *  ================================================================================
  *  Licensed under the Apache License, Version 2.0 (the "License");
  *  you may not use this file except in compliance with the License.
@@ -121,9 +121,9 @@ class SdncOperationsSpec extends Specification {
             def expectedUrl = '/rests/data/network-topology:network-topology/topology=test-topology/node=node1/yang-ext:mount/testResourceId?a=1&b=2&content=testContent'
         when: 'called get modules from node'
             objectUnderTest.getResouceDataForOperationalAndRunning('node1', 'testResourceId',
-                '(a=1,b=2)', 'testAcceptParam', 'content=testContent')
+                '(a=1,b=2)', 'content=testContent')
         then: 'the get operation is executed with the correct URL'
-            1 * mockSdncRestClient.getOperation(expectedUrl, _ as HttpHeaders)
+            1 * mockSdncRestClient.getOperation(expectedUrl)
     }
 
     def 'Write resource data with #scenario operation to SDNC.'() {

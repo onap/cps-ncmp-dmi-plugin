@@ -1,6 +1,7 @@
 /*
  *  ============LICENSE_START=======================================================
  *  Copyright (C) 2021 Nordix Foundation
+ *  Modifications Copyright (C) 2022 Bell Canada
  *  ================================================================================
  *  Licensed under the Apache License, Version 2.0 (the "License");
  *  you may not use this file except in compliance with the License.
@@ -93,7 +94,6 @@ public class DmiRestController implements DmiPluginApi, DmiPluginInternalApi {
      * @param resourceIdentifier    resource identifier to fetch data
      * @param cmHandle              cm handle identifier
      * @param dataAccessRequest     data Access Request
-     * @param acceptParamInHeader   accept header parameter
      * @param optionsParamInQuery   options query parameter
      * @return {@code ResponseEntity} response entity
      */
@@ -102,12 +102,10 @@ public class DmiRestController implements DmiPluginApi, DmiPluginInternalApi {
                                                                    final String cmHandle,
                                                                    final @Valid DataAccessRequest
                                                                                 dataAccessRequest,
-                                                                   final String acceptParamInHeader,
                                                                    final @Valid String optionsParamInQuery) {
         if (isReadOperation(dataAccessRequest)) {
             final String resourceDataAsJson = dmiService.getResourceData(cmHandle,
                 resourceIdentifier,
-                acceptParamInHeader,
                 optionsParamInQuery,
                 DmiService.RESTCONF_CONTENT_PASSTHROUGH_OPERATIONAL_QUERY_PARAM);
             return ResponseEntity.ok(resourceDataAsJson);
@@ -120,13 +118,11 @@ public class DmiRestController implements DmiPluginApi, DmiPluginInternalApi {
                                                                final String cmHandle,
                                                                final @Valid DataAccessRequest
                                                                        dataAccessRequest,
-                                                               final String acceptParamInHeader,
                                                                final @Valid String optionsParamInQuery) {
         final String sdncResponse;
         if (isReadOperation(dataAccessRequest)) {
             sdncResponse = dmiService.getResourceData(cmHandle,
                 resourceIdentifier,
-                acceptParamInHeader,
                 optionsParamInQuery,
                 DmiService.RESTCONF_CONTENT_PASSTHROUGH_RUNNING_QUERY_PARAM);
         } else {
