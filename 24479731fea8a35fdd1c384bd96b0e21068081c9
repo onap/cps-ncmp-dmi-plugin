@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "d01be539_076bf4e3",
+        "filename": "docs/api/swagger/openapi.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 188,
+      "author": {
+        "id": 7680
+      },
+      "writtenOn": "2022-03-29T19:22:45Z",
+      "side": 0,
+      "message": "I know there is a bug to remove this type but what I remember from previous discussions that it is passthrough API and this interface is a generic one not specific to SDNC.\n\nAs a final open-api documentation, we wanted user to define which format they want and if they don\u0027t provide any the device(SDNC) sends the default format. \n\nWhat is the reason fore removing it?",
+      "range": {
+        "startLine": 188,
+        "startChar": 10,
+        "endLine": 188,
+        "endChar": 38
+      },
+      "revId": "24479731fea8a35fdd1c384bd96b0e21068081c9",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    }
+  ]
+}
