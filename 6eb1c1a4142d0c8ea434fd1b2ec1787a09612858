@@ -52,6 +52,24 @@
       "revId": "6eb1c1a4142d0c8ea434fd1b2ec1787a09612858",
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "1b0eb6c5_360e4107",
+        "filename": "csit/tests/ncmp-dmi-passthrough/ncmp-dmi-passthrough.robot",
+        "patchSetId": 1
+      },
+      "lineNbr": 43,
+      "author": {
+        "id": 7743
+      },
+      "writtenOn": "2022-03-29T16:10:24Z",
+      "side": 1,
+      "message": "See here for more information on model sync: https://wiki.onap.org/display/DW/CPS+User+Story+Demos (#8)",
+      "parentUuid": "06b0f532_4e73e550",
+      "revId": "6eb1c1a4142d0c8ea434fd1b2ec1787a09612858",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
     }
   ]
 }
