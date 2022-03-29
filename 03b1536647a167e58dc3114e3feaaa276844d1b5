@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "72cc8633_f8abe6a6",
+        "filename": "docs/api/swagger/openapi.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 6738
+      },
+      "writtenOn": "2022-03-29T16:15:19Z",
+      "side": 1,
+      "message": "this is a file included in the docs for creating readthedocs. Not sure if we need the copywright here. Verified with other files included in the cps repo as well.",
+      "parentUuid": "71eb936d_8596b0f3",
+      "revId": "03b1536647a167e58dc3114e3feaaa276844d1b5",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "70a12382_d5b310df",
         "filename": "openapi/components.yml",
         "patchSetId": 2
@@ -36,6 +54,24 @@
     },
     {
       "key": {
+        "uuid": "44f1079d_193fec7d",
+        "filename": "openapi/components.yml",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 6738
+      },
+      "writtenOn": "2022-03-29T16:15:19Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "70a12382_d5b310df",
+      "revId": "03b1536647a167e58dc3114e3feaaa276844d1b5",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "60c4dd4e_e331ac14",
         "filename": "openapi/components.yml",
         "patchSetId": 2
@@ -47,6 +83,30 @@
       "writtenOn": "2022-03-29T12:38:46Z",
       "side": 1,
       "message": "need better names for these 2 to be clear which is which\nsuggestion\n- acceptParamInHeaderForRead(Operations)\n- acceptParamInHeaderForWrite(Operations)",
+      "range": {
+        "startLine": 161,
+        "startChar": 0,
+        "endLine": 169,
+        "endChar": 28
+      },
+      "revId": "03b1536647a167e58dc3114e3feaaa276844d1b5",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "742ed3dc_a5c8ffdd",
+        "filename": "openapi/components.yml",
+        "patchSetId": 2
+      },
+      "lineNbr": 169,
+      "author": {
+        "id": 6738
+      },
+      "writtenOn": "2022-03-29T16:15:19Z",
+      "side": 1,
+      "message": "As discussed changed the name for the newly added parameter. We still need to discuss on the need for acceptParamForWrite to be covered as a different task.",
+      "parentUuid": "60c4dd4e_e331ac14",
       "range": {
         "startLine": 161,
         "startChar": 0,
