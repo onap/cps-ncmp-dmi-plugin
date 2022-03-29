@@ -150,13 +150,11 @@ public class DmiServiceImpl implements DmiService {
     @Override
     public String getResourceData(final String cmHandle,
         final String resourceIdentifier,
-        final String acceptParamInHeader,
         final String optionsParamInQuery,
         final String restconfContentQueryParam) {
         final ResponseEntity<String> responseEntity = sdncOperations.getResouceDataForOperationalAndRunning(cmHandle,
             resourceIdentifier,
             optionsParamInQuery,
-            acceptParamInHeader,
             restconfContentQueryParam);
         return prepareAndSendResponse(responseEntity, cmHandle);
     }

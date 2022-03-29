@@ -127,23 +127,17 @@ public class SdncOperations {
      * @param nodeId                    network resource identifier
      * @param resourceId                resource identifier
      * @param optionsParamInQuery       fields query
-     * @param acceptParamInHeader       accept parameter
      * @param restConfContentQueryParam restConf content query param
      * @return {@code ResponseEntity} response entity
      */
     public ResponseEntity<String> getResouceDataForOperationalAndRunning(final String nodeId,
         final String resourceId,
         final String optionsParamInQuery,
-        final String acceptParamInHeader,
         final String restConfContentQueryParam) {
         final String getResourceDataUrl = prepareResourceDataUrl(nodeId,
             resourceId,
                 buildQueryParamMap(optionsParamInQuery, restConfContentQueryParam));
-        final HttpHeaders httpHeaders = new HttpHeaders();
-        if (acceptParamInHeader != null && !acceptParamInHeader.isBlank()) {
-            httpHeaders.set(HttpHeaders.ACCEPT, acceptParamInHeader);
-        }
-        return sdncRestconfClient.getOperation(getResourceDataUrl, httpHeaders);
+        return sdncRestconfClient.getOperation(getResourceDataUrl);
     }
 
     /**

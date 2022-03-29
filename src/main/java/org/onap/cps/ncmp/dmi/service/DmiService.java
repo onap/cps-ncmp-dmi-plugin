@@ -70,14 +70,12 @@ public interface DmiService {
      *
      * @param cmHandle                  cm handle identifier
      * @param resourceIdentifier        resource identifier
-     * @param acceptParamInHeader       accept header parameter
      * @param optionsParamInQuery       options query parameter
      * @param restconfContentQueryParam restconf content i.e. datastore to use
      * @return {@code Object} response from network function
      */
     String getResourceData(@NotNull String cmHandle,
         @NotNull String resourceIdentifier,
-        String acceptParamInHeader,
         String optionsParamInQuery,
         String restconfContentQueryParam);
 
