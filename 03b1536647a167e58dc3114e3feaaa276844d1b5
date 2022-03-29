@@ -33,6 +33,52 @@
       "revId": "03b1536647a167e58dc3114e3feaaa276844d1b5",
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "60c4dd4e_e331ac14",
+        "filename": "openapi/components.yml",
+        "patchSetId": 2
+      },
+      "lineNbr": 169,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2022-03-29T12:38:46Z",
+      "side": 1,
+      "message": "need better names for these 2 to be clear which is which\nsuggestion\n- acceptParamInHeaderForRead(Operations)\n- acceptParamInHeaderForWrite(Operations)",
+      "range": {
+        "startLine": 161,
+        "startChar": 0,
+        "endLine": 169,
+        "endChar": 28
+      },
+      "revId": "03b1536647a167e58dc3114e3feaaa276844d1b5",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "6112cb6c_7218a44d",
+        "filename": "openapi/openapi.yml",
+        "patchSetId": 2
+      },
+      "lineNbr": 128,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2022-03-29T12:38:46Z",
+      "side": 1,
+      "message": "see prev comment on names",
+      "range": {
+        "startLine": 128,
+        "startChar": 67,
+        "endLine": 128,
+        "endChar": 70
+      },
+      "revId": "03b1536647a167e58dc3114e3feaaa276844d1b5",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
     }
   ]
 }
