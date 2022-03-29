@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "71eb936d_8596b0f3",
+        "filename": "docs/api/swagger/openapi.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 7743
+      },
+      "writtenOn": "2022-03-29T12:31:42Z",
+      "side": 1,
+      "message": "Legacy: Missing Copyright",
+      "revId": "03b1536647a167e58dc3114e3feaaa276844d1b5",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "70a12382_d5b310df",
+        "filename": "openapi/components.yml",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 7743
+      },
+      "writtenOn": "2022-03-29T12:31:42Z",
+      "side": 1,
+      "message": "Same",
+      "revId": "03b1536647a167e58dc3114e3feaaa276844d1b5",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    }
+  ]
+}
