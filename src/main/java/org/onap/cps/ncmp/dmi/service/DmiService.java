@@ -1,6 +1,7 @@
 /*
  *  ============LICENSE_START=======================================================
  *  Copyright (C) 2021 Nordix Foundation
+ *  Modifications Copyright (C) 2022 Bell Canada
  *  ================================================================================
  *  Licensed under the Apache License, Version 2.0 (the "License");
  *  you may not use this file except in compliance with the License.
@@ -70,14 +71,12 @@ public interface DmiService {
      *
      * @param cmHandle                  cm handle identifier
      * @param resourceIdentifier        resource identifier
-     * @param acceptParamInHeader       accept header parameter
      * @param optionsParamInQuery       options query parameter
      * @param restconfContentQueryParam restconf content i.e. datastore to use
      * @return {@code Object} response from network function
      */
     String getResourceData(@NotNull String cmHandle,
         @NotNull String resourceIdentifier,
-        String acceptParamInHeader,
         String optionsParamInQuery,
         String restconfContentQueryParam);
 
