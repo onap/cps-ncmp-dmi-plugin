@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "6e6b5c21_55712968",
+        "filename": "src/test/groovy/org/onap/cps/ncmp/dmi/service/operation/SdncOperationsSpec.groovy",
+        "patchSetId": 1
+      },
+      "lineNbr": 120,
+      "author": {
+        "id": 7743
+      },
+      "writtenOn": "2022-03-29T09:02:37Z",
+      "side": 1,
+      "message": "missing space between with and #scenario",
+      "revId": "2dbb3e9e34f1bf0fe2450b44eb4928aadd8e4c41",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    }
+  ]
+}
