@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "2779b263_9afc1957",
+        "filename": "csit/tests/dmi-integration/dmi-ncmp.robot",
+        "patchSetId": 3
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 7965
+      },
+      "writtenOn": "2022-03-29T16:32:22Z",
+      "side": 1,
+      "message": "Actually in the CSITs we are just testing the integration points and not looking at the returned data.\nWe are just relying on the response codes , as long as it is 2XX we are good that the integration is fine and would work. So I have explicitly added it in the description just to eliminate confusion.",
+      "range": {
+        "startLine": 38,
+        "startChar": 19,
+        "endLine": 38,
+        "endChar": 59
+      },
+      "revId": "f8288947d90d905b520ae273104cc83e7a133c17",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    }
+  ]
+}
