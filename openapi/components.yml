@@ -166,6 +166,14 @@ components:
         type: string
         enum: [ application/json, application/yang-data+json ]
 
+    acceptParamJsonInHeader:
+      name: accept
+      in: header
+      description: Accept parameter for response, if accept parameter is null, that means client can accept any format.
+      schema:
+        type: string
+        enum: [ application/json ]
+
     optionsParamInQuery:
       name: options
       in: query

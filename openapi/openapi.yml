@@ -1,5 +1,6 @@
 #  ============LICENSE_START=======================================================
 #  Copyright (C) 2021 Nordix Foundation
+#  Modifications Copyright (C) 2022 Bell Canada
 #  ================================================================================
 #  Licensed under the Apache License, Version 2.0 (the "License");
 #  you may not use this file except in compliance with the License.
@@ -124,7 +125,7 @@ paths:
       parameters:
         - $ref: 'components.yml#/components/parameters/cmHandleInPath'
         - $ref: 'components.yml#/components/parameters/resourceIdentifierInQuery'
-        - $ref: 'components.yml#/components/parameters/acceptParamInHeader'
+        - $ref: 'components.yml#/components/parameters/acceptParamJsonInHeader'
         - $ref: 'components.yml#/components/parameters/optionsParamInQuery'
       requestBody:
         description: Operational body
