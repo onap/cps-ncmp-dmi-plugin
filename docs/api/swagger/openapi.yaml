@@ -177,15 +177,6 @@ paths:
         schema:
           type: string
           example: my-schema:my-node
-      - name: accept
-        in: header
-        description: Accept parameter for response, if accept parameter is null, that
-          means client can accept any format.
-        schema:
-          type: string
-          enum:
-          - application/json
-          - application/yang-data+json
       - name: options
         in: query
         description: options parameter in query, it is mandatory to wrap key(s)=value(s)
@@ -268,15 +259,6 @@ paths:
         schema:
           type: string
           example: my-schema:my-node
-      - name: accept
-        in: header
-        description: Accept parameter for response, if accept parameter is null, that
-          means client can accept any format.
-        schema:
-          type: string
-          enum:
-          - application/json
-          - application/yang-data+json
       - name: options
         in: query
         description: options parameter in query, it is mandatory to wrap key(s)=value(s)
