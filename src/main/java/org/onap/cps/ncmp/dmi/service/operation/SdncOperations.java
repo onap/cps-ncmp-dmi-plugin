@@ -1,7 +1,7 @@
 /*
  *  ============LICENSE_START=======================================================
  *  Copyright (C) 2021-2022 Nordix Foundation
- *  Modifications Copyright (C) 2021 Bell Canada
+ *  Modifications Copyright (C) 2021-2022 Bell Canada
  *  ================================================================================
  *  Licensed under the Apache License, Version 2.0 (the "License");
  *  you may not use this file except in compliance with the License.
@@ -127,23 +127,16 @@ public class SdncOperations {
      * @param nodeId                    network resource identifier
      * @param resourceId                resource identifier
      * @param optionsParamInQuery       fields query
-     * @param acceptParamInHeader       accept parameter
      * @param restConfContentQueryParam restConf content query param
      * @return {@code ResponseEntity} response entity
      */
     public ResponseEntity<String> getResouceDataForOperationalAndRunning(final String nodeId,
         final String resourceId,
         final String optionsParamInQuery,
-        final String acceptParamInHeader,
         final String restConfContentQueryParam) {
         final String getResourceDataUrl = prepareResourceDataUrl(nodeId,
-            resourceId,
-                buildQueryParamMap(optionsParamInQuery, restConfContentQueryParam));
-        final HttpHeaders httpHeaders = new HttpHeaders();
-        if (acceptParamInHeader != null && !acceptParamInHeader.isBlank()) {
-            httpHeaders.set(HttpHeaders.ACCEPT, acceptParamInHeader);
-        }
-        return sdncRestconfClient.getOperation(getResourceDataUrl, httpHeaders);
+            resourceId, buildQueryParamMap(optionsParamInQuery, restConfContentQueryParam));
+        return sdncRestconfClient.getOperation(getResourceDataUrl);
     }
 
     /**
