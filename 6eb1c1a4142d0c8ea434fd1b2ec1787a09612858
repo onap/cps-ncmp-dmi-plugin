@@ -34,6 +34,24 @@
       "revId": "6eb1c1a4142d0c8ea434fd1b2ec1787a09612858",
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "06b0f532_4e73e550",
+        "filename": "csit/tests/ncmp-dmi-passthrough/ncmp-dmi-passthrough.robot",
+        "patchSetId": 1
+      },
+      "lineNbr": 43,
+      "author": {
+        "id": 7743
+      },
+      "writtenOn": "2022-03-29T15:49:21Z",
+      "side": 1,
+      "message": "You need to register a node first and only then as part of the sync are the modules added for that cm handle. Fetching the modules needs to be done after it. I would also suggest you check for an expected returned module as done in other tests like:\n\nGet modules for registered data node\n  ...\n    ${responseJson}\u003d     Set Variable       ${response.json()}\n    Should Be Equal As Strings              ${response.status_code}   200\n    FOR   ${item}   IN  @{responseJson}\n            IF   \"${item[\u0027moduleName\u0027]}\" \u003d\u003d \"stores\"\n                Should Be Equal As Strings              \"${item[\u0027revision\u0027]}\"   \"2020-09-15\"\n            END\n        END",
+      "parentUuid": "b556025d_ab5b01a8",
+      "revId": "6eb1c1a4142d0c8ea434fd1b2ec1787a09612858",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
     }
   ]
 }
