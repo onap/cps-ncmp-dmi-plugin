@@ -22,6 +22,30 @@
       "revId": "24479731fea8a35fdd1c384bd96b0e21068081c9",
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "572f28a2_04ed4f64",
+        "filename": "docs/api/swagger/openapi.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 188,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2022-03-30T08:00:53Z",
+      "side": 0,
+      "message": "I think we need a good discussion around accept\u0026response types. I am not sure how it is supposed to work in general and then specifically applied stack: Client \u003c-\u003e NCMP \u003c-\u003e DMI-PLugin \u003c-\u003e Any-Node-Mediation\n\nMaybe call a meeting?",
+      "parentUuid": "d01be539_076bf4e3",
+      "range": {
+        "startLine": 188,
+        "startChar": 10,
+        "endLine": 188,
+        "endChar": 38
+      },
+      "revId": "24479731fea8a35fdd1c384bd96b0e21068081c9",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
     }
   ]
 }
