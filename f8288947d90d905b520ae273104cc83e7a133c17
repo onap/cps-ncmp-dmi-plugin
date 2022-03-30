@@ -22,6 +22,30 @@
       "revId": "f8288947d90d905b520ae273104cc83e7a133c17",
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "e82f7267_313c9ac3",
+        "filename": "csit/tests/dmi-integration/dmi-ncmp.robot",
+        "patchSetId": 3
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 7743
+      },
+      "writtenOn": "2022-03-30T09:29:00Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "2779b263_9afc1957",
+      "range": {
+        "startLine": 38,
+        "startChar": 19,
+        "endLine": 38,
+        "endChar": 59
+      },
+      "revId": "f8288947d90d905b520ae273104cc83e7a133c17",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
     }
   ]
 }
