@@ -35,7 +35,9 @@ ${dmiBasePath}          /dmi
 
 *** Test Cases ***
 
-Get all modules for given cm-handle
-    ${uri}=              Set Variable       ${dmiBasePath}/v1/ch/PNFDemo/modules
+Register cm handle to test integration between DMI and NCMP
+    ${uri}=              Set Variable       ${dmiBasePath}/v1/inventory/cmHandles
     ${headers}=          Create Dictionary  Content-Type=application/json   Authorization=${auth}
-    ${response}=         POST On Session    DMI_URL   ${uri}   headers=${headers}   data={}   expected_status=200
+    ${jsonData}=         Get Binary File    ${DATADIR}${/}cmHandleRegistration.json
+    ${response}=         POST On Session    DMI_URL   ${uri}   headers=${headers}   data=${jsonData}
+    Should Be Equal As Strings              ${response.status_code}   201
