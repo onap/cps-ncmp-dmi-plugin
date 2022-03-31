@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "6f3787a3_88382348",
+        "filename": "docs/api/swagger/openapi.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 277,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2022-03-31T10:01:29Z",
+      "side": 1,
+      "message": "should this whole block be removed?",
+      "range": {
+        "startLine": 270,
+        "startChar": 0,
+        "endLine": 277,
+        "endChar": 28
+      },
+      "revId": "776af6b3a6a061da00d4f8f47d3a8983e774f3c3",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "17e3ac85_4031adf9",
+        "filename": "openapi/components.yml",
+        "patchSetId": 1
+      },
+      "lineNbr": 194,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2022-03-31T10:01:29Z",
+      "side": 1,
+      "message": "why not remove completely?!",
+      "range": {
+        "startLine": 188,
+        "startChar": 0,
+        "endLine": 194,
+        "endChar": 34
+      },
+      "revId": "776af6b3a6a061da00d4f8f47d3a8983e774f3c3",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    }
+  ]
+}
