@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1d3621f4_b8bc1957",
+        "filename": "docs/api/swagger/openapi.yaml",
+        "patchSetId": 5
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 7743
+      },
+      "writtenOn": "2022-04-04T09:05:27Z",
+      "side": 1,
+      "message": "Legacy: Missing copyright",
+      "revId": "570943a0fd115a4e18f2924fa4374a8684dd5dfc",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    }
+  ]
+}
