@@ -1,6 +1,6 @@
 /*
  *  ============LICENSE_START=======================================================
- *  Copyright (C) 2021 Nordix Foundation
+ *  Copyright (C) 2021-2022 Nordix Foundation
  *  Modifications Copyright (C) 2022 Bell Canada
  *  ================================================================================
  *  Licensed under the Apache License, Version 2.0 (the "License");
@@ -21,10 +21,15 @@
 
 package org.onap.cps.ncmp.dmi.rest.controller;
 
+import static org.onap.cps.ncmp.dmi.model.DataAccessRequest.OperationEnum;
+
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import javax.validation.Valid;
+import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.onap.cps.ncmp.dmi.model.CmHandles;
 import org.onap.cps.ncmp.dmi.model.DataAccessRequest;
@@ -44,15 +49,22 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("${rest.api.dmi-base-path}")
 @RestController
 @Slf4j
+@RequiredArgsConstructor
 public class DmiRestController implements DmiPluginApi, DmiPluginInternalApi {
 
-    private DmiService dmiService;
+    private final DmiService dmiService;
 
-    private ObjectMapper objectMapper;
+    private final ObjectMapper objectMapper;
 
-    public DmiRestController(final DmiService dmiService, final ObjectMapper objectMapper) {
-        this.dmiService = dmiService;
-        this.objectMapper = objectMapper;
+    private static final Map<OperationEnum, HttpStatus> operationToHttpStatusMap = new HashMap<>(6);
+
+    static {
+        operationToHttpStatusMap.put(null, HttpStatus.OK);
+        operationToHttpStatusMap.put(OperationEnum.READ, HttpStatus.OK);
+        operationToHttpStatusMap.put(OperationEnum.CREATE, HttpStatus.CREATED);
+        operationToHttpStatusMap.put(OperationEnum.PATCH, HttpStatus.OK);
+        operationToHttpStatusMap.put(OperationEnum.UPDATE, HttpStatus.OK);
+        operationToHttpStatusMap.put(OperationEnum.DELETE, HttpStatus.NO_CONTENT);
     }
 
     @Override
@@ -133,36 +145,12 @@ public class DmiRestController implements DmiPluginApi, DmiPluginInternalApi {
                 dataAccessRequest.getDataType(),
                 dataAccessRequest.getData());
         }
-        return new ResponseEntity<>(sdncResponse, getHttpStatus(dataAccessRequest));
+        return new ResponseEntity<>(sdncResponse, operationToHttpStatusMap.get(dataAccessRequest.getOperation()));
     }
 
     private boolean isReadOperation(final @Valid DataAccessRequest dataAccessRequest) {
         return dataAccessRequest.getOperation() == null
             || dataAccessRequest.getOperation().equals(DataAccessRequest.OperationEnum.READ);
-    }
-
-    private HttpStatus getHttpStatus(final DataAccessRequest dataAccessRequest) {
-        final HttpStatus httpStatus;
-        if (dataAccessRequest.getOperation() == null) {
-            httpStatus = HttpStatus.OK;
-        } else {
-            switch (dataAccessRequest.getOperation()) {
-                case CREATE:
-                    httpStatus = HttpStatus.CREATED;
-                    break;
-                case READ:
-                case UPDATE:
-                case PATCH:
-                    httpStatus = HttpStatus.OK;
-                    break;
-                case DELETE:
-                    httpStatus = HttpStatus.NO_CONTENT;
-                    break;
-                default:
-                    httpStatus = HttpStatus.BAD_REQUEST;
-            }
-        }
-        return httpStatus;
     }
 
     private List<ModuleReference> convertRestObjectToJavaApiObject(

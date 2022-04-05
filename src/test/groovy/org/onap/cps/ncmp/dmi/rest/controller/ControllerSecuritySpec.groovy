@@ -1,6 +1,6 @@
 /*
  *  ============LICENSE_START=======================================================
- *  Copyright (C) 2021 Nordix Foundation
+ *  Copyright (C) 2021-2022 Nordix Foundation
  *  ================================================================================
  *  Licensed under the Apache License, Version 2.0 (the "License");
  *  you may not use this file except in compliance with the License.
@@ -19,6 +19,8 @@
  */
 
 package org.onap.cps.ncmp.dmi.rest.controller
+
+import org.onap.cps.ncmp.dmi.config.WebSecurityConfig
 
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get
 
@@ -59,5 +61,14 @@ class ControllerSecuritySpec extends Specification {
             ).andReturn().response
         then: 'HTTP Unauthorized status code is returned'
             assert response.status == HttpStatus.UNAUTHORIZED.value()
+    }
+
+    def 'Security Config #scenario permit URIs'() {
+        expect: 'can create a web security configuration'
+            new WebSecurityConfig(permitUris,'user','password')
+        where: 'the following string of permit URIs is provided'
+            scenario  | permitUris
+            'with'    | 'a,b'
+            'without' | ''
     }
 }

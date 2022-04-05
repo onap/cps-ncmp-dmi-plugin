@@ -21,6 +21,8 @@
 
 package org.onap.cps.ncmp.dmi.service.operation;
 
+import static org.onap.cps.ncmp.dmi.model.DataAccessRequest.OperationEnum;
+
 import com.jayway.jsonpath.Configuration;
 import com.jayway.jsonpath.JsonPath;
 import com.jayway.jsonpath.JsonPathException;
@@ -30,6 +32,7 @@ import com.jayway.jsonpath.spi.mapper.JacksonMappingProvider;
 import java.util.Arrays;
 import java.util.Collection;
 import java.util.Collections;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
@@ -61,6 +64,16 @@ public class SdncOperations {
     private static final int QUERY_PARAM_SPLIT_LIMIT = 2;
     private static final int QUERY_PARAM_VALUE_INDEX = 1;
     private static final int QUERY_PARAM_NAME_INDEX = 0;
+
+    private static Map<OperationEnum, HttpMethod> operationToHttpMethodMap = new HashMap<>(5);
+
+    static {
+        operationToHttpMethodMap.put(OperationEnum.READ, HttpMethod.GET);
+        operationToHttpMethodMap.put(OperationEnum.CREATE, HttpMethod.POST);
+        operationToHttpMethodMap.put(OperationEnum.PATCH, HttpMethod.PATCH);
+        operationToHttpMethodMap.put(OperationEnum.UPDATE, HttpMethod.PUT);
+        operationToHttpMethodMap.put(OperationEnum.DELETE, HttpMethod.DELETE);
+    }
 
     private final SdncProperties sdncProperties;
     private final SdncRestconfClient sdncRestconfClient;
@@ -156,7 +169,7 @@ public class SdncOperations {
         final var getResourceDataUrl = prepareWriteUrl(nodeId, resourceId);
         final var httpHeaders = new HttpHeaders();
         httpHeaders.setContentType(MediaType.parseMediaType(contentType));
-        final HttpMethod httpMethod = getHttpMethod(operation);
+        final HttpMethod httpMethod = operationToHttpMethodMap.get(operation);
         return sdncRestconfClient.httpOperationWithJsonData(httpMethod, getResourceDataUrl, requestData, httpHeaders);
     }
 
@@ -228,30 +241,6 @@ public class SdncOperations {
             throw new SdncException("SDNC Response processing failed",
                 "SDNC response is not in the expected format.", jsonPathException);
         }
-    }
-
-    private HttpMethod getHttpMethod(final DataAccessRequest.OperationEnum operation) {
-        HttpMethod httpMethod = null;
-        switch (operation) {
-            case READ:
-                httpMethod = HttpMethod.GET;
-                break;
-            case CREATE:
-                httpMethod = HttpMethod.POST;
-                break;
-            case PATCH:
-                httpMethod = HttpMethod.PATCH;
-                break;
-            case UPDATE:
-                httpMethod = HttpMethod.PUT;
-                break;
-            case DELETE:
-                httpMethod = HttpMethod.DELETE;
-                break;
-            default:
-                //unreachable code but checkstyle made me do this!
-        }
-        return httpMethod;
     }
 
     private String getTopologyUrlData() {
