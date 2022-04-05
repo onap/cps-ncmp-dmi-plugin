@@ -20,6 +20,8 @@
 
 package org.onap.cps.ncmp.dmi.rest.controller
 
+import org.onap.cps.ncmp.dmi.config.WebSecurityConfig
+
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get
 
 import org.springframework.beans.factory.annotation.Autowired
@@ -59,5 +61,14 @@ class ControllerSecuritySpec extends Specification {
             ).andReturn().response
         then: 'HTTP Unauthorized status code is returned'
             assert response.status == HttpStatus.UNAUTHORIZED.value()
+    }
+
+    def 'Security Config #scenario permit URIs'() {
+        expect: 'can create a web security configuration'
+            new WebSecurityConfig(permitUris,'user','password')
+        where: 'the following string of permit URIs is provided'
+            scenario  | permitUris
+            'with'    | 'a,b'
+            'without' | ''
     }
 }
