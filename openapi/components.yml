@@ -116,6 +116,9 @@ components:
           example: my-data
         cmHandleProperties:
           $ref: '#/components/schemas/cmHandleProperties'
+        requestId:
+          type: string
+          example: uuid-random-id-eg
 
     cmHandleProperties:
       type: object
@@ -195,3 +198,14 @@ components:
         sample3:
           value:
             options: (key1=10,key2=value2,key3=val31,val32)
+    topicParamInQuery:
+      name: topicParamInQuery
+      in: query
+      description: valid topic name passed from client(NCMP).
+      required: false
+      schema:
+        type: string
+      allowReserved: true
+      examples:
+        sample1:
+          value: ncmp-async-m2m
