@@ -1,6 +1,6 @@
 <!--
   ============LICENSE_START=======================================================
-  Copyright (c) 2021 Nordix Foundation.
+  Copyright (c) 2021-2022 Nordix Foundation.
   Modifications Copyright (C) 2021 Bell Canada.
   ================================================================================
   Licensed under the Apache License, Version 2.0 (the "License");
@@ -25,7 +25,7 @@
     <parent>
         <groupId>org.onap.oparent</groupId>
         <artifactId>oparent</artifactId>
-        <version>3.2.0</version>
+        <version>3.3.0</version>
         <relativePath/>
     </parent>
     <organization>
@@ -72,6 +72,13 @@
                 <groupId>org.springframework.cloud</groupId>
                 <artifactId>spring-cloud-dependencies</artifactId>
                 <version>2021.0.1</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+            <dependency>
+                <groupId>org.testcontainers</groupId>
+                <artifactId>testcontainers-bom</artifactId>
+                <version>1.15.3</version>
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
@@ -131,11 +138,6 @@
             <version>1.6.2</version>
         </dependency>
         <dependency>
-            <groupId>io.springfox</groupId>
-            <artifactId>springfox-boot-starter</artifactId>
-            <version>3.0.0</version>
-        </dependency>
-        <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-security</artifactId>
         </dependency>
@@ -163,6 +165,25 @@
             <groupId>org.apache.httpcomponents</groupId>
             <artifactId>httpclient</artifactId>
             <version>${httpclient.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.kafka</groupId>
+            <artifactId>spring-kafka</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.kafka</groupId>
+            <artifactId>spring-kafka-test</artifactId>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.testcontainers</groupId>
+            <artifactId>spock</artifactId>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.testcontainers</groupId>
+            <artifactId>kafka</artifactId>
+            <scope>test</scope>
         </dependency>
     </dependencies>
     <build>
@@ -280,6 +301,14 @@
                     <excludes>
                         <exclude>**/IT*.java</exclude>
                     </excludes>
+                    <environmentVariables>
+                        <!--
+                            Disable privileged container usage to cleanup the test containers;
+                            these are removed automatically on jvm termination;
+                            see https://www.testcontainers.org/features/configuration/#disabling-ryuk
+                        -->
+                        <TESTCONTAINERS_RYUK_DISABLED>true</TESTCONTAINERS_RYUK_DISABLED>
+                    </environmentVariables>
                 </configuration>
             </plugin>
             <plugin>

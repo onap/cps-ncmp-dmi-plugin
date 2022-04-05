@@ -1,6 +1,6 @@
 /*
  *  ============LICENSE_START=======================================================
- *  Copyright (C) 2021 Nordix Foundation
+ *  Copyright (C) 2021-2022 Nordix Foundation
  *  Modifications Copyright (C) 2021-2022 Bell Canada
  *  ================================================================================
  *  Licensed under the Apache License, Version 2.0 (the "License");
@@ -21,11 +21,11 @@
 
 package org.onap.cps.ncmp.dmi.rest.controller
 
-import com.fasterxml.jackson.databind.ObjectMapper
 import org.onap.cps.ncmp.dmi.TestUtils
 import org.onap.cps.ncmp.dmi.exception.DmiException
 import org.onap.cps.ncmp.dmi.exception.ModuleResourceNotFoundException
 import org.onap.cps.ncmp.dmi.exception.ModulesNotFoundException
+import org.onap.cps.ncmp.dmi.service.NcmpKafkaPublisherService
 import org.onap.cps.ncmp.dmi.service.model.ModuleReference
 import org.onap.cps.ncmp.dmi.model.ModuleSet
 import org.onap.cps.ncmp.dmi.model.ModuleSetSchemas
@@ -36,7 +36,6 @@ import org.spockframework.spring.SpringBean
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.beans.factory.annotation.Value
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest
-import org.springframework.context.annotation.Import
 import org.springframework.http.HttpStatus
 import org.springframework.http.MediaType
 import org.springframework.security.test.context.support.WithMockUser
@@ -56,14 +55,15 @@ import static org.springframework.http.HttpStatus.OK
 
 @WebMvcTest(DmiRestController)
 @WithMockUser
-@Import(ObjectMapper)
 class DmiRestControllerSpec extends Specification {
+    @Autowired
+    private MockMvc mvc
 
     @SpringBean
     DmiService mockDmiService = Mock()
 
-    @Autowired
-    private MockMvc mvc
+    @SpringBean
+    NcmpKafkaPublisherService mockNcmpKafkaPublisherService = Mock()
 
     @Value('${rest.api.dmi-base-path}/v1')
     def basePathV1
@@ -95,18 +95,19 @@ class DmiRestControllerSpec extends Specification {
             def getModuleUrl = "$basePathV1/ch/node1/modules"
         and: 'given request body and get modules for cm-handle throws #exceptionClass'
             def json = '{"cmHandleProperties" : {}}'
-            mockDmiService.getModulesForCmHandle('node1') >> { throw Mock(exceptionClass) }
+            mockDmiService.getModulesForCmHandle('node1') >> { throw exception }
         when: 'post is invoked'
             def response = mvc.perform( post(getModuleUrl)
                     .contentType(MediaType.APPLICATION_JSON).content(json))
                     .andReturn().response
         then: 'response status is #expectedResponse'
-            response.status == expectedResponse
+            response.status == expectedResponse.value()
         where: 'the scenario is #scenario'
-            scenario                       |  exceptionClass                 || expectedResponse
-            'dmi service exception'        |  DmiException.class             || HttpStatus.INTERNAL_SERVER_ERROR.value()
-            'no modules found'             |  ModulesNotFoundException.class || HttpStatus.NOT_FOUND.value()
-            'any other runtime exception'  |  RuntimeException.class         || HttpStatus.INTERNAL_SERVER_ERROR.value()
+            scenario                       | exception                                        || expectedResponse
+            'dmi service exception'        | new DmiException('','')                          || HttpStatus.INTERNAL_SERVER_ERROR
+            'no modules found'             | new ModulesNotFoundException('','')              || HttpStatus.NOT_FOUND
+            'any other runtime exception'  | new RuntimeException()                           || HttpStatus.INTERNAL_SERVER_ERROR
+            'runtime exception with cause' | new RuntimeException('', new RuntimeException()) || HttpStatus.INTERNAL_SERVER_ERROR
     }
 
     def 'Register given list.'() {
