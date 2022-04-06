@@ -2,6 +2,52 @@
   "comments": [
     {
       "key": {
+        "uuid": "87c59a49_5cc79b92",
+        "filename": "pom.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 7743
+      },
+      "writtenOn": "2022-04-06T07:57:53Z",
+      "side": 1,
+      "message": "Copyright 2021-2022 :)",
+      "range": {
+        "startLine": 3,
+        "startChar": 2,
+        "endLine": 3,
+        "endChar": 39
+      },
+      "revId": "7ccc7cfd9d61b0d587022341fe272f6436db87a9",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "00d802a7_91c78bda",
+        "filename": "src/main/java/org/onap/cps/ncmp/dmi/rest/controller/DmiRestController.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 7743
+      },
+      "writtenOn": "2022-04-06T07:57:53Z",
+      "side": 1,
+      "message": "Same",
+      "range": {
+        "startLine": 3,
+        "startChar": 1,
+        "endLine": 3,
+        "endChar": 40
+      },
+      "revId": "7ccc7cfd9d61b0d587022341fe272f6436db87a9",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "bc53e32c_33fc5c06",
         "filename": "src/main/java/org/onap/cps/ncmp/dmi/rest/controller/DmiRestController.java",
         "patchSetId": 1
@@ -18,6 +64,29 @@
         "startChar": 4,
         "endLine": 70,
         "endChar": 5
+      },
+      "revId": "7ccc7cfd9d61b0d587022341fe272f6436db87a9",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "e162911a_32612562",
+        "filename": "src/test/groovy/org/onap/cps/ncmp/dmi/rest/controller/ControllerSecuritySpec.groovy",
+        "patchSetId": 1
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 7743
+      },
+      "writtenOn": "2022-04-06T07:57:53Z",
+      "side": 1,
+      "message": "Same",
+      "range": {
+        "startLine": 3,
+        "startChar": 0,
+        "endLine": 3,
+        "endChar": 40
       },
       "revId": "7ccc7cfd9d61b0d587022341fe272f6436db87a9",
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
