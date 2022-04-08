@@ -20,11 +20,11 @@
 
 package org.onap.cps.ncmp.dmi.config
 
+import org.springdoc.core.GroupedOpenApi
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.boot.test.context.SpringBootTest
 import org.springframework.test.context.ContextConfiguration
 import spock.lang.Specification
-import springfox.documentation.spring.web.plugins.Docket
 
 @SpringBootTest
 @ContextConfiguration(classes = [DmiPluginConfig.DmiPluginProperties])
@@ -38,15 +38,15 @@ class DmiPluginConfigSpec extends Specification {
             dmiPluginProperties.dmiServiceUrl == 'some url for the dmi service'
     }
 
-    def 'DMI plugin docket creation.'() {
+    def 'DMI plugin api creation.'() {
         given: 'a DMI plugin configuration'
             DmiPluginConfig objectUnderTest = new DmiPluginConfig()
         when: 'the api method is invoked'
             def result = objectUnderTest.api()
         then: 'a spring web plugin docket is returned'
-            result instanceof Docket
-        and: 'it is named "dmi-plugin-docket"'
-            result.groupName == 'dmi-plugin-docket'
+            result instanceof GroupedOpenApi
+        and: 'it is named "dmi-plugin-api"'
+            result.group == 'dmi-plugin-api'
     }
 
 }
