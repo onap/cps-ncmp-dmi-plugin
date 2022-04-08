@@ -126,6 +126,7 @@ paths:
         - $ref: 'components.yml#/components/parameters/cmHandleInPath'
         - $ref: 'components.yml#/components/parameters/resourceIdentifierInQuery'
         - $ref: 'components.yml#/components/parameters/optionsParamInQuery'
+        - $ref: 'components.yml#/components/parameters/topicParamInQuery'
       requestBody:
         description: Operational body
         content:
@@ -159,6 +160,7 @@ paths:
         - $ref: 'components.yml#/components/parameters/cmHandleInPath'
         - $ref: 'components.yml#/components/parameters/resourceIdentifierInQuery'
         - $ref: 'components.yml#/components/parameters/optionsParamInQuery'
+        - $ref: 'components.yml#/components/parameters/topicParamInQuery'
       requestBody:
         content:
           application/json:
