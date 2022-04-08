@@ -71,7 +71,7 @@ public class DmiRestController implements DmiPluginApi, DmiPluginInternalApi {
     public ResponseEntity<ModuleSet> getModuleReferences(final String cmHandle,
                                                            final @Valid ModuleReferencesRequest body) {
         // For onap-dmi-plugin we don't need cmHandleProperties, so DataAccessReadRequest is not used.
-        final var moduleSet = dmiService.getModulesForCmHandle(cmHandle);
+        final ModuleSet moduleSet = dmiService.getModulesForCmHandle(cmHandle);
         return ResponseEntity.ok(moduleSet);
     }
 
