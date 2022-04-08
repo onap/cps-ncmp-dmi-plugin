@@ -32,7 +32,7 @@ import com.jayway.jsonpath.spi.mapper.JacksonMappingProvider;
 import java.util.Arrays;
 import java.util.Collection;
 import java.util.Collections;
-import java.util.HashMap;
+import java.util.EnumMap;
 import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
@@ -54,8 +54,7 @@ import org.springframework.web.util.UriComponentsBuilder;
 @Component
 public class SdncOperations {
 
-    private static final String TOPOLOGY_URL_TEMPLATE_DATA =
-        "/rests/data/network-topology:network-topology/";
+    private static final String TOPOLOGY_URL_TEMPLATE_DATA = "/rests/data/network-topology:network-topology/";
     private static final String TOPOLOGY_URL_TEMPLATE_OPERATIONAL =
         "/rests/operations/network-topology:network-topology/";
     private static final String GET_SCHEMA_URL = "ietf-netconf-monitoring:netconf-state/schemas";
@@ -65,7 +64,7 @@ public class SdncOperations {
     private static final int QUERY_PARAM_VALUE_INDEX = 1;
     private static final int QUERY_PARAM_NAME_INDEX = 0;
 
-    private static Map<OperationEnum, HttpMethod> operationToHttpMethodMap = new HashMap<>(5);
+    private static EnumMap<OperationEnum, HttpMethod> operationToHttpMethodMap = new EnumMap<>(OperationEnum.class);
 
     static {
         operationToHttpMethodMap.put(OperationEnum.READ, HttpMethod.GET);
@@ -127,8 +126,8 @@ public class SdncOperations {
      * @return response entity
      */
     public ResponseEntity<String> getModuleResource(final String nodeId, final String moduleProperties) {
-        final var getYangResourceUrl = prepareGetOperationSchemaUrl(nodeId);
-        final var httpHeaders = new HttpHeaders();
+        final String getYangResourceUrl = prepareGetOperationSchemaUrl(nodeId);
+        final HttpHeaders httpHeaders = new HttpHeaders();
         httpHeaders.setContentType(MediaType.APPLICATION_JSON);
         return sdncRestconfClient.httpOperationWithJsonData(
             HttpMethod.POST, getYangResourceUrl, moduleProperties, httpHeaders);
@@ -166,8 +165,8 @@ public class SdncOperations {
                                             final String resourceId,
                                             final String contentType,
                                             final String requestData) {
-        final var getResourceDataUrl = prepareWriteUrl(nodeId, resourceId);
-        final var httpHeaders = new HttpHeaders();
+        final String getResourceDataUrl = prepareWriteUrl(nodeId, resourceId);
+        final HttpHeaders httpHeaders = new HttpHeaders();
         httpHeaders.setContentType(MediaType.parseMediaType(contentType));
         final HttpMethod httpMethod = operationToHttpMethodMap.get(operation);
         return sdncRestconfClient.httpOperationWithJsonData(httpMethod, getResourceDataUrl, requestData, httpHeaders);
