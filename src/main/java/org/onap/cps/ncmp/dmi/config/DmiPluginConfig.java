@@ -21,29 +21,23 @@
 package org.onap.cps.ncmp.dmi.config;
 
 import lombok.Getter;
+import org.springdoc.core.GroupedOpenApi;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.stereotype.Component;
-import springfox.documentation.builders.PathSelectors;
-import springfox.documentation.builders.RequestHandlerSelectors;
-import springfox.documentation.spi.DocumentationType;
-import springfox.documentation.spring.web.plugins.Docket;
 
 
 @Configuration
 public class DmiPluginConfig {
+
     /**
-     * Swagger-ui configuration.
+     * Swagger-ui configuration using springdoc.
      */
-    @Bean("dmi-plugin-docket")
-    public Docket api() {
-        return new Docket(DocumentationType.OAS_30)
-                .groupName("dmi-plugin-docket")
-                .select()
-                .apis(RequestHandlerSelectors.any())
-                .paths(PathSelectors.any())
-                .build();
+    @Bean("dmi-plugin-api")
+    public GroupedOpenApi api() {
+        return GroupedOpenApi.builder().group("dmi-plugin-api")
+                .pathsToMatch("/swagger-ui/**,/swagger-resources/**,/v3/api-docs").build();
     }
 
     @Getter
