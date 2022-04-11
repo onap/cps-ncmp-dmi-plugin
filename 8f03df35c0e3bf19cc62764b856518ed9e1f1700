@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "9b947abc_50c0977a",
+        "filename": "src/main/java/org/onap/cps/ncmp/dmi/service/NcmpKafkaPublisher.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 68,
+      "author": {
+        "id": 7965
+      },
+      "writtenOn": "2022-04-11T10:34:25Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "d61c8af5_5bf04362",
+      "range": {
+        "startLine": 68,
+        "startChar": 20,
+        "endLine": 68,
+        "endChar": 24
+      },
+      "revId": "8f03df35c0e3bf19cc62764b856518ed9e1f1700",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "77e70be1_430d2f64",
         "filename": "src/test/groovy/org/onap/cps/ncmp/dmi/rest/controller/DmiRestControllerSpec.groovy",
         "patchSetId": 2
