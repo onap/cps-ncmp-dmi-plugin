@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "d61c8af5_5bf04362",
+        "filename": "src/main/java/org/onap/cps/ncmp/dmi/service/NcmpKafkaPublisher.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 68,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2022-04-11T09:25:32Z",
+      "side": 1,
+      "message": "I noticed you use debu level in the next class for message sending. I think both for consistency and size of default logs debug level is better...",
+      "range": {
+        "startLine": 68,
+        "startChar": 20,
+        "endLine": 68,
+        "endChar": 24
+      },
+      "revId": "8f03df35c0e3bf19cc62764b856518ed9e1f1700",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "77e70be1_430d2f64",
+        "filename": "src/test/groovy/org/onap/cps/ncmp/dmi/rest/controller/DmiRestControllerSpec.groovy",
+        "patchSetId": 2
+      },
+      "lineNbr": 67,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2022-04-11T09:25:32Z",
+      "side": 1,
+      "message": "should we add/modify some tetst that assert messages have been sent?!",
+      "range": {
+        "startLine": 67,
+        "startChar": 30,
+        "endLine": 67,
+        "endChar": 60
+      },
+      "revId": "8f03df35c0e3bf19cc62764b856518ed9e1f1700",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    }
+  ]
+}
