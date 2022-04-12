@@ -40,4 +40,7 @@ services:
       DMI_SERVICE_URL: ${DMI_SERVICE_URL:-http://ncmp-dmi-plugin:8783}
       DMI_USERNAME: ${DMI_USERNAME:-cpsuser}
       DMI_PASSWORD: ${DMI_PASSWORD:-cpsr0cks!}
+      KAFKA_BOOTSTRAP_SERVER: kafka:9092
+      notification.data-updated.enabled: 'true'
+      NOTIFICATION_DATASPACE_FILTER_PATTERNS: '.*'
     restart: unless-stopped
