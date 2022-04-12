@@ -23,6 +23,10 @@ package org.onap.cps.ncmp.dmi.service
 import org.apache.kafka.clients.admin.NewTopic
 import org.apache.kafka.clients.consumer.KafkaConsumer
 import org.apache.kafka.common.serialization.StringDeserializer
+import org.onap.cps.event.model.CpsAsyncRequestResponseEvent
+import org.onap.cps.ncmp.dmi.notifications.CpsAsyncRequestResponseEventProducer
+import org.onap.cps.ncmp.dmi.notifications.CpsAsyncRequestResponseEventProducerService
+import org.onap.cps.ncmp.dmi.notifications.CpsAsyncRequestResponseEventUtil
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.beans.factory.annotation.Value
 import org.springframework.boot.test.context.SpringBootTest
@@ -48,9 +52,10 @@ import static org.apache.kafka.clients.consumer.ConsumerConfig.VALUE_DESERIALIZE
 @SpringBootTest
 @Testcontainers
 @DirtiesContext
-class NcmpKafkaPublisherSpec extends Specification {
+class CpsAsyncRequestResponseEventProducerSpec extends Specification {
 
     static kafkaTestContainer = new KafkaContainer()
+
     static {
         Runtime.getRuntime().addShutdownHook(new Thread(kafkaTestContainer::stop))
     }
@@ -65,30 +70,38 @@ class NcmpKafkaPublisherSpec extends Specification {
     @Value('${app.ncmp.async-m2m.topic}')
     String topic
 
-    KafkaConsumer<String, Object> consumer = new KafkaConsumer<>(kafkaConsumerConfig())
+    @Autowired
+    CpsAsyncRequestResponseEventProducer cpsAsyncRequestResponseEventProducer;
+
+    KafkaConsumer<String, Object> consumer = new KafkaConsumer<>(consumerConfig())
 
     def 'Publish and Subscribe message'() {
-        given: 'a sample messsage and key'
-            def message = 'sample message'
+        given: 'a sample message and key'
+            def cpsAsyncRequestResponseEventUtil = new CpsAsyncRequestResponseEventUtil()
+            def message = cpsAsyncRequestResponseEventUtil.createEvent(
+                "{}", "ncmp-async-m2m", "12345", "SUCCESS", "200")
             def messageKey = 'message-key'
-            def objectUnderTest = new NcmpKafkaPublisher(kafkaTemplate, topic)
+            def objectUnderTest = new CpsAsyncRequestResponseEventProducerService(cpsAsyncRequestResponseEventProducer)
         when: 'a message is published'
-            objectUnderTest.sendMessage(messageKey, message)
-        then: 'a message is consumed'
+            objectUnderTest.publishToNcmp(messageKey, message)
+        then: 'no exception is thrown'
+            noExceptionThrown()
+        and: 'we receive a message'
             consumer.subscribe([topic] as List<String>)
-            def records = consumer.poll(Duration.ofMillis(1000))
-            assert records.size() == 1
-            assert messageKey == records[0].key
-            assert message == records[0].value
+            def records = consumer.poll(Duration.ofMillis(250))
+            for (record in records) {
+                assert messageKey == record.key()
+                assert message == record.value()
+            }
     }
 
-    def kafkaConsumerConfig() {
+    def consumerConfig() {
         def configs = [:]
         configs.put(KEY_DESERIALIZER_CLASS_CONFIG, StringDeserializer.name)
         configs.put(VALUE_DESERIALIZER_CLASS_CONFIG, JsonDeserializer.name)
-        configs.put(AUTO_OFFSET_RESET_CONFIG, 'earliest')
+        configs.put(AUTO_OFFSET_RESET_CONFIG, "earliest")
         configs.put(BOOTSTRAP_SERVERS_CONFIG, kafkaTestContainer.getBootstrapServers().split(",")[0])
-        configs.put(GROUP_ID_CONFIG, 'test')
+        configs.put(GROUP_ID_CONFIG, "test")
         return configs
     }
 
@@ -102,6 +115,7 @@ class NcmpKafkaPublisherSpec extends Specification {
 class TopicConfig {
     @Bean
     NewTopic newTopic() {
-        return new NewTopic("my-topic-name", 1, (short) 1);
+        return new NewTopic("ncmp-async-m2m", 1, (short) 1);
     }
 }
+
