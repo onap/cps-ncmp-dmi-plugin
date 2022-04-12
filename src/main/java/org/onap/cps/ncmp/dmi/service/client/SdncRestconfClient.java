@@ -20,6 +20,7 @@
 
 package org.onap.cps.ncmp.dmi.service.client;
 
+import lombok.extern.slf4j.Slf4j;
 import org.onap.cps.ncmp.dmi.config.DmiConfiguration.SdncProperties;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpHeaders;
@@ -28,6 +29,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Component;
 import org.springframework.web.client.RestTemplate;
 
+@Slf4j
 @Component
 public class SdncRestconfClient {
 
@@ -69,9 +71,10 @@ public class SdncRestconfClient {
      * @param httpHeaders HTTP Headers
      * @return response entity
      */
-    public ResponseEntity<String> httpOperationWithJsonData(final HttpMethod httpMethod, final String resourceUrl,
-                                                             final String jsonData,
-                                                             final HttpHeaders httpHeaders) {
+    public ResponseEntity<String> httpOperationWithJsonData(final HttpMethod httpMethod,
+                                                            final String resourceUrl,
+                                                            final String jsonData,
+                                                            final HttpHeaders httpHeaders) {
         final String sdncBaseUrl = sdncProperties.getBaseUrl();
         final String sdncRestconfUrl = sdncBaseUrl.concat(resourceUrl);
         httpHeaders.setBasicAuth(sdncProperties.getAuthUsername(), sdncProperties.getAuthPassword());
