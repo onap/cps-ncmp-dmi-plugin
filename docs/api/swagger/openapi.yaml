@@ -405,6 +405,9 @@ components:
           example: my-data
         cmHandleProperties:
           $ref: '#/components/schemas/cmHandleProperties'
+        requestId:
+          type: string
+          example: uuid-random-id-eg
     ModuleSet_schemas:
       type: object
       properties:

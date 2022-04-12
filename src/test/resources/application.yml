@@ -1,5 +1,5 @@
 # ============LICENSE_START=======================================================
-# Copyright (C) 2021 Nordix Foundation
+# Copyright (C) 2021-2022 Nordix Foundation
 # ================================================================================
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -21,6 +21,7 @@ rest:
     dmi-base-path: /dmi
 
 security:
+  permit-uri: /manage/**,/swagger-ui/**,/swagger-resources/**,/v3/api-docs
   auth:
     username: cpsuser
     password: cpsr0cks!
@@ -42,4 +43,19 @@ cps-core:
 dmi:
   service:
     url: some url for the dmi service
+
+spring:
+  kafka:
+    bootstrap-servers: localhost:9092
+    security:
+      protocol: PLAINTEXT
+    producer:
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
+      client-id: dmi-plugin
+
+app:
+  ncmp:
+    async-m2m:
+      topic: ncmp-async-m2m
 

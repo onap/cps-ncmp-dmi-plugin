@@ -40,6 +40,7 @@ import org.onap.cps.ncmp.dmi.model.YangResources;
 import org.onap.cps.ncmp.dmi.rest.api.DmiPluginApi;
 import org.onap.cps.ncmp.dmi.rest.api.DmiPluginInternalApi;
 import org.onap.cps.ncmp.dmi.service.DmiService;
+import org.onap.cps.ncmp.dmi.service.NcmpKafkaPublisherService;
 import org.onap.cps.ncmp.dmi.service.model.ModuleReference;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -56,6 +57,8 @@ public class DmiRestController implements DmiPluginApi, DmiPluginInternalApi {
 
     private final ObjectMapper objectMapper;
 
+    private final NcmpKafkaPublisherService ncmpKafkaPublisherService;
+
     private static final Map<OperationEnum, HttpStatus> operationToHttpStatusMap = new HashMap<>(6);
 
     static {
@@ -66,6 +69,7 @@ public class DmiRestController implements DmiPluginApi, DmiPluginInternalApi {
         operationToHttpStatusMap.put(OperationEnum.UPDATE, HttpStatus.OK);
         operationToHttpStatusMap.put(OperationEnum.DELETE, HttpStatus.NO_CONTENT);
     }
+
 
     @Override
     public ResponseEntity<ModuleSet> getModuleReferences(final String cmHandle,
@@ -107,6 +111,7 @@ public class DmiRestController implements DmiPluginApi, DmiPluginInternalApi {
      * @param cmHandle              cm handle identifier
      * @param dataAccessRequest     data Access Request
      * @param optionsParamInQuery   options query parameter
+     * @param topicParamInQuery     optional topic parameter
      * @return {@code ResponseEntity} response entity
      */
     @Override
@@ -114,7 +119,8 @@ public class DmiRestController implements DmiPluginApi, DmiPluginInternalApi {
                                                                    final String cmHandle,
                                                                    final @Valid DataAccessRequest
                                                                                 dataAccessRequest,
-                                                                   final @Valid String optionsParamInQuery) {
+                                                                   final @Valid String optionsParamInQuery,
+                                                                   final String topicParamInQuery) {
         if (isReadOperation(dataAccessRequest)) {
             final String resourceDataAsJson = dmiService.getResourceData(cmHandle,
                 resourceIdentifier,
@@ -130,7 +136,8 @@ public class DmiRestController implements DmiPluginApi, DmiPluginInternalApi {
                                                                final String cmHandle,
                                                                final @Valid DataAccessRequest
                                                                        dataAccessRequest,
-                                                               final @Valid String optionsParamInQuery) {
+                                                               final @Valid String optionsParamInQuery,
+                                                               final String topicParamInQuery) {
         final String sdncResponse;
         if (isReadOperation(dataAccessRequest)) {
             sdncResponse = dmiService.getResourceData(cmHandle,
