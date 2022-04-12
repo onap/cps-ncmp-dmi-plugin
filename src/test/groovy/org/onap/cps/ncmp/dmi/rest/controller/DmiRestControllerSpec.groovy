@@ -25,7 +25,7 @@ import org.onap.cps.ncmp.dmi.TestUtils
 import org.onap.cps.ncmp.dmi.exception.DmiException
 import org.onap.cps.ncmp.dmi.exception.ModuleResourceNotFoundException
 import org.onap.cps.ncmp.dmi.exception.ModulesNotFoundException
-import org.onap.cps.ncmp.dmi.service.NcmpKafkaPublisherService
+import org.onap.cps.ncmp.dmi.notifications.CpsAsyncRequestResponseEventProducerService
 import org.onap.cps.ncmp.dmi.service.model.ModuleReference
 import org.onap.cps.ncmp.dmi.model.ModuleSet
 import org.onap.cps.ncmp.dmi.model.ModuleSetSchemas
@@ -40,6 +40,7 @@ import org.springframework.http.HttpStatus
 import org.springframework.http.MediaType
 import org.springframework.security.test.context.support.WithMockUser
 import org.springframework.test.web.servlet.MockMvc
+import spock.lang.Ignore
 import spock.lang.Specification
 
 import static org.onap.cps.ncmp.dmi.model.DataAccessRequest.OperationEnum.DELETE
@@ -47,6 +48,7 @@ import static org.onap.cps.ncmp.dmi.model.DataAccessRequest.OperationEnum.PATCH
 import static org.onap.cps.ncmp.dmi.model.DataAccessRequest.OperationEnum.READ
 import static org.springframework.http.HttpStatus.BAD_REQUEST
 import static org.springframework.http.HttpStatus.NO_CONTENT
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post
 import static org.onap.cps.ncmp.dmi.model.DataAccessRequest.OperationEnum.CREATE
 import static org.onap.cps.ncmp.dmi.model.DataAccessRequest.OperationEnum.UPDATE
@@ -64,7 +66,7 @@ class DmiRestControllerSpec extends Specification {
     DmiService mockDmiService = Mock()
 
     @SpringBean
-    NcmpKafkaPublisherService mockNcmpKafkaPublisherService = Mock()
+    CpsAsyncRequestResponseEventProducerService mockCpsAsyncRequestResponseEventProducerService = Mock()
 
     @Value('${rest.api.dmi-base-path}/v1')
     def basePathV1
@@ -256,6 +258,33 @@ class DmiRestControllerSpec extends Specification {
             response.getContentAsString() == '{some-json}'
     }
 
+    def 'PassThrough Running Returns OK when topic is used for async'(){
+        given: 'correct JsonData'
+            def readPassthroughRunning = "${basePathV1}/ch/some-cmHandle/data/ds/ncmp-datastore:passthrough-running" +
+                "?resourceIdentifier=some-resourceIdentifier&topicParamInQuery=my-topic-1"
+        when: 'endpoint is invoked'
+            def jsonData = TestUtils.getResourceFileContent('readData.json')
+            def response = mvc.perform(
+                post(readPassthroughRunning).contentType(MediaType.APPLICATION_JSON).content(jsonData)
+            ).andReturn().response
+        then: 'response status is OK'
+            assert response.status == HttpStatus.OK.value()
+            assert response.getContentAsString().contains("Async Request Recieved")
+    }
+
+    def 'PassThrough Operational Returns OK when topic is used for async'(){
+        given: 'correct JsonData'
+            def readPassThroughOperational ="${basePathV1}/ch/some-cmHandle/data/ds/ncmp-datastore:passthrough-operational" +
+                "?resourceIdentifier=some-resourceIdentifier&topicParamInQuery=my-topic-999"
+        when: 'endpoint is invoked'
+            def jsonData = TestUtils.getResourceFileContent('readData.json')
+            def response = mvc.perform(
+                post(readPassThroughOperational).contentType(MediaType.APPLICATION_JSON).content(jsonData)
+            ).andReturn().response
+        then: 'response status is OK'
+            assert response.status == HttpStatus.OK.value()
+            assert response.getContentAsString().contains("Async Request Recieved")
+    }
 
     def 'Get resource data for pass-through running with #scenario value in resource identifier param.'() {
         given: 'Get resource data url'
