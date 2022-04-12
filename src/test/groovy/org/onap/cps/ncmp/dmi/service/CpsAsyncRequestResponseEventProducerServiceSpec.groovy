@@ -18,27 +18,25 @@
  * ============LICENSE_END=========================================================
  */
 
-package org.onap.cps.ncmp.dmi.service;
+package org.onap.cps.ncmp.dmi.service
 
-import lombok.AllArgsConstructor;
-import lombok.extern.slf4j.Slf4j;
-import org.springframework.stereotype.Service;
+import org.onap.cps.event.model.CpsAsyncRequestResponseEvent
+import org.onap.cps.ncmp.dmi.notifications.CpsAsyncRequestResponseEventProducer
+import org.onap.cps.ncmp.dmi.notifications.CpsAsyncRequestResponseEventProducerService
+import spock.lang.Specification
 
-@Slf4j
-@Service
-@AllArgsConstructor
-public class NcmpKafkaPublisherService {
+class CpsAsyncRequestResponseEventProducerServiceSpec extends Specification {
 
-    private final NcmpKafkaPublisher ncmpKafkaPublisher;
+    def mockNcmpKafkaPublisher = Mock(CpsAsyncRequestResponseEventProducer)
+    def objectUnderTest = new CpsAsyncRequestResponseEventProducerService(mockNcmpKafkaPublisher)
 
-    /**
-     * publish the message to NCMP.
-     *
-     * @param messageKey message key
-     * @param message    message payload
-     */
-    public void publishToNcmp(final String messageKey, final Object message) {
-        log.debug("Publishing message : {} to NCMP with message-key : {}", message, messageKey);
-        ncmpKafkaPublisher.sendMessage(messageKey, message);
+    def 'Message publishing'() {
+        given: 'a sample message with key'
+            def messageKey = 'sample message'
+            def message = new CpsAsyncRequestResponseEvent()
+        when: 'published'
+            objectUnderTest.publishEvent(messageKey, message)
+        then: 'no exception is thrown'
+            noExceptionThrown()
     }
 }
