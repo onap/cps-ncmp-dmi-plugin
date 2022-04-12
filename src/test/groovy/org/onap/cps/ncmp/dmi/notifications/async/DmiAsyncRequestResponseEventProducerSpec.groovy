@@ -2,14 +2,14 @@
  * ============LICENSE_START=======================================================
  * Copyright (C) 2022 Nordix Foundation
  * ================================================================================
- * Licensed under the Apache License, Version 2.0 (the "License");
+ * Licensed under the Apache License, Version 2.0 (the 'License');
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
  *       http://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
+ * distributed under the License is distributed on an 'AS IS' BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
@@ -18,11 +18,12 @@
  * ============LICENSE_END=========================================================
  */
 
-package org.onap.cps.ncmp.dmi.service
+package org.onap.cps.ncmp.dmi.notifications.async
 
 import org.apache.kafka.clients.admin.NewTopic
 import org.apache.kafka.clients.consumer.KafkaConsumer
 import org.apache.kafka.common.serialization.StringDeserializer
+import org.onap.cps.ncmp.dmi.exception.DmiException
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.beans.factory.annotation.Value
 import org.springframework.boot.test.context.SpringBootTest
@@ -35,22 +36,20 @@ import org.springframework.test.context.DynamicPropertyRegistry
 import org.springframework.test.context.DynamicPropertySource
 import org.testcontainers.containers.KafkaContainer
 import org.testcontainers.spock.Testcontainers
+import org.testcontainers.utility.DockerImageName
 import spock.lang.Specification
 
 import java.time.Duration
-
-import static org.apache.kafka.clients.consumer.ConsumerConfig.AUTO_OFFSET_RESET_CONFIG
-import static org.apache.kafka.clients.consumer.ConsumerConfig.BOOTSTRAP_SERVERS_CONFIG
-import static org.apache.kafka.clients.consumer.ConsumerConfig.GROUP_ID_CONFIG
-import static org.apache.kafka.clients.consumer.ConsumerConfig.KEY_DESERIALIZER_CLASS_CONFIG
-import static org.apache.kafka.clients.consumer.ConsumerConfig.VALUE_DESERIALIZER_CLASS_CONFIG
+import java.util.concurrent.TimeoutException
 
 @SpringBootTest
 @Testcontainers
 @DirtiesContext
-class NcmpKafkaPublisherSpec extends Specification {
+class DmiAsyncRequestResponseEventProducerSpec extends Specification {
 
-    static kafkaTestContainer = new KafkaContainer()
+    static kafkaTestContainer = new KafkaContainer(DockerImageName.parse("confluentinc/cp-kafka:6.1.1"))
+    private String requestId = 'some request id'
+
     static {
         Runtime.getRuntime().addShutdownHook(new Thread(kafkaTestContainer::stop))
     }
@@ -63,33 +62,39 @@ class NcmpKafkaPublisherSpec extends Specification {
     KafkaTemplate<String, Object> kafkaTemplate
 
     @Value('${app.ncmp.async-m2m.topic}')
-    String topic
+    def topic
 
-    KafkaConsumer<String, Object> consumer = new KafkaConsumer<>(kafkaConsumerConfig())
+    @Autowired
+    DmiAsyncRequestResponseEventProducer cpsAsyncRequestResponseEventProducer;
 
-    def 'Publish and Subscribe message'() {
-        given: 'a sample messsage and key'
-            def message = 'sample message'
+    def consumer = new KafkaConsumer<>(consumerConfig())
+
+    def 'Publish and Subscribe message - success'() {
+        given: 'a sample message and key'
+            def dmiAsyncRequestResponseEventUtil = new DmiAsyncRequestResponseEventCreator()
+            def message = dmiAsyncRequestResponseEventUtil.createEvent(
+                "{'data' : { 'property1' : 'value1'}}", 'ncmp-async-m2m', '12345', 'SUCCESS', '200')
             def messageKey = 'message-key'
-            def objectUnderTest = new NcmpKafkaPublisher(kafkaTemplate, topic)
-        when: 'a message is published'
-            objectUnderTest.sendMessage(messageKey, message)
-        then: 'a message is consumed'
+            def objectUnderTest = new DmiAsyncRequestResponseEventProducerService(cpsAsyncRequestResponseEventProducer)
+        when: 'an event is published'
+            objectUnderTest.publishAsyncEvent(messageKey, message)
+        then: 'no exception is thrown'
+            noExceptionThrown()
+        and: 'we receive a message'
             consumer.subscribe([topic] as List<String>)
-            def records = consumer.poll(Duration.ofMillis(1000))
-            assert records.size() == 1
-            assert messageKey == records[0].key
-            assert message == records[0].value
+            def records = consumer.poll(Duration.ofMillis(250))
+            for (record in records) {
+                assert messageKey == record.key()
+                assert message == record.value()
+            }
     }
 
-    def kafkaConsumerConfig() {
-        def configs = [:]
-        configs.put(KEY_DESERIALIZER_CLASS_CONFIG, StringDeserializer.name)
-        configs.put(VALUE_DESERIALIZER_CLASS_CONFIG, JsonDeserializer.name)
-        configs.put(AUTO_OFFSET_RESET_CONFIG, 'earliest')
-        configs.put(BOOTSTRAP_SERVERS_CONFIG, kafkaTestContainer.getBootstrapServers().split(",")[0])
-        configs.put(GROUP_ID_CONFIG, 'test')
-        return configs
+    def consumerConfig() {
+        return [
+            'key.deserializer' : StringDeserializer.name,
+            'value.deserializer' : JsonDeserializer.name,
+            'bootstrap.servers' : kafkaTestContainer.getBootstrapServers().split(',')[0],
+            'group.id' : 'test']
     }
 
     @DynamicPropertySource
@@ -102,6 +107,7 @@ class NcmpKafkaPublisherSpec extends Specification {
 class TopicConfig {
     @Bean
     NewTopic newTopic() {
-        return new NewTopic("my-topic-name", 1, (short) 1);
+        return new NewTopic('ncmp-async-m2m', 1, (short) 1);
     }
 }
+
