@@ -18,22 +18,20 @@
  * ============LICENSE_END=========================================================
  */
 
-package org.onap.cps.ncmp.dmi.service;
+package org.onap.cps.ncmp.dmi.notifications;
 
 import lombok.extern.slf4j.Slf4j;
+import org.onap.cps.event.model.CpsAsyncRequestResponseEvent;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.kafka.core.KafkaTemplate;
-import org.springframework.kafka.support.SendResult;
 import org.springframework.stereotype.Component;
-import org.springframework.util.concurrent.ListenableFuture;
-import org.springframework.util.concurrent.ListenableFutureCallback;
 
 @Component
 @Slf4j
-public class NcmpKafkaPublisher {
+public class CpsAsyncRequestResponseEventProducer {
 
-    private final KafkaTemplate<String, Object> kafkaTemplate;
+    private final KafkaTemplate<String, CpsAsyncRequestResponseEvent> kafkaTemplate;
     private final String topicName;
 
     /**
@@ -43,8 +41,9 @@ public class NcmpKafkaPublisher {
      * @param topicName     topic name
      */
     @Autowired
-    public NcmpKafkaPublisher(final KafkaTemplate<String, Object> kafkaTemplate,
-            @Value("${app.ncmp.async-m2m.topic}") final String topicName) {
+    public CpsAsyncRequestResponseEventProducer(
+        final KafkaTemplate<String, CpsAsyncRequestResponseEvent> kafkaTemplate,
+        final @Value("${app.ncmp.async-m2m.topic}") String topicName) {
         this.kafkaTemplate = kafkaTemplate;
         this.topicName = topicName;
     }
@@ -55,18 +54,7 @@ public class NcmpKafkaPublisher {
      * @param messageKey message key
      * @param payload    message payload
      */
-    public void sendMessage(final String messageKey, final Object payload) {
-        final ListenableFuture<SendResult<String, Object>> send = kafkaTemplate.send(topicName, messageKey, payload);
-        send.addCallback(new ListenableFutureCallback<>() {
-            @Override
-            public void onFailure(final Throwable ex) {
-                log.warn("Failed to send the messages {}", ex.getMessage());
-            }
-
-            @Override
-            public void onSuccess(final SendResult<String, Object> result) {
-                log.debug("Sent message {}", result.getProducerRecord());
-            }
-        });
+    public void sendMessage(final String messageKey, final CpsAsyncRequestResponseEvent payload) {
+        kafkaTemplate.send(topicName, messageKey, payload);
     }
 }
