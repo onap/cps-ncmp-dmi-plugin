@@ -118,7 +118,7 @@ components:
           $ref: '#/components/schemas/cmHandleProperties'
         requestId:
           type: string
-          example: uuid-random-id-eg
+          example: 3a9ce55c-e365-4dc9-8da3-a06f07cbc6d7
 
     cmHandleProperties:
       type: object
@@ -208,4 +208,4 @@ components:
       allowReserved: true
       examples:
         sample1:
-          value: ncmp-async-m2m
+          value: 3a9ce55c-e365-4dc9-8da3-a06f07cbc6d7
