@@ -22,25 +22,31 @@
 package org.onap.cps.ncmp.dmi.rest.controller;
 
 import static org.onap.cps.ncmp.dmi.model.DataAccessRequest.OperationEnum;
+import static org.onap.cps.ncmp.dmi.service.DmiService.RESTCONF_CONTENT_PASSTHROUGH_OPERATIONAL_QUERY_PARAM;
+import static org.onap.cps.ncmp.dmi.service.DmiService.RESTCONF_CONTENT_PASSTHROUGH_RUNNING_QUERY_PARAM;
 
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.concurrent.Executors;
 import javax.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.onap.cps.event.model.CpsAsyncRequestResponseEvent;
+import org.onap.cps.ncmp.dmi.exception.ResourceDataNotFound;
 import org.onap.cps.ncmp.dmi.model.CmHandles;
 import org.onap.cps.ncmp.dmi.model.DataAccessRequest;
 import org.onap.cps.ncmp.dmi.model.ModuleReferencesRequest;
 import org.onap.cps.ncmp.dmi.model.ModuleResourcesReadRequest;
 import org.onap.cps.ncmp.dmi.model.ModuleSet;
 import org.onap.cps.ncmp.dmi.model.YangResources;
+import org.onap.cps.ncmp.dmi.notifications.CpsAsyncRequestResponseEventProducerService;
+import org.onap.cps.ncmp.dmi.notifications.CpsAsyncRequestResponseEventUtil;
 import org.onap.cps.ncmp.dmi.rest.api.DmiPluginApi;
 import org.onap.cps.ncmp.dmi.rest.api.DmiPluginInternalApi;
 import org.onap.cps.ncmp.dmi.service.DmiService;
-import org.onap.cps.ncmp.dmi.service.NcmpKafkaPublisherService;
 import org.onap.cps.ncmp.dmi.service.model.ModuleReference;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -57,10 +63,13 @@ public class DmiRestController implements DmiPluginApi, DmiPluginInternalApi {
 
     private final ObjectMapper objectMapper;
 
-    private final NcmpKafkaPublisherService ncmpKafkaPublisherService;
+    private final CpsAsyncRequestResponseEventProducerService cpsAsyncRequestResponseEventProducerService;
 
     private static final Map<OperationEnum, HttpStatus> operationToHttpStatusMap = new HashMap<>(6);
 
+    private static final CpsAsyncRequestResponseEventUtil cpsAsyncRequestResponseEventUtil =
+        new CpsAsyncRequestResponseEventUtil();
+    
     static {
         operationToHttpStatusMap.put(null, HttpStatus.OK);
         operationToHttpStatusMap.put(OperationEnum.READ, HttpStatus.OK);
@@ -69,7 +78,6 @@ public class DmiRestController implements DmiPluginApi, DmiPluginInternalApi {
         operationToHttpStatusMap.put(OperationEnum.UPDATE, HttpStatus.OK);
         operationToHttpStatusMap.put(OperationEnum.DELETE, HttpStatus.NO_CONTENT);
     }
-
 
     @Override
     public ResponseEntity<ModuleSet> getModuleReferences(final String cmHandle,
@@ -81,8 +89,7 @@ public class DmiRestController implements DmiPluginApi, DmiPluginInternalApi {
 
     @Override
     public ResponseEntity<YangResources> retrieveModuleResources(
-        final @Valid ModuleResourcesReadRequest moduleResourcesReadRequest,
-        final String cmHandle) {
+        final @Valid ModuleResourcesReadRequest moduleResourcesReadRequest, final String cmHandle) {
         final List<ModuleReference> moduleReferences = convertRestObjectToJavaApiObject(moduleResourcesReadRequest);
         final YangResources yangResources = dmiService.getModuleResources(cmHandle, moduleReferences);
         return new ResponseEntity<>(yangResources, HttpStatus.OK);
@@ -117,33 +124,87 @@ public class DmiRestController implements DmiPluginApi, DmiPluginInternalApi {
     @Override
     public ResponseEntity<Object> dataAccessPassthroughOperational(final String resourceIdentifier,
                                                                    final String cmHandle,
-                                                                   final @Valid DataAccessRequest
-                                                                                dataAccessRequest,
+                                                                   final @Valid DataAccessRequest dataAccessRequest,
                                                                    final @Valid String optionsParamInQuery,
                                                                    final String topicParamInQuery) {
-        if (isReadOperation(dataAccessRequest)) {
-            final String resourceDataAsJson = dmiService.getResourceData(cmHandle,
-                resourceIdentifier,
-                optionsParamInQuery,
-                DmiService.RESTCONF_CONTENT_PASSTHROUGH_OPERATIONAL_QUERY_PARAM);
-            return ResponseEntity.ok(resourceDataAsJson);
+        if (hasTopic(topicParamInQuery)) {
+            Executors.newSingleThreadExecutor().submit(() -> {
+                String asyncSdncResponse = null;
+                String status = "SUCCESS";
+                String code = "200";
+
+                try {
+                    asyncSdncResponse = getPassthroughOperationalSdncResponse(
+                        dataAccessRequest, cmHandle, resourceIdentifier, optionsParamInQuery);
+                } catch (final ResourceDataNotFound exc) {
+                    log.error("Data for resource not found.");
+                    status = "FAILURE";
+                    code = "404";
+                }
+
+                final CpsAsyncRequestResponseEvent cpsAsyncRequestResponseEvent =
+                    cpsAsyncRequestResponseEventUtil.createEvent(
+                    asyncSdncResponse, topicParamInQuery, dataAccessRequest.getRequestId(), status, code);
+
+                cpsAsyncRequestResponseEventProducerService.publishToNcmp(
+                    dataAccessRequest.getRequestId(), cpsAsyncRequestResponseEvent);
+            });
+
+            return ResponseEntity.ok().build();
         }
-        return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
+
+        final String sdncResponse = getPassthroughOperationalSdncResponse(dataAccessRequest,
+            cmHandle, resourceIdentifier, optionsParamInQuery);
+        return ResponseEntity.ok(sdncResponse);
     }
 
     @Override
     public ResponseEntity<Object> dataAccessPassthroughRunning(final String resourceIdentifier,
                                                                final String cmHandle,
-                                                               final @Valid DataAccessRequest
-                                                                       dataAccessRequest,
+                                                               final @Valid DataAccessRequest dataAccessRequest,
                                                                final @Valid String optionsParamInQuery,
                                                                final String topicParamInQuery) {
-        final String sdncResponse;
+        if (hasTopic(topicParamInQuery)) {
+            Executors.newSingleThreadExecutor().submit(() -> {
+                String sdncResponse = null;
+                String status = "SUCCESS";
+                String code = "200";
+
+                try {
+                    sdncResponse = getPassthroughRunningSdncResponse(
+                        dataAccessRequest, cmHandle, resourceIdentifier, optionsParamInQuery);
+                } catch (final ResourceDataNotFound exc) {
+                    status = "FAILURE";
+                    code = "404";
+                }
+
+                final CpsAsyncRequestResponseEvent cpsAsyncRequestResponseEvent =
+                    cpsAsyncRequestResponseEventUtil.createEvent(
+                    sdncResponse, topicParamInQuery, dataAccessRequest.getRequestId(), status, code);
+
+                cpsAsyncRequestResponseEventProducerService.publishToNcmp(dataAccessRequest.getRequestId(),
+                    cpsAsyncRequestResponseEvent);
+            });
+
+            return ResponseEntity.ok().build();
+        }
+
+        final String sdncResponse = getPassthroughRunningSdncResponse(dataAccessRequest,
+            cmHandle, resourceIdentifier, optionsParamInQuery);
+        return new ResponseEntity<>(sdncResponse, operationToHttpStatusMap.get(dataAccessRequest.getOperation()));
+    }
+
+    private String getPassthroughRunningSdncResponse(final DataAccessRequest dataAccessRequest,
+                                                     final String cmHandle,
+                                                     final String resourceIdentifier,
+                                                     final String optionsParamInQuery) {
+        String sdncResponse = null;
         if (isReadOperation(dataAccessRequest)) {
-            sdncResponse = dmiService.getResourceData(cmHandle,
+            sdncResponse = dmiService.getResourceData(
+                cmHandle,
                 resourceIdentifier,
                 optionsParamInQuery,
-                DmiService.RESTCONF_CONTENT_PASSTHROUGH_RUNNING_QUERY_PARAM);
+                RESTCONF_CONTENT_PASSTHROUGH_RUNNING_QUERY_PARAM);
         } else {
             sdncResponse = dmiService.writeData(
                 dataAccessRequest.getOperation(),
@@ -152,8 +213,9 @@ public class DmiRestController implements DmiPluginApi, DmiPluginInternalApi {
                 dataAccessRequest.getDataType(),
                 dataAccessRequest.getData());
         }
-        return new ResponseEntity<>(sdncResponse, operationToHttpStatusMap.get(dataAccessRequest.getOperation()));
+        return sdncResponse;
     }
+
 
     private boolean isReadOperation(final @Valid DataAccessRequest dataAccessRequest) {
         return dataAccessRequest.getOperation() == null
@@ -164,6 +226,25 @@ public class DmiRestController implements DmiPluginApi, DmiPluginInternalApi {
             final ModuleResourcesReadRequest moduleResourcesReadRequest) {
         return objectMapper
             .convertValue(moduleResourcesReadRequest.getData().getModules(),
-                          new TypeReference<List<ModuleReference>>() {});
+                          new TypeReference<>() {});
+    }
+
+    private String getPassthroughOperationalSdncResponse(final DataAccessRequest dataAccessRequest,
+                                                         final String cmHandle,
+                                                         final String resourceIdentifier,
+                                                         final String optionsParamInQuery) {
+        String sdncResponse = null;
+        if (isReadOperation(dataAccessRequest)) {
+            sdncResponse = dmiService.getResourceData(
+                cmHandle,
+                resourceIdentifier,
+                optionsParamInQuery,
+                RESTCONF_CONTENT_PASSTHROUGH_OPERATIONAL_QUERY_PARAM);
+        }
+        return sdncResponse;
+    }
+
+    private boolean hasTopic(final String topicParamInQuery) {
+        return topicParamInQuery != null && !topicParamInQuery.isEmpty() && !topicParamInQuery.isBlank();
     }
 }

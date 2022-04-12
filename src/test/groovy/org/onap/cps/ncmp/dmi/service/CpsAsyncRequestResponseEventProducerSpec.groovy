@@ -20,7 +20,8 @@
 
 package org.onap.cps.ncmp.dmi.service
 
-
+import org.onap.cps.event.model.CpsAsyncRequestResponseEvent
+import org.onap.cps.ncmp.dmi.notifications.CpsAsyncRequestResponseEventProducer
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.beans.factory.annotation.Value
 import org.springframework.boot.test.context.SpringBootTest
@@ -33,7 +34,7 @@ import spock.lang.Specification
 
 @SpringBootTest
 @Testcontainers
-class NcmpKafkaPublisherSpec extends Specification {
+class CpsAsyncRequestResponseEventProducerSpec extends Specification {
 
     static kafkaTestContainer = new KafkaContainer()
     static {
@@ -52,9 +53,9 @@ class NcmpKafkaPublisherSpec extends Specification {
 
     def 'Publish message'() {
         given: 'a sample messsage and key'
-            def message = 'sample message'
+            def message = new CpsAsyncRequestResponseEvent()
             def messageKey = 'message-key'
-            def objectUnderTest = new NcmpKafkaPublisher(kafkaTemplate, topic)
+            def objectUnderTest = new CpsAsyncRequestResponseEventProducer(kafkaTemplate, "my-topic-1")
         when: 'a message is published'
             objectUnderTest.sendMessage(messageKey, message)
         then: 'no exception is thrown'
