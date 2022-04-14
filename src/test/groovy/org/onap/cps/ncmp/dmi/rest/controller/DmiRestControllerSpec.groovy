@@ -32,6 +32,7 @@ import org.onap.cps.ncmp.dmi.model.ModuleSetSchemas
 import org.onap.cps.ncmp.dmi.model.YangResource
 import org.onap.cps.ncmp.dmi.model.YangResources
 import org.onap.cps.ncmp.dmi.service.DmiService
+import org.onap.cps.ncmp.dmi.util.AsyncTaskExecutor
 import org.spockframework.spring.SpringBean
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.beans.factory.annotation.Value
@@ -64,7 +65,10 @@ class DmiRestControllerSpec extends Specification {
     DmiService mockDmiService = Mock()
 
     @SpringBean
-    NcmpKafkaPublisherService mockNcmpKafkaPublisherService = Mock()
+    AsyncTaskExecutor asyncTaskExecutor = Stub()
+
+    @SpringBean
+    NcmpKafkaPublisherService mockNcmpKafkaPublisherService = Stub()
 
     @Value('${rest.api.dmi-base-path}/v1')
     def basePathV1
