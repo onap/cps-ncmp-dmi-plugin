@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "2b213696_e755ab59",
+        "filename": "src/main/java/org/onap/cps/ncmp/dmi/util/AsyncTaskExecutor.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 44,
+      "author": {
+        "id": 7680
+      },
+      "writtenOn": "2022-04-18T17:58:44Z",
+      "side": 1,
+      "message": "it uses commonforkjoin pool for async execution. Do we want more control over thread pool?",
+      "range": {
+        "startLine": 44,
+        "startChar": 7,
+        "endLine": 44,
+        "endChar": 63
+      },
+      "revId": "18af580346a1969a5bcaacc67acf21d36dba14c3",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    }
+  ]
+}
