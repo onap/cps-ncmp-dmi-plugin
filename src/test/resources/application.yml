@@ -57,5 +57,5 @@ spring:
 app:
   ncmp:
     async-m2m:
-      topic: ncmp-async-m2m
+      topic: my-topic-name
 

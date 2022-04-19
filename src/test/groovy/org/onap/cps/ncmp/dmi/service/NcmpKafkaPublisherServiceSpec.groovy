@@ -35,5 +35,7 @@ class NcmpKafkaPublisherServiceSpec extends Specification {
             objectUnderTest.publishToNcmp(messageKey, message)
         then: 'no exception is thrown'
             noExceptionThrown()
+        and: 'message is published once'
+            1 * mockNcmpKafkaPublisher.sendMessage(messageKey, message)
     }
 }
