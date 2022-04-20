@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "b96dc161_6d095f48",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 7743
+      },
+      "writtenOn": "2022-04-20T07:43:37Z",
+      "side": 1,
+      "message": "This ticket CPS-979 is for WwebClient investigation. \nAlso, I have this async added to my commit already. This commit is not needed and can be closed. We can discuss if required.",
+      "revId": "18af580346a1969a5bcaacc67acf21d36dba14c3",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "2b213696_e755ab59",
         "filename": "src/main/java/org/onap/cps/ncmp/dmi/util/AsyncTaskExecutor.java",
         "patchSetId": 1
