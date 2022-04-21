@@ -19,6 +19,144 @@
     },
     {
       "key": {
+        "uuid": "458cfa1f_92842d9e",
+        "filename": "src/main/java/org/onap/cps/ncmp/dmi/rest/controller/DmiRestController.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 111,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2022-04-21T12:16:38Z",
+      "side": 1,
+      "message": "legacy: insert \u0027datastore\u0027",
+      "range": {
+        "startLine": 111,
+        "startChar": 90,
+        "endLine": 111,
+        "endChar": 91
+      },
+      "revId": "18af580346a1969a5bcaacc67acf21d36dba14c3",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "6b616a65_3fead085",
+        "filename": "src/main/java/org/onap/cps/ncmp/dmi/rest/controller/DmiRestController.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 118,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2022-04-21T12:16:38Z",
+      "side": 1,
+      "message": "good wording :-)",
+      "range": {
+        "startLine": 118,
+        "startChar": 36,
+        "endLine": 118,
+        "endChar": 79
+      },
+      "revId": "18af580346a1969a5bcaacc67acf21d36dba14c3",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ab197d2a_75604ec9",
+        "filename": "src/main/java/org/onap/cps/ncmp/dmi/rest/controller/DmiRestController.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 145,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2022-04-21T12:16:38Z",
+      "side": 1,
+      "message": "insert \u0027datastore\u0027",
+      "range": {
+        "startLine": 145,
+        "startChar": 86,
+        "endLine": 145,
+        "endChar": 87
+      },
+      "revId": "18af580346a1969a5bcaacc67acf21d36dba14c3",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "1fd1cb83_d277f82b",
+        "filename": "src/main/java/org/onap/cps/ncmp/dmi/rest/controller/DmiRestController.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 176,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2022-04-21T12:16:38Z",
+      "side": 1,
+      "message": "(opinion only) see below, I think it is even better to see here it is forwarded to dmiService",
+      "range": {
+        "startLine": 176,
+        "startChar": 27,
+        "endLine": 176,
+        "endChar": 42
+      },
+      "revId": "18af580346a1969a5bcaacc67acf21d36dba14c3",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "c9971e5b_d6c2b343",
+        "filename": "src/main/java/org/onap/cps/ncmp/dmi/rest/controller/DmiRestController.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 181,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2022-04-21T12:16:38Z",
+      "side": 1,
+      "message": "can be simplified like so:\n        if (isReadOperation(dataAccessRequest)) {\n            return getResourceData(cmHandle, resourceIdentifier, optionsParamInQuery,\n                    DmiService.RESTCONF_CONTENT_PASSTHROUGH_RUNNING_QUERY_PARAM);\n        }\n        return writeAndGetResourceData(resourceIdentifier, cmHandle, dataAccessRequest);",
+      "range": {
+        "startLine": 174,
+        "startChar": 0,
+        "endLine": 181,
+        "endChar": 28
+      },
+      "revId": "18af580346a1969a5bcaacc67acf21d36dba14c3",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "e47ff123_65f5fa05",
+        "filename": "src/main/java/org/onap/cps/ncmp/dmi/rest/controller/DmiRestController.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 196,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2022-04-21T12:16:38Z",
+      "side": 1,
+      "message": "NB: doesn\u0027t seem worth a private method...",
+      "range": {
+        "startLine": 196,
+        "startChar": 15,
+        "endLine": 196,
+        "endChar": 41
+      },
+      "revId": "18af580346a1969a5bcaacc67acf21d36dba14c3",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "2b213696_e755ab59",
         "filename": "src/main/java/org/onap/cps/ncmp/dmi/util/AsyncTaskExecutor.java",
         "patchSetId": 1
@@ -35,6 +173,122 @@
         "startChar": 7,
         "endLine": 44,
         "endChar": 63
+      },
+      "revId": "18af580346a1969a5bcaacc67acf21d36dba14c3",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "8f912997_5af3c013",
+        "filename": "src/main/java/org/onap/cps/ncmp/dmi/util/AsyncTaskExecutor.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 44,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2022-04-21T12:16:38Z",
+      "side": 1,
+      "message": "maybe we should create a separate (technical) debt Jitra ticket for manage threadpool ?!",
+      "parentUuid": "2b213696_e755ab59",
+      "range": {
+        "startLine": 44,
+        "startChar": 7,
+        "endLine": 44,
+        "endChar": 63
+      },
+      "revId": "18af580346a1969a5bcaacc67acf21d36dba14c3",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "a1a7e9b9_a4930b46",
+        "filename": "src/main/java/org/onap/cps/ncmp/dmi/util/AsyncTaskExecutor.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 48,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2022-04-21T12:16:38Z",
+      "side": 1,
+      "message": "data could be large!, not suer if including it in the logs makes sense. maybe log a message (without the data instead)",
+      "range": {
+        "startLine": 48,
+        "startChar": 33,
+        "endLine": 48,
+        "endChar": 51
+      },
+      "revId": "18af580346a1969a5bcaacc67acf21d36dba14c3",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "3a2bd128_d1400837",
+        "filename": "src/main/java/org/onap/cps/ncmp/dmi/util/AsyncTaskExecutor.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 52,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2022-04-21T12:16:38Z",
+      "side": 1,
+      "message": "common for both paths so move to above if-statement",
+      "range": {
+        "startLine": 52,
+        "startChar": 28,
+        "endLine": 52,
+        "endChar": 52
+      },
+      "revId": "18af580346a1969a5bcaacc67acf21d36dba14c3",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "9feb3271_bb4233b9",
+        "filename": "src/main/java/org/onap/cps/ncmp/dmi/util/AsyncTaskExecutor.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 55,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2022-04-21T12:16:38Z",
+      "side": 1,
+      "message": "not needed, see prev comment",
+      "range": {
+        "startLine": 55,
+        "startChar": 24,
+        "endLine": 55,
+        "endChar": 48
+      },
+      "revId": "18af580346a1969a5bcaacc67acf21d36dba14c3",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "0f97423f_b36f078b",
+        "filename": "src/test/groovy/org/onap/cps/ncmp/dmi/rest/controller/DmiRestControllerSpec.groovy",
+        "patchSetId": 1
+      },
+      "lineNbr": 68,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2022-04-21T12:16:38Z",
+      "side": 1,
+      "message": "NB: if not used Stub (lighter) might be good enough",
+      "range": {
+        "startLine": 68,
+        "startChar": 42,
+        "endLine": 68,
+        "endChar": 48
       },
       "revId": "18af580346a1969a5bcaacc67acf21d36dba14c3",
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
