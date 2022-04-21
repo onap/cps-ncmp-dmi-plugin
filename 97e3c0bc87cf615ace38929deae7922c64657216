@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "cf115405_b6726acd",
+        "filename": "src/test/groovy/org/onap/cps/ncmp/dmi/service/NcmpKafkaPublisherServiceSpec.groovy",
+        "patchSetId": 1
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2022-04-21T15:11:00Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1b70cb53_30417c19",
+      "range": {
+        "startLine": 39,
+        "startChar": 51,
+        "endLine": 39,
+        "endChar": 55
+      },
+      "revId": "97e3c0bc87cf615ace38929deae7922c64657216",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "339fe98d_46c69da5",
         "filename": "src/test/groovy/org/onap/cps/ncmp/dmi/service/NcmpKafkaPublisherSpec.groovy",
         "patchSetId": 1
@@ -45,6 +69,30 @@
       "revId": "97e3c0bc87cf615ace38929deae7922c64657216",
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "421f823b_3e0bb038",
+        "filename": "src/test/groovy/org/onap/cps/ncmp/dmi/service/NcmpKafkaPublisherSpec.groovy",
+        "patchSetId": 1
+      },
+      "lineNbr": 78,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2022-04-21T15:11:00Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "339fe98d_46c69da5",
+      "range": {
+        "startLine": 77,
+        "startChar": 0,
+        "endLine": 78,
+        "endChar": 31
+      },
+      "revId": "97e3c0bc87cf615ace38929deae7922c64657216",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
     },
     {
       "key": {
