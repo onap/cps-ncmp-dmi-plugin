@@ -1,0 +1,119 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1b70cb53_30417c19",
+        "filename": "src/test/groovy/org/onap/cps/ncmp/dmi/service/NcmpKafkaPublisherServiceSpec.groovy",
+        "patchSetId": 1
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2022-04-21T12:31:15Z",
+      "side": 1,
+      "message": "can this be more strict? ie. use message and mesgaeKe defined above?",
+      "range": {
+        "startLine": 39,
+        "startChar": 51,
+        "endLine": 39,
+        "endChar": 55
+      },
+      "revId": "97e3c0bc87cf615ace38929deae7922c64657216",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "339fe98d_46c69da5",
+        "filename": "src/test/groovy/org/onap/cps/ncmp/dmi/service/NcmpKafkaPublisherSpec.groovy",
+        "patchSetId": 1
+      },
+      "lineNbr": 78,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2022-04-21T12:31:15Z",
+      "side": 1,
+      "message": "this is irrelevant now",
+      "range": {
+        "startLine": 77,
+        "startChar": 0,
+        "endLine": 78,
+        "endChar": 31
+      },
+      "revId": "97e3c0bc87cf615ace38929deae7922c64657216",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "c29c8f63_9f037e3e",
+        "filename": "src/test/groovy/org/onap/cps/ncmp/dmi/service/NcmpKafkaPublisherSpec.groovy",
+        "patchSetId": 1
+      },
+      "lineNbr": 82,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2022-04-21T12:31:15Z",
+      "side": 1,
+      "message": "should you assert there is only on record and just assert the content of it?",
+      "range": {
+        "startLine": 82,
+        "startChar": 17,
+        "endLine": 82,
+        "endChar": 34
+      },
+      "revId": "97e3c0bc87cf615ace38929deae7922c64657216",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "18eee0e5_0ccbf653",
+        "filename": "src/test/groovy/org/onap/cps/ncmp/dmi/service/NcmpKafkaPublisherSpec.groovy",
+        "patchSetId": 1
+      },
+      "lineNbr": 85,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2022-04-21T12:31:15Z",
+      "side": 1,
+      "message": "change this to\nwhen: \u0027 a message is consumed\u0027  (don\u0027t use relative terms like \u0027we\u0027 )",
+      "range": {
+        "startLine": 79,
+        "startChar": 8,
+        "endLine": 85,
+        "endChar": 13
+      },
+      "revId": "97e3c0bc87cf615ace38929deae7922c64657216",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "f12a697c_154ce7df",
+        "filename": "src/test/groovy/org/onap/cps/ncmp/dmi/service/NcmpKafkaPublisherSpec.groovy",
+        "patchSetId": 1
+      },
+      "lineNbr": 88,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2022-04-21T12:31:15Z",
+      "side": 1,
+      "message": "can you define a better more descriptive name please",
+      "range": {
+        "startLine": 88,
+        "startChar": 8,
+        "endLine": 88,
+        "endChar": 22
+      },
+      "revId": "97e3c0bc87cf615ace38929deae7922c64657216",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    }
+  ]
+}
