@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "2907368f_227905f4",
+        "filename": "src/main/java/org/onap/cps/ncmp/dmi/util/AsyncTaskExecutor.java",
+        "patchSetId": 4
+      },
+      "lineNbr": 45,
+      "author": {
+        "id": 7965
+      },
+      "writtenOn": "2022-04-22T11:34:03Z",
+      "side": 1,
+      "message": "NB: we can parameterize it.",
+      "range": {
+        "startLine": 45,
+        "startChar": 27,
+        "endLine": 45,
+        "endChar": 28
+      },
+      "revId": "9cd68932e0fb14571df011ae67588dccfd194460",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    }
+  ]
+}
