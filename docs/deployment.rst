@@ -1,6 +1,6 @@
 .. This work is licensed under a Creative Commons Attribution 4.0 International License.
 .. http://creativecommons.org/licenses/by/4.0
-.. Copyright (C) 2021 Nordix Foundation
+.. Copyright (C) 2021-2022 Nordix Foundation
 
 .. DO NOT CHANGE THIS LABEL FOR RELEASE NOTES - EVEN THOUGH IT GIVES A WARNING
 .. _deployment:
@@ -54,6 +54,6 @@ values to configure for the application being deployed. This list is not exhaust
 DMI-Plugin Docker Installation
 ==============================
 
-DMI-Plugin can also be installed in a docker environment. Latest `docker-compose <https://github.com/onap/cps-ncmp-dmi-plugin/blob/master/docker-compose/docker-compose.yml>`_ is included in the repo to start all the relevant
+DMI-Plugin can also be installed in a docker environment. Latest `docker-compose <https://github.com/onap/cps-ncmp-dmi-plugin/blob/jakarta/docker-compose/docker-compose.yml>`_ is included in the repo to start all the relevant
 services.
-Latest instructions are covered in the `README <https://github.com/onap/cps-ncmp-dmi-plugin/blob/master/docker-compose/README.md>`_
+The instructions are covered in the `README <https://github.com/onap/cps-ncmp-dmi-plugin/blob/jakarta/docker-compose/README.md>`_
