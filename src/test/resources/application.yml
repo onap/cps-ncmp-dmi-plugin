@@ -45,6 +45,8 @@ dmi:
     url: some url for the dmi service
 
 spring:
+  application:
+    name: ncmp-dmi-plugin
   kafka:
     bootstrap-servers: localhost:9092
     security:
