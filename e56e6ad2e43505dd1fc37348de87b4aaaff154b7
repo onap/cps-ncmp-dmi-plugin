@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "aca16395_32e7ea4f",
+        "filename": "pom.xml",
+        "patchSetId": 3
+      },
+      "lineNbr": 195,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2022-05-05T13:38:19Z",
+      "side": 1,
+      "message": "version should be defined in dep. management above",
+      "range": {
+        "startLine": 195,
+        "startChar": 12,
+        "endLine": 195,
+        "endChar": 36
+      },
+      "revId": "e56e6ad2e43505dd1fc37348de87b4aaaff154b7",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "7f8b2b55_2f1f1597",
+        "filename": "pom.xml",
+        "patchSetId": 3
+      },
+      "lineNbr": 200,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2022-05-05T13:38:19Z",
+      "side": 1,
+      "message": "version should be defined in dep. management above",
+      "range": {
+        "startLine": 200,
+        "startChar": 12,
+        "endLine": 200,
+        "endChar": 36
+      },
+      "revId": "e56e6ad2e43505dd1fc37348de87b4aaaff154b7",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    }
+  ]
+}
