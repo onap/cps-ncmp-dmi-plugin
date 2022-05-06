@@ -1,0 +1,44 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "bc046080_0f457508",
+        "filename": "src/main/resources/application.yml",
+        "patchSetId": 5
+      },
+      "lineNbr": 94,
+      "author": {
+        "id": 5658
+      },
+      "writtenOn": "2022-05-06T13:20:03Z",
+      "side": 1,
+      "message": "To be added to test application.yml also.",
+      "range": {
+        "startLine": 94,
+        "startChar": 2,
+        "endLine": 94,
+        "endChar": 8
+      },
+      "revId": "2554838e92746fc57aea928e43647f12aed1d032",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "54abb865_20ee8d25",
+        "filename": "src/main/resources/application.yml",
+        "patchSetId": 5
+      },
+      "lineNbr": 95,
+      "author": {
+        "id": 5658
+      },
+      "writtenOn": "2022-05-06T13:20:03Z",
+      "side": 1,
+      "message": "NB: I\u0027m wondering if these level properties are used somewhere. If not, there is opportunities for clean up ...",
+      "revId": "2554838e92746fc57aea928e43647f12aed1d032",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    }
+  ]
+}
