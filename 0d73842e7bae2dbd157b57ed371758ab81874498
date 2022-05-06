@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "d3001fe8_c1892655",
+        "filename": "pom.xml",
+        "patchSetId": 4
+      },
+      "lineNbr": 201,
+      "author": {
+        "id": 7744
+      },
+      "writtenOn": "2022-05-06T08:21:35Z",
+      "side": 1,
+      "message": "Similar comment as on the other commit. Were the comments on patchset #3 addressed here?",
+      "range": {
+        "startLine": 188,
+        "startChar": 0,
+        "endLine": 201,
+        "endChar": 21
+      },
+      "revId": "0d73842e7bae2dbd157b57ed371758ab81874498",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    }
+  ]
+}
