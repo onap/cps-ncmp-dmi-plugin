@@ -81,6 +81,24 @@
       "revId": "2554838e92746fc57aea928e43647f12aed1d032",
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "a7d9a763_506d6c34",
+        "filename": "src/main/resources/application.yml",
+        "patchSetId": 5
+      },
+      "lineNbr": 95,
+      "author": {
+        "id": 7957
+      },
+      "writtenOn": "2022-05-09T22:58:44Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "17017e9d_05442477",
+      "revId": "2554838e92746fc57aea928e43647f12aed1d032",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
     }
   ]
 }
