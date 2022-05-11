@@ -22,6 +22,30 @@
       "revId": "df26bc38a75f10650ce5785cdc9bd7b9516f6f25",
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "974f947e_81457abc",
+        "filename": "src/main/resources/application.yml",
+        "patchSetId": 6
+      },
+      "lineNbr": 94,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2022-05-11T13:22:12Z",
+      "side": 1,
+      "message": "documentation can be done in separate commit (just don\u0027t close the user story)",
+      "parentUuid": "7c0b375f_5e131eba",
+      "range": {
+        "startLine": 94,
+        "startChar": 0,
+        "endLine": 94,
+        "endChar": 14
+      },
+      "revId": "df26bc38a75f10650ce5785cdc9bd7b9516f6f25",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
     }
   ]
 }
