@@ -35,7 +35,7 @@ import org.onap.cps.ncmp.dmi.exception.CmHandleRegistrationException;
 import org.onap.cps.ncmp.dmi.exception.DmiException;
 import org.onap.cps.ncmp.dmi.exception.ModuleResourceNotFoundException;
 import org.onap.cps.ncmp.dmi.exception.ModulesNotFoundException;
-import org.onap.cps.ncmp.dmi.exception.ResourceDataNotFound;
+import org.onap.cps.ncmp.dmi.exception.HttpClientRequestException;
 import org.onap.cps.ncmp.dmi.model.DataAccessRequest;
 import org.onap.cps.ncmp.dmi.model.ModuleSet;
 import org.onap.cps.ncmp.dmi.model.ModuleSetSchemas;
@@ -59,8 +59,6 @@ public class DmiServiceImpl implements DmiService {
     private NcmpRestClient ncmpRestClient;
     private ObjectMapper objectMapper;
     private DmiPluginProperties dmiPluginProperties;
-    private static final String RESPONSE_CODE = "response code : ";
-    private static final String MESSAGE = " message : ";
 
     /**
      * Constructor.
@@ -107,8 +105,7 @@ public class DmiServiceImpl implements DmiService {
                     "SDNC did not return a module resource for the given cmHandle.");
             } else {
                 log.error("Error occurred when getting module resources from SDNC for the given cmHandle {}", cmHandle);
-                throw new DmiException(cmHandle,
-                    RESPONSE_CODE + responseEntity.getStatusCode() + MESSAGE + responseEntity.getBody());
+                throw new HttpClientRequestException(cmHandle, responseEntity.getBody(), responseEntity.getStatusCode());
             }
         }
         return yangResources;
@@ -166,20 +163,14 @@ public class DmiServiceImpl implements DmiService {
                             final String dataType, final String data) {
         final ResponseEntity<String> responseEntity =
             sdncOperations.writeData(operation, cmHandle, resourceIdentifier, dataType, data);
-        if (responseEntity.getStatusCode().is2xxSuccessful()) {
-            return responseEntity.getBody();
-        } else {
-            throw new DmiException(cmHandle,
-                RESPONSE_CODE + responseEntity.getStatusCode() + MESSAGE + responseEntity.getBody());
-        }
+        return prepareAndSendResponse(responseEntity, cmHandle);
     }
 
     private String prepareAndSendResponse(final ResponseEntity<String> responseEntity, final String cmHandle) {
-        if (responseEntity.getStatusCode() == HttpStatus.OK) {
+        if (responseEntity.getStatusCode().is2xxSuccessful()) {
             return responseEntity.getBody();
         } else {
-            throw new ResourceDataNotFound(cmHandle,
-                RESPONSE_CODE + responseEntity.getStatusCode() + MESSAGE + responseEntity.getBody());
+            throw new HttpClientRequestException(cmHandle, responseEntity.getBody(), responseEntity.getStatusCode());
         }
     }
 

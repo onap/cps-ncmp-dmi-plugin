@@ -18,24 +18,26 @@
  * ============LICENSE_END=========================================================
  */
 
-package org.onap.cps.ncmp.dmi.service
+package org.onap.cps.ncmp.dmi.notifications.async;
 
-import spock.lang.Specification
+import lombok.RequiredArgsConstructor;
+import org.onap.cps.ncmp.event.model.DmiAsyncRequestResponseEvent;
+import org.springframework.kafka.core.KafkaTemplate;
+import org.springframework.stereotype.Service;
 
-class NcmpKafkaPublisherServiceSpec extends Specification {
+@Service
+@RequiredArgsConstructor
+public class DmiAsyncRequestResponseEventProducer {
 
-    def mockNcmpKafkaPublisher = Mock(NcmpKafkaPublisher)
-    def objectUnderTest = new NcmpKafkaPublisherService(mockNcmpKafkaPublisher)
+    private final KafkaTemplate<String, DmiAsyncRequestResponseEvent> kafkaTemplate;
 
-    def 'Message publishing'() {
-        given: 'a sample message with key'
-            def message = 'sample message'
-            def messageKey = 'sample-key'
-        when: 'published'
-            objectUnderTest.publishToNcmp(messageKey, message)
-        then: 'no exception is thrown'
-            noExceptionThrown()
-        and: 'message is published once'
-            1 * mockNcmpKafkaPublisher.sendMessage(messageKey, message)
+    /**
+     * Sends message to the configured topic with a message key.
+     *
+     * @param messageKey message key
+     * @param payload    message payload
+     */
+    public void sendMessage(final String messageKey, final DmiAsyncRequestResponseEvent payload) {
+        kafkaTemplate.send(payload.getEventTarget(), messageKey, payload);
     }
 }
