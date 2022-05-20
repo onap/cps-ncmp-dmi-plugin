@@ -1,0 +1,84 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "c523ea98_cb74ae03",
+        "filename": "src/main/java/org/onap/cps/ncmp/dmi/notifications/async/AsyncTaskExecutor.java",
+        "patchSetId": 17
+      },
+      "lineNbr": 66,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2022-05-20T15:55:44Z",
+      "side": 1,
+      "message": "this should NOT be hardcoded the FUTURE should return original response or an object that has the relevant information.\nWhen that is doen we might NOT need the HTTpCLietnException at all anymore instead we check the statuscode in this method (what is the difference in event really between positive and negative responses)",
+      "range": {
+        "startLine": 66,
+        "startChar": 88,
+        "endLine": 66,
+        "endChar": 104
+      },
+      "revId": "1c7be8a481369c2192fb12eff6108a9ba4a297a1",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "1004581f_ca3ca636",
+        "filename": "src/main/java/org/onap/cps/ncmp/dmi/notifications/async/AsyncTaskExecutor.java",
+        "patchSetId": 17
+      },
+      "lineNbr": 111,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2022-05-20T15:55:44Z",
+      "side": 1,
+      "message": "why are we throwing an exception after publishing an event, who cares about this exception?!",
+      "range": {
+        "startLine": 111,
+        "startChar": 8,
+        "endLine": 111,
+        "endChar": 74
+      },
+      "revId": "1c7be8a481369c2192fb12eff6108a9ba4a297a1",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "8cd7095b_816dc9c3",
+        "filename": "src/test/groovy/org/onap/cps/ncmp/dmi/notifications/async/AsyncTaskExecutorSpec.groovy",
+        "patchSetId": 17
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2022-05-20T15:55:44Z",
+      "side": 1,
+      "message": "this test was not complete and somehow giving false positives, needs to be revisited after production code is updated...\nin any case an exception during async processing should NOT itself thrown an exception but instead create an error event, it probably should\u0027ve tested as part of integration test... or using mocks for all dependencies",
+      "revId": "1c7be8a481369c2192fb12eff6108a9ba4a297a1",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "ac03b356_ba58d331",
+        "filename": "src/test/groovy/org/onap/cps/ncmp/dmi/notifications/async/DmiAsyncRequestResponseEventProducerSpec.groovy",
+        "patchSetId": 17
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2022-05-20T15:55:44Z",
+      "side": 1,
+      "message": "this test is currently nor working\nit complain about no consumer setup, need to check with SOurabh and Joe",
+      "revId": "1c7be8a481369c2192fb12eff6108a9ba4a297a1",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    }
+  ]
+}
