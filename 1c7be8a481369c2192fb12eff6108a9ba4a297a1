@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "b80264a7_04f4fe07",
+        "filename": "src/main/java/org/onap/cps/ncmp/dmi/notifications/async/AsyncTaskExecutor.java",
+        "patchSetId": 17
+      },
+      "lineNbr": 66,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2022-05-23T09:07:33Z",
+      "side": 1,
+      "message": "use a map like the way the synchronous response code is done",
+      "parentUuid": "c523ea98_cb74ae03",
+      "range": {
+        "startLine": 66,
+        "startChar": 88,
+        "endLine": 66,
+        "endChar": 104
+      },
+      "revId": "1c7be8a481369c2192fb12eff6108a9ba4a297a1",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "1004581f_ca3ca636",
         "filename": "src/main/java/org/onap/cps/ncmp/dmi/notifications/async/AsyncTaskExecutor.java",
         "patchSetId": 17
