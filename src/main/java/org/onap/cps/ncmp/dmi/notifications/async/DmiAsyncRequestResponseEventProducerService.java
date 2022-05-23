@@ -18,27 +18,25 @@
  * ============LICENSE_END=========================================================
  */
 
-package org.onap.cps.ncmp.dmi.service;
+package org.onap.cps.ncmp.dmi.notifications.async;
 
-import lombok.AllArgsConstructor;
-import lombok.extern.slf4j.Slf4j;
+import lombok.RequiredArgsConstructor;
+import org.onap.cps.ncmp.event.model.DmiAsyncRequestResponseEvent;
 import org.springframework.stereotype.Service;
 
-@Slf4j
 @Service
-@AllArgsConstructor
-public class NcmpKafkaPublisherService {
+@RequiredArgsConstructor
+public class DmiAsyncRequestResponseEventProducerService {
 
-    private final NcmpKafkaPublisher ncmpKafkaPublisher;
+    private final DmiAsyncRequestResponseEventProducer dmiAsyncRequestResponseEventProducer;
 
     /**
-     * publish the message to NCMP.
-     *
-     * @param messageKey message key
-     * @param message    message payload
+     * publish the message to event bus.
+     * @param requestId the request id
+     * @param dmiAsyncRequestResponseEvent the event to publish
      */
-    public void publishToNcmp(final String messageKey, final Object message) {
-        log.debug("Publishing message : {} to NCMP with message-key : {}", message, messageKey);
-        ncmpKafkaPublisher.sendMessage(messageKey, message);
+    public void publishAsyncEvent(final String requestId,
+                                  final DmiAsyncRequestResponseEvent dmiAsyncRequestResponseEvent) {
+        dmiAsyncRequestResponseEventProducer.sendMessage(requestId, dmiAsyncRequestResponseEvent);
     }
 }
