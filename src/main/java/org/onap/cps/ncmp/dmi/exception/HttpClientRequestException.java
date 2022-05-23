@@ -1,6 +1,6 @@
 /*
  *  ============LICENSE_START=======================================================
- *  Copyright (C) 2021 Nordix Foundation
+ *  Copyright (C) 2021-2022 Nordix Foundation
  *  ================================================================================
  *  Licensed under the Apache License, Version 2.0 (the "License");
  *  you may not use this file except in compliance with the License.
@@ -20,19 +20,25 @@
 
 package org.onap.cps.ncmp.dmi.exception;
 
-public class ResourceDataNotFound extends DmiException {
+import lombok.Getter;
+import org.springframework.http.HttpStatus;
+
+@Getter
+public class HttpClientRequestException extends DmiException {
 
     private static final long serialVersionUID = 881438585188332404L;
 
-    private static final String ERROR_MESSAGE = "Resource data not found for the given cmHandles: ";
+    private final HttpStatus httpStatus;
 
     /**
      * Constructor.
      *
      * @param cmHandle cmHandle identifier
-     * @param details the error details
+     * @param details    response body from the client available as details
+     * @param httpStatus http status from the client
      */
-    public ResourceDataNotFound(final String cmHandle, final String details) {
-        super(ERROR_MESSAGE + cmHandle, details);
+    public HttpClientRequestException(final String cmHandle, final String details, final HttpStatus httpStatus) {
+        super("Resource data request failed for CM Handle: " + cmHandle, details);
+        this.httpStatus = httpStatus;
     }
 }
