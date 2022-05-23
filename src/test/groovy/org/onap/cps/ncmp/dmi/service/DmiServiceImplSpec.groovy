@@ -29,7 +29,7 @@ import org.onap.cps.ncmp.dmi.exception.CmHandleRegistrationException
 import org.onap.cps.ncmp.dmi.exception.DmiException
 import org.onap.cps.ncmp.dmi.exception.ModuleResourceNotFoundException
 import org.onap.cps.ncmp.dmi.exception.ModulesNotFoundException
-import org.onap.cps.ncmp.dmi.exception.ResourceDataNotFound
+import org.onap.cps.ncmp.dmi.exception.HttpClientRequestException
 import org.onap.cps.ncmp.dmi.service.model.ModuleReference
 import org.onap.cps.ncmp.dmi.model.YangResource
 import org.onap.cps.ncmp.dmi.model.YangResources
@@ -221,7 +221,7 @@ class DmiServiceImplSpec extends Specification {
             objectUnderTest.getResourceData(cmHandle,
                 resourceId, optionsParam, restConfQueryParam)
         then: 'resource data not found'
-            thrown(ResourceDataNotFound.class)
+            thrown(HttpClientRequestException.class)
     }
 
     def 'Get resource data for passthrough running.'() {
