@@ -407,7 +407,7 @@ components:
           $ref: '#/components/schemas/cmHandleProperties'
         requestId:
           type: string
-          example: uuid-random-id-eg
+          example: 3a9ce55c-e365-4dc9-8da3-a06f07cbc6d7
     ModuleSet_schemas:
       type: object
       properties:

@@ -21,11 +21,14 @@
 
 package org.onap.cps.ncmp.dmi.rest.controller
 
+
 import org.onap.cps.ncmp.dmi.TestUtils
 import org.onap.cps.ncmp.dmi.exception.DmiException
 import org.onap.cps.ncmp.dmi.exception.ModuleResourceNotFoundException
 import org.onap.cps.ncmp.dmi.exception.ModulesNotFoundException
-import org.onap.cps.ncmp.dmi.service.NcmpKafkaPublisherService
+import org.onap.cps.ncmp.dmi.notifications.async.AsyncTaskExecutor
+import org.onap.cps.ncmp.dmi.notifications.async.DmiAsyncRequestResponseEventProducer
+
 import org.onap.cps.ncmp.dmi.service.model.ModuleReference
 import org.onap.cps.ncmp.dmi.model.ModuleSet
 import org.onap.cps.ncmp.dmi.model.ModuleSetSchemas
@@ -38,6 +41,7 @@ import org.springframework.beans.factory.annotation.Value
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest
 import org.springframework.http.HttpStatus
 import org.springframework.http.MediaType
+import org.springframework.kafka.core.KafkaTemplate
 import org.springframework.security.test.context.support.WithMockUser
 import org.springframework.test.web.servlet.MockMvc
 import spock.lang.Specification
@@ -53,7 +57,7 @@ import static org.onap.cps.ncmp.dmi.model.DataAccessRequest.OperationEnum.UPDATE
 import static org.springframework.http.HttpStatus.CREATED
 import static org.springframework.http.HttpStatus.OK
 
-@WebMvcTest(DmiRestController)
+@WebMvcTest(DmiRestController.class)
 @WithMockUser
 class DmiRestControllerSpec extends Specification {
 
@@ -64,7 +68,10 @@ class DmiRestControllerSpec extends Specification {
     DmiService mockDmiService = Mock()
 
     @SpringBean
-    NcmpKafkaPublisherService mockNcmpKafkaPublisherService = Mock()
+    DmiAsyncRequestResponseEventProducer cpsAsyncRequestResponseEventProducer = new DmiAsyncRequestResponseEventProducer(Mock(KafkaTemplate))
+
+    @SpringBean
+    AsyncTaskExecutor asyncTaskExecutor = new AsyncTaskExecutor(cpsAsyncRequestResponseEventProducer)
 
     @Value('${rest.api.dmi-base-path}/v1')
     def basePathV1
@@ -256,6 +263,23 @@ class DmiRestControllerSpec extends Specification {
             response.getContentAsString() == '{some-json}'
     }
 
+    def 'PassThrough Returns OK when topic is used for async for #scenario'(){
+        given: 'an endpoint'
+            def readPassThroughOperational ="${basePathV1}/ch/some-cmHandle/data/ds/ncmp-datastore:" +
+                resourceIdentifier +
+                '?resourceIdentifier=some-resourceIdentifier&topic=test-topic'
+        when: 'endpoint is invoked'
+            def jsonData = TestUtils.getResourceFileContent('readData.json')
+            def response = mvc.perform(
+                post(readPassThroughOperational).contentType(MediaType.APPLICATION_JSON).content(jsonData)
+            ).andReturn().response
+        then: 'response status is OK'
+            assert response.status == HttpStatus.NO_CONTENT.value()
+        where: 'the following values are used'
+            scenario                  | resourceIdentifier
+            'passthrough-operational' | 'passthrough-operational'
+            'passthrough-running'     | 'passthrough-running'
+    }
 
     def 'Get resource data for pass-through running with #scenario value in resource identifier param.'() {
         given: 'Get resource data url'

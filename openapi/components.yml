@@ -1,5 +1,5 @@
 #  ============LICENSE_START=======================================================
-#  Copyright (C) 2021 Nordix Foundation
+#  Copyright (C) 2021-2022 Nordix Foundation
 #  Modifications Copyright (C) 2022 Bell Canada
 #  ================================================================================
 #  Licensed under the Apache License, Version 2.0 (the "License");
@@ -118,7 +118,7 @@ components:
           $ref: '#/components/schemas/cmHandleProperties'
         requestId:
           type: string
-          example: uuid-random-id-eg
+          example: 3a9ce55c-e365-4dc9-8da3-a06f07cbc6d7
 
     cmHandleProperties:
       type: object
@@ -199,7 +199,7 @@ components:
           value:
             options: (key1=10,key2=value2,key3=val31,val32)
     topicParamInQuery:
-      name: topicParamInQuery
+      name: topic
       in: query
       description: valid topic name passed from client(NCMP).
       required: false
@@ -208,4 +208,4 @@ components:
       allowReserved: true
       examples:
         sample1:
-          value: ncmp-async-m2m
+          value: my-topic-name
