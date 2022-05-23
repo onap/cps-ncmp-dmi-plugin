@@ -1,6 +1,6 @@
 /*
  *  ============LICENSE_START=======================================================
- *  Copyright (C) 2021 Nordix Foundation
+ *  Copyright (C) 2021 - 2022 Nordix Foundation
  *  ================================================================================
  *  Licensed under the Apache License, Version 2.0 (the "License");
  *  you may not use this file except in compliance with the License.
@@ -69,9 +69,10 @@ public class SdncRestconfClient {
      * @param httpHeaders HTTP Headers
      * @return response entity
      */
-    public ResponseEntity<String> httpOperationWithJsonData(final HttpMethod httpMethod, final String resourceUrl,
-                                                             final String jsonData,
-                                                             final HttpHeaders httpHeaders) {
+    public ResponseEntity<String> httpOperationWithJsonData(final HttpMethod httpMethod,
+                                                            final String resourceUrl,
+                                                            final String jsonData,
+                                                            final HttpHeaders httpHeaders) {
         final String sdncBaseUrl = sdncProperties.getBaseUrl();
         final String sdncRestconfUrl = sdncBaseUrl.concat(resourceUrl);
         httpHeaders.setBasicAuth(sdncProperties.getAuthUsername(), sdncProperties.getAuthPassword());
