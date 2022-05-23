@@ -18,27 +18,30 @@
  * ============LICENSE_END=========================================================
  */
 
-package org.onap.cps.ncmp.dmi.service;
+package org.onap.cps.ncmp.dmi.notifications.async;
 
-import lombok.AllArgsConstructor;
-import lombok.extern.slf4j.Slf4j;
+import lombok.RequiredArgsConstructor;
+import org.onap.cps.ncmp.event.model.DmiAsyncRequestResponseEvent;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.kafka.core.KafkaTemplate;
 import org.springframework.stereotype.Service;
 
-@Slf4j
 @Service
-@AllArgsConstructor
-public class NcmpKafkaPublisherService {
+@RequiredArgsConstructor
+public class DmiAsyncRequestResponseEventProducer {
 
-    private final NcmpKafkaPublisher ncmpKafkaPublisher;
+    private final KafkaTemplate<String, DmiAsyncRequestResponseEvent> kafkaTemplate;
+
+    @Value("${app.ncmp.async.topic}")
+    private String dmiNcmpTopic;
 
     /**
-     * publish the message to NCMP.
+     * Sends message to the configured topic with a message key.
      *
-     * @param messageKey message key
-     * @param message    message payload
+     * @param requestId the request id
+     * @param dmiAsyncRequestResponseEvent the event to publish
      */
-    public void publishToNcmp(final String messageKey, final Object message) {
-        log.debug("Publishing message : {} to NCMP with message-key : {}", message, messageKey);
-        ncmpKafkaPublisher.sendMessage(messageKey, message);
+    public void sendMessage(final String requestId, final DmiAsyncRequestResponseEvent dmiAsyncRequestResponseEvent) {
+        kafkaTemplate.send(dmiNcmpTopic, requestId, dmiAsyncRequestResponseEvent);
     }
 }
