@@ -47,19 +47,27 @@ dmi:
 spring:
   application:
     name: ncmp-dmi-plugin
+  mvc:
+    pathmatch:
+      matching-strategy: ANT_PATH_MATCHER
   kafka:
-    bootstrap-servers: localhost:9092
+    bootstrap-servers: ${KAFKA_BOOTSTRAP_SERVER}
     security:
       protocol: PLAINTEXT
     producer:
       key-serializer: org.apache.kafka.common.serialization.StringSerializer
       value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
-      client-id: dmi-plugin
+      client-id: ncmp-dmi-plugin
 
 app:
   ncmp:
     async-m2m:
-      topic: my-topic-name
+      topic: ${NCMP_ASYNC_M2M_TOPIC:ncmp-async-m2m}
+
+notification:
+  async:
+    executor:
+      time-out-value: 2000
 
 logging:
   format: json
