@@ -155,6 +155,24 @@
     },
     {
       "key": {
+        "uuid": "9f896dad_580e6b0d",
+        "filename": "src/test/groovy/org/onap/cps/ncmp/dmi/notifications/async/AsyncTaskExecutorSpec.groovy",
+        "patchSetId": 17
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 7743
+      },
+      "writtenOn": "2022-05-24T08:29:52Z",
+      "side": 1,
+      "message": "Removed file as associated code in AsyncTaskEwxecutor was removed",
+      "parentUuid": "82669509_b07205a5",
+      "revId": "1c7be8a481369c2192fb12eff6108a9ba4a297a1",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ac03b356_ba58d331",
         "filename": "src/test/groovy/org/onap/cps/ncmp/dmi/notifications/async/DmiAsyncRequestResponseEventProducerSpec.groovy",
         "patchSetId": 17
@@ -187,6 +205,24 @@
       "revId": "1c7be8a481369c2192fb12eff6108a9ba4a297a1",
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "405cf812_c0fbe48f",
+        "filename": "src/test/groovy/org/onap/cps/ncmp/dmi/notifications/async/DmiAsyncRequestResponseEventProducerSpec.groovy",
+        "patchSetId": 17
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 7743
+      },
+      "writtenOn": "2022-05-24T08:29:52Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ce66fe59_4d7481e6",
+      "revId": "1c7be8a481369c2192fb12eff6108a9ba4a297a1",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
     }
   ]
 }
