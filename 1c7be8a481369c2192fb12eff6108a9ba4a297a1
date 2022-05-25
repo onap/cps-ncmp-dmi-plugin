@@ -73,6 +73,30 @@
     },
     {
       "key": {
+        "uuid": "cff84675_e33c0a00",
+        "filename": "src/main/java/org/onap/cps/ncmp/dmi/notifications/async/AsyncTaskExecutor.java",
+        "patchSetId": 17
+      },
+      "lineNbr": 66,
+      "author": {
+        "id": 7743
+      },
+      "writtenOn": "2022-05-25T16:50:25Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "b269988d_8036fa2f",
+      "range": {
+        "startLine": 66,
+        "startChar": 88,
+        "endLine": 66,
+        "endChar": 104
+      },
+      "revId": "1c7be8a481369c2192fb12eff6108a9ba4a297a1",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1004581f_ca3ca636",
         "filename": "src/main/java/org/onap/cps/ncmp/dmi/notifications/async/AsyncTaskExecutor.java",
         "patchSetId": 17
