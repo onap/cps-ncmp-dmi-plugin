@@ -2,6 +2,121 @@
   "comments": [
     {
       "key": {
+        "uuid": "2821f837_ff6a763f",
+        "filename": "src/main/java/org/onap/cps/ncmp/dmi/notifications/async/AsyncTaskExecutor.java",
+        "patchSetId": 23
+      },
+      "lineNbr": 78,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2022-05-26T13:42:05Z",
+      "side": 1,
+      "message": "NB: could be refactored int one HttpStatus parameter :-)\nMayb not, I see below you used \u0027status\u0027 to store an error messga ein case of a non-HTTP error...",
+      "range": {
+        "startLine": 78,
+        "startChar": 80,
+        "endLine": 78,
+        "endChar": 92
+      },
+      "revId": "f13a54651a7e2389b406401fa84a404eca73d15e",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "d57e4d9d_e17cec8a",
+        "filename": "src/main/java/org/onap/cps/ncmp/dmi/rest/controller/DmiRestController.java",
+        "patchSetId": 23
+      },
+      "lineNbr": 166,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2022-05-26T13:42:05Z",
+      "side": 1,
+      "message": "NB: not sure if this is really needed but OK I suppose",
+      "range": {
+        "startLine": 166,
+        "startChar": 38,
+        "endLine": 166,
+        "endChar": 60
+      },
+      "revId": "f13a54651a7e2389b406401fa84a404eca73d15e",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5117791a_4597654a",
+        "filename": "src/test/groovy/org/onap/cps/ncmp/dmi/notifications/async/AsyncTaskExecutorIntegrationSpec.groovy",
+        "patchSetId": 23
+      },
+      "lineNbr": 70,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2022-05-26T13:42:05Z",
+      "side": 1,
+      "message": "do we stil need this? or is it default anyway?!",
+      "range": {
+        "startLine": 70,
+        "startChar": 8,
+        "endLine": 70,
+        "endChar": 47
+      },
+      "revId": "f13a54651a7e2389b406401fa84a404eca73d15e",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "d32f6382_46f11bdb",
+        "filename": "src/test/groovy/org/onap/cps/ncmp/dmi/notifications/async/AsyncTaskExecutorIntegrationSpec.groovy",
+        "patchSetId": 23
+      },
+      "lineNbr": 76,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2022-05-26T13:42:05Z",
+      "side": 1,
+      "message": "do we stil need this? or is it default anyway?!",
+      "range": {
+        "startLine": 76,
+        "startChar": 8,
+        "endLine": 76,
+        "endChar": 49
+      },
+      "revId": "f13a54651a7e2389b406401fa84a404eca73d15e",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "a9b19013_61540550",
+        "filename": "src/test/groovy/org/onap/cps/ncmp/dmi/notifications/async/AsyncTaskExecutorIntegrationSpec.groovy",
+        "patchSetId": 23
+      },
+      "lineNbr": 77,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2022-05-26T13:42:05Z",
+      "side": 1,
+      "message": "do we stil need this? or is it default anyway?!",
+      "range": {
+        "startLine": 77,
+        "startChar": 8,
+        "endLine": 77,
+        "endChar": 49
+      },
+      "revId": "f13a54651a7e2389b406401fa84a404eca73d15e",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "5171d63b_1dbc94b8",
         "filename": "src/test/groovy/org/onap/cps/ncmp/dmi/notifications/async/AsyncTaskExecutorIntegrationSpec.groovy",
         "patchSetId": 23
@@ -41,6 +156,29 @@
         "startChar": 33,
         "endLine": 102,
         "endChar": 47
+      },
+      "revId": "f13a54651a7e2389b406401fa84a404eca73d15e",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "78c4d9f8_76bd7929",
+        "filename": "src/test/groovy/org/onap/cps/ncmp/dmi/notifications/async/DmiAsyncEventProducerServiceIntegrationSpec.groovy",
+        "patchSetId": 23
+      },
+      "lineNbr": 77,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2022-05-26T13:42:05Z",
+      "side": 1,
+      "message": "common with prev testclass ?!\n\nShould we have a NotificationBaseSpec which then can be extended my 2 or more other \u0027Specs ?",
+      "range": {
+        "startLine": 60,
+        "startChar": 0,
+        "endLine": 77,
+        "endChar": 0
       },
       "revId": "f13a54651a7e2389b406401fa84a404eca73d15e",
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
