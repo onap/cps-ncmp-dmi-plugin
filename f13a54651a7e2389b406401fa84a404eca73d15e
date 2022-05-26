@@ -1,0 +1,119 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5171d63b_1dbc94b8",
+        "filename": "src/test/groovy/org/onap/cps/ncmp/dmi/notifications/async/AsyncTaskExecutorIntegrationSpec.groovy",
+        "patchSetId": 23
+      },
+      "lineNbr": 100,
+      "author": {
+        "id": 7957
+      },
+      "writtenOn": "2022-05-26T12:17:05Z",
+      "side": 1,
+      "message": "NB : test-topic",
+      "range": {
+        "startLine": 100,
+        "startChar": 50,
+        "endLine": 100,
+        "endChar": 64
+      },
+      "revId": "f13a54651a7e2389b406401fa84a404eca73d15e",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "a70a5b1d_8332f8ac",
+        "filename": "src/test/groovy/org/onap/cps/ncmp/dmi/notifications/async/AsyncTaskExecutorIntegrationSpec.groovy",
+        "patchSetId": 23
+      },
+      "lineNbr": 102,
+      "author": {
+        "id": 7957
+      },
+      "writtenOn": "2022-05-26T12:17:05Z",
+      "side": 1,
+      "message": "NB : test-topic",
+      "range": {
+        "startLine": 102,
+        "startChar": 33,
+        "endLine": 102,
+        "endChar": 47
+      },
+      "revId": "f13a54651a7e2389b406401fa84a404eca73d15e",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "7a77a10d_c22fd563",
+        "filename": "src/test/groovy/org/onap/cps/ncmp/dmi/notifications/async/DmiAsyncEventProducerServiceIntegrationSpec.groovy",
+        "patchSetId": 23
+      },
+      "lineNbr": 96,
+      "author": {
+        "id": 7957
+      },
+      "writtenOn": "2022-05-26T12:17:05Z",
+      "side": 1,
+      "message": "NB : test-topic",
+      "range": {
+        "startLine": 96,
+        "startChar": 57,
+        "endLine": 96,
+        "endChar": 71
+      },
+      "revId": "f13a54651a7e2389b406401fa84a404eca73d15e",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "530416e5_e2687069",
+        "filename": "src/test/groovy/org/onap/cps/ncmp/dmi/notifications/async/DmiAsyncEventProducerServiceIntegrationSpec.groovy",
+        "patchSetId": 23
+      },
+      "lineNbr": 99,
+      "author": {
+        "id": 7957
+      },
+      "writtenOn": "2022-05-26T12:17:05Z",
+      "side": 1,
+      "message": "NB : test-topic",
+      "range": {
+        "startLine": 99,
+        "startChar": 33,
+        "endLine": 99,
+        "endChar": 47
+      },
+      "revId": "f13a54651a7e2389b406401fa84a404eca73d15e",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "ec336f59_68edc15c",
+        "filename": "src/test/groovy/org/onap/cps/ncmp/dmi/notifications/async/DmiAsyncEventProducerServiceIntegrationSpec.groovy",
+        "patchSetId": 23
+      },
+      "lineNbr": 106,
+      "author": {
+        "id": 7957
+      },
+      "writtenOn": "2022-05-26T12:17:05Z",
+      "side": 1,
+      "message": "NB : correlation Id is same as published event correlation Id",
+      "range": {
+        "startLine": 106,
+        "startChar": 35,
+        "endLine": 106,
+        "endChar": 52
+      },
+      "revId": "f13a54651a7e2389b406401fa84a404eca73d15e",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    }
+  ]
+}
