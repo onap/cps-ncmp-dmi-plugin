@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "212e5827_2bfa9760",
+        "filename": "pom.xml",
+        "patchSetId": 22
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 7743
+      },
+      "writtenOn": "2022-05-27T13:45:20Z",
+      "side": 1,
+      "message": "Most of the new dependencies here are part of a rebase",
+      "revId": "ddb0af2feda87b6f9a23254623759fc0cf827d36",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    }
+  ]
+}
