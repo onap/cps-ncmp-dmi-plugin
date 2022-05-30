@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "2e0b734c_7620ca4a",
+        "filename": "src/main/java/org/onap/cps/ncmp/dmi/notifications/async/DmiAsyncRequestResponseEventCreator.java",
+        "patchSetId": 25
+      },
+      "lineNbr": 61,
+      "author": {
+        "id": 7743
+      },
+      "writtenOn": "2022-05-30T16:26:55Z",
+      "side": 1,
+      "message": "I don\u0027t think it needs to a constant myself. from the context we can see that an event source is being added. \nI\u0027m open to what others think?",
+      "parentUuid": "10addb1c_a77b43bc",
+      "range": {
+        "startLine": 61,
+        "startChar": 52,
+        "endLine": 61,
+        "endChar": 75
+      },
+      "revId": "a9b05b40ce7d29427fd2ba84c0461d95c13555fd",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "0ae1a312_cb1b520f",
         "filename": "src/main/java/org/onap/cps/ncmp/dmi/rest/controller/DmiRestController.java",
         "patchSetId": 25
@@ -36,6 +60,30 @@
       "writtenOn": "2022-05-30T15:37:24Z",
       "side": 1,
       "message": "I don\u0027t think the explicit reference to the Module Reference is needed here\n\nCan just be \nnew TypeReference\u003c\u003e() {}",
+      "range": {
+        "startLine": 196,
+        "startChar": 20,
+        "endLine": 196,
+        "endChar": 56
+      },
+      "revId": "a9b05b40ce7d29427fd2ba84c0461d95c13555fd",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "4a98eaf7_36f54cbd",
+        "filename": "src/main/java/org/onap/cps/ncmp/dmi/rest/controller/DmiRestController.java",
+        "patchSetId": 25
+      },
+      "lineNbr": 196,
+      "author": {
+        "id": 7743
+      },
+      "writtenOn": "2022-05-30T16:26:55Z",
+      "side": 1,
+      "message": "This is legacy but I can remove it if others agree others agree :)",
+      "parentUuid": "0ae1a312_cb1b520f",
       "range": {
         "startLine": 196,
         "startChar": 20,
@@ -71,6 +119,30 @@
     },
     {
       "key": {
+        "uuid": "8b08e3f2_51e000fd",
+        "filename": "src/test/groovy/org/onap/cps/ncmp/dmi/rest/controller/DmiRestControllerSpec.groovy",
+        "patchSetId": 25
+      },
+      "lineNbr": 274,
+      "author": {
+        "id": 7743
+      },
+      "writtenOn": "2022-05-30T16:26:55Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "91b7662f_bf5d786e",
+      "range": {
+        "startLine": 274,
+        "startChar": 21,
+        "endLine": 274,
+        "endChar": 47
+      },
+      "revId": "a9b05b40ce7d29427fd2ba84c0461d95c13555fd",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "2b2fa59f_267d3b04",
         "filename": "src/test/groovy/org/onap/cps/ncmp/dmi/rest/controller/DmiRestControllerSpec.groovy",
         "patchSetId": 25
@@ -91,6 +163,30 @@
       "revId": "a9b05b40ce7d29427fd2ba84c0461d95c13555fd",
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "1c5eb765_41c1394e",
+        "filename": "src/test/groovy/org/onap/cps/ncmp/dmi/rest/controller/DmiRestControllerSpec.groovy",
+        "patchSetId": 25
+      },
+      "lineNbr": 281,
+      "author": {
+        "id": 7743
+      },
+      "writtenOn": "2022-05-30T16:26:55Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "2b2fa59f_267d3b04",
+      "range": {
+        "startLine": 279,
+        "startChar": 0,
+        "endLine": 281,
+        "endChar": 61
+      },
+      "revId": "a9b05b40ce7d29427fd2ba84c0461d95c13555fd",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
     }
   ]
 }
