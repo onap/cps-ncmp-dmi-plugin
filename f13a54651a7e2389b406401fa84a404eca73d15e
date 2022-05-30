@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "9586f9db_e4c80c19",
+        "filename": "src/main/java/org/onap/cps/ncmp/dmi/notifications/async/AsyncTaskExecutor.java",
+        "patchSetId": 23
+      },
+      "lineNbr": 78,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2022-05-30T08:19:57Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "2821f837_ff6a763f",
+      "range": {
+        "startLine": 78,
+        "startChar": 80,
+        "endLine": 78,
+        "endChar": 92
+      },
+      "revId": "f13a54651a7e2389b406401fa84a404eca73d15e",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "d57e4d9d_e17cec8a",
         "filename": "src/main/java/org/onap/cps/ncmp/dmi/rest/controller/DmiRestController.java",
         "patchSetId": 23
@@ -60,6 +84,30 @@
       "side": 1,
       "message": "I have added this to validate the ack on the NCMP side. https://jira.onap.org/browse/CPS-1059",
       "parentUuid": "d57e4d9d_e17cec8a",
+      "range": {
+        "startLine": 166,
+        "startChar": 38,
+        "endLine": 166,
+        "endChar": 60
+      },
+      "revId": "f13a54651a7e2389b406401fa84a404eca73d15e",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "c7cc533f_fa5615f1",
+        "filename": "src/main/java/org/onap/cps/ncmp/dmi/rest/controller/DmiRestController.java",
+        "patchSetId": 23
+      },
+      "lineNbr": 166,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2022-05-30T08:19:57Z",
+      "side": 1,
+      "message": "I think just the fact you got a 200 Response is enough acknowledgement...",
+      "parentUuid": "ebf8cf87_a75378f1",
       "range": {
         "startLine": 166,
         "startChar": 38,

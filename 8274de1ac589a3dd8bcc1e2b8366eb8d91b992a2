@@ -1,0 +1,119 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da12a9a0_0912cef5",
+        "filename": "src/main/java/org/onap/cps/ncmp/dmi/notifications/async/AsyncTaskExecutor.java",
+        "patchSetId": 24
+      },
+      "lineNbr": 87,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2022-05-30T08:19:57Z",
+      "side": 1,
+      "message": "NB: why can this no longer be private?",
+      "range": {
+        "startLine": 87,
+        "startChar": 4,
+        "endLine": 87,
+        "endChar": 13
+      },
+      "revId": "8274de1ac589a3dd8bcc1e2b8366eb8d91b992a2",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "556c7768_3bb119a7",
+        "filename": "src/main/java/org/onap/cps/ncmp/dmi/notifications/async/AsyncTaskExecutor.java",
+        "patchSetId": 24
+      },
+      "lineNbr": 103,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2022-05-30T08:19:57Z",
+      "side": 1,
+      "message": "use same conversion as below String.valueOf(HttpStatus.INTERNAL_SERVER_ERROR.value())",
+      "range": {
+        "startLine": 103,
+        "startChar": 55,
+        "endLine": 103,
+        "endChar": 82
+      },
+      "revId": "8274de1ac589a3dd8bcc1e2b8366eb8d91b992a2",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "f23041f2_6425ffde",
+        "filename": "src/main/java/org/onap/cps/ncmp/dmi/notifications/async/AsyncTaskExecutor.java",
+        "patchSetId": 24
+      },
+      "lineNbr": 108,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2022-05-30T08:19:57Z",
+      "side": 1,
+      "message": "not needed",
+      "range": {
+        "startLine": 108,
+        "startChar": 85,
+        "endLine": 108,
+        "endChar": 101
+      },
+      "revId": "8274de1ac589a3dd8bcc1e2b8366eb8d91b992a2",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "a29ef437_5a58a1ef",
+        "filename": "src/main/java/org/onap/cps/ncmp/dmi/notifications/async/AsyncTaskExecutor.java",
+        "patchSetId": 24
+      },
+      "lineNbr": 113,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2022-05-30T08:19:57Z",
+      "side": 1,
+      "message": "see prev comment, convert to String here",
+      "range": {
+        "startLine": 113,
+        "startChar": 81,
+        "endLine": 113,
+        "endChar": 85
+      },
+      "revId": "8274de1ac589a3dd8bcc1e2b8366eb8d91b992a2",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "7b3ba456_9f1af5b8",
+        "filename": "src/main/java/org/onap/cps/ncmp/dmi/rest/controller/DmiRestController.java",
+        "patchSetId": 24
+      },
+      "lineNbr": 166,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2022-05-30T08:19:57Z",
+      "side": 1,
+      "message": "getting more worried about this adding confusion and unnecessary code(paths)\nI think you should return 204, thst should eb enough acknowledgment no need for the client to check any response content",
+      "range": {
+        "startLine": 166,
+        "startChar": 37,
+        "endLine": 166,
+        "endChar": 76
+      },
+      "revId": "8274de1ac589a3dd8bcc1e2b8366eb8d91b992a2",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    }
+  ]
+}
