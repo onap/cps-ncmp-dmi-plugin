@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "e2f89878_3567a872",
+        "filename": "src/main/java/org/onap/cps/ncmp/dmi/notifications/async/AsyncTaskExecutor.java",
+        "patchSetId": 24
+      },
+      "lineNbr": 87,
+      "author": {
+        "id": 7743
+      },
+      "writtenOn": "2022-05-30T08:37:27Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "da12a9a0_0912cef5",
+      "range": {
+        "startLine": 87,
+        "startChar": 4,
+        "endLine": 87,
+        "endChar": 13
+      },
+      "revId": "8274de1ac589a3dd8bcc1e2b8366eb8d91b992a2",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "556c7768_3bb119a7",
         "filename": "src/main/java/org/onap/cps/ncmp/dmi/notifications/async/AsyncTaskExecutor.java",
         "patchSetId": 24
@@ -36,6 +60,30 @@
       "writtenOn": "2022-05-30T08:19:57Z",
       "side": 1,
       "message": "use same conversion as below String.valueOf(HttpStatus.INTERNAL_SERVER_ERROR.value())",
+      "range": {
+        "startLine": 103,
+        "startChar": 55,
+        "endLine": 103,
+        "endChar": 82
+      },
+      "revId": "8274de1ac589a3dd8bcc1e2b8366eb8d91b992a2",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "da6df11f_009b8272",
+        "filename": "src/main/java/org/onap/cps/ncmp/dmi/notifications/async/AsyncTaskExecutor.java",
+        "patchSetId": 24
+      },
+      "lineNbr": 103,
+      "author": {
+        "id": 7743
+      },
+      "writtenOn": "2022-05-30T08:37:27Z",
+      "side": 1,
+      "message": "Will do",
+      "parentUuid": "556c7768_3bb119a7",
       "range": {
         "startLine": 103,
         "startChar": 55,
@@ -71,6 +119,30 @@
     },
     {
       "key": {
+        "uuid": "3737eb0e_59e02016",
+        "filename": "src/main/java/org/onap/cps/ncmp/dmi/notifications/async/AsyncTaskExecutor.java",
+        "patchSetId": 24
+      },
+      "lineNbr": 108,
+      "author": {
+        "id": 7743
+      },
+      "writtenOn": "2022-05-30T08:37:27Z",
+      "side": 1,
+      "message": "Will do",
+      "parentUuid": "f23041f2_6425ffde",
+      "range": {
+        "startLine": 108,
+        "startChar": 85,
+        "endLine": 108,
+        "endChar": 101
+      },
+      "revId": "8274de1ac589a3dd8bcc1e2b8366eb8d91b992a2",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "a29ef437_5a58a1ef",
         "filename": "src/main/java/org/onap/cps/ncmp/dmi/notifications/async/AsyncTaskExecutor.java",
         "patchSetId": 24
@@ -94,6 +166,30 @@
     },
     {
       "key": {
+        "uuid": "554b82ff_943e4e29",
+        "filename": "src/main/java/org/onap/cps/ncmp/dmi/notifications/async/AsyncTaskExecutor.java",
+        "patchSetId": 24
+      },
+      "lineNbr": 113,
+      "author": {
+        "id": 7743
+      },
+      "writtenOn": "2022-05-30T08:37:27Z",
+      "side": 1,
+      "message": "code is defined as String",
+      "parentUuid": "a29ef437_5a58a1ef",
+      "range": {
+        "startLine": 113,
+        "startChar": 81,
+        "endLine": 113,
+        "endChar": 85
+      },
+      "revId": "8274de1ac589a3dd8bcc1e2b8366eb8d91b992a2",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7b3ba456_9f1af5b8",
         "filename": "src/main/java/org/onap/cps/ncmp/dmi/rest/controller/DmiRestController.java",
         "patchSetId": 24
@@ -114,6 +210,30 @@
       "revId": "8274de1ac589a3dd8bcc1e2b8366eb8d91b992a2",
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "0bdc2c93_2359aa0a",
+        "filename": "src/main/java/org/onap/cps/ncmp/dmi/rest/controller/DmiRestController.java",
+        "patchSetId": 24
+      },
+      "lineNbr": 166,
+      "author": {
+        "id": 7743
+      },
+      "writtenOn": "2022-05-30T08:37:27Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "7b3ba456_9f1af5b8",
+      "range": {
+        "startLine": 166,
+        "startChar": 37,
+        "endLine": 166,
+        "endChar": 76
+      },
+      "revId": "8274de1ac589a3dd8bcc1e2b8366eb8d91b992a2",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
     }
   ]
 }
