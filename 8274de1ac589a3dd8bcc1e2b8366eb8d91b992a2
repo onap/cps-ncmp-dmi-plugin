@@ -96,6 +96,30 @@
     },
     {
       "key": {
+        "uuid": "9c6c4be7_9dad819c",
+        "filename": "src/main/java/org/onap/cps/ncmp/dmi/notifications/async/AsyncTaskExecutor.java",
+        "patchSetId": 24
+      },
+      "lineNbr": 103,
+      "author": {
+        "id": 7743
+      },
+      "writtenOn": "2022-05-31T09:49:38Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "da6df11f_009b8272",
+      "range": {
+        "startLine": 103,
+        "startChar": 55,
+        "endLine": 103,
+        "endChar": 82
+      },
+      "revId": "8274de1ac589a3dd8bcc1e2b8366eb8d91b992a2",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "f23041f2_6425ffde",
         "filename": "src/main/java/org/onap/cps/ncmp/dmi/notifications/async/AsyncTaskExecutor.java",
         "patchSetId": 24
@@ -140,6 +164,30 @@
       "revId": "8274de1ac589a3dd8bcc1e2b8366eb8d91b992a2",
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "bc981f22_bc963e89",
+        "filename": "src/main/java/org/onap/cps/ncmp/dmi/notifications/async/AsyncTaskExecutor.java",
+        "patchSetId": 24
+      },
+      "lineNbr": 108,
+      "author": {
+        "id": 7743
+      },
+      "writtenOn": "2022-05-31T09:49:38Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3737eb0e_59e02016",
+      "range": {
+        "startLine": 108,
+        "startChar": 85,
+        "endLine": 108,
+        "endChar": 101
+      },
+      "revId": "8274de1ac589a3dd8bcc1e2b8366eb8d91b992a2",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
     },
     {
       "key": {
