@@ -190,6 +190,30 @@
     },
     {
       "key": {
+        "uuid": "5bfecf38_e3d87049",
+        "filename": "src/main/java/org/onap/cps/ncmp/dmi/notifications/async/AsyncTaskExecutor.java",
+        "patchSetId": 24
+      },
+      "lineNbr": 113,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2022-05-31T09:43:57Z",
+      "side": 1,
+      "message": "NB: but you coud define it as an int and only convert once here :-)\nOr even as a HTTPStatus",
+      "parentUuid": "554b82ff_943e4e29",
+      "range": {
+        "startLine": 113,
+        "startChar": 81,
+        "endLine": 113,
+        "endChar": 85
+      },
+      "revId": "8274de1ac589a3dd8bcc1e2b8366eb8d91b992a2",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7b3ba456_9f1af5b8",
         "filename": "src/main/java/org/onap/cps/ncmp/dmi/rest/controller/DmiRestController.java",
         "patchSetId": 24

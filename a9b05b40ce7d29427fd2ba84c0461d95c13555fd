@@ -49,6 +49,30 @@
     },
     {
       "key": {
+        "uuid": "aee09d58_08ad7268",
+        "filename": "src/main/java/org/onap/cps/ncmp/dmi/notifications/async/DmiAsyncRequestResponseEventCreator.java",
+        "patchSetId": 25
+      },
+      "lineNbr": 61,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2022-05-31T09:43:57Z",
+      "side": 1,
+      "message": "use Application class path",
+      "parentUuid": "2e0b734c_7620ca4a",
+      "range": {
+        "startLine": 61,
+        "startChar": 52,
+        "endLine": 61,
+        "endChar": 75
+      },
+      "revId": "a9b05b40ce7d29427fd2ba84c0461d95c13555fd",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "0ae1a312_cb1b520f",
         "filename": "src/main/java/org/onap/cps/ncmp/dmi/rest/controller/DmiRestController.java",
         "patchSetId": 25
