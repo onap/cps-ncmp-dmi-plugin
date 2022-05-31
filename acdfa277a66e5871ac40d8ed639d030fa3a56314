@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9e44d404_1baa00ee",
+        "filename": "src/test/groovy/org/onap/cps/ncmp/dmi/rest/controller/DmiRestControllerSpec.groovy",
+        "patchSetId": 26
+      },
+      "lineNbr": 268,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2022-05-31T12:43:57Z",
+      "side": 1,
+      "message": "NB: name is misleading (as per Dylan\u0027s comment in patch #25) as URL is now used for both \u0027OPerational\u0027 and \u0027Running\u0027",
+      "range": {
+        "startLine": 268,
+        "startChar": 16,
+        "endLine": 268,
+        "endChar": 43
+      },
+      "revId": "acdfa277a66e5871ac40d8ed639d030fa3a56314",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    }
+  ]
+}

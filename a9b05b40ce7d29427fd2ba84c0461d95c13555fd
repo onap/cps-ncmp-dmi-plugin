@@ -73,6 +73,30 @@
     },
     {
       "key": {
+        "uuid": "7bb4560f_33cc0134",
+        "filename": "src/main/java/org/onap/cps/ncmp/dmi/notifications/async/AsyncTaskExecutor.java",
+        "patchSetId": 25
+      },
+      "lineNbr": 80,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2022-05-31T12:43:57Z",
+      "side": 1,
+      "message": "maybe we need an agreed guideline going forward it is something we can discuss at standup logging is always controversial. Ysu wil always\n  have user/cse complaining there is too little and other users/cases complain there is too much :-(\nFor now let\u0027s be consistent with what we do in other cases and just log teh message (as is)",
+      "parentUuid": "cacd9312_21265e00",
+      "range": {
+        "startLine": 80,
+        "startChar": 20,
+        "endLine": 80,
+        "endChar": 94
+      },
+      "revId": "a9b05b40ce7d29427fd2ba84c0461d95c13555fd",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "10addb1c_a77b43bc",
         "filename": "src/main/java/org/onap/cps/ncmp/dmi/notifications/async/DmiAsyncRequestResponseEventCreator.java",
         "patchSetId": 25
@@ -227,6 +251,30 @@
       "side": 1,
       "message": "Done",
       "parentUuid": "4a98eaf7_36f54cbd",
+      "range": {
+        "startLine": 196,
+        "startChar": 20,
+        "endLine": 196,
+        "endChar": 56
+      },
+      "revId": "a9b05b40ce7d29427fd2ba84c0461d95c13555fd",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "cd97d716_4b8169bb",
+        "filename": "src/main/java/org/onap/cps/ncmp/dmi/rest/controller/DmiRestController.java",
+        "patchSetId": 25
+      },
+      "lineNbr": 196,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2022-05-31T12:43:57Z",
+      "side": 1,
+      "message": "NB: if it works fine but legacy, If no other comments no need to address this",
+      "parentUuid": "4bbd0473_a5fe4590",
       "range": {
         "startLine": 196,
         "startChar": 20,
