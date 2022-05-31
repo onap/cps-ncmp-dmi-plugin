@@ -49,6 +49,30 @@
     },
     {
       "key": {
+        "uuid": "cacd9312_21265e00",
+        "filename": "src/main/java/org/onap/cps/ncmp/dmi/notifications/async/AsyncTaskExecutor.java",
+        "patchSetId": 25
+      },
+      "lineNbr": 80,
+      "author": {
+        "id": 7743
+      },
+      "writtenOn": "2022-05-31T11:03:05Z",
+      "side": 1,
+      "message": "Actually using the throwable or throwable.getStackTrace causes a checksytyle bug. I don\u0027t think it is massively important so I will leave it as is",
+      "parentUuid": "95eeebfc_bc156ee7",
+      "range": {
+        "startLine": 80,
+        "startChar": 20,
+        "endLine": 80,
+        "endChar": 94
+      },
+      "revId": "a9b05b40ce7d29427fd2ba84c0461d95c13555fd",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "10addb1c_a77b43bc",
         "filename": "src/main/java/org/onap/cps/ncmp/dmi/notifications/async/DmiAsyncRequestResponseEventCreator.java",
         "patchSetId": 25
