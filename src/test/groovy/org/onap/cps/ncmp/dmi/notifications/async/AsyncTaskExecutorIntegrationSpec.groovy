@@ -117,7 +117,7 @@ class AsyncTaskExecutorIntegrationSpec extends Specification {
     def 'Publish and Subscribe message - failure'() {
         when: 'a failure event is published'
             def exception = new HttpClientRequestException('some cm handle', 'Node not found', HttpStatus.INTERNAL_SERVER_ERROR)
-            objectUnderTest.publishAsyncFailureEvent(TEST_TOPIC, '67890', DataAccessRequest.OperationEnum.READ, exception)
+            objectUnderTest.publishAsyncFailureEvent(TEST_TOPIC, '67890', exception)
         and: 'the topic is polled'
             def records = consumer.poll(Duration.ofMillis(1500))
         then: 'the record received is the event sent'

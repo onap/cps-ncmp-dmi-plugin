@@ -78,7 +78,7 @@ public class AsyncTaskExecutor {
                     publishAsyncEvent(topicName, requestId, resourceDataAsJson, status, code);
                 } else {
                     log.error("Error occurred with async request {}", throwable.getMessage());
-                    publishAsyncFailureEvent(topicName, requestId, operation, throwable);
+                    publishAsyncFailureEvent(topicName, requestId, throwable);
                 }
             });
         log.info("Async task completed.");
@@ -97,7 +97,6 @@ public class AsyncTaskExecutor {
 
     protected void publishAsyncFailureEvent(final String topicName,
                                             final String requestId,
-                                            final DataAccessRequest.OperationEnum operation,
                                             final Throwable throwable) {
         HttpStatus httpStatus = HttpStatus.INTERNAL_SERVER_ERROR;
 
