@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "cee7c496_be589ff7",
+        "filename": "src/main/java/org/onap/cps/ncmp/dmi/notifications/async/AsyncTaskExecutor.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 100,
+      "author": {
+        "id": 3813
+      },
+      "writtenOn": "2022-06-09T09:35:59Z",
+      "side": 0,
+      "message": "I understand it is not used here. Do you think it needs to be logged in caller?",
+      "range": {
+        "startLine": 100,
+        "startChar": 82,
+        "endLine": 100,
+        "endChar": 91
+      },
+      "revId": "2cd8b98223bd49975fcca0ec7f1d4673a4163074",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    }
+  ]
+}
