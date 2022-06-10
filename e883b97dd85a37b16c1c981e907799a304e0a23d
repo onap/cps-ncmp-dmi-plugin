@@ -1,0 +1,9 @@
+Code-Review+1: Lathishbabu Ganesan <lathishbabu.ganesan@est.tech>
+Code-Review+1: aditya puthuparambil <aditya.puthuparambil@bell.ca>
+Code-Review+2: Toine Siebelink <toine.siebelink@est.tech>
+Verified+1: ONAP Jobbuilder <onap-jobbuilder@jenkins.onap.org>
+Submitted-by: Toine Siebelink <toine.siebelink@est.tech>
+Submitted-at: Fri, 10 Jun 2022 10:34:00 +0000
+Reviewed-on: https://gerrit.onap.org/r/c/cps/ncmp-dmi-plugin/+/129520
+Project: cps/ncmp-dmi-plugin
+Branch: refs/heads/master
