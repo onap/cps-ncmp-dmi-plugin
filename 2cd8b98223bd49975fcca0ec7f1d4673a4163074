@@ -22,6 +22,30 @@
       "revId": "2cd8b98223bd49975fcca0ec7f1d4673a4163074",
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "931e03c5_94097cae",
+        "filename": "src/main/java/org/onap/cps/ncmp/dmi/notifications/async/AsyncTaskExecutor.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 100,
+      "author": {
+        "id": 7931
+      },
+      "writtenOn": "2022-06-10T09:31:07Z",
+      "side": 0,
+      "message": "the error handling has changed and the operation is no longer needed here (see https://gerrit.onap.org/r/c/cps/+/129422), the caller has been updated see line 81 and this method will be updated to \u0027private\u0027",
+      "parentUuid": "cee7c496_be589ff7",
+      "range": {
+        "startLine": 100,
+        "startChar": 82,
+        "endLine": 100,
+        "endChar": 91
+      },
+      "revId": "2cd8b98223bd49975fcca0ec7f1d4673a4163074",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
     }
   ]
 }
