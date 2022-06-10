@@ -46,6 +46,30 @@
       "revId": "2cd8b98223bd49975fcca0ec7f1d4673a4163074",
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "a829f128_e0f72cf7",
+        "filename": "src/main/java/org/onap/cps/ncmp/dmi/notifications/async/AsyncTaskExecutor.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 100,
+      "author": {
+        "id": 3813
+      },
+      "writtenOn": "2022-06-10T09:37:15Z",
+      "side": 0,
+      "message": "Ack. @Joe or @Sourabh. please confirm.",
+      "parentUuid": "931e03c5_94097cae",
+      "range": {
+        "startLine": 100,
+        "startChar": 82,
+        "endLine": 100,
+        "endChar": 91
+      },
+      "revId": "2cd8b98223bd49975fcca0ec7f1d4673a4163074",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
     }
   ]
 }
