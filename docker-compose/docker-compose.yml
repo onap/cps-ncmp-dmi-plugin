@@ -17,8 +17,6 @@
 # SPDX-License-Identifier: Apache-2.0
 # ============LICENSE_END=========================================================
 
-version: "3.7"
-
 services:
   ncmp-dmi-plugin:
     container_name: ncmp-dmi-plugin
