@@ -72,6 +72,7 @@ cp $WORKSPACE/archives/cps/docker-compose/*.yml $WORKSPACE/archives/dc-cps-ncmp
 cd $WORKSPACE/archives/dc-cps-ncmp
 # copy docker-compose (downloaded already for cps)
 cp $WORKSPACE/archives/ncmp-dmi-plugin/docker-compose .
+docker-compose version
 chmod +x docker-compose
 ./docker-compose up -d
 
