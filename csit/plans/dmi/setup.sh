@@ -55,12 +55,11 @@ mkdir -p $WORKSPACE/archives/ncmp-dmi-plugin
 cp $WORKSPACE/../docker-compose/*.yml $WORKSPACE/archives/ncmp-dmi-plugin
 cd $WORKSPACE/archives/ncmp-dmi-plugin
 
-# download docker-compose of a required version (1.25.0 supports configuration of version 3.7)
-curl -L https://github.com/docker/compose/releases/download/1.25.0/docker-compose-`uname -s`-`uname -m` > docker-compose
-chmod +x docker-compose
+# Check Docker Compose version on system
+docker-compose version
 
 # start CPS and PostgreSQL containers with docker compose
-./docker-compose up -d
+docker-compose up -d
 
 ####################### setup cps-ncmp ############################
 
@@ -70,10 +69,7 @@ mkdir -p $WORKSPACE/archives/dc-cps-ncmp
 cat $WORKSPACE/archives/cps/docker-compose/docker-compose.yml
 cp $WORKSPACE/archives/cps/docker-compose/*.yml $WORKSPACE/archives/dc-cps-ncmp
 cd $WORKSPACE/archives/dc-cps-ncmp
-# copy docker-compose (downloaded already for cps)
-cp $WORKSPACE/archives/ncmp-dmi-plugin/docker-compose .
-chmod +x docker-compose
-./docker-compose up -d
+docker-compose up -d
 
 ###################### setup sdnc #######################################
 source $WORKSPACE/plans/dmi/sdnc/sdnc_setup.sh
