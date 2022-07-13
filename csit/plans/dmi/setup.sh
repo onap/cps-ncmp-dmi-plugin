@@ -55,9 +55,8 @@ mkdir -p $WORKSPACE/archives/ncmp-dmi-plugin
 cp $WORKSPACE/../docker-compose/*.yml $WORKSPACE/archives/ncmp-dmi-plugin
 cd $WORKSPACE/archives/ncmp-dmi-plugin
 
-# download docker-compose of a required version (1.25.0 supports configuration of version 3.7)
-curl -L https://github.com/docker/compose/releases/download/1.25.0/docker-compose-`uname -s`-`uname -m` > docker-compose
-chmod +x docker-compose
+# Check Docker Compose version on system
+docker-compose version
 
 # start CPS and PostgreSQL containers with docker compose
 ./docker-compose up -d
