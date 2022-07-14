@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "54cdf1ea_54a4d7cf",
+        "filename": "csit/plans/dmi/setup.sh",
+        "patchSetId": 7
+      },
+      "lineNbr": 60,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2022-07-14T11:03:31Z",
+      "side": 1,
+      "message": "I think this is not needed anymore, I;; try to remove it now",
+      "range": {
+        "startLine": 59,
+        "startChar": 0,
+        "endLine": 60,
+        "endChar": 23
+      },
+      "revId": "a9a56e95955fbf152b41157995c6067492a85382",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    }
+  ]
+}
