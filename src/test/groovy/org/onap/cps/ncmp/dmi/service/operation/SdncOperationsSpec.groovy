@@ -52,13 +52,13 @@ class SdncOperationsSpec extends Specification {
     SdncOperations objectUnderTest
 
     def 'get modules from node.'() {
-        given: 'node id and url'
+        given: 'a node id and url'
             def nodeId = 'node1'
             def expectedUrl = '/rests/data/network-topology:network-topology/topology=test-topology/node=node1/yang-ext:mount/ietf-netconf-monitoring:netconf-state/schemas'
-        and: 'sdnc returns one module in response'
+        and: 'sdnc returns one module during process'
             mockSdncRestClient.getOperation(expectedUrl) >>
                 ResponseEntity.ok(TestUtils.getResourceFileContent('ModuleSchema.json'))
-        when: 'get modules from node is called'
+        when: 'module schemas from node are fetched'
             def moduleSchemas = objectUnderTest.getModuleSchemasFromNode(nodeId)
         then: 'one module is found'
             moduleSchemas.size() == 1
@@ -78,9 +78,9 @@ class SdncOperationsSpec extends Specification {
             def expectedUrl = '/rests/data/network-topology:network-topology/topology=test-topology/node=node1/yang-ext:mount/ietf-netconf-monitoring:netconf-state/schemas'
         and: 'sdnc operation returns #scenario'
             mockSdncRestClient.getOperation(expectedUrl) >> ResponseEntity.ok(responseBody)
-        when: 'modules from node is called'
+        when: 'the module schemas are requested'
             def moduleSchemas = objectUnderTest.getModuleSchemasFromNode(nodeId)
-        then: 'no modules are returned'
+        then: 'no module schemas are returned'
             moduleSchemas.size() == 0
         where:
             scenario               | responseBody
@@ -93,9 +93,9 @@ class SdncOperationsSpec extends Specification {
         given: 'node id and url'
             def nodeId = 'node1'
             def expectedUrl = '/rests/data/network-topology:network-topology/topology=test-topology/node=node1/yang-ext:mount/ietf-netconf-monitoring:netconf-state/schemas'
-        and: 'sdnc operation returns configured response'
+        and: '#scenario is returned during process'
             mockSdncRestClient.getOperation(expectedUrl) >> new ResponseEntity<>(sdncResponseBody, sdncHttpStatus)
-        when: 'modules for node are fetched'
+        when: 'module schemas from node are fetched'
             objectUnderTest.getModuleSchemasFromNode(nodeId)
         then: 'SDNCException is thrown'
             def thrownException = thrown(SdncException)
@@ -111,28 +111,28 @@ class SdncOperationsSpec extends Specification {
         given: 'node id and url'
             def nodeId = 'some-node'
             def expectedUrl = '/rests/operations/network-topology:network-topology/topology=test-topology/node=some-node/yang-ext:mount/ietf-netconf-monitoring:get-schema'
-        when: 'get module resources is called with the expected parameters'
+        when: 'module resource is fetched with the expected parameters'
             objectUnderTest.getModuleResource(nodeId, 'some-json-data')
-        then: 'the SDNC Rest client is invoked with the correct URL and json data'
+        then: 'the SDNC Rest client is invoked with the correct parameters'
             1 * mockSdncRestClient.httpOperationWithJsonData(HttpMethod.POST, expectedUrl, 'some-json-data', _ as HttpHeaders)
     }
 
     def 'Get resource data from node to SDNC.'() {
-        given: 'expected url, topology-id, sdncOperation object'
+        given: 'expected url'
             def expectedUrl = '/rests/data/network-topology:network-topology/topology=test-topology/node=node1/yang-ext:mount/testResourceId?a=1&b=2&content=testContent'
-        when: 'called get modules from node'
+        when: 'resource data is fetched for given node ID'
             objectUnderTest.getResouceDataForOperationalAndRunning('node1', 'testResourceId',
                 '(a=1,b=2)', 'content=testContent')
-        then: 'the get operation is executed with the correct URL'
+        then: 'the SDNC get operation is executed with the correct URL'
             1 * mockSdncRestClient.getOperation(expectedUrl)
     }
 
     def 'Write resource data with #scenario operation to SDNC.'() {
-        given: 'expected url, topology-id, sdncOperation object'
+        given: 'expected url'
             def expectedUrl = '/rests/data/network-topology:network-topology/topology=test-topology/node=node1/yang-ext:mount/testResourceId'
         when: 'write resource data for passthrough running is called'
             objectUnderTest.writeData(operationEnum, 'node1', 'testResourceId', 'application/json', 'requestData')
-        then: 'the #expectedHttpMethod operation is executed with the correct URL and data'
+        then: 'the #expectedHttpMethod operation is executed with the correct parameters'
             1 * mockSdncRestClient.httpOperationWithJsonData(expectedHttpMethod, expectedUrl, 'requestData', _ as HttpHeaders)
         where: 'the following values are used'
             scenario  | operationEnum  || expectedHttpMethod
@@ -144,10 +144,10 @@ class SdncOperationsSpec extends Specification {
     }
 
     def 'build query param list for SDNC where options #scenario'() {
-        when: 'build query param list is called with #scenario'
+        when: 'query param list is built'
             def result = objectUnderTest.buildQueryParamMap(optionsParamInQuery, 'd=4')
                     .toSingleValueMap().toString()
-        then: 'result equals to expected result'
+        then: 'result matches the expected result'
             result == expectedResult
         where: 'following parameters are used'
             scenario                       | optionsParamInQuery || expectedResult
@@ -162,10 +162,9 @@ class SdncOperationsSpec extends Specification {
     }
 
     def 'options parameters contains a comma #scenario'() {
-        // https://jira.onap.org/browse/CPS-719
-        when: 'build query param list is called with #scenario'
+        when: 'query param list is built with #scenario'
             def result = objectUnderTest.buildQueryParamMap(optionsParamInQuery, 'd=4').toSingleValueMap()
-        then: 'expect 2 elements from options where we are ignoring empty query param value +1 from content query param (2+1) = 3 elements'
+        then: 'expect 2 elements from options where we are ignoring empty query param value, +1 from content query param (2+1) = 3 elements'
             def expectedNoOfElements = 3
         and: 'results contains equal elements as expected'
             result.size() == expectedNoOfElements
