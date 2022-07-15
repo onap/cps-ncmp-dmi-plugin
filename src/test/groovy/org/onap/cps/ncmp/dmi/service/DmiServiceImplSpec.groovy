@@ -89,11 +89,11 @@ class DmiServiceImplSpec extends Specification {
         given: 'cm-handle list and json payload'
             def givenCmHandlesList = ['node1', 'node2']
             def expectedJson = '{"dmiPlugin":"test-dmi-service","createdCmHandles":[{"cmHandle":"node1"},{"cmHandle":"node2"}]}'
-        and: 'mockDmiPluginProperties returns test-dmi-service'
+        and: 'method to get DMI service url returns test-dmi-service'
             mockDmiPluginProperties.getDmiServiceUrl() >> 'test-dmi-service'
-        when: 'register cm handles service method with the given cm handles'
+        when: 'register cm handles method is called with the given cm handles'
             objectUnderTest.registerCmHandles(givenCmHandlesList)
-        then: 'register cm handle with ncmp called once and return "created" status'
+        then: 'register cm handle with ncmp is called once and return "created" status'
             1 * mockNcmpRestClient.registerCmHandlesWithNcmp(expectedJson) >> new ResponseEntity<>(HttpStatus.CREATED)
     }
 
@@ -104,7 +104,7 @@ class DmiServiceImplSpec extends Specification {
             mockDmiPluginProperties.getDmiServiceUrl() >> 'test-dmi-service'
         and: 'ncmp rest client returns #responseEntity'
             mockNcmpRestClient.registerCmHandlesWithNcmp(_ as String) >> responseEntity
-        when: 'register cm handles service method called'
+        when: 'register cm handles service method is called'
             objectUnderTest.registerCmHandles(cmHandlesList)
         then: 'a registration exception is thrown'
             thrown(CmHandleRegistrationException.class)
@@ -164,7 +164,7 @@ class DmiServiceImplSpec extends Specification {
     }
 
     def 'Get module resources when sdnc returns #scenario response.'() {
-        given: 'get module schema is invoked and returns a response from sdnc'
+        given: 'get module resource is invoked and returns a response from sdnc'
             mockSdncOperations.getModuleResource(_ as String, _ as String) >> new ResponseEntity<String>('some-response-body', httpStatus)
         when: 'get module resources is invoked with the given cm handle and a module list'
             objectUnderTest.getModuleResources('some-cmHandle', [new ModuleReference()] as LinkedList<ModuleReference>)
@@ -195,7 +195,7 @@ class DmiServiceImplSpec extends Specification {
     }
 
     def 'Get resource data for passthrough operational.'() {
-        given: 'cm-handle, passthrough parameter, resourceId, accept header, fields, depth'
+        given: 'cm-handle, resourceId, fields and content query parameters'
             def cmHandle = 'testCmHandle'
             def resourceId = 'testResourceId'
             def optionsParam = '(fields=x/y/z,depth=10,test=abc)'
@@ -210,7 +210,7 @@ class DmiServiceImplSpec extends Specification {
     }
 
     def 'Get resource data with not found exception.'() {
-        given: 'cm-handle, passthrough parameter, resourceId, accept header, fields, depth, query param'
+        given: 'cm-handle, resourceId, fields and content query parameters'
             def cmHandle = 'testCmHandle'
             def resourceId = 'testResourceId'
             def optionsParam = '(fields=x/y/z,depth=10,test=abc)'
@@ -225,7 +225,7 @@ class DmiServiceImplSpec extends Specification {
     }
 
     def 'Get resource data for passthrough running.'() {
-        given: 'cm-handle, passthrough parameter, resourceId, accept header, fields, depth'
+        given: 'cm-handle, resourceId, fields and content query parameters'
             def cmHandle = 'testCmHandle'
             def resourceId = 'testResourceId'
             def optionsParam = '(fields=x/y/z,depth=10,test=abc)'
