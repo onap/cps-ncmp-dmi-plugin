@@ -40,15 +40,15 @@ class SdncRestconfClientSpec extends Specification {
     def objectUnderTest = new SdncRestconfClient(mockSdncProperties, mockRestTemplate)
 
     def 'SDNC GET operation.'() {
-        given: 'a get url'
+        given: 'a get resource url'
             def getResourceUrl = '/getResourceUrl'
-        and: 'sdnc properties'
+        and: 'test configuration data'
             setupTestConfigurationData()
-        and: 'the rest template returns a valid response entity'
+        and: 'the process returns a valid response entity'
             def mockResponseEntity = Mock(ResponseEntity)
             mockRestTemplate.exchange({ it.toString() == 'http://some-uri/getResourceUrl' },
                     HttpMethod.GET, _ as HttpEntity, String.class) >> mockResponseEntity
-        when: 'GET operation is invoked'
+        when: 'method is called'
             def result = objectUnderTest.getOperation(getResourceUrl)
         then: 'the output of the method is equal to the output from the test template'
             result == mockResponseEntity
@@ -59,9 +59,9 @@ class SdncRestconfClientSpec extends Specification {
             def jsonData = 'some-json'
         and: 'a url for get module resources'
             def getModuleResourceUrl = '/getModuleResourceUrl'
-        and: 'configuration data'
+        and: 'test configuration data'
             setupTestConfigurationData()
-        and: 'the rest template returns a valid response entity'
+        and: 'the process returns a valid response entity'
             def mockResponseEntity = Mock(ResponseEntity)
         when: 'get module resources is invoked'
             def result = objectUnderTest.httpOperationWithJsonData(expectedHttpMethod, getModuleResourceUrl, jsonData, new HttpHeaders())
@@ -81,13 +81,13 @@ class SdncRestconfClientSpec extends Specification {
     def 'SDNC GET operation with header.'() {
         given: 'a get url'
             def getResourceUrl = '/getResourceUrl'
-        and: 'sdnc properties'
+        and: 'test configuration data'
             setupTestConfigurationData()
-        and: 'the rest template returns a valid response entity'
+        and: 'the process returns a valid response entity'
             def mockResponseEntity = Mock(ResponseEntity)
             mockRestTemplate.exchange({ it.toString() == 'http://some-uri/getResourceUrl' },
                     HttpMethod.GET, _ as HttpEntity, String.class) >> mockResponseEntity
-        when: 'GET operation is invoked'
+        when: 'the method is called'
             def result = objectUnderTest.getOperation(getResourceUrl, new HttpHeaders())
         then: 'the output of the method is equal to the output from the test template'
             result == mockResponseEntity

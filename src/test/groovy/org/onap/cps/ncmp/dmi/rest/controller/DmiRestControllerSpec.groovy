@@ -77,18 +77,18 @@ class DmiRestControllerSpec extends Specification {
     def basePathV1
 
     def 'Get all modules.'() {
-        given: 'REST endpoint for getting all modules'
+        given: 'URL for getting all modules'
             def getModuleUrl = "$basePathV1/ch/node1/modules"
-        and: 'get modules for cm-handle returns a json'
+        and: 'the process returns a json'
             def json = '{"cmHandleProperties" : {}}'
             def moduleSetSchema = new ModuleSetSchemas(namespace:'some-namespace',
-                                                        moduleName:'some-moduleName',
-                                                        revision:'some-revision')
+                    moduleName:'some-moduleName',
+                    revision:'some-revision')
             def moduleSetSchemasList = [moduleSetSchema] as List<ModuleSetSchemas>
             def moduleSet = new ModuleSet()
             moduleSet.schemas(moduleSetSchemasList)
             mockDmiService.getModulesForCmHandle('node1') >> moduleSet
-        when: 'post is being called'
+        when: 'the request is posted'
             def response = mvc.perform(post(getModuleUrl)
                     .contentType(MediaType.APPLICATION_JSON).content(json))
                     .andReturn().response
@@ -99,12 +99,13 @@ class DmiRestControllerSpec extends Specification {
     }
 
     def 'Get all modules with exception handling of #scenario.'() {
-        given: 'REST endpoint for getting all modules'
+        given: 'URL for getting all modules'
             def getModuleUrl = "$basePathV1/ch/node1/modules"
-        and: 'given request body and get modules for cm-handle throws #exceptionClass'
+        and: 'given request body'
             def json = '{"cmHandleProperties" : {}}'
+        and: 'a #exception exception is thrown during the process'
             mockDmiService.getModulesForCmHandle('node1') >> { throw exception }
-        when: 'post is invoked'
+        when: 'the request is posted'
             def response = mvc.perform( post(getModuleUrl)
                     .contentType(MediaType.APPLICATION_JSON).content(json))
                     .andReturn().response
@@ -122,7 +123,7 @@ class DmiRestControllerSpec extends Specification {
         given: 'register cm handle url and cm handles json'
             def registerCmhandlesPost = "${basePathV1}/inventory/cmHandles"
             def cmHandleJson = '{"cmHandles":["node1", "node2"]}'
-        when: 'register cm handles api is invoked with POST'
+        when: 'the request is posted'
             def response = mvc.perform(
                     post(registerCmhandlesPost)
                             .contentType(MediaType.APPLICATION_JSON)
@@ -138,7 +139,7 @@ class DmiRestControllerSpec extends Specification {
         given: 'register cm handle url and empty json'
             def registerCmhandlesPost = "${basePathV1}/inventory/cmHandles"
             def emptyJson = '{"cmHandles":[]}'
-        when: 'register cm handles post api is invoked with no content'
+        when: 'the request is posted'
             def response = mvc.perform(
                     post(registerCmhandlesPost).contentType(MediaType.APPLICATION_JSON)
                             .content(emptyJson)
@@ -150,8 +151,9 @@ class DmiRestControllerSpec extends Specification {
     }
 
     def 'Retrieve module resources.'() {
-        given: 'an endpoint and json data'
+        given: 'a URL to get module resources'
             def getModulesEndpoint = "$basePathV1/ch/some-cm-handle/moduleResources"
+        and: 'json data'
             String jsonData = TestUtils.getResourceFileContent('GetModules.json')
         and: 'the DMI service returns the yang resources'
             ModuleReference moduleReference1 = new ModuleReference(name: 'ietf-yang-library', revision: '2016-06-21')
@@ -161,7 +163,7 @@ class DmiRestControllerSpec extends Specification {
             def yangResource = new YangResource(yangSource: '"some-data"', moduleName: 'NAME', revision: 'REVISION')
             yangResources.add(yangResource)
             mockDmiService.getModuleResources('some-cm-handle', moduleReferences) >> yangResources
-        when: 'get module resource api is invoked'
+        when: 'the request is posted'
             def response = mvc.perform(post(getModulesEndpoint)
                     .contentType(MediaType.APPLICATION_JSON)
                     .content(jsonData)).andReturn().response
@@ -172,12 +174,13 @@ class DmiRestControllerSpec extends Specification {
     }
 
     def 'Retrieve module resources with exception handling.'() {
-        given: 'an endpoint and json data'
+        given: 'a URL to get module resources'
             def getModulesEndpoint = "$basePathV1/ch/some-cm-handle/moduleResources"
+        and: 'json data'
             String jsonData = TestUtils.getResourceFileContent('GetModules.json')
-        and: 'the service method is invoked to get module resources and throws an exception'
+        and: 'the system throws a not-found exception (during the processing)'
             mockDmiService.getModuleResources('some-cm-handle', _) >> { throw Mock(ModuleResourceNotFoundException.class) }
-        when: 'get module resource api is invoked'
+        when: 'the request is posted'
             def response = mvc.perform(post(getModulesEndpoint)
                     .contentType(MediaType.APPLICATION_JSON)
                     .content(jsonData)).andReturn().response
@@ -186,17 +189,17 @@ class DmiRestControllerSpec extends Specification {
     }
 
     def 'Get resource data for pass-through operational.'() {
-        given: 'Get resource data url'
+        given: 'Get resource data url and json data'
             def getResourceDataForCmHandleUrl = "${basePathV1}/ch/some-cmHandle/data/ds/ncmp-datastore:passthrough-operational" +
                     "?resourceIdentifier=parent/child&options=(fields=myfields,depth=5)"
             def json = '{"cmHandleProperties" : { "prop1" : "value1", "prop2" : "value2"}}'
-        when: 'get resource data POST api is invoked'
+        when: 'the request is posted'
             def response = mvc.perform(
                     post(getResourceDataForCmHandleUrl).contentType(MediaType.APPLICATION_JSON).content(json)
             ).andReturn().response
         then: 'response status is ok'
             response.status == OK.value()
-        and: 'dmi service called with get resource data'
+        and: 'dmi service method to get resource data is invoked once'
             1 * mockDmiService.getResourceData('some-cmHandle',
                     'parent/child',
                     '(fields=myfields,depth=5)',
@@ -204,13 +207,13 @@ class DmiRestControllerSpec extends Specification {
     }
 
     def 'Get resource data for pass-through operational with bad request.'() {
-        given: 'Get resource data url'
+        given: 'Get resource data url and json data'
             def getResourceDataForCmHandleUrl = "${basePathV1}/ch/some-cmHandle/data/ds/ncmp-datastore:passthrough-operational" +
-                "?resourceIdentifier=parent/child&options=(fields=myfields,depth=5)"
+                    "?resourceIdentifier=parent/child&options=(fields=myfields,depth=5)"
             def jsonData = TestUtils.getResourceFileContent('createDataWithNormalChar.json')
-        when: 'get resource data POST api is invoked'
+        when: 'the request is posted'
             def response = mvc.perform(
-                post(getResourceDataForCmHandleUrl).contentType(MediaType.APPLICATION_JSON).content(jsonData)
+                    post(getResourceDataForCmHandleUrl).contentType(MediaType.APPLICATION_JSON).content(jsonData)
             ).andReturn().response
         then: 'response status is bad request'
             response.status == BAD_REQUEST.value()
@@ -227,12 +230,12 @@ class DmiRestControllerSpec extends Specification {
             mockDmiService.writeData(operationEnum, 'some-cmHandle',
                     'some-resourceIdentifier', dataType,
                     'normal request body' ) >> '{some-json}'
-        when: 'write data for passthrough running post api is invoked with json data'
+        when: 'the request is posted'
             def response = mvc.perform(
                     post(writeDataForPassthroughRunning).contentType(MediaType.APPLICATION_JSON)
                             .content(jsonData)
             ).andReturn().response
-       then: 'response status is #expectedResponseStatus'
+        then: 'response status is #expectedResponseStatus'
             response.status == expectedResponseStatus
         and: 'the data in the request body is as expected'
             response.getContentAsString() == expectedJsonResponse
@@ -246,51 +249,53 @@ class DmiRestControllerSpec extends Specification {
     }
 
     def 'Create data using passthrough for special characters.'(){
-         given: 'create data for cmHandle url and JsonData'
+        given: 'create data for cmHandle url'
             def writeDataForCmHandlePassthroughRunning = "${basePathV1}/ch/some-cmHandle/data/ds/ncmp-datastore:passthrough-running" +
-             "?resourceIdentifier=some-resourceIdentifier"
+                    "?resourceIdentifier=some-resourceIdentifier"
+        and: 'JsonData with special characters'
             def jsonData = TestUtils.getResourceFileContent('createDataWithSpecialChar.json')
-         and: 'dmi service is called'
+        and: 'writeData method returns some json data'
             mockDmiService.writeData(CREATE, 'some-cmHandle', 'some-resourceIdentifier', 'application/json',
-                'data with quote \" and new line \n') >> '{some-json}'
-         when: 'create cmHandle passthrough running post api is invoked with json data with special chars'
+                    'data with quote \" and new line \n') >> '{some-json}'
+        when: 'the request is posted'
             def response = mvc.perform(
-                post(writeDataForCmHandlePassthroughRunning).contentType(MediaType.APPLICATION_JSON).content(jsonData)
+                    post(writeDataForCmHandlePassthroughRunning).contentType(MediaType.APPLICATION_JSON).content(jsonData)
             ).andReturn().response
-         then: 'response status is CREATED'
+        then: 'response status is CREATED'
             response.status == CREATED.value()
-         and: 'the data in the request body is as expected'
+        and: 'the data in the request body is as expected'
             response.getContentAsString() == '{some-json}'
     }
 
     def 'PassThrough Returns OK when topic is used for async'(){
-        given: 'an endpoint'
+        given: 'readPassThrough url and json data'
             def readPassThroughUrl ="${basePathV1}/ch/some-cmHandle/data/ds/ncmp-datastore:" +
-                resourceIdentifier +
-                '?resourceIdentifier=some-resourceIdentifier&topic=test-topic'
-        when: 'endpoint is invoked'
+                    resourceIdentifier +
+                    '?resourceIdentifier=some-resourceIdentifier&topic=test-topic'
             def jsonData = TestUtils.getResourceFileContent('readData.json')
+        when: 'the request is posted'
             def response = mvc.perform(
-                post(readPassThroughUrl).contentType(MediaType.APPLICATION_JSON).content(jsonData)
+                    post(readPassThroughUrl).contentType(MediaType.APPLICATION_JSON).content(jsonData)
             ).andReturn().response
         then: 'response status is OK'
             assert response.status == HttpStatus.NO_CONTENT.value()
         where: 'the following values are used'
-             resourceIdentifier << ['passthrough-operational', 'passthrough-running']
+            resourceIdentifier << ['passthrough-operational', 'passthrough-running']
     }
 
     def 'Get resource data for pass-through running with #scenario value in resource identifier param.'() {
         given: 'Get resource data url'
             def getResourceDataForCmHandleUrl = "${basePathV1}/ch/some-cmHandle/data/ds/ncmp-datastore:passthrough-running" +
                     "?resourceIdentifier="+resourceIdentifier+"&options=(fields=myfields,depth=5)"
+        and: 'json data'
             def json = '{"cmHandleProperties" : { "prop1" : "value1", "prop2" : "value2"}}'
-        when: 'get resource data POST api is invoked'
+        when: 'the request is posted'
             def response = mvc.perform(
                     post(getResourceDataForCmHandleUrl).contentType(MediaType.APPLICATION_JSON).content(json)
             ).andReturn().response
         then: 'response status is ok'
             response.status == OK.value()
-        and: 'dmi service called with get resource data for a cm handle'
+        and: 'dmi service method to get resource data is invoked once'
             1 * mockDmiService.getResourceData('some-cmHandle',
                     resourceIdentifier,
                     '(fields=myfields,depth=5)',
