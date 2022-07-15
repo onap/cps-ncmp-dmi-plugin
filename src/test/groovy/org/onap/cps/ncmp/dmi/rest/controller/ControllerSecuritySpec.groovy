@@ -38,7 +38,7 @@ class ControllerSecuritySpec extends Specification {
 
     def testEndpoint = '/test'
 
-    def 'Get request with authentication'() {
+    def 'Get request with valid authentication'() {
         when: 'request is sent with authentication'
             def response = mvc.perform(
                     get(testEndpoint).header("Authorization", 'Basic Y3BzdXNlcjpjcHNyMGNrcyE=')
