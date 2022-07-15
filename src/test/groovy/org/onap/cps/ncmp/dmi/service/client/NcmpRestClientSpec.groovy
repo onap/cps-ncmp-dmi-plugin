@@ -1,6 +1,6 @@
 /*
  *  ============LICENSE_START=======================================================
- *  Copyright (C) 2021 Nordix Foundation
+ *  Copyright (C) 2021-2022 Nordix Foundation
  *  ================================================================================
  *  Licensed under the Apache License, Version 2.0 (the "License");
  *  you may not use this file except in compliance with the License.
@@ -37,8 +37,8 @@ class NcmpRestClientSpec extends Specification {
     }
 
     def 'Register a cm handle.'() {
-        given: 'json data'
-            def jsonData = 'some json'
+        given: 'some request data'
+            def someRequestData = 'some request data'
         and: 'configuration data'
             mockCpsProperties.baseUrl >> 'http://some-uri'
             mockCpsProperties.dmiRegistrationUrl >> 'some-url'
@@ -46,12 +46,12 @@ class NcmpRestClientSpec extends Specification {
             mockCpsProperties.authPassword >> 'some-password'
         and: 'the rest template returns a valid response entity'
             def mockResponseEntity = Mock(ResponseEntity)
-        when: 'register cm-handle with ncmp is invoked'
-            def result = objectUnderTest.registerCmHandlesWithNcmp(jsonData)
-        then: 'the rest template is called with the correct uri and json in the body'
+        when: 'cmHandle registration occurs'
+            def result = objectUnderTest.registerCmHandlesWithNcmp(someRequestData)
+        then: 'the rest template is called with the correct uri and original request data in the body'
             1 * mockRestTemplate.exchange({ it.toString() == 'http://some-uri/some-url' },
-                    HttpMethod.POST, { it.body.contains(jsonData) }, String.class) >> mockResponseEntity
-        and: 'the output of the method is equal to the output from the test template'
+                    HttpMethod.POST, { it.body.contains(someRequestData) }, String.class) >> mockResponseEntity
+        and: 'the output of the method is equal to the output from the rest template service'
             result == mockResponseEntity
     }
 }
