@@ -78,9 +78,9 @@ class SdncOperationsSpec extends Specification {
             def expectedUrl = '/rests/data/network-topology:network-topology/topology=test-topology/node=node1/yang-ext:mount/ietf-netconf-monitoring:netconf-state/schemas'
         and: 'sdnc operation returns #scenario'
             mockSdncRestClient.getOperation(expectedUrl) >> ResponseEntity.ok(responseBody)
-        when: 'modules from node is called'
+        when: 'the module schemas are requested'
             def moduleSchemas = objectUnderTest.getModuleSchemasFromNode(nodeId)
-        then: 'no modules are returned'
+        then: 'no module schemas are returned'
             moduleSchemas.size() == 0
         where:
             scenario               | responseBody
@@ -95,7 +95,7 @@ class SdncOperationsSpec extends Specification {
             def expectedUrl = '/rests/data/network-topology:network-topology/topology=test-topology/node=node1/yang-ext:mount/ietf-netconf-monitoring:netconf-state/schemas'
         and: 'sdnc operation returns configured response'
             mockSdncRestClient.getOperation(expectedUrl) >> new ResponseEntity<>(sdncResponseBody, sdncHttpStatus)
-        when: 'modules for node are fetched'
+        when: 'module schemas from node are fetched'
             objectUnderTest.getModuleSchemasFromNode(nodeId)
         then: 'SDNCException is thrown'
             def thrownException = thrown(SdncException)
@@ -118,7 +118,7 @@ class SdncOperationsSpec extends Specification {
     }
 
     def 'Get resource data from node to SDNC.'() {
-        given: 'expected url, topology-id, sdncOperation object'
+        given: 'expected url'
             def expectedUrl = '/rests/data/network-topology:network-topology/topology=test-topology/node=node1/yang-ext:mount/testResourceId?a=1&b=2&content=testContent'
         when: 'called get modules from node'
             objectUnderTest.getResouceDataForOperationalAndRunning('node1', 'testResourceId',
@@ -128,7 +128,7 @@ class SdncOperationsSpec extends Specification {
     }
 
     def 'Write resource data with #scenario operation to SDNC.'() {
-        given: 'expected url, topology-id, sdncOperation object'
+        given: 'expected url'
             def expectedUrl = '/rests/data/network-topology:network-topology/topology=test-topology/node=node1/yang-ext:mount/testResourceId'
         when: 'write resource data for passthrough running is called'
             objectUnderTest.writeData(operationEnum, 'node1', 'testResourceId', 'application/json', 'requestData')
@@ -161,11 +161,10 @@ class SdncOperationsSpec extends Specification {
             'is null'                      | null                || '[:]'
     }
 
-    def 'options parameters contains a comma #scenario'() {
-        // https://jira.onap.org/browse/CPS-719
+    def 'options parameters contains a comma #scenario (for CPS-719)'() {
         when: 'build query param list is called with #scenario'
             def result = objectUnderTest.buildQueryParamMap(optionsParamInQuery, 'd=4').toSingleValueMap()
-        then: 'expect 2 elements from options where we are ignoring empty query param value +1 from content query param (2+1) = 3 elements'
+        then: 'expect 2 elements from options where we are ignoring empty query param value, +1 from content query param (2+1) = 3 elements'
             def expectedNoOfElements = 3
         and: 'results contains equal elements as expected'
             result.size() == expectedNoOfElements

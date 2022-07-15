@@ -46,7 +46,7 @@ class NcmpRestClientSpec extends Specification {
             mockCpsProperties.authPassword >> 'some-password'
         and: 'the rest template returns a valid response entity'
             def mockResponseEntity = Mock(ResponseEntity)
-        when: 'register cm-handle with ncmp is invoked'
+        when: 'method is called'
             def result = objectUnderTest.registerCmHandlesWithNcmp(jsonData)
         then: 'the rest template is called with the correct uri and json in the body'
             1 * mockRestTemplate.exchange({ it.toString() == 'http://some-uri/some-url' },
