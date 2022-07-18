@@ -2,6 +2,282 @@
   "comments": [
     {
       "key": {
+        "uuid": "e0dd8c0e_e53bd815",
+        "filename": "src/test/groovy/org/onap/cps/ncmp/dmi/rest/controller/DmiRestControllerSpec.groovy",
+        "patchSetId": 2
+      },
+      "lineNbr": 179,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2022-07-18T14:43:03Z",
+      "side": 1,
+      "message": "request data to get some modules",
+      "range": {
+        "startLine": 179,
+        "startChar": 14,
+        "endLine": 179,
+        "endChar": 23
+      },
+      "revId": "b7fe8f5c070c798d4b2fbe3d50434fd8653715be",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "dc5ad787_f6a2ae28",
+        "filename": "src/test/groovy/org/onap/cps/ncmp/dmi/rest/controller/DmiRestControllerSpec.groovy",
+        "patchSetId": 2
+      },
+      "lineNbr": 195,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2022-07-18T14:43:03Z",
+      "side": 1,
+      "message": "not suer why this added to this test, unless it compulsory I think teh json can be removed altogether\nif it is need it needs to be described using a separate and: label",
+      "range": {
+        "startLine": 195,
+        "startChar": 24,
+        "endLine": 195,
+        "endChar": 90
+      },
+      "revId": "b7fe8f5c070c798d4b2fbe3d50434fd8653715be",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "8adfc8d5_8456c024",
+        "filename": "src/test/groovy/org/onap/cps/ncmp/dmi/rest/controller/DmiRestControllerSpec.groovy",
+        "patchSetId": 2
+      },
+      "lineNbr": 210,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2022-07-18T14:43:03Z",
+      "side": 1,
+      "message": "the json data is very importan affor this test and should be described separately with and: label.\nit is not clear even contradicting itself: the test json filename suggests it should be a positive test but a bad requesst is expected as outcome?!",
+      "range": {
+        "startLine": 210,
+        "startChar": 37,
+        "endLine": 210,
+        "endChar": 51
+      },
+      "revId": "b7fe8f5c070c798d4b2fbe3d50434fd8653715be",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "547b8246_ee89145e",
+        "filename": "src/test/groovy/org/onap/cps/ncmp/dmi/rest/controller/DmiRestControllerSpec.groovy",
+        "patchSetId": 2
+      },
+      "lineNbr": 213,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2022-07-18T14:43:03Z",
+      "side": 1,
+      "message": "see comment above, why should this fail it is not clear...",
+      "range": {
+        "startLine": 213,
+        "startChar": 61,
+        "endLine": 213,
+        "endChar": 85
+      },
+      "revId": "b7fe8f5c070c798d4b2fbe3d50434fd8653715be",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "d8321e8a_8b7b6b95",
+        "filename": "src/test/groovy/org/onap/cps/ncmp/dmi/rest/controller/DmiRestControllerSpec.groovy",
+        "patchSetId": 2
+      },
+      "lineNbr": 228,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2022-07-18T14:43:03Z",
+      "side": 1,
+      "message": "describe the request data using a separate label",
+      "range": {
+        "startLine": 228,
+        "startChar": 8,
+        "endLine": 228,
+        "endChar": 76
+      },
+      "revId": "b7fe8f5c070c798d4b2fbe3d50434fd8653715be",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "d175642b_536632f7",
+        "filename": "src/test/groovy/org/onap/cps/ncmp/dmi/rest/controller/DmiRestControllerSpec.groovy",
+        "patchSetId": 2
+      },
+      "lineNbr": 255,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2022-07-18T14:43:03Z",
+      "side": 1,
+      "message": "I prefer to say \u0027request data\u0027 see some previous comments",
+      "range": {
+        "startLine": 255,
+        "startChar": 14,
+        "endLine": 255,
+        "endChar": 22
+      },
+      "revId": "b7fe8f5c070c798d4b2fbe3d50434fd8653715be",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "9fec9574_4ed34440",
+        "filename": "src/test/groovy/org/onap/cps/ncmp/dmi/rest/controller/DmiRestControllerSpec.groovy",
+        "patchSetId": 2
+      },
+      "lineNbr": 271,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2022-07-18T14:43:03Z",
+      "side": 1,
+      "message": "Passthrough read URL and request data  with a topic (parameter)\n\n(in this case combined is OK because the attention (difference) is the topic flag and that should be mentioned",
+      "range": {
+        "startLine": 271,
+        "startChar": 15,
+        "endLine": 271,
+        "endChar": 49
+      },
+      "revId": "b7fe8f5c070c798d4b2fbe3d50434fd8653715be",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "2ca792ba_ce492ec4",
+        "filename": "src/test/groovy/org/onap/cps/ncmp/dmi/rest/controller/DmiRestControllerSpec.groovy",
+        "patchSetId": 2
+      },
+      "lineNbr": 297,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2022-07-18T14:43:03Z",
+      "side": 1,
+      "message": "probably would add \u0027with correct parameters\u0027",
+      "range": {
+        "startLine": 297,
+        "startChar": 69,
+        "endLine": 297,
+        "endChar": 70
+      },
+      "revId": "b7fe8f5c070c798d4b2fbe3d50434fd8653715be",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "387d1ee3_9bc89abe",
+        "filename": "src/test/groovy/org/onap/cps/ncmp/dmi/service/DmiServiceImplSpec.groovy",
+        "patchSetId": 2
+      },
+      "lineNbr": 56,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2022-07-18T14:43:03Z",
+      "side": 1,
+      "message": "keep all getModules test together i.e. this test and teh next should move to befere line 129 in this patch",
+      "range": {
+        "startLine": 56,
+        "startChar": 4,
+        "endLine": 56,
+        "endChar": 43
+      },
+      "revId": "b7fe8f5c070c798d4b2fbe3d50434fd8653715be",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "2a2ef865_83995c83",
+        "filename": "src/test/groovy/org/onap/cps/ncmp/dmi/service/DmiServiceImplSpec.groovy",
+        "patchSetId": 2
+      },
+      "lineNbr": 94,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2022-07-18T14:43:03Z",
+      "side": 1,
+      "message": "cm handles",
+      "range": {
+        "startLine": 94,
+        "startChar": 34,
+        "endLine": 94,
+        "endChar": 42
+      },
+      "revId": "b7fe8f5c070c798d4b2fbe3d50434fd8653715be",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "892fbe7a_bedd3042",
+        "filename": "src/test/groovy/org/onap/cps/ncmp/dmi/service/DmiServiceImplSpec.groovy",
+        "patchSetId": 2
+      },
+      "lineNbr": 107,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2022-07-18T14:43:03Z",
+      "side": 1,
+      "message": "cm handles",
+      "range": {
+        "startLine": 107,
+        "startChar": 34,
+        "endLine": 107,
+        "endChar": 42
+      },
+      "revId": "b7fe8f5c070c798d4b2fbe3d50434fd8653715be",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "6a5dcbd1_d6f3e76c",
+        "filename": "src/test/groovy/org/onap/cps/ncmp/dmi/service/DmiServiceImplSpec.groovy",
+        "patchSetId": 2
+      },
+      "lineNbr": 123,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2022-07-18T14:43:03Z",
+      "side": 1,
+      "message": "cm handles",
+      "range": {
+        "startLine": 123,
+        "startChar": 34,
+        "endLine": 123,
+        "endChar": 43
+      },
+      "revId": "b7fe8f5c070c798d4b2fbe3d50434fd8653715be",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "832021aa_8cc0ad0a",
         "filename": "src/test/groovy/org/onap/cps/ncmp/dmi/service/DmiServiceImplSpec.groovy",
         "patchSetId": 2
@@ -64,6 +340,121 @@
         "startChar": 0,
         "endLine": 228,
         "endChar": 74
+      },
+      "revId": "b7fe8f5c070c798d4b2fbe3d50434fd8653715be",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "d27d55cf_7465bfd6",
+        "filename": "src/test/groovy/org/onap/cps/ncmp/dmi/service/client/NcmpRestClientSpec.groovy",
+        "patchSetId": 2
+      },
+      "lineNbr": 49,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2022-07-18T14:43:03Z",
+      "side": 1,
+      "message": "this is a bit too generic..\nmaybe \u0027cm handle registration happens/occurs\u0027",
+      "range": {
+        "startLine": 49,
+        "startChar": 15,
+        "endLine": 49,
+        "endChar": 31
+      },
+      "revId": "b7fe8f5c070c798d4b2fbe3d50434fd8653715be",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "9be3fb2f_a6257cc5",
+        "filename": "src/test/groovy/org/onap/cps/ncmp/dmi/service/client/SdncRestconfClientSpec.groovy",
+        "patchSetId": 2
+      },
+      "lineNbr": 51,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2022-07-18T14:43:03Z",
+      "side": 1,
+      "message": "this is a bit too generic 😊\n\nmaybe \u0027 the resource is fetched\u0027",
+      "range": {
+        "startLine": 51,
+        "startChar": 15,
+        "endLine": 51,
+        "endChar": 31
+      },
+      "revId": "b7fe8f5c070c798d4b2fbe3d50434fd8653715be",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "464fc87b_3e3a3928",
+        "filename": "src/test/groovy/org/onap/cps/ncmp/dmi/service/client/SdncRestconfClientSpec.groovy",
+        "patchSetId": 2
+      },
+      "lineNbr": 66,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2022-07-18T14:43:03Z",
+      "side": 1,
+      "message": "the resource is fetched\u0027",
+      "range": {
+        "startLine": 66,
+        "startChar": 15,
+        "endLine": 66,
+        "endChar": 46
+      },
+      "revId": "b7fe8f5c070c798d4b2fbe3d50434fd8653715be",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "4d16babe_8b341e05",
+        "filename": "src/test/groovy/org/onap/cps/ncmp/dmi/service/client/SdncRestconfClientSpec.groovy",
+        "patchSetId": 2
+      },
+      "lineNbr": 90,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2022-07-18T14:43:03Z",
+      "side": 1,
+      "message": "header is signifcant change here and should be highlighted in this label (hasn\u0027t been defined/mentioned aprat from title)\n\n\nwhen\u0027 the resource is fetch wit headers",
+      "range": {
+        "startLine": 90,
+        "startChar": 15,
+        "endLine": 90,
+        "endChar": 35
+      },
+      "revId": "b7fe8f5c070c798d4b2fbe3d50434fd8653715be",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "3dbcdb00_013e85d8",
+        "filename": "src/test/groovy/org/onap/cps/ncmp/dmi/service/client/SdncRestconfClientSpec.groovy",
+        "patchSetId": 2
+      },
+      "lineNbr": 91,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2022-07-18T14:43:03Z",
+      "side": 1,
+      "message": "bit strange it is tested with empty headers bit is probably OK for this test...",
+      "range": {
+        "startLine": 91,
+        "startChar": 70,
+        "endLine": 91,
+        "endChar": 87
       },
       "revId": "b7fe8f5c070c798d4b2fbe3d50434fd8653715be",
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
