@@ -1,0 +1,257 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "95703d69_aa49623d",
+        "filename": "src/test/groovy/org/onap/cps/ncmp/dmi/rest/controller/DmiRestControllerSpec.groovy",
+        "patchSetId": 1
+      },
+      "lineNbr": 91,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2022-07-18T09:02:38Z",
+      "side": 1,
+      "message": "the request is posted",
+      "range": {
+        "startLine": 91,
+        "startChar": 15,
+        "endLine": 91,
+        "endChar": 36
+      },
+      "revId": "35ccf86dd5ad8ed692e87d37f1042434139a3270",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "5ce5c5f1_7e3e047a",
+        "filename": "src/test/groovy/org/onap/cps/ncmp/dmi/rest/controller/DmiRestControllerSpec.groovy",
+        "patchSetId": 1
+      },
+      "lineNbr": 106,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2022-07-18T09:02:38Z",
+      "side": 1,
+      "message": "need separate and blocks\n\nand: \u0027an #exceptionClass exception is thrown during the process\u0027",
+      "range": {
+        "startLine": 106,
+        "startChar": 5,
+        "endLine": 106,
+        "endChar": 80
+      },
+      "revId": "35ccf86dd5ad8ed692e87d37f1042434139a3270",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "bd352ef4_0a4e53ce",
+        "filename": "src/test/groovy/org/onap/cps/ncmp/dmi/rest/controller/DmiRestControllerSpec.groovy",
+        "patchSetId": 1
+      },
+      "lineNbr": 107,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2022-07-18T09:02:38Z",
+      "side": 1,
+      "message": "the request is posted",
+      "range": {
+        "startLine": 107,
+        "startChar": 15,
+        "endLine": 107,
+        "endChar": 30
+      },
+      "revId": "35ccf86dd5ad8ed692e87d37f1042434139a3270",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "aade6205_ca911e5d",
+        "filename": "src/test/groovy/org/onap/cps/ncmp/dmi/rest/controller/DmiRestControllerSpec.groovy",
+        "patchSetId": 1
+      },
+      "lineNbr": 125,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2022-07-18T09:02:38Z",
+      "side": 1,
+      "message": "the request is posted",
+      "range": {
+        "startLine": 125,
+        "startChar": 15,
+        "endLine": 125,
+        "endChar": 59
+      },
+      "revId": "35ccf86dd5ad8ed692e87d37f1042434139a3270",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "127ae688_f6733bf6",
+        "filename": "src/test/groovy/org/onap/cps/ncmp/dmi/rest/controller/DmiRestControllerSpec.groovy",
+        "patchSetId": 1
+      },
+      "lineNbr": 141,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2022-07-18T09:02:38Z",
+      "side": 1,
+      "message": "no need to repeat the condition, it is already on the title and the given.\nJust \u0027the request is posted\u0027  wil do",
+      "range": {
+        "startLine": 141,
+        "startChar": 54,
+        "endLine": 141,
+        "endChar": 70
+      },
+      "revId": "35ccf86dd5ad8ed692e87d37f1042434139a3270",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "974ded6e_16a4539c",
+        "filename": "src/test/groovy/org/onap/cps/ncmp/dmi/rest/controller/DmiRestControllerSpec.groovy",
+        "patchSetId": 1
+      },
+      "lineNbr": 164,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2022-07-18T09:02:38Z",
+      "side": 1,
+      "message": "the request is posted",
+      "range": {
+        "startLine": 164,
+        "startChar": 15,
+        "endLine": 164,
+        "endChar": 50
+      },
+      "revId": "35ccf86dd5ad8ed692e87d37f1042434139a3270",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "c17b85c2_3a57e2f6",
+        "filename": "src/test/groovy/org/onap/cps/ncmp/dmi/rest/controller/DmiRestControllerSpec.groovy",
+        "patchSetId": 1
+      },
+      "lineNbr": 175,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2022-07-18T09:02:38Z",
+      "side": 1,
+      "message": "as per previous tests say what URL is defined here",
+      "range": {
+        "startLine": 175,
+        "startChar": 16,
+        "endLine": 175,
+        "endChar": 41
+      },
+      "revId": "35ccf86dd5ad8ed692e87d37f1042434139a3270",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "db65fd0a_0b2379ff",
+        "filename": "src/test/groovy/org/onap/cps/ncmp/dmi/rest/controller/DmiRestControllerSpec.groovy",
+        "patchSetId": 1
+      },
+      "lineNbr": 178,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2022-07-18T09:02:38Z",
+      "side": 1,
+      "message": "the system throws a not-found exception (during the processing)",
+      "range": {
+        "startLine": 178,
+        "startChar": 14,
+        "endLine": 178,
+        "endChar": 76
+      },
+      "revId": "35ccf86dd5ad8ed692e87d37f1042434139a3270",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "e8337ad2_66b30aaf",
+        "filename": "src/test/groovy/org/onap/cps/ncmp/dmi/rest/controller/DmiRestControllerSpec.groovy",
+        "patchSetId": 1
+      },
+      "lineNbr": 249,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2022-07-18T09:02:38Z",
+      "side": 1,
+      "message": "... json data with special characters",
+      "range": {
+        "startLine": 249,
+        "startChar": 50,
+        "endLine": 249,
+        "endChar": 58
+      },
+      "revId": "35ccf86dd5ad8ed692e87d37f1042434139a3270",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "e7a25cd6_70e8f7c4",
+        "filename": "src/test/groovy/org/onap/cps/ncmp/dmi/rest/controller/DmiRestControllerSpec.groovy",
+        "patchSetId": 1
+      },
+      "lineNbr": 256,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2022-07-18T09:02:38Z",
+      "side": 1,
+      "message": "the request is posted",
+      "range": {
+        "startLine": 256,
+        "startChar": 16,
+        "endLine": 256,
+        "endChar": 105
+      },
+      "revId": "35ccf86dd5ad8ed692e87d37f1042434139a3270",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "81e449c4_fe230189",
+        "filename": "src/test/groovy/org/onap/cps/ncmp/dmi/service/operation/SdncOperationsSpec.groovy",
+        "patchSetId": 1
+      },
+      "lineNbr": 81,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2022-07-18T09:02:38Z",
+      "side": 1,
+      "message": "the module schemas are requested",
+      "range": {
+        "startLine": 81,
+        "startChar": 15,
+        "endLine": 81,
+        "endChar": 53
+      },
+      "revId": "35ccf86dd5ad8ed692e87d37f1042434139a3270",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    }
+  ]
+}
