@@ -1,0 +1,73 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "832021aa_8cc0ad0a",
+        "filename": "src/test/groovy/org/onap/cps/ncmp/dmi/service/DmiServiceImplSpec.groovy",
+        "patchSetId": 2
+      },
+      "lineNbr": 198,
+      "author": {
+        "id": 7931
+      },
+      "writtenOn": "2022-07-18T14:10:30Z",
+      "side": 1,
+      "message": "please confirm better way to label this",
+      "range": {
+        "startLine": 198,
+        "startChar": 14,
+        "endLine": 198,
+        "endChar": 75
+      },
+      "revId": "b7fe8f5c070c798d4b2fbe3d50434fd8653715be",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "6a282916_408a79c4",
+        "filename": "src/test/groovy/org/onap/cps/ncmp/dmi/service/DmiServiceImplSpec.groovy",
+        "patchSetId": 2
+      },
+      "lineNbr": 213,
+      "author": {
+        "id": 7931
+      },
+      "writtenOn": "2022-07-18T14:10:30Z",
+      "side": 1,
+      "message": "please confirm better way to label this",
+      "range": {
+        "startLine": 213,
+        "startChar": 3,
+        "endLine": 213,
+        "endChar": 75
+      },
+      "revId": "b7fe8f5c070c798d4b2fbe3d50434fd8653715be",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "e6fa2641_be1301b1",
+        "filename": "src/test/groovy/org/onap/cps/ncmp/dmi/service/DmiServiceImplSpec.groovy",
+        "patchSetId": 2
+      },
+      "lineNbr": 228,
+      "author": {
+        "id": 7931
+      },
+      "writtenOn": "2022-07-18T14:10:30Z",
+      "side": 1,
+      "message": "please confirm better way to label this",
+      "range": {
+        "startLine": 228,
+        "startChar": 0,
+        "endLine": 228,
+        "endChar": 74
+      },
+      "revId": "b7fe8f5c070c798d4b2fbe3d50434fd8653715be",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    }
+  ]
+}
