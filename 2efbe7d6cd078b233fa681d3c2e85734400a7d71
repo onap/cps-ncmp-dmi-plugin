@@ -25,6 +25,144 @@
     },
     {
       "key": {
+        "uuid": "2912de14_a2d1ef88",
+        "filename": "src/test/groovy/org/onap/cps/ncmp/dmi/rest/controller/DmiRestControllerSpec.groovy",
+        "patchSetId": 4
+      },
+      "lineNbr": 105,
+      "author": {
+        "id": 7744
+      },
+      "writtenOn": "2022-07-20T15:50:58Z",
+      "side": 1,
+      "message": "Don\u0027t know if we need to refer to the specific exception here, as it will be outlined in the definition above.\n\nSo just \u0027an exception is thrown\u0027 could work.",
+      "range": {
+        "startLine": 105,
+        "startChar": 14,
+        "endLine": 105,
+        "endChar": 65
+      },
+      "revId": "2efbe7d6cd078b233fa681d3c2e85734400a7d71",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "9b0c7994_19121eca",
+        "filename": "src/test/groovy/org/onap/cps/ncmp/dmi/rest/controller/DmiRestControllerSpec.groovy",
+        "patchSetId": 4
+      },
+      "lineNbr": 155,
+      "author": {
+        "id": 7744
+      },
+      "writtenOn": "2022-07-20T15:50:58Z",
+      "side": 1,
+      "message": "and: \u0027modules resources json data\u0027",
+      "range": {
+        "startLine": 155,
+        "startChar": 14,
+        "endLine": 155,
+        "endChar": 46
+      },
+      "revId": "2efbe7d6cd078b233fa681d3c2e85734400a7d71",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "bec9024a_7a6abed6",
+        "filename": "src/test/groovy/org/onap/cps/ncmp/dmi/rest/controller/DmiRestControllerSpec.groovy",
+        "patchSetId": 4
+      },
+      "lineNbr": 156,
+      "author": {
+        "id": 7744
+      },
+      "writtenOn": "2022-07-20T15:50:58Z",
+      "side": 1,
+      "message": "Would rename this too. Just to moduleResources.json",
+      "range": {
+        "startLine": 156,
+        "startChar": 64,
+        "endLine": 156,
+        "endChar": 79
+      },
+      "revId": "2efbe7d6cd078b233fa681d3c2e85734400a7d71",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "d6c9d588_40f47b0c",
+        "filename": "src/test/groovy/org/onap/cps/ncmp/dmi/rest/controller/DmiRestControllerSpec.groovy",
+        "patchSetId": 4
+      },
+      "lineNbr": 179,
+      "author": {
+        "id": 7744
+      },
+      "writtenOn": "2022-07-20T15:50:58Z",
+      "side": 1,
+      "message": "Similar to comment above",
+      "range": {
+        "startLine": 178,
+        "startChar": 0,
+        "endLine": 179,
+        "endChar": 81
+      },
+      "revId": "2efbe7d6cd078b233fa681d3c2e85734400a7d71",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "4a099d93_ab2519dc",
+        "filename": "src/test/groovy/org/onap/cps/ncmp/dmi/rest/controller/DmiRestControllerSpec.groovy",
+        "patchSetId": 4
+      },
+      "lineNbr": 208,
+      "author": {
+        "id": 7744
+      },
+      "writtenOn": "2022-07-20T15:50:58Z",
+      "side": 1,
+      "message": "Get resource data for pass-through operational with invalid write request",
+      "range": {
+        "startLine": 208,
+        "startChar": 9,
+        "endLine": 208,
+        "endChar": 88
+      },
+      "revId": "2efbe7d6cd078b233fa681d3c2e85734400a7d71",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "03eba678_807ca73c",
+        "filename": "src/test/groovy/org/onap/cps/ncmp/dmi/rest/controller/DmiRestControllerSpec.groovy",
+        "patchSetId": 4
+      },
+      "lineNbr": 212,
+      "author": {
+        "id": 7744
+      },
+      "writtenOn": "2022-07-20T15:50:58Z",
+      "side": 1,
+      "message": "and: \u0027invalid request data\u0027",
+      "range": {
+        "startLine": 212,
+        "startChar": 14,
+        "endLine": 212,
+        "endChar": 60
+      },
+      "revId": "2efbe7d6cd078b233fa681d3c2e85734400a7d71",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "871eb46e_b7d158c4",
         "filename": "src/test/groovy/org/onap/cps/ncmp/dmi/service/DmiServiceImplSpec.groovy",
         "patchSetId": 4
@@ -41,6 +179,52 @@
         "startChar": 18,
         "endLine": 3,
         "endChar": 23
+      },
+      "revId": "2efbe7d6cd078b233fa681d3c2e85734400a7d71",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "bad1d07c_01e4c4d8",
+        "filename": "src/test/groovy/org/onap/cps/ncmp/dmi/service/DmiServiceImplSpec.groovy",
+        "patchSetId": 4
+      },
+      "lineNbr": 62,
+      "author": {
+        "id": 7744
+      },
+      "writtenOn": "2022-07-20T15:50:58Z",
+      "side": 1,
+      "message": "\u0027register cm handles is called\u0027",
+      "range": {
+        "startLine": 62,
+        "startChar": 15,
+        "endLine": 62,
+        "endChar": 53
+      },
+      "revId": "2efbe7d6cd078b233fa681d3c2e85734400a7d71",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "51db4393_f9bc7358",
+        "filename": "src/test/groovy/org/onap/cps/ncmp/dmi/service/DmiServiceImplSpec.groovy",
+        "patchSetId": 4
+      },
+      "lineNbr": 75,
+      "author": {
+        "id": 7744
+      },
+      "writtenOn": "2022-07-20T15:50:58Z",
+      "side": 1,
+      "message": "same as above",
+      "range": {
+        "startLine": 75,
+        "startChar": 15,
+        "endLine": 75,
+        "endChar": 53
       },
       "revId": "2efbe7d6cd078b233fa681d3c2e85734400a7d71",
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
@@ -87,6 +271,29 @@
         "startChar": 18,
         "endLine": 3,
         "endChar": 23
+      },
+      "revId": "2efbe7d6cd078b233fa681d3c2e85734400a7d71",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "c131c595_f8870c76",
+        "filename": "src/test/groovy/org/onap/cps/ncmp/dmi/service/operation/SdncOperationsSpec.groovy",
+        "patchSetId": 4
+      },
+      "lineNbr": 164,
+      "author": {
+        "id": 7744
+      },
+      "writtenOn": "2022-07-20T15:50:58Z",
+      "side": 1,
+      "message": "Is it necessary to mention the story here at all?",
+      "range": {
+        "startLine": 164,
+        "startChar": 55,
+        "endLine": 164,
+        "endChar": 67
       },
       "revId": "2efbe7d6cd078b233fa681d3c2e85734400a7d71",
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
