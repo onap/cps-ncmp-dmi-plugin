@@ -1,0 +1,142 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "39e17ed8_c7d17a35",
+        "filename": "src/test/groovy/org/onap/cps/ncmp/dmi/rest/controller/DmiRestControllerSpec.groovy",
+        "patchSetId": 8
+      },
+      "lineNbr": 153,
+      "author": {
+        "id": 7957
+      },
+      "writtenOn": "2022-07-22T10:59:02Z",
+      "side": 1,
+      "message": "NB : remove it",
+      "range": {
+        "startLine": 153,
+        "startChar": 16,
+        "endLine": 153,
+        "endChar": 18
+      },
+      "revId": "1e94816b7940e261a1a57cddd3fe251bc7873416",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "66b9cf54_135f17e4",
+        "filename": "src/test/groovy/org/onap/cps/ncmp/dmi/rest/controller/DmiRestControllerSpec.groovy",
+        "patchSetId": 8
+      },
+      "lineNbr": 176,
+      "author": {
+        "id": 7957
+      },
+      "writtenOn": "2022-07-22T10:59:02Z",
+      "side": 1,
+      "message": "NB : Remove it",
+      "range": {
+        "startLine": 176,
+        "startChar": 16,
+        "endLine": 176,
+        "endChar": 18
+      },
+      "revId": "1e94816b7940e261a1a57cddd3fe251bc7873416",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "b7633719_4f58dbb3",
+        "filename": "src/test/groovy/org/onap/cps/ncmp/dmi/rest/controller/DmiRestControllerSpec.groovy",
+        "patchSetId": 8
+      },
+      "lineNbr": 180,
+      "author": {
+        "id": 7957
+      },
+      "writtenOn": "2022-07-22T10:59:02Z",
+      "side": 1,
+      "message": "http status",
+      "range": {
+        "startLine": 180,
+        "startChar": 44,
+        "endLine": 180,
+        "endChar": 54
+      },
+      "revId": "1e94816b7940e261a1a57cddd3fe251bc7873416",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "2011d00a_36cc7867",
+        "filename": "src/test/groovy/org/onap/cps/ncmp/dmi/rest/controller/DmiRestControllerSpec.groovy",
+        "patchSetId": 8
+      },
+      "lineNbr": 212,
+      "author": {
+        "id": 7957
+      },
+      "writtenOn": "2022-07-22T10:59:02Z",
+      "side": 1,
+      "message": "create operation",
+      "range": {
+        "startLine": 212,
+        "startChar": 50,
+        "endLine": 212,
+        "endChar": 58
+      },
+      "revId": "1e94816b7940e261a1a57cddd3fe251bc7873416",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "13f502d7_963d5576",
+        "filename": "src/test/groovy/org/onap/cps/ncmp/dmi/rest/controller/DmiRestControllerSpec.groovy",
+        "patchSetId": 8
+      },
+      "lineNbr": 212,
+      "author": {
+        "id": 7957
+      },
+      "writtenOn": "2022-07-22T10:59:02Z",
+      "side": 1,
+      "message": "An invalid",
+      "range": {
+        "startLine": 212,
+        "startChar": 14,
+        "endLine": 212,
+        "endChar": 26
+      },
+      "revId": "1e94816b7940e261a1a57cddd3fe251bc7873416",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "62b66825_cafcf4ac",
+        "filename": "src/test/groovy/org/onap/cps/ncmp/dmi/service/client/NcmpRestClientSpec.groovy",
+        "patchSetId": 8
+      },
+      "lineNbr": 49,
+      "author": {
+        "id": 7957
+      },
+      "writtenOn": "2022-07-22T10:59:02Z",
+      "side": 1,
+      "message": "registering a cm handle",
+      "range": {
+        "startLine": 49,
+        "startChar": 15,
+        "endLine": 49,
+        "endChar": 43
+      },
+      "revId": "1e94816b7940e261a1a57cddd3fe251bc7873416",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    }
+  ]
+}
