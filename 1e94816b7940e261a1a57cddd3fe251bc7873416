@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "ba836924_151ab9c6",
+        "filename": "src/test/groovy/org/onap/cps/ncmp/dmi/rest/controller/DmiRestControllerSpec.groovy",
+        "patchSetId": 8
+      },
+      "lineNbr": 153,
+      "author": {
+        "id": 7931
+      },
+      "writtenOn": "2022-07-22T12:05:00Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "39e17ed8_c7d17a35",
+      "range": {
+        "startLine": 153,
+        "startChar": 16,
+        "endLine": 153,
+        "endChar": 18
+      },
+      "revId": "1e94816b7940e261a1a57cddd3fe251bc7873416",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "66b9cf54_135f17e4",
         "filename": "src/test/groovy/org/onap/cps/ncmp/dmi/rest/controller/DmiRestControllerSpec.groovy",
         "patchSetId": 8
@@ -45,6 +69,30 @@
       "revId": "1e94816b7940e261a1a57cddd3fe251bc7873416",
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "53a0376b_33ae03d7",
+        "filename": "src/test/groovy/org/onap/cps/ncmp/dmi/rest/controller/DmiRestControllerSpec.groovy",
+        "patchSetId": 8
+      },
+      "lineNbr": 176,
+      "author": {
+        "id": 7931
+      },
+      "writtenOn": "2022-07-22T12:05:00Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "66b9cf54_135f17e4",
+      "range": {
+        "startLine": 176,
+        "startChar": 16,
+        "endLine": 176,
+        "endChar": 18
+      },
+      "revId": "1e94816b7940e261a1a57cddd3fe251bc7873416",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
     },
     {
       "key": {
@@ -165,6 +213,54 @@
     },
     {
       "key": {
+        "uuid": "f6856de8_8a851cf7",
+        "filename": "src/test/groovy/org/onap/cps/ncmp/dmi/rest/controller/DmiRestControllerSpec.groovy",
+        "patchSetId": 8
+      },
+      "lineNbr": 212,
+      "author": {
+        "id": 7931
+      },
+      "writtenOn": "2022-07-22T12:05:00Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "2011d00a_36cc7867",
+      "range": {
+        "startLine": 212,
+        "startChar": 50,
+        "endLine": 212,
+        "endChar": 58
+      },
+      "revId": "1e94816b7940e261a1a57cddd3fe251bc7873416",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "6851a5e4_b95436ed",
+        "filename": "src/test/groovy/org/onap/cps/ncmp/dmi/rest/controller/DmiRestControllerSpec.groovy",
+        "patchSetId": 8
+      },
+      "lineNbr": 212,
+      "author": {
+        "id": 7931
+      },
+      "writtenOn": "2022-07-22T12:05:00Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "13f502d7_963d5576",
+      "range": {
+        "startLine": 212,
+        "startChar": 14,
+        "endLine": 212,
+        "endChar": 26
+      },
+      "revId": "1e94816b7940e261a1a57cddd3fe251bc7873416",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "62b66825_cafcf4ac",
         "filename": "src/test/groovy/org/onap/cps/ncmp/dmi/service/client/NcmpRestClientSpec.groovy",
         "patchSetId": 8
@@ -185,6 +281,30 @@
       "revId": "1e94816b7940e261a1a57cddd3fe251bc7873416",
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "a5a5645c_a7aec8c6",
+        "filename": "src/test/groovy/org/onap/cps/ncmp/dmi/service/client/NcmpRestClientSpec.groovy",
+        "patchSetId": 8
+      },
+      "lineNbr": 49,
+      "author": {
+        "id": 7931
+      },
+      "writtenOn": "2022-07-22T12:05:00Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "62b66825_cafcf4ac",
+      "range": {
+        "startLine": 49,
+        "startChar": 15,
+        "endLine": 49,
+        "endChar": 43
+      },
+      "revId": "1e94816b7940e261a1a57cddd3fe251bc7873416",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
     }
   ]
 }
