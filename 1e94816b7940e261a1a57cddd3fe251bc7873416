@@ -95,6 +95,30 @@
     },
     {
       "key": {
+        "uuid": "cbd71a0d_062e9b03",
+        "filename": "src/test/groovy/org/onap/cps/ncmp/dmi/rest/controller/DmiRestControllerSpec.groovy",
+        "patchSetId": 8
+      },
+      "lineNbr": 180,
+      "author": {
+        "id": 7957
+      },
+      "writtenOn": "2022-07-22T11:55:46Z",
+      "side": 1,
+      "message": "Agreed go ahead with same no need to change anything here. 😊",
+      "parentUuid": "3cf28063_f4cba70d",
+      "range": {
+        "startLine": 180,
+        "startChar": 44,
+        "endLine": 180,
+        "endChar": 54
+      },
+      "revId": "1e94816b7940e261a1a57cddd3fe251bc7873416",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "2011d00a_36cc7867",
         "filename": "src/test/groovy/org/onap/cps/ncmp/dmi/rest/controller/DmiRestControllerSpec.groovy",
         "patchSetId": 8
