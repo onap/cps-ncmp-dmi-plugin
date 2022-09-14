@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9450dcca_5524e1c6",
+        "filename": "INFO.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 54,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2022-09-14T15:41:47Z",
+      "side": 0,
+      "message": "we will stil need aditya to help with release process, so remove her at start of London instead (sorry)",
+      "range": {
+        "startLine": 50,
+        "startChar": 2,
+        "endLine": 54,
+        "endChar": 31
+      },
+      "revId": "7b7297c644144f1d6f7e842422c621d5627d475c",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    }
+  ]
+}
