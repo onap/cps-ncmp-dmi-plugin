@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7534739c_4dbc6412",
+        "filename": "docs/api/swagger/openapi.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 200,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2022-09-14T11:17:36Z",
+      "side": 1,
+      "message": "NB: would not inlcude teh word \u0027valid\u0027 here",
+      "range": {
+        "startLine": 200,
+        "startChar": 21,
+        "endLine": 200,
+        "endChar": 27
+      },
+      "revId": "b5a7f6b2443471e113d4ddf66df50adedea058e8",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "e5bb2d05_2e7e43c8",
+        "filename": "docs/api/swagger/openapi.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 292,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2022-09-14T11:17:36Z",
+      "side": 1,
+      "message": "please remove",
+      "range": {
+        "startLine": 292,
+        "startChar": 21,
+        "endLine": 292,
+        "endChar": 27
+      },
+      "revId": "b5a7f6b2443471e113d4ddf66df50adedea058e8",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    }
+  ]
+}
