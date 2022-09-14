@@ -195,6 +195,16 @@ paths:
           sample3:
             value:
               options: (key1=10,key2=value2,key3=val31,val32)
+      - name: topic
+        in: query
+        description: valid topic name passed from client(NCMP).
+        required: false
+        allowReserved: true
+        schema:
+          type: string
+        examples:
+          sample1:
+            value: my-topic-name
       requestBody:
         description: Operational body
         content:
@@ -277,6 +287,16 @@ paths:
           sample3:
             value:
               options: (key1=10,key2=value2,key3=val31,val32)
+      - name: topic
+        in: query
+        description: valid topic name passed from client(NCMP).
+        required: false
+        allowReserved: true
+        schema:
+          type: string
+        examples:
+          sample1:
+            value: my-topic-name
       requestBody:
         content:
           application/json:
