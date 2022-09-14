@@ -63,7 +63,8 @@ public class DmiAsyncRequestResponseEventCreator {
         dmiAsyncRequestResponseEvent.setEventId(UUID.randomUUID().toString());
         dmiAsyncRequestResponseEvent.setEventCorrelationId(requestId);
         dmiAsyncRequestResponseEvent.setEventType(DmiAsyncRequestResponseEvent.class.getName());
-        dmiAsyncRequestResponseEvent.setEventSchema("urn:cps:" + DmiAsyncRequestResponseEvent.class.getName() + ":v1");
+        dmiAsyncRequestResponseEvent.setEventSchema("urn:cps:" + DmiAsyncRequestResponseEvent.class.getName());
+        dmiAsyncRequestResponseEvent.setEventSchemaVersion("v1");
         dmiAsyncRequestResponseEvent.setEventSource(Application.class.getPackageName());
         dmiAsyncRequestResponseEvent.setEventTarget(topicParamInQuery);
         dmiAsyncRequestResponseEvent.setEventTime(ZonedDateTime.now().format(dateTimeFormatter));
