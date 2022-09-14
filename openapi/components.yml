@@ -201,7 +201,7 @@ components:
     topicParamInQuery:
       name: topic
       in: query
-      description: valid topic name passed from client(NCMP).
+      description: topic name passed from client(NCMP).
       required: false
       schema:
         type: string
