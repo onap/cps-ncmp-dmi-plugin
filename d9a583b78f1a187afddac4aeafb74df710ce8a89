@@ -1,0 +1,10 @@
+Verified+1: ONAP Jobbuilder <onap-jobbuilder@jenkins.onap.org>
+Code-Review+1: Andras Zoltan Kiss <andras.zoltan.kiss@est.tech>
+Code-Review+1: Luke Gleeson <luke.gleeson@est.tech>
+Code-Review+2: Sourabh Sourabh <sourabh.sourabh@est.tech>
+Code-Review+1: aditya puthuparambil <aditya.puthuparambil@bell.ca>
+Submitted-by: aditya puthuparambil <aditya.puthuparambil@bell.ca>
+Submitted-at: Thu, 15 Sep 2022 13:09:43 +0000
+Reviewed-on: https://gerrit.onap.org/r/c/cps/ncmp-dmi-plugin/+/130948
+Project: cps/ncmp-dmi-plugin
+Branch: refs/heads/master
