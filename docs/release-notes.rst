@@ -13,6 +13,68 @@ DMI-Plugin Release Notes
 .. contents::
     :depth: 2
 ..
+..      ====================
+..      * * *   KOHN   * * *
+..      ====================
+
+Version: 1.2.0
+==============
+
+Release Data
+------------
+
++--------------------------------------+--------------------------------------------------------+
+| **CPS Project**                      |  DMI-Plugin                                            |
+|                                      |                                                        |
++--------------------------------------+--------------------------------------------------------+
+| **Docker images**                    | onap/ncmp-dmi-plugin:1.2.0                             |
+|                                      |                                                        |
++--------------------------------------+--------------------------------------------------------+
+| **Release designation**              | 1.2.0 Kohn                                             |
+|                                      |                                                        |
++--------------------------------------+--------------------------------------------------------+
+| **Release date**                     | 2022 September 21                                      |
+|                                      |                                                        |
++--------------------------------------+--------------------------------------------------------+
+
+Features
+--------
+   - `CPS-562 <https://jira.onap.org/browse/CPS-562>`_  Write data for cmHandle using ncmp-datastores:passthrough-running (DMI Plugin.)
+   - `CPS-575 <https://jira.onap.org/browse/CPS-575>`_  Write data for cmHandle using ncmp-datastores:passthrough-running (NCMP.)
+   - `CPS-832 <https://jira.onap.org/browse/CPS-832>`_  Async: E2E Integration (incl. Demo & CSIT)
+   - `CPS-828 <https://jira.onap.org/browse/CPS-828>`_  Async: NCMP Rest impl. including Request ID generation
+   - `CPS-827 <https://jira.onap.org/browse/CPS-827>`_  Remove explicit dependency on log4j 2.16.0
+   - `CPS-1134 <https://jira.onap.org/browse/CPS-1134>`_  Update CPS info.yaml
+
+Bug Fixes
+---------
+   - None
+
+Known Limitations, Issues and Workarounds
+-----------------------------------------
+
+*System Limitations*
+
+None
+
+*Known Vulnerabilities*
+
+None
+
+*Workarounds*
+
+None
+
+Security Notes
+--------------
+
+*Fixed Security Issues*
+
+None
+
+*Known Security Issues*
+
+None
 
 ..      ========================
 ..      * * *   JAKARTA   * * *
