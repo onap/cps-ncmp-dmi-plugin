@@ -1,0 +1,73 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "09885bd3_b6e9ded6",
+        "filename": "docs/release-notes.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 7743
+      },
+      "writtenOn": "2022-09-22T10:24:56Z",
+      "side": 1,
+      "message": "NB: Should this date be updated?",
+      "range": {
+        "startLine": 37,
+        "startChar": 41,
+        "endLine": 37,
+        "endChar": 60
+      },
+      "revId": "7a8c68d4112fac2bd7ed1b9d33544f917357a06e",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "3a6a1ceb_7d41be05",
+        "filename": "docs/release-notes.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 49,
+      "author": {
+        "id": 7743
+      },
+      "writtenOn": "2022-09-22T10:24:56Z",
+      "side": 1,
+      "message": "we had no bug fixes for DMI plugin in Kohn?",
+      "range": {
+        "startLine": 49,
+        "startChar": 5,
+        "endLine": 49,
+        "endChar": 9
+      },
+      "revId": "7a8c68d4112fac2bd7ed1b9d33544f917357a06e",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "0ddf7915_208b2ad6",
+        "filename": "docs/release-notes.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 56,
+      "author": {
+        "id": 7743
+      },
+      "writtenOn": "2022-09-22T10:24:56Z",
+      "side": 1,
+      "message": "NB: We have some limitations w.r.t. performance... should this be mentioned?",
+      "range": {
+        "startLine": 56,
+        "startChar": 0,
+        "endLine": 56,
+        "endChar": 4
+      },
+      "revId": "7a8c68d4112fac2bd7ed1b9d33544f917357a06e",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    }
+  ]
+}
