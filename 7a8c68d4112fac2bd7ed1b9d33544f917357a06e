@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "c10102e2_d4a5d32b",
+        "filename": "docs/release-notes.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2022-09-22T10:41:18Z",
+      "side": 1,
+      "message": "will be done as part of final doc updates at next milestone",
+      "parentUuid": "09885bd3_b6e9ded6",
+      "range": {
+        "startLine": 37,
+        "startChar": 41,
+        "endLine": 37,
+        "endChar": 60
+      },
+      "revId": "7a8c68d4112fac2bd7ed1b9d33544f917357a06e",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "3a6a1ceb_7d41be05",
         "filename": "docs/release-notes.rst",
         "patchSetId": 3
@@ -36,6 +60,30 @@
       "writtenOn": "2022-09-22T10:24:56Z",
       "side": 1,
       "message": "we had no bug fixes for DMI plugin in Kohn?",
+      "range": {
+        "startLine": 49,
+        "startChar": 5,
+        "endLine": 49,
+        "endChar": 9
+      },
+      "revId": "7a8c68d4112fac2bd7ed1b9d33544f917357a06e",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "5a2d10dd_aa0fb3a9",
+        "filename": "docs/release-notes.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 49,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2022-09-22T10:41:18Z",
+      "side": 1,
+      "message": "I double checked. Fact is we mainly worked in NCMP last release adn Ericsson does NOT use ONAP DMI PLugin...",
+      "parentUuid": "3a6a1ceb_7d41be05",
       "range": {
         "startLine": 49,
         "startChar": 5,
@@ -68,6 +116,30 @@
       "revId": "7a8c68d4112fac2bd7ed1b9d33544f917357a06e",
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "0ec3cc2f_8f0b893c",
+        "filename": "docs/release-notes.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 56,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2022-09-22T10:41:18Z",
+      "side": 1,
+      "message": "that would be NCMP but anyway any software has performance \u0027limitations this is more intended for functional limitations",
+      "parentUuid": "0ddf7915_208b2ad6",
+      "range": {
+        "startLine": 56,
+        "startChar": 0,
+        "endLine": 56,
+        "endChar": 4
+      },
+      "revId": "7a8c68d4112fac2bd7ed1b9d33544f917357a06e",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
     }
   ]
 }
