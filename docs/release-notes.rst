@@ -40,7 +40,7 @@ Release Data
 
 Bug Fixes
 ---------
-   - None
+   - `CPS-1350 <https://jira.onap.org/browse/CPS-1350>`_  [CPS/NCMP] Add Basic Auth to CPS/NCMP OpenAPI Definitions
 
 
 Version: 1.2.1

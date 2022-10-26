@@ -344,6 +344,10 @@ paths:
                 message: Internal Server Error
                 details: Internal Server Error occured
 components:
+  securitySchemes:
+    basicAuth:
+      type: http
+      scheme: basic
   schemas:
     ModuleReferencesRequest:
       type: object
@@ -456,3 +460,6 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/ModuleResourcesReadRequest_data_modules'
+
+security:
+  - basicAuth: []
