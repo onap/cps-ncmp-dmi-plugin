@@ -18,6 +18,10 @@
 #  ============LICENSE_END=========================================================
 
 components:
+  securitySchemes:
+    basicAuth:
+      type: http
+      scheme: basic
   schemas:
     ErrorMessage:
       type: object
@@ -209,3 +213,6 @@ components:
       examples:
         sample1:
           value: my-topic-name
+
+security:
+  - basicAuth: []
