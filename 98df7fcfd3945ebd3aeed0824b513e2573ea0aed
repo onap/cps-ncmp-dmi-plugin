@@ -1,0 +1,9 @@
+Verified+1: ONAP Jobbuilder <onap-jobbuilder@jenkins.onap.org>
+Code-Review+2: Sourabh Sourabh <sourabh.sourabh@est.tech>
+Code-Review+1: Priyank Maheshwari <priyank.maheshwari@est.tech>
+Code-Review+1: Joseph Keenan <joseph.keenan@est.tech>
+Submitted-by: Sourabh Sourabh <sourabh.sourabh@est.tech>
+Submitted-at: Fri, 28 Oct 2022 11:05:49 +0000
+Reviewed-on: https://gerrit.onap.org/r/c/cps/ncmp-dmi-plugin/+/131880
+Project: cps/ncmp-dmi-plugin
+Branch: refs/heads/master
