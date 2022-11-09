@@ -28,7 +28,7 @@ TESTPLANDIR=${WORKSPACE}/${TESTPLAN}
 
 # Assume that if ROBOT_VENV is set and virtualenv with system site packages can be activated,
 # ci-management/jjb/integration/include-raw-integration-install-robotframework.sh has already
-# been executed
+# been executed test
 
 if [ -f ${WORKSPACE}/env.properties ]; then
     source ${WORKSPACE}/env.properties
