@@ -1,5 +1,5 @@
 #  ============LICENSE_START=======================================================
-#  Copyright (C) 2021 Nordix Foundation
+#  Copyright (C) 2021-2022 Nordix Foundation
 #  Modifications Copyright (C) 2022 Bell Canada
 #  ================================================================================
 #  Licensed under the Apache License, Version 2.0 (the "License");
@@ -190,3 +190,16 @@ paths:
           $ref: 'components.yml#/components/responses/BadRequest'
         '500':
           $ref: 'components.yml#/components/responses/ServerError'
+
+  /v1/simulate:
+    get:
+      tags:
+        - dmi-plugin-internal
+      summary: test
+      description: test
+      operationId: simulateEvents
+      parameters:
+        - $ref: 'components.yml#/components/parameters/numberOfSimulatedEvents'
+      responses:
+        '200':
+          description: OK
