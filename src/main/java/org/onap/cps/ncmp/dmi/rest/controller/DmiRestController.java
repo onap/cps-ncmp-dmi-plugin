@@ -28,6 +28,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.UUID;
 import javax.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -38,10 +39,13 @@ import org.onap.cps.ncmp.dmi.model.ModuleResourcesReadRequest;
 import org.onap.cps.ncmp.dmi.model.ModuleSet;
 import org.onap.cps.ncmp.dmi.model.YangResources;
 import org.onap.cps.ncmp.dmi.notifications.async.AsyncTaskExecutor;
+import org.onap.cps.ncmp.dmi.notifications.avc.AvcEventCreator;
+import org.onap.cps.ncmp.dmi.notifications.avc.AvcEventProducer;
 import org.onap.cps.ncmp.dmi.rest.api.DmiPluginApi;
 import org.onap.cps.ncmp.dmi.rest.api.DmiPluginInternalApi;
 import org.onap.cps.ncmp.dmi.service.DmiService;
 import org.onap.cps.ncmp.dmi.service.model.ModuleReference;
+import org.onap.cps.ncmp.event.model.AvcEvent;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -57,6 +61,8 @@ public class DmiRestController implements DmiPluginApi, DmiPluginInternalApi {
     private final DmiService dmiService;
     private final ObjectMapper objectMapper;
     private final AsyncTaskExecutor asyncTaskExecutor;
+
+    private final AvcEventProducer avcEventProducer;
     private static final Map<OperationEnum, HttpStatus> operationToHttpStatusMap = new HashMap<>(6);
 
     @Value("${notification.async.executor.time-out-value-in-ms:2000}")
@@ -169,6 +175,19 @@ public class DmiRestController implements DmiPluginApi, DmiPluginInternalApi {
         final String sdncResponse =
             getSdncResponseForPassThroughRunning(resourceIdentifier, cmHandle, dataAccessRequest, optionsParamInQuery);
         return new ResponseEntity<>(sdncResponse, operationToHttpStatusMap.get(dataAccessRequest.getOperation()));
+    }
+
+    @Override
+    public ResponseEntity<Void> simulateEvents(final Integer numberOfSimulatedEvents) {
+        final AvcEventCreator avcEventCreator =  new AvcEventCreator();
+
+        for (int i = 0; i < numberOfSimulatedEvents; i++) {
+            final String eventCorrelationId = UUID.randomUUID().toString();
+            final AvcEvent avcEvent = avcEventCreator.createEvent(eventCorrelationId);
+            avcEventProducer.sendMessage(eventCorrelationId, avcEvent);
+        }
+
+        return new ResponseEntity<>(HttpStatus.OK);
     }
 
     private String getSdncResponseForPassThroughRunning(final String resourceIdentifier,

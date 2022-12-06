@@ -28,7 +28,7 @@ import org.onap.cps.ncmp.dmi.exception.ModuleResourceNotFoundException
 import org.onap.cps.ncmp.dmi.exception.ModulesNotFoundException
 import org.onap.cps.ncmp.dmi.notifications.async.AsyncTaskExecutor
 import org.onap.cps.ncmp.dmi.notifications.async.DmiAsyncRequestResponseEventProducer
-
+import org.onap.cps.ncmp.dmi.notifications.avc.AvcEventProducer
 import org.onap.cps.ncmp.dmi.service.model.ModuleReference
 import org.onap.cps.ncmp.dmi.model.ModuleSet
 import org.onap.cps.ncmp.dmi.model.ModuleSetSchemas
@@ -72,6 +72,9 @@ class DmiRestControllerSpec extends Specification {
 
     @SpringBean
     AsyncTaskExecutor asyncTaskExecutor = new AsyncTaskExecutor(cpsAsyncRequestResponseEventProducer)
+
+    @SpringBean
+    AvcEventProducer avcEventProducer = new AvcEventProducer(Mock(KafkaTemplate))
 
     @Value('${rest.api.dmi-base-path}/v1')
     def basePathV1
