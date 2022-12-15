@@ -1,0 +1,280 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "83ea898c_a1fe984d",
+        "filename": "openapi/openapi.yml",
+        "patchSetId": 2
+      },
+      "lineNbr": 194,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2022-12-15T12:42:30Z",
+      "side": 1,
+      "message": "maybe a bit more descriptive e.g simulateDmiDataEvent",
+      "range": {
+        "startLine": 194,
+        "startChar": 6,
+        "endLine": 194,
+        "endChar": 14
+      },
+      "revId": "5d6d4bb925b90e4383602b40620a38483868b2d4",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "e8fd2b32_255e6f88",
+        "filename": "openapi/openapi.yml",
+        "patchSetId": 2
+      },
+      "lineNbr": 200,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2022-12-15T12:42:30Z",
+      "side": 1,
+      "message": "simulateDmiDataAvcEvent",
+      "range": {
+        "startLine": 200,
+        "startChar": 19,
+        "endLine": 200,
+        "endChar": 33
+      },
+      "revId": "5d6d4bb925b90e4383602b40620a38483868b2d4",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "bd354269_f5f56a35",
+        "filename": "openapi/openapi.yml",
+        "patchSetId": 2
+      },
+      "lineNbr": 202,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2022-12-15T12:42:30Z",
+      "side": 1,
+      "message": "given the context of teh method(name) we can simplifyiy the parameter name: numberOfevents",
+      "range": {
+        "startLine": 202,
+        "startChar": 55,
+        "endLine": 202,
+        "endChar": 78
+      },
+      "revId": "5d6d4bb925b90e4383602b40620a38483868b2d4",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "8d1182dc_b4919f77",
+        "filename": "src/main/java/org/onap/cps/ncmp/dmi/notifications/avc/AvcEventCreator.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2022-12-15T12:42:30Z",
+      "side": 1,
+      "message": "DmiDataAvcEventCreator",
+      "range": {
+        "startLine": 34,
+        "startChar": 13,
+        "endLine": 34,
+        "endChar": 29
+      },
+      "revId": "5d6d4bb925b90e4383602b40620a38483868b2d4",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "fe6a99cd_e4e5a12b",
+        "filename": "src/main/java/org/onap/cps/ncmp/dmi/notifications/avc/AvcEventProducer.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2022-12-15T12:42:30Z",
+      "side": 1,
+      "message": "it\u0027s probably convention but I think \u0027Sender\u0027 would (if we use Producer\u0027 for other events producers in our code leave it as is.\nBut do change the prefix to dmiDataAvcEvent",
+      "range": {
+        "startLine": 32,
+        "startChar": 13,
+        "endLine": 32,
+        "endChar": 29
+      },
+      "revId": "5d6d4bb925b90e4383602b40620a38483868b2d4",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "d62056a4_aebbfd3e",
+        "filename": "src/test/groovy/org/onap/cps/ncmp/dmi/notifications/avc/AvcEventExecutorIntegrationSpec.groovy",
+        "patchSetId": 2
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2022-12-15T12:42:30Z",
+      "side": 1,
+      "message": "explain please (as reply to this comment)",
+      "range": {
+        "startLine": 38,
+        "startChar": 15,
+        "endLine": 39,
+        "endChar": 15
+      },
+      "revId": "5d6d4bb925b90e4383602b40620a38483868b2d4",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "b6bad7ed_071b6625",
+        "filename": "src/test/groovy/org/onap/cps/ncmp/dmi/notifications/avc/AvcEventExecutorIntegrationSpec.groovy",
+        "patchSetId": 2
+      },
+      "lineNbr": 43,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2022-12-15T12:42:30Z",
+      "side": 1,
+      "message": "can you use \u0027def\u0027 here?",
+      "range": {
+        "startLine": 43,
+        "startChar": 4,
+        "endLine": 43,
+        "endChar": 21
+      },
+      "revId": "5d6d4bb925b90e4383602b40620a38483868b2d4",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "a2de1f96_2ed9c137",
+        "filename": "src/test/groovy/org/onap/cps/ncmp/dmi/notifications/avc/AvcEventExecutorIntegrationSpec.groovy",
+        "patchSetId": 2
+      },
+      "lineNbr": 47,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2022-12-15T12:42:30Z",
+      "side": 1,
+      "message": "is this the objectUnderTest  ?! since it is an integration tets do you not want toi use taht term?\n(could also affect the name of the whole spec!)",
+      "range": {
+        "startLine": 47,
+        "startChar": 8,
+        "endLine": 47,
+        "endChar": 19
+      },
+      "revId": "5d6d4bb925b90e4383602b40620a38483868b2d4",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "8d56cde6_5912569d",
+        "filename": "src/test/groovy/org/onap/cps/ncmp/dmi/notifications/avc/AvcEventExecutorIntegrationSpec.groovy",
+        "patchSetId": 2
+      },
+      "lineNbr": 67,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2022-12-15T12:42:30Z",
+      "side": 1,
+      "message": "i might combine these 2 so it make a bit more sense from a PO level:  \n\n        and: \u0027the next event from the dmi-cm-events topic\u0027\n            def record \u003d consumer.poll(Duration.ofMillis(1500)).iterator().next()",
+      "range": {
+        "startLine": 64,
+        "startChar": 0,
+        "endLine": 67,
+        "endChar": 50
+      },
+      "revId": "5d6d4bb925b90e4383602b40620a38483868b2d4",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "a86eb3ad_bdc6976f",
+        "filename": "src/test/groovy/org/onap/cps/ncmp/dmi/notifications/avc/AvcEventExecutorIntegrationSpec.groovy",
+        "patchSetId": 2
+      },
+      "lineNbr": 68,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2022-12-15T12:42:30Z",
+      "side": 1,
+      "message": "the \u0027record\u0027 can be converted in to the a Dmi data avc event",
+      "range": {
+        "startLine": 68,
+        "startChar": 14,
+        "endLine": 68,
+        "endChar": 41
+      },
+      "revId": "5d6d4bb925b90e4383602b40620a38483868b2d4",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "aad14e83_2fb33639",
+        "filename": "src/test/groovy/org/onap/cps/ncmp/dmi/notifications/avc/AvcEventExecutorIntegrationSpec.groovy",
+        "patchSetId": 2
+      },
+      "lineNbr": 69,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2022-12-15T12:42:30Z",
+      "side": 1,
+      "message": "follwo classname",
+      "range": {
+        "startLine": 69,
+        "startChar": 21,
+        "endLine": 69,
+        "endChar": 28
+      },
+      "revId": "5d6d4bb925b90e4383602b40620a38483868b2d4",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "de8a387f_f8f1eeb9",
+        "filename": "src/test/groovy/org/onap/cps/ncmp/dmi/notifications/avc/AvcEventExecutorIntegrationSpec.groovy",
+        "patchSetId": 2
+      },
+      "lineNbr": 70,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2022-12-15T12:42:30Z",
+      "side": 1,
+      "message": "is NCMP\n\n(its is hardcode, not a variable from where so might as well spell it out)",
+      "range": {
+        "startLine": 70,
+        "startChar": 25,
+        "endLine": 70,
+        "endChar": 41
+      },
+      "revId": "5d6d4bb925b90e4383602b40620a38483868b2d4",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    }
+  ]
+}
