@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "f512b1b9_f475f4fa",
+        "filename": "openapi/openapi.yml",
+        "patchSetId": 2
+      },
+      "lineNbr": 194,
+      "author": {
+        "id": 7743
+      },
+      "writtenOn": "2023-01-12T09:59:20Z",
+      "side": 1,
+      "message": "Will do",
+      "parentUuid": "83ea898c_a1fe984d",
+      "range": {
+        "startLine": 194,
+        "startChar": 6,
+        "endLine": 194,
+        "endChar": 14
+      },
+      "revId": "5d6d4bb925b90e4383602b40620a38483868b2d4",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "e8fd2b32_255e6f88",
         "filename": "openapi/openapi.yml",
         "patchSetId": 2
@@ -36,6 +60,30 @@
       "writtenOn": "2022-12-15T12:42:30Z",
       "side": 1,
       "message": "simulateDmiDataAvcEvent",
+      "range": {
+        "startLine": 200,
+        "startChar": 19,
+        "endLine": 200,
+        "endChar": 33
+      },
+      "revId": "5d6d4bb925b90e4383602b40620a38483868b2d4",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "54ac8301_5fd09223",
+        "filename": "openapi/openapi.yml",
+        "patchSetId": 2
+      },
+      "lineNbr": 200,
+      "author": {
+        "id": 7743
+      },
+      "writtenOn": "2023-01-12T09:59:20Z",
+      "side": 1,
+      "message": "Will do",
+      "parentUuid": "e8fd2b32_255e6f88",
       "range": {
         "startLine": 200,
         "startChar": 19,
@@ -71,6 +119,30 @@
     },
     {
       "key": {
+        "uuid": "bca74805_3046210d",
+        "filename": "openapi/openapi.yml",
+        "patchSetId": 2
+      },
+      "lineNbr": 202,
+      "author": {
+        "id": 7743
+      },
+      "writtenOn": "2023-01-12T09:59:20Z",
+      "side": 1,
+      "message": "Will do",
+      "parentUuid": "bd354269_f5f56a35",
+      "range": {
+        "startLine": 202,
+        "startChar": 55,
+        "endLine": 202,
+        "endChar": 78
+      },
+      "revId": "5d6d4bb925b90e4383602b40620a38483868b2d4",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "8d1182dc_b4919f77",
         "filename": "src/main/java/org/onap/cps/ncmp/dmi/notifications/avc/AvcEventCreator.java",
         "patchSetId": 2
@@ -82,6 +154,30 @@
       "writtenOn": "2022-12-15T12:42:30Z",
       "side": 1,
       "message": "DmiDataAvcEventCreator",
+      "range": {
+        "startLine": 34,
+        "startChar": 13,
+        "endLine": 34,
+        "endChar": 29
+      },
+      "revId": "5d6d4bb925b90e4383602b40620a38483868b2d4",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "d51a73e3_f4e03831",
+        "filename": "src/main/java/org/onap/cps/ncmp/dmi/notifications/avc/AvcEventCreator.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 7743
+      },
+      "writtenOn": "2023-01-12T09:59:20Z",
+      "side": 1,
+      "message": "Will do",
+      "parentUuid": "8d1182dc_b4919f77",
       "range": {
         "startLine": 34,
         "startChar": 13,
@@ -117,6 +213,30 @@
     },
     {
       "key": {
+        "uuid": "6d0eeed4_cd00163e",
+        "filename": "src/main/java/org/onap/cps/ncmp/dmi/notifications/avc/AvcEventProducer.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 7743
+      },
+      "writtenOn": "2023-01-12T09:59:20Z",
+      "side": 1,
+      "message": "Will do",
+      "parentUuid": "fe6a99cd_e4e5a12b",
+      "range": {
+        "startLine": 32,
+        "startChar": 13,
+        "endLine": 32,
+        "endChar": 29
+      },
+      "revId": "5d6d4bb925b90e4383602b40620a38483868b2d4",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "d62056a4_aebbfd3e",
         "filename": "src/test/groovy/org/onap/cps/ncmp/dmi/notifications/avc/AvcEventExecutorIntegrationSpec.groovy",
         "patchSetId": 2
@@ -128,6 +248,30 @@
       "writtenOn": "2022-12-15T12:42:30Z",
       "side": 1,
       "message": "explain please (as reply to this comment)",
+      "range": {
+        "startLine": 38,
+        "startChar": 15,
+        "endLine": 39,
+        "endChar": 15
+      },
+      "revId": "5d6d4bb925b90e4383602b40620a38483868b2d4",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "fa7b06e5_4fdf46c0",
+        "filename": "src/test/groovy/org/onap/cps/ncmp/dmi/notifications/avc/AvcEventExecutorIntegrationSpec.groovy",
+        "patchSetId": 2
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 7743
+      },
+      "writtenOn": "2023-01-12T09:59:20Z",
+      "side": 1,
+      "message": "It tell spring that this test may affect the applicationContext for other tests running and that spring should recreate it after running this test - Is it strictly needed though is unclear - it is used in other kafka related tests but a test could be run without it to see if it affects other tests",
+      "parentUuid": "d62056a4_aebbfd3e",
       "range": {
         "startLine": 38,
         "startChar": 15,
@@ -186,6 +330,30 @@
     },
     {
       "key": {
+        "uuid": "e9bf63be_5981a737",
+        "filename": "src/test/groovy/org/onap/cps/ncmp/dmi/notifications/avc/AvcEventExecutorIntegrationSpec.groovy",
+        "patchSetId": 2
+      },
+      "lineNbr": 47,
+      "author": {
+        "id": 7743
+      },
+      "writtenOn": "2023-01-12T09:59:20Z",
+      "side": 1,
+      "message": "Might need further discussion",
+      "parentUuid": "a2de1f96_2ed9c137",
+      "range": {
+        "startLine": 47,
+        "startChar": 8,
+        "endLine": 47,
+        "endChar": 19
+      },
+      "revId": "5d6d4bb925b90e4383602b40620a38483868b2d4",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "8d56cde6_5912569d",
         "filename": "src/test/groovy/org/onap/cps/ncmp/dmi/notifications/avc/AvcEventExecutorIntegrationSpec.groovy",
         "patchSetId": 2
@@ -197,6 +365,30 @@
       "writtenOn": "2022-12-15T12:42:30Z",
       "side": 1,
       "message": "i might combine these 2 so it make a bit more sense from a PO level:  \n\n        and: \u0027the next event from the dmi-cm-events topic\u0027\n            def record \u003d consumer.poll(Duration.ofMillis(1500)).iterator().next()",
+      "range": {
+        "startLine": 64,
+        "startChar": 0,
+        "endLine": 67,
+        "endChar": 50
+      },
+      "revId": "5d6d4bb925b90e4383602b40620a38483868b2d4",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "bb14b328_26c54d57",
+        "filename": "src/test/groovy/org/onap/cps/ncmp/dmi/notifications/avc/AvcEventExecutorIntegrationSpec.groovy",
+        "patchSetId": 2
+      },
+      "lineNbr": 67,
+      "author": {
+        "id": 7743
+      },
+      "writtenOn": "2023-01-12T09:59:20Z",
+      "side": 1,
+      "message": "Will do",
+      "parentUuid": "8d56cde6_5912569d",
       "range": {
         "startLine": 64,
         "startChar": 0,
@@ -232,6 +424,30 @@
     },
     {
       "key": {
+        "uuid": "ddda97f1_8635dd80",
+        "filename": "src/test/groovy/org/onap/cps/ncmp/dmi/notifications/avc/AvcEventExecutorIntegrationSpec.groovy",
+        "patchSetId": 2
+      },
+      "lineNbr": 68,
+      "author": {
+        "id": 7743
+      },
+      "writtenOn": "2023-01-12T09:59:20Z",
+      "side": 1,
+      "message": "will do",
+      "parentUuid": "a86eb3ad_bdc6976f",
+      "range": {
+        "startLine": 68,
+        "startChar": 14,
+        "endLine": 68,
+        "endChar": 41
+      },
+      "revId": "5d6d4bb925b90e4383602b40620a38483868b2d4",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "aad14e83_2fb33639",
         "filename": "src/test/groovy/org/onap/cps/ncmp/dmi/notifications/avc/AvcEventExecutorIntegrationSpec.groovy",
         "patchSetId": 2
@@ -255,6 +471,30 @@
     },
     {
       "key": {
+        "uuid": "c666c1be_e46e3b38",
+        "filename": "src/test/groovy/org/onap/cps/ncmp/dmi/notifications/avc/AvcEventExecutorIntegrationSpec.groovy",
+        "patchSetId": 2
+      },
+      "lineNbr": 69,
+      "author": {
+        "id": 7743
+      },
+      "writtenOn": "2023-01-12T09:59:20Z",
+      "side": 1,
+      "message": "Will do",
+      "parentUuid": "aad14e83_2fb33639",
+      "range": {
+        "startLine": 69,
+        "startChar": 21,
+        "endLine": 69,
+        "endChar": 28
+      },
+      "revId": "5d6d4bb925b90e4383602b40620a38483868b2d4",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "de8a387f_f8f1eeb9",
         "filename": "src/test/groovy/org/onap/cps/ncmp/dmi/notifications/avc/AvcEventExecutorIntegrationSpec.groovy",
         "patchSetId": 2
@@ -266,6 +506,30 @@
       "writtenOn": "2022-12-15T12:42:30Z",
       "side": 1,
       "message": "is NCMP\n\n(its is hardcode, not a variable from where so might as well spell it out)",
+      "range": {
+        "startLine": 70,
+        "startChar": 25,
+        "endLine": 70,
+        "endChar": 41
+      },
+      "revId": "5d6d4bb925b90e4383602b40620a38483868b2d4",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "0b736ea6_8c29f131",
+        "filename": "src/test/groovy/org/onap/cps/ncmp/dmi/notifications/avc/AvcEventExecutorIntegrationSpec.groovy",
+        "patchSetId": 2
+      },
+      "lineNbr": 70,
+      "author": {
+        "id": 7743
+      },
+      "writtenOn": "2023-01-12T09:59:20Z",
+      "side": 1,
+      "message": "Will do",
+      "parentUuid": "de8a387f_f8f1eeb9",
       "range": {
         "startLine": 70,
         "startChar": 25,
