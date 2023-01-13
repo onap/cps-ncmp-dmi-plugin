@@ -1,6 +1,6 @@
 /*
  *  ============LICENSE_START=======================================================
- *  Copyright (C) 2021-2022 Nordix Foundation
+ *  Copyright (C) 2021-2023 Nordix Foundation
  *  Modifications Copyright (C) 2022 Bell Canada
  *  ================================================================================
  *  Licensed under the Apache License, Version 2.0 (the "License");
@@ -38,6 +38,7 @@ import org.onap.cps.ncmp.dmi.model.ModuleResourcesReadRequest;
 import org.onap.cps.ncmp.dmi.model.ModuleSet;
 import org.onap.cps.ncmp.dmi.model.YangResources;
 import org.onap.cps.ncmp.dmi.notifications.async.AsyncTaskExecutor;
+import org.onap.cps.ncmp.dmi.notifications.avc.DmiDataAvcEventProducer;
 import org.onap.cps.ncmp.dmi.rest.api.DmiPluginApi;
 import org.onap.cps.ncmp.dmi.rest.api.DmiPluginInternalApi;
 import org.onap.cps.ncmp.dmi.service.DmiService;
@@ -57,6 +58,8 @@ public class DmiRestController implements DmiPluginApi, DmiPluginInternalApi {
     private final DmiService dmiService;
     private final ObjectMapper objectMapper;
     private final AsyncTaskExecutor asyncTaskExecutor;
+
+    private final DmiDataAvcEventProducer dmiDataAvcEventProducer;
     private static final Map<OperationEnum, HttpStatus> operationToHttpStatusMap = new HashMap<>(6);
 
     @Value("${notification.async.executor.time-out-value-in-ms:2000}")
