@@ -105,7 +105,8 @@
             <dependency>
                 <groupId>org.onap.cps</groupId>
                 <artifactId>cps-ncmp-events</artifactId>
-                <version>${cps.version}</version>
+                <!-- Will need to be modified once CPS part is merged -->
+                <version>3.2.1-SNAPSHOT</version>
             </dependency>
         </dependencies>
     </dependencyManagement>

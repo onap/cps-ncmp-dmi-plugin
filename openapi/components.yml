@@ -213,6 +213,13 @@ components:
       examples:
         sample1:
           value: my-topic-name
+    numberOfEvents:
+      name: numberOfEvents
+      in: query
+      description: number of simulated events to publish
+      required: false
+      schema:
+        type: integer
 
 security:
   - basicAuth: []
