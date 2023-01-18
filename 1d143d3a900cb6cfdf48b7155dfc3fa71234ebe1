@@ -1,0 +1,142 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "88c0ad5c_156d2852",
+        "filename": "openapi/components.yml",
+        "patchSetId": 3
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 7931
+      },
+      "writtenOn": "2023-01-18T10:00:04Z",
+      "side": 1,
+      "message": "-2023",
+      "range": {
+        "startLine": 2,
+        "startChar": 22,
+        "endLine": 2,
+        "endChar": 27
+      },
+      "revId": "1d143d3a900cb6cfdf48b7155dfc3fa71234ebe1",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "5fdc431a_e7d6f4fc",
+        "filename": "openapi/openapi.yml",
+        "patchSetId": 3
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 7931
+      },
+      "writtenOn": "2023-01-18T10:00:04Z",
+      "side": 1,
+      "message": "-2023",
+      "range": {
+        "startLine": 2,
+        "startChar": 21,
+        "endLine": 2,
+        "endChar": 26
+      },
+      "revId": "1d143d3a900cb6cfdf48b7155dfc3fa71234ebe1",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "f918c56b_710e5607",
+        "filename": "pom.xml",
+        "patchSetId": 3
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 7931
+      },
+      "writtenOn": "2023-01-18T10:00:04Z",
+      "side": 1,
+      "message": "-2023",
+      "range": {
+        "startLine": 3,
+        "startChar": 21,
+        "endLine": 3,
+        "endChar": 26
+      },
+      "revId": "1d143d3a900cb6cfdf48b7155dfc3fa71234ebe1",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "87952a03_3cf12d42",
+        "filename": "src/main/java/org/onap/cps/ncmp/dmi/rest/controller/DmiRestController.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 7931
+      },
+      "writtenOn": "2023-01-18T10:00:04Z",
+      "side": 1,
+      "message": "-2023",
+      "range": {
+        "startLine": 3,
+        "startChar": 24,
+        "endLine": 3,
+        "endChar": 27
+      },
+      "revId": "1d143d3a900cb6cfdf48b7155dfc3fa71234ebe1",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "efb504ce_26e19f29",
+        "filename": "src/test/groovy/org/onap/cps/ncmp/dmi/api/kafka/MessagingBaseSpec.groovy",
+        "patchSetId": 3
+      },
+      "lineNbr": 44,
+      "author": {
+        "id": 7931
+      },
+      "writtenOn": "2023-01-18T10:00:04Z",
+      "side": 1,
+      "message": "is this a specific version? is this possible to be passed in with env variable?",
+      "range": {
+        "startLine": 44,
+        "startChar": 74,
+        "endLine": 44,
+        "endChar": 130
+      },
+      "revId": "1d143d3a900cb6cfdf48b7155dfc3fa71234ebe1",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "bf0c5da0_efacf1a2",
+        "filename": "src/test/groovy/org/onap/cps/ncmp/dmi/rest/controller/DmiRestControllerSpec.groovy",
+        "patchSetId": 3
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 7931
+      },
+      "writtenOn": "2023-01-18T10:00:04Z",
+      "side": 1,
+      "message": "-2023",
+      "range": {
+        "startLine": 3,
+        "startChar": 24,
+        "endLine": 3,
+        "endChar": 27
+      },
+      "revId": "1d143d3a900cb6cfdf48b7155dfc3fa71234ebe1",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    }
+  ]
+}
