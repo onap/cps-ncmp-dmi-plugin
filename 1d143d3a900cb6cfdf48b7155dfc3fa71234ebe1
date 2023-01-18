@@ -25,6 +25,29 @@
     },
     {
       "key": {
+        "uuid": "853f1ca6_326e3c6b",
+        "filename": "openapi/components.yml",
+        "patchSetId": 3
+      },
+      "lineNbr": 222,
+      "author": {
+        "id": 7965
+      },
+      "writtenOn": "2023-01-18T10:19:32Z",
+      "side": 1,
+      "message": "I thought we agreed not to do anything in the yaml file for this simulated REST endpoint.",
+      "range": {
+        "startLine": 216,
+        "startChar": 4,
+        "endLine": 222,
+        "endChar": 21
+      },
+      "revId": "1d143d3a900cb6cfdf48b7155dfc3fa71234ebe1",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "5fdc431a_e7d6f4fc",
         "filename": "openapi/openapi.yml",
         "patchSetId": 3
@@ -41,6 +64,29 @@
         "startChar": 21,
         "endLine": 2,
         "endChar": 26
+      },
+      "revId": "1d143d3a900cb6cfdf48b7155dfc3fa71234ebe1",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "fb743e3d_77efa5ec",
+        "filename": "openapi/openapi.yml",
+        "patchSetId": 3
+      },
+      "lineNbr": 205,
+      "author": {
+        "id": 7965
+      },
+      "writtenOn": "2023-01-18T10:19:32Z",
+      "side": 1,
+      "message": "should be gone.\nmaybe best to discuss over a call.",
+      "range": {
+        "startLine": 194,
+        "startChar": 2,
+        "endLine": 205,
+        "endChar": 25
       },
       "revId": "1d143d3a900cb6cfdf48b7155dfc3fa71234ebe1",
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
@@ -94,6 +140,29 @@
     },
     {
       "key": {
+        "uuid": "3be4459b_cd0c948e",
+        "filename": "src/main/java/org/onap/cps/ncmp/dmi/rest/controller/DmiRestController.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 191,
+      "author": {
+        "id": 7965
+      },
+      "writtenOn": "2023-01-18T10:19:32Z",
+      "side": 1,
+      "message": "we have to move this simulation code in a separate controller.",
+      "range": {
+        "startLine": 180,
+        "startChar": 4,
+        "endLine": 191,
+        "endChar": 5
+      },
+      "revId": "1d143d3a900cb6cfdf48b7155dfc3fa71234ebe1",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "efb504ce_26e19f29",
         "filename": "src/test/groovy/org/onap/cps/ncmp/dmi/api/kafka/MessagingBaseSpec.groovy",
         "patchSetId": 3
@@ -105,6 +174,30 @@
       "writtenOn": "2023-01-18T10:00:04Z",
       "side": 1,
       "message": "is this a specific version? is this possible to be passed in with env variable?",
+      "range": {
+        "startLine": 44,
+        "startChar": 74,
+        "endLine": 44,
+        "endChar": 130
+      },
+      "revId": "1d143d3a900cb6cfdf48b7155dfc3fa71234ebe1",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "d67c7e0e_d055b34b",
+        "filename": "src/test/groovy/org/onap/cps/ncmp/dmi/api/kafka/MessagingBaseSpec.groovy",
+        "patchSetId": 3
+      },
+      "lineNbr": 44,
+      "author": {
+        "id": 7965
+      },
+      "writtenOn": "2023-01-18T10:19:32Z",
+      "side": 1,
+      "message": "We actually need to handle this in NCMP.\nHere in DMI the code can be simplistic like below. ( i did this for the internal pipeline which was failing ) \n\nstatic kafkaTestContainer \u003d new KafkaContainer(DockerImageName.parse(\u0027cp-kafka:6.2.1\u0027))",
+      "parentUuid": "efb504ce_26e19f29",
       "range": {
         "startLine": 44,
         "startChar": 74,
