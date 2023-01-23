@@ -1,0 +1,113 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "80204726_05da2da1",
+        "filename": "openapi/components.yml",
+        "patchSetId": 4
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 7965
+      },
+      "writtenOn": "2023-01-23T08:51:53Z",
+      "side": 1,
+      "message": "revert this as there is no change.",
+      "range": {
+        "startLine": 2,
+        "startChar": 3,
+        "endLine": 2,
+        "endChar": 44
+      },
+      "revId": "6454a786f91fe499ac5b95c5d59be96cb2ec9837",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "f76f9146_c04a1fb0",
+        "filename": "openapi/openapi.yml",
+        "patchSetId": 4
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 7965
+      },
+      "writtenOn": "2023-01-23T08:51:53Z",
+      "side": 1,
+      "message": "No change here. File should not appear in the patch.",
+      "revId": "6454a786f91fe499ac5b95c5d59be96cb2ec9837",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "d919eeb0_ba2fb5ef",
+        "filename": "pom.xml",
+        "patchSetId": 4
+      },
+      "lineNbr": 109,
+      "author": {
+        "id": 7965
+      },
+      "writtenOn": "2023-01-23T08:51:53Z",
+      "side": 1,
+      "message": "Depends on the change to be merged.\nDont merge this as is. This will need to be parameterized again.",
+      "range": {
+        "startLine": 109,
+        "startChar": 25,
+        "endLine": 109,
+        "endChar": 39
+      },
+      "revId": "6454a786f91fe499ac5b95c5d59be96cb2ec9837",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "e886f0bf_3b6777d7",
+        "filename": "src/main/java/org/onap/cps/ncmp/dmi/notifications/avc/DmiDataAvcEventController.java",
+        "patchSetId": 4
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 7965
+      },
+      "writtenOn": "2023-01-23T08:51:53Z",
+      "side": 1,
+      "message": "NB: may be DmiDataAvcEventSimulationController ??",
+      "range": {
+        "startLine": 39,
+        "startChar": 13,
+        "endLine": 39,
+        "endChar": 38
+      },
+      "revId": "6454a786f91fe499ac5b95c5d59be96cb2ec9837",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "0eeabf61_27dcfc56",
+        "filename": "src/test/groovy/org/onap/cps/ncmp/dmi/rest/controller/DmiRestControllerSpec.groovy",
+        "patchSetId": 4
+      },
+      "lineNbr": 77,
+      "author": {
+        "id": 7965
+      },
+      "writtenOn": "2023-01-23T08:51:53Z",
+      "side": 1,
+      "message": "Amm. Is it still required here?",
+      "range": {
+        "startLine": 76,
+        "startChar": 4,
+        "endLine": 77,
+        "endChar": 95
+      },
+      "revId": "6454a786f91fe499ac5b95c5d59be96cb2ec9837",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    }
+  ]
+}
