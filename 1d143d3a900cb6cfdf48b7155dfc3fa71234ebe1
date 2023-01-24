@@ -48,6 +48,30 @@
     },
     {
       "key": {
+        "uuid": "14b82d4f_4abff1eb",
+        "filename": "openapi/components.yml",
+        "patchSetId": 3
+      },
+      "lineNbr": 222,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2023-01-24T13:59:12Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "853f1ca6_326e3c6b",
+      "range": {
+        "startLine": 216,
+        "startChar": 4,
+        "endLine": 222,
+        "endChar": 21
+      },
+      "revId": "1d143d3a900cb6cfdf48b7155dfc3fa71234ebe1",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5fdc431a_e7d6f4fc",
         "filename": "openapi/openapi.yml",
         "patchSetId": 3
@@ -198,6 +222,30 @@
       "side": 1,
       "message": "We actually need to handle this in NCMP.\nHere in DMI the code can be simplistic like below. ( i did this for the internal pipeline which was failing ) \n\nstatic kafkaTestContainer \u003d new KafkaContainer(DockerImageName.parse(\u0027cp-kafka:6.2.1\u0027))",
       "parentUuid": "efb504ce_26e19f29",
+      "range": {
+        "startLine": 44,
+        "startChar": 74,
+        "endLine": 44,
+        "endChar": 130
+      },
+      "revId": "1d143d3a900cb6cfdf48b7155dfc3fa71234ebe1",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "93931ff0_6674eba1",
+        "filename": "src/test/groovy/org/onap/cps/ncmp/dmi/api/kafka/MessagingBaseSpec.groovy",
+        "patchSetId": 3
+      },
+      "lineNbr": 44,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2023-01-24T13:59:12Z",
+      "side": 1,
+      "message": "yes extracting it and naming it might be a good idea:\nsuggested name: nordixKafkaTestContainer",
+      "parentUuid": "d67c7e0e_d055b34b",
       "range": {
         "startLine": 44,
         "startChar": 74,

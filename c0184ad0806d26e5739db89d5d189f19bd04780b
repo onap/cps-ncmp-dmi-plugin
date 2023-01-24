@@ -1,0 +1,73 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fcbc1dcd_fdd9147c",
+        "filename": "pom.xml",
+        "patchSetId": 5
+      },
+      "lineNbr": 43,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2023-01-24T13:59:12Z",
+      "side": 1,
+      "message": "should we deliver CPS so this can become a non snapshot, using SNA{SHOTs in CO buidl will lead to intermittent issues",
+      "range": {
+        "startLine": 43,
+        "startChar": 26,
+        "endLine": 43,
+        "endChar": 35
+      },
+      "revId": "c0184ad0806d26e5739db89d5d189f19bd04780b",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "7da08f18_ad6c8318",
+        "filename": "src/main/java/org/onap/cps/ncmp/dmi/notifications/avc/DmiDataAvcEventCreator.java",
+        "patchSetId": 5
+      },
+      "lineNbr": 59,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2023-01-24T13:59:12Z",
+      "side": 1,
+      "message": "log something more meaningful/verbose",
+      "range": {
+        "startLine": 59,
+        "startChar": 19,
+        "endLine": 59,
+        "endChar": 35
+      },
+      "revId": "c0184ad0806d26e5739db89d5d189f19bd04780b",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "8ef813a0_d42db304",
+        "filename": "src/test/groovy/org/onap/cps/ncmp/dmi/notifications/avc/AvcEventExecutorIntegrationSpec.groovy",
+        "patchSetId": 5
+      },
+      "lineNbr": 62,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2023-01-24T13:59:12Z",
+      "side": 1,
+      "message": "then!\nNext blocks can all be and:",
+      "range": {
+        "startLine": 62,
+        "startChar": 8,
+        "endLine": 62,
+        "endChar": 11
+      },
+      "revId": "c0184ad0806d26e5739db89d5d189f19bd04780b",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    }
+  ]
+}
