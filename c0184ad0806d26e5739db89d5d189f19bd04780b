@@ -68,6 +68,75 @@
       "revId": "c0184ad0806d26e5739db89d5d189f19bd04780b",
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "319e2740_83323da5",
+        "filename": "src/test/groovy/org/onap/cps/ncmp/dmi/notifications/avc/AvcEventExecutorIntegrationSpec.groovy",
+        "patchSetId": 5
+      },
+      "lineNbr": 62,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2023-01-24T15:00:42Z",
+      "side": 1,
+      "message": "when: \u0027the event is received\u0027",
+      "range": {
+        "startLine": 62,
+        "startChar": 7,
+        "endLine": 62,
+        "endChar": 11
+      },
+      "revId": "c0184ad0806d26e5739db89d5d189f19bd04780b",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "753969da_9b8281e7",
+        "filename": "src/test/groovy/org/onap/cps/ncmp/dmi/notifications/avc/AvcEventExecutorIntegrationSpec.groovy",
+        "patchSetId": 5
+      },
+      "lineNbr": 65,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2023-01-24T15:00:42Z",
+      "side": 1,
+      "message": "this is test objectMapper functionality",
+      "range": {
+        "startLine": 64,
+        "startChar": 0,
+        "endLine": 65,
+        "endChar": 86
+      },
+      "revId": "c0184ad0806d26e5739db89d5d189f19bd04780b",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "e0d5c3c9_2471e0d1",
+        "filename": "src/test/groovy/org/onap/cps/ncmp/dmi/notifications/avc/AvcEventExecutorIntegrationSpec.groovy",
+        "patchSetId": 5
+      },
+      "lineNbr": 67,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2023-01-24T15:00:42Z",
+      "side": 1,
+      "message": "check a basic attribute of the \u0027record\u0027",
+      "range": {
+        "startLine": 66,
+        "startChar": 8,
+        "endLine": 67,
+        "endChar": 54
+      },
+      "revId": "c0184ad0806d26e5739db89d5d189f19bd04780b",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
     }
   ]
 }
