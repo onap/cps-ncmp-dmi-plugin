@@ -67,7 +67,7 @@ cd $WORKSPACE/archives
 git clone "https://gerrit.onap.org/r/cps"
 mkdir -p $WORKSPACE/archives/dc-cps-ncmp
 cat $WORKSPACE/archives/cps/docker-compose/docker-compose.yml
-cp $WORKSPACE/archives/cps/docker-compose/*.yml $WORKSPACE/archives/dc-cps-ncmp
+cp -avr $WORKSPACE/archives/cps/docker-compose/. $WORKSPACE/archives/dc-cps-ncmp
 cd $WORKSPACE/archives/dc-cps-ncmp
 docker-compose up -d
 
