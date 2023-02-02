@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "75351577_57455e04",
+        "filename": "csit/run-project-csit.sh",
+        "patchSetId": 2
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2023-02-02T13:06:53Z",
+      "side": 1,
+      "message": "DMI_PLUGIN_HOME ?\n\nI think we still copy (clone) CPS INTO dmi plugin folder correct?",
+      "range": {
+        "startLine": 22,
+        "startChar": 7,
+        "endLine": 22,
+        "endChar": 11
+      },
+      "revId": "050d332a9ae793b4ca67f3872f92f0eadf91da3a",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    }
+  ]
+}
