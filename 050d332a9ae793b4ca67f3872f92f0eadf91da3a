@@ -22,6 +22,30 @@
       "revId": "050d332a9ae793b4ca67f3872f92f0eadf91da3a",
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "6e23fed5_42124e92",
+        "filename": "csit/run-project-csit.sh",
+        "patchSetId": 2
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 7931
+      },
+      "writtenOn": "2023-02-02T13:17:11Z",
+      "side": 1,
+      "message": "yes we copy cps in dmi folder",
+      "parentUuid": "75351577_57455e04",
+      "range": {
+        "startLine": 22,
+        "startChar": 7,
+        "endLine": 22,
+        "endChar": 11
+      },
+      "revId": "050d332a9ae793b4ca67f3872f92f0eadf91da3a",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
     }
   ]
 }
