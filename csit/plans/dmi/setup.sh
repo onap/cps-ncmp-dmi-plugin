@@ -62,13 +62,9 @@ docker-compose version
 docker-compose up -d
 
 ####################### setup cps-ncmp ############################
-
-cd $WORKSPACE/archives
+cd $DMI_PLUGIN_HOME
 git clone "https://gerrit.onap.org/r/cps"
-mkdir -p $WORKSPACE/archives/dc-cps-ncmp
-cat $WORKSPACE/archives/cps/docker-compose/docker-compose.yml
-cp $WORKSPACE/archives/cps/docker-compose/*.yml $WORKSPACE/archives/dc-cps-ncmp
-cd $WORKSPACE/archives/dc-cps-ncmp
+cd $DMI_PLUGIN_HOME/cps/docker-compose
 docker-compose up -d
 
 ###################### setup sdnc #######################################
