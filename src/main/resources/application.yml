@@ -23,6 +23,18 @@ server:
 dmi:
   service:
     url: ${DMI_SERVICE_URL}
+  kafka:
+    bootstrap-servers: ${KAFKA_BOOTSTRAP_SERVER:localhost:19092}
+    security:
+      protocol: PLAINTEXT
+    producer:
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
+      client-id: ncmp-dmi-plugin
+    consumer:
+      group-id: ${DMI_CONSUMER_GROUP_ID:ncmp-group}
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      value-deserializer: org.springframework.kafka.support.serializer.JsonDeserializer
 
 rest:
   api:
@@ -53,10 +65,16 @@ spring:
       value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
       client-id: ncmp-dmi-plugin
 
+
 app:
   ncmp:
     async:
       topic: ${NCMP_ASYNC_M2M_TOPIC:ncmp-async-m2m}
+  dmi:
+    avc:
+      topic: ${NCMP_DMI_AVC_SUBSCRIPTION_TOPIC:ncmp-dmi-cm-avc-subscription}
+    avc-response:
+      topic: ${DMI_NCMP_AVC_SUBSCRIPTION_TOPIC:dmi-ncmp-cm-avc-subscription}
 
 notification:
   async:
@@ -83,7 +101,7 @@ management:
 
 cps-core:
   baseUrl: http://${CPS_CORE_HOST}:${CPS_CORE_PORT}
-  dmiRegistrationUrl : /ncmpInventory/v1/ch
+  dmiRegistrationUrl: /ncmpInventory/v1/ch
   auth:
     username: ${CPS_CORE_USERNAME}
     password: ${CPS_CORE_PASSWORD}
