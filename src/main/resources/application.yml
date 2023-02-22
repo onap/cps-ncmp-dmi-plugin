@@ -52,11 +52,22 @@ spring:
       key-serializer: org.apache.kafka.common.serialization.StringSerializer
       value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
       client-id: ncmp-dmi-plugin
+    consumer:
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      value-deserializer: org.springframework.kafka.support.serializer.JsonDeserializer
+      properties:
+        spring.json.trusted.packages: cps.ncmp.event.model
+
 
 app:
   ncmp:
     async:
       topic: ${NCMP_ASYNC_M2M_TOPIC:ncmp-async-m2m}
+  dmi:
+    avc:
+      topic: ${NCMP_DMI_AVC_SUBSCRIPTION_TOPIC:ncmp-dmi-cm-avc-subscription}
+    avc-response:
+      topic: ${NCMP_DMI_AVC_SUBSCRIPTION_TOPIC:dmi-ncmp-cm-avc-subscription}
 
 notification:
   async:
