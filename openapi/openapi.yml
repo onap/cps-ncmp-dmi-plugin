@@ -115,20 +115,21 @@ paths:
         '500':
           $ref: 'components.yml#/components/responses/ServerError'
 
-  /v1/ch/{cmHandle}/data/ds/ncmp-datastore:passthrough-operational:
+  /v1/ch/{cmHandle}/data/ds/{datastore-name}:
     post:
       tags:
         - dmi-plugin
-      summary: Get resource data from passthrough-operational for cm handle
-      description: Get resource data from passthrough-operational for cm handle. Will support read operations only.
-      operationId: dataAccessPassthroughOperational
+      summary: Get resource data from passthrough operational or running for cm handle
+      description: Get resource data from passthrough operational or running for cm handle.
+      operationId: dataAccessPassthrough
       parameters:
+        - $ref: 'components.yml#/components/parameters/datastoreName'
         - $ref: 'components.yml#/components/parameters/cmHandleInPath'
         - $ref: 'components.yml#/components/parameters/resourceIdentifierInQuery'
         - $ref: 'components.yml#/components/parameters/optionsParamInQuery'
         - $ref: 'components.yml#/components/parameters/topicParamInQuery'
       requestBody:
-        description: Operational body
+        description: Operational or Running body
         content:
           application/json:
             schema:
@@ -144,48 +145,6 @@ paths:
                   - yangSource: my-yang-source
                     moduleName: my-module-name
                     revision: my-revision
-        '400':
-          $ref: 'components.yml#/components/responses/BadRequest'
-        '500':
-          $ref: 'components.yml#/components/responses/ServerError'
-
-  /v1/ch/{cmHandle}/data/ds/ncmp-datastore:passthrough-running:
-    post:
-      tags:
-        - dmi-plugin
-      summary: Get, Create or Update request for data passthrough-running for a cm-handle
-      description: Post request to Get, Create or to Update resource data for a cm-handle. Since all requests need to include additional information in a request body HTTP Post is used for all use cases and the actual operation is defined in the request body instead.
-      operationId: dataAccessPassthroughRunning
-      parameters:
-        - $ref: 'components.yml#/components/parameters/cmHandleInPath'
-        - $ref: 'components.yml#/components/parameters/resourceIdentifierInQuery'
-        - $ref: 'components.yml#/components/parameters/optionsParamInQuery'
-        - $ref: 'components.yml#/components/parameters/topicParamInQuery'
-      requestBody:
-        content:
-          application/json:
-            schema:
-              $ref: 'components.yml#/components/schemas/DataAccessRequest'
-      responses:
-        '200':
-          description: OK
-          content:
-            application/json:
-              schema:
-                type: object
-                example:
-                  - yangSource: my-yang-source
-                    moduleName: my-module-name
-                    revision: my-revision
-        '201':
-          description: Created
-          content:
-            text/plain:
-              schema:
-                type: string
-                example: my-resource
-        '204':
-          $ref: 'components.yml#/components/responses/NoContent'
         '400':
           $ref: 'components.yml#/components/responses/BadRequest'
         '500':
