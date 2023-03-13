@@ -52,11 +52,24 @@ spring:
       key-serializer: org.apache.kafka.common.serialization.StringSerializer
       value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
       client-id: ncmp-dmi-plugin
+    consumer:
+      group-id: ${NCMP_CONSUMER_GROUP_ID:ncmp-group}
+      key-deserializer: org.springframework.kafka.support.serializer.ErrorHandlingDeserializer
+      value-deserializer: org.springframework.kafka.support.serializer.ErrorHandlingDeserializer
+      properties:
+        spring.deserializer.key.delegate.class: org.apache.kafka.common.serialization.StringDeserializer
+        spring.deserializer.value.delegate.class: org.springframework.kafka.support.serializer.JsonDeserializer
+        spring.json.use.type.headers: false
+
 
 app:
   ncmp:
     async:
       topic: ${NCMP_ASYNC_M2M_TOPIC:ncmp-async-m2m}
+  dmi:
+    avc:
+      subscription-topic: ${DMI_CM_AVC_SUBSCRIPTION:ncmp-dmi-cm-avc-subscription}
+      subscription-response-topic: ${DMI_CM_AVC_SUBSCRIPTION_RESPONSE:dmi-ncmp-cm-avc-subscription}
 
 notification:
   async:
