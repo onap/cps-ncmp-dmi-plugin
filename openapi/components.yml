@@ -213,6 +213,14 @@ components:
       examples:
         sample1:
           value: my-topic-name
+    datastoreName:
+      name: datastore-name
+      in: path
+      description: The type of the requested data
+      required: true
+      schema:
+        type: string
+        example: ncmp-datastore:passthrough-operational or ncmp-datastore:passthrough-running
 
 security:
   - basicAuth: []

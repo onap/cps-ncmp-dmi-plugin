@@ -40,6 +40,7 @@ import org.onap.cps.ncmp.dmi.model.YangResources;
 import org.onap.cps.ncmp.dmi.notifications.async.AsyncTaskExecutor;
 import org.onap.cps.ncmp.dmi.rest.api.DmiPluginApi;
 import org.onap.cps.ncmp.dmi.rest.api.DmiPluginInternalApi;
+import org.onap.cps.ncmp.dmi.rest.controller.handlers.DatastoreType;
 import org.onap.cps.ncmp.dmi.service.DmiService;
 import org.onap.cps.ncmp.dmi.service.model.ModuleReference;
 import org.springframework.beans.factory.annotation.Value;
@@ -104,10 +105,12 @@ public class DmiRestController implements DmiPluginApi, DmiPluginInternalApi {
     }
 
     /**
-     * This method fetches the resource for given cm handle using pass through operational datastore. It filters the
-     * response on the basis of options query parameters and returns response. Does not support write operations.
+     * This method fetches the resource for given cm handle using pass through operational or running datastore.
+     * It filters the response on the basis of options query parameters and returns response. Passthrough Running
+     * supports both read and write operation whereas passthrough operational does not support write operations.
      *
      * @param resourceIdentifier    resource identifier to fetch data
+     * @param datastoreName       name of the datastore
      * @param cmHandle              cm handle identifier
      * @param dataAccessRequest     data Access Request
      * @param optionsParamInQuery   options query parameter
@@ -115,10 +118,24 @@ public class DmiRestController implements DmiPluginApi, DmiPluginInternalApi {
      * @return {@code ResponseEntity} response entity
      */
     @Override
-    public ResponseEntity<Object> dataAccessPassthroughOperational(final String resourceIdentifier,
+    public ResponseEntity<Object> dataAccessPassthrough(final String resourceIdentifier,
+                                                        final String datastoreName,
+                                                        final String cmHandle,
+                                                        final DataAccessRequest dataAccessRequest,
+                                                        final String optionsParamInQuery,
+                                                        final String topicParamInQuery) {
+        if (DatastoreType.PASSTHROUGH_OPERATIONAL == DatastoreType.fromDatastoreName(datastoreName)) {
+            return dataAccessPassthroughOperational(resourceIdentifier, cmHandle, dataAccessRequest,
+                    optionsParamInQuery, topicParamInQuery);
+        }
+        return dataAccessPassthroughRunning(resourceIdentifier, cmHandle, dataAccessRequest,
+                optionsParamInQuery, topicParamInQuery);
+    }
+
+    private ResponseEntity<Object> dataAccessPassthroughOperational(final String resourceIdentifier,
                                                                    final String cmHandle,
-                                                                   final @Valid DataAccessRequest dataAccessRequest,
-                                                                   final @Valid String optionsParamInQuery,
+                                                                   final DataAccessRequest dataAccessRequest,
+                                                                   final String optionsParamInQuery,
                                                                    final String topicParamInQuery) {
         if (isReadOperation(dataAccessRequest)) {
             if (hasTopic(topicParamInQuery)) {
@@ -133,23 +150,10 @@ public class DmiRestController implements DmiPluginApi, DmiPluginInternalApi {
         return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
     }
 
-    /**
-     * This method fetches the resource for given cm handle using pass through running datastore. It filters the
-     * response on the basis of options query parameters and returns response. It supports both read and write
-     * operation.
-     *
-     * @param resourceIdentifier    resource identifier to fetch data
-     * @param cmHandle              cm handle identifier
-     * @param dataAccessRequest     data Access Request
-     * @param optionsParamInQuery   options query parameter
-     * @param topicParamInQuery     topic name for (triggering) async responses
-     * @return {@code ResponseEntity} response entity
-     */
-    @Override
-    public ResponseEntity<Object> dataAccessPassthroughRunning(final String resourceIdentifier,
+    private ResponseEntity<Object> dataAccessPassthroughRunning(final String resourceIdentifier,
                                                                final String cmHandle,
-                                                               final @Valid DataAccessRequest dataAccessRequest,
-                                                               final @Valid String optionsParamInQuery,
+                                                               final DataAccessRequest dataAccessRequest,
+                                                               final String optionsParamInQuery,
                                                                final String topicParamInQuery) {
         if (hasTopic(topicParamInQuery)) {
             asyncTaskExecutor.executeAsyncTask(() ->
