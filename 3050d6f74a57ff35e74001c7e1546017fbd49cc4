@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "c5e11b4d_34d705b6",
+        "filename": "src/main/java/org/onap/cps/ncmp/dmi/rest/controller/handlers/DatastoreType.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 55,
+      "author": {
+        "id": 6742
+      },
+      "writtenOn": "2023-03-13T16:33:38Z",
+      "side": 1,
+      "message": "Minor/non-blocking comment: Since there are only two values in the enum, isn\u0027t a HashMap overkill? It would probably be more efficient to check against each of the two values using an if-statement.",
+      "range": {
+        "startLine": 55,
+        "startChar": 44,
+        "endLine": 55,
+        "endChar": 92
+      },
+      "revId": "3050d6f74a57ff35e74001c7e1546017fbd49cc4",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    }
+  ]
+}
