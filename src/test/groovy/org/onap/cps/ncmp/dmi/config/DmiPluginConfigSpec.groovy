@@ -36,6 +36,7 @@ class DmiPluginConfigSpec extends Specification {
     def 'DMI plugin properties configuration.'() {
         expect: 'DMI plugin properties are set to values in test configuration yaml file'
             dmiPluginProperties.dmiServiceUrl == 'some url for the dmi service'
+            dmiPluginProperties.dmiServiceName == 'ncmp-dmi-plugin'
     }
 
     def 'DMI plugin api creation.'() {

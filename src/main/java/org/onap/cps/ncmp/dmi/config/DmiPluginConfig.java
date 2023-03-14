@@ -46,6 +46,9 @@ public class DmiPluginConfig {
 
         @Value("${dmi.service.url}")
         private String dmiServiceUrl;
+
+        @Value("${dmi.service.name}")
+        private String dmiServiceName;
     }
 }
 
