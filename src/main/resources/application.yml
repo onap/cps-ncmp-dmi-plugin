@@ -1,5 +1,5 @@
 #  ============LICENSE_START=======================================================
-#  Copyright (C) 2021-2022 Nordix Foundation
+#  Copyright (C) 2021-2023 Nordix Foundation
 #  Modifications Copyright (C) 2021 Bell Canada.
 #  ================================================================================
 #  Licensed under the Apache License, Version 2.0 (the "License");
@@ -23,6 +23,7 @@ server:
 dmi:
   service:
     url: ${DMI_SERVICE_URL}
+    name: ${DMI_SERVICE_NAME:ncmp-dmi-plugin}
 
 rest:
   api:
@@ -52,11 +53,23 @@ spring:
       key-serializer: org.apache.kafka.common.serialization.StringSerializer
       value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
       client-id: ncmp-dmi-plugin
+    consumer:
+      group-id: ${NCMP_CONSUMER_GROUP_ID:ncmp-group}
+      key-deserializer: org.springframework.kafka.support.serializer.ErrorHandlingDeserializer
+      value-deserializer: org.springframework.kafka.support.serializer.ErrorHandlingDeserializer
+      properties:
+        spring.deserializer.key.delegate.class: org.apache.kafka.common.serialization.StringDeserializer
+        spring.deserializer.value.delegate.class: org.springframework.kafka.support.serializer.JsonDeserializer
+        spring.json.use.type.headers: false
 
 app:
   ncmp:
     async:
       topic: ${NCMP_ASYNC_M2M_TOPIC:ncmp-async-m2m}
+  dmi:
+    avc:
+      subscription-topic: ${DMI_CM_AVC_SUBSCRIPTION:ncmp-dmi-cm-avc-subscription-${dmi.service.name}}
+      subscription-response-topic: ${DMI_CM_AVC_SUBSCRIPTION_RESPONSE:dmi-ncmp-cm-avc-subscription}
 
 notification:
   async:
