@@ -43,6 +43,9 @@ cps-core:
 dmi:
   service:
     url: some url for the dmi service
+  avc:
+    subscription-topic: ncmp-dmi-cm-avc-subscription
+    subscription-response-topic: dmi-ncmp-cm-avc-subscription
 
 spring:
   application:
