@@ -1,0 +1,61 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1f65b409_485d2dcc",
+        "filename": "src/main/java/org/onap/cps/ncmp/dmi/notifications/avc/SubscriptionEventConsumer.java",
+        "patchSetId": 5
+      },
+      "lineNbr": 60,
+      "author": {
+        "id": 7965
+      },
+      "writtenOn": "2023-03-16T12:57:43Z",
+      "side": 1,
+      "message": "so here we are just consuming the event --\u003e forming the response --\u003e send back to NCMP\n\nRemind me , what next we will do here.",
+      "revId": "1b7260e8f9ef7d118a26cb6b0621b53b9bd7acb0",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "8f20e2bb_04321acd",
+        "filename": "src/main/java/org/onap/cps/ncmp/dmi/notifications/avc/SubscriptionEventConsumer.java",
+        "patchSetId": 5
+      },
+      "lineNbr": 71,
+      "author": {
+        "id": 7965
+      },
+      "writtenOn": "2023-03-16T12:57:43Z",
+      "side": 1,
+      "message": "NB: we can as well move it to a private method ( just like u did it for sending the subscription response )",
+      "range": {
+        "startLine": 68,
+        "startChar": 8,
+        "endLine": 71,
+        "endChar": 58
+      },
+      "revId": "1b7260e8f9ef7d118a26cb6b0621b53b9bd7acb0",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "2e8b43a3_fec600e1",
+        "filename": "src/main/java/org/onap/cps/ncmp/dmi/service/model/SubscriptionEventResponseStatus.java",
+        "patchSetId": 5
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 7965
+      },
+      "writtenOn": "2023-03-16T12:57:43Z",
+      "side": 1,
+      "message": "So for now we will start with 2 status , later we will look to add more here ??\nis that the plan ? \nlike PARTIALLY_COMPLETED etc.",
+      "revId": "1b7260e8f9ef7d118a26cb6b0621b53b9bd7acb0",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    }
+  ]
+}
