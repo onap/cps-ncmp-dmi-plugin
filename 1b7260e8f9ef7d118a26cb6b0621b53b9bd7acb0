@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "1c5f28dd_cb97e8e7",
+        "filename": "src/main/java/org/onap/cps/ncmp/dmi/notifications/avc/SubscriptionEventConsumer.java",
+        "patchSetId": 5
+      },
+      "lineNbr": 60,
+      "author": {
+        "id": 8063
+      },
+      "writtenOn": "2023-03-16T13:54:06Z",
+      "side": 1,
+      "message": "That is right. Yep, I will do that.",
+      "parentUuid": "1f65b409_485d2dcc",
+      "revId": "1b7260e8f9ef7d118a26cb6b0621b53b9bd7acb0",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "8f20e2bb_04321acd",
         "filename": "src/main/java/org/onap/cps/ncmp/dmi/notifications/avc/SubscriptionEventConsumer.java",
         "patchSetId": 5
@@ -42,6 +60,30 @@
     },
     {
       "key": {
+        "uuid": "042430b2_3c1e96e0",
+        "filename": "src/main/java/org/onap/cps/ncmp/dmi/notifications/avc/SubscriptionEventConsumer.java",
+        "patchSetId": 5
+      },
+      "lineNbr": 71,
+      "author": {
+        "id": 8063
+      },
+      "writtenOn": "2023-03-16T13:54:06Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "8f20e2bb_04321acd",
+      "range": {
+        "startLine": 68,
+        "startChar": 8,
+        "endLine": 71,
+        "endChar": 58
+      },
+      "revId": "1b7260e8f9ef7d118a26cb6b0621b53b9bd7acb0",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "2e8b43a3_fec600e1",
         "filename": "src/main/java/org/onap/cps/ncmp/dmi/service/model/SubscriptionEventResponseStatus.java",
         "patchSetId": 5
@@ -53,6 +95,24 @@
       "writtenOn": "2023-03-16T12:57:43Z",
       "side": 1,
       "message": "So for now we will start with 2 status , later we will look to add more here ??\nis that the plan ? \nlike PARTIALLY_COMPLETED etc.",
+      "revId": "1b7260e8f9ef7d118a26cb6b0621b53b9bd7acb0",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "02382c7d_b1cff1f3",
+        "filename": "src/main/java/org/onap/cps/ncmp/dmi/service/model/SubscriptionEventResponseStatus.java",
+        "patchSetId": 5
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 8063
+      },
+      "writtenOn": "2023-03-16T13:54:06Z",
+      "side": 1,
+      "message": "I think so. Initially, it is thought to have either accepted or declined.",
+      "parentUuid": "2e8b43a3_fec600e1",
       "revId": "1b7260e8f9ef7d118a26cb6b0621b53b9bd7acb0",
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
       "unresolved": true
