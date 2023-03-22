@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "b7c97cab_6321b160",
+        "filename": "src/main/resources/application.yml",
+        "patchSetId": 9
+      },
+      "lineNbr": 71,
+      "author": {
+        "id": 8063
+      },
+      "writtenOn": "2023-03-22T12:24:21Z",
+      "side": 1,
+      "message": "As far as remember, team got decided on a naming convention for the topics, in which direction the message was pushed. For example, if the message is being pushed by dmi to ncmp, then it could be a topic name starting like dmi-ncmp-... I think it is by design. However, we can discuss about this subject more.",
+      "parentUuid": "7aa0152b_3ec65b57",
+      "range": {
+        "startLine": 71,
+        "startChar": 70,
+        "endLine": 71,
+        "endChar": 98
+      },
+      "revId": "a61d7caba965219d0cecbf5a141ccf9b0e222590",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "72eac9f9_40380c77",
         "filename": "src/test/resources/application.yml",
         "patchSetId": 9
@@ -36,6 +60,30 @@
       "writtenOn": "2023-03-22T12:02:25Z",
       "side": 1,
       "message": "NB: Same as previous question.",
+      "range": {
+        "startLine": 48,
+        "startChar": 33,
+        "endLine": 48,
+        "endChar": 61
+      },
+      "revId": "a61d7caba965219d0cecbf5a141ccf9b0e222590",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "7cfdcff3_5f61f02b",
+        "filename": "src/test/resources/application.yml",
+        "patchSetId": 9
+      },
+      "lineNbr": 48,
+      "author": {
+        "id": 8063
+      },
+      "writtenOn": "2023-03-22T12:24:21Z",
+      "side": 1,
+      "message": "Replied in line above.",
+      "parentUuid": "72eac9f9_40380c77",
       "range": {
         "startLine": 48,
         "startChar": 33,
