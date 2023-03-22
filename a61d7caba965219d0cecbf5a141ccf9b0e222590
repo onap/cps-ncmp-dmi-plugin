@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7aa0152b_3ec65b57",
+        "filename": "src/main/resources/application.yml",
+        "patchSetId": 9
+      },
+      "lineNbr": 71,
+      "author": {
+        "id": 8171
+      },
+      "writtenOn": "2023-03-22T12:02:25Z",
+      "side": 1,
+      "message": "NB: would \u0027ncmp-dmi-cm-avc-subscription-response\u0027 not be more readable or is the topic name been decided by design?",
+      "range": {
+        "startLine": 71,
+        "startChar": 70,
+        "endLine": 71,
+        "endChar": 98
+      },
+      "revId": "a61d7caba965219d0cecbf5a141ccf9b0e222590",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "72eac9f9_40380c77",
+        "filename": "src/test/resources/application.yml",
+        "patchSetId": 9
+      },
+      "lineNbr": 48,
+      "author": {
+        "id": 8171
+      },
+      "writtenOn": "2023-03-22T12:02:25Z",
+      "side": 1,
+      "message": "NB: Same as previous question.",
+      "range": {
+        "startLine": 48,
+        "startChar": 33,
+        "endLine": 48,
+        "endChar": 61
+      },
+      "revId": "a61d7caba965219d0cecbf5a141ccf9b0e222590",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    }
+  ]
+}
