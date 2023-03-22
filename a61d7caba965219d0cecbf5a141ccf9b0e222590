@@ -49,6 +49,30 @@
     },
     {
       "key": {
+        "uuid": "2b740d3c_3cd68ff0",
+        "filename": "src/main/resources/application.yml",
+        "patchSetId": 9
+      },
+      "lineNbr": 71,
+      "author": {
+        "id": 8063
+      },
+      "writtenOn": "2023-03-22T22:12:20Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "b7c97cab_6321b160",
+      "range": {
+        "startLine": 71,
+        "startChar": 70,
+        "endLine": 71,
+        "endChar": 98
+      },
+      "revId": "a61d7caba965219d0cecbf5a141ccf9b0e222590",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "72eac9f9_40380c77",
         "filename": "src/test/resources/application.yml",
         "patchSetId": 9
@@ -93,6 +117,30 @@
       "revId": "a61d7caba965219d0cecbf5a141ccf9b0e222590",
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "423b2855_b47a4bef",
+        "filename": "src/test/resources/application.yml",
+        "patchSetId": 9
+      },
+      "lineNbr": 48,
+      "author": {
+        "id": 8063
+      },
+      "writtenOn": "2023-03-22T22:12:20Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7cfdcff3_5f61f02b",
+      "range": {
+        "startLine": 48,
+        "startChar": 33,
+        "endLine": 48,
+        "endChar": 61
+      },
+      "revId": "a61d7caba965219d0cecbf5a141ccf9b0e222590",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
     }
   ]
 }
