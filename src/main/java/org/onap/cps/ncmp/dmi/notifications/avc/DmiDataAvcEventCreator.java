@@ -22,10 +22,11 @@ package org.onap.cps.ncmp.dmi.notifications.avc;
 
 import java.time.ZonedDateTime;
 import java.time.format.DateTimeFormatter;
+import java.util.LinkedHashMap;
+import java.util.Map;
 import java.util.UUID;
 import lombok.extern.slf4j.Slf4j;
 import org.onap.cps.ncmp.event.model.AvcEvent;
-import org.onap.cps.ncmp.event.model.Event;
 
 /**
  * Helper to create AvcEvents.
@@ -49,12 +50,12 @@ public class DmiDataAvcEventCreator {
         avcEvent.setEventType(AvcEvent.class.getName());
         avcEvent.setEventSchema("urn:cps:" + AvcEvent.class.getName());
         avcEvent.setEventSchemaVersion("v1");
-        avcEvent.setEventTarget("NCMP");
+        avcEvent.setEventSource("NCMP");
         avcEvent.setEventTime(ZonedDateTime.now().format(dateTimeFormatter));
 
-        final Event event = new Event();
-        event.setAdditionalProperty("payload", "Hello world!");
-        avcEvent.setEvent(event);
+        final Map<String, Object> eventPayload = new LinkedHashMap<>();
+        eventPayload.put("push-change-update", "{}");
+        avcEvent.setEvent(eventPayload);
 
         log.debug("Avc Event Created ID: {}", avcEvent.getEventId());
         return avcEvent;
