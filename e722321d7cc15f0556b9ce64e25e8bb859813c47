@@ -2,6 +2,46 @@
   "comments": [
     {
       "key": {
+        "uuid": "29d5b931_7a6cd48a",
+        "filename": "src/main/java/org/onap/cps/ncmp/dmi/notifications/avc/SubscriptionEventConsumer.java",
+        "patchSetId": 13
+      },
+      "lineNbr": 68,
+      "author": {
+        "id": 7965
+      },
+      "writtenOn": "2023-03-24T16:07:09Z",
+      "side": 1,
+      "message": "NB: this method can be the first method for readability purpose.\n( if u change it then do it otherwise its just a non-blocking comment )",
+      "revId": "e722321d7cc15f0556b9ce64e25e8bb859813c47",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "c8335569_c60e0dfb",
+        "filename": "src/main/java/org/onap/cps/ncmp/dmi/service/model/SubscriptionEventResponse.java",
+        "patchSetId": 13
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 7965
+      },
+      "writtenOn": "2023-03-24T16:07:09Z",
+      "side": 1,
+      "message": "basically this would be the same as the dmiRequestId.right ?? \nif yes then do we need to revisit the name here ??\nteam suggestions ?",
+      "range": {
+        "startLine": 33,
+        "startChar": 19,
+        "endLine": 33,
+        "endChar": 35
+      },
+      "revId": "e722321d7cc15f0556b9ce64e25e8bb859813c47",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "17989855_6a27c84f",
         "filename": "src/main/resources/application.yml",
         "patchSetId": 13
@@ -18,6 +58,52 @@
         "startChar": 25,
         "endLine": 2,
         "endChar": 26
+      },
+      "revId": "e722321d7cc15f0556b9ce64e25e8bb859813c47",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "12078b27_86b0ef26",
+        "filename": "src/test/groovy/org/onap/cps/ncmp/dmi/notifications/avc/SubscriptionEventConsumerSpec.groovy",
+        "patchSetId": 13
+      },
+      "lineNbr": 92,
+      "author": {
+        "id": 7965
+      },
+      "writtenOn": "2023-03-24T16:07:09Z",
+      "side": 1,
+      "message": "same as below comment.",
+      "range": {
+        "startLine": 92,
+        "startChar": 12,
+        "endLine": 92,
+        "endChar": 72
+      },
+      "revId": "e722321d7cc15f0556b9ce64e25e8bb859813c47",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "5c56cb4e_45027ae1",
+        "filename": "src/test/groovy/org/onap/cps/ncmp/dmi/notifications/avc/SubscriptionEventConsumerSpec.groovy",
+        "patchSetId": 13
+      },
+      "lineNbr": 98,
+      "author": {
+        "id": 7965
+      },
+      "writtenOn": "2023-03-24T16:07:09Z",
+      "side": 1,
+      "message": "NB: def cmHandleIds \u003d [\u0027CmHandle1\u0027, \u0027CmHandle2\u0027] as Set",
+      "range": {
+        "startLine": 98,
+        "startChar": 12,
+        "endLine": 98,
+        "endChar": 64
       },
       "revId": "e722321d7cc15f0556b9ce64e25e8bb859813c47",
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
