@@ -2,6 +2,52 @@
   "comments": [
     {
       "key": {
+        "uuid": "8aeb4060_3b7ebdfe",
+        "filename": "src/main/java/org/onap/cps/ncmp/dmi/notifications/avc/SubscriptionEventConsumer.java",
+        "patchSetId": 12
+      },
+      "lineNbr": 82,
+      "author": {
+        "id": 7830
+      },
+      "writtenOn": "2023-03-24T13:23:49Z",
+      "side": 1,
+      "message": "NB capitalise the C",
+      "range": {
+        "startLine": 82,
+        "startChar": 97,
+        "endLine": 82,
+        "endChar": 98
+      },
+      "revId": "c15b8d970290177d2aefc9098dfb25cfb26bca9f",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "ff5f878a_fe8af70b",
+        "filename": "src/main/java/org/onap/cps/ncmp/dmi/service/model/SubscriptionEventResponse.java",
+        "patchSetId": 12
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 7830
+      },
+      "writtenOn": "2023-03-24T13:23:49Z",
+      "side": 1,
+      "message": "I think we wanted the clientName (being renamed to subscriptionName) here too?",
+      "range": {
+        "startLine": 33,
+        "startChar": 4,
+        "endLine": 33,
+        "endChar": 28
+      },
+      "revId": "c15b8d970290177d2aefc9098dfb25cfb26bca9f",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "c9aad553_76be86c8",
         "filename": "src/main/resources/application.yml",
         "patchSetId": 12
