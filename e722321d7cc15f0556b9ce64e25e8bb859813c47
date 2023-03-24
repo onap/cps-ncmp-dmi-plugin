@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "17989855_6a27c84f",
+        "filename": "src/main/resources/application.yml",
+        "patchSetId": 13
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 8171
+      },
+      "writtenOn": "2023-03-24T15:59:52Z",
+      "side": 1,
+      "message": "NB: 2023",
+      "range": {
+        "startLine": 2,
+        "startChar": 25,
+        "endLine": 2,
+        "endChar": 26
+      },
+      "revId": "e722321d7cc15f0556b9ce64e25e8bb859813c47",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "7907554e_d276c1aa",
+        "filename": "src/test/resources/application.yml",
+        "patchSetId": 13
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 8171
+      },
+      "writtenOn": "2023-03-24T15:59:52Z",
+      "side": 1,
+      "message": "NB:2023",
+      "range": {
+        "startLine": 2,
+        "startChar": 24,
+        "endLine": 2,
+        "endChar": 25
+      },
+      "revId": "e722321d7cc15f0556b9ce64e25e8bb859813c47",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    }
+  ]
+}
