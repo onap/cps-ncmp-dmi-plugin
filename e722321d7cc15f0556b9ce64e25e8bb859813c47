@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "c5eb45cf_888d0f75",
+        "filename": "src/main/java/org/onap/cps/ncmp/dmi/notifications/avc/SubscriptionEventConsumer.java",
+        "patchSetId": 13
+      },
+      "lineNbr": 68,
+      "author": {
+        "id": 8063
+      },
+      "writtenOn": "2023-03-24T16:51:09Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "29d5b931_7a6cd48a",
+      "revId": "e722321d7cc15f0556b9ce64e25e8bb859813c47",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "c8335569_c60e0dfb",
         "filename": "src/main/java/org/onap/cps/ncmp/dmi/service/model/SubscriptionEventResponse.java",
         "patchSetId": 13
@@ -30,6 +48,30 @@
       "writtenOn": "2023-03-24T16:07:09Z",
       "side": 1,
       "message": "basically this would be the same as the dmiRequestId.right ?? \nif yes then do we need to revisit the name here ??\nteam suggestions ?",
+      "range": {
+        "startLine": 33,
+        "startChar": 19,
+        "endLine": 33,
+        "endChar": 35
+      },
+      "revId": "e722321d7cc15f0556b9ce64e25e8bb859813c47",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "ec33aaaf_95cb1aa2",
+        "filename": "src/main/java/org/onap/cps/ncmp/dmi/service/model/SubscriptionEventResponse.java",
+        "patchSetId": 13
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 8063
+      },
+      "writtenOn": "2023-03-24T16:51:09Z",
+      "side": 1,
+      "message": "I think, subscriptionName is ok here as identifier. Since the struct for subscription is look like the below:\n    \"subscription\": {\n      \"clientID\": \"SCO-9989752\",\n      \"name\": \"cm-subscription-001\"\n    },",
+      "parentUuid": "c8335569_c60e0dfb",
       "range": {
         "startLine": 33,
         "startChar": 19,
@@ -65,6 +107,30 @@
     },
     {
       "key": {
+        "uuid": "c854f0b6_89ad6e83",
+        "filename": "src/main/resources/application.yml",
+        "patchSetId": 13
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 8063
+      },
+      "writtenOn": "2023-03-24T16:51:09Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "17989855_6a27c84f",
+      "range": {
+        "startLine": 2,
+        "startChar": 25,
+        "endLine": 2,
+        "endChar": 26
+      },
+      "revId": "e722321d7cc15f0556b9ce64e25e8bb859813c47",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "12078b27_86b0ef26",
         "filename": "src/test/groovy/org/onap/cps/ncmp/dmi/notifications/avc/SubscriptionEventConsumerSpec.groovy",
         "patchSetId": 13
@@ -85,6 +151,30 @@
       "revId": "e722321d7cc15f0556b9ce64e25e8bb859813c47",
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "0bcf9712_c4a6ed3e",
+        "filename": "src/test/groovy/org/onap/cps/ncmp/dmi/notifications/avc/SubscriptionEventConsumerSpec.groovy",
+        "patchSetId": 13
+      },
+      "lineNbr": 92,
+      "author": {
+        "id": 8063
+      },
+      "writtenOn": "2023-03-24T16:51:09Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "12078b27_86b0ef26",
+      "range": {
+        "startLine": 92,
+        "startChar": 12,
+        "endLine": 92,
+        "endChar": 72
+      },
+      "revId": "e722321d7cc15f0556b9ce64e25e8bb859813c47",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
     },
     {
       "key": {
@@ -111,6 +201,30 @@
     },
     {
       "key": {
+        "uuid": "ecf96b3c_ede92bce",
+        "filename": "src/test/groovy/org/onap/cps/ncmp/dmi/notifications/avc/SubscriptionEventConsumerSpec.groovy",
+        "patchSetId": 13
+      },
+      "lineNbr": 98,
+      "author": {
+        "id": 8063
+      },
+      "writtenOn": "2023-03-24T16:51:09Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5c56cb4e_45027ae1",
+      "range": {
+        "startLine": 98,
+        "startChar": 12,
+        "endLine": 98,
+        "endChar": 64
+      },
+      "revId": "e722321d7cc15f0556b9ce64e25e8bb859813c47",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7907554e_d276c1aa",
         "filename": "src/test/resources/application.yml",
         "patchSetId": 13
@@ -131,6 +245,30 @@
       "revId": "e722321d7cc15f0556b9ce64e25e8bb859813c47",
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "ef82b5c3_d46f3ea8",
+        "filename": "src/test/resources/application.yml",
+        "patchSetId": 13
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 8063
+      },
+      "writtenOn": "2023-03-24T16:51:09Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7907554e_d276c1aa",
+      "range": {
+        "startLine": 2,
+        "startChar": 24,
+        "endLine": 2,
+        "endChar": 25
+      },
+      "revId": "e722321d7cc15f0556b9ce64e25e8bb859813c47",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
     }
   ]
 }
