@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "9a64f349_f0a1d2a4",
+        "filename": "src/main/resources/application.yml",
+        "patchSetId": 12
+      },
+      "lineNbr": 58,
+      "author": {
+        "id": 8063
+      },
+      "writtenOn": "2023-03-24T11:48:40Z",
+      "side": 1,
+      "message": "These are key/value de-serializer that catches exceptions to prevent error scenarios like consumption-block, offset not moving, re-try consuming, and many more.  If the delegate fails to deserialize the record content, the ErrorHandlingDeserializer returns a null value. The record is not passed to the listener. Thus, consumptions can continue while it handles the errors. If no error, key/value delegate.class do its job.",
+      "parentUuid": "c9aad553_76be86c8",
+      "range": {
+        "startLine": 57,
+        "startChar": 6,
+        "endLine": 58,
+        "endChar": 96
+      },
+      "revId": "c15b8d970290177d2aefc9098dfb25cfb26bca9f",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "51dce23a_6370762e",
         "filename": "src/main/resources/application.yml",
         "patchSetId": 12
@@ -36,6 +60,30 @@
       "writtenOn": "2023-03-24T11:19:55Z",
       "side": 1,
       "message": "from what I remember we had a logic to have this topic name..right ??\nwe also mentioned somewhere ??\nOr am i mixing it with something else ??",
+      "range": {
+        "startLine": 70,
+        "startChar": 52,
+        "endLine": 70,
+        "endChar": 80
+      },
+      "revId": "c15b8d970290177d2aefc9098dfb25cfb26bca9f",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "3d9ad724_a61c3933",
+        "filename": "src/main/resources/application.yml",
+        "patchSetId": 12
+      },
+      "lineNbr": 70,
+      "author": {
+        "id": 8063
+      },
+      "writtenOn": "2023-03-24T11:48:40Z",
+      "side": 1,
+      "message": "Yes, in SubscriptionEventForwarder.java, it has been implemented like eventsPublisher.publishEvent(DMI_AVC_SUBSCRIPTION_TOPIC_PREFIX + dmiName, eventKey, subscriptionEvent). However, dmiName is extracted in run-time. Thus, I have given this topic name having only DMI_AVC_SUBSCRIPTION_TOPIC_PREFIX. Any better solution for this problem is welcome. I can change this config accordingly.",
+      "parentUuid": "51dce23a_6370762e",
       "range": {
         "startLine": 70,
         "startChar": 52,
