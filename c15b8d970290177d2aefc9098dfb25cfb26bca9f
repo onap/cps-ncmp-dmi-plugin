@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "c9aad553_76be86c8",
+        "filename": "src/main/resources/application.yml",
+        "patchSetId": 12
+      },
+      "lineNbr": 58,
+      "author": {
+        "id": 7965
+      },
+      "writtenOn": "2023-03-24T11:19:55Z",
+      "side": 1,
+      "message": "why do we need ErrorHandlingDeserializer ??",
+      "range": {
+        "startLine": 57,
+        "startChar": 6,
+        "endLine": 58,
+        "endChar": 96
+      },
+      "revId": "c15b8d970290177d2aefc9098dfb25cfb26bca9f",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "51dce23a_6370762e",
+        "filename": "src/main/resources/application.yml",
+        "patchSetId": 12
+      },
+      "lineNbr": 70,
+      "author": {
+        "id": 7965
+      },
+      "writtenOn": "2023-03-24T11:19:55Z",
+      "side": 1,
+      "message": "from what I remember we had a logic to have this topic name..right ??\nwe also mentioned somewhere ??\nOr am i mixing it with something else ??",
+      "range": {
+        "startLine": 70,
+        "startChar": 52,
+        "endLine": 70,
+        "endChar": 80
+      },
+      "revId": "c15b8d970290177d2aefc9098dfb25cfb26bca9f",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    }
+  ]
+}
