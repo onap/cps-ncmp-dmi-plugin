@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "3ddbabd2_d503bb17",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 16
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 8063
+      },
+      "writtenOn": "2023-03-28T14:37:04Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "d94cdcac_b2b2bb0d",
+      "range": {
+        "startLine": 9,
+        "startChar": 0,
+        "endLine": 9,
+        "endChar": 71
+      },
+      "revId": "22907d5f72bcccaa625077a505a7785532833254",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "89c63eeb_6975deaa",
         "filename": "src/main/java/org/onap/cps/ncmp/dmi/notifications/avc/SubscriptionEventConsumer.java",
         "patchSetId": 16
@@ -45,6 +69,30 @@
       "revId": "22907d5f72bcccaa625077a505a7785532833254",
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "5103c886_00cb31d7",
+        "filename": "src/main/java/org/onap/cps/ncmp/dmi/notifications/avc/SubscriptionEventConsumer.java",
+        "patchSetId": 16
+      },
+      "lineNbr": 84,
+      "author": {
+        "id": 8063
+      },
+      "writtenOn": "2023-03-28T14:37:04Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "89c63eeb_6975deaa",
+      "range": {
+        "startLine": 82,
+        "startChar": 8,
+        "endLine": 84,
+        "endChar": 83
+      },
+      "revId": "22907d5f72bcccaa625077a505a7785532833254",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
     },
     {
       "key": {
@@ -71,6 +119,30 @@
     },
     {
       "key": {
+        "uuid": "1350db3b_8e87e470",
+        "filename": "src/main/java/org/onap/cps/ncmp/dmi/notifications/avc/SubscriptionEventConsumer.java",
+        "patchSetId": 16
+      },
+      "lineNbr": 94,
+      "author": {
+        "id": 8063
+      },
+      "writtenOn": "2023-03-28T14:37:04Z",
+      "side": 1,
+      "message": "As per latest discussion, I will provide dmiName from application.yml",
+      "parentUuid": "fc81bdf0_f27e8806",
+      "range": {
+        "startLine": 94,
+        "startChar": 55,
+        "endLine": 94,
+        "endChar": 56
+      },
+      "revId": "22907d5f72bcccaa625077a505a7785532833254",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "94fb0773_c7c53d95",
         "filename": "src/main/java/org/onap/cps/ncmp/dmi/service/model/SubscriptionEventResponse.java",
         "patchSetId": 16
@@ -85,6 +157,24 @@
       "revId": "22907d5f72bcccaa625077a505a7785532833254",
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "3bde665a_f7f3ead9",
+        "filename": "src/main/java/org/onap/cps/ncmp/dmi/service/model/SubscriptionEventResponse.java",
+        "patchSetId": 16
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 8063
+      },
+      "writtenOn": "2023-03-28T14:37:04Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "94fb0773_c7c53d95",
+      "revId": "22907d5f72bcccaa625077a505a7785532833254",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
     },
     {
       "key": {
@@ -108,6 +198,30 @@
       "revId": "22907d5f72bcccaa625077a505a7785532833254",
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "b306b3ea_344d202a",
+        "filename": "src/test/groovy/org/onap/cps/ncmp/dmi/notifications/avc/SubscriptionEventConsumerSpec.groovy",
+        "patchSetId": 16
+      },
+      "lineNbr": 109,
+      "author": {
+        "id": 8063
+      },
+      "writtenOn": "2023-03-28T14:37:04Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "8b05a686_4b7bda89",
+      "range": {
+        "startLine": 109,
+        "startChar": 60,
+        "endLine": 109,
+        "endChar": 73
+      },
+      "revId": "22907d5f72bcccaa625077a505a7785532833254",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
     }
   ]
 }
