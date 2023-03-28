@@ -1,0 +1,113 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "d94cdcac_b2b2bb0d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 16
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 7965
+      },
+      "writtenOn": "2023-03-28T09:36:20Z",
+      "side": 1,
+      "message": "NB: remove this. not happening in this patch now.",
+      "range": {
+        "startLine": 9,
+        "startChar": 0,
+        "endLine": 9,
+        "endChar": 71
+      },
+      "revId": "22907d5f72bcccaa625077a505a7785532833254",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "89c63eeb_6975deaa",
+        "filename": "src/main/java/org/onap/cps/ncmp/dmi/notifications/avc/SubscriptionEventConsumer.java",
+        "patchSetId": 16
+      },
+      "lineNbr": 84,
+      "author": {
+        "id": 7965
+      },
+      "writtenOn": "2023-03-28T09:36:20Z",
+      "side": 1,
+      "message": "NB: lets follow a sequence and be uniform everywhere. ( i know technically doesnt matter but its more readable )\nclientId , subscriptionName and then dmiName.\nSame for our key as well.",
+      "range": {
+        "startLine": 82,
+        "startChar": 8,
+        "endLine": 84,
+        "endChar": 83
+      },
+      "revId": "22907d5f72bcccaa625077a505a7785532833254",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "fc81bdf0_f27e8806",
+        "filename": "src/main/java/org/onap/cps/ncmp/dmi/notifications/avc/SubscriptionEventConsumer.java",
+        "patchSetId": 16
+      },
+      "lineNbr": 94,
+      "author": {
+        "id": 7965
+      },
+      "writtenOn": "2023-03-28T09:36:20Z",
+      "side": 1,
+      "message": "i dont this would be a safe operation as in our examples as well we are taking client-id/subscription-name with  \"-\" in them.\n\nGuys , we can decide on a possible separator here.\n_ underscore\n# Hash\n\nI personally think # can be a good choice.\nwhat do u think guys??",
+      "range": {
+        "startLine": 94,
+        "startChar": 55,
+        "endLine": 94,
+        "endChar": 56
+      },
+      "revId": "22907d5f72bcccaa625077a505a7785532833254",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "94fb0773_c7c53d95",
+        "filename": "src/main/java/org/onap/cps/ncmp/dmi/service/model/SubscriptionEventResponse.java",
+        "patchSetId": 16
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 7965
+      },
+      "writtenOn": "2023-03-28T09:36:20Z",
+      "side": 1,
+      "message": "Exactly.. this sequence we can follow everywhere.",
+      "revId": "22907d5f72bcccaa625077a505a7785532833254",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "8b05a686_4b7bda89",
+        "filename": "src/test/groovy/org/onap/cps/ncmp/dmi/notifications/avc/SubscriptionEventConsumerSpec.groovy",
+        "patchSetId": 16
+      },
+      "lineNbr": 109,
+      "author": {
+        "id": 7965
+      },
+      "writtenOn": "2023-03-28T09:36:20Z",
+      "side": 1,
+      "message": "this is the reason I wanted to use a different symbol ( other than underscore or hyphen )\nwe can have dmiServiceName as ncmp-dmi-plugin.\nlogic wont work then.",
+      "range": {
+        "startLine": 109,
+        "startChar": 60,
+        "endLine": 109,
+        "endChar": 73
+      },
+      "revId": "22907d5f72bcccaa625077a505a7785532833254",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    }
+  ]
+}
