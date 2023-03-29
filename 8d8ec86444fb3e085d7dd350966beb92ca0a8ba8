@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "874d67c5_e7dd3594",
+        "filename": "src/main/java/org/onap/cps/ncmp/dmi/service/model/SubscriptionEventResponseStatus.java",
+        "patchSetId": 19
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 7830
+      },
+      "writtenOn": "2023-03-29T14:38:51Z",
+      "side": 1,
+      "message": "NB I don\u0027t think we will need pending here, pending is more on the NCMP side if the DMI has yet to respond",
+      "range": {
+        "startLine": 26,
+        "startChar": 4,
+        "endLine": 26,
+        "endChar": 11
+      },
+      "revId": "8d8ec86444fb3e085d7dd350966beb92ca0a8ba8",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    }
+  ]
+}
