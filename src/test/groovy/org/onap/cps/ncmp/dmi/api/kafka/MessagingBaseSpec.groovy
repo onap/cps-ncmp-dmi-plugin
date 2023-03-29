@@ -20,8 +20,10 @@
 
 package org.onap.cps.ncmp.dmi.api.kafka
 
+import org.apache.kafka.clients.consumer.KafkaConsumer
 import org.apache.kafka.common.serialization.StringDeserializer
 import org.apache.kafka.common.serialization.StringSerializer
+import org.springframework.kafka.core.DefaultKafkaConsumerFactory
 import org.springframework.kafka.core.DefaultKafkaProducerFactory
 import org.springframework.kafka.core.KafkaTemplate
 import org.springframework.kafka.support.serializer.JsonSerializer
@@ -63,6 +65,8 @@ class MessagingBaseSpec extends Specification {
     }
 
     def kafkaTemplate = new KafkaTemplate<>(new DefaultKafkaProducerFactory<Integer, String>(producerConfigProperties()))
+
+    def consumer = new KafkaConsumer<>(consumerConfigProperties('ncmp-group'))
 
     @DynamicPropertySource
     static void registerKafkaProperties(DynamicPropertyRegistry dynamicPropertyRegistry) {
