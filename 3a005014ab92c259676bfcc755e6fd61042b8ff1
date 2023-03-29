@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7475bf76_d8737395",
+        "filename": "src/main/java/org/onap/cps/ncmp/dmi/service/model/SubscriptionEventResponseStatus.java",
+        "patchSetId": 18
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 7830
+      },
+      "writtenOn": "2023-03-29T13:45:04Z",
+      "side": 1,
+      "message": "I think we went with REJECTED instead?",
+      "range": {
+        "startLine": 25,
+        "startChar": 26,
+        "endLine": 25,
+        "endChar": 34
+      },
+      "revId": "3a005014ab92c259676bfcc755e6fd61042b8ff1",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "ae6bb21f_651d68ad",
+        "filename": "src/main/java/org/onap/cps/ncmp/dmi/service/model/SubscriptionEventResponseStatus.java",
+        "patchSetId": 18
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 7830
+      },
+      "writtenOn": "2023-03-29T13:45:04Z",
+      "side": 1,
+      "message": "Would be better to be ACCEPTED and REJECTED to be consistent with status elsewhere in NCMP\nAnd can then we can use enum.name() also",
+      "range": {
+        "startLine": 25,
+        "startChar": 14,
+        "endLine": 25,
+        "endChar": 22
+      },
+      "revId": "3a005014ab92c259676bfcc755e6fd61042b8ff1",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    }
+  ]
+}
