@@ -45,6 +45,54 @@
       "revId": "3a005014ab92c259676bfcc755e6fd61042b8ff1",
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "ffb21f4d_31e28379",
+        "filename": "src/main/java/org/onap/cps/ncmp/dmi/service/model/SubscriptionEventResponseStatus.java",
+        "patchSetId": 18
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 8063
+      },
+      "writtenOn": "2023-03-29T14:29:26Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "7475bf76_d8737395",
+      "range": {
+        "startLine": 25,
+        "startChar": 26,
+        "endLine": 25,
+        "endChar": 34
+      },
+      "revId": "3a005014ab92c259676bfcc755e6fd61042b8ff1",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "4db904cd_1d720b6b",
+        "filename": "src/main/java/org/onap/cps/ncmp/dmi/service/model/SubscriptionEventResponseStatus.java",
+        "patchSetId": 18
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 8063
+      },
+      "writtenOn": "2023-03-29T14:29:26Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ae6bb21f_651d68ad",
+      "range": {
+        "startLine": 25,
+        "startChar": 14,
+        "endLine": 25,
+        "endChar": 22
+      },
+      "revId": "3a005014ab92c259676bfcc755e6fd61042b8ff1",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
     }
   ]
 }
