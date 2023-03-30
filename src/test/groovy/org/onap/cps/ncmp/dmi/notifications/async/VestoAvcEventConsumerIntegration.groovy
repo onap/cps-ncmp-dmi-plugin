@@ -22,33 +22,31 @@ package org.onap.cps.ncmp.dmi.notifications.async
 
 import com.fasterxml.jackson.databind.ObjectMapper
 import org.onap.cps.ncmp.dmi.api.kafka.MessagingBaseSpec
-import org.onap.cps.ncmp.dmi.exception.HttpClientRequestException
-import org.onap.cps.ncmp.event.model.DmiAsyncRequestResponseEvent
+import org.onap.cps.ncmp.event.model.AVCEvent
 import org.spockframework.spring.SpringBean
 import org.springframework.boot.test.context.SpringBootTest
-import org.springframework.http.HttpStatus
 import org.springframework.test.annotation.DirtiesContext
 import org.testcontainers.spock.Testcontainers
+import org.onap.cps.ncmp.dmi.TestUtils
 
 import java.time.Duration
 
-@SpringBootTest(classes = [AsyncTaskExecutor, DmiAsyncRequestResponseEventProducer])
+@SpringBootTest(classes = [AsyncTaskExecutor, DmiAsyncRequestResponseEventConsumer])
 @Testcontainers
 @DirtiesContext
-class AsyncTaskExecutorIntegrationSpec extends MessagingBaseSpec {
+class VestoAvcEventConsumerIntegration extends MessagingBaseSpec {
 
     @SpringBean
-    DmiAsyncRequestResponseEventProducer cpsAsyncRequestResponseEventProducer =
-        new DmiAsyncRequestResponseEventProducer(kafkaTemplate)
+    DmiAsyncRequestResponseEventConsumer dmiAsyncRequestResponseEventConsumer =
+        new DmiAsyncRequestResponseEventConsumer()
 
     def spiedObjectMapper = Spy(ObjectMapper)
 
-    def objectUnderTest = new AsyncTaskExecutor(cpsAsyncRequestResponseEventProducer)
+    def objectUnderTest = dmiAsyncRequestResponseEventConsumer;
 
-    private static final String TEST_TOPIC = 'test-topic'
+    private static final String TEST_TOPIC = 'unauthenticated.SEC_3GPP_PROVISIONING_OUTPUT'
 
     def setup() {
-        cpsAsyncRequestResponseEventProducer.dmiNcmpTopic = TEST_TOPIC
         consumer.subscribe([TEST_TOPIC] as List<String>)
     }
 
@@ -58,30 +56,17 @@ class AsyncTaskExecutorIntegrationSpec extends MessagingBaseSpec {
 
     def 'Publish and Subscribe message - success'() {
         when: 'a successful event is published'
-            objectUnderTest.publishAsyncEvent(TEST_TOPIC, '12345', '{}', 'OK', '200')
+            def sampleJsonData = TestUtils.getResourceFileContent('STDEvent.json')
+            objectUnderTest.consumeFromTopic(sampleJsonData)
         and: 'the topic is polled'
             def records = consumer.poll(Duration.ofMillis(1500))
         then: 'the record received is the event sent'
             def record = records.iterator().next()
-            DmiAsyncRequestResponseEvent event = spiedObjectMapper.readValue(record.value(), DmiAsyncRequestResponseEvent)
+            AVCEvent event = spiedObjectMapper.readValue(record.value(), AVCEvent)
         and: 'the status & code matches expected'
-            assert event.getEventContent().getResponseStatus() == 'OK'
-            assert event.getEventContent().getResponseCode() == '200'
+            assert event.getEventSource() == 'ncmp-datastore:passthrough-operational'
+            assert event.getEventSchemaVersion() == '1.0'
     }
 
-    def 'Publish and Subscribe message - failure'() {
-        when: 'a failure event is published'
-            def exception = new HttpClientRequestException('some cm handle', 'Node not found', HttpStatus.INTERNAL_SERVER_ERROR)
-            objectUnderTest.publishAsyncFailureEvent(TEST_TOPIC, '67890', exception)
-        and: 'the topic is polled'
-            def records = consumer.poll(Duration.ofMillis(1500))
-        then: 'the record received is the event sent'
-            def record = records.iterator().next()
-            DmiAsyncRequestResponseEvent event = spiedObjectMapper.readValue(record.value(), DmiAsyncRequestResponseEvent)
-        and: 'the status & code matches expected'
-            assert event.getEventContent().getResponseStatus() == 'Internal Server Error'
-            assert event.getEventContent().getResponseCode() == '500'
-    }
-	
-	
+
 }
