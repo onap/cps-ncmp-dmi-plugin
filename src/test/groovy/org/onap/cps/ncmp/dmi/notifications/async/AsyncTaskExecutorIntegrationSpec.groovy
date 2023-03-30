@@ -58,12 +58,12 @@ class AsyncTaskExecutorIntegrationSpec extends MessagingBaseSpec {
 
     def 'Publish and Subscribe message - success'() {
         when: 'a successful event is published'
-            objectUnderTest.publishAsyncEvent(TEST_TOPIC, '12345','{}', 'OK', '200')
+            objectUnderTest.publishAsyncEvent(TEST_TOPIC, '12345', '{}', 'OK', '200')
         and: 'the topic is polled'
             def records = consumer.poll(Duration.ofMillis(1500))
         then: 'the record received is the event sent'
             def record = records.iterator().next()
-            DmiAsyncRequestResponseEvent event  = spiedObjectMapper.readValue(record.value(), DmiAsyncRequestResponseEvent)
+            DmiAsyncRequestResponseEvent event = spiedObjectMapper.readValue(record.value(), DmiAsyncRequestResponseEvent)
         and: 'the status & code matches expected'
             assert event.getEventContent().getResponseStatus() == 'OK'
             assert event.getEventContent().getResponseCode() == '200'
@@ -77,10 +77,11 @@ class AsyncTaskExecutorIntegrationSpec extends MessagingBaseSpec {
             def records = consumer.poll(Duration.ofMillis(1500))
         then: 'the record received is the event sent'
             def record = records.iterator().next()
-            DmiAsyncRequestResponseEvent event  = spiedObjectMapper.readValue(record.value(), DmiAsyncRequestResponseEvent)
+            DmiAsyncRequestResponseEvent event = spiedObjectMapper.readValue(record.value(), DmiAsyncRequestResponseEvent)
         and: 'the status & code matches expected'
             assert event.getEventContent().getResponseStatus() == 'Internal Server Error'
             assert event.getEventContent().getResponseCode() == '500'
     }
-
+	
+	
 }
