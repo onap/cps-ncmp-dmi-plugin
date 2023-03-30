@@ -70,6 +70,9 @@ app:
     avc:
       subscription-topic: ${DMI_CM_AVC_SUBSCRIPTION:ncmp-dmi-cm-avc-subscription-${dmi.service.name}}
       subscription-response-topic: ${DMI_CM_AVC_SUBSCRIPTION_RESPONSE:dmi-ncmp-cm-avc-subscription}
+  ves:
+    consumer:
+      topic: ${DMI_CM_VES_AVC_TOPIC:unauthenticated.SEC_3GPP_PROVISIONING_OUTPUT}
 
 notification:
   async:
