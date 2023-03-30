@@ -1,0 +1,45 @@
+{
+  "event":{
+    "commonEventHeader":{
+      "startEpochMicrosec":1.681381454532E15,
+      "sourceId":"nearrtric-22_660",
+      "eventId":"stnddefined000006",
+      "timeZoneOffset":"UTC+05:30",
+      "reportingEntityId":"nearrtric-22_660",
+      "internalHeaderFields":{
+        "collectorTimeStamp":"Thu, 04 13 2023 10:24:14 UTC"
+      },
+      "priority":"Normal",
+      "version":"4.0.1",
+      "nfVendorName":"Capgemini Engineering",
+      "reportingEntityName":"honeycomb",
+      "sequence":0,
+      "domain":"stndDefined",
+      "lastEpochMicrosec":1.681381454532E15,
+      "eventName":"stnddefined_Metrics",
+      "vesEventListenerVersion":"7.2",
+      "stndDefinedNamespace":"3GPP-Provisioning",
+      "sourceName":"Capgemini Engineering",
+      "nfNamingCode":"NFC"
+    },
+    "stndDefinedFields":{
+      "stndDefinedFieldsVersion":"1.0",
+      "data":{
+        "systemDN":"xyz",
+        "eventTime":"1681381454532000",
+        "notificationId":1,
+        "href":"href1",
+        "notificationType":"notifyMOIChanges",
+        "moiChanges":{
+          "sourceIndicator":"MANAGEMENT_OPERATION",
+          "path":"https://forge.3gpp.org/rep/sa5/MnS/tree/Rel-16",
+          "additionalText":"AdditionalTextDetails",
+          "notificationId":123,
+          "operation":"CREATE",
+          "value":"",
+          "correlatedNotifications":""
+        }
+      }
+    }
+  }
+}
