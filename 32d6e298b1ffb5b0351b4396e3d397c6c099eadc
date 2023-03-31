@@ -1,0 +1,205 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "f10a2c96_6150b797",
+        "filename": "src/main/java/org/onap/cps/ncmp/dmi/notifications/async/DmiAsyncRequestResponseEventConsumer.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 7965
+      },
+      "writtenOn": "2023-03-31T10:31:35Z",
+      "side": 1,
+      "message": "these spaces should not be there.\nOnce you setup your IDE correctly , reformat it then this should be resolved.",
+      "range": {
+        "startLine": 39,
+        "startChar": 0,
+        "endLine": 39,
+        "endChar": 4
+      },
+      "revId": "32d6e298b1ffb5b0351b4396e3d397c6c099eadc",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "73b511ba_63485288",
+        "filename": "src/main/java/org/onap/cps/ncmp/dmi/notifications/async/DmiAsyncRequestResponseEventConsumer.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 43,
+      "author": {
+        "id": 7965
+      },
+      "writtenOn": "2023-03-31T10:31:35Z",
+      "side": 1,
+      "message": "final",
+      "range": {
+        "startLine": 43,
+        "startChar": 33,
+        "endLine": 43,
+        "endChar": 34
+      },
+      "revId": "32d6e298b1ffb5b0351b4396e3d397c6c099eadc",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "8e8bb75a_8b705b75",
+        "filename": "src/main/java/org/onap/cps/ncmp/dmi/notifications/async/DmiAsyncRequestResponseEventConsumer.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 45,
+      "author": {
+        "id": 7965
+      },
+      "writtenOn": "2023-03-31T10:31:35Z",
+      "side": 1,
+      "message": "use logger.",
+      "range": {
+        "startLine": 45,
+        "startChar": 5,
+        "endLine": 45,
+        "endChar": 54
+      },
+      "revId": "32d6e298b1ffb5b0351b4396e3d397c6c099eadc",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "f9fda112_21e6f590",
+        "filename": "src/main/java/org/onap/cps/ncmp/dmi/notifications/async/DmiAsyncRequestResponseEventConsumer.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 57,
+      "author": {
+        "id": 7965
+      },
+      "writtenOn": "2023-03-31T10:31:35Z",
+      "side": 1,
+      "message": "all these things need to go to a mapper and in a separate class.",
+      "range": {
+        "startLine": 51,
+        "startChar": 6,
+        "endLine": 57,
+        "endChar": 84
+      },
+      "revId": "32d6e298b1ffb5b0351b4396e3d397c6c099eadc",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "454bc5a8_cbb9dfab",
+        "filename": "src/main/java/org/onap/cps/ncmp/dmi/notifications/async/DmiAsyncRequestResponseEventConsumer.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 101,
+      "author": {
+        "id": 7965
+      },
+      "writtenOn": "2023-03-31T10:31:35Z",
+      "side": 1,
+      "message": "this needs to be parameterized.\nI will do it as part of a separate patch.\nI will notify you on this.",
+      "range": {
+        "startLine": 101,
+        "startChar": 27,
+        "endLine": 101,
+        "endChar": 42
+      },
+      "revId": "32d6e298b1ffb5b0351b4396e3d397c6c099eadc",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "bc14fba2_c3605c39",
+        "filename": "src/main/java/org/onap/cps/ncmp/dmi/notifications/async/DmiAsyncRequestResponseEventConsumer.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 102,
+      "author": {
+        "id": 7965
+      },
+      "writtenOn": "2023-03-31T10:31:35Z",
+      "side": 1,
+      "message": "use logger instead of sout",
+      "range": {
+        "startLine": 102,
+        "startChar": 8,
+        "endLine": 102,
+        "endChar": 63
+      },
+      "revId": "32d6e298b1ffb5b0351b4396e3d397c6c099eadc",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "acd50b0b_ee2dff16",
+        "filename": "src/main/resources/application.yml",
+        "patchSetId": 1
+      },
+      "lineNbr": 75,
+      "author": {
+        "id": 7965
+      },
+      "writtenOn": "2023-03-31T10:31:35Z",
+      "side": 1,
+      "message": "also the creation of this topic will be handled by you guys in the OOM charts.. right ??",
+      "range": {
+        "startLine": 75,
+        "startChar": 36,
+        "endLine": 75,
+        "endChar": 80
+      },
+      "revId": "32d6e298b1ffb5b0351b4396e3d397c6c099eadc",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "fc94abd4_240b3f03",
+        "filename": "src/test/groovy/org/onap/cps/ncmp/dmi/notifications/async/AsyncTaskExecutorIntegrationSpec.groovy",
+        "patchSetId": 1
+      },
+      "lineNbr": 87,
+      "author": {
+        "id": 7965
+      },
+      "writtenOn": "2023-03-31T10:31:35Z",
+      "side": 1,
+      "message": "write these tests in a separate class for your use case.",
+      "revId": "32d6e298b1ffb5b0351b4396e3d397c6c099eadc",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "23186e9e_ecbd083a",
+        "filename": "src/test/groovy/org/onap/cps/ncmp/dmi/notifications/async/AsyncTaskExecutorIntegrationSpec.groovy",
+        "patchSetId": 1
+      },
+      "lineNbr": 89,
+      "author": {
+        "id": 7965
+      },
+      "writtenOn": "2023-03-31T10:31:35Z",
+      "side": 1,
+      "message": "you need to read this event from a file.",
+      "range": {
+        "startLine": 89,
+        "startChar": 93,
+        "endLine": 89,
+        "endChar": 941
+      },
+      "revId": "32d6e298b1ffb5b0351b4396e3d397c6c099eadc",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    }
+  ]
+}
