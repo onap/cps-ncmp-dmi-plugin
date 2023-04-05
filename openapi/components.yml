@@ -164,6 +164,16 @@ components:
             status: 500
             message: Internal Server Error
             details: Internal Server Error occured
+    NotImplemented:
+      description: Not Implemented
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ErrorMessage'
+          example:
+            status: 501
+            message: Not Implemented
+            details: Method Not Implemented
   parameters:
     cmHandleInPath:
       name: cmHandle
