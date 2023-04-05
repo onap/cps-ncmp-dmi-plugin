@@ -149,3 +149,22 @@ paths:
           $ref: 'components.yml#/components/responses/BadRequest'
         '500':
           $ref: 'components.yml#/components/responses/ServerError'
+  /v1/ch/batch/data/ds/{datastore-name}:
+    post:
+      tags:
+        - dmi-plugin
+      summary: Get a collection of CMHandles
+      description: An interface to accept collection of cm handles for Get operation.
+      operationId: addCmHandleBatch
+      parameters:
+        - $ref: 'components.yml#/components/parameters/datastoreName'
+        - $ref: 'components.yml#/components/parameters/topicParamInQuery'
+      requestBody:
+        description: Contains collection of cm handles with it's private properties and requestId
+        content:
+          application/json:
+            schema:
+              $ref: 'components.yml#/components/schemas/DataAccessRequest'
+    responses:
+      501:
+        $ref: 'components.yml#/components/responses/NotImplemented'
