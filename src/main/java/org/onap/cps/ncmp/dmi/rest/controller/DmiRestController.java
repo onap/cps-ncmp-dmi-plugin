@@ -105,6 +105,21 @@ public class DmiRestController implements DmiPluginApi, DmiPluginInternalApi {
     }
 
     /**
+     * This method is not implemented for ONAP DMI plugin.
+     *
+     * @param datastoreName name of the data store
+     * @param body list of cm-handles
+     * @param topic Kafka topic name
+     * @return (@ code ResponseEntity) response entity
+     */
+    @Override
+    public ResponseEntity<Void> getResourceDataByCmHandles(final String datastoreName,
+                                                 final Object body,
+                                                 final String topic) {
+        return new ResponseEntity<>(HttpStatus.NOT_IMPLEMENTED);
+    }
+
+    /**
      * This method fetches the resource for given cm handle using pass through operational or running datastore.
      * It filters the response on the basis of options query parameters and returns response. Passthrough Running
      * supports both read and write operation whereas passthrough operational does not support write operations.

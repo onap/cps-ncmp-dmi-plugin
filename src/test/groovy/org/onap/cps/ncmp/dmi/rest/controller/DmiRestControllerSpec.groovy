@@ -311,4 +311,19 @@ class DmiRestControllerSpec extends Specification {
             '? needs to be encoded as %3F' | 'idWith%3F'
 
     }
+
+    def 'Get resource data for a collection of cm handles (unimplemented).'() {
+        given: 'an endpoint for adding a batch of cm handle Ids'
+            def url = "$basePathV1/ch/batch/data/ds/test-datastore?topic=test"
+        and: 'a request body'
+            def body = '{"CmHandles": []}'
+        when: 'the endpoint is invoked'
+            def response = mvc.perform(
+                    post(url)
+                            .contentType(MediaType.APPLICATION_JSON)
+                            .content(body)
+            ).andReturn().response
+        then: 'the response status code is 501'
+            assert response.status == 501
+    }
 }
