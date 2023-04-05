@@ -119,8 +119,8 @@ paths:
     post:
       tags:
         - dmi-plugin
-      summary: Get resource data from passthrough operational or running for cm handles
-      description: Get resource data from passthrough operational or running for cm handles
+      summary: Get resource data from passthrough operational or running for a cm handle
+      description: Get resource data from passthrough operational or running for a cm handle
       operationId: dataAccessPassthrough
       parameters:
         - $ref: 'components.yml#/components/parameters/datastoreName'
@@ -149,3 +149,23 @@ paths:
           $ref: 'components.yml#/components/responses/BadRequest'
         '500':
           $ref: 'components.yml#/components/responses/ServerError'
+
+  /v1/ch/batch/data/ds/{datastore-name}:
+    post:
+      tags:
+        - dmi-plugin
+      summary: Get a collection of CMHandles
+      description: Get a collection of cm handles by datastore (not implemented)
+      operationId: getResourceDataByCmHandles
+      parameters:
+        - $ref: 'components.yml#/components/parameters/datastoreName'
+        - $ref: 'components.yml#/components/parameters/topicParamInQuery'
+      requestBody:
+        description: Contains collection of cm handles with it's private properties and requestId
+        content:
+          application/json:
+            schema:
+              type: object
+    responses:
+      501:
+        $ref: 'components.yml#/components/responses/NotImplemented'
