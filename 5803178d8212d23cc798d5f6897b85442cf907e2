@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "ad06a237_086a885c",
+        "filename": "openapi/openapi.yml",
+        "patchSetId": 3
+      },
+      "lineNbr": 122,
+      "author": {
+        "id": 8155
+      },
+      "writtenOn": "2023-04-12T08:47:00Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "04c16891_e8b2f78e",
+      "range": {
+        "startLine": 122,
+        "startChar": 77,
+        "endLine": 122,
+        "endChar": 87
+      },
+      "revId": "5803178d8212d23cc798d5f6897b85442cf907e2",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ef5bf3f1_bccaa0ec",
         "filename": "openapi/openapi.yml",
         "patchSetId": 3
@@ -48,6 +72,30 @@
     },
     {
       "key": {
+        "uuid": "8e0379a5_67e4889e",
+        "filename": "openapi/openapi.yml",
+        "patchSetId": 3
+      },
+      "lineNbr": 123,
+      "author": {
+        "id": 8155
+      },
+      "writtenOn": "2023-04-12T08:47:00Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ef5bf3f1_bccaa0ec",
+      "range": {
+        "startLine": 123,
+        "startChar": 80,
+        "endLine": 123,
+        "endChar": 91
+      },
+      "revId": "5803178d8212d23cc798d5f6897b85442cf907e2",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "8b8702f9_3efa4f23",
         "filename": "openapi/openapi.yml",
         "patchSetId": 3
@@ -68,6 +116,30 @@
       "revId": "5803178d8212d23cc798d5f6897b85442cf907e2",
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "5c404c2b_12e46801",
+        "filename": "openapi/openapi.yml",
+        "patchSetId": 3
+      },
+      "lineNbr": 157,
+      "author": {
+        "id": 8155
+      },
+      "writtenOn": "2023-04-12T08:47:00Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "8b8702f9_3efa4f23",
+      "range": {
+        "startLine": 157,
+        "startChar": 22,
+        "endLine": 157,
+        "endChar": 32
+      },
+      "revId": "5803178d8212d23cc798d5f6897b85442cf907e2",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
     },
     {
       "key": {
