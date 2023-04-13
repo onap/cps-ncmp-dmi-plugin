@@ -1,0 +1,90 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "4ea1a169_809323c7",
+        "filename": "src/main/java/org/onap/cps/ncmp/dmi/notifications/async/DmiAsyncConsumerVesToAvcEventCreator.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 7965
+      },
+      "writtenOn": "2023-04-13T12:50:52Z",
+      "side": 1,
+      "message": "another way to do this will be first creating a POJO class adhering to the VES event.\nThen use the objectmapper to map the fields ( i.e String to VES Event Object ) and then you can use that object to map the required fields to a AVC Event using a separate mapper class.",
+      "range": {
+        "startLine": 22,
+        "startChar": 8,
+        "endLine": 41,
+        "endChar": 9
+      },
+      "revId": "a9dcfed7de778c4be1a7dc35da5f148795823c3c",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "f95d8c75_42c9b706",
+        "filename": "src/main/java/org/onap/cps/ncmp/dmi/notifications/async/DmiAsyncConsumerVesToAvcEventCreator.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 72,
+      "author": {
+        "id": 7965
+      },
+      "writtenOn": "2023-04-13T12:50:52Z",
+      "side": 1,
+      "message": "we can remove the comments.",
+      "range": {
+        "startLine": 70,
+        "startChar": 8,
+        "endLine": 72,
+        "endChar": 78
+      },
+      "revId": "a9dcfed7de778c4be1a7dc35da5f148795823c3c",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "68a66f20_b92a4c10",
+        "filename": "src/test/groovy/org/onap/cps/ncmp/dmi/notifications/async/AsyncTaskExecutorIntegrationSpec.groovy",
+        "patchSetId": 3
+      },
+      "lineNbr": 87,
+      "author": {
+        "id": 7965
+      },
+      "writtenOn": "2023-04-13T12:50:52Z",
+      "side": 1,
+      "message": "these tests need to go in a separate class.",
+      "revId": "a9dcfed7de778c4be1a7dc35da5f148795823c3c",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "2127c80f_b1e10fbb",
+        "filename": "src/test/groovy/org/onap/cps/ncmp/dmi/notifications/async/AsyncTaskExecutorIntegrationSpec.groovy",
+        "patchSetId": 3
+      },
+      "lineNbr": 89,
+      "author": {
+        "id": 7965
+      },
+      "writtenOn": "2023-04-13T12:50:52Z",
+      "side": 1,
+      "message": "we can move this event to a file and then read it from there. Will look cleaner.",
+      "range": {
+        "startLine": 89,
+        "startChar": 93,
+        "endLine": 89,
+        "endChar": 941
+      },
+      "revId": "a9dcfed7de778c4be1a7dc35da5f148795823c3c",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    }
+  ]
+}
