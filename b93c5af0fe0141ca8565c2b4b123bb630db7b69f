@@ -1,0 +1,165 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1d4f5d60_105f7411",
+        "filename": "openapi/components.yml",
+        "patchSetId": 5
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 7957
+      },
+      "writtenOn": "2023-04-14T09:49:30Z",
+      "side": 1,
+      "message": "NB: 2023",
+      "range": {
+        "startLine": 2,
+        "startChar": 22,
+        "endLine": 2,
+        "endChar": 27
+      },
+      "revId": "b93c5af0fe0141ca8565c2b4b123bb630db7b69f",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "caf292de_114d65e3",
+        "filename": "openapi/openapi.yml",
+        "patchSetId": 5
+      },
+      "lineNbr": 157,
+      "author": {
+        "id": 7957
+      },
+      "writtenOn": "2023-04-14T09:49:30Z",
+      "side": 1,
+      "message": "Wrong summary and description",
+      "range": {
+        "startLine": 156,
+        "startChar": 6,
+        "endLine": 157,
+        "endChar": 49
+      },
+      "revId": "b93c5af0fe0141ca8565c2b4b123bb630db7b69f",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "853ce914_5b0732ae",
+        "filename": "openapi/openapi.yml",
+        "patchSetId": 5
+      },
+      "lineNbr": 158,
+      "author": {
+        "id": 7957
+      },
+      "writtenOn": "2023-04-14T09:49:30Z",
+      "side": 1,
+      "message": "Modify the operationId to \"getResourceDataByCmHandles\" or any other better name",
+      "range": {
+        "startLine": 158,
+        "startChar": 19,
+        "endLine": 158,
+        "endChar": 35
+      },
+      "revId": "b93c5af0fe0141ca8565c2b4b123bb630db7b69f",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "25803573_f43a209e",
+        "filename": "src/main/java/org/onap/cps/ncmp/dmi/rest/controller/DmiRestController.java",
+        "patchSetId": 5
+      },
+      "lineNbr": 116,
+      "author": {
+        "id": 7957
+      },
+      "writtenOn": "2023-04-14T09:49:30Z",
+      "side": 1,
+      "message": "method name is not descriptive as suggested in previous comment.",
+      "range": {
+        "startLine": 116,
+        "startChar": 32,
+        "endLine": 116,
+        "endChar": 48
+      },
+      "revId": "b93c5af0fe0141ca8565c2b4b123bb630db7b69f",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "c1e41ca6_23eebae4",
+        "filename": "src/test/groovy/org/onap/cps/ncmp/dmi/rest/controller/DmiRestControllerSpec.groovy",
+        "patchSetId": 5
+      },
+      "lineNbr": 315,
+      "author": {
+        "id": 7957
+      },
+      "writtenOn": "2023-04-14T09:49:30Z",
+      "side": 1,
+      "message": "NB: collection",
+      "range": {
+        "startLine": 315,
+        "startChar": 31,
+        "endLine": 315,
+        "endChar": 37
+      },
+      "revId": "b93c5af0fe0141ca8565c2b4b123bb630db7b69f",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "2803e54f_098a3a7c",
+        "filename": "src/test/groovy/org/onap/cps/ncmp/dmi/rest/controller/DmiRestControllerSpec.groovy",
+        "patchSetId": 5
+      },
+      "lineNbr": 316,
+      "author": {
+        "id": 7957
+      },
+      "writtenOn": "2023-04-14T09:49:30Z",
+      "side": 1,
+      "message": "NB: collection",
+      "range": {
+        "startLine": 316,
+        "startChar": 41,
+        "endLine": 316,
+        "endChar": 46
+      },
+      "revId": "b93c5af0fe0141ca8565c2b4b123bb630db7b69f",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "2aab0a08_fb7d111e",
+        "filename": "src/test/groovy/org/onap/cps/ncmp/dmi/rest/controller/DmiRestControllerSpec.groovy",
+        "patchSetId": 5
+      },
+      "lineNbr": 316,
+      "author": {
+        "id": 7957
+      },
+      "writtenOn": "2023-04-14T09:49:30Z",
+      "side": 1,
+      "message": "NB : Ids",
+      "range": {
+        "startLine": 316,
+        "startChar": 60,
+        "endLine": 316,
+        "endChar": 63
+      },
+      "revId": "b93c5af0fe0141ca8565c2b4b123bb630db7b69f",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    }
+  ]
+}
