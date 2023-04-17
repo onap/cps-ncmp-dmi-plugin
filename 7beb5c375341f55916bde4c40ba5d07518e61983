@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "8c8914da_a7104f50",
+        "filename": "src/main/java/org/onap/cps/ncmp/dmi/notifications/async/DmiAsyncConsumerVesToAvcEventCreator.java",
+        "patchSetId": 7
+      },
+      "lineNbr": 52,
+      "author": {
+        "id": 7965
+      },
+      "writtenOn": "2023-04-17T12:07:17Z",
+      "side": 1,
+      "message": "change it to \nlog.info(\"Json Consumed message : {},\"msg);",
+      "range": {
+        "startLine": 52,
+        "startChar": 8,
+        "endLine": 52,
+        "endChar": 48
+      },
+      "revId": "7beb5c375341f55916bde4c40ba5d07518e61983",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    }
+  ]
+}
