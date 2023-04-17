@@ -1,0 +1,96 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "624be6b5_a936cbd8",
+        "filename": "src/main/java/org/onap/cps/ncmp/dmi/notifications/async/DmiAsyncRequestResponseEventConsumer.java",
+        "patchSetId": 8
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 7965
+      },
+      "writtenOn": "2023-04-17T15:09:27Z",
+      "side": 1,
+      "message": "we will revisit on the class and method namings once the build is passing.",
+      "range": {
+        "startLine": 34,
+        "startChar": 13,
+        "endLine": 34,
+        "endChar": 49
+      },
+      "revId": "a61f312ce7d1833926ac128100d3945cae62fc0a",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "f9d04088_89b39168",
+        "filename": "src/main/java/org/onap/cps/ncmp/dmi/notifications/async/DmiAsyncRequestResponseEventConsumer.java",
+        "patchSetId": 8
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 7965
+      },
+      "writtenOn": "2023-04-17T15:09:27Z",
+      "side": 1,
+      "message": "be more decriptive.",
+      "range": {
+        "startLine": 42,
+        "startChar": 7,
+        "endLine": 42,
+        "endChar": 22
+      },
+      "revId": "a61f312ce7d1833926ac128100d3945cae62fc0a",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "006515a6_f0ac8bd3",
+        "filename": "src/test/groovy/org/onap/cps/ncmp/dmi/notifications/async/VesToAvcEventConsumerIntegrationSpec.groovy",
+        "patchSetId": 8
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 7965
+      },
+      "writtenOn": "2023-04-17T15:09:27Z",
+      "side": 1,
+      "message": "2023. Since this is a new file",
+      "range": {
+        "startLine": 3,
+        "startChar": 17,
+        "endLine": 3,
+        "endChar": 26
+      },
+      "revId": "a61f312ce7d1833926ac128100d3945cae62fc0a",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "21601b4e_c6ebd338",
+        "filename": "src/test/groovy/org/onap/cps/ncmp/dmi/notifications/async/VesToAvcEventConsumerIntegrationSpec.groovy",
+        "patchSetId": 8
+      },
+      "lineNbr": 65,
+      "author": {
+        "id": 7965
+      },
+      "writtenOn": "2023-04-17T15:09:27Z",
+      "side": 1,
+      "message": "this is AvcEvent.\nFix the imports.",
+      "range": {
+        "startLine": 65,
+        "startChar": 12,
+        "endLine": 65,
+        "endChar": 20
+      },
+      "revId": "a61f312ce7d1833926ac128100d3945cae62fc0a",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    }
+  ]
+}
