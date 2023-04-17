@@ -22,6 +22,52 @@
       "revId": "7beb5c375341f55916bde4c40ba5d07518e61983",
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "a19fdc72_468076e2",
+        "filename": "src/main/java/org/onap/cps/ncmp/dmi/notifications/async/DmiAsyncConsumerVesToAvcEventCreator.java",
+        "patchSetId": 7
+      },
+      "lineNbr": 91,
+      "author": {
+        "id": 7965
+      },
+      "writtenOn": "2023-04-17T12:08:19Z",
+      "side": 1,
+      "message": "log.info(\"pushchangeupdateobject: {}, \" , avcEvent.getEvent());",
+      "range": {
+        "startLine": 91,
+        "startChar": 8,
+        "endLine": 91,
+        "endChar": 67
+      },
+      "revId": "7beb5c375341f55916bde4c40ba5d07518e61983",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "8e370064_f2fa21a7",
+        "filename": "src/main/java/org/onap/cps/ncmp/dmi/notifications/async/DmiAsyncRequestResponseEventConsumer.java",
+        "patchSetId": 7
+      },
+      "lineNbr": 47,
+      "author": {
+        "id": 7965
+      },
+      "writtenOn": "2023-04-17T12:08:19Z",
+      "side": 1,
+      "message": "log.info(\"consumed ves message: {}\", msg);",
+      "range": {
+        "startLine": 47,
+        "startChar": 7,
+        "endLine": 47,
+        "endChar": 47
+      },
+      "revId": "7beb5c375341f55916bde4c40ba5d07518e61983",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
     }
   ]
 }
