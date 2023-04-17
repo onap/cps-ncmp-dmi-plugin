@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "974f647a_6fe6136b",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 6
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2023-04-17T09:34:06Z",
+      "side": 1,
+      "message": "add not that this method is no (yet) implemented",
+      "range": {
+        "startLine": 9,
+        "startChar": 3,
+        "endLine": 9,
+        "endChar": 22
+      },
+      "revId": "1b83be4fc58fde1ff95e0fbf49bbd0a3a68dcdc1",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "9d8aa963_20faacaa",
+        "filename": "openapi/openapi.yml",
+        "patchSetId": 6
+      },
+      "lineNbr": 171,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2023-04-17T09:34:06Z",
+      "side": 1,
+      "message": "I think form an interface definition point of view you should allow/define all typical http code (see other methods).ERicsson takes THIS api document to implement their version of it...\n\nit i just THIS ONAP impl. that does NOT implement it (yet)",
+      "range": {
+        "startLine": 170,
+        "startChar": 5,
+        "endLine": 171,
+        "endChar": 67
+      },
+      "revId": "1b83be4fc58fde1ff95e0fbf49bbd0a3a68dcdc1",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    }
+  ]
+}
