@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "6714f6ff_d6c9ea2d",
+        "filename": "src/test/groovy/org/onap/cps/ncmp/dmi/notifications/async/VesToAvcEventConsumerIntegrationSpec.groovy",
+        "patchSetId": 10
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 7965
+      },
+      "writtenOn": "2023-04-18T22:09:04Z",
+      "side": 1,
+      "message": "u need to pass in kafkatemplate here then u wont have null pointer exception and then see real issues.",
+      "revId": "4bbcf7bcf598bfe93bdd3effae9ff4753abc191f",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    }
+  ]
+}
