@@ -5,8 +5,8 @@ netifaces
 pyhocon
 requests
 robotframework-httplibrary
-robotframework-requests
-robotframework-selenium2library
+robotframework-requests==0.9.3
+robotframework-selenium2library==3.0.0
 robotframework-extendedselenium2library
 robotframework-sshlibrary
 scapy
