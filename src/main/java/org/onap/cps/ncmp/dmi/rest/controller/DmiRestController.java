@@ -82,8 +82,8 @@ public class DmiRestController implements DmiPluginApi, DmiPluginInternalApi {
 
     @Override
     public ResponseEntity<YangResources> retrieveModuleResources(
-        final @Valid ModuleResourcesReadRequest moduleResourcesReadRequest,
-        final String cmHandle) {
+        final String cmHandle,
+        final ModuleResourcesReadRequest moduleResourcesReadRequest) {
         final List<ModuleReference> moduleReferences = convertRestObjectToJavaApiObject(moduleResourcesReadRequest);
         final YangResources yangResources = dmiService.getModuleResources(cmHandle, moduleReferences);
         return new ResponseEntity<>(yangResources, HttpStatus.OK);
@@ -121,9 +121,9 @@ public class DmiRestController implements DmiPluginApi, DmiPluginInternalApi {
     public ResponseEntity<Object> dataAccessPassthrough(final String resourceIdentifier,
                                                         final String datastoreName,
                                                         final String cmHandle,
-                                                        final DataAccessRequest dataAccessRequest,
                                                         final String optionsParamInQuery,
-                                                        final String topicParamInQuery) {
+                                                        final String topicParamInQuery,
+                                                        final DataAccessRequest dataAccessRequest) {
         if (DatastoreType.PASSTHROUGH_OPERATIONAL == DatastoreType.fromDatastoreName(datastoreName)) {
             return dataAccessPassthroughOperational(resourceIdentifier, cmHandle, dataAccessRequest,
                     optionsParamInQuery, topicParamInQuery);
