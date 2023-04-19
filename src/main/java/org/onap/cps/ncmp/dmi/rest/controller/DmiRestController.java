@@ -28,7 +28,6 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import javax.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.onap.cps.ncmp.dmi.model.CmHandles;
@@ -74,7 +73,7 @@ public class DmiRestController implements DmiPluginApi, DmiPluginInternalApi {
 
     @Override
     public ResponseEntity<ModuleSet> getModuleReferences(final String cmHandle,
-                                                         final @Valid ModuleReferencesRequest body) {
+                                                         final ModuleReferencesRequest body) {
         // For onap-dmi-plugin we don't need cmHandleProperties, so DataAccessReadRequest is not used.
         final ModuleSet moduleSet = dmiService.getModulesForCmHandle(cmHandle);
         return ResponseEntity.ok(moduleSet);
@@ -82,8 +81,8 @@ public class DmiRestController implements DmiPluginApi, DmiPluginInternalApi {
 
     @Override
     public ResponseEntity<YangResources> retrieveModuleResources(
-        final @Valid ModuleResourcesReadRequest moduleResourcesReadRequest,
-        final String cmHandle) {
+        final String cmHandle,
+        final ModuleResourcesReadRequest moduleResourcesReadRequest) {
         final List<ModuleReference> moduleReferences = convertRestObjectToJavaApiObject(moduleResourcesReadRequest);
         final YangResources yangResources = dmiService.getModuleResources(cmHandle, moduleReferences);
         return new ResponseEntity<>(yangResources, HttpStatus.OK);
@@ -95,7 +94,7 @@ public class DmiRestController implements DmiPluginApi, DmiPluginInternalApi {
      * @param cmHandles list of cm-handles
      * @return (@ code ResponseEntity) response entity
      */
-    public ResponseEntity<String> registerCmHandles(final @Valid CmHandles cmHandles) {
+    public ResponseEntity<String> registerCmHandles(final CmHandles cmHandles) {
         final List<String> cmHandlesList = cmHandles.getCmHandles();
         if (cmHandlesList.isEmpty()) {
             return new ResponseEntity<>("Need at least one cmHandle to process.", HttpStatus.BAD_REQUEST);
@@ -110,20 +109,20 @@ public class DmiRestController implements DmiPluginApi, DmiPluginInternalApi {
      * supports both read and write operation whereas passthrough operational does not support write operations.
      *
      * @param resourceIdentifier    resource identifier to fetch data
-     * @param datastoreName       name of the datastore
+     * @param datastoreName         name of the datastore
      * @param cmHandle              cm handle identifier
-     * @param dataAccessRequest     data Access Request
      * @param optionsParamInQuery   options query parameter
      * @param topicParamInQuery     topic name for (triggering) async responses
+     * @param dataAccessRequest     data Access Request
      * @return {@code ResponseEntity} response entity
      */
     @Override
     public ResponseEntity<Object> dataAccessPassthrough(final String resourceIdentifier,
                                                         final String datastoreName,
                                                         final String cmHandle,
-                                                        final DataAccessRequest dataAccessRequest,
                                                         final String optionsParamInQuery,
-                                                        final String topicParamInQuery) {
+                                                        final String topicParamInQuery,
+                                                        final DataAccessRequest dataAccessRequest) {
         if (DatastoreType.PASSTHROUGH_OPERATIONAL == DatastoreType.fromDatastoreName(datastoreName)) {
             return dataAccessPassthroughOperational(resourceIdentifier, cmHandle, dataAccessRequest,
                     optionsParamInQuery, topicParamInQuery);
@@ -188,7 +187,7 @@ public class DmiRestController implements DmiPluginApi, DmiPluginInternalApi {
             dataAccessRequest.getDataType(), dataAccessRequest.getData());
     }
 
-    private boolean isReadOperation(final @Valid DataAccessRequest dataAccessRequest) {
+    private boolean isReadOperation(final DataAccessRequest dataAccessRequest) {
         return dataAccessRequest.getOperation() == null
             || dataAccessRequest.getOperation().equals(DataAccessRequest.OperationEnum.READ);
     }
