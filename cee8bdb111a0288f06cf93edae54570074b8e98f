@@ -1,0 +1,73 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "b02b32c8_facb1803",
+        "filename": "pom.xml",
+        "patchSetId": 4
+      },
+      "lineNbr": 89,
+      "author": {
+        "id": 8063
+      },
+      "writtenOn": "2023-04-20T09:42:02Z",
+      "side": 1,
+      "message": "Duplicated artifact with the one on line 169.",
+      "range": {
+        "startLine": 85,
+        "startChar": 0,
+        "endLine": 89,
+        "endChar": 25
+      },
+      "revId": "cee8bdb111a0288f06cf93edae54570074b8e98f",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "2b43dac3_f2be282b",
+        "filename": "pom.xml",
+        "patchSetId": 4
+      },
+      "lineNbr": 103,
+      "author": {
+        "id": 8063
+      },
+      "writtenOn": "2023-04-20T09:42:02Z",
+      "side": 1,
+      "message": "I am not sure if we really need this artifact here. Since all container is used under test folders. Also this artifact does not exist in CPS.",
+      "range": {
+        "startLine": 97,
+        "startChar": 1,
+        "endLine": 103,
+        "endChar": 25
+      },
+      "revId": "cee8bdb111a0288f06cf93edae54570074b8e98f",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "da01098b_52e6d924",
+        "filename": "pom.xml",
+        "patchSetId": 4
+      },
+      "lineNbr": 132,
+      "author": {
+        "id": 8063
+      },
+      "writtenOn": "2023-04-20T09:42:02Z",
+      "side": 1,
+      "message": "Duplicated dependency. This has been given on line 57.",
+      "range": {
+        "startLine": 129,
+        "startChar": 0,
+        "endLine": 132,
+        "endChar": 21
+      },
+      "revId": "cee8bdb111a0288f06cf93edae54570074b8e98f",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    }
+  ]
+}
