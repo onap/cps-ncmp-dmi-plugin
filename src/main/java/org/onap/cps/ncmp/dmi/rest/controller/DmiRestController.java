@@ -107,14 +107,13 @@ public class DmiRestController implements DmiPluginApi, DmiPluginInternalApi {
      * This method is not implemented for ONAP DMI plugin.
      *
      * @param datastoreName name of the data store
-     * @param body list of cm-handles
-     * @param topic Kafka topic name
+     * @param topic         Kafka topic name
+     * @param body          list of cm-handles
      * @return (@ code ResponseEntity) response entity
      */
     @Override
-    public ResponseEntity<Void> getResourceDataByCmHandles(final String datastoreName,
-                                                 final Object body,
-                                                 final String topic) {
+    public ResponseEntity<Void> getResourceDataByCmHandles(final String datastoreName, final String topic,
+            final Object body) {
         return new ResponseEntity<>(HttpStatus.NOT_IMPLEMENTED);
     }
 
