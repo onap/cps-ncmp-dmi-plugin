@@ -1,0 +1,7 @@
+Verified+1: ONAP Jobbuilder <onap-jobbuilder@jenkins.onap.org>
+Code-Review+2: Luke Gleeson <luke.gleeson@est.tech>
+Submitted-by: Luke Gleeson <luke.gleeson@est.tech>
+Submitted-at: Fri, 21 Apr 2023 12:15:20 +0000
+Reviewed-on: https://gerrit.onap.org/r/c/cps/ncmp-dmi-plugin/+/134269
+Project: cps/ncmp-dmi-plugin
+Branch: refs/heads/master
