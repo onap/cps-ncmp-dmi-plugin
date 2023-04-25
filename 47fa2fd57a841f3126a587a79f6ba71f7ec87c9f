@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1ce147cb_facb671b",
+        "filename": "src/test/groovy/org/onap/cps/ncmp/dmi/notifications/async/VesToAvcEventConsumerIntegrationSpec.groovy",
+        "patchSetId": 15
+      },
+      "lineNbr": 75,
+      "author": {
+        "id": 7965
+      },
+      "writtenOn": "2023-04-25T11:34:11Z",
+      "side": 1,
+      "message": "why do you duplicate these properties?? \nit is already coming from the parent class. right ?",
+      "range": {
+        "startLine": 47,
+        "startChar": 1,
+        "endLine": 75,
+        "endChar": 2
+      },
+      "revId": "47fa2fd57a841f3126a587a79f6ba71f7ec87c9f",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    }
+  ]
+}
