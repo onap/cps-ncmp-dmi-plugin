@@ -2,6 +2,75 @@
   "comments": [
     {
       "key": {
+        "uuid": "00cfc2ee_580e2d22",
+        "filename": "src/main/java/org/onap/cps/ncmp/dmi/notifications/async/DmiAsyncConsumerVesToAvcEventCreator.java",
+        "patchSetId": 15
+      },
+      "lineNbr": 57,
+      "author": {
+        "id": 7965
+      },
+      "writtenOn": "2023-04-26T16:51:31Z",
+      "side": 1,
+      "message": "this would be different.\nLet me find it and get back.",
+      "range": {
+        "startLine": 57,
+        "startChar": 32,
+        "endLine": 57,
+        "endChar": 72
+      },
+      "revId": "47fa2fd57a841f3126a587a79f6ba71f7ec87c9f",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "f7792891_34bd81cf",
+        "filename": "src/main/java/org/onap/cps/ncmp/dmi/notifications/async/DmiAsyncConsumerVesToAvcEventCreator.java",
+        "patchSetId": 15
+      },
+      "lineNbr": 60,
+      "author": {
+        "id": 7965
+      },
+      "writtenOn": "2023-04-26T16:51:31Z",
+      "side": 1,
+      "message": "internal discussion in progress.\nAvcEvent would be updated and these values will be part of the kafka header as part of \nhttps://wiki.onap.org/display/DW/CPS+Events+Structure\n#2",
+      "range": {
+        "startLine": 54,
+        "startChar": 0,
+        "endLine": 60,
+        "endChar": 46
+      },
+      "revId": "47fa2fd57a841f3126a587a79f6ba71f7ec87c9f",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "cc2f3b1b_4817be79",
+        "filename": "src/main/java/org/onap/cps/ncmp/dmi/notifications/async/DmiAsyncConsumerVesToAvcEventCreator.java",
+        "patchSetId": 15
+      },
+      "lineNbr": 85,
+      "author": {
+        "id": 7965
+      },
+      "writtenOn": "2023-04-26T16:51:31Z",
+      "side": 1,
+      "message": "extra space",
+      "range": {
+        "startLine": 85,
+        "startChar": 0,
+        "endLine": 85,
+        "endChar": 8
+      },
+      "revId": "47fa2fd57a841f3126a587a79f6ba71f7ec87c9f",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "1ce147cb_facb671b",
         "filename": "src/test/groovy/org/onap/cps/ncmp/dmi/notifications/async/VesToAvcEventConsumerIntegrationSpec.groovy",
         "patchSetId": 15
