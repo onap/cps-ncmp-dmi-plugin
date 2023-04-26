@@ -2,6 +2,29 @@
   "comments": [
     {
       "key": {
+        "uuid": "88de2628_75fb3ee7",
+        "filename": "src/main/java/org/onap/cps/ncmp/dmi/notifications/async/DmiAsyncConsumerVesToAvcEventCreator.java",
+        "patchSetId": 15
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 7965
+      },
+      "writtenOn": "2023-04-26T17:03:12Z",
+      "side": 1,
+      "message": "move to org.onap.cps.ncmp.dmi.notifications.avc package",
+      "range": {
+        "startLine": 21,
+        "startChar": 8,
+        "endLine": 21,
+        "endChar": 43
+      },
+      "revId": "47fa2fd57a841f3126a587a79f6ba71f7ec87c9f",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "00cfc2ee_580e2d22",
         "filename": "src/main/java/org/onap/cps/ncmp/dmi/notifications/async/DmiAsyncConsumerVesToAvcEventCreator.java",
         "patchSetId": 15
@@ -64,6 +87,29 @@
         "startChar": 0,
         "endLine": 85,
         "endChar": 8
+      },
+      "revId": "47fa2fd57a841f3126a587a79f6ba71f7ec87c9f",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "dd6c2e19_53c2f360",
+        "filename": "src/main/java/org/onap/cps/ncmp/dmi/service/model/CommonEventHeader.java",
+        "patchSetId": 15
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 7965
+      },
+      "writtenOn": "2023-04-26T17:03:12Z",
+      "side": 1,
+      "message": "can move the related model classes to \norg.onap.cps.ncmp.dmi.service.model.avc",
+      "range": {
+        "startLine": 21,
+        "startChar": 8,
+        "endLine": 21,
+        "endChar": 43
       },
       "revId": "47fa2fd57a841f3126a587a79f6ba71f7ec87c9f",
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
