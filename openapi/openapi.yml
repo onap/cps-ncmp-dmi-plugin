@@ -150,7 +150,7 @@ paths:
         '500':
           $ref: 'components.yml#/components/responses/ServerError'
 
-  /v1/ch/batch/data/ds/{datastore-name}:
+  /v1/data:
     post:
       tags:
         - dmi-plugin
@@ -158,24 +158,33 @@ paths:
       description: Get a collection of cm handles by datastore (not implemented)
       operationId: getResourceDataByCmHandles
       parameters:
-        - $ref: 'components.yml#/components/parameters/datastoreName'
         - $ref: 'components.yml#/components/parameters/topicParamInQuery'
+        - $ref: 'components.yml#/components/parameters/requestIdParamInQuery'
       requestBody:
-        description: Contains collection of cm handles with it's private properties and requestId
+        description: Contains collection of cm handles, datastore along with other attributes
         content:
           application/json:
             schema:
               type: object
-    responses:
-      '200':
-        description: OK
-        content:
-          application/json:
-            schema:
-              type: object
-      '400':
-        $ref: 'components.yml#/components/responses/BadRequest'
-      '500':
-        $ref: 'components.yml#/components/responses/ServerError'
-      '501':
-        $ref: 'components.yml#/components/responses/NotImplemented'
+              example:
+                - operationType: 'read'
+                  operationId: '14'
+                  datastore: 'ncmp-datastore:passthrough-running'
+                  cmhandles:
+                    - id: 'ec2e9495679a43c58659c07d87025e72'
+                      cmHandleProperties:
+                        key1: 'value1'
+                        key2: 'value2'
+      responses:
+        '202':
+          description: Accepted
+          content:
+            application/json:
+              schema:
+                type: object
+        '400':
+          $ref: 'components.yml#/components/responses/BadRequest'
+        '500':
+          $ref: 'components.yml#/components/responses/ServerError'
+        '501':
+          $ref: 'components.yml#/components/responses/NotImplemented'
