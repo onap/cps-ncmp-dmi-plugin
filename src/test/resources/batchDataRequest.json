@@ -1,0 +1,21 @@
+[
+  {
+    "operationType": "read",
+    "operationId": "14",
+    "datastore": "ncmp-datastore:passthrough-running",
+    "cmHandles": [
+      {
+        "id": "ec2e9495679a43c58659c07d87025e72",
+        "cmHandleProperties": {
+          "neType": "RadioNode"
+        }
+      },
+      {
+        "id": "0df4d39af6514d99b816758148389cfd",
+        "cmHandleProperties": {
+          "neType": "RadioNode"
+        }
+      }
+    ]
+  }
+]
