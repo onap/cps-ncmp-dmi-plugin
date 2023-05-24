@@ -150,32 +150,38 @@ paths:
         '500':
           $ref: 'components.yml#/components/responses/ServerError'
 
-  /v1/ch/batch/data/ds/{datastore-name}:
+  /v1/data:
     post:
       tags:
         - dmi-plugin
-      summary: Get a collection of CMHandles
-      description: Get a collection of cm handles by datastore (not implemented)
-      operationId: getResourceDataByCmHandles
+      summary: Get resource data for batch of cm handle ids.
+      description: Get resource data for batch of cm handle ids by supplied operation details
+      operationId: getResourceDataForCmHandleBatch
       parameters:
-        - $ref: 'components.yml#/components/parameters/datastoreName'
-        - $ref: 'components.yml#/components/parameters/topicParamInQuery'
+        - $ref: 'components.yml#/components/parameters/requiredTopicParamInQuery'
+        - $ref: 'components.yml#/components/parameters/requiredRequestIdParamInQuery'
       requestBody:
-        description: Contains collection of cm handles with it's private properties and requestId
+        description: list of operation details
         content:
           application/json:
             schema:
               type: object
-    responses:
-      '200':
-        description: OK
-        content:
-          application/json:
-            schema:
-              type: object
-      '400':
-        $ref: 'components.yml#/components/responses/BadRequest'
-      '500':
-        $ref: 'components.yml#/components/responses/ServerError'
-      '501':
-        $ref: 'components.yml#/components/responses/NotImplemented'
+              example:
+                - operationType: 'read'
+                  operationId: '14'
+                  datastore: 'ncmp-datastore:passthrough-operational'
+                  options: 'some options'
+                  resourceIdentifier: 'some resourceIdentifier'
+                  cmhandles:
+                    - id: 'ch3-dmi2'
+                      cmHandleProperties:
+                        prop: 'some DMI property'
+      responses:
+        '202':
+          description: Accepted
+        '400':
+          $ref: 'components.yml#/components/responses/BadRequest'
+        '500':
+          $ref: 'components.yml#/components/responses/ServerError'
+        '501':
+          $ref: 'components.yml#/components/responses/NotImplemented'
