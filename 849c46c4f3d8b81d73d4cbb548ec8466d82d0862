@@ -1,0 +1,90 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "f687bb6e_fc131ed9",
+        "filename": "openapi/openapi.yml",
+        "patchSetId": 1
+      },
+      "lineNbr": 164,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2023-05-25T16:42:37Z",
+      "side": 1,
+      "message": "it is no longer in the body (would it be easier if it was ?!)\nI am not suer my self we could add topic and request ID in b the body or both of the as URL whatever you think is bets maybe as URL Param is better as they are more part of \u0027infrastructure\u0027...",
+      "range": {
+        "startLine": 164,
+        "startChar": 84,
+        "endLine": 164,
+        "endChar": 97
+      },
+      "revId": "849c46c4f3d8b81d73d4cbb548ec8466d82d0862",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "6d0838db_a714183a",
+        "filename": "src/main/java/org/onap/cps/ncmp/dmi/rest/controller/DmiRestController.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 111,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2023-05-25T16:42:37Z",
+      "side": 1,
+      "message": "Dont usually add language like this, keep it short and simple",
+      "range": {
+        "startLine": 111,
+        "startChar": 37,
+        "endLine": 111,
+        "endChar": 47
+      },
+      "revId": "849c46c4f3d8b81d73d4cbb548ec8466d82d0862",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "329e298d_8aaa6a29",
+        "filename": "src/main/java/org/onap/cps/ncmp/dmi/rest/controller/DmiRestController.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 117,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2023-05-25T16:42:37Z",
+      "side": 1,
+      "message": "we have auto generated instrumentation for this instead now, I would not add logging here",
+      "range": {
+        "startLine": 117,
+        "startChar": 9,
+        "endLine": 117,
+        "endChar": 74
+      },
+      "revId": "849c46c4f3d8b81d73d4cbb548ec8466d82d0862",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "8b5cd9df_323ca5c2",
+        "filename": "src/test/resources/batchDataRequest.json",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2023-05-25T16:42:37Z",
+      "side": 1,
+      "message": "for test we always try to keep data to the minimum required I think a string (in the testcode - easier to see all in one palce) would better with just  the mininal required data:\ne.g. \n\n\n[ {\n    \"operationType\": \"read\",\n    \"operationId\": \"1\",\n    \"datastore\": \"ncmp-datastore:passthrough-running\",\n    \"cmHandles\": [ {\"id\": \"someCh\" } ]\n  } ]",
+      "revId": "849c46c4f3d8b81d73d4cbb548ec8466d82d0862",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    }
+  ]
+}
