@@ -49,6 +49,30 @@
     },
     {
       "key": {
+        "uuid": "20548d09_81e3d576",
+        "filename": "openapi/openapi.yml",
+        "patchSetId": 1
+      },
+      "lineNbr": 164,
+      "author": {
+        "id": 7735
+      },
+      "writtenOn": "2023-05-25T17:26:36Z",
+      "side": 1,
+      "message": "My bad, I misread the comment. I have updated the description bcz requestId is no longer in the body",
+      "parentUuid": "bc5ff942_967b3205",
+      "range": {
+        "startLine": 164,
+        "startChar": 84,
+        "endLine": 164,
+        "endChar": 97
+      },
+      "revId": "849c46c4f3d8b81d73d4cbb548ec8466d82d0862",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "6d0838db_a714183a",
         "filename": "src/main/java/org/onap/cps/ncmp/dmi/rest/controller/DmiRestController.java",
         "patchSetId": 1
