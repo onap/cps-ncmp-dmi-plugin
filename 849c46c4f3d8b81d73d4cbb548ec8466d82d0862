@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "bc5ff942_967b3205",
+        "filename": "openapi/openapi.yml",
+        "patchSetId": 1
+      },
+      "lineNbr": 164,
+      "author": {
+        "id": 7735
+      },
+      "writtenOn": "2023-05-25T17:00:57Z",
+      "side": 1,
+      "message": "I think on spike wiki i can see this point is agreed to keep as query param, But i am ok if any changes needed on this.",
+      "parentUuid": "f687bb6e_fc131ed9",
+      "range": {
+        "startLine": 164,
+        "startChar": 84,
+        "endLine": 164,
+        "endChar": 97
+      },
+      "revId": "849c46c4f3d8b81d73d4cbb548ec8466d82d0862",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "6d0838db_a714183a",
         "filename": "src/main/java/org/onap/cps/ncmp/dmi/rest/controller/DmiRestController.java",
         "patchSetId": 1
@@ -45,6 +69,30 @@
       "revId": "849c46c4f3d8b81d73d4cbb548ec8466d82d0862",
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "de2eb6f3_8babcf69",
+        "filename": "src/main/java/org/onap/cps/ncmp/dmi/rest/controller/DmiRestController.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 111,
+      "author": {
+        "id": 7735
+      },
+      "writtenOn": "2023-05-25T17:00:57Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "6d0838db_a714183a",
+      "range": {
+        "startLine": 111,
+        "startChar": 37,
+        "endLine": 111,
+        "endChar": 47
+      },
+      "revId": "849c46c4f3d8b81d73d4cbb548ec8466d82d0862",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
     },
     {
       "key": {
@@ -85,6 +133,24 @@
       "revId": "849c46c4f3d8b81d73d4cbb548ec8466d82d0862",
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "0c8e93a3_8f942ba4",
+        "filename": "src/test/resources/batchDataRequest.json",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 7735
+      },
+      "writtenOn": "2023-05-25T17:00:57Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "8b5cd9df_323ca5c2",
+      "revId": "849c46c4f3d8b81d73d4cbb548ec8466d82d0862",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
     }
   ]
 }
