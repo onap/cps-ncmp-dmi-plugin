@@ -472,6 +472,30 @@
     },
     {
       "key": {
+        "uuid": "2f341ecd_b00edccf",
+        "filename": "openapi/openapi.yml",
+        "patchSetId": 3
+      },
+      "lineNbr": 177,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2023-05-29T16:20:43Z",
+      "side": 1,
+      "message": "I think \u0027operation\u0027 might be better from  customer point of view. https://wiki.onap.org/pages/viewpage.action?pageId\u003d162104921 also mentioned just \u0027operation\u0027 sin teh first json example... In any case you can double check with teh stakeholders but I am pretty suer they will prefer \u0027operation\u0027 too\nBut in Java we have to call it operationType because \u0027operation\u0027 is the whole object. \nWe can use simple json mapping annotation to convert \u0027operation\u0027 to \u0027operationType\u0027 on the java-side",
+      "parentUuid": "da10865a_48b42989",
+      "range": {
+        "startLine": 170,
+        "startChar": 16,
+        "endLine": 177,
+        "endChar": 38
+      },
+      "revId": "ff8a562e9fc8b4160d73f6ea01a17b7c2c65fa71",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "944c6669_7894faec",
         "filename": "openapi/openapi.yml",
         "patchSetId": 3
