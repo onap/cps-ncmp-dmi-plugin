@@ -1,0 +1,73 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "8a42a759_07b36247",
+        "filename": "openapi/openapi.yml",
+        "patchSetId": 4
+      },
+      "lineNbr": 176,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2023-05-29T08:18:22Z",
+      "side": 1,
+      "message": "do not use \u0027dmi\u0027 in sample names (this more something for a unit test purposes)\n\u0027cmHanlde123\u0027 wil do here",
+      "range": {
+        "startLine": 176,
+        "startChar": 27,
+        "endLine": 176,
+        "endChar": 35
+      },
+      "revId": "ebf3234a439f637a9ef10004ad437d22badab7b9",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "2fa71b34_e9d4bf54",
+        "filename": "openapi/openapi.yml",
+        "patchSetId": 4
+      },
+      "lineNbr": 178,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2023-05-29T08:18:22Z",
+      "side": 1,
+      "message": "I to male it clear the names are \u0027free\u0027 and show at leas to examples\n\nmyProp`: \u0027some value\u0027\notherProp: \u0027other value\u0027",
+      "range": {
+        "startLine": 178,
+        "startChar": 24,
+        "endLine": 178,
+        "endChar": 49
+      },
+      "revId": "ebf3234a439f637a9ef10004ad437d22badab7b9",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "f07b36c6_ab04192f",
+        "filename": "src/main/java/org/onap/cps/ncmp/dmi/rest/controller/DmiRestController.java",
+        "patchSetId": 4
+      },
+      "lineNbr": 117,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2023-05-29T08:18:22Z",
+      "side": 1,
+      "message": "please remove, I\u0027ll explain instrumention to you separately",
+      "range": {
+        "startLine": 117,
+        "startChar": 8,
+        "endLine": 117,
+        "endChar": 93
+      },
+      "revId": "ebf3234a439f637a9ef10004ad437d22badab7b9",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    }
+  ]
+}
