@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "a4a6e4eb_46b7b242",
+        "filename": "openapi/openapi.yml",
+        "patchSetId": 5
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 4893
+      },
+      "writtenOn": "2023-05-31T12:14:21Z",
+      "side": 1,
+      "message": "Does this need updated to 2021-23",
+      "revId": "721ff32e15c410f67557348e34f049befff4f73a",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "ef03179e_dc915d15",
+        "filename": "src/main/java/org/onap/cps/ncmp/dmi/rest/controller/DmiRestController.java",
+        "patchSetId": 5
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 4893
+      },
+      "writtenOn": "2023-05-31T12:14:21Z",
+      "side": 1,
+      "message": "Update to 2021-2023",
+      "revId": "721ff32e15c410f67557348e34f049befff4f73a",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "13b9e4b1_134a424c",
+        "filename": "src/test/groovy/org/onap/cps/ncmp/dmi/rest/controller/DmiRestControllerSpec.groovy",
+        "patchSetId": 5
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 4893
+      },
+      "writtenOn": "2023-05-31T12:14:21Z",
+      "side": 1,
+      "message": "Update to 2021-2023",
+      "revId": "721ff32e15c410f67557348e34f049befff4f73a",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    }
+  ]
+}
