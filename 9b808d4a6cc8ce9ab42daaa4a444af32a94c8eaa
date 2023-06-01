@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "9ae28341_b0710c6a",
+        "filename": "openapi/components.yml",
+        "patchSetId": 6
+      },
+      "lineNbr": 61,
+      "author": {
+        "id": 7735
+      },
+      "writtenOn": "2023-06-01T11:10:02Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ff4bd4e5_9536c507",
+      "range": {
+        "startLine": 61,
+        "startChar": 10,
+        "endLine": 61,
+        "endChar": 21
+      },
+      "revId": "9b808d4a6cc8ce9ab42daaa4a444af32a94c8eaa",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "030c1710_73c88717",
         "filename": "openapi/components.yml",
         "patchSetId": 6
@@ -45,6 +69,30 @@
       "revId": "9b808d4a6cc8ce9ab42daaa4a444af32a94c8eaa",
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "c6e2d724_0d006029",
+        "filename": "openapi/components.yml",
+        "patchSetId": 6
+      },
+      "lineNbr": 93,
+      "author": {
+        "id": 7735
+      },
+      "writtenOn": "2023-06-01T11:10:02Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "030c1710_73c88717",
+      "range": {
+        "startLine": 92,
+        "startChar": 8,
+        "endLine": 93,
+        "endChar": 28
+      },
+      "revId": "9b808d4a6cc8ce9ab42daaa4a444af32a94c8eaa",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
     }
   ]
 }
