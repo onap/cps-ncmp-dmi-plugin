@@ -23,10 +23,8 @@ package org.onap.cps.ncmp.dmi.notifications.avc
 import com.fasterxml.jackson.databind.ObjectMapper
 import org.apache.kafka.clients.consumer.KafkaConsumer
 import org.onap.cps.ncmp.dmi.api.kafka.MessagingBaseSpec
-import org.onap.cps.ncmp.dmi.notifications.async.AsyncTaskExecutor
-import org.onap.cps.ncmp.dmi.service.DmiService
 import org.onap.cps.ncmp.dmi.notifications.avc.DmiDataAvcEventSimulationController
-import org.onap.cps.ncmp.event.model.AvcEvent
+import org.onap.cps.ncmp.events.avc.v1.AvcEvent
 import org.spockframework.spring.SpringBean
 import org.springframework.boot.test.context.SpringBootTest
 import org.springframework.test.annotation.DirtiesContext
@@ -39,12 +37,13 @@ import java.time.Duration
 @DirtiesContext
 class AvcEventExecutorIntegrationSpec extends MessagingBaseSpec {
 
-    @SpringBean
-    DmiDataAvcEventProducer dmiDataAvcEventProducer = new DmiDataAvcEventProducer(kafkaTemplate)
-
-    def dmiService =  new DmiDataAvcEventSimulationController(dmiDataAvcEventProducer)
-
     def objectMapper = new ObjectMapper()
+
+    @SpringBean
+    DmiDataAvcEventProducer dmiDataAvcEventProducer = new DmiDataAvcEventProducer(kafkaTemplate, objectMapper)
+
+    def dmiService = new DmiDataAvcEventSimulationController(dmiDataAvcEventProducer)
+
 
     def 'Publish Avc Event'() {
         given: 'a simulated event'
@@ -57,6 +56,6 @@ class AvcEventExecutorIntegrationSpec extends MessagingBaseSpec {
         then: 'record has correct topic'
             assert record.topic == 'dmi-cm-events'
         and: 'the record value can be mapped to an avcEvent'
-            objectMapper.readValue(record.value(), AvcEvent)
+            objectMapper.readValue(record.value(), AvcEvent.class)
     }
 }
