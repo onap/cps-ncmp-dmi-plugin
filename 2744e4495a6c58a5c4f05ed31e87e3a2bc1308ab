@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "46ec8d60_6f77e829",
+        "filename": "pom.xml",
+        "patchSetId": 2
+      },
+      "lineNbr": 43,
+      "author": {
+        "id": 7965
+      },
+      "writtenOn": "2023-06-06T12:58:02Z",
+      "side": 1,
+      "message": "this is done temporarily until we create 3.3.3 version of CPS.\nWe wont merge it like this.",
+      "range": {
+        "startLine": 43,
+        "startChar": 21,
+        "endLine": 43,
+        "endChar": 35
+      },
+      "revId": "2744e4495a6c58a5c4f05ed31e87e3a2bc1308ab",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    }
+  ]
+}
