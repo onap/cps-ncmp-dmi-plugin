@@ -40,7 +40,7 @@
     <properties>
         <app>org.onap.cps.ncmp.dmi.Application</app>
         <base.image>${docker.pull.registry}/onap/integration-java11:8.0.0</base.image>
-        <cps.version>3.2.6</cps.version>
+        <cps.version>3.3.2-SNAPSHOT</cps.version>
         <image.tag>${project.version}-${maven.build.timestamp}</image.tag>
         <jacoco.minimum.coverage>0.98</jacoco.minimum.coverage>
         <maven.build.timestamp.format>yyyyMMdd'T'HHmmss'Z'</maven.build.timestamp.format>

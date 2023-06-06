@@ -23,7 +23,8 @@ package org.onap.cps.ncmp.dmi.notifications.avc;
 import java.util.UUID;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import org.onap.cps.ncmp.event.model.AvcEvent;
+import org.onap.cps.ncmp.events.avc.v1.AvcEvent;
+import org.onap.cps.ncmp.events.avc.v1.AvcEventHeader;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -52,8 +53,9 @@ public class DmiDataAvcEventSimulationController {
 
         for (int i = 0; i < numberOfSimulatedEvents; i++) {
             final String eventCorrelationId = UUID.randomUUID().toString();
-            final AvcEvent avcEvent = dmiDataAvcEventCreator.createEvent(eventCorrelationId);
-            dmiDataAvcEventProducer.sendMessage(eventCorrelationId, avcEvent);
+            final AvcEventHeader avcEventHeader = dmiDataAvcEventCreator.createAvcEventHeader(eventCorrelationId);
+            final AvcEvent avcEvent = dmiDataAvcEventCreator.createEvent();
+            dmiDataAvcEventProducer.sendMessageWithHeaders(eventCorrelationId, avcEventHeader, avcEvent);
         }
 
         return new ResponseEntity<>(HttpStatus.OK);

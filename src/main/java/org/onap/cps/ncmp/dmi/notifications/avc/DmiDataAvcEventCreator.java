@@ -23,10 +23,18 @@ package org.onap.cps.ncmp.dmi.notifications.avc;
 import java.time.ZonedDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.LinkedHashMap;
+import java.util.List;
 import java.util.Map;
 import java.util.UUID;
 import lombok.extern.slf4j.Slf4j;
-import org.onap.cps.ncmp.event.model.AvcEvent;
+import org.onap.cps.ncmp.events.avc.v1.AvcEvent;
+import org.onap.cps.ncmp.events.avc.v1.AvcEventHeader;
+import org.onap.cps.ncmp.events.avc.v1.DatastoreChanges;
+import org.onap.cps.ncmp.events.avc.v1.Edit;
+import org.onap.cps.ncmp.events.avc.v1.Event;
+import org.onap.cps.ncmp.events.avc.v1.IetfYangPatchYangPatch;
+import org.onap.cps.ncmp.events.avc.v1.PushChangeUpdate;
+import org.onap.cps.ncmp.events.avc.v1.Value;
 
 /**
  * Helper to create AvcEvents.
@@ -34,31 +42,57 @@ import org.onap.cps.ncmp.event.model.AvcEvent;
 @Slf4j
 public class DmiDataAvcEventCreator {
 
-    private static final DateTimeFormatter dateTimeFormatter
-            = DateTimeFormatter.ofPattern("yyyy-MM-dd'T'HH:mm:ss.SSSZ");
+    private static final DateTimeFormatter dateTimeFormatter =
+            DateTimeFormatter.ofPattern("yyyy-MM-dd'T'HH:mm:ss.SSSZ");
 
     /**
      * Create an AVC event.
      *
-     * @param eventCorrelationId  the event correlation id
      * @return DmiAsyncRequestResponseEvent
      */
-    public AvcEvent createEvent(final String eventCorrelationId) {
+    public AvcEvent createEvent() {
         final AvcEvent avcEvent = new AvcEvent();
-        avcEvent.setEventId(UUID.randomUUID().toString());
-        avcEvent.setEventCorrelationId(eventCorrelationId);
-        avcEvent.setEventType(AvcEvent.class.getName());
-        avcEvent.setEventSchema("urn:cps:" + AvcEvent.class.getName());
-        avcEvent.setEventSchemaVersion("v1");
-        avcEvent.setEventSource("NCMP");
-        avcEvent.setEventTime(ZonedDateTime.now().format(dateTimeFormatter));
+        final Event event = new Event();
+        final PushChangeUpdate pushChangeUpdate = new PushChangeUpdate();
+        final DatastoreChanges datastoreChanges = new DatastoreChanges();
+        final IetfYangPatchYangPatch ietfYangPatchYangPatch = new IetfYangPatchYangPatch();
+        ietfYangPatchYangPatch.setPatchId("abcd");
+        final Edit edit1 = new Edit();
+        final Value value = new Value();
+        final Map<String, Object> attributeMap = new LinkedHashMap<>();
+        attributeMap.put("isHoAllowed", false);
+        value.setAttributes(List.of(attributeMap));
+        edit1.setEditId("editId");
+        edit1.setOperation("replace");
+        edit1.setTarget("target_xpath");
+        edit1.setValue(value);
+        ietfYangPatchYangPatch.setEdit(List.of(edit1));
+        datastoreChanges.setIetfYangPatchYangPatch(ietfYangPatchYangPatch);
+        pushChangeUpdate.setDatastoreChanges(datastoreChanges);
+        event.setPushChangeUpdate(pushChangeUpdate);
 
-        final Map<String, Object> eventPayload = new LinkedHashMap<>();
-        eventPayload.put("push-change-update", "{}");
-        avcEvent.setEvent(eventPayload);
-
-        log.debug("Avc Event Created ID: {}", avcEvent.getEventId());
+        avcEvent.setEvent(event);
         return avcEvent;
+    }
+
+    /**
+     * Create an AvcEventHeader.
+     *
+     * @param eventCorrelationId the event correlation id
+     * @return DmiAsyncRequestResponseEventHeader
+     */
+    public AvcEventHeader createAvcEventHeader(final String eventCorrelationId) {
+        final AvcEventHeader avcEventHeader = new AvcEventHeader();
+
+        avcEventHeader.setEventId(UUID.randomUUID().toString());
+        avcEventHeader.setEventCorrelationId(eventCorrelationId);
+        avcEventHeader.setEventType(AvcEvent.class.getName());
+        avcEventHeader.setEventSchema("urn:cps:" + AvcEvent.class.getName());
+        avcEventHeader.setEventSchemaVersion("v1");
+        avcEventHeader.setEventSource("NCMP");
+        avcEventHeader.setEventTime(ZonedDateTime.now().format(dateTimeFormatter));
+
+        return avcEventHeader;
     }
 
 }
