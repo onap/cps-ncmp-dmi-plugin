@@ -20,23 +20,32 @@
 
 package org.onap.cps.ncmp.dmi.notifications.avc;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
+import io.cloudevents.CloudEvent;
+import io.cloudevents.core.CloudEventUtils;
+import io.cloudevents.core.builder.CloudEventBuilder;
+import io.cloudevents.core.data.PojoCloudEventData;
+import io.cloudevents.jackson.PojoCloudEventDataMapper;
+import java.net.URI;
+import java.util.ArrayList;
 import java.util.Date;
-import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import java.util.UUID;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import org.onap.cps.ncmp.dmi.service.model.SubscriptionEventResponse;
-import org.onap.cps.ncmp.dmi.service.model.SubscriptionEventResponseStatus;
+import org.apache.kafka.clients.consumer.ConsumerRecord;
 import org.onap.cps.ncmp.event.model.SubscriptionEvent;
+import org.onap.cps.ncmp.events.avcsubscription1_0_0.dmi_to_ncmp.Data;
+import org.onap.cps.ncmp.events.avcsubscription1_0_0.dmi_to_ncmp.SubscriptionEventResponse;
+import org.onap.cps.ncmp.events.avcsubscription1_0_0.dmi_to_ncmp.SubscriptionStatus;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.kafka.annotation.KafkaListener;
 import org.springframework.kafka.core.KafkaTemplate;
 import org.springframework.kafka.support.KafkaHeaders;
 import org.springframework.messaging.handler.annotation.Header;
-import org.springframework.messaging.handler.annotation.Payload;
 import org.springframework.stereotype.Component;
 
 @Component
@@ -48,23 +57,33 @@ public class SubscriptionEventConsumer {
     private String cmAvcSubscriptionResponseTopic;
     @Value("${dmi.service.name}")
     private String dmiName;
-    private final KafkaTemplate<String, SubscriptionEventResponse> kafkaTemplate;
+    private final KafkaTemplate<String, CloudEvent> cloudEventKafkaTemplate;
+
+    final ObjectMapper objectMapper = new ObjectMapper();
 
     /**
      * Consume the specified event.
      *
-     * @param subscriptionEvent the event to be consumed
+     * @param subscriptionCloudEvent the event to be consumed
      */
     @KafkaListener(topics = "${app.dmi.avc.subscription-topic}",
-            properties = {"spring.json.value.default.type=org.onap.cps.ncmp.event.model.SubscriptionEvent"})
-    public void consumeSubscriptionEvent(@Payload final SubscriptionEvent subscriptionEvent,
+        containerFactory = "cloudEventConcurrentKafkaListenerContainerFactory")
+    public void consumeSubscriptionEvent(final ConsumerRecord<String, CloudEvent> subscriptionCloudEvent,
                                          @Header(KafkaHeaders.RECEIVED_MESSAGE_KEY) final String eventKey,
                                          @Header(KafkaHeaders.RECEIVED_TIMESTAMP) final String timeStampReceived) {
-        final Date dateAndTimeReceived = new Date(Long.parseLong(timeStampReceived));
-        final String subscriptionName = subscriptionEvent.getEvent().getSubscription().getName();
-        log.info("Subscription for SubscriptionName {} is received at {} by dmi plugin.", subscriptionName,
+        final PojoCloudEventData<SubscriptionEvent> deserializedCloudEvent =
+            CloudEventUtils.mapData(subscriptionCloudEvent.value(),
+            PojoCloudEventDataMapper.from(objectMapper, SubscriptionEvent.class));
+        if (deserializedCloudEvent == null) {
+            log.debug("No data found in the consumed event");
+        } else {
+            final SubscriptionEvent subscriptionEvent = deserializedCloudEvent.getValue();
+            final String subscriptionName = subscriptionEvent.getEvent().getSubscription().getName();
+            final Date dateAndTimeReceived = new Date(Long.parseLong(timeStampReceived));
+            log.info("Subscription for SubscriptionName {} is received at {} by dmi plugin.", subscriptionName,
                 dateAndTimeReceived);
-        sendSubscriptionResponseMessage(eventKey, formSubscriptionEventResponse(subscriptionEvent));
+            sendSubscriptionResponseMessage(eventKey, formSubscriptionEventResponse(subscriptionEvent));
+        }
     }
 
     /**
@@ -75,19 +94,40 @@ public class SubscriptionEventConsumer {
      */
     public void sendSubscriptionResponseMessage(final String eventKey,
                                                 final SubscriptionEventResponse subscriptionEventResponse) {
-        kafkaTemplate.send(cmAvcSubscriptionResponseTopic, eventKey, subscriptionEventResponse);
+        cloudEventKafkaTemplate.send(cmAvcSubscriptionResponseTopic, eventKey,
+            convertSubscriptionResponseEvent(eventKey, subscriptionEventResponse));
+    }
+
+    private CloudEvent convertSubscriptionResponseEvent(final String eventKey,
+                                                        final SubscriptionEventResponse subscriptionEventResponse) {
+        CloudEvent cloudEvent = null;
+
+        try {
+            cloudEvent = CloudEventBuilder.v1().withId(UUID.randomUUID().toString()).withSource(URI.create(dmiName))
+                .withType(SubscriptionEventResponse.class.getName())
+                .withDataSchema(URI.create("urn:cps:" + SubscriptionEventResponse.class.getName() + ":1.0.0"))
+                .withExtension("correlationid", eventKey)
+                .withData(objectMapper.writeValueAsBytes(subscriptionEventResponse)).build();
+        } catch (final Exception ex) {
+            throw new RuntimeException("The Cloud Event could not be constructed.", ex);
+        }
+
+        return cloudEvent;
     }
 
     private SubscriptionEventResponse formSubscriptionEventResponse(final SubscriptionEvent subscriptionEvent) {
         final SubscriptionEventResponse subscriptionEventResponse = new SubscriptionEventResponse();
-        subscriptionEventResponse.setClientId(subscriptionEvent.getEvent().getSubscription().getClientID());
-        subscriptionEventResponse.setSubscriptionName(subscriptionEvent.getEvent().getSubscription().getName());
-        subscriptionEventResponse.setDmiName(dmiName);
+        final Data subscriptionResponseData = new Data();
+        subscriptionResponseData.setClientId(subscriptionEvent.getEvent().getSubscription().getClientID());
+        subscriptionResponseData.setSubscriptionName(subscriptionEvent.getEvent().getSubscription().getName());
+        subscriptionResponseData.setDmiName(dmiName);
+
         final List<Object> cmHandleIdToCmHandlePropertyMap = subscriptionEvent.getEvent()
                 .getPredicates()
                 .getTargets();
-        subscriptionEventResponse
-                .setCmHandleIdToStatus(populateCmHandleIdToStatus(extractCmHandleIds(cmHandleIdToCmHandlePropertyMap)));
+        subscriptionResponseData
+                .setSubscriptionStatus(populateSubscriptionStatus(extractCmHandleIds(cmHandleIdToCmHandlePropertyMap)));
+        subscriptionEventResponse.setData(subscriptionResponseData);
         return subscriptionEventResponse;
     }
 
@@ -100,11 +140,15 @@ public class SubscriptionEventConsumer {
         return cmHandleIds;
     }
 
-    private Map<String, SubscriptionEventResponseStatus> populateCmHandleIdToStatus(final Set<String> cmHandleIds) {
-        final Map<String, SubscriptionEventResponseStatus> result = new HashMap<>();
+    private List<SubscriptionStatus> populateSubscriptionStatus(final Set<String> cmHandleIds) {
+        final List<SubscriptionStatus> subscriptionStatuses = new ArrayList<>();
         for (final String cmHandleId : cmHandleIds) {
-            result.put(cmHandleId, SubscriptionEventResponseStatus.ACCEPTED);
+            final SubscriptionStatus status = new SubscriptionStatus();
+            status.setId(cmHandleId);
+            status.setStatus(SubscriptionStatus.Status.ACCEPTED);
+            subscriptionStatuses.add(status);
         }
-        return result;
+        return subscriptionStatuses;
     }
+
 }
