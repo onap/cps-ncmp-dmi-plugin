@@ -49,11 +49,11 @@ components:
         cmHandleProperties:
           $ref: '#/components/schemas/cmHandleProperties'
 
-    ResourceBatchDataRequest:
+    ResourceDataOperationRequests:
       type: array
       items:
         type: object
-        title: 'ResourceBatchRequest'
+        title: 'DataOperationRequest'
         properties:
           operation:
             type: string
