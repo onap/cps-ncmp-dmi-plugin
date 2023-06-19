@@ -29,6 +29,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Primary;
 import org.springframework.kafka.annotation.EnableKafka;
+import org.springframework.kafka.config.ConcurrentKafkaListenerContainerFactory;
 import org.springframework.kafka.core.ConsumerFactory;
 import org.springframework.kafka.core.DefaultKafkaConsumerFactory;
 import org.springframework.kafka.core.DefaultKafkaProducerFactory;
@@ -122,6 +123,20 @@ public class KafkaConfig<T> {
         final KafkaTemplate<String, CloudEvent> kafkaTemplate = new KafkaTemplate<>(cloudEventProducerFactory());
         kafkaTemplate.setConsumerFactory(cloudEventConsumerFactory());
         return kafkaTemplate;
+    }
+
+    /**
+     * A cloud Kafka event template for executing high-level operations. The cloud producer factory ensure this.
+     *
+     * @return an instance of cloud Kafka template.
+     */
+    @Bean
+    public ConcurrentKafkaListenerContainerFactory<String, CloudEvent>
+        cloudEventConcurrentKafkaListenerContainerFactory() {
+        final ConcurrentKafkaListenerContainerFactory<String, CloudEvent> containerFactory =
+            new ConcurrentKafkaListenerContainerFactory<>();
+        containerFactory.setConsumerFactory(cloudEventConsumerFactory());
+        return containerFactory;
     }
 
 }
