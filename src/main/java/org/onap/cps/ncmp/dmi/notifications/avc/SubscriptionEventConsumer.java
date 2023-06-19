@@ -21,7 +21,6 @@
 package org.onap.cps.ncmp.dmi.notifications.avc;
 
 import java.util.Date;
-import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
@@ -30,6 +29,7 @@ import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.onap.cps.ncmp.dmi.service.model.SubscriptionEventResponse;
 import org.onap.cps.ncmp.dmi.service.model.SubscriptionEventResponseStatus;
+import org.onap.cps.ncmp.dmi.service.model.SubscriptionStatus;
 import org.onap.cps.ncmp.event.model.SubscriptionEvent;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.kafka.annotation.KafkaListener;
@@ -83,11 +83,12 @@ public class SubscriptionEventConsumer {
         subscriptionEventResponse.setClientId(subscriptionEvent.getEvent().getSubscription().getClientID());
         subscriptionEventResponse.setSubscriptionName(subscriptionEvent.getEvent().getSubscription().getName());
         subscriptionEventResponse.setDmiName(dmiName);
+
         final List<Object> cmHandleIdToCmHandlePropertyMap = subscriptionEvent.getEvent()
                 .getPredicates()
                 .getTargets();
         subscriptionEventResponse
-                .setCmHandleIdToStatus(populateCmHandleIdToStatus(extractCmHandleIds(cmHandleIdToCmHandlePropertyMap)));
+                .setSubscriptionStatus(populateSubscriptionStatus(extractCmHandleIds(cmHandleIdToCmHandlePropertyMap)));
         return subscriptionEventResponse;
     }
 
@@ -100,11 +101,15 @@ public class SubscriptionEventConsumer {
         return cmHandleIds;
     }
 
-    private Map<String, SubscriptionEventResponseStatus> populateCmHandleIdToStatus(final Set<String> cmHandleIds) {
-        final Map<String, SubscriptionEventResponseStatus> result = new HashMap<>();
+    private Set<SubscriptionStatus> populateSubscriptionStatus(final Set<String> cmHandleIds) {
+        final Set<SubscriptionStatus> subscriptionStatuses = new HashSet<>();
         for (final String cmHandleId : cmHandleIds) {
-            result.put(cmHandleId, SubscriptionEventResponseStatus.ACCEPTED);
+            final SubscriptionStatus status = new SubscriptionStatus();
+            status.setId(cmHandleId);
+            status.setStatus(SubscriptionEventResponseStatus.ACCEPTED);
+            subscriptionStatuses.add(status);
         }
-        return result;
+        return subscriptionStatuses;
     }
+
 }

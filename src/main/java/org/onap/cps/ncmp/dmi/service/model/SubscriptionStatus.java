@@ -21,16 +21,15 @@
 package org.onap.cps.ncmp.dmi.service.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
-import java.util.Set;
 import lombok.Getter;
 import lombok.Setter;
 
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @Getter
 @Setter
-public class SubscriptionEventResponse {
-    private String clientId;
-    private String subscriptionName;
-    private String dmiName;
-    private Set<SubscriptionStatus> subscriptionStatus;
+public class SubscriptionStatus {
+    private String id;
+    private SubscriptionEventResponseStatus status;
+    private String message;
+
 }

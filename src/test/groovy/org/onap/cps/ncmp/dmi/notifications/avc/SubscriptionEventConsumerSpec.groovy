@@ -26,6 +26,7 @@ import org.onap.cps.ncmp.dmi.TestUtils
 import org.onap.cps.ncmp.dmi.api.kafka.MessagingBaseSpec
 import org.onap.cps.ncmp.dmi.service.model.SubscriptionEventResponse
 import org.onap.cps.ncmp.dmi.service.model.SubscriptionEventResponseStatus
+import org.onap.cps.ncmp.dmi.service.model.SubscriptionStatus
 import org.onap.cps.ncmp.event.model.SubscriptionEvent
 import org.spockframework.spring.SpringBean
 import org.springframework.boot.test.context.SpringBootTest
@@ -50,9 +51,10 @@ class SubscriptionEventConsumerSpec extends MessagingBaseSpec {
     def 'Sends subscription event response successfully.'() {
         given: 'an subscription event response'
             def responseStatus = SubscriptionEventResponseStatus.ACCEPTED
-            def cmHandleIdToStatusMap = ['CmHandle1':responseStatus, 'CmHandle2':responseStatus]
+            def subscriptionStatuses = [new SubscriptionStatus(id: 'CmHandle1', status: responseStatus),
+                                        new SubscriptionStatus(id: 'CmHandle2', status: responseStatus)]
             def subscriptionEventResponse = new SubscriptionEventResponse(subscriptionName: 'cm-subscription-001',
-                clientId: 'SCO-9989752', dmiName: 'ncmp-dmi-plugin', cmHandleIdToStatus: cmHandleIdToStatusMap)
+                clientId: 'SCO-9989752', dmiName: 'ncmp-dmi-plugin', subscriptionStatus: subscriptionStatuses)
             objectUnderTest.cmAvcSubscriptionResponseTopic = testTopic
         and: 'consumer has a subscription'
             kafkaConsumer.subscribe([testTopic] as List<String>)
@@ -96,14 +98,14 @@ class SubscriptionEventConsumerSpec extends MessagingBaseSpec {
             assert expectedCmHandleIds == result
     }
 
-    def 'Populate cm handle id to status map successfully.'() {
+    def 'Populate cm handle id to subscriptionStatus successfully.'() {
         given: 'a set of cm handle id'
             def cmHandleIds = ['CmHandle1', 'CmHandle2'] as Set
             def responseStatus = SubscriptionEventResponseStatus.ACCEPTED
-        when: 'populate cm handle id to status map'
-            def result = objectUnderTest.populateCmHandleIdToStatus(cmHandleIds)
-        then: 'cm handle id to status map populated as expected'
-            def expectedMap = ['CmHandle1':responseStatus,'CmHandle2':responseStatus]
-            expectedMap == result
+        when: 'populate cm handle id to subscriptionStatus'
+            def result = objectUnderTest.populateSubscriptionStatus(cmHandleIds).status
+        then: 'cm handle id to subscriptionStatus populated as expected'
+            def expectedStatus = [responseStatus,responseStatus]
+            expectedStatus == result
     }
 }
