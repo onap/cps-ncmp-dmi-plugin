@@ -1,45 +1,39 @@
 {
-  "version": "1.0",
-  "eventType": "CREATE",
-  "event": {
-    "subscription": {
-      "clientID": "SCO-9989752",
-      "name": "cm-subscription-001"
-    },
+  "data": {
     "dataType": {
-      "dataspace": "ALL",
       "dataCategory": "CM",
       "dataProvider": "CM-SERVICE",
-      "schemaName": "org.onap.ncmp:cm-network-avc-event.rfc8641",
-      "schemaVersion": "1.0"
+      "dataspace": "ALL"
     },
     "predicates": {
+      "datastore": "passthrough-running",
       "targets": [
         {
-          "CMHandle1": {
-            "cmhandle-properties": {
-              "prop1": "prop-value"
-            }
+          "id": "CMHandle1",
+          "additional-properties": {
+            "prop1": "prop-value"
           }
         },
         {
-          "CMHandle2": {
-            "cmhandle-properties": {
-              "prop-x": "prop-valuex",
-              "prop-p": "prop-valuep"
-            }
+          "id": "CMHandle2",
+          "additional-properties": {
+            "prop-x": "prop-valuex",
+            "prop-p": "prop-valuep"
           }
         },
         {
-          "CMHandle3": {
-            "cmhandle-properties": {
-              "prop-y": "prop-valuey"
-            }
+          "id": "CMHandle3",
+          "additional-properties": {
+            "prop-y": "prop-valuey"
           }
         }
       ],
-      "datastore": "passthrough-running",
-      "xpath-filter": "//_3gpp-nr-nrm-gnbdufunction:GNBDUFunction/_3gpp-nr-nrm-nrcelldu:NRCellDU/ | //_3gpp-nr-nrm-gnbcuupfunction:GNBCUUPFunction// | //_3gpp-nr-nrm-gnbcucpfunction:GNBCUCPFunction/_3gpp-nr-nrm-nrcelldu:NRCellCU// | //_3gpp-nr-nrm-nrsectorcarrier:NRSectorCarrier//"
+      "datastore-xpath-filter": "//_3gpp-nr-nrm-gnbdufunction:GNBDUFunction/_3gpp-nr-nrm-nrcelldu:NRCellDU/ | //_3gpp-nr-nrm-gnbcuupfunction:GNBCUUPFunction// | //_3gpp-nr-nrm-gnbcucpfunction:GNBCUCPFunction/_3gpp-nr-nrm-nrcelldu:NRCellCU// | //_3gpp-nr-nrm-nrsectorcarrier:NRSectorCarrier//"
+    },
+    "subscription": {
+      "clientID": "SCO-9989752",
+      "name": "cm-subscription-001",
+      "isTagged": false
     }
   }
 }

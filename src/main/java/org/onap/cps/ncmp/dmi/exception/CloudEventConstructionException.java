@@ -18,19 +18,20 @@
  *  ============LICENSE_END=========================================================
  */
 
-package org.onap.cps.ncmp.dmi.service.model;
+package org.onap.cps.ncmp.dmi.exception;
 
-import com.fasterxml.jackson.annotation.JsonInclude;
-import java.util.Map;
-import lombok.Getter;
-import lombok.Setter;
+public class CloudEventConstructionException extends DmiException {
 
-@JsonInclude(JsonInclude.Include.NON_NULL)
-@Getter
-@Setter
-public class SubscriptionEventResponse {
-    private String clientId;
-    private String subscriptionName;
-    private String dmiName;
-    private Map<String, SubscriptionEventResponseStatus> cmHandleIdToStatus;
+    private static final long serialVersionUID = 7747941311132087621L;
+
+    /**
+     * Constructor.
+     *
+     * @param message the error message
+     * @param details the error details
+     * @param cause   the error cause
+     */
+    public CloudEventConstructionException(final String message, final String details, final Throwable cause) {
+        super(message, details, cause);
+    }
 }
