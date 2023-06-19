@@ -313,16 +313,16 @@ class DmiRestControllerSpec extends Specification {
     }
 
     def 'Get resource data for a list of operations.'() {
-        given: 'an endpoint for a batch data request with list of cmhandles in request body'
+        given: 'an endpoint for a data operation request with list of cmhandles in request body'
             def resourceDataUrl = "$basePathV1/data?topic=client-topic-name&requestId=some-requestId"
         and: 'list of operation details are received into request body'
-            def batchDataRequestBody = '[{"operation": "read", "operationId": "14", "datastore": "ncmp-datastore:passthrough-operational", "options": "some options", "resourceIdentifier": "some resourceIdentifier",' +
+            def dataOperationRequestBody = '[{"operation": "read", "operationId": "14", "datastore": "ncmp-datastore:passthrough-operational", "options": "some options", "resourceIdentifier": "some resourceIdentifier",' +
                 '    "cmhandles": [ {"id": "cmHanlde123", "cmHandleProperties": { "myProp`": "some value", "otherProp": "other value"}}]}]'
-        when: 'the dmi resource data for batch operation api is called.'
+        when: 'the dmi resource data for dataOperation api is called.'
             def response = mvc.perform(
-                post(resourceDataUrl).contentType(MediaType.APPLICATION_JSON).content(batchDataRequestBody)
+                post(resourceDataUrl).contentType(MediaType.APPLICATION_JSON).content(dataOperationRequestBody)
             ).andReturn().response
-        then: 'the batch data endpoint returns the not implemented response'
+        then: 'the resource data operation endpoint returns the not implemented response'
             assert response.status == 501
     }
 }

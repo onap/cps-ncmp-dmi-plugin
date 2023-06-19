@@ -154,9 +154,9 @@ paths:
     post:
       tags:
         - dmi-plugin
-      summary: Get resource data for batch of cm handle ids.
-      description: Get resource data for batch of cm handle ids by supplied operation details
-      operationId: getResourceDataForCmHandleBatch
+      summary: Get resource data for group of cm handle ids.
+      description: Get resource data for group of cm handle ids by supplied operation details
+      operationId: getResourceDataForCmHandleDataOperation
       parameters:
         - $ref: 'components.yml#/components/parameters/requiredTopicParamInQuery'
         - $ref: 'components.yml#/components/parameters/requiredRequestIdParamInQuery'
@@ -165,7 +165,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: 'components.yml#/components/schemas/ResourceBatchDataRequest'
+              $ref: 'components.yml#/components/schemas/ResourceDataOperationRequests'
       responses:
         '202':
           description: Accepted
