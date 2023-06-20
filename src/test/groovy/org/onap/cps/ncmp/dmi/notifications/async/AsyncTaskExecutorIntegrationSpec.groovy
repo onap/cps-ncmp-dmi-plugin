@@ -49,18 +49,18 @@ class AsyncTaskExecutorIntegrationSpec extends MessagingBaseSpec {
 
     def setup() {
         cpsAsyncRequestResponseEventProducer.dmiNcmpTopic = TEST_TOPIC
-        consumer.subscribe([TEST_TOPIC] as List<String>)
+        kafkaConsumer.subscribe([TEST_TOPIC] as List<String>)
     }
 
     def cleanup() {
-        consumer.close()
+        kafkaConsumer.close()
     }
 
     def 'Publish and Subscribe message - success'() {
         when: 'a successful event is published'
             objectUnderTest.publishAsyncEvent(TEST_TOPIC, '12345','{}', 'OK', '200')
         and: 'the topic is polled'
-            def records = consumer.poll(Duration.ofMillis(1500))
+            def records = kafkaConsumer.poll(Duration.ofMillis(1500))
         then: 'the record received is the event sent'
             def record = records.iterator().next()
             DmiAsyncRequestResponseEvent event  = spiedObjectMapper.readValue(record.value(), DmiAsyncRequestResponseEvent)
@@ -74,7 +74,7 @@ class AsyncTaskExecutorIntegrationSpec extends MessagingBaseSpec {
             def exception = new HttpClientRequestException('some cm handle', 'Node not found', HttpStatus.INTERNAL_SERVER_ERROR)
             objectUnderTest.publishAsyncFailureEvent(TEST_TOPIC, '67890', exception)
         and: 'the topic is polled'
-            def records = consumer.poll(Duration.ofMillis(1500))
+            def records = kafkaConsumer.poll(Duration.ofMillis(1500))
         then: 'the record received is the event sent'
             def record = records.iterator().next()
             DmiAsyncRequestResponseEvent event  = spiedObjectMapper.readValue(record.value(), DmiAsyncRequestResponseEvent)
