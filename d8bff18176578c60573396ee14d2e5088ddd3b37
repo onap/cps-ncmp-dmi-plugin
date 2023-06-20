@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "d777a7b1_046b8ffe",
+        "filename": "openapi/openapi.yml",
+        "patchSetId": 1
+      },
+      "lineNbr": 157,
+      "author": {
+        "id": 7735
+      },
+      "writtenOn": "2023-06-20T08:48:24Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5137a898_ecf9336e",
+      "range": {
+        "startLine": 157,
+        "startChar": 15,
+        "endLine": 157,
+        "endChar": 33
+      },
+      "revId": "d8bff18176578c60573396ee14d2e5088ddd3b37",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "4d8ac3b4_d5da1f53",
         "filename": "openapi/openapi.yml",
         "patchSetId": 1
@@ -48,6 +72,30 @@
     },
     {
       "key": {
+        "uuid": "d3ce1161_c17f1bcf",
+        "filename": "openapi/openapi.yml",
+        "patchSetId": 1
+      },
+      "lineNbr": 158,
+      "author": {
+        "id": 7735
+      },
+      "writtenOn": "2023-06-20T08:48:24Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "4d8ac3b4_d5da1f53",
+      "range": {
+        "startLine": 158,
+        "startChar": 19,
+        "endLine": 158,
+        "endChar": 35
+      },
+      "revId": "d8bff18176578c60573396ee14d2e5088ddd3b37",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "a9712785_ae695eea",
         "filename": "src/test/groovy/org/onap/cps/ncmp/dmi/rest/controller/DmiRestControllerSpec.groovy",
         "patchSetId": 1
@@ -68,6 +116,30 @@
       "revId": "d8bff18176578c60573396ee14d2e5088ddd3b37",
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "7c0d9ebb_6ba2337e",
+        "filename": "src/test/groovy/org/onap/cps/ncmp/dmi/rest/controller/DmiRestControllerSpec.groovy",
+        "patchSetId": 1
+      },
+      "lineNbr": 315,
+      "author": {
+        "id": 7735
+      },
+      "writtenOn": "2023-06-20T08:48:24Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "a9712785_ae695eea",
+      "range": {
+        "startLine": 315,
+        "startChar": 9,
+        "endLine": 315,
+        "endChar": 26
+      },
+      "revId": "d8bff18176578c60573396ee14d2e5088ddd3b37",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
     }
   ]
 }
