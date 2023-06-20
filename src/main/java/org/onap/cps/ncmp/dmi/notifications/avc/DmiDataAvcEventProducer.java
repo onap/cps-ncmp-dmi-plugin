@@ -20,9 +20,11 @@
 
 package org.onap.cps.ncmp.dmi.notifications.avc;
 
+
+import io.cloudevents.CloudEvent;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import org.onap.cps.ncmp.event.model.AvcEvent;
+import org.apache.kafka.clients.producer.ProducerRecord;
 import org.springframework.kafka.core.KafkaTemplate;
 import org.springframework.stereotype.Service;
 
@@ -31,16 +33,18 @@ import org.springframework.stereotype.Service;
 @RequiredArgsConstructor
 public class DmiDataAvcEventProducer {
 
-    private final KafkaTemplate<String, AvcEvent> kafkaTemplate;
-
+    private final KafkaTemplate<String, CloudEvent> cloudEventKafkaTemplate;
+    
     /**
-     * Sends message to the configured topic with a message key.
+     * Publishing DMI Data AVC event payload as CloudEvent.
      *
-     * @param requestId the request id
-     * @param avcEvent the event to publish
+     * @param requestId     the request id
+     * @param cloudAvcEvent event with data as DMI DataAVC event
      */
-    public void sendMessage(final String requestId, final AvcEvent avcEvent) {
-        kafkaTemplate.send("dmi-cm-events", requestId, avcEvent);
+    public void publishDmiDataAvcCloudEvent(final String requestId, final CloudEvent cloudAvcEvent) {
+        final ProducerRecord<String, CloudEvent> producerRecord =
+                new ProducerRecord<>("dmi-cm-events", requestId, cloudAvcEvent);
+        cloudEventKafkaTemplate.send(producerRecord);
         log.debug("AVC event sent");
     }
 }
