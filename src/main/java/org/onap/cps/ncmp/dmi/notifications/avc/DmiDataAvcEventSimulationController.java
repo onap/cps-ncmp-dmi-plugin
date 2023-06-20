@@ -20,10 +20,10 @@
 
 package org.onap.cps.ncmp.dmi.notifications.avc;
 
+import io.cloudevents.CloudEvent;
 import java.util.UUID;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import org.onap.cps.ncmp.event.model.AvcEvent;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -42,18 +42,19 @@ public class DmiDataAvcEventSimulationController {
 
     /**
      * Simulate Event for AVC.
+     *
      * @param numberOfSimulatedEvents number of events to be generated
      * @return ResponseEntity
      */
     @GetMapping(path = "/v1/simulateDmiDataEvent")
-    public ResponseEntity<Void> simulateEvents(@RequestParam("numberOfSimulatedEvents")
-                                                   final Integer numberOfSimulatedEvents) {
-        final DmiDataAvcEventCreator dmiDataAvcEventCreator = new DmiDataAvcEventCreator();
+    public ResponseEntity<Void> simulateEvents(
+            @RequestParam("numberOfSimulatedEvents") final Integer numberOfSimulatedEvents) {
+        final DmiDataAvcCloudEventCreator dmiDataAvcCloudEventCreator = new DmiDataAvcCloudEventCreator();
 
         for (int i = 0; i < numberOfSimulatedEvents; i++) {
             final String eventCorrelationId = UUID.randomUUID().toString();
-            final AvcEvent avcEvent = dmiDataAvcEventCreator.createEvent(eventCorrelationId);
-            dmiDataAvcEventProducer.sendMessage(eventCorrelationId, avcEvent);
+            final CloudEvent cloudEvent = dmiDataAvcCloudEventCreator.createCloudEvent(eventCorrelationId);
+            dmiDataAvcEventProducer.publishDmiDataAvcCloudEvent(eventCorrelationId, cloudEvent);
         }
 
         return new ResponseEntity<>(HttpStatus.OK);
