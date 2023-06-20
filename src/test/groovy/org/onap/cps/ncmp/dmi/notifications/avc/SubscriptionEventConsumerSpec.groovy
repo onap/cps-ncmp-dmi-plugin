@@ -22,6 +22,7 @@ package org.onap.cps.ncmp.dmi.notifications.avc
 
 import com.fasterxml.jackson.databind.ObjectMapper
 import org.apache.kafka.clients.consumer.KafkaConsumer
+import org.apache.kafka.common.serialization.StringDeserializer
 import org.onap.cps.ncmp.dmi.TestUtils
 import org.onap.cps.ncmp.dmi.api.kafka.MessagingBaseSpec
 import org.onap.cps.ncmp.dmi.service.model.SubscriptionEventResponse
@@ -38,8 +39,6 @@ import java.time.Duration
 @Testcontainers
 @DirtiesContext
 class SubscriptionEventConsumerSpec extends MessagingBaseSpec {
-
-    def kafkaConsumer = new KafkaConsumer<>(consumerConfigProperties('ncmp-group'))
 
     def objectMapper = new ObjectMapper()
     def testTopic = 'dmi-ncmp-cm-avc-subscription'

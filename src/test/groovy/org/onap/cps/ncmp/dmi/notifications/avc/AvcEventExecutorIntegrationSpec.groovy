@@ -21,12 +21,10 @@
 package org.onap.cps.ncmp.dmi.notifications.avc
 
 import com.fasterxml.jackson.databind.ObjectMapper
-import org.apache.kafka.clients.consumer.KafkaConsumer
+import io.cloudevents.core.CloudEventUtils
+import io.cloudevents.jackson.PojoCloudEventDataMapper
 import org.onap.cps.ncmp.dmi.api.kafka.MessagingBaseSpec
-import org.onap.cps.ncmp.dmi.notifications.async.AsyncTaskExecutor
-import org.onap.cps.ncmp.dmi.service.DmiService
-import org.onap.cps.ncmp.dmi.notifications.avc.DmiDataAvcEventSimulationController
-import org.onap.cps.ncmp.event.model.AvcEvent
+import org.onap.cps.ncmp.events.avc1_0_0.AvcEvent
 import org.spockframework.spring.SpringBean
 import org.springframework.boot.test.context.SpringBootTest
 import org.springframework.test.annotation.DirtiesContext
@@ -40,9 +38,9 @@ import java.time.Duration
 class AvcEventExecutorIntegrationSpec extends MessagingBaseSpec {
 
     @SpringBean
-    DmiDataAvcEventProducer dmiDataAvcEventProducer = new DmiDataAvcEventProducer(kafkaTemplate)
+    DmiDataAvcEventProducer dmiDataAvcEventProducer = new DmiDataAvcEventProducer(cloudEventKafkaTemplate)
 
-    def dmiService =  new DmiDataAvcEventSimulationController(dmiDataAvcEventProducer)
+    def dmiService = new DmiDataAvcEventSimulationController(dmiDataAvcEventProducer)
 
     def objectMapper = new ObjectMapper()
 
@@ -50,13 +48,14 @@ class AvcEventExecutorIntegrationSpec extends MessagingBaseSpec {
         given: 'a simulated event'
             dmiService.simulateEvents(1)
         and: 'a consumer subscribed to dmi-cm-events topic'
-            def consumer = new KafkaConsumer<>(consumerConfigProperties('test'))
-            consumer.subscribe(['dmi-cm-events'])
+            cloudEventKafkaConsumer.subscribe(['dmi-cm-events'])
         when: 'the next event record is consumed'
-            def record = consumer.poll(Duration.ofMillis(1500)).iterator().next()
+            def record = cloudEventKafkaConsumer.poll(Duration.ofMillis(1500)).iterator().next()
         then: 'record has correct topic'
             assert record.topic == 'dmi-cm-events'
         and: 'the record value can be mapped to an avcEvent'
-            objectMapper.readValue(record.value(), AvcEvent)
+            def dmiDataAvcEvent = record.value()
+            def convertedAvcEvent = CloudEventUtils.mapData(dmiDataAvcEvent, PojoCloudEventDataMapper.from(objectMapper, AvcEvent.class)).getValue()
+            assert convertedAvcEvent != null
     }
 }
