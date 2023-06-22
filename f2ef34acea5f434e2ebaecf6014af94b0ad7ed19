@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "94e528a8_bfe0efb3",
+        "filename": "src/main/java/org/onap/cps/ncmp/dmi/notifications/avc/DmiDataAvcCloudEventCreator.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 45,
+      "author": {
+        "id": 7965
+      },
+      "writtenOn": "2023-06-22T14:23:17Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ac1ffe1c_f470ef0d",
+      "range": {
+        "startLine": 45,
+        "startChar": 0,
+        "endLine": 45,
+        "endChar": 6
+      },
+      "revId": "f2ef34acea5f434e2ebaecf6014af94b0ad7ed19",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1995f0d0_1029772e",
         "filename": "src/main/java/org/onap/cps/ncmp/dmi/notifications/avc/DmiDataAvcCloudEventCreator.java",
         "patchSetId": 3
@@ -48,6 +72,30 @@
     },
     {
       "key": {
+        "uuid": "968a68cc_6e4c78f6",
+        "filename": "src/main/java/org/onap/cps/ncmp/dmi/notifications/avc/DmiDataAvcCloudEventCreator.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 59,
+      "author": {
+        "id": 7965
+      },
+      "writtenOn": "2023-06-22T14:23:17Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1995f0d0_1029772e",
+      "range": {
+        "startLine": 59,
+        "startChar": 4,
+        "endLine": 59,
+        "endChar": 11
+      },
+      "revId": "f2ef34acea5f434e2ebaecf6014af94b0ad7ed19",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "b68ca819_5c7b457a",
         "filename": "src/main/java/org/onap/cps/ncmp/dmi/notifications/avc/DmiDataAvcEventSimulationController.java",
         "patchSetId": 3
@@ -68,6 +116,30 @@
       "revId": "f2ef34acea5f434e2ebaecf6014af94b0ad7ed19",
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "28a7f7bb_95041ffc",
+        "filename": "src/main/java/org/onap/cps/ncmp/dmi/notifications/avc/DmiDataAvcEventSimulationController.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 52,
+      "author": {
+        "id": 7965
+      },
+      "writtenOn": "2023-06-22T14:23:17Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "b68ca819_5c7b457a",
+      "range": {
+        "startLine": 52,
+        "startChar": 0,
+        "endLine": 52,
+        "endChar": 106
+      },
+      "revId": "f2ef34acea5f434e2ebaecf6014af94b0ad7ed19",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
     }
   ]
 }
