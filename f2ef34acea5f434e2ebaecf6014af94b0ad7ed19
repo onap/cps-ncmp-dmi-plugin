@@ -1,0 +1,73 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ac1ffe1c_f470ef0d",
+        "filename": "src/main/java/org/onap/cps/ncmp/dmi/notifications/avc/DmiDataAvcCloudEventCreator.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 45,
+      "author": {
+        "id": 8063
+      },
+      "writtenOn": "2023-06-22T13:36:35Z",
+      "side": 1,
+      "message": "How is the idea that changing its public constructor to @NoArgsConstructor(access \u003d AccessLevel.PRIVATE) ?",
+      "range": {
+        "startLine": 45,
+        "startChar": 0,
+        "endLine": 45,
+        "endChar": 6
+      },
+      "revId": "f2ef34acea5f434e2ebaecf6014af94b0ad7ed19",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "1995f0d0_1029772e",
+        "filename": "src/main/java/org/onap/cps/ncmp/dmi/notifications/avc/DmiDataAvcCloudEventCreator.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 59,
+      "author": {
+        "id": 8063
+      },
+      "writtenOn": "2023-06-22T13:36:35Z",
+      "side": 1,
+      "message": "If you agree to have a private constructor, then you may access this method with public static modifiers.",
+      "range": {
+        "startLine": 59,
+        "startChar": 4,
+        "endLine": 59,
+        "endChar": 11
+      },
+      "revId": "f2ef34acea5f434e2ebaecf6014af94b0ad7ed19",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "b68ca819_5c7b457a",
+        "filename": "src/main/java/org/onap/cps/ncmp/dmi/notifications/avc/DmiDataAvcEventSimulationController.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 52,
+      "author": {
+        "id": 8063
+      },
+      "writtenOn": "2023-06-22T13:36:35Z",
+      "side": 1,
+      "message": "Every time, this object needs to be created with this way. How about if you change the methods in it to public static that return a new instance of AvcEvent? Also, having a private consturtor on the DmiDataAvcCloudEventCreator object.",
+      "range": {
+        "startLine": 52,
+        "startChar": 0,
+        "endLine": 52,
+        "endChar": 106
+      },
+      "revId": "f2ef34acea5f434e2ebaecf6014af94b0ad7ed19",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    }
+  ]
+}
