@@ -1,6 +1,6 @@
 /*
  *  ============LICENSE_START=======================================================
- *  Copyright (C) 2021-2022 Nordix Foundation
+ *  Copyright (C) 2021-2023 Nordix Foundation
  *  ================================================================================
  *  Licensed under the Apache License, Version 2.0 (the "License");
  *  you may not use this file except in compliance with the License.
@@ -21,6 +21,7 @@
 package org.onap.cps.ncmp.dmi.rest.controller
 
 import org.onap.cps.ncmp.dmi.config.WebSecurityConfig
+import org.springframework.context.annotation.Import
 
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get
 
@@ -31,6 +32,7 @@ import org.springframework.test.web.servlet.MockMvc
 import spock.lang.Specification
 
 @WebMvcTest(controllers = TestController.class)
+@Import(WebSecurityConfig)
 class ControllerSecuritySpec extends Specification {
 
     @Autowired
