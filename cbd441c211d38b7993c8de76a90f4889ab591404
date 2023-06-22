@@ -22,6 +22,30 @@
       "revId": "cbd441c211d38b7993c8de76a90f4889ab591404",
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "2f72fad7_47ed1105",
+        "filename": "src/main/java/org/onap/cps/ncmp/dmi/config/WebSecurityConfig.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 4893
+      },
+      "writtenOn": "2023-06-22T15:23:31Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "6b1b7e34_4aea1af8",
+      "range": {
+        "startLine": 3,
+        "startChar": 18,
+        "endLine": 3,
+        "endChar": 22
+      },
+      "revId": "cbd441c211d38b7993c8de76a90f4889ab591404",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
     }
   ]
 }
