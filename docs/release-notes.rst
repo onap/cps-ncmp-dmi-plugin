@@ -385,17 +385,19 @@ None
 References
 ----------
 
-For more information on the ONAP Istanbul release, please see:
+For more information on the latest ONAP release, please see:
 
 #. `ONAP Home Page`_
-#. `ONAP Documentation`_
-#. `ONAP Release Downloads`_
 #. `ONAP Wiki Page`_
+#. `ONAP Documentation`_
+#. `ONAP DMI Plugin Documentation`_
+#. `ONAP Release Downloads`_
 
 
 .. _`ONAP Home Page`: https://www.onap.org
 .. _`ONAP Wiki Page`: https://wiki.onap.org
 .. _`ONAP Documentation`: https://docs.onap.org
+.. _`ONAP DMI Plugin Documentation`: https://docs.onap.org/projects/onap-cps-ncmp-dmi-plugin
 .. _`ONAP Release Downloads`: https://git.onap.org
 
 Quick Links:
