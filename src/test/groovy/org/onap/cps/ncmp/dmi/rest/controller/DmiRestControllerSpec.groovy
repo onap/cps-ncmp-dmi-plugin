@@ -23,6 +23,7 @@ package org.onap.cps.ncmp.dmi.rest.controller
 
 
 import org.onap.cps.ncmp.dmi.TestUtils
+import org.onap.cps.ncmp.dmi.config.WebSecurityConfig
 import org.onap.cps.ncmp.dmi.exception.DmiException
 import org.onap.cps.ncmp.dmi.exception.ModuleResourceNotFoundException
 import org.onap.cps.ncmp.dmi.exception.ModulesNotFoundException
@@ -39,6 +40,7 @@ import org.spockframework.spring.SpringBean
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.beans.factory.annotation.Value
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest
+import org.springframework.context.annotation.Import
 import org.springframework.http.HttpStatus
 import org.springframework.http.MediaType
 import org.springframework.kafka.core.KafkaTemplate
@@ -57,6 +59,7 @@ import static org.onap.cps.ncmp.dmi.model.DataAccessRequest.OperationEnum.UPDATE
 import static org.springframework.http.HttpStatus.CREATED
 import static org.springframework.http.HttpStatus.OK
 
+@Import(WebSecurityConfig)
 @WebMvcTest(DmiRestController.class)
 @WithMockUser
 class DmiRestControllerSpec extends Specification {
