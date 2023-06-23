@@ -22,6 +22,30 @@
       "revId": "49d63b1d2e6ad6cd2eae492d38178c89334751d3",
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "a35de33f_1650f9d8",
+        "filename": "src/main/resources/application.yml",
+        "patchSetId": 4
+      },
+      "lineNbr": 67,
+      "author": {
+        "id": 7965
+      },
+      "writtenOn": "2023-06-23T12:29:15Z",
+      "side": 1,
+      "message": "Amm.. for test yaml its not required at the moment.\nThe reason I introduced this is coz I was seeing some exceptions in our logs when the kafkalistener was converting the binary event from the wire to an actual pojo object.\n\nIn theory , the reason why this is added is : \"The FAIL_ON_EMPTY_BEANS serialization feature defines what happens when no accessors (properties) for a type are found. If enabled (the default), an exception is thrown to indicate that the bean is non-serializable. If disabled, a bean is serialized as an empty Object with no properties. \"",
+      "parentUuid": "a8a8ee7e_49a430f4",
+      "range": {
+        "startLine": 65,
+        "startChar": 0,
+        "endLine": 67,
+        "endChar": 34
+      },
+      "revId": "49d63b1d2e6ad6cd2eae492d38178c89334751d3",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
     }
   ]
 }
