@@ -94,6 +94,30 @@
       "revId": "1118bedbd3981c12aebcb9fa99e8744a9bf413c3",
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "c791ca00_b9447d98",
+        "filename": "pom.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 302,
+      "author": {
+        "id": 7965
+      },
+      "writtenOn": "2023-06-28T12:42:19Z",
+      "side": 1,
+      "message": "alright. No harm then 😊\nI was just thinking in terms of consistency we have in cps-and-ncmp code.",
+      "parentUuid": "c210ffb1_92d30ccf",
+      "range": {
+        "startLine": 302,
+        "startChar": 99,
+        "endLine": 302,
+        "endChar": 106
+      },
+      "revId": "1118bedbd3981c12aebcb9fa99e8744a9bf413c3",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
     }
   ]
 }
