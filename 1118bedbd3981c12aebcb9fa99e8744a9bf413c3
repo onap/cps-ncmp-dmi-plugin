@@ -46,6 +46,30 @@
       "revId": "1118bedbd3981c12aebcb9fa99e8744a9bf413c3",
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "a849cea4_4ecaf4e2",
+        "filename": "pom.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 302,
+      "author": {
+        "id": 7965
+      },
+      "writtenOn": "2023-06-28T11:48:45Z",
+      "side": 1,
+      "message": "I meant what if we remove the extra folder ? \nWill it not work then ? \n\n${project.basedir}/target/generated-sources/openapi",
+      "parentUuid": "9dcd133f_7a7c177b",
+      "range": {
+        "startLine": 302,
+        "startChar": 99,
+        "endLine": 302,
+        "endChar": 106
+      },
+      "revId": "1118bedbd3981c12aebcb9fa99e8744a9bf413c3",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
     }
   ]
 }
