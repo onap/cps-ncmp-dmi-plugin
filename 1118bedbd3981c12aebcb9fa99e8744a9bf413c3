@@ -22,6 +22,30 @@
       "revId": "1118bedbd3981c12aebcb9fa99e8744a9bf413c3",
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "9dcd133f_7a7c177b",
+        "filename": "pom.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 302,
+      "author": {
+        "id": 4893
+      },
+      "writtenOn": "2023-06-28T11:20:43Z",
+      "side": 1,
+      "message": "It is. Not sure why it is being created",
+      "parentUuid": "69180fb7_119e77d6",
+      "range": {
+        "startLine": 302,
+        "startChar": 99,
+        "endLine": 302,
+        "endChar": 106
+      },
+      "revId": "1118bedbd3981c12aebcb9fa99e8744a9bf413c3",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
     }
   ]
 }
