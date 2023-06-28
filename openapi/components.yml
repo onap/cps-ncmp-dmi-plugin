@@ -137,7 +137,6 @@ components:
     YangResources:
       type: array
       items:
-        type: object
         $ref: '#/components/schemas/YangResource'
 
     YangResource:
@@ -173,6 +172,7 @@ components:
 
     cmHandleProperties:
       type: object
+      nullable: true
       additionalProperties:
         type: string
         example: {"prop1":"value1","prop2":"value2"}

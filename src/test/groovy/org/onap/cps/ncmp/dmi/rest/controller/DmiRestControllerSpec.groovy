@@ -27,12 +27,12 @@ import org.onap.cps.ncmp.dmi.config.WebSecurityConfig
 import org.onap.cps.ncmp.dmi.exception.DmiException
 import org.onap.cps.ncmp.dmi.exception.ModuleResourceNotFoundException
 import org.onap.cps.ncmp.dmi.exception.ModulesNotFoundException
+import org.onap.cps.ncmp.dmi.model.ModuleSetSchemasInner
 import org.onap.cps.ncmp.dmi.notifications.async.AsyncTaskExecutor
 import org.onap.cps.ncmp.dmi.notifications.async.DmiAsyncRequestResponseEventProducer
 
 import org.onap.cps.ncmp.dmi.service.model.ModuleReference
 import org.onap.cps.ncmp.dmi.model.ModuleSet
-import org.onap.cps.ncmp.dmi.model.ModuleSetSchemas
 import org.onap.cps.ncmp.dmi.model.YangResource
 import org.onap.cps.ncmp.dmi.model.YangResources
 import org.onap.cps.ncmp.dmi.service.DmiService
@@ -84,10 +84,10 @@ class DmiRestControllerSpec extends Specification {
             def getModuleUrl = "$basePathV1/ch/node1/modules"
             def someValidJson = '{}'
         and: 'DMI service returns some module'
-            def moduleSetSchema = new ModuleSetSchemas(namespace:'some-namespace',
+            def moduleSetSchema = new ModuleSetSchemasInner(namespace:'some-namespace',
                     moduleName:'some-moduleName',
                     revision:'some-revision')
-            def moduleSetSchemasList = [moduleSetSchema] as List<ModuleSetSchemas>
+            def moduleSetSchemasList = [moduleSetSchema] as List<ModuleSetSchemasInner>
             def moduleSet = new ModuleSet()
             moduleSet.schemas(moduleSetSchemasList)
             mockDmiService.getModulesForCmHandle('node1') >> moduleSet

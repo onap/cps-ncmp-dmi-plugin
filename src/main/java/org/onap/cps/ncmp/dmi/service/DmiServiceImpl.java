@@ -38,7 +38,7 @@ import org.onap.cps.ncmp.dmi.exception.ModuleResourceNotFoundException;
 import org.onap.cps.ncmp.dmi.exception.ModulesNotFoundException;
 import org.onap.cps.ncmp.dmi.model.DataAccessRequest;
 import org.onap.cps.ncmp.dmi.model.ModuleSet;
-import org.onap.cps.ncmp.dmi.model.ModuleSetSchemas;
+import org.onap.cps.ncmp.dmi.model.ModuleSetSchemasInner;
 import org.onap.cps.ncmp.dmi.model.YangResource;
 import org.onap.cps.ncmp.dmi.model.YangResources;
 import org.onap.cps.ncmp.dmi.service.client.NcmpRestClient;
@@ -137,8 +137,8 @@ public class DmiServiceImpl implements DmiService {
         }
     }
 
-    private ModuleSetSchemas toModuleSetSchemas(final ModuleSchema moduleSchema) {
-        final ModuleSetSchemas moduleSetSchemas = new ModuleSetSchemas();
+    private ModuleSetSchemasInner toModuleSetSchemas(final ModuleSchema moduleSchema) {
+        final ModuleSetSchemasInner moduleSetSchemas = new ModuleSetSchemasInner();
         moduleSetSchemas.setModuleName(moduleSchema.getIdentifier());
         moduleSetSchemas.setNamespace(moduleSchema.getNamespace());
         moduleSetSchemas.setRevision(moduleSchema.getVersion());
