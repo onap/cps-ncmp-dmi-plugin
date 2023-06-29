@@ -118,6 +118,53 @@
       "revId": "1118bedbd3981c12aebcb9fa99e8744a9bf413c3",
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "10d0ff8b_06f3a782",
+        "filename": "pom.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 302,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2023-06-29T08:50:02Z",
+      "side": 1,
+      "message": "I presume the lats \u0027openapi\u0027 is the filename (without extension)",
+      "parentUuid": "c791ca00_b9447d98",
+      "range": {
+        "startLine": 302,
+        "startChar": 99,
+        "endLine": 302,
+        "endChar": 106
+      },
+      "revId": "1118bedbd3981c12aebcb9fa99e8744a9bf413c3",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "256680c3_3b585061",
+        "filename": "src/main/java/org/onap/cps/ncmp/dmi/service/DmiServiceImpl.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 140,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2023-06-29T08:50:02Z",
+      "side": 1,
+      "message": "NB: maybe we can come up with  a better name later :-)",
+      "range": {
+        "startLine": 140,
+        "startChar": 28,
+        "endLine": 140,
+        "endChar": 33
+      },
+      "revId": "1118bedbd3981c12aebcb9fa99e8744a9bf413c3",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
     }
   ]
 }
