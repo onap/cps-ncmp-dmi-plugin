@@ -1,6 +1,30 @@
 {
   "comments": [
     {
+      "unresolved": true,
+      "key": {
+        "uuid": "1de3c9a2_a42f0dde",
+        "filename": "src/main/java/org/onap/cps/ncmp/dmi/notifications/avcsubscription/SubscriptionEventConsumer.java",
+        "patchSetId": 5
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 8063
+      },
+      "writtenOn": "2023-07-14T10:49:26Z",
+      "side": 1,
+      "message": "This object is a bit out-dated. It needs to be replaced by the new one:\nimport org.onap.cps.ncmp.events.avcsubscription1_0_0.ncmp_to_dmi.SubscriptionEvent;\n\nThe rest of the class needs to be modified with that change.",
+      "range": {
+        "startLine": 40,
+        "startChar": 0,
+        "endLine": 40,
+        "endChar": 55
+      },
+      "revId": "7b69488de08e49c2dfe8b69061349dcf62e2b76f",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
+      "unresolved": true,
       "key": {
         "uuid": "a8b7d310_0806f870",
         "filename": "src/main/java/org/onap/cps/ncmp/dmi/notifications/avcsubscription/SubscriptionEventConsumer.java",
@@ -20,10 +44,10 @@
         "endChar": 57
       },
       "revId": "7b69488de08e49c2dfe8b69061349dcf62e2b76f",
-      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
-      "unresolved": true
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
     },
     {
+      "unresolved": true,
       "key": {
         "uuid": "51404f22_f6f99ef4",
         "filename": "src/main/java/org/onap/cps/ncmp/dmi/notifications/avcsubscription/SubscriptionEventConsumer.java",
@@ -43,8 +67,7 @@
         "endChar": 112
       },
       "revId": "7b69488de08e49c2dfe8b69061349dcf62e2b76f",
-      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
-      "unresolved": true
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
     }
   ]
 }
