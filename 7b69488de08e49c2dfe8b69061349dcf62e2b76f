@@ -140,6 +140,29 @@
       },
       "revId": "7b69488de08e49c2dfe8b69061349dcf62e2b76f",
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "266fbe10_ceea8e5e",
+        "filename": "src/main/java/org/onap/cps/ncmp/dmi/notifications/avcsubscription/SubscriptionEventConsumer.java",
+        "patchSetId": 5
+      },
+      "lineNbr": 112,
+      "author": {
+        "id": 7965
+      },
+      "writtenOn": "2023-07-17T13:23:39Z",
+      "side": 1,
+      "message": "introduces a major sonar violation.\nCheck code in cps-and-ncmp where Halil fixes it.",
+      "range": {
+        "startLine": 112,
+        "startChar": 12,
+        "endLine": 112,
+        "endChar": 88
+      },
+      "revId": "7b69488de08e49c2dfe8b69061349dcf62e2b76f",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
     }
   ]
 }

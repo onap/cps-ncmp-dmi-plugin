@@ -1,0 +1,67 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "72c8f03c_7b1c375e",
+        "filename": "src/main/java/org/onap/cps/ncmp/dmi/notifications/avcsubscription/SubscriptionEventConsumer.java",
+        "patchSetId": 6
+      },
+      "lineNbr": 58,
+      "author": {
+        "id": 7965
+      },
+      "writtenOn": "2023-07-17T13:23:39Z",
+      "side": 1,
+      "message": "remove this line plz.",
+      "revId": "2b388bd6cde133258358ff2a50521084eb3ae018",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "bde24958_02fdb932",
+        "filename": "src/test/groovy/org/onap/cps/ncmp/dmi/notifications/avcsubscription/SubscriptionEventConsumerSpec.groovy",
+        "patchSetId": 6
+      },
+      "lineNbr": 119,
+      "author": {
+        "id": 7965
+      },
+      "writtenOn": "2023-07-17T13:23:39Z",
+      "side": 1,
+      "message": "not properly formatted.",
+      "range": {
+        "startLine": 103,
+        "startChar": 4,
+        "endLine": 119,
+        "endChar": 5
+      },
+      "revId": "2b388bd6cde133258358ff2a50521084eb3ae018",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "034c5445_af45aa4a",
+        "filename": "src/test/groovy/org/onap/cps/ncmp/dmi/notifications/avcsubscription/SubscriptionEventConsumerSpec.groovy",
+        "patchSetId": 6
+      },
+      "lineNbr": 190,
+      "author": {
+        "id": 7965
+      },
+      "writtenOn": "2023-07-17T13:23:39Z",
+      "side": 1,
+      "message": "not properly formatted.",
+      "range": {
+        "startLine": 177,
+        "startChar": 4,
+        "endLine": 190,
+        "endChar": 5
+      },
+      "revId": "2b388bd6cde133258358ff2a50521084eb3ae018",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    }
+  ]
+}
