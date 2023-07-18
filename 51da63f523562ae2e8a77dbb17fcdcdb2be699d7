@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "967b0466_53c9d4a3",
+        "filename": "src/main/java/org/onap/cps/ncmp/dmi/notifications/avcsubscription/SubscriptionEventConsumer.java",
+        "patchSetId": 7
+      },
+      "lineNbr": 102,
+      "author": {
+        "id": 7965
+      },
+      "writtenOn": "2023-07-18T12:23:49Z",
+      "side": 1,
+      "message": "this needs to be read from the header and sent back.\neg : subscriptionCreated or subscriptionDeleted.",
+      "range": {
+        "startLine": 102,
+        "startChar": 26,
+        "endLine": 102,
+        "endChar": 67
+      },
+      "revId": "51da63f523562ae2e8a77dbb17fcdcdb2be699d7",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    }
+  ]
+}

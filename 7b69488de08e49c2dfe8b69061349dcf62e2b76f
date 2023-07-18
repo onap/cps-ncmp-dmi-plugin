@@ -187,6 +187,30 @@
       },
       "revId": "7b69488de08e49c2dfe8b69061349dcf62e2b76f",
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "fe86a436_b7cb0614",
+        "filename": "src/main/java/org/onap/cps/ncmp/dmi/notifications/avcsubscription/SubscriptionEventConsumer.java",
+        "patchSetId": 5
+      },
+      "lineNbr": 112,
+      "author": {
+        "id": 7965
+      },
+      "writtenOn": "2023-07-18T12:23:49Z",
+      "side": 1,
+      "message": "Nope. This is not resolved.\nSee Halils patch.\nhttps://gerrit.onap.org/r/c/cps/+/135413/4/cps-ncmp-service/src/main/java/org/onap/cps/ncmp/api/impl/utils/SubscriptionEventCloudMapper.java#77",
+      "parentUuid": "34a94045_8d43228a",
+      "range": {
+        "startLine": 112,
+        "startChar": 12,
+        "endLine": 112,
+        "endChar": 88
+      },
+      "revId": "7b69488de08e49c2dfe8b69061349dcf62e2b76f",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
     }
   ]
 }
