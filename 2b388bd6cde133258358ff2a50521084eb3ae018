@@ -18,6 +18,24 @@
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "b00abea4_3a1be66b",
+        "filename": "src/main/java/org/onap/cps/ncmp/dmi/notifications/avcsubscription/SubscriptionEventConsumer.java",
+        "patchSetId": 6
+      },
+      "lineNbr": 58,
+      "author": {
+        "id": 8171
+      },
+      "writtenOn": "2023-07-18T12:03:54Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "72c8f03c_7b1c375e",
+      "revId": "2b388bd6cde133258358ff2a50521084eb3ae018",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "bde24958_02fdb932",
@@ -41,6 +59,30 @@
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "a50a186e_f9e6b15c",
+        "filename": "src/test/groovy/org/onap/cps/ncmp/dmi/notifications/avcsubscription/SubscriptionEventConsumerSpec.groovy",
+        "patchSetId": 6
+      },
+      "lineNbr": 119,
+      "author": {
+        "id": 8171
+      },
+      "writtenOn": "2023-07-18T12:03:54Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "bde24958_02fdb932",
+      "range": {
+        "startLine": 103,
+        "startChar": 4,
+        "endLine": 119,
+        "endChar": 5
+      },
+      "revId": "2b388bd6cde133258358ff2a50521084eb3ae018",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "034c5445_af45aa4a",
@@ -54,6 +96,30 @@
       "writtenOn": "2023-07-17T13:23:39Z",
       "side": 1,
       "message": "not properly formatted.",
+      "range": {
+        "startLine": 177,
+        "startChar": 4,
+        "endLine": 190,
+        "endChar": 5
+      },
+      "revId": "2b388bd6cde133258358ff2a50521084eb3ae018",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "e19653a5_c7d61c02",
+        "filename": "src/test/groovy/org/onap/cps/ncmp/dmi/notifications/avcsubscription/SubscriptionEventConsumerSpec.groovy",
+        "patchSetId": 6
+      },
+      "lineNbr": 190,
+      "author": {
+        "id": 8171
+      },
+      "writtenOn": "2023-07-18T12:03:54Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "034c5445_af45aa4a",
       "range": {
         "startLine": 177,
         "startChar": 4,
