@@ -1,0 +1,61 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "0715f7f9_b8e91a76",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 9
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 7830
+      },
+      "writtenOn": "2023-07-19T16:34:44Z",
+      "side": 1,
+      "message": "Just two comments, looks great otherwise",
+      "revId": "ba35e0357e55ac157457d0c7fdfef5be32c21087",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "e3d29fa5_00c72e95",
+        "filename": "src/main/java/org/onap/cps/ncmp/dmi/notifications/avcsubscription/SubscriptionEventConsumer.java",
+        "patchSetId": 9
+      },
+      "lineNbr": 96,
+      "author": {
+        "id": 7830
+      },
+      "writtenOn": "2023-07-19T16:34:44Z",
+      "side": 1,
+      "message": "Would separate out all the method calls, just a lot on one line",
+      "revId": "ba35e0357e55ac157457d0c7fdfef5be32c21087",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "ca67f520_6ba31c9b",
+        "filename": "src/test/groovy/org/onap/cps/ncmp/dmi/notifications/avcsubscription/SubscriptionEventResponseMapperSpec.groovy",
+        "patchSetId": 9
+      },
+      "lineNbr": 81,
+      "author": {
+        "id": 7830
+      },
+      "writtenOn": "2023-07-19T16:34:44Z",
+      "side": 1,
+      "message": "Think this can be condensed to\n\nobjectUnderTest.toCloudEvent(testSubscriptionEventResponse, eventKey, \"CREATE\", dmiName)\nthen: \u0027...\u0027\nthrown(CloudEventConstructionException)",
+      "range": {
+        "startLine": 74,
+        "startChar": 11,
+        "endLine": 81,
+        "endChar": 77
+      },
+      "revId": "ba35e0357e55ac157457d0c7fdfef5be32c21087",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    }
+  ]
+}
