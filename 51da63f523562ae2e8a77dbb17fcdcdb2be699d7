@@ -22,6 +22,30 @@
       },
       "revId": "51da63f523562ae2e8a77dbb17fcdcdb2be699d7",
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "7a38fe3f_f02b65ea",
+        "filename": "src/main/java/org/onap/cps/ncmp/dmi/notifications/avcsubscription/SubscriptionEventConsumer.java",
+        "patchSetId": 7
+      },
+      "lineNbr": 102,
+      "author": {
+        "id": 8171
+      },
+      "writtenOn": "2023-07-19T11:59:02Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "967b0466_53c9d4a3",
+      "range": {
+        "startLine": 102,
+        "startChar": 26,
+        "endLine": 102,
+        "endChar": 67
+      },
+      "revId": "51da63f523562ae2e8a77dbb17fcdcdb2be699d7",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
     }
   ]
 }
