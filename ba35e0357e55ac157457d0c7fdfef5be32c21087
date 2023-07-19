@@ -18,6 +18,46 @@
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "80236893_b8e8574d",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 9
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 8063
+      },
+      "writtenOn": "2023-07-19T16:41:29Z",
+      "side": 1,
+      "message": "I have tested this commit with NCMP interaction, it works very fine functionally except some header values are set wrongly. You can also summarize the changes briefly in your commit message details.",
+      "revId": "ba35e0357e55ac157457d0c7fdfef5be32c21087",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "0ff16978_15742408",
+        "filename": "src/main/java/org/onap/cps/ncmp/dmi/notifications/avcsubscription/SubscriptionEventConsumer.java",
+        "patchSetId": 9
+      },
+      "lineNbr": 83,
+      "author": {
+        "id": 8063
+      },
+      "writtenOn": "2023-07-19T16:41:29Z",
+      "side": 1,
+      "message": "As per the comment in the Mapper, these two params are not needed, I believe.",
+      "range": {
+        "startLine": 83,
+        "startChar": 16,
+        "endLine": 83,
+        "endChar": 43
+      },
+      "revId": "ba35e0357e55ac157457d0c7fdfef5be32c21087",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "e3d29fa5_00c72e95",
@@ -31,6 +71,115 @@
       "writtenOn": "2023-07-19T16:34:44Z",
       "side": 1,
       "message": "Would separate out all the method calls, just a lot on one line",
+      "revId": "ba35e0357e55ac157457d0c7fdfef5be32c21087",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "ca46b7ce_bdbfc57f",
+        "filename": "src/main/java/org/onap/cps/ncmp/dmi/notifications/avcsubscription/SubscriptionEventResponseMapper.java",
+        "patchSetId": 9
+      },
+      "lineNbr": 74,
+      "author": {
+        "id": 8063
+      },
+      "writtenOn": "2023-07-19T16:41:29Z",
+      "side": 1,
+      "message": "No need for this parameter. You can remove it.",
+      "range": {
+        "startLine": 74,
+        "startChar": 0,
+        "endLine": 74,
+        "endChar": 30
+      },
+      "revId": "ba35e0357e55ac157457d0c7fdfef5be32c21087",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "52649d58_dfd914c2",
+        "filename": "src/main/java/org/onap/cps/ncmp/dmi/notifications/avcsubscription/SubscriptionEventResponseMapper.java",
+        "patchSetId": 9
+      },
+      "lineNbr": 75,
+      "author": {
+        "id": 8063
+      },
+      "writtenOn": "2023-07-19T16:41:29Z",
+      "side": 1,
+      "message": "If you pass the type from the consumer like this, it would end up with a different type other than subscriptionCreatedStatus. As of now, you can set \"subscriptionCreatedStatus\" hard coded below, and remove this method parameter.",
+      "range": {
+        "startLine": 75,
+        "startChar": 8,
+        "endLine": 75,
+        "endChar": 38
+      },
+      "revId": "ba35e0357e55ac157457d0c7fdfef5be32c21087",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "943d12d0_33a2660c",
+        "filename": "src/main/java/org/onap/cps/ncmp/dmi/notifications/avcsubscription/SubscriptionEventResponseMapper.java",
+        "patchSetId": 9
+      },
+      "lineNbr": 79,
+      "author": {
+        "id": 8063
+      },
+      "writtenOn": "2023-07-19T16:41:29Z",
+      "side": 1,
+      "message": "This can be given hard-coded like \"subscriptionCreatedStatus\"",
+      "range": {
+        "startLine": 79,
+        "startChar": 26,
+        "endLine": 79,
+        "endChar": 42
+      },
+      "revId": "ba35e0357e55ac157457d0c7fdfef5be32c21087",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "a44d753a_9b74b528",
+        "filename": "src/main/java/org/onap/cps/ncmp/dmi/notifications/avcsubscription/SubscriptionEventResponseMapper.java",
+        "patchSetId": 9
+      },
+      "lineNbr": 81,
+      "author": {
+        "id": 8063
+      },
+      "writtenOn": "2023-07-19T16:41:29Z",
+      "side": 1,
+      "message": "This eventKey could be a combination of \u003cclientId\u003e:\u003csubscriptionName\u003e from subscriptionEventResponse.Data in this method.",
+      "revId": "ba35e0357e55ac157457d0c7fdfef5be32c21087",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "eb202e6c_53a2fc1c",
+        "filename": "src/main/java/org/onap/cps/ncmp/dmi/notifications/avcsubscription/SubscriptionEventResponseMapper.java",
+        "patchSetId": 9
+      },
+      "lineNbr": 83,
+      "author": {
+        "id": 8063
+      },
+      "writtenOn": "2023-07-19T16:41:29Z",
+      "side": 1,
+      "message": "This is the value of dmiName from the method parameters.",
+      "range": {
+        "startLine": 83,
+        "startChar": 28,
+        "endLine": 83,
+        "endChar": 88
+      },
       "revId": "ba35e0357e55ac157457d0c7fdfef5be32c21087",
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
     },
