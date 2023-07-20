@@ -37,6 +37,23 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "7407f210_aecc33ca",
+        "filename": "src/main/java/org/onap/cps/ncmp/dmi/notifications/avcsubscription/SubscriptionEventConsumer.java",
+        "patchSetId": 9
+      },
+      "lineNbr": 64,
+      "author": {
+        "id": 7965
+      },
+      "writtenOn": "2023-07-20T11:55:41Z",
+      "side": 1,
+      "message": "as discussed , here you can have a check if the eventType if of type \"subscriptionCreated\" then you can pass the subscriptionType parameter as \"subscriptionCreatedStatus\"",
+      "revId": "ba35e0357e55ac157457d0c7fdfef5be32c21087",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "0ff16978_15742408",
         "filename": "src/main/java/org/onap/cps/ncmp/dmi/notifications/avcsubscription/SubscriptionEventConsumer.java",
         "patchSetId": 9
