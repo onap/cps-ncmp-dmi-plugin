@@ -1,0 +1,67 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "493f48ba_f7679a23",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 11
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 7965
+      },
+      "writtenOn": "2023-07-24T13:02:53Z",
+      "side": 1,
+      "message": "some minor comments otherwise looking alright to me.",
+      "revId": "9a314cb57fdf1b20e654d1494ac6856c0a11e34f",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "01fcdd51_53d38dfc",
+        "filename": "src/main/java/org/onap/cps/ncmp/dmi/notifications/avcsubscription/SubscriptionEventConsumer.java",
+        "patchSetId": 11
+      },
+      "lineNbr": 65,
+      "author": {
+        "id": 7965
+      },
+      "writtenOn": "2023-07-24T13:02:53Z",
+      "side": 1,
+      "message": "NB : \"subscriptionCreated\".equals(subscriptionType)",
+      "range": {
+        "startLine": 65,
+        "startChar": 16,
+        "endLine": 65,
+        "endChar": 62
+      },
+      "revId": "9a314cb57fdf1b20e654d1494ac6856c0a11e34f",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "92779bd3_2f98bceb",
+        "filename": "src/main/java/org/onap/cps/ncmp/dmi/notifications/avcsubscription/SubscriptionEventConsumer.java",
+        "patchSetId": 11
+      },
+      "lineNbr": 103,
+      "author": {
+        "id": 7965
+      },
+      "writtenOn": "2023-07-24T13:02:53Z",
+      "side": 1,
+      "message": "NB: cmHandleIdToCmHandlePropertyMap  ( naming )",
+      "range": {
+        "startLine": 103,
+        "startChar": 64,
+        "endLine": 103,
+        "endChar": 95
+      },
+      "revId": "9a314cb57fdf1b20e654d1494ac6856c0a11e34f",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    }
+  ]
+}
