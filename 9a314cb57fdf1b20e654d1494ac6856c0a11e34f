@@ -18,6 +18,23 @@
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "19afdfab_db98212a",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 11
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 8063
+      },
+      "writtenOn": "2023-07-24T14:07:07Z",
+      "side": 1,
+      "message": "The commit is ok for me.",
+      "revId": "9a314cb57fdf1b20e654d1494ac6856c0a11e34f",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "01fcdd51_53d38dfc",
@@ -59,6 +76,29 @@
         "startChar": 64,
         "endLine": 103,
         "endChar": 95
+      },
+      "revId": "9a314cb57fdf1b20e654d1494ac6856c0a11e34f",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "b522ded0_8cd372ea",
+        "filename": "src/main/java/org/onap/cps/ncmp/dmi/notifications/avcsubscription/SubscriptionEventResponseMapper.java",
+        "patchSetId": 11
+      },
+      "lineNbr": 78,
+      "author": {
+        "id": 8063
+      },
+      "writtenOn": "2023-07-24T14:07:07Z",
+      "side": 1,
+      "message": "NB: Dublicated with line 84.",
+      "range": {
+        "startLine": 78,
+        "startChar": 78,
+        "endLine": 78,
+        "endChar": 110
       },
       "revId": "9a314cb57fdf1b20e654d1494ac6856c0a11e34f",
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
