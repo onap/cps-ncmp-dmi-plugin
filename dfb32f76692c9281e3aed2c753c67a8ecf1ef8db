@@ -50,6 +50,24 @@
       "message": "Build failing due to Java version discrepancy between CPS and DMI, should be resolved when java 17 migration is complete in DMI",
       "revId": "dfb32f76692c9281e3aed2c753c67a8ecf1ef8db",
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "44de95aa_3186dd16",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 12
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 7965
+      },
+      "writtenOn": "2023-07-25T15:22:42Z",
+      "side": 1,
+      "message": "so do we wait till the java 17 is done for dmi-plugin ??",
+      "parentUuid": "486d97c2_32268b66",
+      "revId": "dfb32f76692c9281e3aed2c753c67a8ecf1ef8db",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
     }
   ]
 }
