@@ -75,7 +75,8 @@ public class SubscriptionEventResponseMapper {
         final String subscriptionType,
         final String dmiName) {
         try {
-            return CloudEventBuilder.v1().withId(UUID.randomUUID().toString())
+            return CloudEventBuilder.v1()
+                .withId(UUID.randomUUID().toString())
                 .withSource(URI.create(dmiName))
                 .withType(subscriptionType)
                 .withDataSchema(URI.create("urn:cps:" + SubscriptionEventResponse.class.getName() + ":1.0.0"))

@@ -88,7 +88,7 @@ class SubscriptionEventConsumerSpec extends MessagingBaseSpec {
             def subscriptionEvent = objectMapper.readValue(jsonData, SubscriptionEvent.class)
             objectUnderTest.cmAvcSubscriptionResponseTopic = testTopic
             def cloudEvent = CloudEventBuilder.v1().withId(UUID.randomUUID().toString()).withSource(URI.create('test-ncmp-dmi'))
-                    .withType("subscriptionCreated")
+                    .withType(subscriptionType)
                     .withDataSchema(URI.create("urn:cps:" + SubscriptionEvent.class.getName() + ":1.0.0"))
                     .withExtension("correlationid", eventKey)
                     .withTime(OffsetDateTime.ofInstant(timestamp.toInstant(), ZoneId.of("UTC")))
@@ -98,6 +98,10 @@ class SubscriptionEventConsumerSpec extends MessagingBaseSpec {
             objectUnderTest.consumeSubscriptionEvent(testEventSent)
         then: 'no exception is thrown'
             noExceptionThrown()
+        where: 'given #senario'
+            scenario                    | subscriptionType
+            'Subscription Create Event' | "subscriptionCreated"
+            'Subscription Delete Event' | "subscriptionDeleted"
     }
 
     def 'Consume invalid message.'() {

@@ -65,6 +65,9 @@ public class SubscriptionEventConsumer {
             if ("subscriptionCreated".equals(subscriptionType)) {
                 sendSubscriptionResponseMessage(eventKey, "subscriptionCreatedStatus",
                     formSubscriptionEventResponse(subscriptionEvent));
+            } else if ("subscriptionDeleted".equals(subscriptionType)) {
+                sendSubscriptionResponseMessage(eventKey, "subscriptionDeletedStatus",
+                    formSubscriptionEventResponse(subscriptionEvent));
             }
         }
     }
