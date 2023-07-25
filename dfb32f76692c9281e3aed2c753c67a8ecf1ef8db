@@ -33,6 +33,23 @@
       "message": "recheck",
       "revId": "dfb32f76692c9281e3aed2c753c67a8ecf1ef8db",
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "486d97c2_32268b66",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 12
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 8171
+      },
+      "writtenOn": "2023-07-25T15:08:38Z",
+      "side": 1,
+      "message": "Build failing due to Java version discrepancy between CPS and DMI, should be resolved when java 17 migration is complete in DMI",
+      "revId": "dfb32f76692c9281e3aed2c753c67a8ecf1ef8db",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
     }
   ]
 }
