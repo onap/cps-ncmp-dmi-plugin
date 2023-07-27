@@ -16,6 +16,46 @@
       "message": "changes are fine to me.",
       "revId": "5272927ea8fd21487d640e22e62c087913e302f5",
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "685a19f6_eda7105d",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 8063
+      },
+      "writtenOn": "2023-07-27T16:07:33Z",
+      "side": 1,
+      "message": "NB: Similarly, you can try to enrich SubscriptionEventResponseMapperSpec.groovy by adding more test for \u0027subscriptionDeletedStatus\u0027. Especially, the first method in that groovy file which tests toCloudEvent is the good place to go with...",
+      "revId": "5272927ea8fd21487d640e22e62c087913e302f5",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "66b6b7f6_ba6e3160",
+        "filename": "src/test/groovy/org/onap/cps/ncmp/dmi/notifications/avcsubscription/SubscriptionEventConsumerSpec.groovy",
+        "patchSetId": 2
+      },
+      "lineNbr": 70,
+      "author": {
+        "id": 8063
+      },
+      "writtenOn": "2023-07-27T16:07:33Z",
+      "side": 1,
+      "message": "NB: You can enrich this test by adding scenarios like \u0027subscriptionDeletedStatus\u0027 also. Then, you can verify if you consume the right type of headers.",
+      "range": {
+        "startLine": 70,
+        "startChar": 70,
+        "endLine": 70,
+        "endChar": 97
+      },
+      "revId": "5272927ea8fd21487d640e22e62c087913e302f5",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
     }
   ]
 }
