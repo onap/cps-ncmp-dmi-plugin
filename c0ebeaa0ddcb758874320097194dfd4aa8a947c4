@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "3b96bee9_ed616ba2",
+        "filename": "src/main/java/org/onap/cps/ncmp/dmi/notifications/avcsubscription/SubscriptionEventConsumer.java",
+        "patchSetId": 13
+      },
+      "lineNbr": 98,
+      "author": {
+        "id": 7830
+      },
+      "writtenOn": "2023-07-27T15:20:32Z",
+      "side": 1,
+      "message": "NB would separate into different lines",
+      "range": {
+        "startLine": 95,
+        "startChar": 8,
+        "endLine": 98,
+        "endChar": 56
+      },
+      "revId": "c0ebeaa0ddcb758874320097194dfd4aa8a947c4",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    }
+  ]
+}
