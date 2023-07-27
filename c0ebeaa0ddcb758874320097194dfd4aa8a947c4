@@ -1,0 +1,10 @@
+Verified+1: ONAP Required GHA <releng+onap.required.gha@linuxfoundation.org>
+Verified+1: ONAP Jobbuilder <onap-jobbuilder@jenkins.onap.org>
+Code-Review+2: Luke Gleeson <luke.gleeson@est.tech>
+Code-Review+1: Halil Cakal <halil.cakal@est.tech>
+Code-Review+1: Priyank Maheshwari <priyank.maheshwari@est.tech>
+Submitted-by: Luke Gleeson <luke.gleeson@est.tech>
+Submitted-at: Thu, 27 Jul 2023 15:21:59 +0000
+Reviewed-on: https://gerrit.onap.org/r/c/cps/ncmp-dmi-plugin/+/134951
+Project: cps/ncmp-dmi-plugin
+Branch: refs/heads/master
