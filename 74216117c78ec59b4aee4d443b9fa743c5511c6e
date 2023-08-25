@@ -1,0 +1,136 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "20b3955a_ae102f99",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 8063
+      },
+      "writtenOn": "2023-08-25T10:23:13Z",
+      "side": 1,
+      "message": "A few reviews...",
+      "revId": "74216117c78ec59b4aee4d443b9fa743c5511c6e",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "dfe9d05c_a9227954",
+        "filename": "src/main/java/org/onap/cps/ncmp/dmi/notifications/cmsubscription/CmSubscriptionDmiInEventConsumer.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 8063
+      },
+      "writtenOn": "2023-08-25T10:23:13Z",
+      "side": 1,
+      "message": "NB: Since @Component is the parent of @Service annotation, it might be better to use @Service annotation because it also includes a bit of business logic.",
+      "range": {
+        "startLine": 42,
+        "startChar": 1,
+        "endLine": 42,
+        "endChar": 10
+      },
+      "revId": "74216117c78ec59b4aee4d443b9fa743c5511c6e",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "25a54d2d_a0007f09",
+        "filename": "src/main/java/org/onap/cps/ncmp/dmi/notifications/cmsubscription/CmSubscriptionDmiInEventConsumer.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 43,
+      "author": {
+        "id": 8063
+      },
+      "writtenOn": "2023-08-25T10:23:13Z",
+      "side": 1,
+      "message": "It seems this is redundant since there hasnot been a logger is used.",
+      "range": {
+        "startLine": 43,
+        "startChar": 0,
+        "endLine": 43,
+        "endChar": 6
+      },
+      "revId": "74216117c78ec59b4aee4d443b9fa743c5511c6e",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "e2e18146_e2172287",
+        "filename": "src/main/java/org/onap/cps/ncmp/dmi/notifications/cmsubscription/CmSubscriptionDmiOutEventToCloudEventMapper.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 8063
+      },
+      "writtenOn": "2023-08-25T10:23:13Z",
+      "side": 1,
+      "message": "There is no logger used, so no need to enable that logger.",
+      "range": {
+        "startLine": 35,
+        "startChar": 0,
+        "endLine": 35,
+        "endChar": 6
+      },
+      "revId": "74216117c78ec59b4aee4d443b9fa743c5511c6e",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "6aafbb9d_598bdc34",
+        "filename": "src/main/java/org/onap/cps/ncmp/dmi/notifications/cmsubscription/CmSubscriptionDmiOutEventToCloudEventMapper.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 59,
+      "author": {
+        "id": 8063
+      },
+      "writtenOn": "2023-08-25T10:23:13Z",
+      "side": 1,
+      "message": "Redundant concat between two str.",
+      "range": {
+        "startLine": 59,
+        "startChar": 39,
+        "endLine": 59,
+        "endChar": 44
+      },
+      "revId": "74216117c78ec59b4aee4d443b9fa743c5511c6e",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "72f7bdbd_90ebbca2",
+        "filename": "src/main/java/org/onap/cps/ncmp/dmi/notifications/mapper/CloudEventMapper.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 45,
+      "author": {
+        "id": 8063
+      },
+      "writtenOn": "2023-08-25T10:23:13Z",
+      "side": 1,
+      "message": "NB: Ident issue.",
+      "range": {
+        "startLine": 45,
+        "startChar": 15,
+        "endLine": 45,
+        "endChar": 34
+      },
+      "revId": "74216117c78ec59b4aee4d443b9fa743c5511c6e",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    }
+  ]
+}
