@@ -41,6 +41,30 @@
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "87fd38f6_d7a8c4cf",
+        "filename": "src/main/java/org/onap/cps/ncmp/dmi/notifications/cmsubscription/CmSubscriptionDmiInEventConsumer.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 7965
+      },
+      "writtenOn": "2023-08-25T14:10:48Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "dfe9d05c_a9227954",
+      "range": {
+        "startLine": 42,
+        "startChar": 1,
+        "endLine": 42,
+        "endChar": 10
+      },
+      "revId": "74216117c78ec59b4aee4d443b9fa743c5511c6e",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "25a54d2d_a0007f09",
@@ -54,6 +78,30 @@
       "writtenOn": "2023-08-25T10:23:13Z",
       "side": 1,
       "message": "It seems this is redundant since there hasnot been a logger is used.",
+      "range": {
+        "startLine": 43,
+        "startChar": 0,
+        "endLine": 43,
+        "endChar": 6
+      },
+      "revId": "74216117c78ec59b4aee4d443b9fa743c5511c6e",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "f2baa5e9_8db4ab70",
+        "filename": "src/main/java/org/onap/cps/ncmp/dmi/notifications/cmsubscription/CmSubscriptionDmiInEventConsumer.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 43,
+      "author": {
+        "id": 7965
+      },
+      "writtenOn": "2023-08-25T14:10:48Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "25a54d2d_a0007f09",
       "range": {
         "startLine": 43,
         "startChar": 0,
@@ -110,6 +158,30 @@
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "1a656824_c11e2cb4",
+        "filename": "src/main/java/org/onap/cps/ncmp/dmi/notifications/cmsubscription/CmSubscriptionDmiOutEventToCloudEventMapper.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 59,
+      "author": {
+        "id": 7965
+      },
+      "writtenOn": "2023-08-25T14:10:48Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "6aafbb9d_598bdc34",
+      "range": {
+        "startLine": 59,
+        "startChar": 39,
+        "endLine": 59,
+        "endChar": 44
+      },
+      "revId": "74216117c78ec59b4aee4d443b9fa743c5511c6e",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "72f7bdbd_90ebbca2",
@@ -123,6 +195,30 @@
       "writtenOn": "2023-08-25T10:23:13Z",
       "side": 1,
       "message": "NB: Ident issue.",
+      "range": {
+        "startLine": 45,
+        "startChar": 15,
+        "endLine": 45,
+        "endChar": 34
+      },
+      "revId": "74216117c78ec59b4aee4d443b9fa743c5511c6e",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "50780c50_41b1528b",
+        "filename": "src/main/java/org/onap/cps/ncmp/dmi/notifications/mapper/CloudEventMapper.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 45,
+      "author": {
+        "id": 7965
+      },
+      "writtenOn": "2023-08-25T14:10:48Z",
+      "side": 1,
+      "message": "nope.thats correct.",
+      "parentUuid": "72f7bdbd_90ebbca2",
       "range": {
         "startLine": 45,
         "startChar": 15,
