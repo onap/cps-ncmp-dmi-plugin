@@ -1,6 +1,6 @@
 .. This work is licensed under a Creative Commons Attribution 4.0 International License.
 .. http://creativecommons.org/licenses/by/4.0
-.. Copyright (C) 2021 Nordix Foundation
+.. Copyright (C) 2021-2023 Nordix Foundation
 .. _architecture:
 
 DMI-Plugin Architecture
@@ -41,6 +41,7 @@ The DMI-Plugin provides following interfaces.
    * - CPS-NCMP-I-01
      - DMI-Plugin Inventory
      - - Register Plug-in CM-Handles
+       - Health Check API
      - REST
    * - DMI-I-01
      - Provides NCMP with  xNF data access and module information
