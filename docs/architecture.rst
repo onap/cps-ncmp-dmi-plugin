@@ -41,6 +41,7 @@ The DMI-Plugin provides following interfaces.
    * - CPS-NCMP-I-01
      - DMI-Plugin Inventory
      - - Register Plug-in CM-Handles
+     - - Health Check API
      - REST
    * - DMI-I-01
      - Provides NCMP with  xNF data access and module information
