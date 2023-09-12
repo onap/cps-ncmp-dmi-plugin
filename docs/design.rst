@@ -1,6 +1,6 @@
 .. This work is licensed under a Creative Commons Attribution 4.0 International License.
 .. http://creativecommons.org/licenses/by/4.0
-.. Copyright (C) 2021 Nordix Foundation
+.. Copyright (C) 2021-2023 Nordix Foundation
 
 .. DO NOT CHANGE THIS LABEL FOR RELEASE NOTES - EVEN THOUGH IT GIVES A WARNING
 .. _design:
@@ -37,6 +37,19 @@ and CPS-NCMP using the drop down table in the top right:
 .. code-block:: bash
 
   http://<hostname>:<port>/swagger-ui/index.html?configUrl=/v3/api-docs/swagger-config#/
+
+Health Check APIs
+=================
+
+Spring Boot provides a built-in Health Check feature through the Spring Boot Actuator module.
+Health checks are essential for monitoring the status of DMI-Plugin.
+By default, the health check endpoint is available at /manage/health in an ONAP DMI-Plugin Spring Boot application.
+
+The healthcheck URL can be accessed using following URI:
+
+.. code-block:: bash
+
+  http://<hostname>:<port>/manage/health
 
 Consumed APIs
 =============
