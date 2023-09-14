@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "2a0ec893_4fd709ff",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 8063
+      },
+      "writtenOn": "2023-09-14T15:38:48Z",
+      "side": 1,
+      "message": "Thank you for reviewing my commit. Please find the new patchset.",
+      "revId": "b319e230111953e956ea51782fb1532d4e93d1e0",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    }
+  ]
+}
