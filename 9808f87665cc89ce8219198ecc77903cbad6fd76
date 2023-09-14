@@ -1,0 +1,44 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "2f7ea819_eccc4348",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2023-09-14T15:06:39Z",
+      "side": 1,
+      "message": "a little rewording",
+      "revId": "9808f87665cc89ce8219198ecc77903cbad6fd76",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "4737dab2_2623ac1c",
+        "filename": "docs/design.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 46,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2023-09-14T15:06:39Z",
+      "side": 1,
+      "message": "move this block below the definition. and reword and simplify like so:\n\n\nThe Health check endpoint is essential for monitoring the status of DMI-Plugins.\nCPS is using a Spring Boot pattern here which can easily be configured for any spring boot application. Springboot provides a built-in Health Check feature through the Spring Boot Actuator module.",
+      "range": {
+        "startLine": 44,
+        "startChar": 0,
+        "endLine": 46,
+        "endChar": 115
+      },
+      "revId": "9808f87665cc89ce8219198ecc77903cbad6fd76",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    }
+  ]
+}
