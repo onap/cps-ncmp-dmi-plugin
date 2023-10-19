@@ -80,7 +80,7 @@ public class WebSecurityConfig {
                 .httpBasic()
                 .and()
                 .authorizeRequests()
-                .antMatchers(permitUris).permitAll()
+                .requestMatchers(permitUris).permitAll()
                 .anyRequest().authenticated()
                 .and()
                 .csrf().disable();
