@@ -106,7 +106,7 @@ public class DmiServiceImpl implements DmiService {
             } else {
                 log.error("Error occurred when getting module resources from SDNC for the given cmHandle {}", cmHandle);
                 throw new HttpClientRequestException(
-                    cmHandle, responseEntity.getBody(), responseEntity.getStatusCode());
+                    cmHandle, responseEntity.getBody(), (HttpStatus) responseEntity.getStatusCode());
             }
         }
         return yangResources;
@@ -171,7 +171,8 @@ public class DmiServiceImpl implements DmiService {
         if (responseEntity.getStatusCode().is2xxSuccessful()) {
             return responseEntity.getBody();
         } else {
-            throw new HttpClientRequestException(cmHandle, responseEntity.getBody(), responseEntity.getStatusCode());
+            throw new HttpClientRequestException(cmHandle, responseEntity.getBody(),
+                    (HttpStatus) responseEntity.getStatusCode());
         }
     }
 
