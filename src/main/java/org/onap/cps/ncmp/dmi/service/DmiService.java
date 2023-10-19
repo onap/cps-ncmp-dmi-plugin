@@ -21,8 +21,8 @@
 
 package org.onap.cps.ncmp.dmi.service;
 
+import jakarta.validation.constraints.NotNull;
 import java.util.List;
-import javax.validation.constraints.NotNull;
 import org.onap.cps.ncmp.dmi.exception.DmiException;
 import org.onap.cps.ncmp.dmi.model.DataAccessRequest;
 import org.onap.cps.ncmp.dmi.model.ModuleSet;

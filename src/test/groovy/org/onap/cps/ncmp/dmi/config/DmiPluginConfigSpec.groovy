@@ -20,7 +20,7 @@
 
 package org.onap.cps.ncmp.dmi.config
 
-import org.springdoc.core.GroupedOpenApi
+import org.springdoc.core.models.GroupedOpenApi
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.boot.test.context.SpringBootTest
 import org.springframework.test.context.ContextConfiguration
