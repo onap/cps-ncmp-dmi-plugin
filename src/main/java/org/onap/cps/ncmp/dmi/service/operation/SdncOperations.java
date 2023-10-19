@@ -115,7 +115,7 @@ public class SdncOperations {
         }
         throw new SdncException(
                 String.format("SDNC failed to get Modules Schema for node %s", nodeId),
-                modulesResponseEntity.getStatusCode(), modulesResponseEntity.getBody());
+                (HttpStatus) modulesResponseEntity.getStatusCode(), modulesResponseEntity.getBody());
     }
 
     /**
