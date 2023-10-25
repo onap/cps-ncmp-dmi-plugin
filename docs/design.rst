@@ -45,7 +45,7 @@ The healthcheck URL can be accessed using following URI:
 
 .. code-block:: bash
 
-  http://<hostname>:<port>/manage/health
+  http://<hostname>:<port>/actuator/health
 
 The Health check endpoint is essential for monitoring the status of DMI-Plugins.
 CPS is using a Spring Boot pattern here which can easily be configured for any spring boot application.

@@ -26,7 +26,11 @@ check_health()
 
   while [ "$TICKER" -le "$TIME_OUT" ]; do
 
-    RESPONSE=$(curl --location --request GET 'http://'$1'/manage/health/readiness')
+    if [[ "$2" == "dmi-plugin" ]]; then
+      RESPONSE=$(curl --location --request GET 'http://'$1'/actuator/health/readiness')
+    else
+      RESPONSE=$(curl --location --request GET 'http://'$1'/manage/health/readiness')
+    fi
 
     if [[ "$RESPONSE" == *"UP"* ]]; then
       echo "$2 started in $TICKER"
