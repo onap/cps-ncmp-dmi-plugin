@@ -22,7 +22,7 @@ Documentation         DMI - Actuator endpoints
 Library               Collections
 Library               RequestsLibrary
 
-Suite Setup           Create Session    MANAGEMENT_URL    http://${DMI_HOST}:${DMI_MANAGEMENT_PORT}/manage
+Suite Setup           Create Session    MANAGEMENT_URL    http://${DMI_HOST}:${DMI_PORT}/actuator
 
 *** Test Cases ***
 Test DMI Enhanced Healthcheck

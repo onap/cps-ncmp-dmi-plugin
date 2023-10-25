@@ -26,7 +26,7 @@ check_health()
 
   while [ "$TICKER" -le "$TIME_OUT" ]; do
 
-    RESPONSE=$(curl --location --request GET 'http://'$1'/manage/health/readiness')
+    RESPONSE=$(curl --location --request GET 'http://'$1'/actuator/health/readiness')
 
     if [[ "$RESPONSE" == *"UP"* ]]; then
       echo "$2 started in $TICKER"
