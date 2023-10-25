@@ -16,6 +16,24 @@
       "message": "BU I assume another patch once Priyans commit for DMI is merged. Maybe that is Priyanks responsibility ?!",
       "revId": "56b8406095f2b3f84ad4d28695d9fe420a418270",
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "fceaa290_83ab73d8",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 8063
+      },
+      "writtenOn": "2023-10-25T14:51:32Z",
+      "side": 1,
+      "message": "I suggest to get the commit (in NCMP) merge first then we can submit this commit accordingly.",
+      "parentUuid": "7f588bc2_40fe879f",
+      "revId": "56b8406095f2b3f84ad4d28695d9fe420a418270",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
     }
   ]
 }
