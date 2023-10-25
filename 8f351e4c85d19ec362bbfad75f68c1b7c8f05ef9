@@ -1,0 +1,44 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "0142f341_eef8985c",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2023-10-25T13:34:04Z",
+      "side": 1,
+      "message": "Cna you explain answer my fist comment I am confused...",
+      "revId": "8f351e4c85d19ec362bbfad75f68c1b7c8f05ef9",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "07e0cb9c_1d9e1642",
+        "filename": "csit/plans/dmi/setup.sh",
+        "patchSetId": 2
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2023-10-25T13:34:04Z",
+      "side": 1,
+      "message": "so this will be changged later?\nDoes it depend on what gets merged first?!",
+      "range": {
+        "startLine": 31,
+        "startChar": 0,
+        "endLine": 33,
+        "endChar": 6
+      },
+      "revId": "8f351e4c85d19ec362bbfad75f68c1b7c8f05ef9",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    }
+  ]
+}
