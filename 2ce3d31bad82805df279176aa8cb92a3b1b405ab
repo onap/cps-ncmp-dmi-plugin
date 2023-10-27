@@ -1,0 +1,159 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "012654aa_373efc39",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 8063
+      },
+      "writtenOn": "2023-10-27T13:49:10Z",
+      "side": 1,
+      "message": "I have some NB comments on the licenses, but there are a fews of deprecated functions in WebSecurityConfig. Thus I suggest to have them updated ones.",
+      "revId": "2ce3d31bad82805df279176aa8cb92a3b1b405ab",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "c953d19f_2751f387",
+        "filename": "src/main/java/org/onap/cps/ncmp/dmi/config/DmiPluginConfig.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 8063
+      },
+      "writtenOn": "2023-10-27T13:49:10Z",
+      "side": 1,
+      "message": "NB: 2023",
+      "range": {
+        "startLine": 3,
+        "startChar": 23,
+        "endLine": 3,
+        "endChar": 28
+      },
+      "revId": "2ce3d31bad82805df279176aa8cb92a3b1b405ab",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "fdb08b2e_df18173b",
+        "filename": "src/main/java/org/onap/cps/ncmp/dmi/config/WebSecurityConfig.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 86,
+      "author": {
+        "id": 8063
+      },
+      "writtenOn": "2023-10-27T13:49:10Z",
+      "side": 1,
+      "message": "This block is marked as deprecated with the upgrade to new versions. I suggest having this block similar to the impl. in WebSecurityConfig in CPS.",
+      "range": {
+        "startLine": 80,
+        "startChar": 1,
+        "endLine": 86,
+        "endChar": 34
+      },
+      "revId": "2ce3d31bad82805df279176aa8cb92a3b1b405ab",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "957dcc44_57e57e7e",
+        "filename": "src/main/java/org/onap/cps/ncmp/dmi/service/DmiService.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 8063
+      },
+      "writtenOn": "2023-10-27T13:49:10Z",
+      "side": 1,
+      "message": "NB: 2021-2023",
+      "range": {
+        "startLine": 3,
+        "startChar": 18,
+        "endLine": 3,
+        "endChar": 23
+      },
+      "revId": "2ce3d31bad82805df279176aa8cb92a3b1b405ab",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "e227f691_74460d2a",
+        "filename": "src/main/java/org/onap/cps/ncmp/dmi/service/DmiServiceImpl.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 8063
+      },
+      "writtenOn": "2023-10-27T13:49:10Z",
+      "side": 1,
+      "message": "NB: 2021-2023",
+      "range": {
+        "startLine": 3,
+        "startChar": 18,
+        "endLine": 3,
+        "endChar": 23
+      },
+      "revId": "2ce3d31bad82805df279176aa8cb92a3b1b405ab",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "07605e49_e978bc34",
+        "filename": "src/main/java/org/onap/cps/ncmp/dmi/service/operation/SdncOperations.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 8063
+      },
+      "writtenOn": "2023-10-27T13:49:10Z",
+      "side": 1,
+      "message": "NB: 2023",
+      "range": {
+        "startLine": 3,
+        "startChar": 23,
+        "endLine": 3,
+        "endChar": 28
+      },
+      "revId": "2ce3d31bad82805df279176aa8cb92a3b1b405ab",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "7b94f9f5_3878c7df",
+        "filename": "src/test/groovy/org/onap/cps/ncmp/dmi/config/DmiPluginConfigSpec.groovy",
+        "patchSetId": 3
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 8063
+      },
+      "writtenOn": "2023-10-27T13:49:10Z",
+      "side": 1,
+      "message": "NB: 2023",
+      "range": {
+        "startLine": 3,
+        "startChar": 23,
+        "endLine": 3,
+        "endChar": 28
+      },
+      "revId": "2ce3d31bad82805df279176aa8cb92a3b1b405ab",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    }
+  ]
+}
