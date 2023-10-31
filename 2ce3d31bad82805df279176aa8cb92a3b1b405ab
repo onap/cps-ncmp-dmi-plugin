@@ -41,6 +41,30 @@
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "1b60ad73_61236f4e",
+        "filename": "src/main/java/org/onap/cps/ncmp/dmi/config/DmiPluginConfig.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 4893
+      },
+      "writtenOn": "2023-10-31T08:14:29Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "c953d19f_2751f387",
+      "range": {
+        "startLine": 3,
+        "startChar": 23,
+        "endLine": 3,
+        "endChar": 28
+      },
+      "revId": "2ce3d31bad82805df279176aa8cb92a3b1b405ab",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "fdb08b2e_df18173b",
@@ -54,6 +78,30 @@
       "writtenOn": "2023-10-27T13:49:10Z",
       "side": 1,
       "message": "This block is marked as deprecated with the upgrade to new versions. I suggest having this block similar to the impl. in WebSecurityConfig in CPS.",
+      "range": {
+        "startLine": 80,
+        "startChar": 1,
+        "endLine": 86,
+        "endChar": 34
+      },
+      "revId": "2ce3d31bad82805df279176aa8cb92a3b1b405ab",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "cd4220a6_48938c6f",
+        "filename": "src/main/java/org/onap/cps/ncmp/dmi/config/WebSecurityConfig.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 86,
+      "author": {
+        "id": 4893
+      },
+      "writtenOn": "2023-10-31T08:14:29Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "fdb08b2e_df18173b",
       "range": {
         "startLine": 80,
         "startChar": 1,
@@ -87,6 +135,30 @@
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "3c601d5f_37e9b4cc",
+        "filename": "src/main/java/org/onap/cps/ncmp/dmi/service/DmiService.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 4893
+      },
+      "writtenOn": "2023-10-31T08:14:29Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "957dcc44_57e57e7e",
+      "range": {
+        "startLine": 3,
+        "startChar": 18,
+        "endLine": 3,
+        "endChar": 23
+      },
+      "revId": "2ce3d31bad82805df279176aa8cb92a3b1b405ab",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "e227f691_74460d2a",
@@ -100,6 +172,30 @@
       "writtenOn": "2023-10-27T13:49:10Z",
       "side": 1,
       "message": "NB: 2021-2023",
+      "range": {
+        "startLine": 3,
+        "startChar": 18,
+        "endLine": 3,
+        "endChar": 23
+      },
+      "revId": "2ce3d31bad82805df279176aa8cb92a3b1b405ab",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "e2de6b7f_2e8ff2c1",
+        "filename": "src/main/java/org/onap/cps/ncmp/dmi/service/DmiServiceImpl.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 4893
+      },
+      "writtenOn": "2023-10-31T08:14:29Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "e227f691_74460d2a",
       "range": {
         "startLine": 3,
         "startChar": 18,
@@ -133,6 +229,30 @@
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "954bea54_d41b70c6",
+        "filename": "src/main/java/org/onap/cps/ncmp/dmi/service/operation/SdncOperations.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 4893
+      },
+      "writtenOn": "2023-10-31T08:14:29Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "07605e49_e978bc34",
+      "range": {
+        "startLine": 3,
+        "startChar": 23,
+        "endLine": 3,
+        "endChar": 28
+      },
+      "revId": "2ce3d31bad82805df279176aa8cb92a3b1b405ab",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "7b94f9f5_3878c7df",
@@ -146,6 +266,30 @@
       "writtenOn": "2023-10-27T13:49:10Z",
       "side": 1,
       "message": "NB: 2023",
+      "range": {
+        "startLine": 3,
+        "startChar": 23,
+        "endLine": 3,
+        "endChar": 28
+      },
+      "revId": "2ce3d31bad82805df279176aa8cb92a3b1b405ab",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "468aeb78_473cffda",
+        "filename": "src/test/groovy/org/onap/cps/ncmp/dmi/config/DmiPluginConfigSpec.groovy",
+        "patchSetId": 3
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 4893
+      },
+      "writtenOn": "2023-10-31T08:14:29Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7b94f9f5_3878c7df",
       "range": {
         "startLine": 3,
         "startChar": 23,
