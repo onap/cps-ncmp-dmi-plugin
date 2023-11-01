@@ -20,6 +20,8 @@
 
 package org.onap.cps.ncmp.dmi.config;
 
+import static org.springframework.security.config.Customizer.withDefaults;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
@@ -77,13 +79,12 @@ public class WebSecurityConfig {
     @SuppressWarnings("squid:S4502")
     public SecurityFilterChain filterChain(final HttpSecurity http) throws Exception {
         http
-                .httpBasic()
-                .and()
+                .httpBasic(withDefaults())
                 .authorizeRequests()
-                .antMatchers(permitUris).permitAll()
+                .requestMatchers(permitUris).permitAll()
                 .anyRequest().authenticated()
                 .and()
-                .csrf().disable();
+                .csrf((csrf) -> csrf.disable());
 
         return http.build();
     }
