@@ -93,6 +93,11 @@
                 <version>7.0.1</version>
             </dependency>
             <dependency>
+                <groupId>net.minidev</groupId>
+                <artifactId>json-smart</artifactId>
+                <version>2.5.0</version>
+            </dependency>
+            <dependency>
                 <groupId>org.apache.httpcomponents</groupId>
                 <artifactId>httpclient</artifactId>
                 <version>4.5.13</version>
@@ -127,7 +132,7 @@
             <dependency>
                 <groupId>org.codehaus.janino</groupId>
                 <artifactId>janino</artifactId>
-                <version>3.1.7</version>
+                <version>3.1.10</version>
             </dependency>
             <dependency>
                 <groupId>org.projectlombok</groupId>
