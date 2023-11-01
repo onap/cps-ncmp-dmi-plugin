@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "dc4f8f4a_f6f16270",
+        "filename": "pom.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 99,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2023-11-01T12:18:02Z",
+      "side": 1,
+      "message": "as dsicussed, were does thsi come from. YOu might need to update to springboot 3.1.5 to get this (or higher) version with explciitly definein version here....",
+      "range": {
+        "startLine": 95,
+        "startChar": 1,
+        "endLine": 99,
+        "endChar": 25
+      },
+      "revId": "a12d2718699793285b9bc3a63ce3b99ca367c954",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    }
+  ]
+}
