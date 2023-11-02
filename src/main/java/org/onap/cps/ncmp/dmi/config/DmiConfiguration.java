@@ -81,7 +81,6 @@ public class DmiConfiguration {
     private void setCustomRequestFactoryToSupportPatch(final RestTemplate restTemplate) {
         final HttpComponentsClientHttpRequestFactory requestFactory = new HttpComponentsClientHttpRequestFactory();
         requestFactory.setConnectTimeout(TIMEOUT);
-        requestFactory.setReadTimeout(TIMEOUT);
         restTemplate.setRequestFactory(requestFactory);
     }
 }
