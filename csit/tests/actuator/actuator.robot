@@ -1,5 +1,5 @@
 # ============LICENSE_START=======================================================
-# Copyright (C) 2022 Nordix Foundation.
+# Copyright (C) 2022-2024 Nordix Foundation.
 # ================================================================================
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -17,17 +17,28 @@
 # ============LICENSE_END=========================================================
 
 *** Settings ***
-Documentation         DMI - Actuator endpoints
+Documentation         DMI - Actuator and Swagger UI endpoints
 
 Library               Collections
 Library               RequestsLibrary
 
-Suite Setup           Create Session    MANAGEMENT_URL    http://${DMI_HOST}:${DMI_PORT}/actuator
+Suite Setup           Create Session    DMI_URL    http://${DMI_HOST}:${DMI_PORT}
+
+*** Variables ***
+${auth}              Basic Y3BzdXNlcjpjcHNyMGNrcyE=
+${actuatorPath}      /actuator/health
+${swaggerPath}       /swagger-ui/index.html
 
 *** Test Cases ***
+
 Test DMI Enhanced Healthcheck
-    [Documentation]     Runs DMI Health Check. It will check for overall status update of DMI component like, Database and diskspace status along with liveliness and readiness check
-    ${response}=      GET On Session    MANAGEMENT_URL     health    expected_status=200
-    ${resp_body}=      Convert to string     ${response.text}
-    Should Contain      ${resp_body}     UP
-    Should Not Contain      ${resp_body}     DOWN
+    [Documentation]         Runs DMI Health Check. It will check for overall status update of DMI component like, Database and diskspace status along with liveliness and readiness check
+    ${response}=            GET On Session        DMI_URL     ${actuatorPath}    expected_status=200
+    ${resp_body}=           Convert to string     ${response.text}
+    Should Contain          ${resp_body}          UP
+    Should Not Contain      ${resp_body}          DOWN
+
+Test DMI Swagger UI
+    [Documentation]       Runs health check for DMI Swagger UI. If the DMI Swagger URL is accessible, status should be 200.
+    ${headers}=           Create Dictionary   Authorization=${auth}
+    GET On Session        DMI_URL             ${swaggerPath}    headers=${headers}    expected_status=200
