@@ -186,6 +186,7 @@ cat "${TESTPLANDIR}/testplan.txt" | egrep -v '(^[[:space:]]*#|^[[:space:]]*$)' |
 cat testplan.txt
 SUITES=$( xargs -a testplan.txt )
 
+
 echo ROBOT_VARIABLES="${ROBOT_VARIABLES}"
 echo "Starting Robot test suites ${SUITES} ..."
 relax_set
