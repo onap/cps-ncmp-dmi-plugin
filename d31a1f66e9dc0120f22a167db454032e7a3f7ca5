@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "24ba82a2_12bb3c11",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 8063
+      },
+      "writtenOn": "2024-01-16T09:56:22Z",
+      "side": 1,
+      "message": "I think it is good to align robotframework-onap version as given in CPS, as you have done here. I suggest you to have also that flag --legacy-output. that way we could have had them at once.",
+      "revId": "d31a1f66e9dc0120f22a167db454032e7a3f7ca5",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    }
+  ]
+}
