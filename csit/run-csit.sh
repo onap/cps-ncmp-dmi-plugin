@@ -20,9 +20,38 @@
 #
 # Branched from ccsdk/distribution to this repository Feb 23, 2021
 
+echo "---> run-csit.sh"
+
+WORKDIR=$(mktemp -d --suffix=-robot-workdir)
+
+# Version should match those used to setup robot-framework in other jobs/stages
+# Use pyenv for selecting the python version
+if [[ -d "/opt/pyenv" ]]; then
+  echo "Setup pyenv:"
+  export PYENV_ROOT="/opt/pyenv"
+  export PATH="$PYENV_ROOT/bin:$PATH"
+  pyenv versions
+  if command -v pyenv 1>/dev/null 2>&1; then
+    eval "$(pyenv init - --no-rehash)"
+    # Choose the latest numeric Python version from installed list
+    version=$(pyenv versions --bare | sed '/^[^0-9]/d' | sort -V | tail -n 1)
+    pyenv local "${version}"
+  fi
+fi
+
 #
 # functions
 #
+
+# wrapper for sourcing a file
+function source_safely() {
+    [ -z "$1" ] && return 1
+    relax_set
+    . "$1"
+    load_set
+}
+# Activate the virtualenv containing all the required libraries installed by prepare-csit.sh
+source_safely "${ROBOT3_VENV}/bin/activate"
 
 function on_exit(){
     rc=$?
@@ -107,14 +136,6 @@ function relax_set() {
     set +o pipefail
 }
 
-# wrapper for sourcing a file
-function source_safely() {
-    [ -z "$1" ] && return 1
-    relax_set
-    . "$1"
-    load_set
-}
-
 #
 # main
 #
@@ -154,14 +175,11 @@ TESTPLANDIR="${WORKSPACE}/${TESTPLAN}"
 # Run installation of prerequired libraries
 source_safely "${WORKSPACE}/prepare-csit.sh"
 
-# Activate the virtualenv containing all the required libraries installed by prepare-csit.sh
-source_safely "${ROBOT_VENV}/bin/activate"
-
-WORKDIR=$(mktemp -d --suffix=-robot-workdir)
+# Use robot framework working directory
 cd "${WORKDIR}"
 
 # Add csit scripts to PATH
-export PATH="${PATH}:${WORKSPACE}/docker/scripts:${WORKSPACE}/scripts:${ROBOT_VENV}/bin"
+export PATH="${PATH}:${WORKSPACE}/docker/scripts:${WORKSPACE}/scripts:${ROBOT3_VENV}/bin"
 export SCRIPTS="${WORKSPACE}/scripts"
 export ROBOT_VARIABLES=
 
@@ -190,6 +208,12 @@ SUITES=$( xargs -a testplan.txt )
 echo ROBOT_VARIABLES="${ROBOT_VARIABLES}"
 echo "Starting Robot test suites ${SUITES} ..."
 relax_set
+
+echo "Versioning information:"
+python3 --version
+pip freeze
+python3 -m robot.run --version || :
+
 python3 -m robot.run -N ${TESTPLAN} -v WORKSPACE:/tmp ${ROBOT_VARIABLES} ${TESTOPTIONS} ${SUITES}
 RESULT=$?
 load_set
