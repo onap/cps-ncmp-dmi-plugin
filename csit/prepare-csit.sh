@@ -1,6 +1,6 @@
 #!/bin/bash -x
 #
-# Copyright (C) 2022 Nordix Foundation.
+# Copyright (C) 2022-2024 Nordix Foundation.
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -19,6 +19,7 @@
 #
 # Branched from ccsdk/distribution to this repository Feb 23, 2021
 #
+echo "---> prepare-csit.sh"
 
 if [ -z "$WORKSPACE" ]; then
     export WORKSPACE=`git rev-parse --show-toplevel`
@@ -26,26 +27,46 @@ fi
 
 TESTPLANDIR=${WORKSPACE}/${TESTPLAN}
 
-# Assume that if ROBOT_VENV is set and virtualenv with system site packages can be activated,
+# Version should match those used to setup robot-framework in other jobs/stages
+# Use pyenv for selecting the python version
+if [[ -d "/opt/pyenv" ]]; then
+  echo "Setup pyenv:"
+  export PYENV_ROOT="/opt/pyenv"
+  export PATH="$PYENV_ROOT/bin:$PATH"
+  pyenv versions
+  if command -v pyenv 1>/dev/null 2>&1; then
+    eval "$(pyenv init - --no-rehash)"
+    # Choose the latest numeric Python version from installed list
+    version=$(pyenv versions --bare | sed '/^[^0-9]/d' | sort -V | tail -n 1)
+    pyenv local "${version}"
+  fi
+fi
+
+# Assume that if ROBOT3_VENV is set and virtualenv with system site packages can be activated,
 # ci-management/jjb/integration/include-raw-integration-install-robotframework.sh has already
 # been executed
 
 if [ -f ${WORKSPACE}/env.properties ]; then
     source ${WORKSPACE}/env.properties
 fi
-#if [ -f ${ROBOT_VENV}/bin/activate ]; then
-#    source ${ROBOT_VENV}/bin/activate
-#else
+if [ -f ${ROBOT3_VENV}/bin/activate ]; then
+   source ${ROBOT3_VENV}/bin/activate
+else
     rm -rf /tmp/ci-management
     rm -f ${WORKSPACE}/env.properties
     cd /tmp
+    git clone "https://gerrit.onap.org/r/ci-management"
     source ${WORKSPACE}/install-robotframework.sh
-#fi
+fi
 
 # install eteutils
-mkdir -p ${ROBOT_VENV}/src/onap
-rm -rf ${ROBOT_VENV}/src/onap/testsuite
-python3 -m pip install --upgrade --extra-index-url="https://nexus3.onap.org/repository/PyPi.staging/simple" 'robotframework-onap==0.5.1.*' --pre
+mkdir -p ${ROBOT3_VENV}/src/onap
+rm -rf ${ROBOT3_VENV}/src/onap/testsuite
 
+python3 -m pip install --upgrade --extra-index-url="https://nexus3.onap.org/repository/PyPi.staging/simple" 'robotframework-onap==11.0.0.dev17' --pre
+
+echo "Versioning information:"
+python3 --version
 pip freeze
 
+python3 -m robot.run --version || :
