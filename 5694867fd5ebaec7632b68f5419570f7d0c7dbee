@@ -16,6 +16,24 @@
       "message": "hope the changes came up by comparing whatever scripts we have in CPS repo. right ?",
       "revId": "5694867fd5ebaec7632b68f5419570f7d0c7dbee",
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "9f73d4b3_043e900d",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 7931
+      },
+      "writtenOn": "2024-01-18T14:29:06Z",
+      "side": 1,
+      "message": "yes , also used Matt\u0027s patches as guidelines - see Description on the tickethttps://jira.onap.org/browse/CPS-2032 :)",
+      "parentUuid": "cbaf5ba2_7652f89d",
+      "revId": "5694867fd5ebaec7632b68f5419570f7d0c7dbee",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
     }
   ]
 }
