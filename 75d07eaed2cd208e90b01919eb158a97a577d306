@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "b5e4f4a2_59204916",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 7965
+      },
+      "writtenOn": "2024-01-22T13:03:51Z",
+      "side": 1,
+      "message": "merging based on previous +1s and the scripts are now in sync with the ncmp scripts as well.",
+      "revId": "75d07eaed2cd208e90b01919eb158a97a577d306",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    }
+  ]
+}
