@@ -25,7 +25,6 @@ Library               RequestsLibrary
 Suite Setup           Create Session    DMI_URL    http://${DMI_HOST}:${DMI_PORT}
 
 *** Variables ***
-${auth}              Basic Y3BzdXNlcjpjcHNyMGNrcyE=
 ${actuatorPath}      /actuator/health
 ${swaggerPath}       /swagger-ui/index.html
 
@@ -40,5 +39,4 @@ Test DMI Enhanced Healthcheck
 
 Test DMI Swagger UI
     [Documentation]       Runs health check for DMI Swagger UI. If the DMI Swagger URL is accessible, status should be 200.
-    ${headers}=           Create Dictionary   Authorization=${auth}
-    GET On Session        DMI_URL             ${swaggerPath}    headers=${headers}    expected_status=200
+    GET On Session        DMI_URL             ${swaggerPath}    expected_status=200
