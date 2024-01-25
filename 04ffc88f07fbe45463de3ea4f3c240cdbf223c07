@@ -1,0 +1,10 @@
+Verified+1: ONAP Jobbuilder <onap-jobbuilder@jenkins.onap.org>
+Verified+1: ONAP Required GHA <releng+onap.required.gha@linuxfoundation.org>
+Code-Review+1: Daniel Hanrahan <daniel.hanrahan@est.tech>
+Code-Review+2: Priyank Maheshwari <priyank.maheshwari@est.tech>
+Code-Review+2: Lee Anjella Macabuhay <lee.anjella.macabuhay@est.tech>
+Submitted-by: Priyank Maheshwari <priyank.maheshwari@est.tech>
+Submitted-at: Thu, 25 Jan 2024 13:40:49 +0000
+Reviewed-on: https://gerrit.onap.org/r/c/cps/ncmp-dmi-plugin/+/137082
+Project: cps/ncmp-dmi-plugin
+Branch: refs/heads/master
