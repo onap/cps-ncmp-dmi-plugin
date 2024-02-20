@@ -18,6 +18,23 @@
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "2c0d4772_8c507d88",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 481
+      },
+      "writtenOn": "2024-02-20T18:26:00Z",
+      "side": 1,
+      "message": "abandoning",
+      "revId": "34b6efe08eaba817c4a898138f924f03dc2a4ef2",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "32761e33_42b7846d",
@@ -31,6 +48,30 @@
       "writtenOn": "2024-02-20T13:23:26Z",
       "side": 1,
       "message": "it already has this requirement.",
+      "range": {
+        "startLine": 1,
+        "startChar": 0,
+        "endLine": 1,
+        "endChar": 3
+      },
+      "revId": "34b6efe08eaba817c4a898138f924f03dc2a4ef2",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "414753e8_23955c9b",
+        "filename": "docs/requirements-docs.txt",
+        "patchSetId": 1
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 481
+      },
+      "writtenOn": "2024-02-20T18:26:00Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "32761e33_42b7846d",
       "range": {
         "startLine": 1,
         "startChar": 0,
