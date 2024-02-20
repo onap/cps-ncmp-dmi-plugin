@@ -5,3 +5,4 @@ sphinxcontrib-blockdiag  # BSD
 sphinxcontrib-seqdiag # BSD
 sphinxcontrib-swaggerdoc
 sphinxcontrib-spelling
+six
