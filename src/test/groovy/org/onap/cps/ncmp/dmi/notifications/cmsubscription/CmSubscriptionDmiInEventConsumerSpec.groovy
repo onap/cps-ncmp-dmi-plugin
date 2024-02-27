@@ -26,8 +26,8 @@ import io.cloudevents.core.builder.CloudEventBuilder
 import org.apache.kafka.clients.consumer.ConsumerRecord
 import org.onap.cps.ncmp.dmi.TestUtils
 import org.onap.cps.ncmp.dmi.api.kafka.MessagingBaseSpec
-import org.onap.cps.ncmp.events.cmsubscription1_0_0.dmi_to_ncmp.CmSubscriptionDmiOutEvent
-import org.onap.cps.ncmp.events.cmsubscription1_0_0.dmi_to_ncmp.Data
+import org.onap.cps.ncmp.events.cmsubscription_merge1_0_0.dmi_to_ncmp.CmSubscriptionDmiOutEvent
+import org.onap.cps.ncmp.events.cmsubscription_merge1_0_0.dmi_to_ncmp.Data
 import org.onap.cps.ncmp.events.cmsubscription1_0_0.dmi_to_ncmp.SubscriptionStatus
 import org.onap.cps.ncmp.events.cmsubscription1_0_0.ncmp_to_dmi.CmHandle
 import org.onap.cps.ncmp.events.cmsubscription1_0_0.ncmp_to_dmi.CmSubscriptionDmiInEvent
@@ -56,18 +56,15 @@ class CmSubscriptionDmiInEventConsumerSpec extends MessagingBaseSpec {
         given: 'an subscription event response'
             objectUnderTest.dmiName = 'test-ncmp-dmi'
             objectUnderTest.cmAvcSubscriptionResponseTopic = testTopic
-            def responseStatus = SubscriptionStatus.Status.ACCEPTED
-            def subscriptionStatuses = [new SubscriptionStatus(id: 'CmHandle1', status: responseStatus),
-                                        new SubscriptionStatus(id: 'CmHandle2', status: responseStatus)]
-            def cmSubscriptionDmiOutEventData = new Data(subscriptionName: 'cm-subscription-001',
-                clientId: 'SCO-9989752', dmiName: 'ncmp-dmi-plugin', subscriptionStatus: subscriptionStatuses)
+            def correlationId = 'subscription1#test-ncmp-dmi'
+            def cmSubscriptionDmiOutEventData = new Data(statusCode: '1', statusMessage: 'accepted')
             def subscriptionEventResponse =
                 new CmSubscriptionDmiOutEvent().withData(cmSubscriptionDmiOutEventData)
         and: 'consumer has a subscription'
             kafkaConsumer.subscribe([testTopic] as List<String>)
         when: 'an event is published'
             def eventKey = UUID.randomUUID().toString()
-            objectUnderTest.sendCmSubscriptionDmiOutEvent(eventKey, "subscriptionCreatedStatus", subscriptionEventResponse)
+            objectUnderTest.sendCmSubscriptionDmiOutEvent(eventKey, "subscriptionCreatedStatus", subscriptionEventResponse, correlationId)
         and: 'topic is polled'
             def records = kafkaConsumer.poll(Duration.ofMillis(1500))
         then: 'poll returns one record'
@@ -120,39 +117,5 @@ class CmSubscriptionDmiInEventConsumerSpec extends MessagingBaseSpec {
             objectUnderTest.consumeCmSubscriptionDmiInEvent(testEventSent)
         then: 'no exception is thrown and event is logged'
             noExceptionThrown()
-    }
-
-    def 'Form a SubscriptionEventResponse from a SubscriptionEvent.'() {
-        given: 'a SubscriptionEvent'
-            def jsonData = TestUtils.getResourceFileContent('avcSubscriptionCreationEvent.json')
-            def subscriptionEvent = objectMapper.readValue(jsonData, CmSubscriptionDmiInEvent.class)
-        when: 'a SubscriptionResponseEvent is formed'
-            def result = objectUnderTest.formCmSubscriptionDmiOutEvent(subscriptionEvent)
-        then: 'Confirm SubscriptionEventResponse was formed as expected'
-            assert result.data.clientId == "SCO-9989752"
-            assert result.data.subscriptionName == "cm-subscription-001"
-    }
-
-    def 'Extract cm handle ids from cm handle successfully.'() {
-        given: 'a list of cm handles'
-            def cmHandleIds =
-                [new CmHandle(id: 'CmHandle1', additionalProperties: ['prop-x': 'prop-valuex']),
-                 new CmHandle(id: 'CmHandle2', additionalProperties: ['prop-y': 'prop-valuey'])]
-        when: 'extract the cm handle ids'
-            def result = objectUnderTest.extractCmHandleIds(cmHandleIds)
-        then: 'cm handle ids are extracted as expected'
-            def expectedCmHandleIds = ['CmHandle1', 'CmHandle2'] as Set
-            assert expectedCmHandleIds == result
-    }
-
-    def 'Populate cm handle id to subscriptionStatus successfully.'() {
-        given: 'a set of cm handle id'
-            def cmHandleIds = ['CmHandle1', 'CmHandle2'] as Set
-            def responseStatus = SubscriptionStatus.Status.ACCEPTED
-        when: 'populate cm handle id to subscriptionStatus'
-            def result = objectUnderTest.populateSubscriptionStatus(cmHandleIds).status
-        then: 'cm handle id to subscriptionStatus populated as expected'
-            def expectedStatus = [responseStatus, responseStatus]
-            expectedStatus == result
     }
 }

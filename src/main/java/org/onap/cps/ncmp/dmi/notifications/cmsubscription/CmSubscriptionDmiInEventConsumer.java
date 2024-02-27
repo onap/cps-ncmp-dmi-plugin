@@ -21,18 +21,12 @@
 package org.onap.cps.ncmp.dmi.notifications.cmsubscription;
 
 import io.cloudevents.CloudEvent;
-import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
 import lombok.RequiredArgsConstructor;
 import org.apache.kafka.clients.consumer.ConsumerRecord;
 import org.onap.cps.ncmp.dmi.notifications.mapper.CloudEventMapper;
-import org.onap.cps.ncmp.events.cmsubscription1_0_0.dmi_to_ncmp.CmSubscriptionDmiOutEvent;
-import org.onap.cps.ncmp.events.cmsubscription1_0_0.dmi_to_ncmp.Data;
-import org.onap.cps.ncmp.events.cmsubscription1_0_0.dmi_to_ncmp.SubscriptionStatus;
-import org.onap.cps.ncmp.events.cmsubscription1_0_0.ncmp_to_dmi.CmHandle;
-import org.onap.cps.ncmp.events.cmsubscription1_0_0.ncmp_to_dmi.CmSubscriptionDmiInEvent;
+import org.onap.cps.ncmp.events.cmsubscription_merge1_0_0.dmi_to_ncmp.CmSubscriptionDmiOutEvent;
+import org.onap.cps.ncmp.events.cmsubscription_merge1_0_0.dmi_to_ncmp.Data;
+import org.onap.cps.ncmp.events.cmsubscription_merge1_0_0.ncmp_to_dmi.CmSubscriptionDmiInEvent;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.kafka.annotation.KafkaListener;
 import org.springframework.kafka.core.KafkaTemplate;
@@ -62,12 +56,15 @@ public class CmSubscriptionDmiInEventConsumer {
         if (cmSubscriptionDmiInEvent != null) {
             final String eventKey = cmSubscriptionDmiInCloudEvent.value().getId();
             final String subscriptionType = cmSubscriptionDmiInCloudEvent.value().getType();
+            final String correlationId = String.valueOf(cmSubscriptionDmiInCloudEvent.value()
+                .getExtension("correlationid"));
+
             if ("subscriptionCreated".equals(subscriptionType)) {
                 sendCmSubscriptionDmiOutEvent(eventKey, "subscriptionCreatedStatus",
-                        formCmSubscriptionDmiOutEvent(cmSubscriptionDmiInEvent));
+                        formCmSubscriptionDmiOutEvent(), correlationId);
             } else if ("subscriptionDeleted".equals(subscriptionType)) {
                 sendCmSubscriptionDmiOutEvent(eventKey, "subscriptionDeletedStatus",
-                        formCmSubscriptionDmiOutEvent(cmSubscriptionDmiInEvent));
+                        formCmSubscriptionDmiOutEvent(), correlationId);
             }
         }
     }
@@ -80,45 +77,19 @@ public class CmSubscriptionDmiInEventConsumer {
      * @param cmSubscriptionDmiOutEvent is the payload of the kafka message
      */
     public void sendCmSubscriptionDmiOutEvent(final String eventKey, final String subscriptionType,
-            final CmSubscriptionDmiOutEvent cmSubscriptionDmiOutEvent) {
+            final CmSubscriptionDmiOutEvent cmSubscriptionDmiOutEvent, final String correlationId) {
         cloudEventKafkaTemplate.send(cmAvcSubscriptionResponseTopic, eventKey,
                 CmSubscriptionDmiOutEventToCloudEventMapper.toCloudEvent(cmSubscriptionDmiOutEvent, subscriptionType,
-                        dmiName));
+                        dmiName, correlationId));
     }
 
-    private CmSubscriptionDmiOutEvent formCmSubscriptionDmiOutEvent(
-            final CmSubscriptionDmiInEvent cmSubscriptionDmiInEvent) {
+    private CmSubscriptionDmiOutEvent formCmSubscriptionDmiOutEvent() {
         final CmSubscriptionDmiOutEvent cmSubscriptionDmiOutEvent = new CmSubscriptionDmiOutEvent();
         final Data cmSubscriptionDmiOutEventData = new Data();
-        cmSubscriptionDmiOutEventData.setClientId(cmSubscriptionDmiInEvent.getData().getSubscription().getClientID());
-        cmSubscriptionDmiOutEventData.setSubscriptionName(
-                cmSubscriptionDmiInEvent.getData().getSubscription().getName());
-        cmSubscriptionDmiOutEventData.setDmiName(dmiName);
-
-        final List<CmHandle> cmHandles = cmSubscriptionDmiInEvent.getData().getPredicates().getTargets();
-        cmSubscriptionDmiOutEventData.setSubscriptionStatus(populateSubscriptionStatus(extractCmHandleIds(cmHandles)));
+        cmSubscriptionDmiOutEventData.setStatusCode("1");
+        cmSubscriptionDmiOutEventData.setStatusMessage("Accepted");
         cmSubscriptionDmiOutEvent.setData(cmSubscriptionDmiOutEventData);
         return cmSubscriptionDmiOutEvent;
-    }
-
-    private Set<String> extractCmHandleIds(final List<CmHandle> cmHandles) {
-        final Set<String> cmHandleIds = new HashSet<>();
-
-        for (final CmHandle cmHandle : cmHandles) {
-            cmHandleIds.add(cmHandle.getId());
-        }
-        return cmHandleIds;
-    }
-
-    private List<SubscriptionStatus> populateSubscriptionStatus(final Set<String> cmHandleIds) {
-        final List<SubscriptionStatus> subscriptionStatuses = new ArrayList<>();
-        for (final String cmHandleId : cmHandleIds) {
-            final SubscriptionStatus status = new SubscriptionStatus();
-            status.setId(cmHandleId);
-            status.setStatus(SubscriptionStatus.Status.ACCEPTED);
-            subscriptionStatuses.add(status);
-        }
-        return subscriptionStatuses;
     }
 
 }

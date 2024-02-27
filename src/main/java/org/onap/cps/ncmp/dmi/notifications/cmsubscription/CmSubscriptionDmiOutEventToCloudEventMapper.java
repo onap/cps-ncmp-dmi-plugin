@@ -28,7 +28,7 @@ import java.util.UUID;
 import lombok.AccessLevel;
 import lombok.NoArgsConstructor;
 import org.onap.cps.ncmp.dmi.exception.CloudEventConstructionException;
-import org.onap.cps.ncmp.events.cmsubscription1_0_0.dmi_to_ncmp.CmSubscriptionDmiOutEvent;
+import org.onap.cps.ncmp.events.cmsubscription_merge1_0_0.dmi_to_ncmp.CmSubscriptionDmiOutEvent;
 
 @NoArgsConstructor(access = AccessLevel.PRIVATE)
 public class CmSubscriptionDmiOutEventToCloudEventMapper {
@@ -44,13 +44,12 @@ public class CmSubscriptionDmiOutEventToCloudEventMapper {
      * @return CloudEvent built.
      */
     public static CloudEvent toCloudEvent(final CmSubscriptionDmiOutEvent cmSubscriptionDmiOutEvent,
-            final String subscriptionType, final String dmiName) {
+            final String subscriptionType, final String dmiName, final String correlationId) {
         try {
             return CloudEventBuilder.v1().withId(UUID.randomUUID().toString()).withSource(URI.create(dmiName))
                     .withType(subscriptionType)
                     .withDataSchema(URI.create("urn:cps:" + CmSubscriptionDmiOutEvent.class.getName() + ":1.0.0"))
-                    .withExtension("correlationid", cmSubscriptionDmiOutEvent.getData().getClientId() + ":"
-                                                            + cmSubscriptionDmiOutEvent.getData().getSubscriptionName())
+                    .withExtension("correlationid", correlationId)
                     .withData(objectMapper.writeValueAsBytes(cmSubscriptionDmiOutEvent)).build();
         } catch (final Exception ex) {
             throw new CloudEventConstructionException("The Cloud Event could not be constructed",
