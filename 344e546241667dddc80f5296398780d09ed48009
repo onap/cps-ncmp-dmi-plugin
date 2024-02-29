@@ -1,0 +1,12 @@
+Verified+1: Thomas Kulik <thomas.kulik@telekom.de>
+Code-Review+2: Matthew Watkins <mwatkins@linuxfoundation.org>
+Code-Review+1: Levente Csanyi <levente.csanyi@est.tech>
+Verified+1: ONAP Required GHA <releng+onap.required.gha@linuxfoundation.org>
+Verified+1: ONAP Jobbuilder <onap-jobbuilder@jenkins.onap.org>
+Code-Review+2: Thomas Kulik <thomas.kulik@telekom.de>
+Code-Review+1: Halil Cakal <halil.cakal@est.tech>
+Submitted-by: Thomas Kulik <thomas.kulik@telekom.de>
+Submitted-at: Thu, 29 Feb 2024 14:40:39 +0000
+Reviewed-on: https://gerrit.onap.org/r/c/cps/ncmp-dmi-plugin/+/137414
+Project: cps/ncmp-dmi-plugin
+Branch: refs/heads/master
