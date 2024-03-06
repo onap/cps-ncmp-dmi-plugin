@@ -21,21 +21,19 @@
 
 package org.onap.cps.ncmp.dmi.rest.controller
 
-
 import org.onap.cps.ncmp.dmi.TestUtils
 import org.onap.cps.ncmp.dmi.config.WebSecurityConfig
 import org.onap.cps.ncmp.dmi.exception.DmiException
 import org.onap.cps.ncmp.dmi.exception.ModuleResourceNotFoundException
 import org.onap.cps.ncmp.dmi.exception.ModulesNotFoundException
-import org.onap.cps.ncmp.dmi.model.ModuleSetSchemasInner
-import org.onap.cps.ncmp.dmi.notifications.async.AsyncTaskExecutor
-import org.onap.cps.ncmp.dmi.notifications.async.DmiAsyncRequestResponseEventProducer
-
-import org.onap.cps.ncmp.dmi.service.model.ModuleReference
 import org.onap.cps.ncmp.dmi.model.ModuleSet
+import org.onap.cps.ncmp.dmi.model.ModuleSetSchemasInner
 import org.onap.cps.ncmp.dmi.model.YangResource
 import org.onap.cps.ncmp.dmi.model.YangResources
+import org.onap.cps.ncmp.dmi.notifications.async.AsyncTaskExecutor
+import org.onap.cps.ncmp.dmi.notifications.async.DmiAsyncRequestResponseEventProducer
 import org.onap.cps.ncmp.dmi.service.DmiService
+import org.onap.cps.ncmp.dmi.service.model.ModuleReference
 import org.spockframework.spring.SpringBean
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.beans.factory.annotation.Value
@@ -48,16 +46,17 @@ import org.springframework.security.test.context.support.WithMockUser
 import org.springframework.test.web.servlet.MockMvc
 import spock.lang.Specification
 
+import static org.onap.cps.ncmp.dmi.model.DataAccessRequest.OperationEnum.CREATE
 import static org.onap.cps.ncmp.dmi.model.DataAccessRequest.OperationEnum.DELETE
 import static org.onap.cps.ncmp.dmi.model.DataAccessRequest.OperationEnum.PATCH
 import static org.onap.cps.ncmp.dmi.model.DataAccessRequest.OperationEnum.READ
-import static org.springframework.http.HttpStatus.BAD_REQUEST
-import static org.springframework.http.HttpStatus.NO_CONTENT
-import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post
-import static org.onap.cps.ncmp.dmi.model.DataAccessRequest.OperationEnum.CREATE
 import static org.onap.cps.ncmp.dmi.model.DataAccessRequest.OperationEnum.UPDATE
+import static org.springframework.http.HttpStatus.BAD_REQUEST
 import static org.springframework.http.HttpStatus.CREATED
+import static org.springframework.http.HttpStatus.INTERNAL_SERVER_ERROR
+import static org.springframework.http.HttpStatus.NO_CONTENT
 import static org.springframework.http.HttpStatus.OK
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post
 
 @Import(WebSecurityConfig)
 @WebMvcTest(DmiRestController.class)
@@ -222,6 +221,22 @@ class DmiRestControllerSpec extends Specification {
             response.status == BAD_REQUEST.value()
         and: 'dmi service is not invoked'
             0 * mockDmiService.getResourceData(*_)
+    }
+
+    def 'Get resource data for invalid datastore'() {
+        given: 'Get resource data url'
+            def getResourceDataForCmHandleUrl = "${basePathV1}/ch/some-cmHandle/data/ds/dummy-datastore" +
+                "?resourceIdentifier=parent/child&options=(fields=myfields,depth=5)"
+        and: 'an invalid write request data for "create" operation'
+            def jsonData = '{"operation":"create"}'
+        when: 'the request is posted'
+            def response = mvc.perform(
+                post(getResourceDataForCmHandleUrl).contentType(MediaType.APPLICATION_JSON).content(jsonData)
+            ).andReturn().response
+        then: 'response status is internal server error'
+            response.status == INTERNAL_SERVER_ERROR.value()
+        and: 'response contains expected error message'
+            response.contentAsString.contains('dummy-datastore is an invalid datastore name')
     }
 
     def 'data with #scenario operation using passthrough running.'() {
