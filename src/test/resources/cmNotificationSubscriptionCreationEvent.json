@@ -1,0 +1,43 @@
+{
+  "data": {
+    "cmhandles": [
+      {
+        "cmhandleId": "CMHandle1",
+        "private-properties": {
+          "prop1": "prop-value"
+        }
+      },
+      {
+        "cmhandleId": "CMHandle2",
+        "private-properties": {
+          "prop-x": "prop-valuex",
+          "prop-p": "prop-valuep"
+        }
+      },
+      {
+        "cmhandleId": "CMHandle3",
+        "private-properties": {
+          "prop-y": "prop-valuey"
+        }
+      }
+    ],
+    "predicates": [
+      {
+        "targetFilter": [
+          "CMHandle1",
+          "CMHandle2",
+          "CMHandle3"
+        ],
+        "scopeFilter": {
+          "datastore": "ncmp-datastore:passthrough-running",
+          "xpath-filter": [
+            "//_3gpp-nr-nrm-gnbdufunction:GNBDUFunction/_3gpp-nr-nrm-nrcelldu:NRCellDU/",
+            "//_3gpp-nr-nrm-gnbcuupfunction:GNBCUUPFunction//",
+            "//_3gpp-nr-nrm-gnbcucpfunction:GNBCUCPFunction/_3gpp-nr-nrm-nrcelldu:NRCellCU//",
+            "//_3gpp-nr-nrm-nrsectorcarrier:NRSectorCarrier//"
+          ]
+        }
+      }
+    ]
+  }
+}
