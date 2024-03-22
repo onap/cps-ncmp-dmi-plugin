@@ -136,6 +136,23 @@
       },
       "revId": "fd21b11a7645de57059cb8567e186b8146c662f0",
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "7fa981c9_6d9b5924",
+        "filename": "src/test/resources/cmNotificationSubscriptionCreationEvent.json",
+        "patchSetId": 3
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 7965
+      },
+      "writtenOn": "2024-03-22T10:42:47Z",
+      "side": 1,
+      "message": "can rename this file to cmNotificationSubscriptionDmiInEvent_create.json or similar",
+      "revId": "fd21b11a7645de57059cb8567e186b8146c662f0",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
     }
   ]
 }
