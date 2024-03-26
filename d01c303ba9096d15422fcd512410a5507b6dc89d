@@ -1,0 +1,182 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "fa53de5b_369e72a3",
+        "filename": "src/main/java/org/onap/cps/ncmp/dmi/notifications/cmsubscription/CmNotificationSubscriptionDmiInEventConsumer.java",
+        "patchSetId": 4
+      },
+      "lineNbr": 47,
+      "author": {
+        "id": 7931
+      },
+      "writtenOn": "2024-03-26T10:21:56Z",
+      "side": 1,
+      "message": "make it specific for the cm Notification subscription",
+      "range": {
+        "startLine": 47,
+        "startChar": 14,
+        "endLine": 47,
+        "endChar": 34
+      },
+      "revId": "d01c303ba9096d15422fcd512410a5507b6dc89d",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "99bf640a_2a1ae936",
+        "filename": "src/main/java/org/onap/cps/ncmp/dmi/notifications/cmsubscription/CmNotificationSubscriptionDmiInEventConsumer.java",
+        "patchSetId": 4
+      },
+      "lineNbr": 53,
+      "author": {
+        "id": 7931
+      },
+      "writtenOn": "2024-03-26T10:21:56Z",
+      "side": 1,
+      "message": "consistency \n\n\u003e consumeCmNotificationSubscriptionDmiInEvent",
+      "range": {
+        "startLine": 53,
+        "startChar": 16,
+        "endLine": 53,
+        "endChar": 47
+      },
+      "revId": "d01c303ba9096d15422fcd512410a5507b6dc89d",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "661e4940_722092e3",
+        "filename": "src/main/java/org/onap/cps/ncmp/dmi/notifications/cmsubscription/CmNotificationSubscriptionDmiInEventConsumer.java",
+        "patchSetId": 4
+      },
+      "lineNbr": 55,
+      "author": {
+        "id": 7931
+      },
+      "writtenOn": "2024-03-26T10:21:56Z",
+      "side": 1,
+      "message": "same.. add notification for consistency",
+      "revId": "d01c303ba9096d15422fcd512410a5507b6dc89d",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "ec11c493_95546fa7",
+        "filename": "src/main/java/org/onap/cps/ncmp/dmi/notifications/cmsubscription/CmNotificationSubscriptionDmiInEventConsumer.java",
+        "patchSetId": 4
+      },
+      "lineNbr": 99,
+      "author": {
+        "id": 7931
+      },
+      "writtenOn": "2024-03-26T10:21:56Z",
+      "side": 1,
+      "message": "can you confirm this is to stay as AVC ?",
+      "range": {
+        "startLine": 99,
+        "startChar": 39,
+        "endLine": 99,
+        "endChar": 42
+      },
+      "revId": "d01c303ba9096d15422fcd512410a5507b6dc89d",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "2f5b7d36_cad6f020",
+        "filename": "src/test/groovy/org/onap/cps/ncmp/dmi/notifications/cmsubscription/CmNotificationSubscriptionDmiInEventConsumerSpec.groovy",
+        "patchSetId": 4
+      },
+      "lineNbr": 57,
+      "author": {
+        "id": 7931
+      },
+      "writtenOn": "2024-03-26T10:21:56Z",
+      "side": 1,
+      "message": "NB: if not relevant for the test, can keep this simple and readable\n\n\u003emaybe \u0027testId#...\u0027 ?",
+      "range": {
+        "startLine": 57,
+        "startChar": 33,
+        "endLine": 57,
+        "endChar": 60
+      },
+      "revId": "d01c303ba9096d15422fcd512410a5507b6dc89d",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "5f733b6d_88fe0f32",
+        "filename": "src/test/groovy/org/onap/cps/ncmp/dmi/notifications/cmsubscription/CmNotificationSubscriptionDmiInEventConsumerSpec.groovy",
+        "patchSetId": 4
+      },
+      "lineNbr": 96,
+      "author": {
+        "id": 7931
+      },
+      "writtenOn": "2024-03-26T10:21:56Z",
+      "side": 1,
+      "message": "scenario",
+      "range": {
+        "startLine": 96,
+        "startChar": 22,
+        "endLine": 96,
+        "endChar": 30
+      },
+      "revId": "d01c303ba9096d15422fcd512410a5507b6dc89d",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "168b2487_26ebb283",
+        "filename": "src/test/groovy/org/onap/cps/ncmp/dmi/notifications/cmsubscription/CmNotificationSubscriptionDmiInEventConsumerSpec.groovy",
+        "patchSetId": 4
+      },
+      "lineNbr": 117,
+      "author": {
+        "id": 7931
+      },
+      "writtenOn": "2024-03-26T10:21:56Z",
+      "side": 1,
+      "message": "no exception thrown for invalid event type ?",
+      "range": {
+        "startLine": 116,
+        "startChar": 5,
+        "endLine": 117,
+        "endChar": 31
+      },
+      "revId": "d01c303ba9096d15422fcd512410a5507b6dc89d",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "0e3ac8af_44b747c4",
+        "filename": "src/test/groovy/org/onap/cps/ncmp/dmi/notifications/cmsubscription/CmNotificationSubscriptionDmiOutEventToCloudEventMapperSpec.groovy",
+        "patchSetId": 4
+      },
+      "lineNbr": 60,
+      "author": {
+        "id": 7931
+      },
+      "writtenOn": "2024-03-26T10:21:56Z",
+      "side": 1,
+      "message": "mention use of \u0027null\u0027 as it is not straightforward in this test the difference between above test and this one",
+      "range": {
+        "startLine": 60,
+        "startChar": 3,
+        "endLine": 60,
+        "endChar": 9
+      },
+      "revId": "d01c303ba9096d15422fcd512410a5507b6dc89d",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    }
+  ]
+}

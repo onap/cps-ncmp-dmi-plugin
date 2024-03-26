@@ -75,6 +75,30 @@
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "d3654a4a_4feaa524",
+        "filename": "src/main/java/org/onap/cps/ncmp/dmi/exception/CloudEventConstructionException.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 7931
+      },
+      "writtenOn": "2024-03-26T10:21:56Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "15d63f05_b8b00ad9",
+      "range": {
+        "startLine": 28,
+        "startChar": 6,
+        "endLine": 28,
+        "endChar": 19
+      },
+      "revId": "0e2f59acc41115d91132d6e772e3839480fba203",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "c6b7e70e_f744d726",
