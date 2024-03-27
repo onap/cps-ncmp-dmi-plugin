@@ -158,6 +158,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "624f4beb_8632945a",
+        "filename": "src/test/groovy/org/onap/cps/ncmp/dmi/notifications/cmsubscription/CmNotificationSubscriptionDmiInEventConsumerSpec.groovy",
+        "patchSetId": 4
+      },
+      "lineNbr": 117,
+      "author": {
+        "id": 8171
+      },
+      "writtenOn": "2024-03-27T13:01:44Z",
+      "side": 1,
+      "message": "cloud event mapper will throw an exception and log it not the consumer",
+      "parentUuid": "168b2487_26ebb283",
+      "range": {
+        "startLine": 116,
+        "startChar": 5,
+        "endLine": 117,
+        "endChar": 31
+      },
+      "revId": "d01c303ba9096d15422fcd512410a5507b6dc89d",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "0e3ac8af_44b747c4",
         "filename": "src/test/groovy/org/onap/cps/ncmp/dmi/notifications/cmsubscription/CmNotificationSubscriptionDmiOutEventToCloudEventMapperSpec.groovy",
         "patchSetId": 4
