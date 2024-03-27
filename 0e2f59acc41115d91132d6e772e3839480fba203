@@ -122,6 +122,30 @@
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "b0480c34_abc01083",
+        "filename": "src/main/java/org/onap/cps/ncmp/dmi/notifications/cmsubscription/CmNotificationSubscriptionDmiInConsumer.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 7965
+      },
+      "writtenOn": "2024-03-27T10:10:04Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "c6b7e70e_f744d726",
+      "range": {
+        "startLine": 37,
+        "startChar": 13,
+        "endLine": 37,
+        "endChar": 52
+      },
+      "revId": "0e2f59acc41115d91132d6e772e3839480fba203",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "92318c53_85f66f5f",
@@ -135,6 +159,24 @@
       "writtenOn": "2024-03-20T09:20:11Z",
       "side": 1,
       "message": "access modifier.\nprivate",
+      "revId": "0e2f59acc41115d91132d6e772e3839480fba203",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "f659cc0c_2e3c1641",
+        "filename": "src/main/java/org/onap/cps/ncmp/dmi/notifications/cmsubscription/CmNotificationSubscriptionDmiInConsumer.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 7965
+      },
+      "writtenOn": "2024-03-27T10:10:04Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "92318c53_85f66f5f",
       "revId": "0e2f59acc41115d91132d6e772e3839480fba203",
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
     },
@@ -156,6 +198,24 @@
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "efb5c57c_54099236",
+        "filename": "src/main/java/org/onap/cps/ncmp/dmi/notifications/cmsubscription/CmNotificationSubscriptionDmiInConsumer.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 43,
+      "author": {
+        "id": 7965
+      },
+      "writtenOn": "2024-03-27T10:10:04Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1e67997c_2c0f204a",
+      "revId": "0e2f59acc41115d91132d6e772e3839480fba203",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "818bafeb_0b6207d3",
@@ -169,6 +229,30 @@
       "writtenOn": "2024-03-20T09:20:11Z",
       "side": 1,
       "message": "NB: this is the subscriptionId",
+      "range": {
+        "startLine": 59,
+        "startChar": 25,
+        "endLine": 59,
+        "endChar": 33
+      },
+      "revId": "0e2f59acc41115d91132d6e772e3839480fba203",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "274e639f_876bf5a2",
+        "filename": "src/main/java/org/onap/cps/ncmp/dmi/notifications/cmsubscription/CmNotificationSubscriptionDmiInConsumer.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 59,
+      "author": {
+        "id": 7965
+      },
+      "writtenOn": "2024-03-27T10:10:04Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "818bafeb_0b6207d3",
       "range": {
         "startLine": 59,
         "startChar": 25,
@@ -202,6 +286,30 @@
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "d82540bd_d78da667",
+        "filename": "src/main/java/org/onap/cps/ncmp/dmi/notifications/cmsubscription/CmNotificationSubscriptionDmiInConsumer.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 65,
+      "author": {
+        "id": 7965
+      },
+      "writtenOn": "2024-03-27T10:10:04Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "88c0fa96_1e057cbc",
+      "range": {
+        "startLine": 65,
+        "startChar": 78,
+        "endLine": 65,
+        "endChar": 103
+      },
+      "revId": "0e2f59acc41115d91132d6e772e3839480fba203",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "2d3d7f06_ee4f7e72",
@@ -215,6 +323,30 @@
       "writtenOn": "2024-03-20T09:20:11Z",
       "side": 1,
       "message": "subscriptionDeleteResponse",
+      "range": {
+        "startLine": 68,
+        "startChar": 78,
+        "endLine": 68,
+        "endChar": 103
+      },
+      "revId": "0e2f59acc41115d91132d6e772e3839480fba203",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "b09ef38c_a6f71cdf",
+        "filename": "src/main/java/org/onap/cps/ncmp/dmi/notifications/cmsubscription/CmNotificationSubscriptionDmiInConsumer.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 68,
+      "author": {
+        "id": 7965
+      },
+      "writtenOn": "2024-03-27T10:10:04Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "2d3d7f06_ee4f7e72",
       "range": {
         "startLine": 68,
         "startChar": 78,
@@ -248,6 +380,30 @@
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "767d68b6_648c5499",
+        "filename": "src/main/java/org/onap/cps/ncmp/dmi/notifications/cmsubscription/CmNotificationSubscriptionDmiInConsumer.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 88,
+      "author": {
+        "id": 7965
+      },
+      "writtenOn": "2024-03-27T10:10:04Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ebeecacf_eb4a11bd",
+      "range": {
+        "startLine": 88,
+        "startChar": 68,
+        "endLine": 88,
+        "endChar": 75
+      },
+      "revId": "0e2f59acc41115d91132d6e772e3839480fba203",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "25844c94_6085ea4c",
@@ -271,6 +427,30 @@
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "8062a670_31e648f9",
+        "filename": "src/main/java/org/onap/cps/ncmp/dmi/notifications/cmsubscription/CmNotificationSubscriptionDmiOutEventToCloudEventMapper.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 53,
+      "author": {
+        "id": 7965
+      },
+      "writtenOn": "2024-03-27T10:10:04Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "25844c94_6085ea4c",
+      "range": {
+        "startLine": 53,
+        "startChar": 56,
+        "endLine": 53,
+        "endChar": 109
+      },
+      "revId": "0e2f59acc41115d91132d6e772e3839480fba203",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "26e7436d_f2b96ef0",
@@ -284,6 +464,30 @@
       "writtenOn": "2024-03-20T09:20:11Z",
       "side": 1,
       "message": "we dont know this.",
+      "range": {
+        "startLine": 59,
+        "startChar": 17,
+        "endLine": 59,
+        "endChar": 75
+      },
+      "revId": "0e2f59acc41115d91132d6e772e3839480fba203",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "8cb46777_9f32ee92",
+        "filename": "src/main/java/org/onap/cps/ncmp/dmi/notifications/cmsubscription/CmNotificationSubscriptionDmiOutEventToCloudEventMapper.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 59,
+      "author": {
+        "id": 7965
+      },
+      "writtenOn": "2024-03-27T10:10:04Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "26e7436d_f2b96ef0",
       "range": {
         "startLine": 59,
         "startChar": 17,
