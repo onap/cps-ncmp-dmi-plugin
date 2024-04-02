@@ -1,81 +1,78 @@
 openapi: 3.0.1
 info:
-  title: NCMP DMI Plugin
   description: Adds Data Model Inventory Registry capability for ONAP
+  title: NCMP DMI Plugin
   version: 1.0.0
 servers:
-- url: /dmi
+  - url: /dmi
 tags:
-- name: dmi-plugin-internal
-  description: DMI plugin internal rest apis
-- name: dmi-plugin
-  description: DMI plugin rest apis
+  - description: DMI plugin internal rest apis
+    name: dmi-plugin-internal
+  - description: DMI plugin rest apis
+    name: dmi-plugin
 paths:
   /v1/ch/{cmHandle}/modules:
     post:
-      tags:
-      - dmi-plugin
-      summary: Get all modules for cm handle
       description: Get all modules for given cm handle
       operationId: getModuleReferences
       parameters:
-      - name: cmHandle
-        in: path
-        description: The identifier for a network function, network element, subnetwork,
-          or any other cm object by managed Network CM Proxy
-        required: true
-        schema:
-          type: string
-          example: my-cm-handle
+        - description: "The identifier for a network function, network element, subnetwork,\
+          \ or any other cm object by managed Network CM Proxy"
+          in: path
+          name: cmHandle
+          required: true
+          schema:
+            example: my-cm-handle
+            type: string
       requestBody:
-        description: Operational body
         content:
           application/json:
             schema:
               $ref: '#/components/schemas/ModuleReferencesRequest'
+        description: Operational body
       responses:
         "200":
-          description: OK
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/ModuleSet'
+          description: OK
         "404":
-          description: The specified resource was not found
           content:
             application/json:
-              schema:
-                $ref: '#/components/schemas/ErrorMessage'
               example:
                 status: 404
                 message: Resource Not Found
                 details: The requested resource is not found
-        "500":
-          description: Internal Server Error
-          content:
-            application/json:
               schema:
                 $ref: '#/components/schemas/ErrorMessage'
+          description: The specified resource was not found
+        "500":
+          content:
+            application/json:
               example:
                 status: 500
                 message: Internal Server Error
                 details: Internal Server Error occured
+              schema:
+                $ref: '#/components/schemas/ErrorMessage'
+          description: Internal Server Error
+      summary: Get all modules for cm handle
+      tags:
+        - dmi-plugin
   /v1/ch/{cmHandle}/moduleResources:
     post:
-      tags:
-      - dmi-plugin
-      summary: Retrieve module resources
       description: Retrieve module resources for one or more modules
       operationId: retrieveModuleResources
       parameters:
-      - name: cmHandle
-        in: path
-        description: The identifier for a network function, network element, subnetwork,
-          or any other cm object by managed Network CM Proxy
-        required: true
-        schema:
-          type: string
-          example: my-cm-handle
+        - description: "The identifier for a network function, network element, subnetwork,\
+          \ or any other cm object by managed Network CM Proxy"
+          in: path
+          name: cmHandle
+          required: true
+          schema:
+            example: my-cm-handle
+            type: string
       requestBody:
         content:
           application/json:
@@ -84,291 +81,407 @@ paths:
         required: true
       responses:
         "200":
-          description: OK
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/YangResources'
+          description: OK
         "404":
-          description: The specified resource was not found
           content:
             application/json:
-              schema:
-                $ref: '#/components/schemas/ErrorMessage'
               example:
                 status: 404
                 message: Resource Not Found
                 details: The requested resource is not found
-        "500":
-          description: Internal Server Error
-          content:
-            application/json:
               schema:
                 $ref: '#/components/schemas/ErrorMessage'
+          description: The specified resource was not found
+        "500":
+          content:
+            application/json:
               example:
                 status: 500
                 message: Internal Server Error
                 details: Internal Server Error occured
+              schema:
+                $ref: '#/components/schemas/ErrorMessage'
+          description: Internal Server Error
+      summary: Retrieve module resources
+      tags:
+        - dmi-plugin
   /v1/inventory/cmHandles:
     post:
-      tags:
-      - dmi-plugin-internal
-      summary: register given list of cm handles (internal use only)
       description: register given list of cm handles (internal use only)
       operationId: registerCmHandles
       requestBody:
-        description: list of cm handles
         content:
           application/json:
             schema:
               $ref: '#/components/schemas/CmHandles'
+        description: list of cm handles
         required: true
       responses:
         "201":
-          description: Created
           content:
             text/plain:
               schema:
-                type: string
                 example: cm-handle registered successfully
-        "400":
-          description: Bad Request
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/ErrorMessage'
-              example:
-                status: 400
-                message: Bad Request
-                details: The provided request is not valid
-        "500":
-          description: Internal Server Error
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/ErrorMessage'
-              example:
-                status: 500
-                message: Internal Server Error
-                details: Internal Server Error occured
-      x-api-audience: component-internal
-  /v1/ch/{cmHandle}/data/ds/ncmp-datastore:passthrough-operational:
-    post:
-      tags:
-      - dmi-plugin
-      summary: Get resource data from passthrough-operational for cm handle
-      description: Get resource data from passthrough-operational for cm handle. Will
-        support read operations only.
-      operationId: dataAccessPassthroughOperational
-      parameters:
-      - name: cmHandle
-        in: path
-        description: The identifier for a network function, network element, subnetwork,
-          or any other cm object by managed Network CM Proxy
-        required: true
-        schema:
-          type: string
-          example: my-cm-handle
-      - name: resourceIdentifier
-        in: query
-        description: Resource identifier to get/set the resource data
-        required: true
-        allowReserved: true
-        schema:
-          type: string
-          example: my-schema:my-node
-      - name: options
-        in: query
-        description: options parameter in query, it is mandatory to wrap key(s)=value(s)
-          in parenthesis'()'.
-        required: false
-        allowReserved: true
-        schema:
-          type: string
-        examples:
-          sample1:
-            value:
-              options: (key1=value1,key2=value2)
-          sample2:
-            value:
-              options: (key1=value1,key2=value1/value2)
-          sample3:
-            value:
-              options: (key1=10,key2=value2,key3=val31,val32)
-      - name: topic
-        in: query
-        description: topic name passed from client(NCMP).
-        required: false
-        allowReserved: true
-        schema:
-          type: string
-        examples:
-          sample1:
-            value: my-topic-name
-      requestBody:
-        description: Operational body
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/DataAccessRequest'
-      responses:
-        "200":
-          description: OK
-          content:
-            application/json:
-              schema:
-                type: object
-                example:
-                - yangSource: my-yang-source
-                  moduleName: my-module-name
-                  revision: my-revision
-        "400":
-          description: Bad Request
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/ErrorMessage'
-              example:
-                status: 400
-                message: Bad Request
-                details: The provided request is not valid
-        "500":
-          description: Internal Server Error
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/ErrorMessage'
-              example:
-                status: 500
-                message: Internal Server Error
-                details: Internal Server Error occured
-  /v1/ch/{cmHandle}/data/ds/ncmp-datastore:passthrough-running:
-    post:
-      tags:
-      - dmi-plugin
-      summary: Get, Create or Update request for data passthrough-running for a cm-handle
-      description: Post request to Get, Create or to Update resource data for a cm-handle.
-        Since all requests need to include additional information in a request body
-        HTTP Post is used for all use cases and the actual operation is defined in
-        the request body instead.
-      operationId: dataAccessPassthroughRunning
-      parameters:
-      - name: cmHandle
-        in: path
-        description: The identifier for a network function, network element, subnetwork,
-          or any other cm object by managed Network CM Proxy
-        required: true
-        schema:
-          type: string
-          example: my-cm-handle
-      - name: resourceIdentifier
-        in: query
-        description: Resource identifier to get/set the resource data
-        required: true
-        allowReserved: true
-        schema:
-          type: string
-          example: my-schema:my-node
-      - name: options
-        in: query
-        description: options parameter in query, it is mandatory to wrap key(s)=value(s)
-          in parenthesis'()'.
-        required: false
-        allowReserved: true
-        schema:
-          type: string
-        examples:
-          sample1:
-            value:
-              options: (key1=value1,key2=value2)
-          sample2:
-            value:
-              options: (key1=value1,key2=value1/value2)
-          sample3:
-            value:
-              options: (key1=10,key2=value2,key3=val31,val32)
-      - name: topic
-        in: query
-        description: topic name passed from client(NCMP).
-        required: false
-        allowReserved: true
-        schema:
-          type: string
-        examples:
-          sample1:
-            value: my-topic-name
-      requestBody:
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/DataAccessRequest'
-      responses:
-        "200":
-          description: OK
-          content:
-            application/json:
-              schema:
-                type: object
-                example:
-                - yangSource: my-yang-source
-                  moduleName: my-module-name
-                  revision: my-revision
-        "201":
-          description: Created
-          content:
-            text/plain:
-              schema:
                 type: string
-                example: my-resource
-        "204":
-          description: No Content
-          content: {}
+          description: Created
         "400":
-          description: Bad Request
           content:
             application/json:
-              schema:
-                $ref: '#/components/schemas/ErrorMessage'
               example:
                 status: 400
                 message: Bad Request
                 details: The provided request is not valid
-        "500":
-          description: Internal Server Error
-          content:
-            application/json:
               schema:
                 $ref: '#/components/schemas/ErrorMessage'
+          description: Bad Request
+        "500":
+          content:
+            application/json:
               example:
                 status: 500
                 message: Internal Server Error
                 details: Internal Server Error occured
+              schema:
+                $ref: '#/components/schemas/ErrorMessage'
+          description: Internal Server Error
+      summary: register given list of cm handles (internal use only)
+      tags:
+        - dmi-plugin-internal
+      x-api-audience: component-internal
+  /v1/ch/{cmHandle}/data/ds/{datastore-name}:
+    post:
+      description: Get resource data from passthrough operational or running for a
+        cm handle
+      operationId: dataAccessPassthrough
+      parameters:
+        - description: The type of the requested data
+          in: path
+          name: datastore-name
+          required: true
+          schema:
+            example: ncmp-datastore:passthrough-operational or ncmp-datastore:passthrough-running
+            type: string
+        - description: "The identifier for a network function, network element, subnetwork,\
+          \ or any other cm object by managed Network CM Proxy"
+          in: path
+          name: cmHandle
+          required: true
+          schema:
+            example: my-cm-handle
+            type: string
+        - allowReserved: true
+          description: Resource identifier to get/set the resource data
+          in: query
+          name: resourceIdentifier
+          required: true
+          schema:
+            example: my-schema:my-node
+            type: string
+        - allowReserved: true
+          description: "options parameter in query, it is mandatory to wrap key(s)=value(s)\
+          \ in parenthesis'()'."
+          examples:
+            sample1:
+              value:
+                options: "(key1=value1,key2=value2)"
+            sample2:
+              value:
+                options: "(key1=value1,key2=value1/value2)"
+            sample3:
+              value:
+                options: "(key1=10,key2=value2,key3=val31,val32)"
+          in: query
+          name: options
+          required: false
+          schema:
+            type: string
+        - allowReserved: true
+          description: topic name passed from client(NCMP).
+          examples:
+            sample1:
+              value: my-topic-name
+          in: query
+          name: topic
+          required: false
+          schema:
+            type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/DataAccessRequest'
+        description: Contains collection of cm handles with it's private properties
+          and requestId
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                example:
+                  - yangSource: my-yang-source
+                    moduleName: my-module-name
+                    revision: my-revision
+                type: object
+          description: OK
+        "400":
+          content:
+            application/json:
+              example:
+                status: 400
+                message: Bad Request
+                details: The provided request is not valid
+              schema:
+                $ref: '#/components/schemas/ErrorMessage'
+          description: Bad Request
+        "500":
+          content:
+            application/json:
+              example:
+                status: 500
+                message: Internal Server Error
+                details: Internal Server Error occured
+              schema:
+                $ref: '#/components/schemas/ErrorMessage'
+          description: Internal Server Error
+      summary: Get resource data from passthrough operational or running for a cm
+        handle
+      tags:
+        - dmi-plugin
+  /v1/data:
+    post:
+      description: Execute a data operation for group of cm handle ids by supplied
+        operation details
+      operationId: getResourceDataForCmHandleDataOperation
+      parameters:
+        - allowReserved: true
+          description: mandatory topic name passed from client(NCMP).
+          examples:
+            sample1:
+              value:
+                topic: my-topic-name
+          in: query
+          name: topic
+          required: true
+          schema:
+            type: string
+        - allowReserved: true
+          description: request Id generated by NCMP and sent as an acknowledgement for
+            the client request the same including here.
+          examples:
+            sample1:
+              value: 4753fc1f-7de2-449a-b306-a6204b5370b3
+          in: query
+          name: requestId
+          required: true
+          schema:
+            type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ResourceDataOperationRequests'
+        description: list of operation details
+      responses:
+        "202":
+          description: Accepted
+        "400":
+          content:
+            application/json:
+              example:
+                status: 400
+                message: Bad Request
+                details: The provided request is not valid
+              schema:
+                $ref: '#/components/schemas/ErrorMessage'
+          description: Bad Request
+        "500":
+          content:
+            application/json:
+              example:
+                status: 500
+                message: Internal Server Error
+                details: Internal Server Error occured
+              schema:
+                $ref: '#/components/schemas/ErrorMessage'
+          description: Internal Server Error
+        "501":
+          content:
+            application/json:
+              example:
+                status: 501
+                message: Not Implemented
+                details: Method Not Implemented
+              schema:
+                $ref: '#/components/schemas/ErrorMessage'
+          description: Not Implemented
+      summary: Execute a data operation for group of cm handle ids.
+      tags:
+        - dmi-plugin
 components:
-  securitySchemes:
-    basicAuth:
-      type: http
-      scheme: basic
+  parameters:
+    cmHandleInPath:
+      description: "The identifier for a network function, network element, subnetwork,\
+        \ or any other cm object by managed Network CM Proxy"
+      in: path
+      name: cmHandle
+      required: true
+      schema:
+        example: my-cm-handle
+        type: string
+    datastoreName:
+      description: The type of the requested data
+      in: path
+      name: datastore-name
+      required: true
+      schema:
+        example: ncmp-datastore:passthrough-operational or ncmp-datastore:passthrough-running
+        type: string
+    resourceIdentifierInQuery:
+      allowReserved: true
+      description: Resource identifier to get/set the resource data
+      in: query
+      name: resourceIdentifier
+      required: true
+      schema:
+        example: my-schema:my-node
+        type: string
+    optionsParamInQuery:
+      allowReserved: true
+      description: "options parameter in query, it is mandatory to wrap key(s)=value(s)\
+        \ in parenthesis'()'."
+      examples:
+        sample1:
+          value:
+            options: "(key1=value1,key2=value2)"
+        sample2:
+          value:
+            options: "(key1=value1,key2=value1/value2)"
+        sample3:
+          value:
+            options: "(key1=10,key2=value2,key3=val31,val32)"
+      in: query
+      name: options
+      required: false
+      schema:
+        type: string
+    topicParamInQuery:
+      allowReserved: true
+      description: topic name passed from client(NCMP).
+      examples:
+        sample1:
+          value: my-topic-name
+      in: query
+      name: topic
+      required: false
+      schema:
+        type: string
+    requiredTopicParamInQuery:
+      allowReserved: true
+      description: mandatory topic name passed from client(NCMP).
+      examples:
+        sample1:
+          value:
+            topic: my-topic-name
+      in: query
+      name: topic
+      required: true
+      schema:
+        type: string
+    requiredRequestIdParamInQuery:
+      allowReserved: true
+      description: request Id generated by NCMP and sent as an acknowledgement for
+        the client request the same including here.
+      examples:
+        sample1:
+          value: 4753fc1f-7de2-449a-b306-a6204b5370b3
+      in: query
+      name: requestId
+      required: true
+      schema:
+        type: string
+  responses:
+    NotFound:
+      content:
+        application/json:
+          example:
+            status: 404
+            message: Resource Not Found
+            details: The requested resource is not found
+          schema:
+            $ref: '#/components/schemas/ErrorMessage'
+      description: The specified resource was not found
+    ServerError:
+      content:
+        application/json:
+          example:
+            status: 500
+            message: Internal Server Error
+            details: Internal Server Error occured
+          schema:
+            $ref: '#/components/schemas/ErrorMessage'
+      description: Internal Server Error
+    BadRequest:
+      content:
+        application/json:
+          example:
+            status: 400
+            message: Bad Request
+            details: The provided request is not valid
+          schema:
+            $ref: '#/components/schemas/ErrorMessage'
+      description: Bad Request
+    NotImplemented:
+      content:
+        application/json:
+          example:
+            status: 501
+            message: Not Implemented
+            details: Method Not Implemented
+          schema:
+            $ref: '#/components/schemas/ErrorMessage'
+      description: Not Implemented
   schemas:
     ModuleReferencesRequest:
-      type: object
-      properties:
+      example:
+        moduleSetTag: moduleSetTag
         cmHandleProperties:
-          $ref: '#/components/schemas/cmHandleProperties'
+          key: "{\"prop1\":\"value1\",\"prop2\":\"value2\"}"
+      properties:
+        moduleSetTag:
+          type: string
+        cmHandleProperties:
+          additionalProperties:
+            example: "{\"prop1\":\"value1\",\"prop2\":\"value2\"}"
+            type: string
+          nullable: true
+          type: object
+      type: object
     cmHandleProperties:
-      type: object
       additionalProperties:
+        example: "{\"prop1\":\"value1\",\"prop2\":\"value2\"}"
         type: string
-        example: '{"prop1":"value1","prop2":"value2"}'
-    ModuleSet:
+      nullable: true
       type: object
+    ModuleSet:
+      example:
+        schemas:
+          - moduleName: my-module-name
+            namespace: my-namespace
+            revision: my-revision
+          - moduleName: my-module-name
+            namespace: my-namespace
+            revision: my-revision
       properties:
         schemas:
-          type: array
           items:
-            $ref: '#/components/schemas/ModuleSet_schemas'
-    ErrorMessage:
-      title: Error
+            $ref: '#/components/schemas/ModuleSet_schemas_inner'
+          type: array
       type: object
+    ErrorMessage:
       properties:
         status:
           type: string
@@ -376,90 +489,199 @@ components:
           type: string
         details:
           type: string
-    ModuleResourcesReadRequest:
+      title: Error
       type: object
+    ModuleResourcesReadRequest:
+      example:
+        data:
+          modules:
+            - name: my-name
+              revision: my-revision
+            - name: my-name
+              revision: my-revision
+        cmHandleProperties:
+          key: "{\"prop1\":\"value1\",\"prop2\":\"value2\"}"
       properties:
         data:
           $ref: '#/components/schemas/ModuleResourcesReadRequest_data'
         cmHandleProperties:
-          $ref: '#/components/schemas/cmHandleProperties'
+          additionalProperties:
+            example: "{\"prop1\":\"value1\",\"prop2\":\"value2\"}"
+            type: string
+          nullable: true
+          type: object
+      type: object
     YangResources:
-      type: array
       items:
         $ref: '#/components/schemas/YangResource'
+      type: array
     YangResource:
+      example:
+        yangSource: my-yang-source
+        moduleName: my-module-name
+        revision: my-revision
       properties:
         yangSource:
-          type: string
           example: my-yang-source
+          type: string
         moduleName:
-          type: string
           example: my-module-name
-        revision:
           type: string
+        revision:
           example: my-revision
+          type: string
     CmHandles:
-      type: object
-      properties:
+      example:
         cmHandles:
-          type: array
-          example:
           - cmHandleId1
           - cmHandleId2
           - cmHandleId3
+      properties:
+        cmHandles:
+          example:
+            - cmHandleId1
+            - cmHandleId2
+            - cmHandleId3
           items:
             type: string
-    DataAccessRequest:
+          type: array
       type: object
+    DataAccessRequest:
+      example:
+        data: my-data
+        requestId: 3a9ce55c-e365-4dc9-8da3-a06f07cbc6d7
+        dataType: my-data-type
+        cmHandleProperties:
+          key: "{\"prop1\":\"value1\",\"prop2\":\"value2\"}"
+        operation: read
       properties:
         operation:
-          type: string
-          example: read
           enum:
-          - read
-          - create
-          - update
-          - patch
-          - delete
+            - read
+            - create
+            - update
+            - patch
+            - delete
+          example: read
+          type: string
         dataType:
-          type: string
           example: my-data-type
+          type: string
         data:
-          type: string
           example: my-data
-        cmHandleProperties:
-          $ref: '#/components/schemas/cmHandleProperties'
-        requestId:
           type: string
+        cmHandleProperties:
+          additionalProperties:
+            example: "{\"prop1\":\"value1\",\"prop2\":\"value2\"}"
+            type: string
+          nullable: true
+          type: object
+        requestId:
           example: 3a9ce55c-e365-4dc9-8da3-a06f07cbc6d7
-    ModuleSet_schemas:
+          type: string
       type: object
+    ResourceDataOperationRequests:
+      items:
+        $ref: '#/components/schemas/DataOperationRequest'
+      type: array
+    cmHandle:
+      example:
+        id: cmHandle123
+        cmHandleProperties:
+          myProp: some value
+          otherProp: other value
+      properties:
+        id:
+          type: string
+        cmHandleProperties:
+          additionalProperties:
+            type: string
+          type: object
+      title: cmHandle
+      type: object
+    ModuleSet_schemas_inner:
+      example:
+        moduleName: my-module-name
+        namespace: my-namespace
+        revision: my-revision
       properties:
         moduleName:
-          type: string
           example: my-module-name
+          type: string
         revision:
-          type: string
           example: my-revision
-        namespace:
           type: string
+        namespace:
           example: my-namespace
-    ModuleResourcesReadRequest_data_modules:
+          type: string
       type: object
+    ModuleResourcesReadRequest_data_modules_inner:
+      example:
+        name: my-name
+        revision: my-revision
       properties:
         name:
-          type: string
           example: my-name
-        revision:
           type: string
+        revision:
           example: my-revision
-    ModuleResourcesReadRequest_data:
+          type: string
       type: object
+    ModuleResourcesReadRequest_data:
+      example:
+        modules:
+          - name: my-name
+            revision: my-revision
+          - name: my-name
+            revision: my-revision
       properties:
         modules:
-          type: array
           items:
-            $ref: '#/components/schemas/ModuleResourcesReadRequest_data_modules'
-
-security:
-  - basicAuth: []
+            $ref: '#/components/schemas/ModuleResourcesReadRequest_data_modules_inner'
+          type: array
+      type: object
+    DataOperationRequest:
+      example:
+        resourceIdentifier: some resource identifier
+        datastore: ncmp-datastore:passthrough-operational
+        options: some option
+        operationId: "12"
+        cmHandles:
+          - id: cmHandle123
+            cmHandleProperties:
+              myProp: some value
+              otherProp: other value
+          - id: cmHandle123
+            cmHandleProperties:
+              myProp: some value
+              otherProp: other value
+        operation: read
+      properties:
+        operation:
+          example: read
+          type: string
+        operationId:
+          description: it is recommended that the operationId is unique within the
+            scope of the request
+          example: "12"
+          type: string
+        datastore:
+          example: ncmp-datastore:passthrough-operational
+          type: string
+        options:
+          example: some option
+          type: string
+        resourceIdentifier:
+          example: some resource identifier
+          type: string
+        cmHandles:
+          items:
+            $ref: '#/components/schemas/cmHandle'
+          type: array
+      required:
+        - cmHandles
+        - datastore
+        - operation
+        - operationId
+      title: DataOperationRequest
+      type: object
