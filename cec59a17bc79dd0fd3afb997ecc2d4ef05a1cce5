@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "cfb152b2_6607207a",
+        "filename": "docs/release-notes.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2024-04-03T10:14:41Z",
+      "side": 1,
+      "message": "We are in \"Ne Dehli\" Now. Check CPS release notes for formatting, probably dont have to include release we didn\u0027t add anything...\n(It seems we haven\u0027t released DMI plugin for a long time!)",
+      "range": {
+        "startLine": 18,
+        "startChar": 16,
+        "endLine": 18,
+        "endChar": 20
+      },
+      "revId": "cec59a17bc79dd0fd3afb997ecc2d4ef05a1cce5",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    }
+  ]
+}
