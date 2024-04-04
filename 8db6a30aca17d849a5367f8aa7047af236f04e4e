@@ -54,6 +54,24 @@
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "8f5fd44f_ff5ea93f",
+        "filename": "docs/api/swagger/openapi.yaml",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 7957
+      },
+      "writtenOn": "2024-04-04T08:58:01Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "e3f4ac22_01488fa3",
+      "revId": "8db6a30aca17d849a5367f8aa7047af236f04e4e",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "bb44cfeb_d00a2ba5",
@@ -77,6 +95,30 @@
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "95b4db23_d0047b56",
+        "filename": "docs/api/swagger/openapi.yaml",
+        "patchSetId": 4
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 7957
+      },
+      "writtenOn": "2024-04-04T08:58:01Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "bb44cfeb_d00a2ba5",
+      "range": {
+        "startLine": 4,
+        "startChar": 2,
+        "endLine": 4,
+        "endChar": 24
+      },
+      "revId": "8db6a30aca17d849a5367f8aa7047af236f04e4e",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "48e65563_17e8bf6f",
@@ -90,6 +132,30 @@
       "writtenOn": "2024-04-04T08:30:53Z",
       "side": 1,
       "message": "NB: name after description?",
+      "range": {
+        "startLine": 10,
+        "startChar": 2,
+        "endLine": 12,
+        "endChar": 20
+      },
+      "revId": "8db6a30aca17d849a5367f8aa7047af236f04e4e",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "1e726bb1_d2b23342",
+        "filename": "docs/api/swagger/openapi.yaml",
+        "patchSetId": 4
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 7957
+      },
+      "writtenOn": "2024-04-04T08:58:01Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "48e65563_17e8bf6f",
       "range": {
         "startLine": 10,
         "startChar": 2,
