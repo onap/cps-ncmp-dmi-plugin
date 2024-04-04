@@ -20,6 +20,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "b499a25f_985582bd",
+        "filename": "docs/api/swagger/openapi.yaml",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 8155
+      },
+      "writtenOn": "2024-04-04T08:33:59Z",
+      "side": 1,
+      "message": "it was generated like this, but i can make alignments",
+      "parentUuid": "17fb0bb5_648c3fec",
+      "revId": "8db6a30aca17d849a5367f8aa7047af236f04e4e",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "bb44cfeb_d00a2ba5",
         "filename": "docs/api/swagger/openapi.yaml",
         "patchSetId": 4
