@@ -46,6 +46,8 @@ components:
     ModuleReferencesRequest:
       type: object
       properties:
+        moduleSetTag:
+          type: string
         cmHandleProperties:
           $ref: '#/components/schemas/cmHandleProperties'
 
