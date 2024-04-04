@@ -38,6 +38,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "e3f4ac22_01488fa3",
+        "filename": "docs/api/swagger/openapi.yaml",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2024-04-04T08:38:43Z",
+      "side": 1,
+      "message": "dont modify the generated Docuemnt! \nIf needed change the source file instead!",
+      "parentUuid": "b499a25f_985582bd",
+      "revId": "8db6a30aca17d849a5367f8aa7047af236f04e4e",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "bb44cfeb_d00a2ba5",
         "filename": "docs/api/swagger/openapi.yaml",
         "patchSetId": 4
