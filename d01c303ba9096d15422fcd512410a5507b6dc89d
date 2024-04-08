@@ -24,6 +24,30 @@
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "d9fb9edb_10381ea9",
+        "filename": "src/main/java/org/onap/cps/ncmp/dmi/notifications/cmsubscription/CmNotificationSubscriptionDmiInEventConsumer.java",
+        "patchSetId": 4
+      },
+      "lineNbr": 47,
+      "author": {
+        "id": 7931
+      },
+      "writtenOn": "2024-04-08T09:03:13Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "fa53de5b_369e72a3",
+      "range": {
+        "startLine": 47,
+        "startChar": 14,
+        "endLine": 47,
+        "endChar": 34
+      },
+      "revId": "d01c303ba9096d15422fcd512410a5507b6dc89d",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "99bf640a_2a1ae936",
@@ -47,6 +71,30 @@
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "cf5a3181_0035a689",
+        "filename": "src/main/java/org/onap/cps/ncmp/dmi/notifications/cmsubscription/CmNotificationSubscriptionDmiInEventConsumer.java",
+        "patchSetId": 4
+      },
+      "lineNbr": 53,
+      "author": {
+        "id": 7931
+      },
+      "writtenOn": "2024-04-08T09:03:13Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "99bf640a_2a1ae936",
+      "range": {
+        "startLine": 53,
+        "startChar": 16,
+        "endLine": 53,
+        "endChar": 47
+      },
+      "revId": "d01c303ba9096d15422fcd512410a5507b6dc89d",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "661e4940_722092e3",
@@ -60,6 +108,24 @@
       "writtenOn": "2024-03-26T10:21:56Z",
       "side": 1,
       "message": "same.. add notification for consistency",
+      "revId": "d01c303ba9096d15422fcd512410a5507b6dc89d",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "7d738349_f7cfbaee",
+        "filename": "src/main/java/org/onap/cps/ncmp/dmi/notifications/cmsubscription/CmNotificationSubscriptionDmiInEventConsumer.java",
+        "patchSetId": 4
+      },
+      "lineNbr": 55,
+      "author": {
+        "id": 7931
+      },
+      "writtenOn": "2024-04-08T09:03:13Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "661e4940_722092e3",
       "revId": "d01c303ba9096d15422fcd512410a5507b6dc89d",
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
     },
@@ -110,6 +176,30 @@
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "30bc694d_c864ac2f",
+        "filename": "src/test/groovy/org/onap/cps/ncmp/dmi/notifications/cmsubscription/CmNotificationSubscriptionDmiInEventConsumerSpec.groovy",
+        "patchSetId": 4
+      },
+      "lineNbr": 57,
+      "author": {
+        "id": 7931
+      },
+      "writtenOn": "2024-04-08T09:03:13Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "2f5b7d36_cad6f020",
+      "range": {
+        "startLine": 57,
+        "startChar": 33,
+        "endLine": 57,
+        "endChar": 60
+      },
+      "revId": "d01c303ba9096d15422fcd512410a5507b6dc89d",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "5f733b6d_88fe0f32",
@@ -123,6 +213,30 @@
       "writtenOn": "2024-03-26T10:21:56Z",
       "side": 1,
       "message": "scenario",
+      "range": {
+        "startLine": 96,
+        "startChar": 22,
+        "endLine": 96,
+        "endChar": 30
+      },
+      "revId": "d01c303ba9096d15422fcd512410a5507b6dc89d",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "7a705349_09c47e62",
+        "filename": "src/test/groovy/org/onap/cps/ncmp/dmi/notifications/cmsubscription/CmNotificationSubscriptionDmiInEventConsumerSpec.groovy",
+        "patchSetId": 4
+      },
+      "lineNbr": 96,
+      "author": {
+        "id": 7931
+      },
+      "writtenOn": "2024-04-08T09:03:13Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5f733b6d_88fe0f32",
       "range": {
         "startLine": 96,
         "startChar": 22,
@@ -182,6 +296,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "8cd88195_56c3337c",
+        "filename": "src/test/groovy/org/onap/cps/ncmp/dmi/notifications/cmsubscription/CmNotificationSubscriptionDmiInEventConsumerSpec.groovy",
+        "patchSetId": 4
+      },
+      "lineNbr": 117,
+      "author": {
+        "id": 7931
+      },
+      "writtenOn": "2024-04-08T09:03:13Z",
+      "side": 1,
+      "message": "can add verification for log",
+      "parentUuid": "624f4beb_8632945a",
+      "range": {
+        "startLine": 116,
+        "startChar": 5,
+        "endLine": 117,
+        "endChar": 31
+      },
+      "revId": "d01c303ba9096d15422fcd512410a5507b6dc89d",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "0e3ac8af_44b747c4",
         "filename": "src/test/groovy/org/onap/cps/ncmp/dmi/notifications/cmsubscription/CmNotificationSubscriptionDmiOutEventToCloudEventMapperSpec.groovy",
         "patchSetId": 4
@@ -193,6 +331,30 @@
       "writtenOn": "2024-03-26T10:21:56Z",
       "side": 1,
       "message": "mention use of \u0027null\u0027 as it is not straightforward in this test the difference between above test and this one",
+      "range": {
+        "startLine": 60,
+        "startChar": 3,
+        "endLine": 60,
+        "endChar": 9
+      },
+      "revId": "d01c303ba9096d15422fcd512410a5507b6dc89d",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "b3fe908d_b91d0ba6",
+        "filename": "src/test/groovy/org/onap/cps/ncmp/dmi/notifications/cmsubscription/CmNotificationSubscriptionDmiOutEventToCloudEventMapperSpec.groovy",
+        "patchSetId": 4
+      },
+      "lineNbr": 60,
+      "author": {
+        "id": 7931
+      },
+      "writtenOn": "2024-04-08T09:03:13Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "0e3ac8af_44b747c4",
       "range": {
         "startLine": 60,
         "startChar": 3,
