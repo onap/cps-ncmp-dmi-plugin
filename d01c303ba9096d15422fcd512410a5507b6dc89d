@@ -320,6 +320,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "8c065cac_ec03d004",
+        "filename": "src/test/groovy/org/onap/cps/ncmp/dmi/notifications/cmsubscription/CmNotificationSubscriptionDmiInEventConsumerSpec.groovy",
+        "patchSetId": 4
+      },
+      "lineNbr": 117,
+      "author": {
+        "id": 7965
+      },
+      "writtenOn": "2024-04-09T12:01:46Z",
+      "side": 1,
+      "message": "agreed for verification in the log.",
+      "parentUuid": "8cd88195_56c3337c",
+      "range": {
+        "startLine": 116,
+        "startChar": 5,
+        "endLine": 117,
+        "endChar": 31
+      },
+      "revId": "d01c303ba9096d15422fcd512410a5507b6dc89d",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "0e3ac8af_44b747c4",
         "filename": "src/test/groovy/org/onap/cps/ncmp/dmi/notifications/cmsubscription/CmNotificationSubscriptionDmiOutEventToCloudEventMapperSpec.groovy",
         "patchSetId": 4

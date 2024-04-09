@@ -186,6 +186,30 @@
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "a705bcac_703ddaf6",
+        "filename": "src/test/groovy/org/onap/cps/ncmp/dmi/notifications/mapper/CloudEventMapperSpec.groovy",
+        "patchSetId": 3
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 7965
+      },
+      "writtenOn": "2024-04-09T12:01:46Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "a71e31a8_be5a2114",
+      "range": {
+        "startLine": 31,
+        "startChar": 0,
+        "endLine": 31,
+        "endChar": 48
+      },
+      "revId": "fd21b11a7645de57059cb8567e186b8146c662f0",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "7fa981c9_6d9b5924",

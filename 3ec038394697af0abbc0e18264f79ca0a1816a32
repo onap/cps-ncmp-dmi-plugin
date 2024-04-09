@@ -35,6 +35,23 @@
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "49bc28bb_6a487d30",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 5
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 7965
+      },
+      "writtenOn": "2024-04-09T12:01:46Z",
+      "side": 1,
+      "message": "some comments. and also reminder for the previous comments.",
+      "revId": "3ec038394697af0abbc0e18264f79ca0a1816a32",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "0cbce02b_282d7cdb",
@@ -54,6 +71,47 @@
         "endLine": 90,
         "endChar": 48
       },
+      "revId": "3ec038394697af0abbc0e18264f79ca0a1816a32",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "ac79443d_69d9fb63",
+        "filename": "src/main/java/org/onap/cps/ncmp/dmi/notifications/cmsubscription/CmNotificationSubscriptionDmiInEventConsumer.java",
+        "patchSetId": 5
+      },
+      "lineNbr": 90,
+      "author": {
+        "id": 7965
+      },
+      "writtenOn": "2024-04-09T12:01:46Z",
+      "side": 1,
+      "message": "agreed. can copy the same enum for onap-dmi-plugin codebase as well as we dont share cps-ncmp-service module to onap-dmi-plugin.",
+      "parentUuid": "0cbce02b_282d7cdb",
+      "range": {
+        "startLine": 90,
+        "startChar": 38,
+        "endLine": 90,
+        "endChar": 48
+      },
+      "revId": "3ec038394697af0abbc0e18264f79ca0a1816a32",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "3f1b4a22_cd724960",
+        "filename": "src/test/groovy/org/onap/cps/ncmp/dmi/notifications/mapper/CloudEventMapperSpec.groovy",
+        "patchSetId": 5
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 7965
+      },
+      "writtenOn": "2024-04-09T12:01:46Z",
+      "side": 1,
+      "message": "incorrect formatting. correct it.",
       "revId": "3ec038394697af0abbc0e18264f79ca0a1816a32",
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
     }
