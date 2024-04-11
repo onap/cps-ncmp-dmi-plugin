@@ -139,6 +139,30 @@
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "a00adb42_5a3ddbcf",
+        "filename": "src/test/groovy/org/onap/cps/ncmp/dmi/notifications/cmsubscription/CmNotificationSubscriptionDmiInEventConsumerSpec.groovy",
+        "patchSetId": 3
+      },
+      "lineNbr": 102,
+      "author": {
+        "id": 7965
+      },
+      "writtenOn": "2024-04-11T12:23:32Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "f905cd91_5a71c2dd",
+      "range": {
+        "startLine": 102,
+        "startChar": 4,
+        "endLine": 102,
+        "endChar": 38
+      },
+      "revId": "fd21b11a7645de57059cb8567e186b8146c662f0",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "e66e7f5c_52772bdb",
