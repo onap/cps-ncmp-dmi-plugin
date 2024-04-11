@@ -1,0 +1,67 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "8100a7cb_741eb385",
+        "filename": "src/test/groovy/org/onap/cps/ncmp/dmi/notifications/cmsubscription/CmNotificationSubscriptionDmiInEventConsumerSpec.groovy",
+        "patchSetId": 8
+      },
+      "lineNbr": 122,
+      "author": {
+        "id": 7965
+      },
+      "writtenOn": "2024-04-11T14:19:02Z",
+      "side": 1,
+      "message": "def invalidJsonBody \u003d \u0027///////\u0027",
+      "revId": "1c54a99cd6fde4f00f608b915983c010da06ae9f",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "2aa70b61_be2db76d",
+        "filename": "src/test/groovy/org/onap/cps/ncmp/dmi/notifications/cmsubscription/CmNotificationSubscriptionDmiInEventConsumerSpec.groovy",
+        "patchSetId": 8
+      },
+      "lineNbr": 130,
+      "author": {
+        "id": 7965
+      },
+      "writtenOn": "2024-04-11T14:19:02Z",
+      "side": 1,
+      "message": "invalidJsonBody",
+      "range": {
+        "startLine": 130,
+        "startChar": 102,
+        "endLine": 130,
+        "endChar": 108
+      },
+      "revId": "1c54a99cd6fde4f00f608b915983c010da06ae9f",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "ba013836_37844116",
+        "filename": "src/test/groovy/org/onap/cps/ncmp/dmi/notifications/cmsubscription/CmNotificationSubscriptionDmiInEventConsumerSpec.groovy",
+        "patchSetId": 8
+      },
+      "lineNbr": 134,
+      "author": {
+        "id": 7965
+      },
+      "writtenOn": "2024-04-11T14:19:02Z",
+      "side": 1,
+      "message": "I think she meant the below.\nNB: exception is thrown and event is logged",
+      "range": {
+        "startLine": 134,
+        "startChar": 15,
+        "endLine": 134,
+        "endChar": 44
+      },
+      "revId": "1c54a99cd6fde4f00f608b915983c010da06ae9f",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    }
+  ]
+}
