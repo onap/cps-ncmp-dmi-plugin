@@ -22,6 +22,29 @@
       },
       "revId": "95af63597bf4447d11ac1b4a2ffef7f1f79f8c03",
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "c31151e6_b1ce39b7",
+        "filename": "src/test/groovy/org/onap/cps/ncmp/dmi/notifications/cmsubscription/CmNotificationSubscriptionDmiInEventConsumerSpec.groovy",
+        "patchSetId": 7
+      },
+      "lineNbr": 134,
+      "author": {
+        "id": 7931
+      },
+      "writtenOn": "2024-04-11T13:32:26Z",
+      "side": 1,
+      "message": "remove this",
+      "range": {
+        "startLine": 134,
+        "startChar": 14,
+        "endLine": 134,
+        "endChar": 27
+      },
+      "revId": "95af63597bf4447d11ac1b4a2ffef7f1f79f8c03",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
     }
   ]
 }
