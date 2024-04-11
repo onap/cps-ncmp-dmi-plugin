@@ -114,6 +114,24 @@
       "message": "incorrect formatting. correct it.",
       "revId": "3ec038394697af0abbc0e18264f79ca0a1816a32",
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "14af78d5_679fc7d6",
+        "filename": "src/test/groovy/org/onap/cps/ncmp/dmi/notifications/mapper/CloudEventMapperSpec.groovy",
+        "patchSetId": 5
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 7965
+      },
+      "writtenOn": "2024-04-11T11:04:45Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3f1b4a22_cd724960",
+      "revId": "3ec038394697af0abbc0e18264f79ca0a1816a32",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
     }
   ]
 }

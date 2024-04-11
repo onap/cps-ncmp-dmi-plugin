@@ -1,0 +1,165 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "d8936962_0ac71bbc",
+        "filename": "src/main/java/org/onap/cps/ncmp/dmi/notifications/cmsubscription/CmNotificationSubscriptionDmiInEventConsumer.java",
+        "patchSetId": 6
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 7965
+      },
+      "writtenOn": "2024-04-11T11:04:45Z",
+      "side": 1,
+      "message": "NB: rename it to cmNotificationSubscriptionResponseTopic",
+      "range": {
+        "startLine": 42,
+        "startChar": 19,
+        "endLine": 42,
+        "endChar": 49
+      },
+      "revId": "0cedb122ebf8f3f4f298356eb543fb07176d865d",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "591b53b1_ed4b39e3",
+        "filename": "src/main/java/org/onap/cps/ncmp/dmi/notifications/cmsubscription/CmNotificationSubscriptionDmiInEventConsumer.java",
+        "patchSetId": 6
+      },
+      "lineNbr": 81,
+      "author": {
+        "id": 7965
+      },
+      "writtenOn": "2024-04-11T11:04:45Z",
+      "side": 1,
+      "message": "cmNotificationSubscriptionStatus",
+      "range": {
+        "startLine": 81,
+        "startChar": 14,
+        "endLine": 81,
+        "endChar": 33
+      },
+      "revId": "0cedb122ebf8f3f4f298356eb543fb07176d865d",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "544f366e_5e7df067",
+        "filename": "src/main/java/org/onap/cps/ncmp/dmi/notifications/cmsubscription/CmNotificationSubscriptionDmiInEventConsumer.java",
+        "patchSetId": 6
+      },
+      "lineNbr": 85,
+      "author": {
+        "id": 7965
+      },
+      "writtenOn": "2024-04-11T11:04:45Z",
+      "side": 1,
+      "message": "cmNotificationSubscriptionStatus",
+      "range": {
+        "startLine": 85,
+        "startChar": 21,
+        "endLine": 85,
+        "endChar": 39
+      },
+      "revId": "0cedb122ebf8f3f4f298356eb543fb07176d865d",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "6f4fa654_3c6b9d57",
+        "filename": "src/main/java/org/onap/cps/ncmp/dmi/notifications/cmsubscription/CmNotificationSubscriptionDmiInEventConsumer.java",
+        "patchSetId": 6
+      },
+      "lineNbr": 85,
+      "author": {
+        "id": 7965
+      },
+      "writtenOn": "2024-04-11T11:04:45Z",
+      "side": 1,
+      "message": "change this to CmNotificationSubscriptionStatus so u wont be needed to call .toString on line 67 and 70 and also during comparison u can compare the enums.",
+      "range": {
+        "startLine": 85,
+        "startChar": 14,
+        "endLine": 85,
+        "endChar": 20
+      },
+      "revId": "0cedb122ebf8f3f4f298356eb543fb07176d865d",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "ec0a311c_1e5693e9",
+        "filename": "src/main/java/org/onap/cps/ncmp/dmi/notifications/cmsubscription/CmNotificationSubscriptionDmiInEventConsumer.java",
+        "patchSetId": 6
+      },
+      "lineNbr": 91,
+      "author": {
+        "id": 7965
+      },
+      "writtenOn": "2024-04-11T11:04:45Z",
+      "side": 1,
+      "message": "not needed",
+      "range": {
+        "startLine": 91,
+        "startChar": 79,
+        "endLine": 91,
+        "endChar": 90
+      },
+      "revId": "0cedb122ebf8f3f4f298356eb543fb07176d865d",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "0de767ef_5474aede",
+        "filename": "src/main/java/org/onap/cps/ncmp/dmi/notifications/cmsubscription/CmNotificationSubscriptionDmiInEventConsumer.java",
+        "patchSetId": 6
+      },
+      "lineNbr": 94,
+      "author": {
+        "id": 7965
+      },
+      "writtenOn": "2024-04-11T11:04:45Z",
+      "side": 1,
+      "message": "not needed",
+      "range": {
+        "startLine": 94,
+        "startChar": 86,
+        "endLine": 94,
+        "endChar": 97
+      },
+      "revId": "0cedb122ebf8f3f4f298356eb543fb07176d865d",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "f23d3bce_92763bae",
+        "filename": "src/main/java/org/onap/cps/ncmp/dmi/notifications/cmsubscription/model/CmNotificationSubscriptionStatus.java",
+        "patchSetId": 6
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 7965
+      },
+      "writtenOn": "2024-04-11T11:04:45Z",
+      "side": 1,
+      "message": "u can remove the PENDING state as its not valid for onap-dmi-plugin",
+      "range": {
+        "startLine": 25,
+        "startChar": 48,
+        "endLine": 25,
+        "endChar": 67
+      },
+      "revId": "0cedb122ebf8f3f4f298356eb543fb07176d865d",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    }
+  ]
+}
