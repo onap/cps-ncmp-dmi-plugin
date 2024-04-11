@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "e35a0f4c_78c846dc",
+        "filename": "src/test/groovy/org/onap/cps/ncmp/dmi/notifications/cmsubscription/CmNotificationSubscriptionDmiInEventConsumerSpec.groovy",
+        "patchSetId": 7
+      },
+      "lineNbr": 121,
+      "author": {
+        "id": 7965
+      },
+      "writtenOn": "2024-04-11T12:49:47Z",
+      "side": 1,
+      "message": "NB: body.\nonly the body is invalid. other things seems to be correct only.\nif you want u can define it as variable , otherwise its not that clear abt what is invalid.\n\ndef invalidJsonBody \u003d \u0027/////\u0027",
+      "range": {
+        "startLine": 121,
+        "startChar": 33,
+        "endLine": 121,
+        "endChar": 37
+      },
+      "revId": "95af63597bf4447d11ac1b4a2ffef7f1f79f8c03",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    }
+  ]
+}
