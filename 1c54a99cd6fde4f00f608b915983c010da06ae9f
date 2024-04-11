@@ -18,6 +18,24 @@
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "c1bb012c_b5784892",
+        "filename": "src/test/groovy/org/onap/cps/ncmp/dmi/notifications/cmsubscription/CmNotificationSubscriptionDmiInEventConsumerSpec.groovy",
+        "patchSetId": 8
+      },
+      "lineNbr": 122,
+      "author": {
+        "id": 6742
+      },
+      "writtenOn": "2024-04-11T14:38:29Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "8100a7cb_741eb385",
+      "revId": "1c54a99cd6fde4f00f608b915983c010da06ae9f",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "2aa70b61_be2db76d",
@@ -41,6 +59,30 @@
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "c524e9f2_6bdd9a37",
+        "filename": "src/test/groovy/org/onap/cps/ncmp/dmi/notifications/cmsubscription/CmNotificationSubscriptionDmiInEventConsumerSpec.groovy",
+        "patchSetId": 8
+      },
+      "lineNbr": 130,
+      "author": {
+        "id": 6742
+      },
+      "writtenOn": "2024-04-11T14:38:29Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "2aa70b61_be2db76d",
+      "range": {
+        "startLine": 130,
+        "startChar": 102,
+        "endLine": 130,
+        "endChar": 108
+      },
+      "revId": "1c54a99cd6fde4f00f608b915983c010da06ae9f",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "ba013836_37844116",
@@ -54,6 +96,30 @@
       "writtenOn": "2024-04-11T14:19:02Z",
       "side": 1,
       "message": "I think she meant the below.\nNB: exception is thrown and event is logged",
+      "range": {
+        "startLine": 134,
+        "startChar": 15,
+        "endLine": 134,
+        "endChar": 44
+      },
+      "revId": "1c54a99cd6fde4f00f608b915983c010da06ae9f",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "7041220f_0cd3c558",
+        "filename": "src/test/groovy/org/onap/cps/ncmp/dmi/notifications/cmsubscription/CmNotificationSubscriptionDmiInEventConsumerSpec.groovy",
+        "patchSetId": 8
+      },
+      "lineNbr": 134,
+      "author": {
+        "id": 6742
+      },
+      "writtenOn": "2024-04-11T14:38:29Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba013836_37844116",
       "range": {
         "startLine": 134,
         "startChar": 15,
