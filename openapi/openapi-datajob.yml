@@ -1,0 +1,164 @@
+openapi: 3.0.3
+info:
+  description: Adds subjob capabilities for DCM
+  title: NCMP Data Subjob API
+  version: 1.0.0
+servers:
+  - url: /dmi
+tags:
+  - description: DMI plugin rest apis
+    name: dmi-datajob
+paths:
+  /v1/dataJob/{requestId}:
+    post:
+      description: Create a read request
+      operationId: createReadRequest
+      parameters:
+        - $ref: '#/components/parameters/requestIdInPath'
+      requestBody:
+        description: Operation body
+        content:
+          application/3gpp-json-patch+json:
+            schema:
+              $ref: '#/components/schemas/SubjobRequest'
+      tags:
+        - dmi-datajob
+      responses:
+        "200":
+          description: Response for subjob
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  dataProducerJobId:
+                    type: string
+                    description: The data job ID.
+components:
+  parameters:
+    requestIdInPath:
+      description: Identifier for the overall Datajob
+      in: path
+      name: requestId
+      required: true
+      schema:
+        example: requestId
+        type: string
+  schemas:
+    SubjobRequest:
+      type: object
+      required:
+        - dataProducerId
+        - data
+      properties:
+        dataAcceptType:
+          example: application/vnd.3gpp.object-tree-hierarchical+json
+          type: string
+        dataContentType:
+          example: application/3gpp-json-patch+json
+          type: string
+        dataProducerId:
+          example: my-data-producer-identifier
+          type: string
+        data:
+          oneOf:
+            - $ref: '#/components/schemas/ReadOperation'
+            - $ref: '#/components/schemas/WriteOperation'
+    ReadOperation:
+      example:
+        op: read
+        operationId: 1
+        path: SubNetwork=Europe/SubNetwork=Ireland/MeContext=NR03gNodeBRadio00003/ManagedElement=NR03gNodeBRadio00003/GNBCUCPFunction=2
+        attributes: userLabel
+        scope:
+          scopeTyp: BASE_ONLY
+      type: array
+      items:
+        type: object
+        required:
+          - path
+          - op
+        properties:
+          path:
+            example: SubNetwork=Europe/SubNetwork=Ireland/MeContext=NR03gNodeBRadio00003/ManagedElement=NR03gNodeBRadio00003
+            type: string
+          op:
+            example: read
+            type: string
+          operationId:
+            example: 1
+            type: string
+          attributes:
+            type: array
+            items:
+              example: cellId
+              type: string
+          fields:
+            type: array
+            items:
+              type: string
+          filter:
+            example: NRCellDU/attributes/administrativeState==LOCKED
+            type: string
+          scopeType:
+            example: BASE_ONLY
+            type: string
+          scopeLevel:
+            example: 0
+            type: integer
+          moduleSetTag:
+            example: my-module-set-tag
+            type: string
+          cmHandleProperties:
+            $ref: '#/components/schemas/CmHandleProperties'
+    WriteOperation:
+      example:
+        op: add
+        path: SubNetwork=Europe/SubNetwork=Ireland/MeContext=NR03gNodeBRadio00003/ManagedElement=NR03gNodeBRadio00003/GNBCUCPFunction=1/EUtraNetwork=1/EUtranFrequency=12
+        value:
+          id: 12
+          attributes:
+            userLabel: label12
+      type: array
+      items:
+        type: object
+        required:
+          - path
+          - op
+        properties:
+          path:
+            example: SubNetwork=Europe/SubNetwork=Ireland/MeContext=NR03gNodeBRadio00003/ManagedElement=NR03gNodeBRadio00003
+            type: string
+          op:
+            example: add
+            type: string
+          operationId:
+            example: 1
+            type: string
+          value:
+            type: object
+            oneOf:
+              - $ref: '#/components/schemas/Resource'
+              - $ref: '#/components/schemas/ActionParameters'
+              - $ref: '#/components/schemas/Object'
+    CmHandleProperties:
+      type: object
+    Resource:
+      type: object
+      properties:
+        id:
+          example: resource-identifier
+          type: string
+        attributes:
+          type: object
+          additionalProperties:
+            example: 'userLabel: label11'
+            type: string
+    ActionParameters:
+      type: object
+      additionalProperties:
+        type: string
+    Object:
+      type: object
+
+

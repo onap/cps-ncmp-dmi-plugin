@@ -1,0 +1,184 @@
+openapi: 3.0.3
+info:
+  description: Adds subjob capabilities for DCM
+  title: NCMP Data Subjob API
+  version: 1.0.0
+servers:
+- url: /dmi
+tags:
+- description: DMI plugin rest apis
+  name: dmi-datajob
+paths:
+  /v1/dataJob/{requestId}:
+    post:
+      description: Create a read request
+      operationId: createReadRequest
+      parameters:
+      - description: Identifier for the overall Datajob
+        explode: false
+        in: path
+        name: requestId
+        required: true
+        schema:
+          example: requestId
+          type: string
+        style: simple
+      requestBody:
+        content:
+          application/3gpp-json-patch+json:
+            schema:
+              $ref: '#/components/schemas/SubjobRequest'
+        description: Operation body
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/createReadRequest_200_response'
+          description: Response for subjob
+      tags:
+      - dmi-datajob
+components:
+  parameters:
+    requestIdInPath:
+      description: Identifier for the overall Datajob
+      explode: false
+      in: path
+      name: requestId
+      required: true
+      schema:
+        example: requestId
+        type: string
+      style: simple
+  schemas:
+    SubjobRequest:
+      properties:
+        dataAcceptType:
+          example: application/vnd.3gpp.object-tree-hierarchical+json
+          type: string
+        dataContentType:
+          example: application/3gpp-json-patch+json
+          type: string
+        dataProducerId:
+          example: my-data-producer-identifier
+          type: string
+        data:
+          $ref: '#/components/schemas/SubjobRequest_data'
+      required:
+      - data
+      - dataProducerId
+      type: object
+    ReadOperation:
+      example:
+        op: read
+        operationId: 1
+        path: SubNetwork=Europe/SubNetwork=Ireland/MeContext=NR03gNodeBRadio00003/ManagedElement=NR03gNodeBRadio00003/GNBCUCPFunction=2
+        attributes: userLabel
+        scope:
+          scopeTyp: BASE_ONLY
+      items:
+        $ref: '#/components/schemas/ReadOperation_inner'
+      type: array
+    WriteOperation:
+      example:
+        op: add
+        path: SubNetwork=Europe/SubNetwork=Ireland/MeContext=NR03gNodeBRadio00003/ManagedElement=NR03gNodeBRadio00003/GNBCUCPFunction=1/EUtraNetwork=1/EUtranFrequency=12
+        value:
+          id: 12
+          attributes:
+            userLabel: label12
+      items:
+        $ref: '#/components/schemas/WriteOperation_inner'
+      type: array
+    CmHandleProperties:
+      type: object
+    Resource:
+      properties:
+        id:
+          example: resource-identifier
+          type: string
+        attributes:
+          additionalProperties:
+            example: "userLabel: label11"
+            type: string
+          type: object
+      type: object
+    ActionParameters:
+      additionalProperties:
+        type: string
+      type: object
+    Object:
+      type: object
+    createReadRequest_200_response:
+      example:
+        dataProducerJobId: dataProducerJobId
+      properties:
+        dataProducerJobId:
+          description: The data job ID.
+          type: string
+      type: object
+    SubjobRequest_data:
+      oneOf:
+      - $ref: '#/components/schemas/ReadOperation'
+      - $ref: '#/components/schemas/WriteOperation'
+    ReadOperation_inner:
+      properties:
+        path:
+          example: SubNetwork=Europe/SubNetwork=Ireland/MeContext=NR03gNodeBRadio00003/ManagedElement=NR03gNodeBRadio00003
+          type: string
+        op:
+          example: read
+          type: string
+        operationId:
+          example: "1"
+          type: string
+        attributes:
+          items:
+            example: cellId
+            type: string
+          type: array
+        fields:
+          items:
+            type: string
+          type: array
+        filter:
+          example: NRCellDU/attributes/administrativeState==LOCKED
+          type: string
+        scopeType:
+          example: BASE_ONLY
+          type: string
+        scopeLevel:
+          example: 0
+          type: integer
+        moduleSetTag:
+          example: my-module-set-tag
+          type: string
+        cmHandleProperties:
+          type: object
+      required:
+      - op
+      - path
+      type: object
+    WriteOperation_inner_value:
+      oneOf:
+      - $ref: '#/components/schemas/Resource'
+      - $ref: '#/components/schemas/ActionParameters'
+      - $ref: '#/components/schemas/Object'
+      type: object
+    WriteOperation_inner:
+      properties:
+        path:
+          example: SubNetwork=Europe/SubNetwork=Ireland/MeContext=NR03gNodeBRadio00003/ManagedElement=NR03gNodeBRadio00003
+          type: string
+        op:
+          example: add
+          type: string
+        operationId:
+          example: "1"
+          type: string
+        value:
+          $ref: '#/components/schemas/WriteOperation_inner_value'
+      required:
+      - op
+      - path
+      type: object
