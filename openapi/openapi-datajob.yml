@@ -1,0 +1,134 @@
+openapi: 3.0.3
+info:
+  description: Adds subjob capabilities for DCM
+  title: NCMP Data Subjob API
+  version: 1.0.0
+servers:
+  - url: /dmi
+tags:
+  - description: DMI plugin rest apis
+    name: dmi-datajob
+paths:
+  /v1/dataJob/{requestId}:
+    post:
+      description: Create a read request
+      operationId: createReadRequest
+      parameters:
+        - $ref: '#/components/parameters/requestIdInPath'
+      requestBody:
+        description: Operation body
+        content:
+          application/3gpp-json-patch+json:
+            schema:
+              $ref: '#/components/schemas/SubjobRequest'
+      tags:
+        - dmi-datajob
+      responses:
+        "200":
+          description: Response for subjob
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  dataProducerJobId:
+                    type: string
+                    description: The data job ID.
+components:
+  parameters:
+    requestIdInPath:
+      description: requestId
+      in: path
+      name: requestId
+      required: true
+      schema:
+        example: requestId
+        type: string
+  schemas:
+    SubjobRequest:
+      type: object
+      required:
+        - dataProducerId
+        - data
+      properties:
+        dataAcceptType:
+          type: string
+        dataContentCype:
+          type: string
+        dataProducerId:
+          type: string
+        data:
+          oneOf:
+            - $ref: '#/components/schemas/ReadOperation'
+            - $ref: '#/components/schemas/WriteOperation'
+    ReadOperation:
+      type: array
+      items:
+        type: object
+        required:
+          - path
+          - op
+        properties:
+          path:
+            type: string
+          op:
+            type: string
+          operationId:
+            type: string
+          attributes:
+            type: array
+            items:
+              type: string
+          fields:
+            type: array
+            items:
+              type: string
+          filter:
+            type: string
+          scopeType:
+            type: string
+          scopeLevel:
+            type: integer
+          moduleSetTag:
+            type: string
+          cmHandleProperties:
+            $ref: '#/components/schemas/CmHandleProperties'
+    WriteOperation:
+      type: array
+      items:
+        type: object
+        required:
+          - path
+          - op
+        properties:
+          path:
+            type: string
+          op:
+            type: string
+          operationId:
+            type: string
+          value:
+            type: object
+            oneOf:
+              - $ref: '#/components/schemas/Resource'
+              - $ref: '#/components/schemas/ActionParameters'
+              - $ref: '#/components/schemas/Object'
+    CmHandleProperties:
+      type: object
+    Resource:
+      type: object
+      properties:
+        id:
+          type: string
+        attributes:
+          type: object
+          additionalProperties:
+            type: string
+    ActionParameters:
+      type: object
+      additionalProperties:
+        type: string
+    Object:
+      type: object
+
+
