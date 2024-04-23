@@ -65,6 +65,30 @@
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "065bad42_36b85e39",
+        "filename": "openapi/openapi-datajob.yml",
+        "patchSetId": 1
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 4893
+      },
+      "writtenOn": "2024-04-23T10:03:18Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "aee88ef7_b64d16de",
+      "range": {
+        "startLine": 40,
+        "startChar": 19,
+        "endLine": 40,
+        "endChar": 28
+      },
+      "revId": "f919ff9ed3c2d07e4417fc47fb65dd380a887b92",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "7bbadf27_16494f6e",
@@ -102,6 +126,30 @@
       "side": 1,
       "message": "Seeking confirmation about the format of this value",
       "parentUuid": "7bbadf27_16494f6e",
+      "range": {
+        "startLine": 45,
+        "startChar": 17,
+        "endLine": 45,
+        "endChar": 26
+      },
+      "revId": "f919ff9ed3c2d07e4417fc47fb65dd380a887b92",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "87f23c9c_6babf935",
+        "filename": "openapi/openapi-datajob.yml",
+        "patchSetId": 1
+      },
+      "lineNbr": 45,
+      "author": {
+        "id": 4893
+      },
+      "writtenOn": "2024-04-23T10:03:18Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "4fa22684_4f71a7ea",
       "range": {
         "startLine": 45,
         "startChar": 17,

@@ -18,6 +18,24 @@
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "330cc377_39c6dbae",
+        "filename": "openapi/openapi-datajob.yml",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 4893
+      },
+      "writtenOn": "2024-04-23T10:03:18Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "73ad3a11_d38b0af2",
+      "revId": "33b4cee1bdc969917569593526db11470c75b08e",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "c2d52e7f_1465ef7f",
@@ -41,6 +59,30 @@
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "97a4cfed_c92eecdf",
+        "filename": "openapi/openapi-datajob.yml",
+        "patchSetId": 2
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 4893
+      },
+      "writtenOn": "2024-04-23T10:03:18Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "c2d52e7f_1465ef7f",
+      "range": {
+        "startLine": 3,
+        "startChar": 15,
+        "endLine": 3,
+        "endChar": 47
+      },
+      "revId": "33b4cee1bdc969917569593526db11470c75b08e",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "c5ee3b39_6ec2b7ed",
@@ -54,6 +96,30 @@
       "writtenOn": "2024-04-22T15:39:08Z",
       "side": 1,
       "message": "mayb just \u0027abc123\u0027 or \u0027some-identifier\u0027",
+      "range": {
+        "startLine": 44,
+        "startChar": 13,
+        "endLine": 45,
+        "endChar": 26
+      },
+      "revId": "33b4cee1bdc969917569593526db11470c75b08e",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "31f9bcae_3f5ea201",
+        "filename": "openapi/openapi-datajob.yml",
+        "patchSetId": 2
+      },
+      "lineNbr": 45,
+      "author": {
+        "id": 4893
+      },
+      "writtenOn": "2024-04-23T10:03:18Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "c5ee3b39_6ec2b7ed",
       "range": {
         "startLine": 44,
         "startChar": 13,
