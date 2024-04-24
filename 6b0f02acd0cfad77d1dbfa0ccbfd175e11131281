@@ -94,6 +94,30 @@
       },
       "revId": "6b0f02acd0cfad77d1dbfa0ccbfd175e11131281",
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "38171be1_1ced53cc",
+        "filename": "openapi/openapi-datajob.yml",
+        "patchSetId": 4
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 8063
+      },
+      "writtenOn": "2024-04-24T10:51:32Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "8221034a_11780c17",
+      "range": {
+        "startLine": 1,
+        "startChar": 0,
+        "endLine": 1,
+        "endChar": 14
+      },
+      "revId": "6b0f02acd0cfad77d1dbfa0ccbfd175e11131281",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
     }
   ]
 }
