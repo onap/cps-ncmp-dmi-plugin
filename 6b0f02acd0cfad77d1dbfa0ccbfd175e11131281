@@ -22,6 +22,30 @@
       },
       "revId": "6b0f02acd0cfad77d1dbfa0ccbfd175e11131281",
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "51684408_9714e291",
+        "filename": "openapi/openapi-datajob.yml",
+        "patchSetId": 4
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 4893
+      },
+      "writtenOn": "2024-04-24T10:04:30Z",
+      "side": 1,
+      "message": "None of our openapi specs have licenses presumably because they are strict specs and not openly written",
+      "parentUuid": "d8f157b7_e6f4f669",
+      "range": {
+        "startLine": 1,
+        "startChar": 0,
+        "endLine": 1,
+        "endChar": 14
+      },
+      "revId": "6b0f02acd0cfad77d1dbfa0ccbfd175e11131281",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
     }
   ]
 }
