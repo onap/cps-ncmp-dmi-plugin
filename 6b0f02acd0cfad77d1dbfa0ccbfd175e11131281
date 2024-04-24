@@ -46,6 +46,30 @@
       },
       "revId": "6b0f02acd0cfad77d1dbfa0ccbfd175e11131281",
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "e3f2f319_c55d0a85",
+        "filename": "openapi/openapi-datajob.yml",
+        "patchSetId": 4
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 8063
+      },
+      "writtenOn": "2024-04-24T10:33:35Z",
+      "side": 1,
+      "message": "all of our codes openly availabe to the community indeed but we have licenses.\n\nmaybe as an example you could have a look this file why did someone put a licence header:\n\nncmp-dmi-plugin/openapi/openapi.yml",
+      "parentUuid": "51684408_9714e291",
+      "range": {
+        "startLine": 1,
+        "startChar": 0,
+        "endLine": 1,
+        "endChar": 14
+      },
+      "revId": "6b0f02acd0cfad77d1dbfa0ccbfd175e11131281",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
     }
   ]
 }
