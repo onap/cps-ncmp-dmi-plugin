@@ -1,0 +1,90 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "18ba582c_9a310ed5",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 5
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2024-04-25T08:15:29Z",
+      "side": 1,
+      "message": "some minor suggestions",
+      "revId": "7e9a4361251454653ae4821f96da4e2894ed06de",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "a0834d84_68225026",
+        "filename": "openapi/openapi-datajob.yml",
+        "patchSetId": 5
+      },
+      "lineNbr": 81,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2024-04-25T08:15:29Z",
+      "side": 1,
+      "message": "use the term \u0027paths\u0027 as defined on line #104",
+      "range": {
+        "startLine": 81,
+        "startChar": 68,
+        "endLine": 81,
+        "endChar": 81
+      },
+      "revId": "7e9a4361251454653ae4821f96da4e2894ed06de",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "87f3a323_64c314f8",
+        "filename": "openapi/openapi-datajob.yml",
+        "patchSetId": 5
+      },
+      "lineNbr": 143,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2024-04-25T08:15:29Z",
+      "side": 1,
+      "message": "Private properties of the cm handle for the given path",
+      "range": {
+        "startLine": 143,
+        "startChar": 25,
+        "endLine": 143,
+        "endChar": 84
+      },
+      "revId": "7e9a4361251454653ae4821f96da4e2894ed06de",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "8f3956d6_718e95c5",
+        "filename": "openapi/openapi-datajob.yml",
+        "patchSetId": 5
+      },
+      "lineNbr": 179,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2024-04-25T08:15:29Z",
+      "side": 1,
+      "message": "add same descrption as for read operation",
+      "range": {
+        "startLine": 179,
+        "startChar": 3,
+        "endLine": 179,
+        "endChar": 23
+      },
+      "revId": "7e9a4361251454653ae4821f96da4e2894ed06de",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    }
+  ]
+}
