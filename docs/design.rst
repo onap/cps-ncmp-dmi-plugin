@@ -19,6 +19,8 @@ The DMI-Plugin supports the public APIs listed in the link below:
 
 :download:`DMI Rest OpenApi Specification <api/swagger/openapi.yaml>`
 
+:download:`DMI Datajob OpenApi Specification <api/swagger/openapi-datajob.yaml>`
+
 View Offered APIs
 -----------------
 
