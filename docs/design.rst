@@ -1,6 +1,6 @@
 .. This work is licensed under a Creative Commons Attribution 4.0 International License.
 .. http://creativecommons.org/licenses/by/4.0
-.. Copyright (C) 2021-2023 Nordix Foundation
+.. Copyright (C) 2021-2024 Nordix Foundation
 
 .. DO NOT CHANGE THIS LABEL FOR RELEASE NOTES - EVEN THOUGH IT GIVES A WARNING
 .. _design:
@@ -18,6 +18,8 @@ Offered APIs
 The DMI-Plugin supports the public APIs listed in the link below:
 
 :download:`DMI Rest OpenApi Specification <api/swagger/openapi.yaml>`
+
+:download:`DMI Datajob OpenApi Specification <api/swagger/openapi-datajob.yaml>`
 
 View Offered APIs
 -----------------
