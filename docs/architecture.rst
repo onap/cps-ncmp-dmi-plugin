@@ -1,6 +1,6 @@
 .. This work is licensed under a Creative Commons Attribution 4.0 International License.
 .. http://creativecommons.org/licenses/by/4.0
-.. Copyright (C) 2021-2023 Nordix Foundation
+.. Copyright (C) 2021-2024 Nordix Foundation
 .. _architecture:
 
 DMI-Plugin Architecture
@@ -51,6 +51,15 @@ The DMI-Plugin provides following interfaces.
        - Read data
        - Query data
        - Query module references
+     - REST
+   * - DMI-I-02
+     - Provides support for Async Data Subjobs
+     - - Subnetwork-wide create
+       - Subnetwork-wide read
+       - Subnetwork-wide update
+       - Subnetwork-wide delete
+       - Subnetwork-wide action
+       - Subnetwork-wide query
      - REST
 
 More details on the CPS interface CPS-E-05 which is responsible for the DMI-Plugin can be found on the :ref:`CPS Architecture page<onap-cps:architecture>`

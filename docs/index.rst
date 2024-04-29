@@ -28,7 +28,4 @@ CPS-NCMP Documentation
 
 * :ref:`CPS-NCMP<onap-cps:master_index>`
 
-CPS-Temporal Documentation
---------------------------
 
-* :ref:`CPS-Temporal<onap-cps-cps-temporal:master_index>`
