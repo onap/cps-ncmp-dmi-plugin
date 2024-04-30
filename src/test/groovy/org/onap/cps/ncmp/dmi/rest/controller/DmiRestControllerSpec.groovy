@@ -21,6 +21,10 @@
 
 package org.onap.cps.ncmp.dmi.rest.controller
 
+import ch.qos.logback.classic.Level
+import ch.qos.logback.classic.Logger
+import ch.qos.logback.classic.spi.ILoggingEvent
+import ch.qos.logback.core.read.ListAppender
 import org.onap.cps.ncmp.dmi.TestUtils
 import org.onap.cps.ncmp.dmi.config.WebSecurityConfig
 import org.onap.cps.ncmp.dmi.exception.DmiException
@@ -34,6 +38,7 @@ import org.onap.cps.ncmp.dmi.notifications.async.AsyncTaskExecutor
 import org.onap.cps.ncmp.dmi.notifications.async.DmiAsyncRequestResponseEventProducer
 import org.onap.cps.ncmp.dmi.service.DmiService
 import org.onap.cps.ncmp.dmi.service.model.ModuleReference
+import org.slf4j.LoggerFactory
 import org.spockframework.spring.SpringBean
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.beans.factory.annotation.Value
@@ -74,6 +79,17 @@ class DmiRestControllerSpec extends Specification {
 
     @SpringBean
     AsyncTaskExecutor asyncTaskExecutor = new AsyncTaskExecutor(cpsAsyncRequestResponseEventProducer)
+
+    def logger = Spy(ListAppender<ILoggingEvent>)
+
+    void setup() {
+        ((Logger) LoggerFactory.getLogger(DmiRestController.class)).addAppender(logger)
+        logger.start()
+    }
+
+    void cleanup() {
+        ((Logger) LoggerFactory.getLogger(DmiRestController.class)).detachAndStopAllAppenders()
+    }
 
     @Value('${rest.api.dmi-base-path}/v1')
     def basePathV1
@@ -187,6 +203,27 @@ class DmiRestControllerSpec extends Specification {
                     .content(jsonData)).andReturn().response
         then: 'a not found status is returned'
             response.status == HttpStatus.NOT_FOUND.value()
+    }
+
+    def 'Retrieve module resources and ensure module set tag is logged.'() {
+        given: 'URL to get module resources'
+            def getModulesEndpoint = "$basePathV1/ch/some-cm-handle/moduleResources"
+        and: 'request data to get some modules'
+            String jsonData = TestUtils.getResourceFileContent('moduleResources.json')
+        and: 'the DMI service returns the yang resources'
+            def moduleReferences = []
+            def yangResources = new YangResources()
+            def yangResource = new YangResource()
+            yangResources.add(yangResource)
+            mockDmiService.getModuleResources('some-cm-handle', moduleReferences) >> yangResources
+        when: 'the request is posted'
+            mvc.perform(post(getModulesEndpoint)
+                .contentType(MediaType.APPLICATION_JSON)
+                .content(jsonData))
+        then: 'the module set tag is logged'
+            def loggingEvent = getLoggingEvent()
+            assert loggingEvent.level == Level.INFO
+            assert loggingEvent.formattedMessage.contains('Module set tag received: module-set-tag1')
     }
 
     def 'Get resource data for pass-through operational.'() {
@@ -342,5 +379,9 @@ class DmiRestControllerSpec extends Specification {
             ).andReturn().response
         then: 'the resource data operation endpoint returns the not implemented response'
             assert response.status == 501
+    }
+
+    def getLoggingEvent() {
+        return logger.list[0]
     }
 }

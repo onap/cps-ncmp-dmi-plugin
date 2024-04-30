@@ -13,5 +13,6 @@
   },
   "cmHandleProperties": {
     "subsystemId": "system-001"
-  }
+  },
+  "moduleSetTag": "module-set-tag1"
 }
