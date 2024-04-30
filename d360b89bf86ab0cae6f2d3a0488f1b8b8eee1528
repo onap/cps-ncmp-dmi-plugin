@@ -20,6 +20,29 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "a1f37833_40da6968",
+        "filename": "docs/architecture.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 57,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2024-04-30T21:50:04Z",
+      "side": 1,
+      "message": "wonder about this term, was it in the study? \nI suppose it is related to teh DataProducerIdentifier so I wonder we should use that term. Maybe just explain teh potential scope on line #56 ?",
+      "range": {
+        "startLine": 57,
+        "startChar": 9,
+        "endLine": 57,
+        "endChar": 24
+      },
+      "revId": "d360b89bf86ab0cae6f2d3a0488f1b8b8eee1528",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "03d67f8e_ffe21231",
         "filename": "docs/design.rst",
         "patchSetId": 2
