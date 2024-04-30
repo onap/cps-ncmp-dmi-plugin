@@ -493,6 +493,7 @@ components:
       type: object
     ModuleResourcesReadRequest:
       example:
+        moduleSetTag: moduleSetTag
         data:
           modules:
             - name: my-name
