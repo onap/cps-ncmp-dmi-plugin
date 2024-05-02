@@ -138,7 +138,11 @@ public class DmiRestController implements DmiPluginApi, DmiPluginInternalApi {
                                                         final String resourceIdentifier,
                                                         final String optionsParamInQuery,
                                                         final String topicParamInQuery,
+                                                        final String moduleSetTagParamInQuery,
                                                         final DataAccessRequest dataAccessRequest) {
+        if (moduleSetTagParamInQuery != null) {
+            log.info("moduleSetTag logged as {}", moduleSetTagParamInQuery);
+        }
         if (DatastoreType.PASSTHROUGH_OPERATIONAL == DatastoreType.fromDatastoreName(datastoreName)) {
             return dataAccessPassthroughOperational(resourceIdentifier, cmHandle, dataAccessRequest,
                     optionsParamInQuery, topicParamInQuery);
@@ -152,6 +156,7 @@ public class DmiRestController implements DmiPluginApi, DmiPluginInternalApi {
                                                                    final DataAccessRequest dataAccessRequest,
                                                                    final String optionsParamInQuery,
                                                                    final String topicParamInQuery) {
+
         if (isReadOperation(dataAccessRequest)) {
             if (hasTopic(topicParamInQuery)) {
                 return handleAsyncRequest(resourceIdentifier, cmHandle, dataAccessRequest, optionsParamInQuery,
@@ -170,6 +175,8 @@ public class DmiRestController implements DmiPluginApi, DmiPluginInternalApi {
                                                                final DataAccessRequest dataAccessRequest,
                                                                final String optionsParamInQuery,
                                                                final String topicParamInQuery) {
+
+
         if (hasTopic(topicParamInQuery)) {
             asyncTaskExecutor.executeAsyncTask(() ->
                     getSdncResponseForPassThroughRunning(
