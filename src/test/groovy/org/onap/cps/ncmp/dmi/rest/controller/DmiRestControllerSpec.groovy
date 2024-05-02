@@ -21,6 +21,10 @@
 
 package org.onap.cps.ncmp.dmi.rest.controller
 
+import ch.qos.logback.classic.Level
+import ch.qos.logback.classic.Logger
+import ch.qos.logback.classic.spi.ILoggingEvent
+import ch.qos.logback.core.read.ListAppender
 import org.onap.cps.ncmp.dmi.TestUtils
 import org.onap.cps.ncmp.dmi.config.WebSecurityConfig
 import org.onap.cps.ncmp.dmi.exception.DmiException
@@ -34,6 +38,7 @@ import org.onap.cps.ncmp.dmi.notifications.async.AsyncTaskExecutor
 import org.onap.cps.ncmp.dmi.notifications.async.DmiAsyncRequestResponseEventProducer
 import org.onap.cps.ncmp.dmi.service.DmiService
 import org.onap.cps.ncmp.dmi.service.model.ModuleReference
+import org.slf4j.LoggerFactory
 import org.spockframework.spring.SpringBean
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.beans.factory.annotation.Value
@@ -74,6 +79,17 @@ class DmiRestControllerSpec extends Specification {
 
     @SpringBean
     AsyncTaskExecutor asyncTaskExecutor = new AsyncTaskExecutor(cpsAsyncRequestResponseEventProducer)
+
+    def logger = Spy(ListAppender<ILoggingEvent>)
+
+    void setup() {
+        ((Logger) LoggerFactory.getLogger(DmiRestController.class)).addAppender(logger)
+        logger.start()
+    }
+
+    void cleanup() {
+        ((Logger) LoggerFactory.getLogger(DmiRestController.class)).detachAndStopAllAppenders()
+    }
 
     @Value('${rest.api.dmi-base-path}/v1')
     def basePathV1
@@ -302,6 +318,20 @@ class DmiRestControllerSpec extends Specification {
             resourceIdentifier << ['passthrough-operational', 'passthrough-running']
     }
 
+    def 'PassThrough logs module set tag'(){
+        given: 'Passthrough read URL and request data with a module set tag (parameter)'
+            def readPassThroughUrl ="${basePathV1}/ch/some-cmHandle/data/ds/ncmp-datastore:" +
+                'passthrough-running?resourceIdentifier=some-resourceIdentifier&moduleSetTag=module-set-tag1'
+            def jsonData = TestUtils.getResourceFileContent('readData.json')
+        when: 'the request is posted'
+            mvc.perform(
+                post(readPassThroughUrl).contentType(MediaType.APPLICATION_JSON).content(jsonData))
+        then: 'response status is OK'
+            def loggingEvent = getLoggingEvent()
+            assert loggingEvent.level == Level.INFO
+            assert loggingEvent.formattedMessage.contains('Module set tag received and logged: module-set-tag1')
+    }
+
     def 'Get resource data for pass-through running with #scenario value in resource identifier param.'() {
         given: 'Get resource data url'
             def getResourceDataForCmHandleUrl = "${basePathV1}/ch/some-cmHandle/data/ds/ncmp-datastore:passthrough-running" +
@@ -342,5 +372,9 @@ class DmiRestControllerSpec extends Specification {
             ).andReturn().response
         then: 'the resource data operation endpoint returns the not implemented response'
             assert response.status == 501
+    }
+
+    def getLoggingEvent() {
+        return logger.list[0]
     }
 }
