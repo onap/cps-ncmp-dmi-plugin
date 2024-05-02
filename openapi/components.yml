@@ -279,6 +279,18 @@ components:
         sample1:
           value: my-topic-name
 
+    moduleSetTagParamInQuery:
+      name: moduleSetTag
+      in: query
+      description: moduleSetTag passed from client(NCMP).
+      required: false
+      schema:
+        type: string
+      allowReserved: true
+      examples:
+        sample1:
+          value: tag1
+
     requiredTopicParamInQuery:
       name: topic
       in: query
