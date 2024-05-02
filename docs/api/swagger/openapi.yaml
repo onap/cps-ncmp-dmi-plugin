@@ -209,6 +209,16 @@ paths:
           required: false
           schema:
             type: string
+        - allowReserved: true
+          description: Module set tag of the given cm handle.
+          examples:
+            sample1:
+              value: module-set-tag1
+          in: query
+          name: moduleSetTag
+          required: false
+          schema:
+            type: string
       requestBody:
         content:
           application/json:
@@ -379,6 +389,17 @@ components:
       required: false
       schema:
         type: string
+    moduleSetTagParamInQuery:
+      name: moduleSetTag
+      in: query
+      description: moduleSetTag passed from client(NCMP).
+      required: false
+      schema:
+        type: string
+      allowReserved: true
+      examples:
+        sample1:
+          value: tag1
     requiredTopicParamInQuery:
       allowReserved: true
       description: mandatory topic name passed from client(NCMP).
