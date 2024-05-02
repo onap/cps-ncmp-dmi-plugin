@@ -339,6 +339,20 @@ class DmiRestControllerSpec extends Specification {
             resourceIdentifier << ['passthrough-operational', 'passthrough-running']
     }
 
+    def 'PassThrough logs module set tag'(){
+        given: 'Passthrough read URL and request data with a module set tag (parameter)'
+            def readPassThroughUrl ="${basePathV1}/ch/some-cmHandle/data/ds/ncmp-datastore:" +
+                'passthrough-running?resourceIdentifier=some-resourceIdentifier&moduleSetTag=module-set-tag1'
+            def jsonData = TestUtils.getResourceFileContent('readData.json')
+        when: 'the request is posted'
+            mvc.perform(
+                post(readPassThroughUrl).contentType(MediaType.APPLICATION_JSON).content(jsonData))
+        then: 'response status is OK'
+            def loggingEvent = getLoggingEvent()
+            assert loggingEvent.level == Level.INFO
+            assert loggingEvent.formattedMessage.contains('Module set tag received and logged: module-set-tag1')
+    }
+
     def 'Get resource data for pass-through running with #scenario value in resource identifier param.'() {
         given: 'Get resource data url'
             def getResourceDataForCmHandleUrl = "${basePathV1}/ch/some-cmHandle/data/ds/ncmp-datastore:passthrough-running" +
