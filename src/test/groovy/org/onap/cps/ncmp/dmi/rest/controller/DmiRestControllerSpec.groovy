@@ -290,7 +290,7 @@ class DmiRestControllerSpec extends Specification {
         given: 'Passthrough read URL and request data  with a topic (parameter)'
             def readPassThroughUrl ="${basePathV1}/ch/some-cmHandle/data/ds/ncmp-datastore:" +
                     resourceIdentifier +
-                    '?resourceIdentifier=some-resourceIdentifier&topic=test-topic'
+                    '?resourceIdentifier=some-resourceIdentifier&topic=test-topic&moduleSetTag=tag1'
             def jsonData = TestUtils.getResourceFileContent('readData.json')
         when: 'the request is posted'
             def response = mvc.perform(

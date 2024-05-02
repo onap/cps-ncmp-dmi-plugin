@@ -292,6 +292,18 @@ components:
           value:
             topic: my-topic-name
 
+    moduleSetTagParamInQuery:
+      name: moduleSetTag
+      in: query
+      description: Module set tag of the given cm handle.
+      required: false
+      schema:
+        type: string
+      allowReserved: true
+      examples:
+        sample1:
+          value: tag1
+
     requiredRequestIdParamInQuery:
       name: requestId
       in: query
