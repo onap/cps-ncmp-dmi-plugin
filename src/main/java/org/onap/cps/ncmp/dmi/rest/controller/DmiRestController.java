@@ -80,16 +80,13 @@ public class DmiRestController implements DmiPluginApi, DmiPluginInternalApi {
         return ResponseEntity.ok(moduleSet);
     }
 
-
     @Override
     public ResponseEntity<YangResources> retrieveModuleResources(
         final String cmHandle,
         final ModuleResourcesReadRequest moduleResourcesReadRequest) {
         final List<ModuleReference> moduleReferences = convertRestObjectToJavaApiObject(moduleResourcesReadRequest);
         final YangResources yangResources = dmiService.getModuleResources(cmHandle, moduleReferences);
-        if (moduleResourcesReadRequest.getModuleSetTag() != null) {
-            log.info("Module set tag received: {}", moduleResourcesReadRequest.getModuleSetTag());
-        }
+        log.info("Module set tag received: {}", moduleResourcesReadRequest.getModuleSetTag());
         return new ResponseEntity<>(yangResources, HttpStatus.OK);
     }
 
@@ -141,7 +138,10 @@ public class DmiRestController implements DmiPluginApi, DmiPluginInternalApi {
                                                         final String resourceIdentifier,
                                                         final String optionsParamInQuery,
                                                         final String topicParamInQuery,
+                                                        final String moduleSetTagParamInQuery,
                                                         final DataAccessRequest dataAccessRequest) {
+
+        log.info("Module set tag received: {}", moduleSetTagParamInQuery);
         if (DatastoreType.PASSTHROUGH_OPERATIONAL == DatastoreType.fromDatastoreName(datastoreName)) {
             return dataAccessPassthroughOperational(resourceIdentifier, cmHandle, dataAccessRequest,
                     optionsParamInQuery, topicParamInQuery);
