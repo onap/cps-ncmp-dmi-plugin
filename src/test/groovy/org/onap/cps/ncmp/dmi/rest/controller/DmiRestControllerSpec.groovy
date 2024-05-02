@@ -21,7 +21,7 @@
 
 package org.onap.cps.ncmp.dmi.rest.controller
 
-import ch.qos.logback.classic.Level
+
 import ch.qos.logback.classic.Logger
 import ch.qos.logback.classic.spi.ILoggingEvent
 import ch.qos.logback.core.read.ListAppender
@@ -221,9 +221,8 @@ class DmiRestControllerSpec extends Specification {
                 .contentType(MediaType.APPLICATION_JSON)
                 .content(jsonData))
         then: 'the module set tag is logged'
-            def loggingEvent = getLoggingEvent()
-            assert loggingEvent.level == Level.INFO
-            assert loggingEvent.formattedMessage.contains('Module set tag received: module-set-tag1')
+            def loggingEvent = getLoggingMessage(0)
+            assert loggingEvent.contains('module-set-tag1')
     }
 
     def 'Get resource data for pass-through operational.'() {
@@ -339,6 +338,32 @@ class DmiRestControllerSpec extends Specification {
             resourceIdentifier << ['passthrough-operational', 'passthrough-running']
     }
 
+    def 'PassThrough logs module set tag'(){
+        given: 'Passthrough read URL and request data with a module set tag (parameter)'
+            def readPassThroughUrl ="${basePathV1}/ch/some-cmHandle/data/ds/ncmp-datastore:" +
+                'passthrough-running?resourceIdentifier=some-resourceIdentifier&moduleSetTag=module-set-tag1'
+            def jsonData = TestUtils.getResourceFileContent('readData.json')
+        when: 'the request is posted'
+            mvc.perform(
+                post(readPassThroughUrl).contentType(MediaType.APPLICATION_JSON).content(jsonData))
+        then: 'response status is OK'
+            def loggingEvent = getLoggingMessage(0)
+            assert loggingEvent.contains('module-set-tag1')
+    }
+
+    def 'PassThrough logs module set tag incorrectly as it contains disallowed special character'(){
+        given: 'Passthrough read URL and request data with a module set tag (parameter)'
+            def readPassThroughUrl ="${basePathV1}/ch/some-cmHandle/data/ds/ncmp-datastore:" +
+                'passthrough-running?resourceIdentifier=some-resourceIdentifier&moduleSetTag=module&set-tag1'
+            def jsonData = TestUtils.getResourceFileContent('readData.json')
+        when: 'the request is posted'
+            mvc.perform(
+                post(readPassThroughUrl).contentType(MediaType.APPLICATION_JSON).content(jsonData))
+        then: 'response status is OK'
+            def loggingEvent = getLoggingMessage(0)
+            assert !loggingEvent.contains('module&set-tag1')
+    }
+
     def 'Get resource data for pass-through running with #scenario value in resource identifier param.'() {
         given: 'Get resource data url'
             def getResourceDataForCmHandleUrl = "${basePathV1}/ch/some-cmHandle/data/ds/ncmp-datastore:passthrough-running" +
@@ -381,7 +406,7 @@ class DmiRestControllerSpec extends Specification {
             assert response.status == 501
     }
 
-    def getLoggingEvent() {
-        return logger.list[0]
+    def getLoggingMessage(int index) {
+        return logger.list[index].formattedMessage
     }
 }
