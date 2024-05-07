@@ -23,6 +23,7 @@ package org.onap.cps.ncmp.dmi.notifications.async
 import com.fasterxml.jackson.databind.ObjectMapper
 import org.onap.cps.ncmp.dmi.api.kafka.MessagingBaseSpec
 import org.onap.cps.ncmp.dmi.exception.HttpClientRequestException
+import org.onap.cps.ncmp.dmi.model.DataAccessRequest
 import org.onap.cps.ncmp.event.model.DmiAsyncRequestResponseEvent
 import org.spockframework.spring.SpringBean
 import org.springframework.boot.test.context.SpringBootTest
@@ -31,6 +32,7 @@ import org.springframework.test.annotation.DirtiesContext
 import org.testcontainers.spock.Testcontainers
 
 import java.time.Duration
+import java.util.function.Supplier
 
 @SpringBootTest(classes = [AsyncTaskExecutor, DmiAsyncRequestResponseEventProducer])
 @Testcontainers
@@ -42,6 +44,7 @@ class AsyncTaskExecutorIntegrationSpec extends MessagingBaseSpec {
         new DmiAsyncRequestResponseEventProducer(kafkaTemplate)
 
     def spiedObjectMapper = Spy(ObjectMapper)
+    def mockSupplier = Mock(Supplier)
 
     def objectUnderTest = new AsyncTaskExecutor(cpsAsyncRequestResponseEventProducer)
 
@@ -81,6 +84,27 @@ class AsyncTaskExecutorIntegrationSpec extends MessagingBaseSpec {
         and: 'the status & code matches expected'
             assert event.getEventContent().getResponseStatus() == 'Internal Server Error'
             assert event.getEventContent().getResponseCode() == '500'
+    }
+
+    def 'Execute an Async Task using asyncTaskExecutor and throw an error'() {
+        given: 'A task to be executed'
+            def requestId = '123456'
+            def operationEnum = DataAccessRequest.OperationEnum.CREATE
+            def timeOut = 100
+        when: 'AsyncTask has been executed'
+            objectUnderTest.executeAsyncTask(taskSupplierForFailingTask(), TEST_TOPIC, requestId, operationEnum, timeOut)
+            def records = kafkaConsumer.poll(Duration.ofMillis(1500))
+        then: 'the record received is the event sent'
+            def record = records.iterator().next()
+            DmiAsyncRequestResponseEvent event  = spiedObjectMapper.readValue(record.value(), DmiAsyncRequestResponseEvent)
+        and: 'the status & code matches expected'
+            assert event.getEventContent().getResponseStatus() == 'Internal Server Error'
+            assert event.getEventContent().getResponseCode() == '500'
+
+    }
+
+    def taskSupplierForFailingTask() {
+        return () -> { throw new RuntimeException('original exception message') }
     }
 
 }

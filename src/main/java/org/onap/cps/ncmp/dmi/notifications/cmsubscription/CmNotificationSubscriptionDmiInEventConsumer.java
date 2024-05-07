@@ -91,7 +91,7 @@ public class CmNotificationSubscriptionDmiInEventConsumer {
         if (cmNotificationSubscriptionStatus.equals(CmNotificationSubscriptionStatus.ACCEPTED)) {
             cmNotificationSubscriptionDmiOutEventData.setStatusCode("1");
             cmNotificationSubscriptionDmiOutEventData.setStatusMessage("ACCEPTED");
-        } else if (cmNotificationSubscriptionStatus.equals(CmNotificationSubscriptionStatus.REJECTED)) {
+        } else {
             cmNotificationSubscriptionDmiOutEventData.setStatusCode("2");
             cmNotificationSubscriptionDmiOutEventData.setStatusMessage("REJECTED");
         }
