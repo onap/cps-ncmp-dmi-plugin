@@ -73,23 +73,28 @@ class CmNotificationSubscriptionDmiInEventConsumerSpec extends MessagingBaseSpec
             objectUnderTest.dmiName = 'test-ncmp-dmi'
             objectUnderTest.cmNotificationSubscriptionResponseTopic = testTopic
             def correlationId = 'test-subscriptionId#test-ncmp-dmi'
-            def cmSubscriptionDmiOutEventData = new Data(statusCode: '1', statusMessage: 'ACCEPTED')
+            def cmSubscriptionDmiOutEventData = new Data(statusCode: subscriptionStatusCode, statusMessage: subscriptionStatusMessage)
             def subscriptionEventResponse =
                     new CmNotificationSubscriptionDmiOutEvent().withData(cmSubscriptionDmiOutEventData)
         and: 'consumer has a subscription'
             kafkaConsumer.subscribe([testTopic] as List<String>)
         when: 'an event is published'
             def eventKey = UUID.randomUUID().toString()
-            objectUnderTest.createAndSendCmNotificationSubscriptionDmiOutEvent(eventKey, "subscriptionCreatedStatus", correlationId, CmNotificationSubscriptionStatus.ACCEPTED)
+            objectUnderTest.createAndSendCmNotificationSubscriptionDmiOutEvent(eventKey, "subscriptionCreatedStatus", correlationId, subscriptionAcceptanceType)
         and: 'topic is polled'
             def records = kafkaConsumer.poll(Duration.ofMillis(1500))
-        then: 'poll returns one record'
+        then: 'poll returns one record and close kafkaConsumer'
             assert records.size() == 1
             def record = records.iterator().next()
+            kafkaConsumer.close()
         and: 'the record value matches the expected event value'
             def expectedValue = objectMapper.writeValueAsString(subscriptionEventResponse)
             assert expectedValue == record.value
             assert eventKey == record.key
+        where: 'given #scenario'
+            scenario                   | subscriptionAcceptanceType                 | subscriptionStatusCode | subscriptionStatusMessage
+            'Subscription is Accepted' | CmNotificationSubscriptionStatus.ACCEPTED  | '1'                    | 'ACCEPTED'
+            'Subscription is Rejected' | CmNotificationSubscriptionStatus.REJECTED  | '2'                    | 'REJECTED'
     }
 
     def 'Consume valid message.'() {
