@@ -23,6 +23,7 @@ package org.onap.cps.ncmp.dmi.rest.controller;
 
 import static org.onap.cps.ncmp.dmi.model.DataAccessRequest.OperationEnum;
 
+import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import java.util.HashMap;
@@ -30,6 +31,7 @@ import java.util.List;
 import java.util.Map;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.onap.cps.ncmp.dmi.exception.DmiException;
 import org.onap.cps.ncmp.dmi.model.CmHandles;
 import org.onap.cps.ncmp.dmi.model.DataAccessRequest;
 import org.onap.cps.ncmp.dmi.model.ModuleReferencesRequest;
@@ -116,6 +118,20 @@ public class DmiRestController implements DmiPluginApi, DmiPluginInternalApi {
     @Override
     public ResponseEntity<Void> getResourceDataForCmHandleDataOperation(final String topic, final String requestId,
                                 final ResourceDataOperationRequests resourceDataOperationRequests) {
+        log.info("Request Details (for testing purposes)");
+        log.info("Request Id: {}", requestId);
+        log.info("Topic: {}", topic);
+
+        String resourceDataOperationRequestsJson = "";
+        try {
+            resourceDataOperationRequestsJson = objectMapper.writeValueAsString(resourceDataOperationRequests);
+        } catch (final JsonProcessingException e) {
+            log.error("Parsing error occurred while converting Resource DataOperation Requests to JSON {}",
+                    resourceDataOperationRequests);
+            throw new DmiException("Internal Server Error.",
+                    "Parsing error occurred while converting given resource Data Operation Requests object to JSON ");
+        }
+        log.info("Operation Request details {}", resourceDataOperationRequestsJson);
         return new ResponseEntity<>(HttpStatus.NOT_IMPLEMENTED);
     }
 

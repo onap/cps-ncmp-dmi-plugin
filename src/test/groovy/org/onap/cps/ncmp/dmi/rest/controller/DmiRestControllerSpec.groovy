@@ -384,13 +384,20 @@ class DmiRestControllerSpec extends Specification {
             def resourceDataUrl = "$basePathV1/data?topic=client-topic-name&requestId=some-requestId"
         and: 'list of operation details are received into request body'
             def dataOperationRequestBody = '[{"operation": "read", "operationId": "14", "datastore": "ncmp-datastore:passthrough-operational", "options": "some options", "resourceIdentifier": "some resourceIdentifier",' +
-                '    "cmhandles": [ {"id": "cmHanlde123", "cmHandleProperties": { "myProp`": "some value", "otherProp": "other value"}}]}]'
+                '"cmHandles": [ {"id": "cmHandle123", "moduleSetTag": "module-set-tag1", "cmHandleProperties": { "myProp`": "some value", "otherProp": "other value"}}]}]'
         when: 'the dmi resource data for dataOperation api is called.'
             def response = mvc.perform(
                 post(resourceDataUrl).contentType(MediaType.APPLICATION_JSON).content(dataOperationRequestBody)
             ).andReturn().response
         then: 'the resource data operation endpoint returns the not implemented response'
             assert response.status == 501
+        and: 'the job details are correctly received (logged)'
+            assert getLoggingMessage(1).contains('some-requestId')
+            assert getLoggingMessage(2).contains('client-topic-name')
+            assert getLoggingMessage(3).contains('some resourceIdentifier')
+            assert getLoggingMessage(3).contains('module-set-tag1')
+        and: 'the operation Id is correctly received (logged)'
+            assert getLoggingMessage(3).contains('14')
     }
 
     def getLoggingMessage(int index) {
