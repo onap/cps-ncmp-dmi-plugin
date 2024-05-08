@@ -76,27 +76,31 @@ components:
           cmHandles:
             type: array
             items:
-              $ref: '#/components/schemas/cmHandle'
+              $ref: '#/components/schemas/dmiOperationCmHandle'
         required:
           - operation
           - operationId
           - datastore
           - cmHandles
 
-    cmHandle:
+    dmiOperationCmHandle:
       type: object
-      title: 'cmHandle'
+      title: 'CmHandle with properties for DMI'
       properties:
         id:
           type: string
         cmHandleProperties:
           additionalProperties:
             type: string
+        moduleSetTag:
+          type: string
+          example: module-set-tag1
       example:
         id: cmHandle123
         cmHandleProperties:
           myProp: some value
           otherProp: other value
+          moduleSetTag: module-set-tag1
 
     ModuleResourcesReadRequest:
       type: object
