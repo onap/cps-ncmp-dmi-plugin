@@ -73,6 +73,9 @@ components:
           resourceIdentifier:
             type: string
             example: 'some resource identifier'
+          moduleSetTag:
+            type: string
+            example: 'tag1'
           cmHandles:
             type: array
             items:
