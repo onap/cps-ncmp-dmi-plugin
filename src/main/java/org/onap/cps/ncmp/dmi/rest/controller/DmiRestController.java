@@ -30,6 +30,7 @@ import java.util.List;
 import java.util.Map;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.onap.cps.ncmp.dmi.model.CmHandle;
 import org.onap.cps.ncmp.dmi.model.CmHandles;
 import org.onap.cps.ncmp.dmi.model.DataAccessRequest;
 import org.onap.cps.ncmp.dmi.model.ModuleReferencesRequest;
@@ -119,6 +120,17 @@ public class DmiRestController implements DmiPluginApi, DmiPluginInternalApi {
     @Override
     public ResponseEntity<Void> getResourceDataForCmHandleDataOperation(final String topic, final String requestId,
                                 final ResourceDataOperationRequests resourceDataOperationRequests) {
+        log.info("Request Details (for testing purposes)");
+        log.info("Request Id: {}", requestId);
+        log.info("Topic: {}", topic);
+        log.info("Details of the first Operation");
+        log.info("Resource Identifier: {}", resourceDataOperationRequests.get(0).getResourceIdentifier());
+        final CmHandle firstCmHandle = resourceDataOperationRequests.get(0).getCmHandles().get(0);
+        log.info("Module Set Tag received: {}", firstCmHandle.getModuleSetTag());
+        log.info("Operation Id: {}", resourceDataOperationRequests.get(0).getOperationId());
+        log.info("Cm Handles: {}", resourceDataOperationRequests.get(0).getCmHandles());
+        log.info("Options: {}", resourceDataOperationRequests.get(0).getOptions());
+
         return new ResponseEntity<>(HttpStatus.NOT_IMPLEMENTED);
     }
 
