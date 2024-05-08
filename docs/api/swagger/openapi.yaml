@@ -665,6 +665,7 @@ components:
     DataOperationRequest:
       example:
         resourceIdentifier: some resource identifier
+        moduleSetTag: tag1
         datastore: ncmp-datastore:passthrough-operational
         options: some option
         operationId: "12"
