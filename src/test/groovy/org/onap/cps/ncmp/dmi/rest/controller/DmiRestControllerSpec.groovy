@@ -221,9 +221,8 @@ class DmiRestControllerSpec extends Specification {
                 .contentType(MediaType.APPLICATION_JSON)
                 .content(jsonData))
         then: 'the module set tag is logged'
-            def loggingEvent = getLoggingEvent()
-            assert loggingEvent.level == Level.INFO
-            assert loggingEvent.formattedMessage.contains('Module set tag received: module-set-tag1')
+            def loggingEvent = getLoggingMessage(0)
+            assert loggingEvent.contains('Module set tag received: module-set-tag1')
     }
 
     def 'Get resource data for pass-through operational.'() {
@@ -372,16 +371,22 @@ class DmiRestControllerSpec extends Specification {
             def resourceDataUrl = "$basePathV1/data?topic=client-topic-name&requestId=some-requestId"
         and: 'list of operation details are received into request body'
             def dataOperationRequestBody = '[{"operation": "read", "operationId": "14", "datastore": "ncmp-datastore:passthrough-operational", "options": "some options", "resourceIdentifier": "some resourceIdentifier",' +
-                '    "cmhandles": [ {"id": "cmHanlde123", "cmHandleProperties": { "myProp`": "some value", "otherProp": "other value"}}]}]'
+                '"cmHandles": [ {"id": "cmHandle123", "moduleSetTag": "module-set-tag1", "cmHandleProperties": { "myProp`": "some value", "otherProp": "other value"}}]}]'
         when: 'the dmi resource data for dataOperation api is called.'
             def response = mvc.perform(
                 post(resourceDataUrl).contentType(MediaType.APPLICATION_JSON).content(dataOperationRequestBody)
             ).andReturn().response
         then: 'the resource data operation endpoint returns the not implemented response'
             assert response.status == 501
+        and:
+            assert getLoggingMessage(1).contains('some-requestId')
+            assert getLoggingMessage(2).contains('client-topic-name')
+            assert getLoggingMessage(4).contains('some resourceIdentifier')
+            assert getLoggingMessage(5).contains('module-set-tag1')
+            assert getLoggingMessage(6).contains('14')
     }
 
-    def getLoggingEvent() {
-        return logger.list[0]
+    def getLoggingMessage(int index) {
+        return logger.list[index].formattedMessage
     }
 }
