@@ -3,6 +3,69 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "0331cf37_33de68f0",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2024-05-13T10:57:17Z",
+      "side": 1,
+      "message": "add DMI",
+      "range": {
+        "startLine": 7,
+        "startChar": 4,
+        "endLine": 7,
+        "endChar": 37
+      },
+      "revId": "02d4e054ca6bf42c3dc6961308539eec19e43074",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "cbba1fdb_cfec0d49",
+        "filename": "docs/api/swagger/openapi.yaml",
+        "patchSetId": 3
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2024-05-13T10:57:17Z",
+      "side": 1,
+      "message": "Genreated file, ignore my comments",
+      "revId": "02d4e054ca6bf42c3dc6961308539eec19e43074",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "67311b28_e126b42c",
+        "filename": "openapi/components.yml",
+        "patchSetId": 3
+      },
+      "lineNbr": 282,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2024-05-13T10:57:17Z",
+      "side": 1,
+      "message": "move to below requiredTopicParamInQuery",
+      "range": {
+        "startLine": 282,
+        "startChar": 4,
+        "endLine": 282,
+        "endChar": 29
+      },
+      "revId": "02d4e054ca6bf42c3dc6961308539eec19e43074",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "5b78a214_0728d50a",
         "filename": "openapi/components.yml",
         "patchSetId": 3
@@ -26,6 +89,53 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "611532e7_5b00bbf2",
+        "filename": "openapi/components.yml",
+        "patchSetId": 3
+      },
+      "lineNbr": 285,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2024-05-13T10:57:17Z",
+      "side": 1,
+      "message": "this is NOT passed form the client (unlike the topic), also use English not java variable names\nsuggestion: \u0027module set tag of the given cm handle\u0027",
+      "parentUuid": "5b78a214_0728d50a",
+      "range": {
+        "startLine": 285,
+        "startChar": 19,
+        "endLine": 285,
+        "endChar": 31
+      },
+      "revId": "02d4e054ca6bf42c3dc6961308539eec19e43074",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "00285e9a_6d1ef1c4",
+        "filename": "src/main/java/org/onap/cps/ncmp/dmi/rest/controller/DmiRestController.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 141,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2024-05-13T10:57:17Z",
+      "side": 1,
+      "message": "add a logger and log something like\nlogger.trace(\"Module Set Tag %s (not used by ONAP plugin)\", moduleSetTagParamInQuery)",
+      "range": {
+        "startLine": 141,
+        "startChar": 69,
+        "endLine": 141,
+        "endChar": 93
+      },
+      "revId": "02d4e054ca6bf42c3dc6961308539eec19e43074",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "7cf3b23e_62c711a5",
         "filename": "src/test/groovy/org/onap/cps/ncmp/dmi/rest/controller/DmiRestControllerSpec.groovy",
         "patchSetId": 3
@@ -37,6 +147,30 @@
       "writtenOn": "2024-05-13T08:15:54Z",
       "side": 1,
       "message": "NB: is it compulsory, I assume not.\nSince this test does not ASSERT it. it should not be added in teh UTL so.\nIS tregher an easy way to assert it being passed on in this or anotehr test?!",
+      "range": {
+        "startLine": 293,
+        "startChar": 81,
+        "endLine": 293,
+        "endChar": 99
+      },
+      "revId": "02d4e054ca6bf42c3dc6961308539eec19e43074",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "b3e644d0_e4d7c6c3",
+        "filename": "src/test/groovy/org/onap/cps/ncmp/dmi/rest/controller/DmiRestControllerSpec.groovy",
+        "patchSetId": 3
+      },
+      "lineNbr": 293,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2024-05-13T10:57:17Z",
+      "side": 1,
+      "message": "Add NEW test to verify module set tag is logged",
+      "parentUuid": "7cf3b23e_62c711a5",
       "range": {
         "startLine": 293,
         "startChar": 81,
