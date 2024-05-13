@@ -16,6 +16,23 @@
       "message": "looks good to me!",
       "revId": "8f04e23f2445fd0b94796df3c246d3333d24b893",
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "7fbfb97a_5ceb8c9f",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2024-05-13T11:37:18Z",
+      "side": 1,
+      "message": "add test! there seems to be only one extsting test that expect a 501 response?! See\norg.onap.cps.ncmp.dmi.rest.controller.DmiRestControllerSpec#Execute a data operation for a list of operations.\nLets meet about this oen too with SOurabh and discuss what needs to be done in more detail",
+      "revId": "8f04e23f2445fd0b94796df3c246d3333d24b893",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
     }
   ]
 }
