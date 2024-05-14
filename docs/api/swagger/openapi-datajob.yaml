@@ -5,40 +5,69 @@ info:
   title: NCMP Data Subjob API
   version: 1.0.0
 servers:
-  - url: /dmi
+- url: /dmi
 tags:
-  - description: DMI plugin rest apis
-    name: dmi-datajob
+- description: DMI plugin rest apis
+  name: dmi-datajob
 paths:
-  /v1/dataJob/{requestId}:
+  /dmi/v1/readJob/{requestId}:
     post:
       description: Create a read request
-      operationId: createReadRequest
+      operationId: readDataJob
       parameters:
-        - description: Identifier for the overall Datajob
-          explode: false
-          in: path
-          name: requestId
-          required: true
-          schema:
-            example: some-identifier
-            type: string
-          style: simple
+      - description: Identifier for the overall Datajob
+        explode: false
+        in: path
+        name: requestId
+        required: true
+        schema:
+          example: some-identifier
+          type: string
+        style: simple
       requestBody:
         content:
           application/3gpp-json-patch+json:
             schema:
-              $ref: '#/components/schemas/SubjobRequest'
+              $ref: '#/components/schemas/SubjobReadRequest'
         description: Operation body
       responses:
         "200":
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/createReadRequest_200_response'
+                $ref: '#/components/schemas/readDataJob_200_response'
           description: Response for subjob
       tags:
-        - dmi-datajob
+      - dmi-datajob
+  /dmi/v1/writeJob/{requestId}:
+    post:
+      description: Create a write request
+      operationId: writeDataJob
+      parameters:
+      - description: Identifier for the overall Datajob
+        explode: false
+        in: path
+        name: requestId
+        required: true
+        schema:
+          example: some-identifier
+          type: string
+        style: simple
+      requestBody:
+        content:
+          application/3gpp-json-patch+json:
+            schema:
+              $ref: '#/components/schemas/SubjobWriteRequest'
+        description: Operation body
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/readDataJob_200_response'
+          description: Response for subjob
+      tags:
+      - dmi-datajob
 components:
   parameters:
     requestIdInPath:
@@ -52,7 +81,7 @@ components:
         type: string
       style: simple
   schemas:
-    SubjobRequest:
+    SubjobReadRequest:
       properties:
         dataAcceptType:
           description: Defines the data response accept type
@@ -68,33 +97,46 @@ components:
           example: my-data-producer-identifier
           type: string
         data:
-          $ref: '#/components/schemas/SubjobRequest_data'
+          example:
+            op: read
+            operationId: 1
+            path: SubNetwork=Europe/SubNetwork=Ireland/MeContext=NR03gNodeBRadio00003/ManagedElement=NR03gNodeBRadio00003/GNBCUCPFunction=2
+            attributes: userLabel
+            scope:
+              scopeTyp: BASE_ONLY
+          items:
+            $ref: '#/components/schemas/SubjobReadRequest_data_inner'
+          type: array
       required:
-        - data
-        - dataProducerId
+      - data
+      - dataProducerId
       type: object
-    ReadOperation:
-      example:
-        op: read
-        operationId: 1
-        path: SubNetwork=Europe/SubNetwork=Ireland/MeContext=NR03gNodeBRadio00003/ManagedElement=NR03gNodeBRadio00003/GNBCUCPFunction=2
-        attributes: userLabel
-        scope:
-          scopeTyp: BASE_ONLY
-      items:
-        $ref: '#/components/schemas/ReadOperation_inner'
-      type: array
-    WriteOperation:
-      example:
-        op: add
-        path: SubNetwork=Europe/SubNetwork=Ireland/MeContext=NR03gNodeBRadio00003/ManagedElement=NR03gNodeBRadio00003/GNBCUCPFunction=1/EUtraNetwork=1/EUtranFrequency=12
-        value:
-          id: 12
-          attributes:
-            userLabel: label12
-      items:
-        $ref: '#/components/schemas/WriteOperation_inner'
-      type: array
+    SubjobWriteRequest:
+      properties:
+        dataAcceptType:
+          example: application/vnd.3gpp.object-tree-hierarchical+json
+          type: string
+        dataContentType:
+          example: application/3gpp-json-patch+json
+          type: string
+        dataProducerId:
+          example: my-data-producer-identifier
+          type: string
+        data:
+          example:
+            op: add
+            path: SubNetwork=Europe/SubNetwork=Ireland/MeContext=NR03gNodeBRadio00003/ManagedElement=NR03gNodeBRadio00003/GNBCUCPFunction=1/EUtraNetwork=1/EUtranFrequency=12
+            value:
+              id: 12
+              attributes:
+                userLabel: label12
+          items:
+            $ref: '#/components/schemas/SubjobWriteRequest_data_inner'
+          type: array
+      required:
+      - data
+      - dataProducerId
+      type: object
     CmHandleProperties:
       description: Private properties of the cm handle for the given path
       type: object
@@ -119,7 +161,7 @@ components:
       type: object
     Object:
       type: object
-    createReadRequest_200_response:
+    readDataJob_200_response:
       example:
         dataProducerJobId: dataProducerJobId
       properties:
@@ -127,72 +169,54 @@ components:
           description: The data job ID.
           type: string
       type: object
-    SubjobRequest_data:
-      oneOf:
-        - $ref: '#/components/schemas/ReadOperation'
-        - $ref: '#/components/schemas/WriteOperation'
-    ReadOperation_inner:
+    SubjobReadRequest_data_inner:
       properties:
         path:
-          description: Defines the resource on which operation is executed
           example: SubNetwork=Europe/SubNetwork=Ireland/MeContext=NR03gNodeBRadio00003/ManagedElement=NR03gNodeBRadio00003
           type: string
         op:
-          description: Describes the operation to execute
           example: read
           type: string
         operationId:
-          description: Unique identifier for the operation within the request
           example: "1"
           type: string
         attributes:
-          description: This parameter specifies the attributes of the scoped resources
-            that are returned
           items:
             example: cellId
             type: string
           type: array
         fields:
-          description: This parameter specifies the attribute fields of the scoped
-            resources that are returned
           items:
             type: string
           type: array
         filter:
-          description: This parameter is used to filter the scoped Managed Objects.
-            Only Managed Objects passing the filter criteria will be fetched
           example: NRCellDU/attributes/administrativeState==LOCKED
           type: string
         scopeType:
-          description: ScopeType selects MOs depending on relationships with Base
-            Managed Object
           example: BASE_ONLY
           type: string
         scopeLevel:
-          description: Only used when the scope type is BASE_NTH_LEVEL to specify
-            amount of levels to search
           example: 0
           type: integer
         moduleSetTag:
-          description: Module set identifier
           example: my-module-set-tag
           type: string
         cmHandleProperties:
           description: Private properties of the cm handle for the given path
           type: object
       required:
-        - op
-        - path
+      - op
+      - path
       type: object
-    WriteOperation_inner_value:
+    SubjobWriteRequest_data_inner_value:
       description: Value dependent on the op specified. Resource for an add. Object
         for a replace. ActionParameters for an action.
       oneOf:
-        - $ref: '#/components/schemas/Resource'
-        - $ref: '#/components/schemas/ActionParameters'
-        - $ref: '#/components/schemas/Object'
+      - $ref: '#/components/schemas/Resource'
+      - $ref: '#/components/schemas/ActionParameters'
+      - $ref: '#/components/schemas/Object'
       type: object
-    WriteOperation_inner:
+    SubjobWriteRequest_data_inner:
       properties:
         path:
           description: Defines the resource on which operation is executed
@@ -207,8 +231,8 @@ components:
           example: "1"
           type: string
         value:
-          $ref: '#/components/schemas/WriteOperation_inner_value'
+          $ref: '#/components/schemas/SubjobWriteRequest_data_inner_value'
       required:
-        - op
-        - path
+      - op
+      - path
       type: object
