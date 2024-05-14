@@ -24,6 +24,30 @@
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "d6b0668c_8685ca24",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 7617
+      },
+      "writtenOn": "2024-05-14T14:36:16Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "0331cf37_33de68f0",
+      "range": {
+        "startLine": 7,
+        "startChar": 4,
+        "endLine": 7,
+        "endChar": 37
+      },
+      "revId": "02d4e054ca6bf42c3dc6961308539eec19e43074",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "cbba1fdb_cfec0d49",
@@ -41,6 +65,24 @@
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "4ac2d81c_7bfaf729",
+        "filename": "docs/api/swagger/openapi.yaml",
+        "patchSetId": 3
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 7617
+      },
+      "writtenOn": "2024-05-14T14:36:16Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "cbba1fdb_cfec0d49",
+      "revId": "02d4e054ca6bf42c3dc6961308539eec19e43074",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "67311b28_e126b42c",
@@ -54,6 +96,30 @@
       "writtenOn": "2024-05-13T10:57:17Z",
       "side": 1,
       "message": "move to below requiredTopicParamInQuery",
+      "range": {
+        "startLine": 282,
+        "startChar": 4,
+        "endLine": 282,
+        "endChar": 29
+      },
+      "revId": "02d4e054ca6bf42c3dc6961308539eec19e43074",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "9ee3a93b_3e10f320",
+        "filename": "openapi/components.yml",
+        "patchSetId": 3
+      },
+      "lineNbr": 282,
+      "author": {
+        "id": 7617
+      },
+      "writtenOn": "2024-05-14T14:36:16Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "67311b28_e126b42c",
       "range": {
         "startLine": 282,
         "startChar": 4,
@@ -101,6 +167,30 @@
       "side": 1,
       "message": "this is NOT passed form the client (unlike the topic), also use English not java variable names\nsuggestion: \u0027module set tag of the given cm handle\u0027",
       "parentUuid": "5b78a214_0728d50a",
+      "range": {
+        "startLine": 285,
+        "startChar": 19,
+        "endLine": 285,
+        "endChar": 31
+      },
+      "revId": "02d4e054ca6bf42c3dc6961308539eec19e43074",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "70fc9577_be465803",
+        "filename": "openapi/components.yml",
+        "patchSetId": 3
+      },
+      "lineNbr": 285,
+      "author": {
+        "id": 7617
+      },
+      "writtenOn": "2024-05-14T14:36:16Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "611532e7_5b00bbf2",
       "range": {
         "startLine": 285,
         "startChar": 19,
