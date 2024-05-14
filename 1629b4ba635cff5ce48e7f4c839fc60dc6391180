@@ -1,0 +1,73 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "c6208ad7_0c10a93a",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 6
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2024-05-14T16:02:06Z",
+      "side": 1,
+      "message": "add module set tag to dmi (single cm handle) data request",
+      "range": {
+        "startLine": 7,
+        "startChar": 14,
+        "endLine": 7,
+        "endChar": 49
+      },
+      "revId": "1629b4ba635cff5ce48e7f4c839fc60dc6391180",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "dc1fcf8e_1680b25e",
+        "filename": "docs/api/swagger/openapi.yaml",
+        "patchSetId": 6
+      },
+      "lineNbr": 213,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2024-05-14T16:02:06Z",
+      "side": 1,
+      "message": "just NCMP",
+      "range": {
+        "startLine": 213,
+        "startChar": 48,
+        "endLine": 213,
+        "endChar": 60
+      },
+      "revId": "1629b4ba635cff5ce48e7f4c839fc60dc6391180",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "043c62b6_db3f35a1",
+        "filename": "openapi/components.yml",
+        "patchSetId": 6
+      },
+      "lineNbr": 302,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2024-05-14T16:02:06Z",
+      "side": 1,
+      "message": "NB: not sure if this is needed?",
+      "range": {
+        "startLine": 302,
+        "startChar": 6,
+        "endLine": 302,
+        "endChar": 25
+      },
+      "revId": "1629b4ba635cff5ce48e7f4c839fc60dc6391180",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    }
+  ]
+}
