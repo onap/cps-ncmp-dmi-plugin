@@ -27,10 +27,10 @@ tags:
   - description: DMI plugin rest apis
     name: dmi-datajob
 paths:
-  /v1/dataJob/{requestId}:
+  /dmi/v1/readJob/{requestId}:
     post:
       description: Create a read request
-      operationId: createReadRequest
+      operationId: readDataJob
       parameters:
         - $ref: '#/components/parameters/requestIdInPath'
       requestBody:
@@ -38,7 +38,32 @@ paths:
         content:
           application/3gpp-json-patch+json:
             schema:
-              $ref: '#/components/schemas/SubjobRequest'
+              $ref: '#/components/schemas/SubjobReadRequest'
+      tags:
+        - dmi-datajob
+      responses:
+        "200":
+          description: Response for subjob
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  dataProducerJobId:
+                    type: string
+                    description: The data job ID.
+  /dmi/v1/writeJob/{requestId}:
+    post:
+      description: Create a write request
+      operationId: writeDataJob
+      parameters:
+        - $ref: '#/components/parameters/requestIdInPath'
+      requestBody:
+        description: Operation body
+        content:
+          application/3gpp-json-patch+json:
+            schema:
+              $ref: '#/components/schemas/SubjobWriteRequest'
       tags:
         - dmi-datajob
       responses:
@@ -63,7 +88,7 @@ components:
         example: some-identifier
         type: string
   schemas:
-    SubjobRequest:
+    SubjobReadRequest:
       type: object
       required:
         - dataProducerId
@@ -82,100 +107,114 @@ components:
           example: my-data-producer-identifier
           type: string
         data:
-          oneOf:
-            - $ref: '#/components/schemas/ReadOperation'
-            - $ref: '#/components/schemas/WriteOperation'
-    ReadOperation:
-      example:
-        op: read
-        operationId: 1
-        path: SubNetwork=Europe/SubNetwork=Ireland/MeContext=NR03gNodeBRadio00003/ManagedElement=NR03gNodeBRadio00003/GNBCUCPFunction=2
-        attributes: userLabel
-        scope:
-          scopeTyp: BASE_ONLY
-      type: array
-      items:
-        type: object
-        required:
-          - path
-          - op
-        properties:
-          path:
-            description: Defines the resource on which operation is executed
-            example: SubNetwork=Europe/SubNetwork=Ireland/MeContext=NR03gNodeBRadio00003/ManagedElement=NR03gNodeBRadio00003
-            type: string
-          op:
-            description: Describes the operation to execute
-            example: read
-            type: string
-          operationId:
-            description: Unique identifier for the operation within the request
-            example: 1
-            type: string
-          attributes:
-            description: This parameter specifies the attributes of the scoped resources that are returned
-            type: array
-            items:
-              example: cellId
-              type: string
-          fields:
-            description: This parameter specifies the attribute fields of the scoped resources that are returned
-            type: array
-            items:
-              type: string
-          filter:
-            description: This parameter is used to filter the scoped Managed Objects. Only Managed Objects passing the filter criteria will be fetched
-            example: NRCellDU/attributes/administrativeState==LOCKED
-            type: string
-          scopeType:
-            description: ScopeType selects MOs depending on relationships with Base Managed Object
-            example: BASE_ONLY
-            type: string
-          scopeLevel:
-            description: Only used when the scope type is BASE_NTH_LEVEL to specify amount of levels to search
-            example: 0
-            type: integer
-          moduleSetTag:
-            description: Module set identifier
-            example: my-module-set-tag
-            type: string
-          cmHandleProperties:
-            description: Private properties of the cm handle for the given path
-            $ref: '#/components/schemas/CmHandleProperties'
-    WriteOperation:
-      example:
-        op: add
-        path: SubNetwork=Europe/SubNetwork=Ireland/MeContext=NR03gNodeBRadio00003/ManagedElement=NR03gNodeBRadio00003/GNBCUCPFunction=1/EUtraNetwork=1/EUtranFrequency=12
-        value:
-          id: 12
-          attributes:
-            userLabel: label12
-      type: array
-      items:
-        type: object
-        required:
-          - path
-          - op
-        properties:
-          path:
-            description: Defines the resource on which operation is executed
-            example: SubNetwork=Europe/SubNetwork=Ireland/MeContext=NR03gNodeBRadio00003/ManagedElement=NR03gNodeBRadio00003
-            type: string
-          op:
-            description: Describes the operation to execute
-            example: add
-            type: string
-          operationId:
-            description: Unique identifier for the operation within the request
-            example: 1
-            type: string
-          value:
-            description: Value dependent on the op specified. Resource for an add. Object for a replace. ActionParameters for an action.
+          example:
+            op: read
+            operationId: 1
+            path: SubNetwork=Europe/SubNetwork=Ireland/MeContext=NR03gNodeBRadio00003/ManagedElement=NR03gNodeBRadio00003/GNBCUCPFunction=2
+            attributes: userLabel
+            scope:
+              scopeTyp: BASE_ONLY
+          type: array
+          items:
             type: object
-            oneOf:
-              - $ref: '#/components/schemas/Resource'
-              - $ref: '#/components/schemas/ActionParameters'
-              - $ref: '#/components/schemas/Object'
+            required:
+              - path
+              - op
+            properties:
+              path:
+                description: Defines the resource on which operation is executed
+                example: SubNetwork=Europe/SubNetwork=Ireland/MeContext=NR03gNodeBRadio00003/ManagedElement=NR03gNodeBRadio00003
+                type: string
+              op:
+                description: Describes the operation to execute
+                example: read
+                type: string
+              operationId:
+                description: Unique identifier for the operation within the request
+                example: 1
+                type: string
+              attributes:
+                description: This parameter specifies the attributes of the scoped resources that are returned
+                type: array
+                items:
+                  example: cellId
+                  type: string
+              fields:
+                description: This parameter specifies the attribute fields of the scoped resources that are returned
+                type: array
+                items:
+                  type: string
+              filter:
+                description: This parameter is used to filter the scoped Managed Objects. Only Managed Objects passing the filter criteria will be fetched
+                example: NRCellDU/attributes/administrativeState==LOCKED
+                type: string
+              scopeType:
+                description: ScopeType selects MOs depending on relationships with Base Managed Object
+                example: BASE_ONLY
+                type: string
+              scopeLevel:
+                description: Only used when the scope type is BASE_NTH_LEVEL to specify amount of levels to search
+                example: 0
+                type: integer
+              moduleSetTag:
+                description: Module set identifier
+                example: my-module-set-tag
+                type: string
+              cmHandleProperties:
+                description: Private properties of the cm handle for the given path
+                $ref: '#/components/schemas/CmHandleProperties'
+    SubjobWriteRequest:
+      type: object
+      required:
+        - dataProducerId
+        - data
+      properties:
+        dataAcceptType:
+          description: Defines the data response accept type
+          example: application/vnd.3gpp.object-tree-hierarchical+json
+          type: string
+        dataContentType:
+          description: Defines the data request content type
+          example: application/3gpp-json-patch+json
+          type: string
+        dataProducerId:
+          description: ID of the producer registered by DMI for the paths in the operations in this request
+          example: my-data-producer-identifier
+          type: string
+        data:
+          example:
+            op: add
+            path: SubNetwork=Europe/SubNetwork=Ireland/MeContext=NR03gNodeBRadio00003/ManagedElement=NR03gNodeBRadio00003/GNBCUCPFunction=1/EUtraNetwork=1/EUtranFrequency=12
+            value:
+              id: 12
+              attributes:
+                userLabel: label12
+          type: array
+          items:
+            type: object
+            required:
+              - path
+              - op
+            properties:
+              path:
+                description: Defines the resource on which operation is executed
+                example: SubNetwork=Europe/SubNetwork=Ireland/MeContext=NR03gNodeBRadio00003/ManagedElement=NR03gNodeBRadio00003
+                type: string
+              op:
+                description: Describes the operation to execute
+                example: add
+                type: string
+              operationId:
+                description: Unique identifier for the operation within the request
+                example: 1
+                type: string
+              value:
+                description: Value dependent on the op specified. Resource for an add. Object for a replace. ActionParameters for an action.
+                type: object
+                oneOf:
+                  - $ref: '#/components/schemas/Resource'
+                  - $ref: '#/components/schemas/ActionParameters'
+                  - $ref: '#/components/schemas/Object'
     CmHandleProperties:
       description: Private properties of the cm handle for the given path
       type: object
