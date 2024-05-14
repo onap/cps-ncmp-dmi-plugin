@@ -39,6 +39,30 @@
       },
       "revId": "3d5c1aa9a6deb1e995f23eed964733898ef0767f",
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "6305e1ea_2be297ba",
+        "filename": "openapi/components.yml",
+        "patchSetId": 2
+      },
+      "lineNbr": 105,
+      "author": {
+        "id": 7617
+      },
+      "writtenOn": "2024-05-14T10:20:51Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "bc9fae56_da4d37e2",
+      "range": {
+        "startLine": 104,
+        "startChar": 0,
+        "endLine": 105,
+        "endChar": 22
+      },
+      "revId": "3d5c1aa9a6deb1e995f23eed964733898ef0767f",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
     }
   ]
 }
