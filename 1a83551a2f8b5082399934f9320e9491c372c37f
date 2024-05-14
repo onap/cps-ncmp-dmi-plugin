@@ -1,0 +1,8 @@
+Verified+1: ONAP Required GHA <releng+onap.required.gha@linuxfoundation.org>
+Verified+1: ONAP Jobbuilder <onap-jobbuilder@jenkins.onap.org>
+Code-Review+2: Priyank Maheshwari <priyank.maheshwari@est.tech>
+Submitted-by: Priyank Maheshwari <priyank.maheshwari@est.tech>
+Submitted-at: Tue, 14 May 2024 11:07:44 +0000
+Reviewed-on: https://gerrit.onap.org/r/c/cps/ncmp-dmi-plugin/+/137890
+Project: cps/ncmp-dmi-plugin
+Branch: refs/heads/master
