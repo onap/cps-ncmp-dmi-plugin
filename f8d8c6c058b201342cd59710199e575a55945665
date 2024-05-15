@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "d69b8d1f_7fa185c9",
+        "filename": "openapi/components.yml",
+        "patchSetId": 5
+      },
+      "lineNbr": 105,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2024-05-15T12:35:42Z",
+      "side": 1,
+      "message": "although it is the default, to be explicitly, maybe add \u0027required:false\u0027 (to all parameters)\nIn CPS/NCMP we always specify it.",
+      "range": {
+        "startLine": 105,
+        "startChar": 10,
+        "endLine": 105,
+        "endChar": 22
+      },
+      "revId": "f8d8c6c058b201342cd59710199e575a55945665",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    }
+  ]
+}
