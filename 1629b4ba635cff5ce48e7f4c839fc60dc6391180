@@ -24,6 +24,30 @@
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "9ef490e1_2f8d9960",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 6
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 7617
+      },
+      "writtenOn": "2024-05-15T16:47:18Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "c6208ad7_0c10a93a",
+      "range": {
+        "startLine": 7,
+        "startChar": 14,
+        "endLine": 7,
+        "endChar": 49
+      },
+      "revId": "1629b4ba635cff5ce48e7f4c839fc60dc6391180",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "dc1fcf8e_1680b25e",
@@ -47,6 +71,30 @@
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "514c22bd_4f6173b0",
+        "filename": "docs/api/swagger/openapi.yaml",
+        "patchSetId": 6
+      },
+      "lineNbr": 213,
+      "author": {
+        "id": 7617
+      },
+      "writtenOn": "2024-05-15T16:47:18Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "dc1fcf8e_1680b25e",
+      "range": {
+        "startLine": 213,
+        "startChar": 48,
+        "endLine": 213,
+        "endChar": 60
+      },
+      "revId": "1629b4ba635cff5ce48e7f4c839fc60dc6391180",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "043c62b6_db3f35a1",
@@ -60,6 +108,30 @@
       "writtenOn": "2024-05-14T16:02:06Z",
       "side": 1,
       "message": "NB: not sure if this is needed?",
+      "range": {
+        "startLine": 302,
+        "startChar": 6,
+        "endLine": 302,
+        "endChar": 25
+      },
+      "revId": "1629b4ba635cff5ce48e7f4c839fc60dc6391180",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "83bbfca9_0ae85086",
+        "filename": "openapi/components.yml",
+        "patchSetId": 6
+      },
+      "lineNbr": 302,
+      "author": {
+        "id": 7617
+      },
+      "writtenOn": "2024-05-15T16:47:18Z",
+      "side": 1,
+      "message": "AllowReserved is whether you want to allow reserved characters in the string value of that parameter. Reserved/special characters such as :/?#[]@!$\u0026\u0027()*+,;\u003d that may be used as delimiters in the URI. (This is a param in the query).\n\nIt depends on what characters are allowed in a a moduleSetTag name. Are there any restrictions on it?\nReserved characters are allowed in topic name (parameter above), and every other URI parameter here. I think we probably need to retain it for moduleSetTag aswell?",
+      "parentUuid": "043c62b6_db3f35a1",
       "range": {
         "startLine": 302,
         "startChar": 6,

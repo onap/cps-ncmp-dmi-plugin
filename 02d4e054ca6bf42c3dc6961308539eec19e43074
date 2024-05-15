@@ -224,6 +224,30 @@
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "5aa0b6d9_767785ac",
+        "filename": "src/main/java/org/onap/cps/ncmp/dmi/rest/controller/DmiRestController.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 141,
+      "author": {
+        "id": 7617
+      },
+      "writtenOn": "2024-05-15T16:47:18Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "00285e9a_6d1ef1c4",
+      "range": {
+        "startLine": 141,
+        "startChar": 69,
+        "endLine": 141,
+        "endChar": 93
+      },
+      "revId": "02d4e054ca6bf42c3dc6961308539eec19e43074",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "7cf3b23e_62c711a5",
@@ -261,6 +285,30 @@
       "side": 1,
       "message": "Add NEW test to verify module set tag is logged",
       "parentUuid": "7cf3b23e_62c711a5",
+      "range": {
+        "startLine": 293,
+        "startChar": 81,
+        "endLine": 293,
+        "endChar": 99
+      },
+      "revId": "02d4e054ca6bf42c3dc6961308539eec19e43074",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "6218d2a8_93853cd6",
+        "filename": "src/test/groovy/org/onap/cps/ncmp/dmi/rest/controller/DmiRestControllerSpec.groovy",
+        "patchSetId": 3
+      },
+      "lineNbr": 293,
+      "author": {
+        "id": 7617
+      },
+      "writtenOn": "2024-05-15T16:47:18Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "b3e644d0_e4d7c6c3",
       "range": {
         "startLine": 293,
         "startChar": 81,
