@@ -1,0 +1,67 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "8965e342_1c466e4a",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2024-05-15T12:47:24Z",
+      "side": 1,
+      "message": "I accidently commented on the generated file but same comment I think apply to teh actual source",
+      "revId": "8dbd807970822af5d6066e04c63e53485e882bc4",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "e3d9fd71_82658e55",
+        "filename": "docs/api/swagger/openapi-datajob.yaml",
+        "patchSetId": 3
+      },
+      "lineNbr": 67,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2024-05-15T12:47:24Z",
+      "side": 1,
+      "message": "should we have a separate or more generic response definition?!",
+      "range": {
+        "startLine": 67,
+        "startChar": 44,
+        "endLine": 67,
+        "endChar": 68
+      },
+      "revId": "8dbd807970822af5d6066e04c63e53485e882bc4",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "7ccb7956_01bd841b",
+        "filename": "docs/api/swagger/openapi-datajob.yaml",
+        "patchSetId": 3
+      },
+      "lineNbr": 236,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2024-05-15T12:47:24Z",
+      "side": 1,
+      "message": "NB: logically I would put this AFTER \u0027SubjobWriteRequest_data_inner\u0027\n(jsut realziign this is generated so mayeb you dont have control)",
+      "range": {
+        "startLine": 229,
+        "startChar": 0,
+        "endLine": 236,
+        "endChar": 18
+      },
+      "revId": "8dbd807970822af5d6066e04c63e53485e882bc4",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    }
+  ]
+}
