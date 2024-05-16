@@ -24,6 +24,30 @@
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "66afd247_e192538c",
+        "filename": "openapi/components.yml",
+        "patchSetId": 10
+      },
+      "lineNbr": 307,
+      "author": {
+        "id": 7617
+      },
+      "writtenOn": "2024-05-16T10:45:18Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9c4d08a5_184c13d8",
+      "range": {
+        "startLine": 307,
+        "startChar": 21,
+        "endLine": 307,
+        "endChar": 25
+      },
+      "revId": "17ff9a239ee3dbe1f66842dec611c3fe4821b7a0",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "28477ebb_b6538404",
@@ -47,6 +71,30 @@
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "a5d2566d_17e7e5e1",
+        "filename": "src/test/groovy/org/onap/cps/ncmp/dmi/rest/controller/DmiRestControllerSpec.groovy",
+        "patchSetId": 10
+      },
+      "lineNbr": 225,
+      "author": {
+        "id": 7617
+      },
+      "writtenOn": "2024-05-16T10:45:18Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "28477ebb_b6538404",
+      "range": {
+        "startLine": 225,
+        "startChar": 30,
+        "endLine": 225,
+        "endChar": 32
+      },
+      "revId": "17ff9a239ee3dbe1f66842dec611c3fe4821b7a0",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "023e75a9_14a5feb7",
@@ -60,6 +108,30 @@
       "writtenOn": "2024-05-16T10:43:51Z",
       "side": 1,
       "message": "NB: message",
+      "range": {
+        "startLine": 396,
+        "startChar": 18,
+        "endLine": 396,
+        "endChar": 24
+      },
+      "revId": "17ff9a239ee3dbe1f66842dec611c3fe4821b7a0",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "310f7ed7_3582488c",
+        "filename": "src/test/groovy/org/onap/cps/ncmp/dmi/rest/controller/DmiRestControllerSpec.groovy",
+        "patchSetId": 10
+      },
+      "lineNbr": 396,
+      "author": {
+        "id": 7617
+      },
+      "writtenOn": "2024-05-16T10:45:18Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "023e75a9_14a5feb7",
       "range": {
         "startLine": 396,
         "startChar": 18,
