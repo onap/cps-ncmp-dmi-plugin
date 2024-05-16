@@ -164,6 +164,30 @@
       },
       "revId": "1629b4ba635cff5ce48e7f4c839fc60dc6391180",
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "4e1659d5_145e051a",
+        "filename": "openapi/components.yml",
+        "patchSetId": 6
+      },
+      "lineNbr": 302,
+      "author": {
+        "id": 7617
+      },
+      "writtenOn": "2024-05-16T09:50:19Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "83bbfca9_0ae85086",
+      "range": {
+        "startLine": 302,
+        "startChar": 6,
+        "endLine": 302,
+        "endChar": 25
+      },
+      "revId": "1629b4ba635cff5ce48e7f4c839fc60dc6391180",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
     }
   ]
 }
