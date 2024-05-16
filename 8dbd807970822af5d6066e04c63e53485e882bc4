@@ -43,6 +43,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "2907e151_9d90e2e2",
+        "filename": "docs/api/swagger/openapi-datajob.yaml",
+        "patchSetId": 3
+      },
+      "lineNbr": 67,
+      "author": {
+        "id": 4893
+      },
+      "writtenOn": "2024-05-16T09:40:38Z",
+      "side": 1,
+      "message": "For current happy flow we can assume 200 but no big deal to add others at this stage if we want to",
+      "parentUuid": "e3d9fd71_82658e55",
+      "range": {
+        "startLine": 67,
+        "startChar": 44,
+        "endLine": 67,
+        "endChar": 68
+      },
+      "revId": "8dbd807970822af5d6066e04c63e53485e882bc4",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "7ccb7956_01bd841b",
         "filename": "docs/api/swagger/openapi-datajob.yaml",
         "patchSetId": 3
@@ -54,6 +78,30 @@
       "writtenOn": "2024-05-15T12:47:24Z",
       "side": 1,
       "message": "NB: logically I would put this AFTER \u0027SubjobWriteRequest_data_inner\u0027\n(jsut realziign this is generated so mayeb you dont have control)",
+      "range": {
+        "startLine": 229,
+        "startChar": 0,
+        "endLine": 236,
+        "endChar": 18
+      },
+      "revId": "8dbd807970822af5d6066e04c63e53485e882bc4",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "4cb7ac80_e3341a34",
+        "filename": "docs/api/swagger/openapi-datajob.yaml",
+        "patchSetId": 3
+      },
+      "lineNbr": 236,
+      "author": {
+        "id": 4893
+      },
+      "writtenOn": "2024-05-16T09:40:38Z",
+      "side": 1,
+      "message": "We have no control here",
+      "parentUuid": "7ccb7956_01bd841b",
       "range": {
         "startLine": 229,
         "startChar": 0,

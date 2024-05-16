@@ -22,6 +22,30 @@
       },
       "revId": "1423083346aac5bbeb35044729f6949bdb49202d",
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "406f56a4_11366a17",
+        "filename": "openapi/openapi-datajob.yml",
+        "patchSetId": 1
+      },
+      "lineNbr": 124,
+      "author": {
+        "id": 4893
+      },
+      "writtenOn": "2024-05-16T09:40:38Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "6b49f55e_4b9a3931",
+      "range": {
+        "startLine": 124,
+        "startChar": 14,
+        "endLine": 124,
+        "endChar": 19
+      },
+      "revId": "1423083346aac5bbeb35044729f6949bdb49202d",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
     }
   ]
 }
