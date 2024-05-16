@@ -255,6 +255,29 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "d17fd8d4_65329350",
+        "filename": "src/test/groovy/org/onap/cps/ncmp/dmi/rest/controller/DmiRestControllerSpec.groovy",
+        "patchSetId": 9
+      },
+      "lineNbr": 345,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2024-05-16T10:43:51Z",
+      "side": 1,
+      "message": "try to test here with special characters, not suer if the workd in context of mvc test though but let\u0027s try...",
+      "range": {
+        "startLine": 345,
+        "startChar": 93,
+        "endLine": 345,
+        "endChar": 108
+      },
+      "revId": "8c0eca01fd6786280ecbd0be177e01cde4bcdd55",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "f1646d70_a2688b98",
         "filename": "src/test/groovy/org/onap/cps/ncmp/dmi/rest/controller/DmiRestControllerSpec.groovy",
         "patchSetId": 9

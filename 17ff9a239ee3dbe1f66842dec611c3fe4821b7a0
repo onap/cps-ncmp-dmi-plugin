@@ -1,0 +1,73 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "9c4d08a5_184c13d8",
+        "filename": "openapi/components.yml",
+        "patchSetId": 10
+      },
+      "lineNbr": 307,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2024-05-16T10:43:51Z",
+      "side": 1,
+      "message": "as agreed lest remove this!",
+      "range": {
+        "startLine": 307,
+        "startChar": 21,
+        "endLine": 307,
+        "endChar": 25
+      },
+      "revId": "17ff9a239ee3dbe1f66842dec611c3fe4821b7a0",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "28477ebb_b6538404",
+        "filename": "src/test/groovy/org/onap/cps/ncmp/dmi/rest/controller/DmiRestControllerSpec.groovy",
+        "patchSetId": 10
+      },
+      "lineNbr": 225,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2024-05-16T10:43:51Z",
+      "side": 1,
+      "message": "just no need for the pre-amble...",
+      "range": {
+        "startLine": 225,
+        "startChar": 30,
+        "endLine": 225,
+        "endChar": 32
+      },
+      "revId": "17ff9a239ee3dbe1f66842dec611c3fe4821b7a0",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "023e75a9_14a5feb7",
+        "filename": "src/test/groovy/org/onap/cps/ncmp/dmi/rest/controller/DmiRestControllerSpec.groovy",
+        "patchSetId": 10
+      },
+      "lineNbr": 396,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2024-05-16T10:43:51Z",
+      "side": 1,
+      "message": "NB: message",
+      "range": {
+        "startLine": 396,
+        "startChar": 18,
+        "endLine": 396,
+        "endChar": 24
+      },
+      "revId": "17ff9a239ee3dbe1f66842dec611c3fe4821b7a0",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    }
+  ]
+}

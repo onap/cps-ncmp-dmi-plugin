@@ -188,6 +188,30 @@
       },
       "revId": "1629b4ba635cff5ce48e7f4c839fc60dc6391180",
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "7f58805e_3b2a67aa",
+        "filename": "openapi/components.yml",
+        "patchSetId": 6
+      },
+      "lineNbr": 302,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2024-05-16T10:43:51Z",
+      "side": 1,
+      "message": "lets check with Daniel and Priyank",
+      "parentUuid": "4e1659d5_145e051a",
+      "range": {
+        "startLine": 302,
+        "startChar": 6,
+        "endLine": 302,
+        "endChar": 25
+      },
+      "revId": "1629b4ba635cff5ce48e7f4c839fc60dc6391180",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
     }
   ]
 }
