@@ -101,6 +101,11 @@ components:
     ModuleResourcesReadRequest:
       type: object
       properties:
+        moduleSetTag:
+          type: string
+          description: Module set tag of the given cm handle
+          example: Module-set-tag-1
+          required: false
         data:
           type: object
           properties:
