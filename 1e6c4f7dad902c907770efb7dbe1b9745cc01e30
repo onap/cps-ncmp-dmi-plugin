@@ -1,0 +1,44 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "a5ced410_c74aeac1",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 15
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2024-05-16T13:10:18Z",
+      "side": 1,
+      "message": "just remove the test with invalid characters. I\u0027ll do something as part of the ne jira ticket (I stil have to raise)",
+      "revId": "1e6c4f7dad902c907770efb7dbe1b9745cc01e30",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "87d413e6_3fc468ff",
+        "filename": "src/test/groovy/org/onap/cps/ncmp/dmi/rest/controller/DmiRestControllerSpec.groovy",
+        "patchSetId": 15
+      },
+      "lineNbr": 365,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2024-05-16T13:10:18Z",
+      "side": 1,
+      "message": "so lets remove this test",
+      "range": {
+        "startLine": 354,
+        "startChar": 0,
+        "endLine": 365,
+        "endChar": 5
+      },
+      "revId": "1e6c4f7dad902c907770efb7dbe1b9745cc01e30",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    }
+  ]
+}
