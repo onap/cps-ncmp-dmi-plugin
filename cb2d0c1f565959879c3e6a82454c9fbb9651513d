@@ -24,6 +24,30 @@
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "e7a60dea_c77f0702",
+        "filename": "openapi/components.yml",
+        "patchSetId": 8
+      },
+      "lineNbr": 88,
+      "author": {
+        "id": 7617
+      },
+      "writtenOn": "2024-05-20T08:39:55Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "e358f53f_f16fe729",
+      "range": {
+        "startLine": 88,
+        "startChar": 14,
+        "endLine": 88,
+        "endChar": 34
+      },
+      "revId": "cb2d0c1f565959879c3e6a82454c9fbb9651513d",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "eb662122_1b0816ea",
@@ -37,6 +61,30 @@
       "writtenOn": "2024-05-20T08:09:21Z",
       "side": 1,
       "message": "remove te word \u0027received\u0027",
+      "range": {
+        "startLine": 129,
+        "startChar": 32,
+        "endLine": 129,
+        "endChar": 41
+      },
+      "revId": "cb2d0c1f565959879c3e6a82454c9fbb9651513d",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "55249cde_149d708f",
+        "filename": "src/main/java/org/onap/cps/ncmp/dmi/rest/controller/DmiRestController.java",
+        "patchSetId": 8
+      },
+      "lineNbr": 129,
+      "author": {
+        "id": 7617
+      },
+      "writtenOn": "2024-05-20T08:39:55Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "eb662122_1b0816ea",
       "range": {
         "startLine": 129,
         "startChar": 32,
@@ -70,6 +118,30 @@
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "ae5ac805_7124ec18",
+        "filename": "src/test/groovy/org/onap/cps/ncmp/dmi/rest/controller/DmiRestControllerSpec.groovy",
+        "patchSetId": 8
+      },
+      "lineNbr": 381,
+      "author": {
+        "id": 7617
+      },
+      "writtenOn": "2024-05-20T08:39:55Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "4f877cef_2a711282",
+      "range": {
+        "startLine": 381,
+        "startChar": 8,
+        "endLine": 381,
+        "endChar": 12
+      },
+      "revId": "cb2d0c1f565959879c3e6a82454c9fbb9651513d",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "5d197db8_8bdce92f",
@@ -83,6 +155,30 @@
       "writtenOn": "2024-05-20T08:09:21Z",
       "side": 1,
       "message": "since \u002714\u0027 is not self explanatory can you insert \nand: \u0027the operation id is received\u0027",
+      "range": {
+        "startLine": 386,
+        "startChar": 0,
+        "endLine": 386,
+        "endChar": 54
+      },
+      "revId": "cb2d0c1f565959879c3e6a82454c9fbb9651513d",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "95e34e99_2b97b5c2",
+        "filename": "src/test/groovy/org/onap/cps/ncmp/dmi/rest/controller/DmiRestControllerSpec.groovy",
+        "patchSetId": 8
+      },
+      "lineNbr": 386,
+      "author": {
+        "id": 7617
+      },
+      "writtenOn": "2024-05-20T08:39:55Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5d197db8_8bdce92f",
       "range": {
         "startLine": 386,
         "startChar": 0,
