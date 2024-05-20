@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "6f2bac1a_5fd98b14",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 14
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2024-05-20T15:58:23Z",
+      "side": 1,
+      "message": "Reverrt back to #11 as discussed for simplicty and testing",
+      "revId": "052ceea835681887b8de5f5261f32e5adb2c0ac7",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    }
+  ]
+}
