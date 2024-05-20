@@ -48,6 +48,30 @@
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "4db524af_80242a53",
+        "filename": "docs/api/swagger/openapi.yaml",
+        "patchSetId": 10
+      },
+      "lineNbr": 678,
+      "author": {
+        "id": 7957
+      },
+      "writtenOn": "2024-05-20T15:33:01Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "6b003409_d6b808e8",
+      "range": {
+        "startLine": 675,
+        "startChar": 2,
+        "endLine": 678,
+        "endChar": 36
+      },
+      "revId": "53a40fba7fe59e368a09b7dc8fc47beb25738522",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "a6daa7dd_4c193241",
