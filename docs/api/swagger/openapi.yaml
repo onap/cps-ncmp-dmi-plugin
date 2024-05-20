@@ -671,10 +671,12 @@ components:
             cmHandleProperties:
               myProp: some value
               otherProp: other value
+              moduleSetTag: module-set-tag1
           - id: cmHandle123
             cmHandleProperties:
               myProp: some value
               otherProp: other value
+              moduleSetTag: module-set-tag2
         operation: read
       properties:
         operation:

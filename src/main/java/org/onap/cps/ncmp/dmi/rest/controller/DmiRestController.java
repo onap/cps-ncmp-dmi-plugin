@@ -116,6 +116,17 @@ public class DmiRestController implements DmiPluginApi, DmiPluginInternalApi {
     @Override
     public ResponseEntity<Void> getResourceDataForCmHandleDataOperation(final String topic, final String requestId,
                                 final ResourceDataOperationRequests resourceDataOperationRequests) {
+        log.info("Request Details (for testing purposes)");
+        log.info("Request Id: {}", requestId);
+        log.info("Topic: {}", topic);
+
+        log.info("Details of the first Operation");
+        log.info("Resource Identifier: {}", resourceDataOperationRequests.get(0).getResourceIdentifier());
+        log.info("Module Set Tag: {}", resourceDataOperationRequests.get(0).getCmHandles().get(0).getModuleSetTag());
+        log.info("Operation Id: {}", resourceDataOperationRequests.get(0).getOperationId());
+        log.info("Cm Handles: {}", resourceDataOperationRequests.get(0).getCmHandles());
+        log.info("Options: {}", resourceDataOperationRequests.get(0).getOptions());
+
         return new ResponseEntity<>(HttpStatus.NOT_IMPLEMENTED);
     }
 
