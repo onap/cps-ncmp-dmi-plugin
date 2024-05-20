@@ -65,6 +65,30 @@
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "7cb97c88_f665c69f",
+        "filename": "docs/api/swagger/openapi-datajob.yaml",
+        "patchSetId": 3
+      },
+      "lineNbr": 67,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2024-05-20T08:02:59Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "2907e151_9d90e2e2",
+      "range": {
+        "startLine": 67,
+        "startChar": 44,
+        "endLine": 67,
+        "endChar": 68
+      },
+      "revId": "8dbd807970822af5d6066e04c63e53485e882bc4",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "7ccb7956_01bd841b",
