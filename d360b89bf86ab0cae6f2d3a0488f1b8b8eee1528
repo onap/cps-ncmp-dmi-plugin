@@ -41,6 +41,30 @@
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "0d8dff45_4a97c10f",
+        "filename": "docs/architecture.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 57,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2024-05-21T09:19:40Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "a1f37833_40da6968",
+      "range": {
+        "startLine": 57,
+        "startChar": 9,
+        "endLine": 57,
+        "endChar": 24
+      },
+      "revId": "d360b89bf86ab0cae6f2d3a0488f1b8b8eee1528",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "03d67f8e_ffe21231",
