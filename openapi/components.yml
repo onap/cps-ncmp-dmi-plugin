@@ -252,7 +252,6 @@ components:
       in: query
       description: Resource identifier to get/set the resource data
       required: true
-      allowReserved: true
       schema:
         type: string
         example: my-schema:my-node
@@ -264,7 +263,6 @@ components:
       required: false
       schema:
         type: string
-      allowReserved: true
       examples:
         sample1:
           value:
@@ -283,7 +281,6 @@ components:
       required: false
       schema:
         type: string
-      allowReserved: true
       examples:
         sample1:
           value: my-topic-name
@@ -295,7 +292,6 @@ components:
       required: true
       schema:
         type: string
-      allowReserved: true
       examples:
         sample1:
           value:
@@ -319,7 +315,6 @@ components:
       required: true
       schema:
         type: string
-      allowReserved: true
       examples:
         sample1:
           value: 4753fc1f-7de2-449a-b306-a6204b5370b3
