@@ -24,6 +24,30 @@
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "03f38e37_bd9bee0c",
+        "filename": "docs/api/swagger/openapi.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 266,
+      "author": {
+        "id": 7617
+      },
+      "writtenOn": "2024-05-22T15:30:48Z",
+      "side": 1,
+      "message": "No, actually you are correct. It\u0027s the weird order of the items threw me. 😊",
+      "parentUuid": "f4d08d25_e0075593",
+      "range": {
+        "startLine": 266,
+        "startChar": 6,
+        "endLine": 266,
+        "endChar": 7
+      },
+      "revId": "190c30c687cb5506fed6e27bfa623fa2747386bb",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "b3f047c7_b895ddf2",
@@ -37,6 +61,30 @@
       "writtenOn": "2024-05-22T15:27:33Z",
       "side": 1,
       "message": "and here",
+      "range": {
+        "startLine": 276,
+        "startChar": 6,
+        "endLine": 276,
+        "endChar": 7
+      },
+      "revId": "190c30c687cb5506fed6e27bfa623fa2747386bb",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "09f17551_228bbddf",
+        "filename": "docs/api/swagger/openapi.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 276,
+      "author": {
+        "id": 7617
+      },
+      "writtenOn": "2024-05-22T15:30:48Z",
+      "side": 1,
+      "message": "as above",
+      "parentUuid": "b3f047c7_b895ddf2",
       "range": {
         "startLine": 276,
         "startChar": 6,
