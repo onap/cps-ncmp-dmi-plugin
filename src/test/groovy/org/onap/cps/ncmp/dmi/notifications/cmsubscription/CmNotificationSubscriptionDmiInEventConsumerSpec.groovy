@@ -71,7 +71,7 @@ class CmNotificationSubscriptionDmiInEventConsumerSpec extends MessagingBaseSpec
     def 'Sends subscription cloud event response successfully.'() {
         given: 'an subscription event response'
             objectUnderTest.dmiName = 'test-ncmp-dmi'
-            objectUnderTest.cmNotificationSubscriptionResponseTopic = testTopic
+            objectUnderTest.cmNotificationSubscriptionDmiOutTopic = testTopic
             def correlationId = 'test-subscriptionId#test-ncmp-dmi'
             def cmSubscriptionDmiOutEventData = new Data(statusCode: subscriptionStatusCode, statusMessage: subscriptionStatusMessage)
             def subscriptionEventResponse =
@@ -104,7 +104,7 @@ class CmNotificationSubscriptionDmiInEventConsumerSpec extends MessagingBaseSpec
             def timestamp = new Timestamp(1679521929511)
             def jsonData = TestUtils.getResourceFileContent('cmNotificationSubscriptionCreationEvent.json')
             def subscriptionEvent = objectMapper.readValue(jsonData, CmNotificationSubscriptionDmiInEvent.class)
-            objectUnderTest.cmNotificationSubscriptionResponseTopic = testTopic
+            objectUnderTest.cmNotificationSubscriptionDmiOutTopic = testTopic
             def cloudEvent = CloudEventBuilder.v1().withId(UUID.randomUUID().toString()).withSource(URI.create('test-ncmp-dmi'))
                     .withType(subscriptionType)
                     .withDataSchema(URI.create("urn:cps:" + CmNotificationSubscriptionDmiInEvent.class.getName() + ":1.0.0"))
@@ -128,7 +128,7 @@ class CmNotificationSubscriptionDmiInEventConsumerSpec extends MessagingBaseSpec
             def eventKey = UUID.randomUUID().toString()
             def timestamp = new Timestamp(1679521929511)
             def invalidJsonBody = "/////"
-            objectUnderTest.cmNotificationSubscriptionResponseTopic = testTopic
+            objectUnderTest.cmNotificationSubscriptionDmiOutTopic = testTopic
             def cloudEvent = CloudEventBuilder.v1().withId(UUID.randomUUID().toString()).withSource(URI.create('test-ncmp-dmi'))
                     .withType("subscriptionCreated")
                     .withDataSchema(URI.create("urn:cps:org.onap.ncmp.dmi.cm.subscription:1.0.0"))
