@@ -38,8 +38,8 @@ import org.springframework.stereotype.Service;
 public class CmNotificationSubscriptionDmiInEventConsumer {
 
 
-    @Value("${app.dmi.avc.subscription-response-topic}")
-    private String cmNotificationSubscriptionResponseTopic;
+    @Value("${app.dmi.avc.cm-subscription-dmi-out}")
+    private String cmNotificationSubscriptionDmiOutTopic;
     @Value("${dmi.service.name}")
     private String dmiName;
     private final KafkaTemplate<String, CloudEvent> cloudEventKafkaTemplate;
@@ -49,7 +49,7 @@ public class CmNotificationSubscriptionDmiInEventConsumer {
      *
      * @param cmNotificationSubscriptionDmiInCloudEvent the event to be consumed
      */
-    @KafkaListener(topics = "${app.dmi.avc.subscription-topic}",
+    @KafkaListener(topics = "${app.dmi.avc.cm-subscription-dmi-in}",
         containerFactory = "cloudEventConcurrentKafkaListenerContainerFactory")
     public void consumeCmNotificationSubscriptionDmiInEvent(
         final ConsumerRecord<String, CloudEvent> cmNotificationSubscriptionDmiInCloudEvent) {
@@ -62,10 +62,10 @@ public class CmNotificationSubscriptionDmiInEventConsumer {
             final String correlationId = String.valueOf(cmNotificationSubscriptionDmiInCloudEvent.value()
                 .getExtension("correlationid"));
 
-            if ("subscriptionCreated".equals(subscriptionType)) {
+            if ("subscriptionCreateRequest".equals(subscriptionType)) {
                 createAndSendCmNotificationSubscriptionDmiOutEvent(subscriptionId, "subscriptionCreateResponse",
                     correlationId, CmNotificationSubscriptionStatus.ACCEPTED);
-            } else if ("subscriptionDeleted".equals(subscriptionType)) {
+            } else if ("subscriptionDeleteRequest".equals(subscriptionType)) {
                 createAndSendCmNotificationSubscriptionDmiOutEvent(subscriptionId, "subscriptionDeleteResponse",
                     correlationId, CmNotificationSubscriptionStatus.ACCEPTED);
             }
@@ -92,12 +92,12 @@ public class CmNotificationSubscriptionDmiInEventConsumer {
             cmNotificationSubscriptionDmiOutEventData.setStatusCode("1");
             cmNotificationSubscriptionDmiOutEventData.setStatusMessage("ACCEPTED");
         } else {
-            cmNotificationSubscriptionDmiOutEventData.setStatusCode("2");
+            cmNotificationSubscriptionDmiOutEventData.setStatusCode("104");
             cmNotificationSubscriptionDmiOutEventData.setStatusMessage("REJECTED");
         }
         cmNotificationSubscriptionDmiOutEvent.setData(cmNotificationSubscriptionDmiOutEventData);
 
-        cloudEventKafkaTemplate.send(cmNotificationSubscriptionResponseTopic, eventKey,
+        cloudEventKafkaTemplate.send(cmNotificationSubscriptionDmiOutTopic, eventKey,
             CmNotificationSubscriptionDmiOutEventToCloudEventMapper.toCloudEvent(cmNotificationSubscriptionDmiOutEvent,
                 subscriptionType, dmiName, correlationId));
 

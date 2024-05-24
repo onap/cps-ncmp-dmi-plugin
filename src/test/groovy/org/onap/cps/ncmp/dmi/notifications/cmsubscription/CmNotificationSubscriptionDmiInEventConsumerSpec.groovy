@@ -47,12 +47,12 @@ import java.time.OffsetDateTime
 import java.time.ZoneId
 
 
-@SpringBootTest(classes = [CmNotificationSubscriptionDmiInEventConsumer])
 @Testcontainers
 @DirtiesContext
 class CmNotificationSubscriptionDmiInEventConsumerSpec extends MessagingBaseSpec {
     def objectMapper = new ObjectMapper()
     def testTopic = 'dmi-ncmp-cm-avc-subscription'
+    def testDmiName = 'test-ncmp-dmi'
 
     @SpringBean
     CmNotificationSubscriptionDmiInEventConsumer objectUnderTest = new CmNotificationSubscriptionDmiInEventConsumer(cloudEventKafkaTemplate)
@@ -70,8 +70,8 @@ class CmNotificationSubscriptionDmiInEventConsumerSpec extends MessagingBaseSpec
 
     def 'Sends subscription cloud event response successfully.'() {
         given: 'an subscription event response'
-            objectUnderTest.dmiName = 'test-ncmp-dmi'
-            objectUnderTest.cmNotificationSubscriptionResponseTopic = testTopic
+            objectUnderTest.dmiName = testDmiName
+            objectUnderTest.cmNotificationSubscriptionDmiOutTopic = testTopic
             def correlationId = 'test-subscriptionId#test-ncmp-dmi'
             def cmSubscriptionDmiOutEventData = new Data(statusCode: subscriptionStatusCode, statusMessage: subscriptionStatusMessage)
             def subscriptionEventResponse =
@@ -94,17 +94,17 @@ class CmNotificationSubscriptionDmiInEventConsumerSpec extends MessagingBaseSpec
         where: 'given #scenario'
             scenario                   | subscriptionAcceptanceType                 | subscriptionStatusCode | subscriptionStatusMessage
             'Subscription is Accepted' | CmNotificationSubscriptionStatus.ACCEPTED  | '1'                    | 'ACCEPTED'
-            'Subscription is Rejected' | CmNotificationSubscriptionStatus.REJECTED  | '2'                    | 'REJECTED'
+            'Subscription is Rejected' | CmNotificationSubscriptionStatus.REJECTED  | '104'                    | 'REJECTED'
     }
 
     def 'Consume valid message.'() {
         given: 'an event'
-            objectUnderTest.dmiName = 'test-ncmp-dmi'
+            objectUnderTest.dmiName = testDmiName
             def eventKey = UUID.randomUUID().toString()
             def timestamp = new Timestamp(1679521929511)
             def jsonData = TestUtils.getResourceFileContent('cmNotificationSubscriptionCreationEvent.json')
             def subscriptionEvent = objectMapper.readValue(jsonData, CmNotificationSubscriptionDmiInEvent.class)
-            objectUnderTest.cmNotificationSubscriptionResponseTopic = testTopic
+            objectUnderTest.cmNotificationSubscriptionDmiOutTopic = testTopic
             def cloudEvent = CloudEventBuilder.v1().withId(UUID.randomUUID().toString()).withSource(URI.create('test-ncmp-dmi'))
                     .withType(subscriptionType)
                     .withDataSchema(URI.create("urn:cps:" + CmNotificationSubscriptionDmiInEvent.class.getName() + ":1.0.0"))
@@ -124,11 +124,11 @@ class CmNotificationSubscriptionDmiInEventConsumerSpec extends MessagingBaseSpec
 
     def 'Consume invalid message.'() {
         given: 'an invalid event body'
-            objectUnderTest.dmiName = 'test-ncmp-dmi'
+            objectUnderTest.dmiName = testDmiName
             def eventKey = UUID.randomUUID().toString()
             def timestamp = new Timestamp(1679521929511)
             def invalidJsonBody = "/////"
-            objectUnderTest.cmNotificationSubscriptionResponseTopic = testTopic
+            objectUnderTest.cmNotificationSubscriptionDmiOutTopic = testTopic
             def cloudEvent = CloudEventBuilder.v1().withId(UUID.randomUUID().toString()).withSource(URI.create('test-ncmp-dmi'))
                     .withType("subscriptionCreated")
                     .withDataSchema(URI.create("urn:cps:org.onap.ncmp.dmi.cm.subscription:1.0.0"))
