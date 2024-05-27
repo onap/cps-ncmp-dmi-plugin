@@ -1,5 +1,29 @@
 {
-  "comments": [],
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "d5b8a170_3a8605fb",
+        "filename": "docs/api/swagger/openapi.yaml",
+        "patchSetId": 16
+      },
+      "lineNbr": 220,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2024-05-27T13:01:07Z",
+      "side": 1,
+      "message": "Although not clearly specified/requested it does make sense that this goes INSIDE the DataAccessRequest (object) below ie become part of the body instead the URI!",
+      "range": {
+        "startLine": 212,
+        "startChar": 0,
+        "endLine": 220,
+        "endChar": 24
+      },
+      "revId": "184b681a516c08abe9ef151090c5f208f5544e0e",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    }
+  ],
   "submitRequirementResults": [
     {
       "submitRequirement": {
