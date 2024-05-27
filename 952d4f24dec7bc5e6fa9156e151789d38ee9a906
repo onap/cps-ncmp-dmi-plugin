@@ -1,0 +1,96 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "cbf2bc0a_a914c0ad",
+        "filename": "src/test/groovy/org/onap/cps/ncmp/dmi/notifications/cmsubscription/CmNotificationSubscriptionDmiInEventConsumerSpec.groovy",
+        "patchSetId": 1
+      },
+      "lineNbr": 50,
+      "author": {
+        "id": 8063
+      },
+      "writtenOn": "2024-05-27T13:28:44Z",
+      "side": 1,
+      "message": "NB: Redundant bean activation (in application context) since the bean has not been autowired but instantiated with \u0027new\u0027 keyword.\n\nWould be removed.",
+      "range": {
+        "startLine": 50,
+        "startChar": 1,
+        "endLine": 50,
+        "endChar": 73
+      },
+      "revId": "952d4f24dec7bc5e6fa9156e151789d38ee9a906",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "46d0be1b_737d7095",
+        "filename": "src/test/groovy/org/onap/cps/ncmp/dmi/notifications/cmsubscription/CmNotificationSubscriptionDmiInEventConsumerSpec.groovy",
+        "patchSetId": 1
+      },
+      "lineNbr": 73,
+      "author": {
+        "id": 8063
+      },
+      "writtenOn": "2024-05-27T13:28:44Z",
+      "side": 1,
+      "message": "NB: Same as others.",
+      "range": {
+        "startLine": 73,
+        "startChar": 38,
+        "endLine": 73,
+        "endChar": 53
+      },
+      "revId": "952d4f24dec7bc5e6fa9156e151789d38ee9a906",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "4ec019ae_775d0024",
+        "filename": "src/test/groovy/org/onap/cps/ncmp/dmi/notifications/cmsubscription/CmNotificationSubscriptionDmiInEventConsumerSpec.groovy",
+        "patchSetId": 1
+      },
+      "lineNbr": 102,
+      "author": {
+        "id": 8063
+      },
+      "writtenOn": "2024-05-27T13:28:44Z",
+      "side": 1,
+      "message": "NB: the object might be expensive to create every time for all three test cases below.\n\nYou may create dmiName object once at the begining of the class like testTopic, then assign it here.",
+      "range": {
+        "startLine": 102,
+        "startChar": 38,
+        "endLine": 102,
+        "endChar": 53
+      },
+      "revId": "952d4f24dec7bc5e6fa9156e151789d38ee9a906",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "08e1fd56_2c6b2472",
+        "filename": "src/test/groovy/org/onap/cps/ncmp/dmi/notifications/cmsubscription/CmNotificationSubscriptionDmiInEventConsumerSpec.groovy",
+        "patchSetId": 1
+      },
+      "lineNbr": 127,
+      "author": {
+        "id": 8063
+      },
+      "writtenOn": "2024-05-27T13:28:44Z",
+      "side": 1,
+      "message": "NB: Same as above",
+      "range": {
+        "startLine": 127,
+        "startChar": 38,
+        "endLine": 127,
+        "endChar": 53
+      },
+      "revId": "952d4f24dec7bc5e6fa9156e151789d38ee9a906",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    }
+  ]
+}
