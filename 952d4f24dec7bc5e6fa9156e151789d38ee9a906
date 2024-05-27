@@ -3,6 +3,29 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "ae7888a4_166ca96a",
+        "filename": "src/main/java/org/onap/cps/ncmp/dmi/notifications/cmsubscription/CmNotificationSubscriptionDmiInEventConsumer.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 95,
+      "author": {
+        "id": 7965
+      },
+      "writtenOn": "2024-05-27T13:47:09Z",
+      "side": 1,
+      "message": "this has now changed to 104 as per my latest patch and we discussed the same.",
+      "range": {
+        "startLine": 95,
+        "startChar": 69,
+        "endLine": 95,
+        "endChar": 70
+      },
+      "revId": "952d4f24dec7bc5e6fa9156e151789d38ee9a906",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "cbf2bc0a_a914c0ad",
         "filename": "src/test/groovy/org/onap/cps/ncmp/dmi/notifications/cmsubscription/CmNotificationSubscriptionDmiInEventConsumerSpec.groovy",
         "patchSetId": 1
