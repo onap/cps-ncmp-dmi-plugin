@@ -149,10 +149,8 @@ public class DmiRestController implements DmiPluginApi, DmiPluginInternalApi {
                                                         final String resourceIdentifier,
                                                         final String optionsParamInQuery,
                                                         final String topicParamInQuery,
-                                                        final String moduleSetTagParamInQuery,
                                                         final DataAccessRequest dataAccessRequest) {
-
-        log.info("Module set tag received: {}", moduleSetTagParamInQuery);
+        log.info("Module set tag received: {}", dataAccessRequest.getModuleSetTag());
         if (DatastoreType.PASSTHROUGH_OPERATIONAL == DatastoreType.fromDatastoreName(datastoreName)) {
             return dataAccessPassthroughOperational(resourceIdentifier, cmHandle, dataAccessRequest,
                     optionsParamInQuery, topicParamInQuery);
