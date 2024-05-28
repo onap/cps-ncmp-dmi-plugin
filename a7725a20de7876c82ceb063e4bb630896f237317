@@ -18,6 +18,24 @@
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "ab999a37_ec4c16a7",
+        "filename": "docs/api/swagger/openapi.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 7617
+      },
+      "writtenOn": "2024-05-28T13:46:41Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "c180f543_41c4b52f",
+      "revId": "a7725a20de7876c82ceb063e4bb630896f237317",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "c61d97eb_240d395f",
@@ -41,6 +59,30 @@
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "cccf2885_beb27485",
+        "filename": "openapi/components.yml",
+        "patchSetId": 1
+      },
+      "lineNbr": 185,
+      "author": {
+        "id": 7617
+      },
+      "writtenOn": "2024-05-28T13:46:41Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "c61d97eb_240d395f",
+      "range": {
+        "startLine": 183,
+        "startChar": 0,
+        "endLine": 185,
+        "endChar": 34
+      },
+      "revId": "a7725a20de7876c82ceb063e4bb630896f237317",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "6f61efe4_a32a81d6",
@@ -54,6 +96,30 @@
       "writtenOn": "2024-05-28T13:36:35Z",
       "side": 1,
       "message": "NB: remove the word \u0027received\u0027",
+      "range": {
+        "startLine": 153,
+        "startChar": 33,
+        "endLine": 153,
+        "endChar": 41
+      },
+      "revId": "a7725a20de7876c82ceb063e4bb630896f237317",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "a9d8541d_429dce12",
+        "filename": "src/main/java/org/onap/cps/ncmp/dmi/rest/controller/DmiRestController.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 153,
+      "author": {
+        "id": 7617
+      },
+      "writtenOn": "2024-05-28T13:46:41Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "6f61efe4_a32a81d6",
       "range": {
         "startLine": 153,
         "startChar": 33,
