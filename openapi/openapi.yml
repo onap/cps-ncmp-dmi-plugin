@@ -128,7 +128,6 @@ paths:
         - $ref: 'components.yml#/components/parameters/resourceIdentifierInQuery'
         - $ref: 'components.yml#/components/parameters/optionsParamInQuery'
         - $ref: 'components.yml#/components/parameters/topicParamInQuery'
-        - $ref: 'components.yml#/components/parameters/moduleSetTagParamInQuery'
       requestBody:
         description: Contains collection of cm handles with it's private properties and requestId
         content:
