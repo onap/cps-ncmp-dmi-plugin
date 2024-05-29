@@ -27,7 +27,7 @@ tags:
   - description: DMI plugin rest apis
     name: dmi-datajob
 paths:
-  /dmi/v1/readJob/{requestId}:
+  /v1/readJob/{requestId}:
     post:
       description: Create a read request
       operationId: readDataJob
@@ -42,17 +42,9 @@ paths:
       tags:
         - dmi-datajob
       responses:
-        "200":
-          description: Response for subjob
-          content:
-            application/json:
-              schema:
-                type: object
-                properties:
-                  dataProducerJobId:
-                    type: string
-                    description: The data job ID.
-  /dmi/v1/writeJob/{requestId}:
+        "501":
+          $ref: '#/components/responses/NotImplemented'
+  /v1/writeJob/{requestId}:
     post:
       description: Create a write request
       operationId: writeDataJob
@@ -67,16 +59,9 @@ paths:
       tags:
         - dmi-datajob
       responses:
-        "200":
-          description: Response for subjob
-          content:
-            application/json:
-              schema:
-                type: object
-                properties:
-                  dataProducerJobId:
-                    type: string
-                    description: The data job ID.
+        "501":
+          $ref: '#/components/responses/NotImplemented'
+
 components:
   parameters:
     requestIdInPath:
@@ -88,6 +73,16 @@ components:
         example: some-identifier
         type: string
   schemas:
+    ErrorMessage:
+      type: object
+      title: Error
+      properties:
+        status:
+          type: string
+        message:
+          type: string
+        details:
+          type: string
     SubjobReadRequest:
       type: object
       required:
@@ -245,5 +240,15 @@ components:
         type: string
     Object:
       type: object
-
+  responses:
+    NotImplemented:
+      description: Not Implemented
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ErrorMessage'
+          example:
+            status: 501
+            message: Not Implemented
+            details: Method Not Implemented
 
