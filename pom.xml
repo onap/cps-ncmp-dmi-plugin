@@ -347,9 +347,9 @@
                             <inputSpec>${project.basedir}/openapi/openapi-datajob.yml</inputSpec>
                             <generatorName>spring</generatorName>
                             <generateSupportingFiles>false</generateSupportingFiles>
-                            <invokerPackage>org.onap.cps.ncmp.dmi.rest.controller</invokerPackage>
-                            <apiPackage>org.onap.cps.ncmp.dmi.rest.api</apiPackage>
-                            <modelPackage>org.onap.cps.ncmp.dmi.model</modelPackage>
+                            <invokerPackage>org.onap.cps.ncmp.dmi.datajobs.rest.controller</invokerPackage>
+                            <apiPackage>org.onap.cps.ncmp.dmi.datajobs.rest.api</apiPackage>
+                            <modelPackage>org.onap.cps.ncmp.dmi.datajobs.model</modelPackage>
                             <generateAliasAsModel>true</generateAliasAsModel>
                             <configOptions>
                                 <sourceFolder>src/gen/java</sourceFolder>
@@ -575,6 +575,7 @@
                 <configuration>
                     <excludes>
                         <exclude>org/onap/cps/ncmp/dmi/model/*</exclude>
+                        <exclude>org/onap/cps/ncmp/dmi/datajobs/model/*</exclude>
                     </excludes>
                 </configuration>
                 <executions>
