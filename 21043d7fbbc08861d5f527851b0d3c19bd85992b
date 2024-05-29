@@ -18,6 +18,24 @@
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "7b230739_47a1ca86",
+        "filename": "src/main/java/org/onap/cps/ncmp/dmi/datajobs/rest/controller/DmiDatajobsRestController.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 4893
+      },
+      "writtenOn": "2024-05-29T09:41:10Z",
+      "side": 1,
+      "message": "Yeah that makes complete sense",
+      "parentUuid": "168ca718_39cf075c",
+      "revId": "21043d7fbbc08861d5f527851b0d3c19bd85992b",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "7260c000_4b381130",
@@ -35,6 +53,24 @@
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "63864298_7260e80d",
+        "filename": "src/test/groovy/org/onap/cps/ncmp/dmi/datajobs/rest/controller/DmiDatajobsRestControllerSpec.groovy",
+        "patchSetId": 1
+      },
+      "lineNbr": 51,
+      "author": {
+        "id": 4893
+      },
+      "writtenOn": "2024-05-29T09:41:10Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7260c000_4b381130",
+      "revId": "21043d7fbbc08861d5f527851b0d3c19bd85992b",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "3bf8c720_ffd63d42",
@@ -48,6 +84,24 @@
       "writtenOn": "2024-05-29T09:36:55Z",
       "side": 1,
       "message": "indentation in this test is just a bit off",
+      "revId": "21043d7fbbc08861d5f527851b0d3c19bd85992b",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "d352a41c_1ced0146",
+        "filename": "src/test/groovy/org/onap/cps/ncmp/dmi/datajobs/rest/controller/DmiDatajobsRestControllerSpec.groovy",
+        "patchSetId": 1
+      },
+      "lineNbr": 71,
+      "author": {
+        "id": 4893
+      },
+      "writtenOn": "2024-05-29T09:41:10Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3bf8c720_ffd63d42",
       "revId": "21043d7fbbc08861d5f527851b0d3c19bd85992b",
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
     }
