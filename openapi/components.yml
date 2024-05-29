@@ -180,6 +180,9 @@ components:
         requestId:
           type: string
           example: 3a9ce55c-e365-4dc9-8da3-a06f07cbc6d7
+        moduleSetTag:
+          type: string
+          example: module-set-tag1
 
     cmHandleProperties:
       type: object
@@ -296,17 +299,6 @@ components:
         sample1:
           value:
             topic: my-topic-name
-
-    moduleSetTagParamInQuery:
-      name: moduleSetTag
-      in: query
-      description: Module set tag of the given cm handle.
-      required: false
-      schema:
-        type: string
-      examples:
-        sample1:
-          value: tag1
 
     requiredRequestIdParamInQuery:
       name: requestId

@@ -206,15 +206,6 @@ paths:
         required: false
         schema:
           type: string
-      - description: Module set tag of the given cm handle.
-        examples:
-          sample1:
-            value: tag1
-        in: query
-        name: moduleSetTag
-        required: false
-        schema:
-          type: string
       requestBody:
         content:
           application/json:
@@ -377,16 +368,6 @@ components:
           value: my-topic-name
       in: query
       name: topic
-      required: false
-      schema:
-        type: string
-    moduleSetTagParamInQuery:
-      description: Module set tag of the given cm handle.
-      examples:
-        sample1:
-          value: tag1
-      in: query
-      name: moduleSetTag
       required: false
       schema:
         type: string
@@ -567,6 +548,7 @@ components:
         dataType: my-data-type
         cmHandleProperties:
           key: "{\"prop1\":\"value1\",\"prop2\":\"value2\"}"
+        moduleSetTag: module-set-tag1
         operation: read
       properties:
         operation:
@@ -592,6 +574,9 @@ components:
           type: object
         requestId:
           example: 3a9ce55c-e365-4dc9-8da3-a06f07cbc6d7
+          type: string
+        moduleSetTag:
+          example: module-set-tag1
           type: string
       type: object
     ResourceDataOperationRequests:

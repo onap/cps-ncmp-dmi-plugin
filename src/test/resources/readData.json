@@ -4,5 +4,6 @@
   "data": "normal request body",
   "cmHandleProperties": {
     "some-property": "some-property-value"
-  }
+  },
+  "moduleSetTag": "module-set-tag-example"
 }
