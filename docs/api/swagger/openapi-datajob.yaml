@@ -10,7 +10,7 @@ tags:
 - description: DMI plugin rest apis
   name: dmi-datajob
 paths:
-  /dmi/v1/readJob/{requestId}:
+  /v1/readJob/{requestId}:
     post:
       description: Create a read request
       operationId: readDataJob
@@ -31,15 +31,19 @@ paths:
               $ref: '#/components/schemas/SubjobReadRequest'
         description: Operation body
       responses:
-        "200":
+        "501":
           content:
             application/json:
+              example:
+                status: 501
+                message: Not Implemented
+                details: Method Not Implemented
               schema:
-                $ref: '#/components/schemas/readDataJob_200_response'
-          description: Response for subjob
+                $ref: '#/components/schemas/ErrorMessage'
+          description: Not Implemented
       tags:
       - dmi-datajob
-  /dmi/v1/writeJob/{requestId}:
+  /v1/writeJob/{requestId}:
     post:
       description: Create a write request
       operationId: writeDataJob
@@ -60,12 +64,16 @@ paths:
               $ref: '#/components/schemas/SubjobWriteRequest'
         description: Operation body
       responses:
-        "200":
+        "501":
           content:
             application/json:
+              example:
+                status: 501
+                message: Not Implemented
+                details: Method Not Implemented
               schema:
-                $ref: '#/components/schemas/readDataJob_200_response'
-          description: Response for subjob
+                $ref: '#/components/schemas/ErrorMessage'
+          description: Not Implemented
       tags:
       - dmi-datajob
 components:
@@ -80,7 +88,28 @@ components:
         example: some-identifier
         type: string
       style: simple
+  responses:
+    NotImplemented:
+      content:
+        application/json:
+          example:
+            status: 501
+            message: Not Implemented
+            details: Method Not Implemented
+          schema:
+            $ref: '#/components/schemas/ErrorMessage'
+      description: Not Implemented
   schemas:
+    ErrorMessage:
+      properties:
+        status:
+          type: string
+        message:
+          type: string
+        details:
+          type: string
+      title: Error
+      type: object
     SubjobReadRequest:
       properties:
         dataAcceptType:
@@ -164,14 +193,6 @@ components:
       description: The input of the action in the form of key value pairs
       type: object
     Object:
-      type: object
-    readDataJob_200_response:
-      example:
-        dataProducerJobId: dataProducerJobId
-      properties:
-        dataProducerJobId:
-          description: The data job ID.
-          type: string
       type: object
     SubjobReadRequest_data_inner:
       properties:
