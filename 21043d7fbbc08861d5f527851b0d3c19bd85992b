@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "168ca718_39cf075c",
+        "filename": "src/main/java/org/onap/cps/ncmp/dmi/datajobs/rest/controller/DmiDatajobsRestController.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 7617
+      },
+      "writtenOn": "2024-05-29T09:36:55Z",
+      "side": 1,
+      "message": "\u0027theVoid\u0027?",
+      "revId": "21043d7fbbc08861d5f527851b0d3c19bd85992b",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "7260c000_4b381130",
+        "filename": "src/test/groovy/org/onap/cps/ncmp/dmi/datajobs/rest/controller/DmiDatajobsRestControllerSpec.groovy",
+        "patchSetId": 1
+      },
+      "lineNbr": 51,
+      "author": {
+        "id": 7617
+      },
+      "writtenOn": "2024-05-29T09:36:55Z",
+      "side": 1,
+      "message": "indent",
+      "revId": "21043d7fbbc08861d5f527851b0d3c19bd85992b",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "3bf8c720_ffd63d42",
+        "filename": "src/test/groovy/org/onap/cps/ncmp/dmi/datajobs/rest/controller/DmiDatajobsRestControllerSpec.groovy",
+        "patchSetId": 1
+      },
+      "lineNbr": 71,
+      "author": {
+        "id": 7617
+      },
+      "writtenOn": "2024-05-29T09:36:55Z",
+      "side": 1,
+      "message": "indentation in this test is just a bit off",
+      "revId": "21043d7fbbc08861d5f527851b0d3c19bd85992b",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    }
+  ]
+}
