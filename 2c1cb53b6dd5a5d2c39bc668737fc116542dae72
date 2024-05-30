@@ -41,6 +41,30 @@
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "7fca2ff7_7ad15d69",
+        "filename": "src/test/groovy/org/onap/cps/ncmp/dmi/datajobs/rest/controller/DmiDatajobsRestControllerSpec.groovy",
+        "patchSetId": 3
+      },
+      "lineNbr": 49,
+      "author": {
+        "id": 4893
+      },
+      "writtenOn": "2024-05-30T14:30:34Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "77f0da67_f6f2cccb",
+      "range": {
+        "startLine": 49,
+        "startChar": 12,
+        "endLine": 49,
+        "endChar": 34
+      },
+      "revId": "2c1cb53b6dd5a5d2c39bc668737fc116542dae72",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "ae606d18_735ce123",
@@ -54,6 +78,30 @@
       "writtenOn": "2024-05-30T14:11:56Z",
       "side": 1,
       "message": "as above: try without",
+      "range": {
+        "startLine": 68,
+        "startChar": 24,
+        "endLine": 68,
+        "endChar": 47
+      },
+      "revId": "2c1cb53b6dd5a5d2c39bc668737fc116542dae72",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "69273d18_7203389b",
+        "filename": "src/test/groovy/org/onap/cps/ncmp/dmi/datajobs/rest/controller/DmiDatajobsRestControllerSpec.groovy",
+        "patchSetId": 3
+      },
+      "lineNbr": 68,
+      "author": {
+        "id": 4893
+      },
+      "writtenOn": "2024-05-30T14:30:34Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ae606d18_735ce123",
       "range": {
         "startLine": 68,
         "startChar": 24,
