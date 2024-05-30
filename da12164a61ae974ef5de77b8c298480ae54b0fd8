@@ -20,6 +20,52 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "2f0ee098_9a7b61eb",
+        "filename": "src/main/java/org/onap/cps/ncmp/dmi/datajobs/rest/controller/DmiDatajobsRestController.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 7957
+      },
+      "writtenOn": "2024-05-30T08:38:03Z",
+      "side": 1,
+      "message": "unused",
+      "range": {
+        "startLine": 35,
+        "startChar": 0,
+        "endLine": 35,
+        "endChar": 6
+      },
+      "revId": "da12164a61ae974ef5de77b8c298480ae54b0fd8",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "73470148_ccf13b85",
+        "filename": "src/main/java/org/onap/cps/ncmp/dmi/datajobs/rest/controller/DmiDatajobsRestController.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 7957
+      },
+      "writtenOn": "2024-05-30T08:38:03Z",
+      "side": 1,
+      "message": "unused",
+      "range": {
+        "startLine": 36,
+        "startChar": 0,
+        "endLine": 36,
+        "endChar": 24
+      },
+      "revId": "da12164a61ae974ef5de77b8c298480ae54b0fd8",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "a1e60888_ea80b637",
         "filename": "src/test/groovy/org/onap/cps/ncmp/dmi/datajobs/rest/controller/DmiDatajobsRestControllerSpec.groovy",
         "patchSetId": 2
