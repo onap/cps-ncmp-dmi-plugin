@@ -1,0 +1,67 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "5a0bff04_5c0804a2",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2024-05-30T14:11:56Z",
+      "side": 1,
+      "message": "some minor suggestions",
+      "revId": "2c1cb53b6dd5a5d2c39bc668737fc116542dae72",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "77f0da67_f6f2cccb",
+        "filename": "src/test/groovy/org/onap/cps/ncmp/dmi/datajobs/rest/controller/DmiDatajobsRestControllerSpec.groovy",
+        "patchSetId": 3
+      },
+      "lineNbr": 49,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2024-05-30T14:11:56Z",
+      "side": 1,
+      "message": "needed \u0027\u0027 as well but I woudln\u0027t def a variable just inline \u0027\u0027 below. I wonder if it might even work without .content()\nIn general LESS is better in testware (as long as it doesn\u0027t affect readability)",
+      "range": {
+        "startLine": 49,
+        "startChar": 12,
+        "endLine": 49,
+        "endChar": 34
+      },
+      "revId": "2c1cb53b6dd5a5d2c39bc668737fc116542dae72",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "ae606d18_735ce123",
+        "filename": "src/test/groovy/org/onap/cps/ncmp/dmi/datajobs/rest/controller/DmiDatajobsRestControllerSpec.groovy",
+        "patchSetId": 3
+      },
+      "lineNbr": 68,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2024-05-30T14:11:56Z",
+      "side": 1,
+      "message": "as above: try without",
+      "range": {
+        "startLine": 68,
+        "startChar": 24,
+        "endLine": 68,
+        "endChar": 47
+      },
+      "revId": "2c1cb53b6dd5a5d2c39bc668737fc116542dae72",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    }
+  ]
+}
