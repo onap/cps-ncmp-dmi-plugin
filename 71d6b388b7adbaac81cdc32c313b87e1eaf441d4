@@ -1,0 +1,107 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "e1733ee6_c45fa6a6",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2024-06-24T14:18:34Z",
+      "side": 1,
+      "message": "nned to chat about a few things...",
+      "revId": "71d6b388b7adbaac81cdc32c313b87e1eaf441d4",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "7f6a49e0_54ece2e1",
+        "filename": "dmi-service/src/main/java/org/onap/cps/ncmp/dmi/datajobs/datajobs/rest/controller/DmiDatajobsRestController.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2024-06-24T14:18:34Z",
+      "side": 1,
+      "message": "seems to be an issue with the folder structure here",
+      "range": {
+        "startLine": 21,
+        "startChar": 30,
+        "endLine": 21,
+        "endChar": 47
+      },
+      "revId": "71d6b388b7adbaac81cdc32c313b87e1eaf441d4",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "473d61a8_dc83a61f",
+        "filename": "dmi-service/src/test/java/groovy/org/onap/cps/ncmp/dmi/api/kafka/MessagingBaseSpec.groovy",
+        "patchSetId": 1
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2024-06-24T14:18:34Z",
+      "side": 1,
+      "message": "we never did a groovy package!\nShould not be needed\nalso it leeds to unnecessary import.\nBy definition (unit) testware classes should be in the same package as the class under test!",
+      "range": {
+        "startLine": 21,
+        "startChar": 8,
+        "endLine": 21,
+        "endChar": 14
+      },
+      "revId": "71d6b388b7adbaac81cdc32c313b87e1eaf441d4",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "4a7753b1_2fcb7b10",
+        "filename": "dmi-service/src/test/java/groovy/org/onap/cps/ncmp/dmi/rest/controller/DmiRestControllerSpec.groovy",
+        "patchSetId": 1
+      },
+      "lineNbr": 55,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2024-06-24T14:18:34Z",
+      "side": 1,
+      "message": "set your * import treshold in intelliJ to 999!",
+      "range": {
+        "startLine": 54,
+        "startChar": 0,
+        "endLine": 55,
+        "endChar": 51
+      },
+      "revId": "71d6b388b7adbaac81cdc32c313b87e1eaf441d4",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "dbd3c5ec_9855856a",
+        "filename": "pom.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2024-06-24T14:18:34Z",
+      "side": 1,
+      "message": "Where did all the properties and dependency management go?! I only see it being deleted ?!",
+      "revId": "71d6b388b7adbaac81cdc32c313b87e1eaf441d4",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    }
+  ]
+}
