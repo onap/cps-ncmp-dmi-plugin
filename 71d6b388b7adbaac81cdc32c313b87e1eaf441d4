@@ -41,6 +41,30 @@
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "ad060f53_79b615a7",
+        "filename": "dmi-service/src/main/java/org/onap/cps/ncmp/dmi/datajobs/datajobs/rest/controller/DmiDatajobsRestController.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2024-06-25T09:47:17Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7f6a49e0_54ece2e1",
+      "range": {
+        "startLine": 21,
+        "startChar": 30,
+        "endLine": 21,
+        "endChar": 47
+      },
+      "revId": "71d6b388b7adbaac81cdc32c313b87e1eaf441d4",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "473d61a8_dc83a61f",
@@ -54,6 +78,30 @@
       "writtenOn": "2024-06-24T14:18:34Z",
       "side": 1,
       "message": "we never did a groovy package!\nShould not be needed\nalso it leeds to unnecessary import.\nBy definition (unit) testware classes should be in the same package as the class under test!",
+      "range": {
+        "startLine": 21,
+        "startChar": 8,
+        "endLine": 21,
+        "endChar": 14
+      },
+      "revId": "71d6b388b7adbaac81cdc32c313b87e1eaf441d4",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "d8343175_57846f77",
+        "filename": "dmi-service/src/test/java/groovy/org/onap/cps/ncmp/dmi/api/kafka/MessagingBaseSpec.groovy",
+        "patchSetId": 1
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2024-06-25T09:47:17Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "473d61a8_dc83a61f",
       "range": {
         "startLine": 21,
         "startChar": 8,
@@ -100,6 +148,24 @@
       "writtenOn": "2024-06-24T14:18:34Z",
       "side": 1,
       "message": "Where did all the properties and dependency management go?! I only see it being deleted ?!",
+      "revId": "71d6b388b7adbaac81cdc32c313b87e1eaf441d4",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "74c50630_4602f841",
+        "filename": "pom.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2024-06-25T09:47:17Z",
+      "side": 1,
+      "message": "in dmi-service/pom.xml",
+      "parentUuid": "dbd3c5ec_9855856a",
       "revId": "71d6b388b7adbaac81cdc32c313b87e1eaf441d4",
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
     }
