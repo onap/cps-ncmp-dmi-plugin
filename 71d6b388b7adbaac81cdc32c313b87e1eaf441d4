@@ -137,6 +137,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "623af2c6_e2983578",
+        "filename": "dmi-service/src/test/java/groovy/org/onap/cps/ncmp/dmi/rest/controller/DmiRestControllerSpec.groovy",
+        "patchSetId": 1
+      },
+      "lineNbr": 55,
+      "author": {
+        "id": 4893
+      },
+      "writtenOn": "2024-06-25T09:51:37Z",
+      "side": 1,
+      "message": "Done. Only see the change if you compare Patchset 1 to Patchset 2. Patchset 2 is identical to base so shows as no changes.",
+      "parentUuid": "4a7753b1_2fcb7b10",
+      "range": {
+        "startLine": 54,
+        "startChar": 0,
+        "endLine": 55,
+        "endChar": 51
+      },
+      "revId": "71d6b388b7adbaac81cdc32c313b87e1eaf441d4",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "dbd3c5ec_9855856a",
         "filename": "pom.xml",
         "patchSetId": 1
