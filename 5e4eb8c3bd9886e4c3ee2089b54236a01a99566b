@@ -86,6 +86,24 @@
       "message": "NB:\nDo we need to filter out test resources here like below :\n\n\u003cresource\u003e\n                \u003cdirectory\u003esrc/test/resources\u003c/directory\u003e\n                \u003cfiltering\u003etrue\u003c/filtering\u003e\n            \u003c/resource\u003e",
       "revId": "5e4eb8c3bd9886e4c3ee2089b54236a01a99566b",
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "ff87819d_8c4ef63a",
+        "filename": "dmi-service/pom.xml",
+        "patchSetId": 2
+      },
+      "lineNbr": 271,
+      "author": {
+        "id": 4893
+      },
+      "writtenOn": "2024-06-27T09:21:52Z",
+      "side": 1,
+      "message": "This commit is just to make a module setup. This would be more a technical debt question. Don\u0027t know if it is necessary",
+      "parentUuid": "c23ba95a_b62ddf74",
+      "revId": "5e4eb8c3bd9886e4c3ee2089b54236a01a99566b",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
     }
   ]
 }
