@@ -53,6 +53,24 @@
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "53961399_a5021d0c",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 7965
+      },
+      "writtenOn": "2024-06-27T09:08:05Z",
+      "side": 1,
+      "message": "Discussed with the team and decided to go ahead with this as we dont see any issues with this.",
+      "parentUuid": "e781a16a_07fe1387",
+      "revId": "5e4eb8c3bd9886e4c3ee2089b54236a01a99566b",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "c23ba95a_b62ddf74",
