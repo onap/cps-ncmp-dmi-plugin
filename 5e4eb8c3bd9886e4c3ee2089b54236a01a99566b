@@ -104,6 +104,24 @@
       "parentUuid": "c23ba95a_b62ddf74",
       "revId": "5e4eb8c3bd9886e4c3ee2089b54236a01a99566b",
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "f5b3e9c8_68468646",
+        "filename": "dmi-service/pom.xml",
+        "patchSetId": 2
+      },
+      "lineNbr": 271,
+      "author": {
+        "id": 7957
+      },
+      "writtenOn": "2024-06-27T11:06:20Z",
+      "side": 1,
+      "message": "Will keep this open for internal team discussion",
+      "parentUuid": "ff87819d_8c4ef63a",
+      "revId": "5e4eb8c3bd9886e4c3ee2089b54236a01a99566b",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
     }
   ]
 }
