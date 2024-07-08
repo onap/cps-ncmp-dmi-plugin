@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "0bd9e6a7_f29be2e2",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2024-07-08T16:00:54Z",
+      "side": 1,
+      "message": "not suer what actually to review if all this has been moved from other repo.\nMaybe you can specify in the commit message if any of these files have changed really?",
+      "revId": "68d0659686d32c0ca4699090cc2817098ed5463b",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    }
+  ]
+}
