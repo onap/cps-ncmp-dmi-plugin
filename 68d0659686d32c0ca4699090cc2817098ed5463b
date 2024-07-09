@@ -16,6 +16,24 @@
       "message": "not suer what actually to review if all this has been moved from other repo.\nMaybe you can specify in the commit message if any of these files have changed really?",
       "revId": "68d0659686d32c0ca4699090cc2817098ed5463b",
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "8c58bebe_75d7ae0b",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 4893
+      },
+      "writtenOn": "2024-07-09T08:17:06Z",
+      "side": 1,
+      "message": "Added better description in commit message",
+      "parentUuid": "0bd9e6a7_f29be2e2",
+      "revId": "68d0659686d32c0ca4699090cc2817098ed5463b",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
     }
   ]
 }
