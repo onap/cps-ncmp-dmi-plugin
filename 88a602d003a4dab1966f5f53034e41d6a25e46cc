@@ -1,6 +1,23 @@
 {
   "comments": [
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "12c7d1f9_247488ae",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2024-07-09T12:36:21Z",
+      "side": 1,
+      "message": "question about the version handling\nand need to copy in EventDateTimeFormatterSpec as well..",
+      "revId": "88a602d003a4dab1966f5f53034e41d6a25e46cc",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "dcf83b1f_bf45c269",
@@ -18,6 +35,47 @@
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "0baeb3ae_9e718c8b",
+        "filename": "dmi-stub/dmi-plugin-demo-and-csit-stub-service/pom.xml",
+        "patchSetId": 3
+      },
+      "lineNbr": 58,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2024-07-09T12:36:21Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "dcf83b1f_bf45c269",
+      "revId": "88a602d003a4dab1966f5f53034e41d6a25e46cc",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "d8af71d2_d337bc3f",
+        "filename": "dmi-stub/dmi-plugin-demo-and-csit-stub-service/pom.xml",
+        "patchSetId": 3
+      },
+      "lineNbr": 60,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2024-07-09T12:36:21Z",
+      "side": 1,
+      "message": "there seems to be a legacy issue with the versions here. Are these not inherrited from the cps-dependencies?!",
+      "range": {
+        "startLine": 60,
+        "startChar": 21,
+        "endLine": 60,
+        "endChar": 29
+      },
+      "revId": "88a602d003a4dab1966f5f53034e41d6a25e46cc",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "d1ed5960_511c6e9a",
@@ -31,6 +89,24 @@
       "writtenOn": "2024-07-09T09:29:53Z",
       "side": 1,
       "message": "cps-ncmp-rest not required. Only need cps-ncmp-events",
+      "revId": "88a602d003a4dab1966f5f53034e41d6a25e46cc",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "53be17c1_b41c5220",
+        "filename": "dmi-stub/dmi-plugin-demo-and-csit-stub-service/pom.xml",
+        "patchSetId": 3
+      },
+      "lineNbr": 90,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2024-07-09T12:36:21Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "d1ed5960_511c6e9a",
       "revId": "88a602d003a4dab1966f5f53034e41d6a25e46cc",
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
     },
@@ -54,6 +130,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "26b64bf5_da0efefb",
+        "filename": "dmi-stub/dmi-plugin-demo-and-csit-stub-service/src/main/java/org/onap/cps/ncmp/dmi/rest/stub/controller/DmiRestStubController.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2024-07-09T12:36:21Z",
+      "side": 1,
+      "message": "so you cerate a copy and past of teh EventDatTieFormatter?",
+      "parentUuid": "6a05d7ba_e2c96561",
+      "revId": "88a602d003a4dab1966f5f53034e41d6a25e46cc",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "8006d298_a2e00e64",
         "filename": "dmi-stub/dmi-plugin-demo-and-csit-stub-service/src/main/java/org/onap/cps/ncmp/dmi/rest/stub/controller/DmiRestStubController.java",
         "patchSetId": 3
@@ -65,6 +159,24 @@
       "writtenOn": "2024-07-09T09:29:53Z",
       "side": 1,
       "message": "Changed from response.setIds(dataOperationRequest.getCmHandles().stream().map(DmiOperationCmHandle::getId).toList());\nto  .collect(Collectors.toList())",
+      "revId": "88a602d003a4dab1966f5f53034e41d6a25e46cc",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "700b2c4d_a10e0ee5",
+        "filename": "dmi-stub/dmi-plugin-demo-and-csit-stub-service/src/main/java/org/onap/cps/ncmp/dmi/rest/stub/controller/DmiRestStubController.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 279,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2024-07-09T12:36:21Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "8006d298_a2e00e64",
       "revId": "88a602d003a4dab1966f5f53034e41d6a25e46cc",
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
     },
@@ -82,6 +194,24 @@
       "writtenOn": "2024-07-09T09:29:53Z",
       "side": 1,
       "message": "Added from CPS, previously came is as a dependency",
+      "revId": "88a602d003a4dab1966f5f53034e41d6a25e46cc",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "adaa1673_8310df58",
+        "filename": "dmi-stub/dmi-plugin-demo-and-csit-stub-service/src/main/java/org/onap/cps/ncmp/dmi/rest/stub/utils/EventDateTimeFormatter.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2024-07-09T12:36:21Z",
+      "side": 1,
+      "message": "yes is better this way.\n(did you copy the test as well?)",
+      "parentUuid": "280ae73c_a6e1ab72",
       "revId": "88a602d003a4dab1966f5f53034e41d6a25e46cc",
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
     },
