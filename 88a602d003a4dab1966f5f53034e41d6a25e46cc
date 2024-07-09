@@ -100,6 +100,30 @@
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "37709916_f1a099d0",
+        "filename": "dmi-stub/dmi-plugin-demo-and-csit-stub-service/pom.xml",
+        "patchSetId": 3
+      },
+      "lineNbr": 60,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2024-07-09T15:56:56Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "855b45ae_d2cf87a6",
+      "range": {
+        "startLine": 60,
+        "startChar": 21,
+        "endLine": 60,
+        "endChar": 29
+      },
+      "revId": "88a602d003a4dab1966f5f53034e41d6a25e46cc",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "d1ed5960_511c6e9a",
@@ -272,6 +296,24 @@
       "side": 1,
       "message": "The test isn\u0027t in the stub module which I think we would like to maintain. Might need a think about this one",
       "parentUuid": "adaa1673_8310df58",
+      "revId": "88a602d003a4dab1966f5f53034e41d6a25e46cc",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "1fc5ca2a_379bce46",
+        "filename": "dmi-stub/dmi-plugin-demo-and-csit-stub-service/src/main/java/org/onap/cps/ncmp/dmi/rest/stub/utils/EventDateTimeFormatter.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2024-07-09T15:56:56Z",
+      "side": 1,
+      "message": "just setup test\\groovy like in production code. I did the same for the Policy Executor Stub that got merged earlier today...",
+      "parentUuid": "29642449_e6868b51",
       "revId": "88a602d003a4dab1966f5f53034e41d6a25e46cc",
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
     },
