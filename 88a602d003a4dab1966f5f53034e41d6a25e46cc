@@ -78,6 +78,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "855b45ae_d2cf87a6",
+        "filename": "dmi-stub/dmi-plugin-demo-and-csit-stub-service/pom.xml",
+        "patchSetId": 3
+      },
+      "lineNbr": 60,
+      "author": {
+        "id": 4893
+      },
+      "writtenOn": "2024-07-09T13:09:55Z",
+      "side": 1,
+      "message": "We don\u0027t inherit from cps-dependencies in the plugin. The lombok version was incorrect though",
+      "parentUuid": "d8af71d2_d337bc3f",
+      "range": {
+        "startLine": 60,
+        "startChar": 21,
+        "endLine": 60,
+        "endChar": 29
+      },
+      "revId": "88a602d003a4dab1966f5f53034e41d6a25e46cc",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "d1ed5960_511c6e9a",
         "filename": "dmi-stub/dmi-plugin-demo-and-csit-stub-service/pom.xml",
         "patchSetId": 3
@@ -148,6 +172,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "f96cce87_eb023b36",
+        "filename": "dmi-stub/dmi-plugin-demo-and-csit-stub-service/src/main/java/org/onap/cps/ncmp/dmi/rest/stub/controller/DmiRestStubController.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 4893
+      },
+      "writtenOn": "2024-07-09T13:09:55Z",
+      "side": 1,
+      "message": "Exactly yes",
+      "parentUuid": "26b64bf5_da0efefb",
+      "revId": "88a602d003a4dab1966f5f53034e41d6a25e46cc",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "8006d298_a2e00e64",
         "filename": "dmi-stub/dmi-plugin-demo-and-csit-stub-service/src/main/java/org/onap/cps/ncmp/dmi/rest/stub/controller/DmiRestStubController.java",
         "patchSetId": 3
@@ -212,6 +254,24 @@
       "side": 1,
       "message": "yes is better this way.\n(did you copy the test as well?)",
       "parentUuid": "280ae73c_a6e1ab72",
+      "revId": "88a602d003a4dab1966f5f53034e41d6a25e46cc",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "29642449_e6868b51",
+        "filename": "dmi-stub/dmi-plugin-demo-and-csit-stub-service/src/main/java/org/onap/cps/ncmp/dmi/rest/stub/utils/EventDateTimeFormatter.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 4893
+      },
+      "writtenOn": "2024-07-09T13:09:55Z",
+      "side": 1,
+      "message": "The test isn\u0027t in the stub module which I think we would like to maintain. Might need a think about this one",
+      "parentUuid": "adaa1673_8310df58",
       "revId": "88a602d003a4dab1966f5f53034e41d6a25e46cc",
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
     },
