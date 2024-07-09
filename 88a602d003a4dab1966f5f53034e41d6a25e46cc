@@ -212,6 +212,24 @@
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "abc0b526_ab25d0bb",
+        "filename": "dmi-stub/dmi-plugin-demo-and-csit-stub-service/src/main/java/org/onap/cps/ncmp/dmi/rest/stub/controller/DmiRestStubController.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2024-07-09T15:57:43Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "f96cce87_eb023b36",
+      "revId": "88a602d003a4dab1966f5f53034e41d6a25e46cc",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "8006d298_a2e00e64",
@@ -331,6 +349,24 @@
       "writtenOn": "2024-07-09T09:29:53Z",
       "side": 1,
       "message": "New module",
+      "revId": "88a602d003a4dab1966f5f53034e41d6a25e46cc",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "4b646801_fd5b2f00",
+        "filename": "pom.xml",
+        "patchSetId": 3
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2024-07-09T15:57:43Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "9fb02aa9_de859eda",
       "revId": "88a602d003a4dab1966f5f53034e41d6a25e46cc",
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
     }
