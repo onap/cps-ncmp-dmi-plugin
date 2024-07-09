@@ -1,0 +1,106 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "dcf83b1f_bf45c269",
+        "filename": "dmi-stub/dmi-plugin-demo-and-csit-stub-service/pom.xml",
+        "patchSetId": 3
+      },
+      "lineNbr": 58,
+      "author": {
+        "id": 4893
+      },
+      "writtenOn": "2024-07-09T09:29:53Z",
+      "side": 1,
+      "message": "projectlombok to jakarta-servlet dependencies added after stopping dependency to cps-ncmp-rest",
+      "revId": "88a602d003a4dab1966f5f53034e41d6a25e46cc",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "d1ed5960_511c6e9a",
+        "filename": "dmi-stub/dmi-plugin-demo-and-csit-stub-service/pom.xml",
+        "patchSetId": 3
+      },
+      "lineNbr": 90,
+      "author": {
+        "id": 4893
+      },
+      "writtenOn": "2024-07-09T09:29:53Z",
+      "side": 1,
+      "message": "cps-ncmp-rest not required. Only need cps-ncmp-events",
+      "revId": "88a602d003a4dab1966f5f53034e41d6a25e46cc",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "6a05d7ba_e2c96561",
+        "filename": "dmi-stub/dmi-plugin-demo-and-csit-stub-service/src/main/java/org/onap/cps/ncmp/dmi/rest/stub/controller/DmiRestStubController.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 4893
+      },
+      "writtenOn": "2024-07-09T09:29:53Z",
+      "side": 1,
+      "message": "Added in utils directory. Previously gotten from CPS",
+      "revId": "88a602d003a4dab1966f5f53034e41d6a25e46cc",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "8006d298_a2e00e64",
+        "filename": "dmi-stub/dmi-plugin-demo-and-csit-stub-service/src/main/java/org/onap/cps/ncmp/dmi/rest/stub/controller/DmiRestStubController.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 279,
+      "author": {
+        "id": 4893
+      },
+      "writtenOn": "2024-07-09T09:29:53Z",
+      "side": 1,
+      "message": "Changed from response.setIds(dataOperationRequest.getCmHandles().stream().map(DmiOperationCmHandle::getId).toList());\nto  .collect(Collectors.toList())",
+      "revId": "88a602d003a4dab1966f5f53034e41d6a25e46cc",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "280ae73c_a6e1ab72",
+        "filename": "dmi-stub/dmi-plugin-demo-and-csit-stub-service/src/main/java/org/onap/cps/ncmp/dmi/rest/stub/utils/EventDateTimeFormatter.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 4893
+      },
+      "writtenOn": "2024-07-09T09:29:53Z",
+      "side": 1,
+      "message": "Added from CPS, previously came is as a dependency",
+      "revId": "88a602d003a4dab1966f5f53034e41d6a25e46cc",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "9fb02aa9_de859eda",
+        "filename": "pom.xml",
+        "patchSetId": 3
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 4893
+      },
+      "writtenOn": "2024-07-09T09:29:53Z",
+      "side": 1,
+      "message": "New module",
+      "revId": "88a602d003a4dab1966f5f53034e41d6a25e46cc",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    }
+  ]
+}
