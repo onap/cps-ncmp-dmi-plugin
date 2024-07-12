@@ -56,6 +56,30 @@
       },
       "revId": "a29947d9eead013ae7b8922b0af1e6134b16ac36",
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "57cf6291_eaab4d05",
+        "filename": "dmi-stub/dmi-plugin-demo-and-csit-stub-service/src/test/groovy/org/onap/cps/ncmp/dmi/rest/stub/utils/EventDateTimeFormatterSpec.groovy",
+        "patchSetId": 7
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 4893
+      },
+      "writtenOn": "2024-07-12T12:38:19Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "fc19c975_7f312fa5",
+      "range": {
+        "startLine": 9,
+        "startChar": 4,
+        "endLine": 24,
+        "endChar": 5
+      },
+      "revId": "a29947d9eead013ae7b8922b0af1e6134b16ac36",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
     }
   ]
 }
