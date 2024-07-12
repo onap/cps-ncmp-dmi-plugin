@@ -16,6 +16,46 @@
       "message": "recheck",
       "revId": "a29947d9eead013ae7b8922b0af1e6134b16ac36",
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "21c5ac6c_7d583ce5",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 7
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 7957
+      },
+      "writtenOn": "2024-07-12T12:31:26Z",
+      "side": 1,
+      "message": "Only a minor alignment is need else it looks good to me it can be merged after this.",
+      "revId": "a29947d9eead013ae7b8922b0af1e6134b16ac36",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "fc19c975_7f312fa5",
+        "filename": "dmi-stub/dmi-plugin-demo-and-csit-stub-service/src/test/groovy/org/onap/cps/ncmp/dmi/rest/stub/utils/EventDateTimeFormatterSpec.groovy",
+        "patchSetId": 7
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 7957
+      },
+      "writtenOn": "2024-07-12T12:31:26Z",
+      "side": 1,
+      "message": "alignments",
+      "range": {
+        "startLine": 9,
+        "startChar": 4,
+        "endLine": 24,
+        "endChar": 5
+      },
+      "revId": "a29947d9eead013ae7b8922b0af1e6134b16ac36",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
     }
   ]
 }
