@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "4daf0fba_35395f34",
+        "filename": "dmi-stub/dmi-plugin-demo-and-csit-stub-service/src/main/resources/application.yml",
+        "patchSetId": 2
+      },
+      "lineNbr": 56,
+      "author": {
+        "id": 6742
+      },
+      "writtenOn": "2024-07-12T15:47:25Z",
+      "side": 1,
+      "message": "You have deleted module-resource-delay-ms by mistake. We should have four delays now:\n\n    module-references-delay-ms: ${MODULE_REFERENCES_DELAY_MS:100}\n    module-resources-delay-ms: ${MODULE_RESOURCES_DELAY_MS:1000}\n    read-data-for-cm-handle-delay-ms: ${READ_DATA_FOR_CM_HANDLE_DELAY_MS:300}\n    write-data-for-cm-handle-delay-ms: ${WRITE_DATA_FOR_CM_HANDLE_DELAY_MS:670}",
+      "range": {
+        "startLine": 54,
+        "startChar": 65,
+        "endLine": 56,
+        "endChar": 79
+      },
+      "revId": "7fef1cfde4b5803b53160d7ca4498e2cb0a79c94",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    }
+  ]
+}
