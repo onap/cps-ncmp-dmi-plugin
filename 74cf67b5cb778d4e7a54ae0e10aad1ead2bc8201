@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "ef3c0864_18650e35",
+        "filename": "dmi-stub/dmi-plugin-demo-and-csit-stub-service/src/main/java/org/onap/cps/ncmp/dmi/rest/stub/controller/DmiRestStubController.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 328,
+      "author": {
+        "id": 7931
+      },
+      "writtenOn": "2024-07-16T09:22:24Z",
+      "side": 1,
+      "message": "are the comments necessary ?\ni think it should be removed",
+      "range": {
+        "startLine": 326,
+        "startChar": 13,
+        "endLine": 328,
+        "endChar": 55
+      },
+      "revId": "74cf67b5cb778d4e7a54ae0e10aad1ead2bc8201",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    }
+  ]
+}
