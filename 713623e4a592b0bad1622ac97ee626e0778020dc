@@ -46,6 +46,30 @@
       },
       "revId": "713623e4a592b0bad1622ac97ee626e0778020dc",
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "3087a03e_68cba2dd",
+        "filename": "dmi-stub/pom.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 47,
+      "author": {
+        "id": 4893
+      },
+      "writtenOn": "2024-07-17T10:08:25Z",
+      "side": 1,
+      "message": "The SNAPSHOT is being used in cps-parent in the main CPS repo. Is this a mistake?",
+      "parentUuid": "1a0f63ee_0e9db63f",
+      "range": {
+        "startLine": 47,
+        "startChar": 33,
+        "endLine": 47,
+        "endChar": 47
+      },
+      "revId": "713623e4a592b0bad1622ac97ee626e0778020dc",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
     }
   ]
 }
