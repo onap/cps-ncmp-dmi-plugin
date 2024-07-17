@@ -98,7 +98,24 @@
         </profile>
     </profiles>
     <dependencies>
-
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+            <exclusions>
+                <exclusion>
+                    <groupId>org.slf4j</groupId>
+                    <artifactId>slf4j-api</artifactId>
+                </exclusion></exclusions>
+        </dependency>
+        <dependency>
+            <groupId>ch.qos.logback</groupId>
+            <artifactId>logback-classic</artifactId>
+            <exclusions>
+                <exclusion>
+                    <groupId>org.slf4j</groupId>
+                    <artifactId>slf4j-api</artifactId>
+                </exclusion></exclusions>
+        </dependency>
         <dependency>
             <groupId>org.onap.cps</groupId>
             <artifactId>dmi-plugin-demo-and-csit-stub-service</artifactId>
@@ -110,10 +127,7 @@
                 </exclusion>
             </exclusions>
         </dependency>
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-web</artifactId>
-            <version>3.2.4</version>
-        </dependency>
+
+
     </dependencies>
 </project>
