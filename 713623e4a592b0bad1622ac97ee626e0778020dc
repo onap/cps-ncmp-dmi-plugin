@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "e81e439a_5a3f844f",
+        "filename": "dmi-stub/pom.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 47,
+      "author": {
+        "id": 7965
+      },
+      "writtenOn": "2024-07-17T09:36:39Z",
+      "side": 1,
+      "message": "only point to the released version.\n3.5.1",
+      "range": {
+        "startLine": 47,
+        "startChar": 33,
+        "endLine": 47,
+        "endChar": 47
+      },
+      "revId": "713623e4a592b0bad1622ac97ee626e0778020dc",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    }
+  ]
+}
