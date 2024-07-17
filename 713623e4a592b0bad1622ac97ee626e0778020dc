@@ -70,6 +70,30 @@
       },
       "revId": "713623e4a592b0bad1622ac97ee626e0778020dc",
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "7fad41ab_45fd1d12",
+        "filename": "dmi-stub/pom.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 47,
+      "author": {
+        "id": 7965
+      },
+      "writtenOn": "2024-07-17T10:29:20Z",
+      "side": 1,
+      "message": "no no.\nin CPS we are working towards 3.5.2 now thats why it is in 3.5.2-SNAPSHOT ( which is absolutely correct; next we will release 3.5.2 when release happens. Last released version in 3.5.1 ) , but we cant refer a non released version in any other repo ( any change in the CPS dependency will directly impact in the DMI stub without we knowing abt it. We wont have any control on the version management )",
+      "parentUuid": "3087a03e_68cba2dd",
+      "range": {
+        "startLine": 47,
+        "startChar": 33,
+        "endLine": 47,
+        "endChar": 47
+      },
+      "revId": "713623e4a592b0bad1622ac97ee626e0778020dc",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
     }
   ]
 }
