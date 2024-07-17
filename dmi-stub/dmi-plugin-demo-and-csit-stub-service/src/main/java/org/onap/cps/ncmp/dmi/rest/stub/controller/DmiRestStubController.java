@@ -64,8 +64,8 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping("${rest.api.dmi-stub-base-path}")
-@RequiredArgsConstructor
 @Slf4j
+@RequiredArgsConstructor
 public class DmiRestStubController {
 
     private static final String DEFAULT_TAG = "tagD";
