@@ -22,6 +22,30 @@
       },
       "revId": "713623e4a592b0bad1622ac97ee626e0778020dc",
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "1a0f63ee_0e9db63f",
+        "filename": "dmi-stub/pom.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 47,
+      "author": {
+        "id": 7965
+      },
+      "writtenOn": "2024-07-17T09:37:25Z",
+      "side": 1,
+      "message": "for testing we can use any version in our local.",
+      "parentUuid": "e81e439a_5a3f844f",
+      "range": {
+        "startLine": 47,
+        "startChar": 33,
+        "endLine": 47,
+        "endChar": 47
+      },
+      "revId": "713623e4a592b0bad1622ac97ee626e0778020dc",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
     }
   ]
 }
