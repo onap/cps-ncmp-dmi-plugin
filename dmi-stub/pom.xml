@@ -41,13 +41,13 @@
     </modules>
 <dependencyManagement>
         <dependencies>
-                    <dependency>
-                        <groupId>org.onap.cps</groupId>
-                        <artifactId>cps-dependencies</artifactId>
-                        <version>3.5.1</version>
-                        <type>pom</type>
-                        <scope>import</scope>
-                    </dependency>
+            <dependency>
+                 <groupId>org.onap.cps</groupId>
+                 <artifactId>cps-dependencies</artifactId>
+                 <version>3.5.1</version>
+                 <type>pom</type>
+                <scope>import</scope>
+            </dependency>
         </dependencies>
     </dependencyManagement>
 </project>

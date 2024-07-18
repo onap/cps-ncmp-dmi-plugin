@@ -282,3 +282,22 @@ components:
       - op
       - path
       type: object
+    SubjobWriteResponse:
+      type: object
+      required:
+        - subJobId
+        - dmiServiceName
+        - dataProducerId
+      properties:
+        subJobId:
+          description: Unique identifier for the sub-job
+          example: my-sub-job-id
+          type: string
+        dmiServiceName:
+          description: Name of the relevant DMI Service
+          example: my-dmi-service
+          type: string
+        dataProducerId:
+          description: ID of the producer registered by DMI for the paths in the operations in this request
+          example: my-data-producer-identifier
+          type: string
