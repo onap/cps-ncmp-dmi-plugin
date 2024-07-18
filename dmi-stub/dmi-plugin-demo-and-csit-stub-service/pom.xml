@@ -93,6 +93,11 @@
             <artifactId>cps-ncmp-events</artifactId>
             <version>3.4.9</version>
         </dependency>
+        <dependency>
+            <groupId>io.swagger.core.v3</groupId>
+            <artifactId>swagger-annotations</artifactId>
+        </dependency>
+
         <!-- T E S T   D E P E N D E N C I E S -->
         <dependency>
             <groupId>org.spockframework</groupId>
