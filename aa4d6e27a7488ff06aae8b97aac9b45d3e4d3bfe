@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "d830edce_243bdde7",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2024-07-22T14:57:27Z",
+      "side": 1,
+      "message": "looks good\nSince this is a \u0027move\u0027 is assume there is another commit to remove it from the other repo, correct?",
+      "revId": "aa4d6e27a7488ff06aae8b97aac9b45d3e4d3bfe",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    }
+  ]
+}
