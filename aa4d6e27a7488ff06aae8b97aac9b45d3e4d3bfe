@@ -16,6 +16,52 @@
       "message": "looks good\nSince this is a \u0027move\u0027 is assume there is another commit to remove it from the other repo, correct?",
       "revId": "aa4d6e27a7488ff06aae8b97aac9b45d3e4d3bfe",
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "5292db89_1f4b20b9",
+        "filename": "dmi-stub/dmi-plugin-demo-and-csit-stub-service/pom.xml",
+        "patchSetId": 2
+      },
+      "lineNbr": 99,
+      "author": {
+        "id": 7957
+      },
+      "writtenOn": "2024-07-24T15:24:18Z",
+      "side": 1,
+      "message": "NB: Pls maintain order",
+      "range": {
+        "startLine": 96,
+        "startChar": 6,
+        "endLine": 99,
+        "endChar": 21
+      },
+      "revId": "aa4d6e27a7488ff06aae8b97aac9b45d3e4d3bfe",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "c331942c_dd49753c",
+        "filename": "dmi-stub/dmi-plugin-demo-and-csit-stub-service/src/main/java/org/onap/cps/ncmp/dmi/rest/stub/controller/DmiRestStubController.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 275,
+      "author": {
+        "id": 7957
+      },
+      "writtenOn": "2024-07-24T15:24:18Z",
+      "side": 1,
+      "message": "NB: merge both logs as line number 291",
+      "range": {
+        "startLine": 274,
+        "startChar": 7,
+        "endLine": 275,
+        "endChar": 58
+      },
+      "revId": "aa4d6e27a7488ff06aae8b97aac9b45d3e4d3bfe",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
     }
   ]
 }
