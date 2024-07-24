@@ -24,3 +24,4 @@ services:
       - "6512:6513"
     volumes:
       - ./netconf-config:/config/modules/stores
+      - ./tls:/config/tls
