@@ -32,7 +32,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class DmiDatajobsRestController implements DmiDatajobApi {
     /**
-     * * This method is not implemented for ONAP DMI plugin.
+     * This method is not implemented for ONAP DMI plugin.
      *
      * @param requestId Identifier for the overall Datajob (required)
      * @param subjobReadRequest Operation body (optional)
@@ -46,7 +46,7 @@ public class DmiDatajobsRestController implements DmiDatajobApi {
     }
 
     /**
-     * * This method is not implemented for ONAP DMI plugin.
+     * This method is not implemented for ONAP DMI plugin.
      *
      * @param requestId Identifier for the overall Datajob (required)
      * @param subjobWriteRequest Operation body (optional)
@@ -55,6 +55,21 @@ public class DmiDatajobsRestController implements DmiDatajobApi {
     @Override
     public ResponseEntity<Void> writeDataJob(final String requestId,
                                                                final SubjobWriteRequest subjobWriteRequest) {
+        return new ResponseEntity<>(HttpStatus.NOT_IMPLEMENTED);
+    }
+
+    /**
+     * This method is not implemented for ONAP DMI plugin.
+     *
+     * @param requestId Identifier for the overall Datajob (required)
+     * @param dataProducerJobId Identifier for the data producer job (required)
+     * @param dataProducerId Identifier for the data producer as a query parameter (required)
+     * @return ResponseEntity(Void) response entity indicating the method is not implemented
+     */
+    @Override
+    public ResponseEntity<Void> getDataJobStatus(final String requestId,
+                                                 final String dataProducerJobId,
+                                                 final String dataProducerId) {
         return new ResponseEntity<>(HttpStatus.NOT_IMPLEMENTED);
     }
 }

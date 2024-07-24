@@ -61,6 +61,19 @@ paths:
       responses:
         "501":
           $ref: '#/components/responses/NotImplemented'
+  /v1/dataJob/{requestId}/dataProducerJob/{dataProducerJobId}/status:
+    get:
+      description: Retrieve the status of a specific data job.
+      operationId: getDataJobStatus
+      parameters:
+        - $ref: '#/components/parameters/requestIdInPath'
+        - $ref: '#/components/parameters/dataProducerJobIdInPath'
+        - $ref: '#/components/parameters/dataProducerIdInQuery'
+      tags:
+        - dmi-datajob
+      responses:
+        "501":
+          $ref: '#/components/responses/NotImplemented'
 
 components:
   parameters:
@@ -72,6 +85,22 @@ components:
       schema:
         example: some-identifier
         type: string
+    dataProducerJobIdInPath:
+      description: Identifier for the data producer job
+      in: path
+      name: dataProducerJobId
+      required: true
+      schema:
+        example: some-producer-job-identifier
+        type: string
+    dataProducerIdInQuery:
+      name: dataProducerId
+      in: query
+      description: Identifier for the data producer
+      required: true
+      schema:
+        type: string
+        example: some-data-producer-identifier
   schemas:
     ErrorMessage:
       type: object
