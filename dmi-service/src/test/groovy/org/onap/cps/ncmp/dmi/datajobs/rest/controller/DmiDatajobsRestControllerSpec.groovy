@@ -30,6 +30,7 @@ import org.springframework.security.test.context.support.WithMockUser
 import org.springframework.test.web.servlet.MockMvc
 import spock.lang.Specification
 
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post
 
 @Import(WebSecurityConfig)
@@ -65,5 +66,17 @@ class DmiDatajobsRestControllerSpec extends Specification{
         ).andReturn().response
         then: 'response value is Not Implemented'
         response.status == HttpStatus.NOT_IMPLEMENTED.value()
+    }
+
+    def 'get status request should return 501 HTTP Status' () {
+        given: 'URL to get the status of a data job'
+            def getStatus = "${basePathV1}/dataJob/some-identifier/dataProducerJob/some-producer-job-identifier/status?dataProducerId=some-data-producer-identifier"
+        when: 'the request is performed'
+            def response = mvc.perform(
+                    get(getStatus)
+                            .contentType('application/json')
+            ).andReturn().response
+        then: 'response value is Not Implemented'
+            response.status == HttpStatus.NOT_IMPLEMENTED.value()
     }
 }
