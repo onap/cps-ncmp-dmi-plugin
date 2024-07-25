@@ -58,6 +58,30 @@
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "a42595c5_d8b42a23",
+        "filename": "dmi-service/openapi/openapi-datajob.yml",
+        "patchSetId": 2
+      },
+      "lineNbr": 66,
+      "author": {
+        "id": 7957
+      },
+      "writtenOn": "2024-07-25T09:58:29Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "45872fde_024dbb7d",
+      "range": {
+        "startLine": 66,
+        "startChar": 19,
+        "endLine": 66,
+        "endChar": 47
+      },
+      "revId": "039273f6e476493653b2be4878f8908c5be4a8b9",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "19e5d682_6a1ddd42",
@@ -71,6 +95,30 @@
       "writtenOn": "2024-07-25T09:08:11Z",
       "side": 1,
       "message": "NB: @return ResponseEntity\u003cVoid\u003e response entity indicating the method is not implemented",
+      "range": {
+        "startLine": 67,
+        "startChar": 7,
+        "endLine": 67,
+        "endChar": 54
+      },
+      "revId": "039273f6e476493653b2be4878f8908c5be4a8b9",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "36d85e3b_c809fbbc",
+        "filename": "dmi-service/src/main/java/org/onap/cps/ncmp/dmi/datajobs/rest/controller/DmiDatajobsRestController.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 67,
+      "author": {
+        "id": 7957
+      },
+      "writtenOn": "2024-07-25T09:58:29Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "19e5d682_6a1ddd42",
       "range": {
         "startLine": 67,
         "startChar": 7,
