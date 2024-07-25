@@ -1,0 +1,67 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "c31a2b24_b671a1e1",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 5
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2024-07-25T15:31:09Z",
+      "side": 1,
+      "message": "added not-implemented http error for new endpoints",
+      "range": {
+        "startLine": 10,
+        "startChar": 2,
+        "endLine": 10,
+        "endChar": 33
+      },
+      "revId": "ae1c7ea49add17946d6b08bc4ff8d5eb04ee97af",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "b3ff8986_f23fc0ac",
+        "filename": "dmi-service/openapi/openapi-datajob.yml",
+        "patchSetId": 5
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2024-07-25T15:31:09Z",
+      "side": 1,
+      "message": "need top update the copy in dos folder\n(run maven clean install)",
+      "revId": "ae1c7ea49add17946d6b08bc4ff8d5eb04ee97af",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "47c4c766_c710483d",
+        "filename": "dmi-service/src/main/java/org/onap/cps/ncmp/dmi/datajobs/rest/controller/DmiDatajobsRestController.java",
+        "patchSetId": 5
+      },
+      "lineNbr": 62,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2024-07-25T15:31:09Z",
+      "side": 1,
+      "message": "legacy: Remove additional *",
+      "range": {
+        "startLine": 62,
+        "startChar": 6,
+        "endLine": 62,
+        "endChar": 9
+      },
+      "revId": "ae1c7ea49add17946d6b08bc4ff8d5eb04ee97af",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    }
+  ]
+}
