@@ -24,6 +24,30 @@
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "0d21f916_eb728e1c",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 5
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 8155
+      },
+      "writtenOn": "2024-07-25T15:40:43Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "c31a2b24_b671a1e1",
+      "range": {
+        "startLine": 10,
+        "startChar": 2,
+        "endLine": 10,
+        "endChar": 33
+      },
+      "revId": "ae1c7ea49add17946d6b08bc4ff8d5eb04ee97af",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "b3ff8986_f23fc0ac",
@@ -37,6 +61,24 @@
       "writtenOn": "2024-07-25T15:31:09Z",
       "side": 1,
       "message": "need top update the copy in dos folder\n(run maven clean install)",
+      "revId": "ae1c7ea49add17946d6b08bc4ff8d5eb04ee97af",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "6b3d585e_e980a65a",
+        "filename": "dmi-service/openapi/openapi-datajob.yml",
+        "patchSetId": 5
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 8155
+      },
+      "writtenOn": "2024-07-25T15:40:43Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "b3ff8986_f23fc0ac",
       "revId": "ae1c7ea49add17946d6b08bc4ff8d5eb04ee97af",
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
     },
