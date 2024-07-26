@@ -41,6 +41,30 @@
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "da7c222f_0f0219bb",
+        "filename": "dmi-service/openapi/openapi-datajob.yml",
+        "patchSetId": 4
+      },
+      "lineNbr": 79,
+      "author": {
+        "id": 8155
+      },
+      "writtenOn": "2024-07-26T14:06:33Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "01e11577_d1976c69",
+      "range": {
+        "startLine": 79,
+        "startChar": 44,
+        "endLine": 79,
+        "endChar": 53
+      },
+      "revId": "b9e18b41d2c17f0e323d6d83aafea1dcd7e2e918",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "6a68ab05_488ad899",
@@ -64,6 +88,30 @@
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "9538ade4_255a1ff0",
+        "filename": "dmi-service/src/main/java/org/onap/cps/ncmp/dmi/datajobs/rest/controller/DmiDatajobsRestController.java",
+        "patchSetId": 4
+      },
+      "lineNbr": 67,
+      "author": {
+        "id": 8155
+      },
+      "writtenOn": "2024-07-26T14:06:33Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "6a68ab05_488ad899",
+      "range": {
+        "startLine": 67,
+        "startChar": 29,
+        "endLine": 67,
+        "endChar": 35
+      },
+      "revId": "b9e18b41d2c17f0e323d6d83aafea1dcd7e2e918",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "fdc845d3_01fddbf9",
@@ -77,6 +125,30 @@
       "writtenOn": "2024-07-26T14:04:14Z",
       "side": 1,
       "message": "remove",
+      "range": {
+        "startLine": 83,
+        "startChar": 29,
+        "endLine": 83,
+        "endChar": 35
+      },
+      "revId": "b9e18b41d2c17f0e323d6d83aafea1dcd7e2e918",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "d1748c23_a2aea0ea",
+        "filename": "dmi-service/src/main/java/org/onap/cps/ncmp/dmi/datajobs/rest/controller/DmiDatajobsRestController.java",
+        "patchSetId": 4
+      },
+      "lineNbr": 83,
+      "author": {
+        "id": 8155
+      },
+      "writtenOn": "2024-07-26T14:06:33Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "fdc845d3_01fddbf9",
       "range": {
         "startLine": 83,
         "startChar": 29,
