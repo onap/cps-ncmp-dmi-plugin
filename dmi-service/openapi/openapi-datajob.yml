@@ -74,6 +74,20 @@ paths:
       responses:
         "501":
           $ref: '#/components/responses/NotImplemented'
+  /v1/dataJob/{requestId}/dataProducerJob/{dataProducerJobId}/result:
+    get:
+      description: Retrieve the result of a specific data job.
+      operationId: getDataJobResult
+      parameters:
+        - $ref: '#/components/parameters/requestIdInPath'
+        - $ref: '#/components/parameters/dataProducerJobIdInPath'
+        - $ref: '#/components/parameters/dataProducerIdInQuery'
+        - $ref: '#/components/parameters/destinationInQuery'
+      tags:
+        - dmi-datajob
+      responses:
+        "501":
+          $ref: '#/components/responses/NotImplemented'
 
 components:
   parameters:
@@ -101,6 +115,14 @@ components:
       schema:
         type: string
         example: some-data-producer-identifier
+    destinationInQuery:
+      name: destination
+      in: query
+      description: The destination of the results (Kafka topic name or s3 bucket name)
+      required: true
+      schema:
+        type: string
+        example: some-destination
   schemas:
     ErrorMessage:
       type: object
