@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "442670f6_e9cf5fca",
+        "filename": "dmi-service/openapi/openapi-datajob.yml",
+        "patchSetId": 6
+      },
+      "lineNbr": 79,
+      "author": {
+        "id": 7957
+      },
+      "writtenOn": "2024-07-26T15:33:34Z",
+      "side": 1,
+      "message": "NB: Retrieve the result of a specific data producer job associated with a data job request.",
+      "range": {
+        "startLine": 79,
+        "startChar": 19,
+        "endLine": 79,
+        "endChar": 53
+      },
+      "revId": "ee4242c9d89dc1a814f12d0f90880e3f21745f43",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "9fd41c74_228d8424",
+        "filename": "dmi-service/openapi/openapi-datajob.yml",
+        "patchSetId": 6
+      },
+      "lineNbr": 80,
+      "author": {
+        "id": 7957
+      },
+      "writtenOn": "2024-07-26T15:33:34Z",
+      "side": 1,
+      "message": "NB: getDataProducerJobResult",
+      "range": {
+        "startLine": 80,
+        "startChar": 19,
+        "endLine": 80,
+        "endChar": 35
+      },
+      "revId": "ee4242c9d89dc1a814f12d0f90880e3f21745f43",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    }
+  ]
+}
