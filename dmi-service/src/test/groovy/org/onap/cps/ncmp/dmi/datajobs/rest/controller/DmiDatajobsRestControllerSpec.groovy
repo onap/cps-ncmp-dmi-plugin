@@ -79,4 +79,16 @@ class DmiDatajobsRestControllerSpec extends Specification{
         then: 'response value is Not Implemented'
             response.status == HttpStatus.NOT_IMPLEMENTED.value()
     }
+
+    def 'get result request should return 501 HTTP Status' () {
+        given: 'URL to get the result of a data job'
+            def getStatus = "${basePathV1}/dataJob/some-identifier/dataProducerJob/some-producer-job-identifier/result?dataProducerId=some-data-producer-identifier&destination=some-destination"
+        when: 'the request is performed'
+            def response = mvc.perform(
+                    get(getStatus)
+                            .contentType('application/json')
+            ).andReturn().response
+        then: 'response value is Not Implemented'
+            response.status == HttpStatus.NOT_IMPLEMENTED.value()
+    }
 }
