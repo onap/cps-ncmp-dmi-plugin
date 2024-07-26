@@ -89,7 +89,7 @@ public class DmiRestStubController {
     private long readDataForCmHandleDelayMs;
     @Value("${delay.write-data-for-cm-handle-delay-ms}")
     private long writeDataForCmHandleDelayMs;
-    private AtomicInteger subJobWriteRequestCounter;
+    private final AtomicInteger subJobWriteRequestCounter = new AtomicInteger();
 
     /**
      * This code defines a REST API endpoint for adding new the module set tag mapping. The endpoint receives the
@@ -291,6 +291,27 @@ public class DmiRestStubController {
         log.info("Received request to retrieve data job status. Request ID: {}, Data Producer Job ID: {}",
                 requestId, dataProducerJobId);
         return ResponseEntity.ok("FINISHED");
+    }
+
+    /**
+     * Retrieves the result of a given data job identified by {@code requestId} and {@code dataProducerJobId}.
+     *
+     * @param requestId             Identifier for the overall Datajob (required)
+     * @param dataProducerJobId     Identifier for the data producer job (required)
+     * @param dataProducerId        Identifier for the data producer as a query parameter (required)
+     * @param destination           The destination of the results, Kafka topic name or s3 bucket name (required)
+     * @return A ResponseEntity with HTTP status 200 (OK) and the data job's result as an Object.
+     */
+    @GetMapping("/v1/dataJob/{requestId}/dataProducerJob/{dataProducerJobId}/result")
+    public ResponseEntity<Object> retrieveDataJobResult(
+            @PathVariable("requestId") final String requestId,
+            @PathVariable("dataProducerJobId") final String dataProducerJobId,
+            @RequestParam(name = "dataProducerId") String dataProducerId,
+            @RequestParam(name = "destination") String destination) {
+        log.debug("Received request to retrieve data job result. Request ID: {}, Data Producer Job ID: {}, " +
+                        "Data Producer ID: {}, Destination: {}",
+                requestId, dataProducerJobId, dataProducerId, destination);
+        return ResponseEntity.ok(Map.of("result", "some status"));
     }
 
     private CloudEvent buildAndGetCloudEvent(final String topic, final String requestId,

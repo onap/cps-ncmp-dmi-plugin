@@ -121,6 +121,60 @@ paths:
           description: Not Implemented
       tags:
         - dmi-datajob
+  /v1/dataJob/{requestId}/dataProducerJob/{dataProducerJobId}/result:
+    get:
+      description: Retrieve the result of a data job.
+      operationId: getDataJobResult
+      parameters:
+        - description: Identifier for the overall Datajob
+          explode: false
+          in: path
+          name: requestId
+          required: true
+          schema:
+            example: some-identifier
+            type: string
+          style: simple
+        - description: Identifier for the data producer job
+          explode: false
+          in: path
+          name: dataProducerJobId
+          required: true
+          schema:
+            example: some-producer-job-identifier
+            type: string
+          style: simple
+        - description: Identifier for the data producer
+          explode: true
+          in: query
+          name: dataProducerId
+          required: true
+          schema:
+            example: some-data-producer-identifier
+            type: string
+          style: form
+        - description: The destination of the results (Kafka topic name or s3 bucket name)
+          explode: true
+          in: query
+          name: destination
+          required: true
+          schema:
+            example: some-destination
+            type: string
+          style: form
+      responses:
+        "501":
+          content:
+            application/json:
+              example:
+                status: 501
+                message: Not Implemented
+                details: Method Not Implemented
+              schema:
+                $ref: '#/components/schemas/ErrorMessage'
+          description: Not Implemented
+      tags:
+        - dmi-datajob
 components:
   parameters:
     requestIdInPath:
@@ -151,6 +205,16 @@ components:
       required: true
       schema:
         example: some-data-producer-identifier
+        type: string
+      style: form
+    destinationInQuery:
+      description: The destination of the results (Kafka topic name or s3 bucket name)
+      explode: true
+      in: query
+      name: destination
+      required: true
+      schema:
+        example: some-destination
         type: string
       style: form
   responses:
