@@ -45,6 +45,30 @@
       },
       "revId": "ee4242c9d89dc1a814f12d0f90880e3f21745f43",
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "8f2bfead_978f5deb",
+        "filename": "dmi-service/openapi/openapi-datajob.yml",
+        "patchSetId": 6
+      },
+      "lineNbr": 80,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2024-07-29T09:14:24Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9fd41c74_228d8424",
+      "range": {
+        "startLine": 80,
+        "startChar": 19,
+        "endLine": 80,
+        "endChar": 35
+      },
+      "revId": "ee4242c9d89dc1a814f12d0f90880e3f21745f43",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
     }
   ]
 }
