@@ -97,6 +97,14 @@ paths:
             example: some-producer-job-identifier
             type: string
           style: simple
+        - description: Identifier for the data producer
+          in: query
+          name: dataProducerId
+          required: true
+          schema:
+            example: some-data-producer-identifier
+            type: string
+          style: form
       responses:
         "501":
           content:
@@ -110,17 +118,17 @@ paths:
           description: Not Implemented
       tags:
         - dmi-datajob
-  /v1/dataJob/{requestId}/dataProducerJob/{dataProducerJobId}/result:
+  /v1/cmwriteJob/dataProducer/{dataProducerId}/dataProducerJob/{dataProducerJobId}/result:
     get:
       description: Retrieve the result of a data job.
       operationId: getDataJobResult
       parameters:
-        - description: Identifier for the overall Datajob
+        - description: Identifier for the data producer
           in: path
-          name: requestId
+          name: dataProducerId
           required: true
           schema:
-            example: some-identifier
+            example: some-data-producer-identifier
             type: string
           style: simple
         - description: Identifier for the data producer job
@@ -277,7 +285,7 @@ components:
           type: string
         dataJobId:
           description: Identifier for the overall Data Job
-          example: my-data-producer-identifier
+          example: my-data-job-identifier
           type: string
         data:
           example:
