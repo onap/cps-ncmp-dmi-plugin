@@ -74,14 +74,13 @@ paths:
       responses:
         "501":
           $ref: '#/components/responses/NotImplemented'
-  /v1/dataJob/{requestId}/dataProducerJob/{dataProducerJobId}/result:
+  /v1/dataProducer/{dataProducerId}/dataProducerJob/{dataProducerJobId}/result:
     get:
       description: Retrieve the result of a data job.
       operationId: getDataJobResult
       parameters:
-        - $ref: '#/components/parameters/requestIdInPath'
         - $ref: '#/components/parameters/dataProducerJobIdInPath'
-        - $ref: '#/components/parameters/dataProducerIdInQuery'
+        - $ref: '#/components/parameters/dataProducerIdInPath'
         - $ref: '#/components/parameters/destinationInQuery'
       tags:
         - dmi-datajob
@@ -107,6 +106,14 @@ components:
       schema:
         example: some-producer-job-identifier
         type: string
+    dataProducerIdInPath:
+      name: dataProducerId
+      in: path
+      description: Identifier for the data producer
+      required: true
+      schema:
+        type: string
+        example: some-data-producer-identifier
     dataProducerIdInQuery:
       name: dataProducerId
       in: query

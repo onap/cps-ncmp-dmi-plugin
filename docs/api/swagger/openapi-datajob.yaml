@@ -121,20 +121,11 @@ paths:
           description: Not Implemented
       tags:
         - dmi-datajob
-  /v1/dataJob/{requestId}/dataProducerJob/{dataProducerJobId}/result:
+  /v1/dataProducer/{dataProducerId}/dataProducerJob/{dataProducerJobId}/result:
     get:
       description: Retrieve the result of a data job.
       operationId: getDataJobResult
       parameters:
-        - description: Identifier for the overall Datajob
-          explode: false
-          in: path
-          name: requestId
-          required: true
-          schema:
-            example: some-identifier
-            type: string
-          style: simple
         - description: Identifier for the data producer job
           explode: false
           in: path
@@ -145,15 +136,16 @@ paths:
             type: string
           style: simple
         - description: Identifier for the data producer
-          explode: true
-          in: query
+          explode: false
+          in: path
           name: dataProducerId
           required: true
           schema:
             example: some-data-producer-identifier
             type: string
-          style: form
-        - description: The destination of the results (Kafka topic name or s3 bucket name)
+          style: simple
+        - description: The destination of the results (Kafka topic name or s3 bucket
+            name)
           explode: true
           in: query
           name: destination
@@ -195,6 +187,16 @@ components:
       required: true
       schema:
         example: some-producer-job-identifier
+        type: string
+      style: simple
+    dataProducerIdInPath:
+      description: Identifier for the data producer
+      explode: false
+      in: path
+      name: dataProducerId
+      required: true
+      schema:
+        example: some-data-producer-identifier
         type: string
       style: simple
     dataProducerIdInQuery:

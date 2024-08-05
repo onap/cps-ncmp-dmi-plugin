@@ -76,15 +76,13 @@ public class DmiDatajobsRestController implements DmiDatajobApi {
     /**
      * This method is not implemented for ONAP DMI plugin.
      *
-     * @param requestId             Identifier for the overall Datajob (required)
      * @param dataProducerJobId     Identifier for the data producer job (required)
      * @param dataProducerId        Identifier for the data producer as a query parameter (required)
      * @param destination           The destination of the results, Kafka topic name or s3 bucket name (required)
      * @return ResponseEntity       Response entity indicating the method is not implemented
      */
     @Override
-    public ResponseEntity<Void> getDataJobResult(final String requestId,
-                                                 final String dataProducerJobId,
+    public ResponseEntity<Void> getDataJobResult(final String dataProducerJobId,
                                                  final String dataProducerId,
                                                  final String destination) {
         return new ResponseEntity<>(HttpStatus.NOT_IMPLEMENTED);
