@@ -76,9 +76,8 @@ public class DmiDatajobsRestController implements DmiDatajobApi {
      * @return ResponseEntity       Response entity indicating the method is not implemented
      */
     @Override
-    public ResponseEntity<Void> getDataJobResult(final String requestId,
+    public ResponseEntity<Void> getDataJobResult(final String dataProducerId,
                                                  final String dataProducerJobId,
-                                                 final String dataProducerId,
                                                  final String destination) {
         return new ResponseEntity<>(HttpStatus.NOT_IMPLEMENTED);
     }

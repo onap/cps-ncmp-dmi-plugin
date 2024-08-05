@@ -73,14 +73,13 @@ paths:
       responses:
         "501":
           $ref: '#/components/responses/NotImplemented'
-  /v1/dataJob/{requestId}/dataProducerJob/{dataProducerJobId}/result:
+  /v1/cmwriteJob/dataProducer/{dataProducerId}/dataProducerJob/{dataProducerJobId}/result:
     get:
       description: Retrieve the result of a data job.
       operationId: getDataJobResult
       parameters:
-        - $ref: '#/components/parameters/requestIdInPath'
+        - $ref: '#/components/parameters/dataProducerIdInPath'
         - $ref: '#/components/parameters/dataProducerJobIdInPath'
-        - $ref: '#/components/parameters/dataProducerIdInQuery'
         - $ref: '#/components/parameters/destinationInQuery'
       tags:
         - dmi-datajob

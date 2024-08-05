@@ -298,21 +298,19 @@ public class DmiRestStubController {
     /**
      * Retrieves the result of a given data job identified by {@code requestId} and {@code dataProducerJobId}.
      *
-     * @param requestId             Identifier for the overall Datajob (required)
      * @param dataProducerJobId     Identifier for the data producer job (required)
      * @param dataProducerId        Identifier for the data producer as a query parameter (required)
      * @param destination           The destination of the results, Kafka topic name or s3 bucket name (required)
      * @return A ResponseEntity with HTTP status 200 (OK) and the data job's result as an Object.
      */
-    @GetMapping("/v1/dataJob/{requestId}/dataProducerJob/{dataProducerJobId}/result")
+    @GetMapping("/v1/cmwriteJob/dataProducer/{dataProducerId}/dataProducerJob/{dataProducerJobId}/result")
     public ResponseEntity<Object> retrieveDataJobResult(
-            @PathVariable("requestId") final String requestId,
+            @PathVariable("dataProducerId") final String dataProducerId,
             @PathVariable("dataProducerJobId") final String dataProducerJobId,
-            @RequestParam(name = "dataProducerId") String dataProducerId,
             @RequestParam(name = "destination") String destination) {
-        log.debug("Received request to retrieve data job result. Request ID: {}, Data Producer Job ID: {}, " +
-                        "Data Producer ID: {}, Destination: {}",
-                requestId, dataProducerJobId, dataProducerId, destination);
+        log.debug("Received request to retrieve data job result. Data Producer ID: {}, " +
+                        "Data Producer Job ID: {}, Destination: {}",
+                dataProducerId, dataProducerJobId, destination);
         return ResponseEntity.ok(Map.of("result", "some status"));
     }
 
