@@ -65,6 +65,30 @@
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "c6eed598_4654b7b1",
+        "filename": "dmi-service/openapi/openapi-datajob.yml",
+        "patchSetId": 1
+      },
+      "lineNbr": 93,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2024-08-08T15:41:16Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "2ea0b913_432a99d7",
+      "range": {
+        "startLine": 93,
+        "startChar": 4,
+        "endLine": 93,
+        "endChar": 19
+      },
+      "revId": "8b0094edf65d18dc27b35fe89888f850f35bbd99",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "ccd9dd6b_df6da66c",
@@ -159,6 +183,30 @@
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "10ec3333_d9ea4c8b",
+        "filename": "dmi-service/openapi/openapi-datajob.yml",
+        "patchSetId": 1
+      },
+      "lineNbr": 117,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2024-08-08T15:41:16Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "f3f6975b_27ddacb0",
+      "range": {
+        "startLine": 117,
+        "startChar": 4,
+        "endLine": 117,
+        "endChar": 26
+      },
+      "revId": "8b0094edf65d18dc27b35fe89888f850f35bbd99",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "f62ecc1e_6d6cc209",
@@ -243,6 +291,30 @@
       "side": 1,
       "message": "I also found the same article, but this is the generated doc. Might be some new OpenAPI feature??",
       "parentUuid": "d74081d6_e4650da4",
+      "range": {
+        "startLine": 139,
+        "startChar": 10,
+        "endLine": 139,
+        "endChar": 24
+      },
+      "revId": "8b0094edf65d18dc27b35fe89888f850f35bbd99",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "f0899aad_d9fa5d47",
+        "filename": "docs/api/swagger/openapi-datajob.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 139,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2024-08-08T15:41:16Z",
+      "side": 1,
+      "message": "well this is OUT source file, no generated code shoudlbe visisble in gerrit...",
+      "parentUuid": "ff7f203b_611c3774",
       "range": {
         "startLine": 139,
         "startChar": 10,
