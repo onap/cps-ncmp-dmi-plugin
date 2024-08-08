@@ -1,0 +1,159 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "d45e3ce2_f953204f",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2024-08-08T13:00:52Z",
+      "side": 1,
+      "message": "can you check the bit about explode, I think we should remove it (for all)",
+      "revId": "8b0094edf65d18dc27b35fe89888f850f35bbd99",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "04877db6_60d5629e",
+        "filename": "dmi-service/openapi/openapi-datajob.yml",
+        "patchSetId": 1
+      },
+      "lineNbr": 93,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2024-08-08T13:00:52Z",
+      "side": 1,
+      "message": "I suppose you handle this in your next ticket/commit?",
+      "range": {
+        "startLine": 93,
+        "startChar": 4,
+        "endLine": 93,
+        "endChar": 19
+      },
+      "revId": "8b0094edf65d18dc27b35fe89888f850f35bbd99",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "ccd9dd6b_df6da66c",
+        "filename": "dmi-service/openapi/openapi-datajob.yml",
+        "patchSetId": 1
+      },
+      "lineNbr": 101,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2024-08-08T13:00:52Z",
+      "side": 1,
+      "message": "NB: should come after dataProducerId",
+      "range": {
+        "startLine": 101,
+        "startChar": 4,
+        "endLine": 101,
+        "endChar": 28
+      },
+      "revId": "8b0094edf65d18dc27b35fe89888f850f35bbd99",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "1009f071_c8207b87",
+        "filename": "dmi-service/openapi/openapi-datajob.yml",
+        "patchSetId": 1
+      },
+      "lineNbr": 117,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2024-08-08T13:00:52Z",
+      "side": 1,
+      "message": "I suppose you handle this in your next ticket/commit?",
+      "range": {
+        "startLine": 117,
+        "startChar": 4,
+        "endLine": 117,
+        "endChar": 26
+      },
+      "revId": "8b0094edf65d18dc27b35fe89888f850f35bbd99",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "f62ecc1e_6d6cc209",
+        "filename": "dmi-service/src/main/java/org/onap/cps/ncmp/dmi/datajobs/rest/controller/DmiDatajobsRestController.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 86,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2024-08-08T13:00:52Z",
+      "side": 1,
+      "message": "did you check te order in the generated code? (I know we cannot control it)",
+      "range": {
+        "startLine": 85,
+        "startChar": 48,
+        "endLine": 86,
+        "endChar": 77
+      },
+      "revId": "8b0094edf65d18dc27b35fe89888f850f35bbd99",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "d74081d6_e4650da4",
+        "filename": "docs/api/swagger/openapi-datajob.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 139,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2024-08-08T13:00:52Z",
+      "side": 1,
+      "message": "what does \u0027explode\u0027 do?!\nWhat is the default ie. do we need it if it is \u0027false\u0027 ?!\nI did some readin up I dont think we need it really for string variables...\nsee \"https://swagger.io/docs/specification/serialization/\"",
+      "range": {
+        "startLine": 139,
+        "startChar": 10,
+        "endLine": 139,
+        "endChar": 24
+      },
+      "revId": "8b0094edf65d18dc27b35fe89888f850f35bbd99",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "187e22b9_9f433435",
+        "filename": "docs/api/swagger/openapi-datajob.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 149,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2024-08-08T13:00:52Z",
+      "side": 1,
+      "message": "what does \u0027explode\u0027 do?!",
+      "range": {
+        "startLine": 149,
+        "startChar": 10,
+        "endLine": 149,
+        "endChar": 23
+      },
+      "revId": "8b0094edf65d18dc27b35fe89888f850f35bbd99",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    }
+  ]
+}
