@@ -1,0 +1,44 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "18bb28e6_c8aff134",
+        "filename": "dmi-stub/dmi-plugin-demo-and-csit-stub-service/src/main/java/org/onap/cps/ncmp/dmi/rest/stub/controller/DmiRestStubController.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 355,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2024-08-08T15:50:53Z",
+      "side": 1,
+      "message": "simulatedResponseDelay",
+      "range": {
+        "startLine": 355,
+        "startChar": 108,
+        "endLine": 355,
+        "endChar": 115
+      },
+      "revId": "1db4fa0d258a746e7462364837c8d19724ae5527",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "efee4c11_945fb071",
+        "filename": "dmi-stub/dmi-plugin-demo-and-csit-stub-service/src/main/java/org/onap/cps/ncmp/dmi/rest/stub/controller/DmiRestStubController.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 377,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2024-08-08T15:50:53Z",
+      "side": 1,
+      "message": "need simulatedRepsonseDelay here too",
+      "revId": "1db4fa0d258a746e7462364837c8d19724ae5527",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    }
+  ]
+}
