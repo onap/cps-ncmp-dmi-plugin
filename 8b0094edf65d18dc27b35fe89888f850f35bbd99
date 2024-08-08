@@ -43,6 +43,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "2ea0b913_432a99d7",
+        "filename": "dmi-service/openapi/openapi-datajob.yml",
+        "patchSetId": 1
+      },
+      "lineNbr": 93,
+      "author": {
+        "id": 8155
+      },
+      "writtenOn": "2024-08-08T13:15:10Z",
+      "side": 1,
+      "message": "yes!",
+      "parentUuid": "04877db6_60d5629e",
+      "range": {
+        "startLine": 93,
+        "startChar": 4,
+        "endLine": 93,
+        "endChar": 19
+      },
+      "revId": "8b0094edf65d18dc27b35fe89888f850f35bbd99",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "ccd9dd6b_df6da66c",
         "filename": "dmi-service/openapi/openapi-datajob.yml",
         "patchSetId": 1
@@ -54,6 +78,30 @@
       "writtenOn": "2024-08-08T13:00:52Z",
       "side": 1,
       "message": "NB: should come after dataProducerId",
+      "range": {
+        "startLine": 101,
+        "startChar": 4,
+        "endLine": 101,
+        "endChar": 28
+      },
+      "revId": "8b0094edf65d18dc27b35fe89888f850f35bbd99",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "80c4a36a_a0d0c69a",
+        "filename": "dmi-service/openapi/openapi-datajob.yml",
+        "patchSetId": 1
+      },
+      "lineNbr": 101,
+      "author": {
+        "id": 8155
+      },
+      "writtenOn": "2024-08-08T13:15:10Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "ccd9dd6b_df6da66c",
       "range": {
         "startLine": 101,
         "startChar": 4,
@@ -89,6 +137,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "f3f6975b_27ddacb0",
+        "filename": "dmi-service/openapi/openapi-datajob.yml",
+        "patchSetId": 1
+      },
+      "lineNbr": 117,
+      "author": {
+        "id": 8155
+      },
+      "writtenOn": "2024-08-08T13:15:10Z",
+      "side": 1,
+      "message": "also yes!",
+      "parentUuid": "1009f071_c8207b87",
+      "range": {
+        "startLine": 117,
+        "startChar": 4,
+        "endLine": 117,
+        "endChar": 26
+      },
+      "revId": "8b0094edf65d18dc27b35fe89888f850f35bbd99",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "f62ecc1e_6d6cc209",
         "filename": "dmi-service/src/main/java/org/onap/cps/ncmp/dmi/datajobs/rest/controller/DmiDatajobsRestController.java",
         "patchSetId": 1
@@ -100,6 +172,30 @@
       "writtenOn": "2024-08-08T13:00:52Z",
       "side": 1,
       "message": "did you check te order in the generated code? (I know we cannot control it)",
+      "range": {
+        "startLine": 85,
+        "startChar": 48,
+        "endLine": 86,
+        "endChar": 77
+      },
+      "revId": "8b0094edf65d18dc27b35fe89888f850f35bbd99",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "a003ae19_f800db9c",
+        "filename": "dmi-service/src/main/java/org/onap/cps/ncmp/dmi/datajobs/rest/controller/DmiDatajobsRestController.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 86,
+      "author": {
+        "id": 8155
+      },
+      "writtenOn": "2024-08-08T13:15:10Z",
+      "side": 1,
+      "message": "I checked and the order is the same.\nBut the 2 values indeed should be swapped based on the wiki page. we should be able to controll it from the opeanapi definition",
+      "parentUuid": "f62ecc1e_6d6cc209",
       "range": {
         "startLine": 85,
         "startChar": 48,
@@ -135,6 +231,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "ff7f203b_611c3774",
+        "filename": "docs/api/swagger/openapi-datajob.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 139,
+      "author": {
+        "id": 8155
+      },
+      "writtenOn": "2024-08-08T13:15:10Z",
+      "side": 1,
+      "message": "I also found the same article, but this is the generated doc. Might be some new OpenAPI feature??",
+      "parentUuid": "d74081d6_e4650da4",
+      "range": {
+        "startLine": 139,
+        "startChar": 10,
+        "endLine": 139,
+        "endChar": 24
+      },
+      "revId": "8b0094edf65d18dc27b35fe89888f850f35bbd99",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "187e22b9_9f433435",
         "filename": "docs/api/swagger/openapi-datajob.yaml",
         "patchSetId": 1
@@ -146,6 +266,30 @@
       "writtenOn": "2024-08-08T13:00:52Z",
       "side": 1,
       "message": "what does \u0027explode\u0027 do?!",
+      "range": {
+        "startLine": 149,
+        "startChar": 10,
+        "endLine": 149,
+        "endChar": 23
+      },
+      "revId": "8b0094edf65d18dc27b35fe89888f850f35bbd99",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "d3f26bf6_4518bac2",
+        "filename": "docs/api/swagger/openapi-datajob.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 149,
+      "author": {
+        "id": 8155
+      },
+      "writtenOn": "2024-08-08T13:15:10Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "187e22b9_9f433435",
       "range": {
         "startLine": 149,
         "startChar": 10,
