@@ -32,6 +32,8 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.UUID;
+import java.util.concurrent.ConcurrentHashMap;
+import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicInteger;
 import java.util.stream.Collectors;
 import lombok.RequiredArgsConstructor;
@@ -72,7 +74,6 @@ import org.springframework.web.bind.annotation.RestController;
 @RequiredArgsConstructor
 public class DmiRestStubController {
 
-    private static final String DEFAULT_TAG = "tagD";
     private static final String DEFAULT_PASSTHROUGH_OPERATION = "read";
     private static final String dataOperationEventType = "org.onap.cps.ncmp.events.async1_0_0.DataOperationEvent";
     private static final Map<String, String> moduleSetTagPerCmHandleId = new HashMap<>();
@@ -90,6 +91,8 @@ public class DmiRestStubController {
     @Value("${delay.write-data-for-cm-handle-delay-ms}")
     private long writeDataForCmHandleDelayMs;
     private final AtomicInteger subJobWriteRequestCounter = new AtomicInteger();
+    private static final long INITIAL_MODULE_PROCESSING_DELAY_MS = TimeUnit.MINUTES.toMillis(2);
+    private static final Map<String, Long> firstRequestTimePerModuleSetTag = new ConcurrentHashMap<>();
 
     /**
      * This code defines a REST API endpoint for adding new the module set tag mapping. The endpoint receives the
@@ -163,21 +166,11 @@ public class DmiRestStubController {
     @PostMapping("/v1/ch/{cmHandleId}/modules")
     public ResponseEntity<String> getModuleReferences(@PathVariable("cmHandleId") final String cmHandleId,
                                                       @RequestBody final Object moduleReferencesRequest) {
-        delay(moduleReferencesDelayMs);
-        try {
-            log.info("Incoming DMI request body: {}",
-                    objectMapper.writeValueAsString(moduleReferencesRequest));
-        } catch (final JsonProcessingException jsonProcessingException) {
-            log.info("Unable to parse dmi data operation request to json string");
-        }
-        final String moduleResponseContent = getModuleResourceResponse(cmHandleId,
-                "ModuleResponse.json");
-        log.info("cm handle: {} requested for modules", cmHandleId);
-        return ResponseEntity.ok(moduleResponseContent);
+        return processModuleRequest(moduleReferencesRequest, "ModuleResponse.json", moduleReferencesDelayMs);
     }
 
     /**
-     * Retrieves module resources for a given cmHandleId.
+     * Get module resources for a given cmHandleId.
      *
      * @param cmHandleId                 The identifier for a network function, network element, subnetwork,
      *                                   or any other cm object by managed Network CM Proxy
@@ -185,14 +178,10 @@ public class DmiRestStubController {
      * @return ResponseEntity response entity having module resources response as json string.
      */
     @PostMapping("/v1/ch/{cmHandleId}/moduleResources")
-    public ResponseEntity<String> retrieveModuleResources(
+    public ResponseEntity<String> getModuleResources(
             @PathVariable("cmHandleId") final String cmHandleId,
             @RequestBody final Object moduleResourcesReadRequest) {
-        delay(moduleResourcesDelayMs);
-        final String moduleResourcesResponseContent = getModuleResourceResponse(cmHandleId,
-                "ModuleResourcesResponse.json");
-        log.info("cm handle: {} requested for modules resources", cmHandleId);
-        return ResponseEntity.ok(moduleResourcesResponseContent);
+        return processModuleRequest(moduleResourcesReadRequest, "ModuleResourcesResponse.json", moduleResourcesDelayMs);
     }
 
     /**
@@ -363,18 +352,61 @@ public class DmiRestStubController {
         return dataOperationEvent;
     }
 
-    private String getModuleResourceResponse(final String cmHandleId, final String moduleResponseType) {
-        if (moduleSetTagPerCmHandleId.isEmpty()) {
-            log.info("Using default module responses of type ietfYang");
-            return ResourceFileReaderUtil.getResourceFileContent(applicationContext.getResource(
-                    ResourceLoader.CLASSPATH_URL_PREFIX
-                            + String.format("module/ietfYang-%s", moduleResponseType)));
+    private ResponseEntity<String> processModuleRequest(Object moduleRequest, String responseFileName, long simulatedResponseDelay) {
+        String moduleSetTag = extractModuleSetTagFromRequest(moduleRequest);
+
+        if (isModuleSetTagNullOrEmpty(moduleSetTag)) {
+            logRequestBody(moduleRequest);
+            log.info("Received request with an empty or null moduleSetTag. Returning default response content.");
+            String moduleResponseContent = getModuleResourceResponse(moduleSetTag, responseFileName);
+            delay(simulatedResponseDelay);
+            return ResponseEntity.ok(moduleResponseContent);
         }
-        final String moduleSetTag = moduleSetTagPerCmHandleId.getOrDefault(cmHandleId, DEFAULT_TAG);
-        final String moduleResponseFilePath = String.format("module/%s-%s", moduleSetTag, moduleResponseType);
-        final Resource moduleResponseResource = applicationContext.getResource(
-                ResourceLoader.CLASSPATH_URL_PREFIX + moduleResponseFilePath);
+
+        long firstRequestTimestamp = firstRequestTimePerModuleSetTag.computeIfAbsent(moduleSetTag, currentRequestTimestamp -> {
+            log.info("First request received for moduleSetTag '{}'. Returning HTTP 503 service unavailable until (simulated) initial processing period is over.", moduleSetTag);
+            return System.currentTimeMillis();
+        });
+
+        long currentTimestamp = System.currentTimeMillis();
+
+        if (currentTimestamp - firstRequestTimestamp > INITIAL_MODULE_PROCESSING_DELAY_MS) {
+            log.info("(Simulated) Initial processing period expired for moduleSetTag '{}'. Returning response content.", moduleSetTag);
+            logRequestBody(moduleRequest);
+            String moduleResponseContent = getModuleResourceResponse(moduleSetTag, responseFileName);
+            delay(simulatedResponseDelay);
+            return ResponseEntity.ok(moduleResponseContent);
+        }
+        long remainingProcessingTime = INITIAL_MODULE_PROCESSING_DELAY_MS - (currentTimestamp - firstRequestTimestamp);
+        log.info("Request received for moduleSetTag '{}' but (simulated) initial processing period is still active. Returning HTTP 503. Time remaining: {} ms.", moduleSetTag, remainingProcessingTime);
+        return ResponseEntity.status(HttpStatus.SERVICE_UNAVAILABLE).build();
+    }
+
+    private String extractModuleSetTagFromRequest(Object moduleReferencesRequest) {
+        JsonNode rootNode = objectMapper.valueToTree(moduleReferencesRequest);
+        return rootNode.path("moduleSetTag").asText(null);
+    }
+
+    private boolean isModuleSetTagNullOrEmpty(String moduleSetTag) {
+        return moduleSetTag == null || moduleSetTag.trim().isEmpty();
+    }
+
+    private void logRequestBody(Object request) {
+        try {
+            log.info("Incoming DMI request body: {}", objectMapper.writeValueAsString(request));
+        } catch (final JsonProcessingException jsonProcessingException) {
+            log.info("Unable to parse DMI request to json string");
+        }
+    }
+
+    private String getModuleResourceResponse(final String moduleSetTag, final String responseFileName) {
+        String moduleResponseFilePath = isModuleSetTagNullOrEmpty(moduleSetTag)
+                ? String.format("module/ietfYang-%s", responseFileName)
+                : String.format("module/%s-%s", moduleSetTag, responseFileName);
         log.info("Using module responses from : {}", moduleResponseFilePath);
+
+        Resource moduleResponseResource = applicationContext.getResource(
+                ResourceLoader.CLASSPATH_URL_PREFIX + moduleResponseFilePath);
         return ResourceFileReaderUtil.getResourceFileContent(moduleResponseResource);
     }
 
