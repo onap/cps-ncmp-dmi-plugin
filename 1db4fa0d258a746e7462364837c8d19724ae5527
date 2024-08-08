@@ -39,6 +39,24 @@
       "message": "need simulatedRepsonseDelay here too",
       "revId": "1db4fa0d258a746e7462364837c8d19724ae5527",
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "5accfadc_3ac1772a",
+        "filename": "dmi-stub/dmi-plugin-demo-and-csit-stub-service/src/main/java/org/onap/cps/ncmp/dmi/rest/stub/controller/DmiRestStubController.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 377,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2024-08-08T16:31:11Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "efee4c11_945fb071",
+      "revId": "1db4fa0d258a746e7462364837c8d19724ae5527",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
     }
   ]
 }
