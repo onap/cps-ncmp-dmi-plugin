@@ -225,7 +225,7 @@ public class DmiRestStubController {
         log.info("Logging request body {}", requestBody);
 
         final String sampleJson = ResourceFileReaderUtil.getResourceFileContent(applicationContext.getResource(
-                ResourceLoader.CLASSPATH_URL_PREFIX + "data/operational/ietf-network-topology-sample-rfc8345.json"));
+                ResourceLoader.CLASSPATH_URL_PREFIX + "data/ietf-network-topology-sample-rfc8345.json"));
         return ResponseEntity.ok(sampleJson);
     }
 
@@ -347,7 +347,7 @@ public class DmiRestStubController {
         response.setOptions(dataOperationRequest.getOptions());
         final String ietfNetworkTopologySample = ResourceFileReaderUtil.getResourceFileContent(
                 applicationContext.getResource(ResourceLoader.CLASSPATH_URL_PREFIX
-                        + "data/operational/ietf-network-topology-sample-rfc8345.json"));
+                        + "data/ietf-network-topology-sample-rfc8345.json"));
         final JSONParser jsonParser = new JSONParser();
         try {
             response.setResult(jsonParser.parse(ietfNetworkTopologySample));
