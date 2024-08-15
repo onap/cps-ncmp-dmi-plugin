@@ -46,7 +46,7 @@ class DmiDatajobsRestControllerSpec extends Specification{
 
     def 'write request should return 501 HTTP Status' () {
         given: 'URL to write a data job'
-            def getModuleUrl = "${basePathV1}/writeJob/001"
+            def getModuleUrl = "${basePathV1}/cmwriteJob?destination=001"
         when: 'the request is posted'
             def response = mvc.perform(
                 post(getModuleUrl)
@@ -58,7 +58,7 @@ class DmiDatajobsRestControllerSpec extends Specification{
 
     def 'read request should return 501 HTTP Status' () {
         given: 'URL to write a data job'
-            def getModuleUrl = "${basePathV1}/readJob/001"
+            def getModuleUrl = "${basePathV1}/cmreadJob?destination=001"
         when: 'the request is posted'
             def response = mvc.perform(
                 post(getModuleUrl)
@@ -70,7 +70,7 @@ class DmiDatajobsRestControllerSpec extends Specification{
 
     def 'get status request should return 501 HTTP Status' () {
         given: 'URL to get the status of a data job'
-            def getStatus = "${basePathV1}/dataJob/some-identifier/dataProducerJob/some-producer-job-identifier/status?dataProducerId=some-data-producer-identifier"
+            def getStatus = "${basePathV1}/cmwriteJob/dataProducer/data-producer-id/dataProducerJob/data-producerd-job-id}/status"
         when: 'the request is performed'
             def response = mvc.perform(
                     get(getStatus)

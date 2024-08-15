@@ -27,12 +27,12 @@ tags:
   - description: DMI plugin rest apis
     name: dmi-datajob
 paths:
-  /v1/readJob/{requestId}:
+  /v1/cmreadJob:
     post:
       description: Create a read request
       operationId: readDataJob
       parameters:
-        - $ref: '#/components/parameters/requestIdInPath'
+        - $ref: '#/components/parameters/destinationInQuery'
       requestBody:
         description: Operation body
         content:
@@ -44,12 +44,12 @@ paths:
       responses:
         "501":
           $ref: '#/components/responses/NotImplemented'
-  /v1/writeJob/{requestId}:
+  /v1/cmwriteJob:
     post:
       description: Create a write request
       operationId: writeDataJob
       parameters:
-        - $ref: '#/components/parameters/requestIdInPath'
+        - $ref: '#/components/parameters/destinationInQuery'
       requestBody:
         description: Operation body
         content:
@@ -61,14 +61,13 @@ paths:
       responses:
         "501":
           $ref: '#/components/responses/NotImplemented'
-  /v1/dataJob/{requestId}/dataProducerJob/{dataProducerJobId}/status:
+  /v1/cmwriteJob/dataProducer/{dataProducerId}/dataProducerJob/{dataProducerJobId}/status:
     get:
       description: Retrieve the status of a specific data job.
       operationId: getDataJobStatus
       parameters:
-        - $ref: '#/components/parameters/requestIdInPath'
+        - $ref: '#/components/parameters/dataProducerIdInPath'
         - $ref: '#/components/parameters/dataProducerJobIdInPath'
-        - $ref: '#/components/parameters/dataProducerIdInQuery'
       tags:
         - dmi-datajob
       responses:
@@ -107,6 +106,14 @@ components:
       schema:
         example: some-producer-job-identifier
         type: string
+    dataProducerIdInPath:
+      name: dataProducerId
+      in: path
+      description: Identifier for the data producer
+      required: true
+      schema:
+        type: string
+        example: some-data-producer-identifier
     dataProducerIdInQuery:
       name: dataProducerId
       in: query
@@ -225,6 +232,10 @@ components:
           type: string
         dataProducerId:
           description: ID of the producer registered by DMI for the paths in the operations in this request
+          example: my-data-producer-identifier
+          type: string
+        dataJobId:
+          description: Identifier for the overall Data Job
           example: my-data-producer-identifier
           type: string
         data:

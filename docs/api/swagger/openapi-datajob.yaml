@@ -10,20 +10,20 @@ tags:
   - description: DMI plugin rest apis
     name: dmi-datajob
 paths:
-  /v1/readJob/{requestId}:
+  /v1/cmreadJob:
     post:
       description: Create a read request
       operationId: readDataJob
       parameters:
-        - description: Identifier for the overall Datajob
-          explode: false
-          in: path
-          name: requestId
+        - description: The destination of the results (Kafka topic name or s3 bucket
+            name)
+          in: query
+          name: destination
           required: true
           schema:
-            example: some-identifier
+            example: some-destination
             type: string
-          style: simple
+          style: form
       requestBody:
         content:
           application/3gpp-json-patch+json:
@@ -43,20 +43,20 @@ paths:
           description: Not Implemented
       tags:
         - dmi-datajob
-  /v1/writeJob/{requestId}:
+  /v1/cmwriteJob:
     post:
       description: Create a write request
       operationId: writeDataJob
       parameters:
-        - description: Identifier for the overall Datajob
-          explode: false
-          in: path
-          name: requestId
+        - description: The destination of the results (Kafka topic name or s3 bucket
+            name)
+          in: query
+          name: destination
           required: true
           schema:
-            example: some-identifier
+            example: some-destination
             type: string
-          style: simple
+          style: form
       requestBody:
         content:
           application/3gpp-json-patch+json:
@@ -76,22 +76,20 @@ paths:
           description: Not Implemented
       tags:
         - dmi-datajob
-  /v1/dataJob/{requestId}/dataProducerJob/{dataProducerJobId}/status:
+  /v1/cmwriteJob/dataProducer/{dataProducerId}/dataProducerJob/{dataProducerJobId}/status:
     get:
       description: Retrieve the status of a specific data job.
       operationId: getDataJobStatus
       parameters:
-        - description: Identifier for the overall Datajob
-          explode: false
+        - description: Identifier for the data producer
           in: path
-          name: requestId
+          name: dataProducerId
           required: true
           schema:
-            example: some-identifier
+            example: some-data-producer-identifier
             type: string
           style: simple
         - description: Identifier for the data producer job
-          explode: false
           in: path
           name: dataProducerJobId
           required: true
@@ -99,15 +97,6 @@ paths:
             example: some-producer-job-identifier
             type: string
           style: simple
-        - description: Identifier for the data producer
-          explode: true
-          in: query
-          name: dataProducerId
-          required: true
-          schema:
-            example: some-data-producer-identifier
-            type: string
-          style: form
       responses:
         "501":
           content:
@@ -127,7 +116,6 @@ paths:
       operationId: getDataJobResult
       parameters:
         - description: Identifier for the overall Datajob
-          explode: false
           in: path
           name: requestId
           required: true
@@ -136,7 +124,6 @@ paths:
             type: string
           style: simple
         - description: Identifier for the data producer job
-          explode: false
           in: path
           name: dataProducerJobId
           required: true
@@ -145,7 +132,6 @@ paths:
             type: string
           style: simple
         - description: Identifier for the data producer
-          explode: true
           in: query
           name: dataProducerId
           required: true
@@ -153,8 +139,8 @@ paths:
             example: some-data-producer-identifier
             type: string
           style: form
-        - description: The destination of the results (Kafka topic name or s3 bucket name)
-          explode: true
+        - description: The destination of the results (Kafka topic name or s3 bucket
+            name)
           in: query
           name: destination
           required: true
@@ -179,7 +165,6 @@ components:
   parameters:
     requestIdInPath:
       description: Identifier for the overall Datajob
-      explode: false
       in: path
       name: requestId
       required: true
@@ -189,7 +174,6 @@ components:
       style: simple
     dataProducerJobIdInPath:
       description: Identifier for the data producer job
-      explode: false
       in: path
       name: dataProducerJobId
       required: true
@@ -197,9 +181,17 @@ components:
         example: some-producer-job-identifier
         type: string
       style: simple
+    dataProducerIdInPath:
+      description: Identifier for the data producer
+      in: path
+      name: dataProducerId
+      required: true
+      schema:
+        example: some-data-producer-identifier
+        type: string
+      style: simple
     dataProducerIdInQuery:
       description: Identifier for the data producer
-      explode: true
       in: query
       name: dataProducerId
       required: true
@@ -209,7 +201,6 @@ components:
       style: form
     destinationInQuery:
       description: The destination of the results (Kafka topic name or s3 bucket name)
-      explode: true
       in: query
       name: destination
       required: true
@@ -282,6 +273,10 @@ components:
         dataProducerId:
           description: ID of the producer registered by DMI for the paths in the operations
             in this request
+          example: my-data-producer-identifier
+          type: string
+        dataJobId:
+          description: Identifier for the overall Data Job
           example: my-data-producer-identifier
           type: string
         data:
