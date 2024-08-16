@@ -22,6 +22,30 @@
       },
       "revId": "636c228c5d646e7c919bc5ce135fa2967b3fef5a",
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "b150d241_f2b5dd21",
+        "filename": "dmi-stub/dmi-plugin-demo-and-csit-stub-service/src/main/java/org/onap/cps/ncmp/dmi/rest/stub/controller/DmiRestStubController.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 268,
+      "author": {
+        "id": 8155
+      },
+      "writtenOn": "2024-08-16T11:41:38Z",
+      "side": 1,
+      "message": "i could not find much more info on the wiki abt this.",
+      "parentUuid": "848cbbd7_a0ef0c04",
+      "range": {
+        "startLine": 268,
+        "startChar": 13,
+        "endLine": 268,
+        "endChar": 25
+      },
+      "revId": "636c228c5d646e7c919bc5ce135fa2967b3fef5a",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
     }
   ]
 }
