@@ -3,6 +3,29 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "ea33bd59_78a17789",
+        "filename": "dmi-service/openapi/openapi-datajob.yml",
+        "patchSetId": 1
+      },
+      "lineNbr": 237,
+      "author": {
+        "id": 7965
+      },
+      "writtenOn": "2024-08-16T12:57:05Z",
+      "side": 1,
+      "message": "NB: i think i remember it been called dataproducerJobId in the other patch  ??",
+      "range": {
+        "startLine": 237,
+        "startChar": 8,
+        "endLine": 237,
+        "endChar": 17
+      },
+      "revId": "636c228c5d646e7c919bc5ce135fa2967b3fef5a",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "848cbbd7_a0ef0c04",
         "filename": "dmi-stub/dmi-plugin-demo-and-csit-stub-service/src/main/java/org/onap/cps/ncmp/dmi/rest/stub/controller/DmiRestStubController.java",
         "patchSetId": 1
