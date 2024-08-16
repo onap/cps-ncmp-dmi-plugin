@@ -65,6 +65,30 @@
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "7b610461_dd18bbdf",
+        "filename": "dmi-service/openapi/openapi-datajob.yml",
+        "patchSetId": 2
+      },
+      "lineNbr": 77,
+      "author": {
+        "id": 8155
+      },
+      "writtenOn": "2024-08-16T11:16:51Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "b492df36_b9bf7935",
+      "range": {
+        "startLine": 77,
+        "startChar": 8,
+        "endLine": 77,
+        "endChar": 9
+      },
+      "revId": "7f1ebceb033a8c3306f621b1cb46cbcb35aed352",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "31cf7f48_00c24ed6",
@@ -112,6 +136,30 @@
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "65307b22_190fdbdc",
+        "filename": "dmi-service/src/test/groovy/org/onap/cps/ncmp/dmi/datajobs/rest/controller/DmiDatajobsRestControllerSpec.groovy",
+        "patchSetId": 2
+      },
+      "lineNbr": 85,
+      "author": {
+        "id": 8155
+      },
+      "writtenOn": "2024-08-16T11:16:51Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9de9b287_348dc236",
+      "range": {
+        "startLine": 85,
+        "startChar": 43,
+        "endLine": 85,
+        "endChar": 53
+      },
+      "revId": "7f1ebceb033a8c3306f621b1cb46cbcb35aed352",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "2649e0a9_910bca94",
@@ -149,6 +197,30 @@
       "side": 1,
       "message": "that how its defined in the wiki page",
       "parentUuid": "2649e0a9_910bca94",
+      "range": {
+        "startLine": 304,
+        "startChar": 21,
+        "endLine": 304,
+        "endChar": 31
+      },
+      "revId": "7f1ebceb033a8c3306f621b1cb46cbcb35aed352",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "20a9165e_84a5f37a",
+        "filename": "dmi-stub/dmi-plugin-demo-and-csit-stub-service/src/main/java/org/onap/cps/ncmp/dmi/rest/stub/controller/DmiRestStubController.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 304,
+      "author": {
+        "id": 8155
+      },
+      "writtenOn": "2024-08-16T11:16:51Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "23249d3d_acd54234",
       "range": {
         "startLine": 304,
         "startChar": 21,
