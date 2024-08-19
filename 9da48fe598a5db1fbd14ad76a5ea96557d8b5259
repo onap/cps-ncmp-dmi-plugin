@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "263695d3_bc0bd075",
+        "filename": "dmi-service/src/main/java/org/onap/cps/ncmp/dmi/datajobs/rest/controller/DmiDatajobsRestController.java",
+        "patchSetId": 4
+      },
+      "lineNbr": 74,
+      "author": {
+        "id": 7965
+      },
+      "writtenOn": "2024-08-19T09:53:49Z",
+      "side": 1,
+      "message": "NB: sequence of javadocs doesnt match the formal arguments.",
+      "range": {
+        "startLine": 73,
+        "startChar": 7,
+        "endLine": 74,
+        "endChar": 28
+      },
+      "revId": "9da48fe598a5db1fbd14ad76a5ea96557d8b5259",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    }
+  ]
+}
