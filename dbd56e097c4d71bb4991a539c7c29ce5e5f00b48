@@ -33,6 +33,23 @@
       "message": "recheck",
       "revId": "dbd56e097c4d71bb4991a539c7c29ce5e5f00b48",
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "d41cc237_943eb973",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 5
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 4893
+      },
+      "writtenOn": "2024-08-26T10:28:21Z",
+      "side": 1,
+      "message": "Failing test:\nGet all modules for given cm-handle to test integration between DMI and SDNC",
+      "revId": "dbd56e097c4d71bb4991a539c7c29ce5e5f00b48",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
     }
   ]
 }
