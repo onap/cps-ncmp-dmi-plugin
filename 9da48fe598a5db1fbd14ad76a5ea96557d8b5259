@@ -1,6 +1,23 @@
 {
   "comments": [
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "b4bb1c87_e40341e3",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2024-08-26T08:25:34Z",
+      "side": 1,
+      "message": "2 small issues in java doc",
+      "revId": "9da48fe598a5db1fbd14ad76a5ea96557d8b5259",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "263695d3_bc0bd075",
@@ -19,6 +36,53 @@
         "startChar": 7,
         "endLine": 74,
         "endChar": 28
+      },
+      "revId": "9da48fe598a5db1fbd14ad76a5ea96557d8b5259",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "799a1441_84bf5e3a",
+        "filename": "dmi-service/src/main/java/org/onap/cps/ncmp/dmi/datajobs/rest/controller/DmiDatajobsRestController.java",
+        "patchSetId": 4
+      },
+      "lineNbr": 74,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2024-08-26T08:25:34Z",
+      "side": 1,
+      "message": "agreed, please swap",
+      "parentUuid": "263695d3_bc0bd075",
+      "range": {
+        "startLine": 73,
+        "startChar": 7,
+        "endLine": 74,
+        "endChar": 28
+      },
+      "revId": "9da48fe598a5db1fbd14ad76a5ea96557d8b5259",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "3eb59f4e_da2bb8df",
+        "filename": "dmi-stub/dmi-plugin-demo-and-csit-stub-service/src/main/java/org/onap/cps/ncmp/dmi/rest/stub/controller/DmiRestStubController.java",
+        "patchSetId": 4
+      },
+      "lineNbr": 302,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2024-08-26T08:25:34Z",
+      "side": 1,
+      "message": "swap parameters in java doc",
+      "range": {
+        "startLine": 301,
+        "startChar": 1,
+        "endLine": 302,
+        "endChar": 100
       },
       "revId": "9da48fe598a5db1fbd14ad76a5ea96557d8b5259",
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
