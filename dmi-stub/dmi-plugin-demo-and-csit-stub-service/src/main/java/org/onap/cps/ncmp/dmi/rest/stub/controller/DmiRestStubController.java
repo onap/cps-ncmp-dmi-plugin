@@ -20,7 +20,6 @@
 
 package org.onap.cps.ncmp.dmi.rest.stub.controller;
 
-
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -40,6 +39,7 @@ import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
 import org.onap.cps.ncmp.dmi.datajobs.model.SubjobWriteRequest;
 import org.onap.cps.ncmp.dmi.datajobs.model.SubjobWriteResponse;
+import org.onap.cps.ncmp.dmi.rest.stub.controller.aop.ModuleInitialProcess;
 import org.onap.cps.ncmp.dmi.rest.stub.model.data.operational.DataOperationRequest;
 import org.onap.cps.ncmp.dmi.rest.stub.model.data.operational.DmiDataOperationRequest;
 import org.onap.cps.ncmp.dmi.rest.stub.model.data.operational.DmiOperationCmHandle;
@@ -72,7 +72,6 @@ import org.springframework.web.bind.annotation.RestController;
 @RequiredArgsConstructor
 public class DmiRestStubController {
 
-    private static final String DEFAULT_TAG = "tagD";
     private static final String DEFAULT_PASSTHROUGH_OPERATION = "read";
     private static final String dataOperationEventType = "org.onap.cps.ncmp.events.async1_0_0.DataOperationEvent";
     private static final Map<String, String> moduleSetTagPerCmHandleId = new HashMap<>();
@@ -161,23 +160,14 @@ public class DmiRestStubController {
      * @return ResponseEntity response entity having module response as json string.
      */
     @PostMapping("/v1/ch/{cmHandleId}/modules")
+    @ModuleInitialProcess
     public ResponseEntity<String> getModuleReferences(@PathVariable("cmHandleId") final String cmHandleId,
                                                       @RequestBody final Object moduleReferencesRequest) {
-        delay(moduleReferencesDelayMs);
-        try {
-            log.info("Incoming DMI request body: {}",
-                    objectMapper.writeValueAsString(moduleReferencesRequest));
-        } catch (final JsonProcessingException jsonProcessingException) {
-            log.info("Unable to parse dmi data operation request to json string");
-        }
-        final String moduleResponseContent = getModuleResourceResponse(cmHandleId,
-                "ModuleResponse.json");
-        log.info("cm handle: {} requested for modules", cmHandleId);
-        return ResponseEntity.ok(moduleResponseContent);
+        return processModuleRequest(moduleReferencesRequest, "ModuleResponse.json", moduleReferencesDelayMs);
     }
 
     /**
-     * Retrieves module resources for a given cmHandleId.
+     * Get module resources for a given cmHandleId.
      *
      * @param cmHandleId                 The identifier for a network function, network element, subnetwork,
      *                                   or any other cm object by managed Network CM Proxy
@@ -185,14 +175,11 @@ public class DmiRestStubController {
      * @return ResponseEntity response entity having module resources response as json string.
      */
     @PostMapping("/v1/ch/{cmHandleId}/moduleResources")
-    public ResponseEntity<String> retrieveModuleResources(
+    @ModuleInitialProcess
+    public ResponseEntity<String> getModuleResources(
             @PathVariable("cmHandleId") final String cmHandleId,
             @RequestBody final Object moduleResourcesReadRequest) {
-        delay(moduleResourcesDelayMs);
-        final String moduleResourcesResponseContent = getModuleResourceResponse(cmHandleId,
-                "ModuleResourcesResponse.json");
-        log.info("cm handle: {} requested for modules resources", cmHandleId);
-        return ResponseEntity.ok(moduleResourcesResponseContent);
+        return processModuleRequest(moduleResourcesReadRequest, "ModuleResourcesResponse.json", moduleResourcesDelayMs);
     }
 
     /**
@@ -363,18 +350,39 @@ public class DmiRestStubController {
         return dataOperationEvent;
     }
 
-    private String getModuleResourceResponse(final String cmHandleId, final String moduleResponseType) {
-        if (moduleSetTagPerCmHandleId.isEmpty()) {
-            log.info("Using default module responses of type ietfYang");
-            return ResourceFileReaderUtil.getResourceFileContent(applicationContext.getResource(
-                    ResourceLoader.CLASSPATH_URL_PREFIX
-                            + String.format("module/ietfYang-%s", moduleResponseType)));
+    private ResponseEntity<String> processModuleRequest(Object moduleRequest, String responseFileName, long simulatedResponseDelay) {
+        String moduleSetTag = extractModuleSetTagFromRequest(moduleRequest);
+        logRequestBody(moduleRequest);
+        String moduleResponseContent = getModuleResponseContent(moduleSetTag, responseFileName);
+        delay(simulatedResponseDelay);
+        return ResponseEntity.ok(moduleResponseContent);
+    }
+
+    private String extractModuleSetTagFromRequest(Object moduleReferencesRequest) {
+        JsonNode rootNode = objectMapper.valueToTree(moduleReferencesRequest);
+        return rootNode.path("moduleSetTag").asText(null);
+    }
+
+    private boolean isModuleSetTagNullOrEmpty(String moduleSetTag) {
+        return moduleSetTag == null || moduleSetTag.trim().isEmpty();
+    }
+
+    private void logRequestBody(Object request) {
+        try {
+            log.info("Incoming DMI request body: {}", objectMapper.writeValueAsString(request));
+        } catch (final JsonProcessingException jsonProcessingException) {
+            log.info("Unable to parse DMI request to json string");
         }
-        final String moduleSetTag = moduleSetTagPerCmHandleId.getOrDefault(cmHandleId, DEFAULT_TAG);
-        final String moduleResponseFilePath = String.format("module/%s-%s", moduleSetTag, moduleResponseType);
-        final Resource moduleResponseResource = applicationContext.getResource(
-                ResourceLoader.CLASSPATH_URL_PREFIX + moduleResponseFilePath);
+    }
+
+    private String getModuleResponseContent(final String moduleSetTag, final String responseFileName) {
+        String moduleResponseFilePath = isModuleSetTagNullOrEmpty(moduleSetTag)
+                ? String.format("module/ietfYang-%s", responseFileName)
+                : String.format("module/%s-%s", moduleSetTag, responseFileName);
         log.info("Using module responses from : {}", moduleResponseFilePath);
+
+        Resource moduleResponseResource = applicationContext.getResource(
+                ResourceLoader.CLASSPATH_URL_PREFIX + moduleResponseFilePath);
         return ResourceFileReaderUtil.getResourceFileContent(moduleResponseResource);
     }
 
