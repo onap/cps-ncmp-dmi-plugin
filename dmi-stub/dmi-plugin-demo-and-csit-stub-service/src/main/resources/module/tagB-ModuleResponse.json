@@ -1,6 +1,10 @@
 {
 	"schemas": [
 		{
+			"moduleName": "ietf-yang-types",
+			"revision": "2013-07-15"
+		},
+		{
 			"moduleName": "M1",
 			"revision": "2024-01-01"
 		},
