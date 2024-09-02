@@ -44,6 +44,12 @@ management:
         web:
             exposure:
                 include: health
+    endpoint:
+        health:
+            show-details: always
+            # kubernetes probes: liveness and readiness
+            probes:
+                enabled: true
 
 app:
     ncmp:
