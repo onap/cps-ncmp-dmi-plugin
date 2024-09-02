@@ -94,7 +94,7 @@ public class ModuleInitialProcessAspect {
     }
 
     private boolean isInitialProcessingCompleted(long currentTimestamp, long firstRequestTimestamp) {
-        return currentTimestamp - firstRequestTimestamp > moduleInitialProcessingDelayMs;
+        return currentTimestamp - firstRequestTimestamp >= moduleInitialProcessingDelayMs;
     }
 
     private long calculateRemainingProcessingTime(long currentTimestamp, long firstRequestTimestamp) {
