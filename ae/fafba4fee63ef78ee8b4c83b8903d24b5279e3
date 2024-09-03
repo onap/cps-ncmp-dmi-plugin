@@ -1,0 +1,10 @@
+Code-Review+2: Sourabh Sourabh <sourabh.sourabh@est.tech>
+Verified+1: ONAP Jobbuilder <onap-jobbuilder@jenkins.onap.org>
+Verified+1: ONAP Required GHA <releng+onap.required.gha@linuxfoundation.org>
+Code-Review+1: Halil Cakal <halil.cakal@est.tech>
+Code-Review+1: Gerard Nugent <gerard.nugent@est.tech>
+Submitted-by: Sourabh Sourabh <sourabh.sourabh@est.tech>
+Submitted-at: Tue, 03 Sep 2024 09:39:04 +0000
+Reviewed-on: https://gerrit.onap.org/r/c/cps/ncmp-dmi-plugin/+/138885
+Project: cps/ncmp-dmi-plugin
+Branch: refs/heads/master
