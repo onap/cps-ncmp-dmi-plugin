@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "ad417842_cffcf6c0",
+        "filename": "csit/install-deps.sh",
+        "patchSetId": 1
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 8063
+      },
+      "writtenOn": "2024-09-06T10:06:48Z",
+      "side": 1,
+      "message": "you ll always be depended on hard-coded latest compose, however you can do fetch the latest compose by using the command like:\n\nsome comment like: get latest docker compose released tag\nCOMPOSE_VERSION\u003d$(curl -s https://api.github.com/repos/docker/compose/releases/latest | grep \u0027tag_name\u0027 | cut -d\\\" -f4)\n\nThen, you can try:\nWith this command, you also will be independen of binary type i.e if the system is not linux 64 bit OS but x86_64, then `uname -s`-`uname -m` ll automatically download relevant the binaries for the system that use CSIT for onap dmi.\n\ncurl -s -L https://github.com/docker/compose/releases/download/${COMPOSE_VERSION}/docker-compose-`uname -s`-`uname -m` \u003e bin/docker-compose",
+      "range": {
+        "startLine": 31,
+        "startChar": 65,
+        "endLine": 31,
+        "endChar": 72
+      },
+      "revId": "939d3068d288229e5c9ae2f00d21ba5553356a07",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    }
+  ]
+}
