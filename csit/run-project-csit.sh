@@ -26,6 +26,8 @@ rm -rf ${WORKSPACE}/archives
 mkdir -p ${WORKSPACE}/archives
 cd ${WORKSPACE}
 
+source install-deps.sh
+
 # Execute all test-suites defined under plans subdirectory
 for dir in plans/*/
 do
