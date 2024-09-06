@@ -46,6 +46,30 @@
       },
       "revId": "939d3068d288229e5c9ae2f00d21ba5553356a07",
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "6d60c089_dcbbe53b",
+        "filename": "csit/install-deps.sh",
+        "patchSetId": 1
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 8063
+      },
+      "writtenOn": "2024-09-06T10:19:25Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "41373811_41a33cd9",
+      "range": {
+        "startLine": 31,
+        "startChar": 65,
+        "endLine": 31,
+        "endChar": 72
+      },
+      "revId": "939d3068d288229e5c9ae2f00d21ba5553356a07",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
     }
   ]
 }
