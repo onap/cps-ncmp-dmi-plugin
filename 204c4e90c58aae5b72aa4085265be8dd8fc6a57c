@@ -18,6 +18,46 @@
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "acec1c0c_4e0f9349",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 8063
+      },
+      "writtenOn": "2024-09-06T16:11:45Z",
+      "side": 1,
+      "message": "a few clean up is needed, i think",
+      "revId": "204c4e90c58aae5b72aa4085265be8dd8fc6a57c",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "b4464f0e_2f6b1b8f",
+        "filename": "dmi-service/pom.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 119,
+      "author": {
+        "id": 8063
+      },
+      "writtenOn": "2024-09-06T16:11:45Z",
+      "side": 1,
+      "message": "Can we use the version \u003cversion\u003e1.18.32\u003c/version\u003e like in cps, since this version does not work when I run unit tests",
+      "range": {
+        "startLine": 119,
+        "startChar": 25,
+        "endLine": 119,
+        "endChar": 33
+      },
+      "revId": "204c4e90c58aae5b72aa4085265be8dd8fc6a57c",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "e3f73b7b_2a6c2012",
@@ -77,6 +117,190 @@
         "startChar": 25,
         "endLine": 30,
         "endChar": 29
+      },
+      "revId": "204c4e90c58aae5b72aa4085265be8dd8fc6a57c",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "49f2a0b0_be27ed44",
+        "filename": "dmi-service/src/test/groovy/org/onap/cps/ncmp/dmi/notifications/cmsubscription/DmiInEventConsumerSpec.groovy",
+        "patchSetId": 1
+      },
+      "lineNbr": 50,
+      "author": {
+        "id": 8063
+      },
+      "writtenOn": "2024-09-06T16:11:45Z",
+      "side": 1,
+      "message": "Not needed",
+      "range": {
+        "startLine": 49,
+        "startChar": 0,
+        "endLine": 50,
+        "endChar": 15
+      },
+      "revId": "204c4e90c58aae5b72aa4085265be8dd8fc6a57c",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "f86acd32_6d1313e1",
+        "filename": "dmi-service/src/test/groovy/org/onap/cps/ncmp/dmi/notifications/cmsubscription/DmiInEventConsumerSpec.groovy",
+        "patchSetId": 1
+      },
+      "lineNbr": 56,
+      "author": {
+        "id": 8063
+      },
+      "writtenOn": "2024-09-06T16:11:45Z",
+      "side": 1,
+      "message": "Not needed since new initialize the object",
+      "range": {
+        "startLine": 56,
+        "startChar": 5,
+        "endLine": 56,
+        "endChar": 15
+      },
+      "revId": "204c4e90c58aae5b72aa4085265be8dd8fc6a57c",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "144c2300_0fc64c1c",
+        "filename": "dmi-service/src/test/groovy/org/onap/cps/ncmp/dmi/notifications/cmsubscription/DmiInEventConsumerSpec.groovy",
+        "patchSetId": 1
+      },
+      "lineNbr": 57,
+      "author": {
+        "id": 8063
+      },
+      "writtenOn": "2024-09-06T16:11:45Z",
+      "side": 1,
+      "message": "def",
+      "range": {
+        "startLine": 57,
+        "startChar": 4,
+        "endLine": 57,
+        "endChar": 22
+      },
+      "revId": "204c4e90c58aae5b72aa4085265be8dd8fc6a57c",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "c612f478_6b4b42cb",
+        "filename": "dmi-service/src/test/groovy/org/onap/cps/ncmp/dmi/notifications/cmsubscription/DmiOutEventToCloudEventMapperSpec.groovy",
+        "patchSetId": 1
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 8063
+      },
+      "writtenOn": "2024-09-06T16:11:45Z",
+      "side": 1,
+      "message": "Since not autowired (new keyworld used to instantiate, not required to inject.",
+      "range": {
+        "startLine": 33,
+        "startChar": 0,
+        "endLine": 33,
+        "endChar": 7
+      },
+      "revId": "204c4e90c58aae5b72aa4085265be8dd8fc6a57c",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "c0bcbe5f_56bc1f2d",
+        "filename": "dmi-service/src/test/groovy/org/onap/cps/ncmp/dmi/notifications/cmsubscription/DmiOutEventToCloudEventMapperSpec.groovy",
+        "patchSetId": 1
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 8063
+      },
+      "writtenOn": "2024-09-06T16:11:45Z",
+      "side": 1,
+      "message": "Not required since created with new keyword",
+      "range": {
+        "startLine": 36,
+        "startChar": 0,
+        "endLine": 36,
+        "endChar": 3
+      },
+      "revId": "204c4e90c58aae5b72aa4085265be8dd8fc6a57c",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "9812b966_8ef9a13c",
+        "filename": "dmi-service/src/test/groovy/org/onap/cps/ncmp/dmi/notifications/cmsubscription/DmiOutEventToCloudEventMapperSpec.groovy",
+        "patchSetId": 1
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 8063
+      },
+      "writtenOn": "2024-09-06T16:11:45Z",
+      "side": 1,
+      "message": "Not required since new is used to initialize the ojbect",
+      "range": {
+        "startLine": 39,
+        "startChar": 5,
+        "endLine": 39,
+        "endChar": 15
+      },
+      "revId": "204c4e90c58aae5b72aa4085265be8dd8fc6a57c",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "8599cbcd_c115c3ef",
+        "filename": "dmi-service/src/test/groovy/org/onap/cps/ncmp/dmi/notifications/cmsubscription/DmiOutEventToCloudEventMapperSpec.groovy",
+        "patchSetId": 1
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 8063
+      },
+      "writtenOn": "2024-09-06T16:11:45Z",
+      "side": 1,
+      "message": "def",
+      "range": {
+        "startLine": 40,
+        "startChar": 4,
+        "endLine": 40,
+        "endChar": 33
+      },
+      "revId": "204c4e90c58aae5b72aa4085265be8dd8fc6a57c",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "44fe2c5a_143d35b1",
+        "filename": "dmi-service/src/test/groovy/org/onap/cps/ncmp/dmi/notifications/mapper/CloudEventMapperSpec.groovy",
+        "patchSetId": 1
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 8063
+      },
+      "writtenOn": "2024-09-06T16:11:45Z",
+      "side": 1,
+      "message": "Nice usage other than making it with new keyword",
+      "range": {
+        "startLine": 33,
+        "startChar": 0,
+        "endLine": 33,
+        "endChar": 3
       },
       "revId": "204c4e90c58aae5b72aa4085265be8dd8fc6a57c",
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
