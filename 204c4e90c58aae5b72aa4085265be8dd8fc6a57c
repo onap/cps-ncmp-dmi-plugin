@@ -1,6 +1,40 @@
 {
   "comments": [
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "cb5bbfdb_da5fc264",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 8171
+      },
+      "writtenOn": "2024-09-06T13:34:20Z",
+      "side": 1,
+      "message": "Update copyright year, all else looks good",
+      "revId": "204c4e90c58aae5b72aa4085265be8dd8fc6a57c",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "e3f73b7b_2a6c2012",
+        "filename": "dmi-service/src/main/java/org/onap/cps/ncmp/dmi/notifications/avc/DmiDataAvcCloudEventCreator.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 8171
+      },
+      "writtenOn": "2024-09-06T13:34:20Z",
+      "side": 1,
+      "message": "NB: 2023-2024",
+      "revId": "204c4e90c58aae5b72aa4085265be8dd8fc6a57c",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "079e5530_35487216",
