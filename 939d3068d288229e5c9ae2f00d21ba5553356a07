@@ -22,6 +22,30 @@
       },
       "revId": "939d3068d288229e5c9ae2f00d21ba5553356a07",
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "41373811_41a33cd9",
+        "filename": "csit/install-deps.sh",
+        "patchSetId": 1
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 7965
+      },
+      "writtenOn": "2024-09-06T10:17:16Z",
+      "side": 1,
+      "message": "As discussed offline , its a good suggestion.\nBut relying on the latest version always will not be deterministic. Features always gets added or removed from this active project and we might face surprising issues with this.\nSo I would suggest to have the version hard coded and when we have a requirement to upgrade we can analyze the version we want to use then which is free from vulnerabilities.",
+      "parentUuid": "ad417842_cffcf6c0",
+      "range": {
+        "startLine": 31,
+        "startChar": 65,
+        "endLine": 31,
+        "endChar": 72
+      },
+      "revId": "939d3068d288229e5c9ae2f00d21ba5553356a07",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
     }
   ]
 }
