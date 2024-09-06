@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "079e5530_35487216",
+        "filename": "dmi-service/src/main/java/org/onap/cps/ncmp/dmi/notifications/cmsubscription/DmiInEventConsumer.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 6742
+      },
+      "writtenOn": "2024-09-06T12:48:38Z",
+      "side": 1,
+      "message": "Nb. These events should probably not be in impl package since they are being used here!",
+      "range": {
+        "startLine": 30,
+        "startChar": 25,
+        "endLine": 30,
+        "endChar": 29
+      },
+      "revId": "204c4e90c58aae5b72aa4085265be8dd8fc6a57c",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    }
+  ]
+}
