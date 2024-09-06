@@ -22,6 +22,30 @@
       },
       "revId": "204c4e90c58aae5b72aa4085265be8dd8fc6a57c",
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "7a64aa59_37530eba",
+        "filename": "dmi-service/src/main/java/org/onap/cps/ncmp/dmi/notifications/cmsubscription/DmiInEventConsumer.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 7965
+      },
+      "writtenOn": "2024-09-06T12:53:08Z",
+      "side": 1,
+      "message": "these are actually coming from cps-ncmp-events jar.\nProbably we can fix it in the cps repo first and then revisit.",
+      "parentUuid": "079e5530_35487216",
+      "range": {
+        "startLine": 30,
+        "startChar": 25,
+        "endLine": 30,
+        "endChar": 29
+      },
+      "revId": "204c4e90c58aae5b72aa4085265be8dd8fc6a57c",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
     }
   ]
 }
