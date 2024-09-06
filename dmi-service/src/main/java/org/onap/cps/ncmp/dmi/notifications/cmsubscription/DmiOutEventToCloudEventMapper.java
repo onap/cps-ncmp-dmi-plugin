@@ -28,23 +28,23 @@ import java.util.UUID;
 import lombok.AccessLevel;
 import lombok.NoArgsConstructor;
 import org.onap.cps.ncmp.dmi.exception.CloudEventConstructionException;
-import org.onap.cps.ncmp.events.cmnotificationsubscription_merge1_0_0.dmi_to_ncmp.CmNotificationSubscriptionDmiOutEvent;
+import org.onap.cps.ncmp.impl.cmnotificationsubscription_1_0_0.dmi_to_ncmp.DmiOutEvent;
 
 @NoArgsConstructor(access = AccessLevel.PRIVATE)
-public class CmNotificationSubscriptionDmiOutEventToCloudEventMapper {
+public class DmiOutEventToCloudEventMapper {
 
     private static final ObjectMapper objectMapper = new ObjectMapper();
 
     /**
      * Maps SubscriptionEventResponse to a CloudEvent.
      *
-     * @param cmSubscriptionDmiOutEvent object.
+     * @param dmiOutEvent object.
      * @param subscriptionType          String of subscription type.
      * @param dmiName                   String of dmiName.
      * @param correlationId             String of correlationId.
      * @return CloudEvent built.
      */
-    public static CloudEvent toCloudEvent(final CmNotificationSubscriptionDmiOutEvent cmSubscriptionDmiOutEvent,
+    public static CloudEvent toCloudEvent(final DmiOutEvent dmiOutEvent,
                                           final String subscriptionType, final String dmiName,
                                           final String correlationId) {
         try {
@@ -52,7 +52,7 @@ public class CmNotificationSubscriptionDmiOutEventToCloudEventMapper {
                 .withType(subscriptionType)
                 .withDataSchema(URI.create("urn:cps:org.onap.ncmp.dmi.cm.subscription:1.0.0"))
                 .withExtension("correlationid", correlationId)
-                .withData(objectMapper.writeValueAsBytes(cmSubscriptionDmiOutEvent)).build();
+                .withData(objectMapper.writeValueAsBytes(dmiOutEvent)).build();
         } catch (final Exception ex) {
             throw new CloudEventConstructionException("The Cloud Event could not be constructed",
                 "Invalid object passed", ex);
