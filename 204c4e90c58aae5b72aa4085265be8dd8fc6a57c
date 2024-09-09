@@ -71,6 +71,24 @@
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "0567c625_65420db8",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 7965
+      },
+      "writtenOn": "2024-09-09T08:47:52Z",
+      "side": 1,
+      "message": "if you are ok with the version upgrade then lets merge this one and I can take action on your comments in the next patch on this ?",
+      "parentUuid": "44212ac3_a878537e",
+      "revId": "204c4e90c58aae5b72aa4085265be8dd8fc6a57c",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "b4464f0e_2f6b1b8f",
