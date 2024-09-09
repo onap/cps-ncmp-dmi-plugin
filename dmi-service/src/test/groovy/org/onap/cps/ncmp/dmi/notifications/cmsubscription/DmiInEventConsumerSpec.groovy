@@ -32,12 +32,11 @@ import org.onap.cps.ncmp.dmi.TestUtils
 import org.onap.cps.ncmp.dmi.api.kafka.MessagingBaseSpec
 import org.onap.cps.ncmp.dmi.notifications.cmsubscription.model.CmNotificationSubscriptionStatus
 import org.onap.cps.ncmp.dmi.notifications.mapper.CloudEventMapper
-import org.onap.cps.ncmp.events.cmnotificationsubscription_merge1_0_0.dmi_to_ncmp.CmNotificationSubscriptionDmiOutEvent
-import org.onap.cps.ncmp.events.cmnotificationsubscription_merge1_0_0.dmi_to_ncmp.Data
-import org.onap.cps.ncmp.events.cmnotificationsubscription_merge1_0_0.ncmp_to_dmi.CmNotificationSubscriptionDmiInEvent
+import org.onap.cps.ncmp.impl.cmnotificationsubscription_1_0_0.dmi_to_ncmp.Data
+import org.onap.cps.ncmp.impl.cmnotificationsubscription_1_0_0.dmi_to_ncmp.DmiOutEvent
+import org.onap.cps.ncmp.impl.cmnotificationsubscription_1_0_0.ncmp_to_dmi.DmiInEvent
 import org.slf4j.LoggerFactory
 import org.spockframework.spring.SpringBean
-import org.springframework.boot.test.context.SpringBootTest
 import org.springframework.test.annotation.DirtiesContext
 import org.testcontainers.spock.Testcontainers
 
@@ -49,13 +48,13 @@ import java.time.ZoneId
 
 @Testcontainers
 @DirtiesContext
-class CmNotificationSubscriptionDmiInEventConsumerSpec extends MessagingBaseSpec {
+class DmiInEventConsumerSpec extends MessagingBaseSpec {
     def objectMapper = new ObjectMapper()
     def testTopic = 'dmi-ncmp-cm-avc-subscription'
     def testDmiName = 'test-ncmp-dmi'
 
     @SpringBean
-    CmNotificationSubscriptionDmiInEventConsumer objectUnderTest = new CmNotificationSubscriptionDmiInEventConsumer(cloudEventKafkaTemplate)
+    DmiInEventConsumer objectUnderTest = new DmiInEventConsumer(cloudEventKafkaTemplate)
 
     def logger = Spy(ListAppender<ILoggingEvent>)
 
@@ -71,11 +70,11 @@ class CmNotificationSubscriptionDmiInEventConsumerSpec extends MessagingBaseSpec
     def 'Sends subscription cloud event response successfully.'() {
         given: 'an subscription event response'
             objectUnderTest.dmiName = testDmiName
-            objectUnderTest.cmNotificationSubscriptionDmiOutTopic = testTopic
+            objectUnderTest.dmoOutEventTopic = testTopic
             def correlationId = 'test-subscriptionId#test-ncmp-dmi'
             def cmSubscriptionDmiOutEventData = new Data(statusCode: subscriptionStatusCode, statusMessage: subscriptionStatusMessage)
             def subscriptionEventResponse =
-                    new CmNotificationSubscriptionDmiOutEvent().withData(cmSubscriptionDmiOutEventData)
+                    new DmiOutEvent().withData(cmSubscriptionDmiOutEventData)
         and: 'consumer has a subscription'
             kafkaConsumer.subscribe([testTopic] as List<String>)
         when: 'an event is published'
@@ -92,9 +91,9 @@ class CmNotificationSubscriptionDmiInEventConsumerSpec extends MessagingBaseSpec
             assert expectedValue == record.value
             assert eventKey == record.key
         where: 'given #scenario'
-            scenario                   | subscriptionAcceptanceType                 | subscriptionStatusCode | subscriptionStatusMessage
-            'Subscription is Accepted' | CmNotificationSubscriptionStatus.ACCEPTED  | '1'                    | 'ACCEPTED'
-            'Subscription is Rejected' | CmNotificationSubscriptionStatus.REJECTED  | '104'                    | 'REJECTED'
+            scenario                   | subscriptionAcceptanceType                | subscriptionStatusCode | subscriptionStatusMessage
+            'Subscription is Accepted' | CmNotificationSubscriptionStatus.ACCEPTED | '1'                    | 'ACCEPTED'
+            'Subscription is Rejected' | CmNotificationSubscriptionStatus.REJECTED | '104'                  | 'REJECTED'
     }
 
     def 'Consume valid message.'() {
@@ -103,17 +102,17 @@ class CmNotificationSubscriptionDmiInEventConsumerSpec extends MessagingBaseSpec
             def eventKey = UUID.randomUUID().toString()
             def timestamp = new Timestamp(1679521929511)
             def jsonData = TestUtils.getResourceFileContent('cmNotificationSubscriptionCreationEvent.json')
-            def subscriptionEvent = objectMapper.readValue(jsonData, CmNotificationSubscriptionDmiInEvent.class)
-            objectUnderTest.cmNotificationSubscriptionDmiOutTopic = testTopic
+            def subscriptionEvent = objectMapper.readValue(jsonData, DmiInEvent.class)
+            objectUnderTest.dmoOutEventTopic = testTopic
             def cloudEvent = CloudEventBuilder.v1().withId(UUID.randomUUID().toString()).withSource(URI.create('test-ncmp-dmi'))
                     .withType(subscriptionType)
-                    .withDataSchema(URI.create("urn:cps:" + CmNotificationSubscriptionDmiInEvent.class.getName() + ":1.0.0"))
+                    .withDataSchema(URI.create("urn:cps:" + DmiInEvent.class.getName() + ":1.0.0"))
                     .withExtension("correlationid", eventKey)
                     .withTime(OffsetDateTime.ofInstant(timestamp.toInstant(), ZoneId.of("UTC")))
                     .withData(objectMapper.writeValueAsBytes(subscriptionEvent)).build()
             def testEventSent = new ConsumerRecord<String, CloudEvent>('topic-name', 0, 0, eventKey, cloudEvent)
         when: 'the valid event is consumed'
-            objectUnderTest.consumeCmNotificationSubscriptionDmiInEvent(testEventSent)
+            objectUnderTest.consumeDmiInEvent(testEventSent)
         then: 'no exception is thrown'
             noExceptionThrown()
         where: 'given #scenario'
@@ -128,7 +127,7 @@ class CmNotificationSubscriptionDmiInEventConsumerSpec extends MessagingBaseSpec
             def eventKey = UUID.randomUUID().toString()
             def timestamp = new Timestamp(1679521929511)
             def invalidJsonBody = "/////"
-            objectUnderTest.cmNotificationSubscriptionDmiOutTopic = testTopic
+            objectUnderTest.dmoOutEventTopic = testTopic
             def cloudEvent = CloudEventBuilder.v1().withId(UUID.randomUUID().toString()).withSource(URI.create('test-ncmp-dmi'))
                     .withType("subscriptionCreated")
                     .withDataSchema(URI.create("urn:cps:org.onap.ncmp.dmi.cm.subscription:1.0.0"))
@@ -136,7 +135,7 @@ class CmNotificationSubscriptionDmiInEventConsumerSpec extends MessagingBaseSpec
                     .withExtension("correlationid", eventKey).withData(objectMapper.writeValueAsBytes(invalidJsonBody)).build()
             def testEventSent = new ConsumerRecord<String, CloudEvent>('topic-name', 0, 0, eventKey, cloudEvent)
         when: 'the invalid event is consumed'
-            objectUnderTest.consumeCmNotificationSubscriptionDmiInEvent(testEventSent)
+            objectUnderTest.consumeDmiInEvent(testEventSent)
         then: 'exception is thrown and event is logged'
             def loggingEvent = getLoggingEvent()
             assert loggingEvent.level == Level.ERROR

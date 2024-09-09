@@ -39,7 +39,6 @@ import org.onap.cps.ncmp.events.avc1_0_0.DatastoreChanges;
 import org.onap.cps.ncmp.events.avc1_0_0.Edit;
 import org.onap.cps.ncmp.events.avc1_0_0.IetfYangPatchYangPatch;
 import org.onap.cps.ncmp.events.avc1_0_0.PushChangeUpdate;
-import org.onap.cps.ncmp.events.avc1_0_0.Value;
 
 /**
  * Helper to create AvcEvents.
@@ -84,14 +83,12 @@ public class DmiDataAvcCloudEventCreator {
         final IetfYangPatchYangPatch ietfYangPatchYangPatch = new IetfYangPatchYangPatch();
         ietfYangPatchYangPatch.setPatchId("abcd");
         final Edit edit1 = new Edit();
-        final Value value = new Value();
         final Map<String, Object> attributeMap = new LinkedHashMap<>();
         attributeMap.put("isHoAllowed", false);
-        value.setAttributes(List.of(attributeMap));
         edit1.setEditId("editId");
         edit1.setOperation("replace");
         edit1.setTarget("target_xpath");
-        edit1.setValue(value);
+        edit1.setValue(List.of(attributeMap));
         ietfYangPatchYangPatch.setEdit(List.of(edit1));
         datastoreChanges.setIetfYangPatchYangPatch(ietfYangPatchYangPatch);
         pushChangeUpdate.setDatastoreChanges(datastoreChanges);

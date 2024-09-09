@@ -25,9 +25,9 @@ import lombok.RequiredArgsConstructor;
 import org.apache.kafka.clients.consumer.ConsumerRecord;
 import org.onap.cps.ncmp.dmi.notifications.cmsubscription.model.CmNotificationSubscriptionStatus;
 import org.onap.cps.ncmp.dmi.notifications.mapper.CloudEventMapper;
-import org.onap.cps.ncmp.events.cmnotificationsubscription_merge1_0_0.dmi_to_ncmp.CmNotificationSubscriptionDmiOutEvent;
-import org.onap.cps.ncmp.events.cmnotificationsubscription_merge1_0_0.dmi_to_ncmp.Data;
-import org.onap.cps.ncmp.events.cmnotificationsubscription_merge1_0_0.ncmp_to_dmi.CmNotificationSubscriptionDmiInEvent;
+import org.onap.cps.ncmp.impl.cmnotificationsubscription_1_0_0.dmi_to_ncmp.Data;
+import org.onap.cps.ncmp.impl.cmnotificationsubscription_1_0_0.dmi_to_ncmp.DmiOutEvent;
+import org.onap.cps.ncmp.impl.cmnotificationsubscription_1_0_0.ncmp_to_dmi.DmiInEvent;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.kafka.annotation.KafkaListener;
 import org.springframework.kafka.core.KafkaTemplate;
@@ -35,31 +35,31 @@ import org.springframework.stereotype.Service;
 
 @Service
 @RequiredArgsConstructor
-public class CmNotificationSubscriptionDmiInEventConsumer {
+public class DmiInEventConsumer {
 
 
     @Value("${app.dmi.avc.cm-subscription-dmi-out}")
-    private String cmNotificationSubscriptionDmiOutTopic;
+    private String dmoOutEventTopic;
     @Value("${dmi.service.name}")
     private String dmiName;
     private final KafkaTemplate<String, CloudEvent> cloudEventKafkaTemplate;
 
     /**
-     * Consume the cmNotificationSubscriptionDmiInCloudEvent event.
+     * Consume the DmiInCloudEvent.
      *
-     * @param cmNotificationSubscriptionDmiInCloudEvent the event to be consumed
+     * @param dmiInCloudEvent the event to be consumed
      */
     @KafkaListener(topics = "${app.dmi.avc.cm-subscription-dmi-in}",
         containerFactory = "cloudEventConcurrentKafkaListenerContainerFactory")
-    public void consumeCmNotificationSubscriptionDmiInEvent(
-        final ConsumerRecord<String, CloudEvent> cmNotificationSubscriptionDmiInCloudEvent) {
-        final CmNotificationSubscriptionDmiInEvent cmNotificationSubscriptionDmiInEvent =
-            CloudEventMapper.toTargetEvent(cmNotificationSubscriptionDmiInCloudEvent.value(),
-                CmNotificationSubscriptionDmiInEvent.class);
+    public void consumeDmiInEvent(
+        final ConsumerRecord<String, CloudEvent> dmiInCloudEvent) {
+        final DmiInEvent cmNotificationSubscriptionDmiInEvent =
+            CloudEventMapper.toTargetEvent(dmiInCloudEvent.value(),
+                DmiInEvent.class);
         if (cmNotificationSubscriptionDmiInEvent != null) {
-            final String subscriptionId = cmNotificationSubscriptionDmiInCloudEvent.value().getId();
-            final String subscriptionType = cmNotificationSubscriptionDmiInCloudEvent.value().getType();
-            final String correlationId = String.valueOf(cmNotificationSubscriptionDmiInCloudEvent.value()
+            final String subscriptionId = dmiInCloudEvent.value().getId();
+            final String subscriptionType = dmiInCloudEvent.value().getType();
+            final String correlationId = String.valueOf(dmiInCloudEvent.value()
                 .getExtension("correlationid"));
 
             if ("subscriptionCreateRequest".equals(subscriptionType)) {
@@ -84,21 +84,21 @@ public class CmNotificationSubscriptionDmiInEventConsumer {
         final String eventKey, final String subscriptionType, final String correlationId,
         final CmNotificationSubscriptionStatus cmNotificationSubscriptionStatus) {
 
-        final CmNotificationSubscriptionDmiOutEvent cmNotificationSubscriptionDmiOutEvent =
-            new CmNotificationSubscriptionDmiOutEvent();
-        final Data cmNotificationSubscriptionDmiOutEventData = new Data();
+        final DmiOutEvent cmNotificationSubscriptionDmiOutEvent =
+            new DmiOutEvent();
+        final Data dmiOutEventData = new Data();
 
         if (cmNotificationSubscriptionStatus.equals(CmNotificationSubscriptionStatus.ACCEPTED)) {
-            cmNotificationSubscriptionDmiOutEventData.setStatusCode("1");
-            cmNotificationSubscriptionDmiOutEventData.setStatusMessage("ACCEPTED");
+            dmiOutEventData.setStatusCode("1");
+            dmiOutEventData.setStatusMessage("ACCEPTED");
         } else {
-            cmNotificationSubscriptionDmiOutEventData.setStatusCode("104");
-            cmNotificationSubscriptionDmiOutEventData.setStatusMessage("REJECTED");
+            dmiOutEventData.setStatusCode("104");
+            dmiOutEventData.setStatusMessage("REJECTED");
         }
-        cmNotificationSubscriptionDmiOutEvent.setData(cmNotificationSubscriptionDmiOutEventData);
+        cmNotificationSubscriptionDmiOutEvent.setData(dmiOutEventData);
 
-        cloudEventKafkaTemplate.send(cmNotificationSubscriptionDmiOutTopic, eventKey,
-            CmNotificationSubscriptionDmiOutEventToCloudEventMapper.toCloudEvent(cmNotificationSubscriptionDmiOutEvent,
+        cloudEventKafkaTemplate.send(dmoOutEventTopic, eventKey,
+            DmiOutEventToCloudEventMapper.toCloudEvent(cmNotificationSubscriptionDmiOutEvent,
                 subscriptionType, dmiName, correlationId));
 
     }
