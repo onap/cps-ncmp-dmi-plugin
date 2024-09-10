@@ -39,6 +39,30 @@
       },
       "revId": "4e2f75d1472afeec1ebabbf8292681495a2a3185",
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "f175b5b7_44bf6448",
+        "filename": "docs/api/swagger/openapi-datajob.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 4893
+      },
+      "writtenOn": "2024-09-10T10:38:40Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "300b9ada_5294343a",
+      "range": {
+        "startLine": 20,
+        "startChar": 7,
+        "endLine": 20,
+        "endChar": 21
+      },
+      "revId": "4e2f75d1472afeec1ebabbf8292681495a2a3185",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
     }
   ]
 }
