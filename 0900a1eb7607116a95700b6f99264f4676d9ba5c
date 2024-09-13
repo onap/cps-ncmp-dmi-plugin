@@ -16,6 +16,23 @@
       "message": "Had chat with Priyank. true is the default for explode parameter so  no need for it in the file",
       "revId": "0900a1eb7607116a95700b6f99264f4676d9ba5c",
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "1ae79ab1_d88c3ae7",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 7965
+      },
+      "writtenOn": "2024-09-13T10:39:12Z",
+      "side": 1,
+      "message": "fine by me",
+      "revId": "0900a1eb7607116a95700b6f99264f4676d9ba5c",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
     }
   ]
 }
