@@ -18,7 +18,7 @@
  * ============LICENSE_END=========================================================
  */
 
-package org.onap.cps.ncmp.dmi.rest.stub.controller.config;
+package org.onap.cps.ncmp.dmi.rest.stub.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
