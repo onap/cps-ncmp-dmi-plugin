@@ -33,6 +33,8 @@
     <properties>
         <sonar.skip>true</sonar.skip>
         <jacoco.skip>true</jacoco.skip>
+        <java.version>17</java.version>
+        <maven.compiler.release>17</maven.compiler.release>
     </properties>
 
     <modules>
@@ -97,5 +99,4 @@
     </plugin>
     </plugins>
     </build>
-
 </project>
