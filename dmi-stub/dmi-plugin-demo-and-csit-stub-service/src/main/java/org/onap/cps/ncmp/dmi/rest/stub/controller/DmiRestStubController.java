@@ -27,6 +27,7 @@ import io.cloudevents.CloudEvent;
 import io.cloudevents.core.builder.CloudEventBuilder;
 import java.net.URI;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -43,6 +44,7 @@ import org.onap.cps.ncmp.dmi.rest.stub.controller.aop.ModuleInitialProcess;
 import org.onap.cps.ncmp.dmi.rest.stub.model.data.operational.DataOperationRequest;
 import org.onap.cps.ncmp.dmi.rest.stub.model.data.operational.DmiDataOperationRequest;
 import org.onap.cps.ncmp.dmi.rest.stub.model.data.operational.DmiOperationCmHandle;
+import org.onap.cps.ncmp.dmi.rest.stub.service.YangModuleFactory;
 import org.onap.cps.ncmp.dmi.rest.stub.utils.EventDateTimeFormatter;
 import org.onap.cps.ncmp.dmi.rest.stub.utils.ResourceFileReaderUtil;
 import org.onap.cps.ncmp.events.async1_0_0.Data;
@@ -50,7 +52,6 @@ import org.onap.cps.ncmp.events.async1_0_0.DataOperationEvent;
 import org.onap.cps.ncmp.events.async1_0_0.Response;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.ApplicationContext;
-import org.springframework.core.io.Resource;
 import org.springframework.core.io.ResourceLoader;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -75,6 +76,8 @@ public class DmiRestStubController {
     private static final String DEFAULT_PASSTHROUGH_OPERATION = "read";
     private static final String dataOperationEventType = "org.onap.cps.ncmp.events.async1_0_0.DataOperationEvent";
     private static final Map<String, String> moduleSetTagPerCmHandleId = new HashMap<>();
+    public static final String MODULE_REFERENCE_RESPONSE = "ModuleReference";
+    public static final String MODULE_RESOURCE_RESPONSE = "ModuleResource";
     private final KafkaTemplate<String, CloudEvent> cloudEventKafkaTemplate;
     private final ObjectMapper objectMapper;
     private final ApplicationContext applicationContext;
@@ -89,6 +92,8 @@ public class DmiRestStubController {
     @Value("${delay.write-data-for-cm-handle-delay-ms}")
     private long writeDataForCmHandleDelayMs;
     private final AtomicInteger subJobWriteRequestCounter = new AtomicInteger();
+    private final YangModuleFactory yangModuleFactory;
+    private static final List<String> MODULE_SET_TAGS = Arrays.asList("tagA", "tagB", "tagC", "tagD", "tagE");
 
     /**
      * This code defines a REST API endpoint for adding new the module set tag mapping. The endpoint receives the
@@ -163,7 +168,7 @@ public class DmiRestStubController {
     @ModuleInitialProcess
     public ResponseEntity<String> getModuleReferences(@PathVariable("cmHandleId") final String cmHandleId,
                                                       @RequestBody final Object moduleReferencesRequest) {
-        return processModuleRequest(moduleReferencesRequest, "ModuleResponse.json", moduleReferencesDelayMs);
+        return processModuleRequest(moduleReferencesRequest, MODULE_REFERENCE_RESPONSE, moduleReferencesDelayMs);
     }
 
     /**
@@ -179,7 +184,7 @@ public class DmiRestStubController {
     public ResponseEntity<String> getModuleResources(
             @PathVariable("cmHandleId") final String cmHandleId,
             @RequestBody final Object moduleResourcesReadRequest) {
-        return processModuleRequest(moduleResourcesReadRequest, "ModuleResourcesResponse.json", moduleResourcesDelayMs);
+        return processModuleRequest(moduleResourcesReadRequest, MODULE_RESOURCE_RESPONSE, moduleResourcesDelayMs);
     }
 
     /**
@@ -350,10 +355,19 @@ public class DmiRestStubController {
         return dataOperationEvent;
     }
 
-    private ResponseEntity<String> processModuleRequest(Object moduleRequest, String responseFileName, long simulatedResponseDelay) {
-        String moduleSetTag = extractModuleSetTagFromRequest(moduleRequest);
+    private ResponseEntity<String> processModuleRequest(Object moduleRequest, String responseType, long simulatedResponseDelay) {
+        String moduleResponseContent = "";
+        final String moduleSetTag = extractModuleSetTagFromRequest(moduleRequest);
         logRequestBody(moduleRequest);
-        String moduleResponseContent = getModuleResponseContent(moduleSetTag, responseFileName);
+
+        int length = (!isModuleSetTagNullOrEmpty(moduleSetTag)  && MODULE_SET_TAGS.contains(moduleSetTag)) ? 200 : 10;
+
+        if (MODULE_RESOURCE_RESPONSE.equals(responseType)) {
+            moduleResponseContent = yangModuleFactory.makeModuleResources(length);
+        } else {
+            moduleResponseContent = yangModuleFactory.makeModuleReferences(length);
+        }
+
         delay(simulatedResponseDelay);
         return ResponseEntity.ok(moduleResponseContent);
     }
@@ -373,17 +387,6 @@ public class DmiRestStubController {
         } catch (final JsonProcessingException jsonProcessingException) {
             log.info("Unable to parse DMI request to json string");
         }
-    }
-
-    private String getModuleResponseContent(final String moduleSetTag, final String responseFileName) {
-        String moduleResponseFilePath = isModuleSetTagNullOrEmpty(moduleSetTag)
-                ? String.format("module/ietfYang-%s", responseFileName)
-                : String.format("module/%s-%s", moduleSetTag, responseFileName);
-        log.info("Using module responses from : {}", moduleResponseFilePath);
-
-        Resource moduleResponseResource = applicationContext.getResource(
-                ResourceLoader.CLASSPATH_URL_PREFIX + moduleResponseFilePath);
-        return ResourceFileReaderUtil.getResourceFileContent(moduleResponseResource);
     }
 
     private String getPassthroughOperationType(final String requestBody) {
