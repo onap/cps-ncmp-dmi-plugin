@@ -1,6 +1,6 @@
 /*
  * ============LICENSE_START=======================================================
- *  Copyright (C) 2023 Nordix Foundation
+ *  Copyright (C) 2023-2024 Nordix Foundation
  *  ================================================================================
  *  Licensed under the Apache License, Version 2.0 (the "License");
  *  you may not use this file except in compliance with the License.
@@ -22,8 +22,11 @@ package org.onap.cps.ncmp.dmi.rest.stub.controller;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.annotation.ComponentScan;
+
 
 @SpringBootApplication
+@ComponentScan(basePackages = {"org.onap.cps.ncmp.dmi.rest.stub"})
 public class DmiDemoApplication {
 
     public static void main(final String[] args) {
