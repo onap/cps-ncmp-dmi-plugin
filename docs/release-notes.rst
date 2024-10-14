@@ -64,7 +64,7 @@ Release Data
 
 Features
 --------
-   - `CPS-2030 <https://jira.onap.org/browse/CPS-2030>`_  Add moduleSetTag to the request towards dmi plugin if moduleSetTag is set for the cmHandle.
+   - `CPS-2030 <https://lf-onap.atlassian.net/browse/CPS-2030>`_  Add moduleSetTag to the request towards dmi plugin if moduleSetTag is set for the cmHandle.
 
 ..      ====================
 ..      * * *   KOHN   * * *
@@ -115,8 +115,8 @@ Release Data
 
 Features
 --------
-   - `CPS-1775 <https://jira.onap.org/browse/CPS-1775>`_  Migrate to Java 17.
-   - `CPS-1790 <https://jira.onap.org/browse/CPS-1790>`_  Update to Spring Boot 3.1.2.
+   - `CPS-1775 <https://lf-onap.atlassian.net/browse/CPS-1775>`_  Migrate to Java 17.
+   - `CPS-1790 <https://lf-onap.atlassian.net/browse/CPS-1790>`_  Update to Spring Boot 3.1.2.
 
 
 Version: 1.2.2 (not yet released)
@@ -141,7 +141,7 @@ Release Data
 
 Bug Fixes
 ---------
-   - `CPS-1350 <https://jira.onap.org/browse/CPS-1350>`_  [CPS/NCMP] Add Basic Auth to CPS/NCMP OpenAPI Definitions
+   - `CPS-1350 <https://lf-onap.atlassian.net/browse/CPS-1350>`_  [CPS/NCMP] Add Basic Auth to CPS/NCMP OpenAPI Definitions
 
 
 Version: 1.2.1
@@ -190,9 +190,9 @@ Release Data
 
 Features
 --------
-   - `CPS-562 <https://jira.onap.org/browse/CPS-562>`_  Write data for cmHandle using ncmp-datastores:passthrough-running (DMI Plugin.)
-   - `CPS-832 <https://jira.onap.org/browse/CPS-832>`_  Async: E2E Integration
-   - `CPS-828 <https://jira.onap.org/browse/CPS-828>`_  Async: NCMP Rest impl. including Request ID generation
+   - `CPS-562 <https://lf-onap.atlassian.net/browse/CPS-562>`_  Write data for cmHandle using ncmp-datastores:passthrough-running (DMI Plugin.)
+   - `CPS-832 <https://lf-onap.atlassian.net/browse/CPS-832>`_  Async: E2E Integration
+   - `CPS-828 <https://lf-onap.atlassian.net/browse/CPS-828>`_  Async: NCMP Rest impl. including Request ID generation
 
 Bug Fixes
 ---------
@@ -250,14 +250,14 @@ Release Data
 
 Features
 --------
-   - `CPS-637 <https://jira.onap.org/browse/CPS-637>`_  Support Update operation for datastore pass-through running
-   - `CPS-639 <https://jira.onap.org/browse/CPS-639>`_  Support Delete operation for datastore pass-through running
-   - `CPS-784 <https://jira.onap.org/browse/CPS-784>`_  Add examples to DMI-Plugin API Spec
+   - `CPS-637 <https://lf-onap.atlassian.net/browse/CPS-637>`_  Support Update operation for datastore pass-through running
+   - `CPS-639 <https://lf-onap.atlassian.net/browse/CPS-639>`_  Support Delete operation for datastore pass-through running
+   - `CPS-784 <https://lf-onap.atlassian.net/browse/CPS-784>`_  Add examples to DMI-Plugin API Spec
 
 Bug Fixes
 ---------
 
-   - `CPS-841 <https://jira.onap.org/browse/CPS-841>`_  Upgrade log4j to 2.17.1 as recommended by ONAP SECCOM
+   - `CPS-841 <https://lf-onap.atlassian.net/browse/CPS-841>`_  Upgrade log4j to 2.17.1 as recommended by ONAP SECCOM
 
 Known Limitations, Issues and Workarounds
 -----------------------------------------
@@ -312,7 +312,7 @@ Release Data
 Bug Fixes
 ---------
 
-   - `CPS-841 <https://jira.onap.org/browse/CPS-841>`_  Update log4j version to 2.17.1 due to security vulnerability
+   - `CPS-841 <https://lf-onap.atlassian.net/browse/CPS-841>`_  Update log4j version to 2.17.1 due to security vulnerability
 
 Version: 1.0.2
 ==============
@@ -337,7 +337,7 @@ Release Data
 Bug Fixes
 ---------
 
-   - `CPS-820 <https://jira.onap.org/browse/CPS-820>`_  Update log4j version due to security vulnerability
+   - `CPS-820 <https://lf-onap.atlassian.net/browse/CPS-820>`_  Update log4j version due to security vulnerability
 
 Version: 1.0.1
 ==============
@@ -362,19 +362,19 @@ Release Data
 Bug Fixes
 ---------
 
-   - `CPS-653 <https://jira.onap.org/browse/CPS-653>`_ cmHandleProperties not supported by dmi in fetch modules
-   - `CPS-659 <https://jira.onap.org/browse/CPS-659>`_ DMI does not set CREATE Response code for passthrough-running create use-case
-   - `CPS-669 <https://jira.onap.org/browse/CPS-669>`_ Improvements in the NCMP-DMI plugin OOM charts
-   - `CPS-678 <https://jira.onap.org/browse/CPS-678>`_ Passthrough read only supports known parameters (depth&field)
-   - `CPS-679 <https://jira.onap.org/browse/CPS-679>`_ Passthrough does not support resourceIdentifier with / tokens
-   - `CPS-706 <https://jira.onap.org/browse/CPS-706>`_ get moduleschema/yangresouce endpoint not working
+   - `CPS-653 <https://lf-onap.atlassian.net/browse/CPS-653>`_ cmHandleProperties not supported by dmi in fetch modules
+   - `CPS-659 <https://lf-onap.atlassian.net/browse/CPS-659>`_ DMI does not set CREATE Response code for passthrough-running create use-case
+   - `CPS-669 <https://lf-onap.atlassian.net/browse/CPS-669>`_ Improvements in the NCMP-DMI plugin OOM charts
+   - `CPS-678 <https://lf-onap.atlassian.net/browse/CPS-678>`_ Passthrough read only supports known parameters (depth&field)
+   - `CPS-679 <https://lf-onap.atlassian.net/browse/CPS-679>`_ Passthrough does not support resourceIdentifier with / tokens
+   - `CPS-706 <https://lf-onap.atlassian.net/browse/CPS-706>`_ get moduleschema/yangresouce endpoint not working
 
 Known Limitations, Issues and Workarounds
 -----------------------------------------
 
 *System Limitations*
 
-  - `CPS-719 <https://jira.onap.org/browse/CPS-719>`_ Passthrough query options do not support comma (,) token in values
+  - `CPS-719 <https://lf-onap.atlassian.net/browse/CPS-719>`_ Passthrough query options do not support comma (,) token in values
 
 *Known Vulnerabilities*
 
@@ -437,9 +437,9 @@ Software Deliverables
 Bug Fixes
 ---------
 
-   - `CPS-504 <https://jira.onap.org/browse/CPS-504>`_ Checkstyle rules are not enforced for cps-ncmp-dmi-plugin
-   - `CPS-589 <https://jira.onap.org/browse/CPS-589>`_ Json for Yang Resources does not contain name and revision tags
-   - `CPS-617 <https://jira.onap.org/browse/CPS-617>`_ DMI base path does not conform to agreed API URL
+   - `CPS-504 <https://lf-onap.atlassian.net/browse/CPS-504>`_ Checkstyle rules are not enforced for cps-ncmp-dmi-plugin
+   - `CPS-589 <https://lf-onap.atlassian.net/browse/CPS-589>`_ Json for Yang Resources does not contain name and revision tags
+   - `CPS-617 <https://lf-onap.atlassian.net/browse/CPS-617>`_ DMI base path does not conform to agreed API URL
 
 Summary
 -------
@@ -465,8 +465,8 @@ None
 
 *Known Vulnerabilities*
 
-   - `CPS-653 <https://jira.onap.org/browse/CPS-653>`_ cmHandleProperties not supported by dmi in fetch modules
-   - `CPS-659 <https://jira.onap.org/browse/CPS-659>`_ DMI does not set CREATE Response code for passthrough-running create use-case
+   - `CPS-653 <https://lf-onap.atlassian.net/browse/CPS-653>`_ cmHandleProperties not supported by dmi in fetch modules
+   - `CPS-659 <https://lf-onap.atlassian.net/browse/CPS-659>`_ DMI does not set CREATE Response code for passthrough-running create use-case
 
 *Workarounds*
 
@@ -496,12 +496,12 @@ For more information on the latest ONAP release, please see:
 
 
 .. _`ONAP Home Page`: https://www.onap.org
-.. _`ONAP Wiki Page`: https://wiki.onap.org
-.. _`ONAP Documentation`: https://docs.onap.org
+.. _`ONAP Wiki Page`: https://lf-onap.atlassian.net
+.. _`ONAP Documentation`: https://lf-onap.atlassian.net/wiki/spaces/DW/overview
 .. _`ONAP DMI Plugin Documentation`: https://docs.onap.org/projects/onap-cps-ncmp-dmi-plugin
 .. _`ONAP Release Downloads`: https://git.onap.org
 
 Quick Links:
 
-        - `CPS project page <https://wiki.onap.org/pages/viewpage.action?pageId=71834216>`_
+        - `CPS project page <https://lf-onap.atlassian.net/wiki/spaces/DW/pages/16442177/Configuration+Persistence+Service+Developer+s+Landing+Page>`_
         - `Passing Badge information for CPS <https://bestpractices.coreinfrastructure.org/en/projects/4398>`_
