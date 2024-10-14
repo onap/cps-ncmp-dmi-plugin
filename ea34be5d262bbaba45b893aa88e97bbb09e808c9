@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "28056bd7_be8ed210",
+        "filename": "dmi-stub/dmi-plugin-demo-and-csit-stub-service/src/main/java/org/onap/cps/ncmp/dmi/rest/stub/service/YangModuleFactory.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 6742
+      },
+      "writtenOn": "2024-10-14T19:48:10Z",
+      "side": 1,
+      "message": "I want to test this commit further, but I love the idea of the YangModelFactory, very neat!",
+      "range": {
+        "startLine": 37,
+        "startChar": 13,
+        "endLine": 37,
+        "endChar": 30
+      },
+      "revId": "ea34be5d262bbaba45b893aa88e97bbb09e808c9",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    }
+  ]
+}
