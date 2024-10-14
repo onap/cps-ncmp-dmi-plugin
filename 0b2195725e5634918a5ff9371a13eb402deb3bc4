@@ -24,6 +24,30 @@
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "97ea83cb_2a40d160",
+        "filename": "docs/release-notes.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 500,
+      "author": {
+        "id": 8063
+      },
+      "writtenOn": "2024-10-14T14:06:12Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "d21f4dc9_a7ce7e63",
+      "range": {
+        "startLine": 500,
+        "startChar": 26,
+        "endLine": 500,
+        "endChar": 79
+      },
+      "revId": "0b2195725e5634918a5ff9371a13eb402deb3bc4",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "5339bcce_e949981c",
@@ -37,6 +61,30 @@
       "writtenOn": "2024-10-14T13:29:39Z",
       "side": 1,
       "message": "use https://lf-onap.atlassian.net/wiki/spaces/DW/pages/16398157/Configuration+Persistence+Service+Project",
+      "range": {
+        "startLine": 506,
+        "startChar": 29,
+        "endLine": 506,
+        "endChar": 147
+      },
+      "revId": "0b2195725e5634918a5ff9371a13eb402deb3bc4",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "5656a1cf_1cf410cf",
+        "filename": "docs/release-notes.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 506,
+      "author": {
+        "id": 8063
+      },
+      "writtenOn": "2024-10-14T14:06:12Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5339bcce_e949981c",
       "range": {
         "startLine": 506,
         "startChar": 29,
