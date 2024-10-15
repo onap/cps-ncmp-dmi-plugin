@@ -46,6 +46,29 @@
       },
       "revId": "ea34be5d262bbaba45b893aa88e97bbb09e808c9",
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "331be09b_c1e8e9ac",
+        "filename": "dmi-stub/dmi-plugin-demo-and-csit-stub-service/src/main/java/org/onap/cps/ncmp/dmi/rest/stub/service/YangModuleFactory.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 96,
+      "author": {
+        "id": 6742
+      },
+      "writtenOn": "2024-10-15T13:36:55Z",
+      "side": 1,
+      "message": "This should be same revision as in other methods, e.g. pass as parameter",
+      "range": {
+        "startLine": 96,
+        "startChar": 44,
+        "endLine": 96,
+        "endChar": 57
+      },
+      "revId": "ea34be5d262bbaba45b893aa88e97bbb09e808c9",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
     }
   ]
 }
