@@ -277,6 +277,30 @@
       },
       "revId": "ea34be5d262bbaba45b893aa88e97bbb09e808c9",
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "3d6ec11a_ca59b2ad",
+        "filename": "dmi-stub/pom.xml",
+        "patchSetId": 2
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2024-10-15T14:54:11Z",
+      "side": 1,
+      "message": "ok, this modules parent ids oparent. reminds me we need get rid of oparent (from ONAP) ... I\u0027ll check/create a JIra now for that",
+      "parentUuid": "e39a3e8c_b1781b12",
+      "range": {
+        "startLine": 36,
+        "startChar": 0,
+        "endLine": 37,
+        "endChar": 59
+      },
+      "revId": "ea34be5d262bbaba45b893aa88e97bbb09e808c9",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
     }
   ]
 }
