@@ -77,6 +77,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "96a3def3_33aa224f",
+        "filename": "dmi-stub/dmi-plugin-demo-and-csit-stub-service/src/main/java/org/onap/cps/ncmp/dmi/rest/stub/model/module/ModuleReference.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2024-10-21T10:03:34Z",
+      "side": 1,
+      "message": "i think that  might be OK",
+      "parentUuid": "42fa8d32_6d2c4def",
+      "revId": "575879449fe8779c63a80ba59ba7fc6d22874bc9",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "467dbc7d_d2428f69",
         "filename": "dmi-stub/dmi-plugin-demo-and-csit-stub-service/src/main/java/org/onap/cps/ncmp/dmi/rest/stub/service/YangModuleFactory.java",
         "patchSetId": 3
@@ -157,6 +175,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "b0df1512_3d4db2a9",
+        "filename": "dmi-stub/dmi-plugin-demo-and-csit-stub-service/src/main/java/org/onap/cps/ncmp/dmi/rest/stub/service/YangModuleFactory.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 136,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2024-10-21T10:03:34Z",
+      "side": 1,
+      "message": "agreed, code should not be committed for review when not passing spotbugs/checkstyle",
+      "parentUuid": "c92af67a_305f3c46",
+      "revId": "575879449fe8779c63a80ba59ba7fc6d22874bc9",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "fe939219_28f59f58",
         "filename": "dmi-stub/dmi-plugin-demo-and-csit-stub-service/src/main/java/org/onap/cps/ncmp/dmi/rest/stub/service/YangModuleFactory.java",
         "patchSetId": 3
@@ -168,6 +204,30 @@
       "writtenOn": "2024-10-21T09:48:10Z",
       "side": 1,
       "message": "do we have to make this configurable ??",
+      "range": {
+        "startLine": 137,
+        "startChar": 58,
+        "endLine": 137,
+        "endChar": 61
+      },
+      "revId": "575879449fe8779c63a80ba59ba7fc6d22874bc9",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "ff42d761_421f0395",
+        "filename": "dmi-stub/dmi-plugin-demo-and-csit-stub-service/src/main/java/org/onap/cps/ncmp/dmi/rest/stub/service/YangModuleFactory.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 137,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2024-10-21T10:03:34Z",
+      "side": 1,
+      "message": "not configurable but a private cosntant TARGET_SIZE would be good for readability",
+      "parentUuid": "fe939219_28f59f58",
       "range": {
         "startLine": 137,
         "startChar": 58,
@@ -260,6 +320,30 @@
       "writtenOn": "2024-10-21T09:48:10Z",
       "side": 1,
       "message": "?? ModuleSetTagUtil ?? what u guys think ?",
+      "range": {
+        "startLine": 26,
+        "startChar": 13,
+        "endLine": 26,
+        "endChar": 20
+      },
+      "revId": "575879449fe8779c63a80ba59ba7fc6d22874bc9",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "224ae63d_6595119d",
+        "filename": "dmi-stub/dmi-plugin-demo-and-csit-stub-service/src/main/java/org/onap/cps/ncmp/dmi/rest/stub/utils/TagUtil.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2024-10-21T10:03:34Z",
+      "side": 1,
+      "message": "i think teh whole calls is NOT needed",
+      "parentUuid": "fa71a09e_953cc496",
       "range": {
         "startLine": 26,
         "startChar": 13,
