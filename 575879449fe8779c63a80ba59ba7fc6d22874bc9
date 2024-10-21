@@ -1,6 +1,40 @@
 {
   "comments": [
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "66e041e1_3da267cd",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 7965
+      },
+      "writtenOn": "2024-10-21T09:48:10Z",
+      "side": 1,
+      "message": "preliminary comments.\nwill review one more time.",
+      "revId": "575879449fe8779c63a80ba59ba7fc6d22874bc9",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "e99fd09b_d8825e24",
+        "filename": "dmi-stub/dmi-plugin-demo-and-csit-stub-service/src/main/java/org/onap/cps/ncmp/dmi/rest/stub/controller/DmiRestStubController.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 80,
+      "author": {
+        "id": 7965
+      },
+      "writtenOn": "2024-10-21T09:48:10Z",
+      "side": 1,
+      "message": "I would group the static , non static and instance variables here.\nMix of the above doesnt look good.",
+      "revId": "575879449fe8779c63a80ba59ba7fc6d22874bc9",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "6d5dc469_dfc2edae",
@@ -26,6 +60,63 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "42fa8d32_6d2c4def",
+        "filename": "dmi-stub/dmi-plugin-demo-and-csit-stub-service/src/main/java/org/onap/cps/ncmp/dmi/rest/stub/model/module/ModuleReference.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 7965
+      },
+      "writtenOn": "2024-10-21T09:48:10Z",
+      "side": 1,
+      "message": "no namespace needed??",
+      "revId": "575879449fe8779c63a80ba59ba7fc6d22874bc9",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "467dbc7d_d2428f69",
+        "filename": "dmi-stub/dmi-plugin-demo-and-csit-stub-service/src/main/java/org/onap/cps/ncmp/dmi/rest/stub/service/YangModuleFactory.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 44,
+      "author": {
+        "id": 7965
+      },
+      "writtenOn": "2024-10-21T09:48:10Z",
+      "side": 1,
+      "message": "same comment as before regarding the grouping of static , local and instance vars.",
+      "revId": "575879449fe8779c63a80ba59ba7fc6d22874bc9",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "d3c73df1_556df14d",
+        "filename": "dmi-stub/dmi-plugin-demo-and-csit-stub-service/src/main/java/org/onap/cps/ncmp/dmi/rest/stub/service/YangModuleFactory.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 113,
+      "author": {
+        "id": 7965
+      },
+      "writtenOn": "2024-10-21T09:48:10Z",
+      "side": 1,
+      "message": "NB: we dont prefer e , rather use jsonProcessingException at all places.",
+      "range": {
+        "startLine": 113,
+        "startChar": 41,
+        "endLine": 113,
+        "endChar": 42
+      },
+      "revId": "575879449fe8779c63a80ba59ba7fc6d22874bc9",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "3c513935_d538f8f9",
         "filename": "dmi-stub/dmi-plugin-demo-and-csit-stub-service/src/main/java/org/onap/cps/ncmp/dmi/rest/stub/service/YangModuleFactory.java",
         "patchSetId": 3
@@ -42,6 +133,46 @@
         "startChar": 29,
         "endLine": 123,
         "endChar": 90
+      },
+      "revId": "575879449fe8779c63a80ba59ba7fc6d22874bc9",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "c92af67a_305f3c46",
+        "filename": "dmi-stub/dmi-plugin-demo-and-csit-stub-service/src/main/java/org/onap/cps/ncmp/dmi/rest/stub/service/YangModuleFactory.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 136,
+      "author": {
+        "id": 7965
+      },
+      "writtenOn": "2024-10-21T09:48:10Z",
+      "side": 1,
+      "message": "final. ( check for this comment at all places )",
+      "revId": "575879449fe8779c63a80ba59ba7fc6d22874bc9",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "fe939219_28f59f58",
+        "filename": "dmi-stub/dmi-plugin-demo-and-csit-stub-service/src/main/java/org/onap/cps/ncmp/dmi/rest/stub/service/YangModuleFactory.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 137,
+      "author": {
+        "id": 7965
+      },
+      "writtenOn": "2024-10-21T09:48:10Z",
+      "side": 1,
+      "message": "do we have to make this configurable ??",
+      "range": {
+        "startLine": 137,
+        "startChar": 58,
+        "endLine": 137,
+        "endChar": 61
       },
       "revId": "575879449fe8779c63a80ba59ba7fc6d22874bc9",
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
@@ -112,6 +243,46 @@
         "endLine": 26,
         "endChar": 21
       },
+      "revId": "575879449fe8779c63a80ba59ba7fc6d22874bc9",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "fa71a09e_953cc496",
+        "filename": "dmi-stub/dmi-plugin-demo-and-csit-stub-service/src/main/java/org/onap/cps/ncmp/dmi/rest/stub/utils/TagUtil.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 7965
+      },
+      "writtenOn": "2024-10-21T09:48:10Z",
+      "side": 1,
+      "message": "?? ModuleSetTagUtil ?? what u guys think ?",
+      "range": {
+        "startLine": 26,
+        "startChar": 13,
+        "endLine": 26,
+        "endChar": 20
+      },
+      "revId": "575879449fe8779c63a80ba59ba7fc6d22874bc9",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "911994f9_c88b3978",
+        "filename": "dmi-stub/dmi-plugin-demo-and-csit-stub-service/src/main/java/org/onap/cps/ncmp/dmi/rest/stub/utils/TagUtil.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 7965
+      },
+      "writtenOn": "2024-10-21T09:48:10Z",
+      "side": 1,
+      "message": "final ?",
       "revId": "575879449fe8779c63a80ba59ba7fc6d22874bc9",
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
     }
