@@ -35,6 +35,24 @@
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "2e083115_2a9c73c3",
+        "filename": "dmi-stub/dmi-plugin-demo-and-csit-stub-service/src/main/java/org/onap/cps/ncmp/dmi/rest/stub/controller/DmiRestStubController.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 80,
+      "author": {
+        "id": 8063
+      },
+      "writtenOn": "2024-10-22T10:31:34Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "e99fd09b_d8825e24",
+      "revId": "575879449fe8779c63a80ba59ba7fc6d22874bc9",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "6d5dc469_dfc2edae",
@@ -48,6 +66,30 @@
       "writtenOn": "2024-10-21T09:30:08Z",
       "side": 1,
       "message": "NB: name inconsistent with type",
+      "range": {
+        "startLine": 361,
+        "startChar": 109,
+        "endLine": 361,
+        "endChar": 121
+      },
+      "revId": "575879449fe8779c63a80ba59ba7fc6d22874bc9",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "863e5143_9c902914",
+        "filename": "dmi-stub/dmi-plugin-demo-and-csit-stub-service/src/main/java/org/onap/cps/ncmp/dmi/rest/stub/controller/DmiRestStubController.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 361,
+      "author": {
+        "id": 8063
+      },
+      "writtenOn": "2024-10-22T10:31:34Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "6d5dc469_dfc2edae",
       "range": {
         "startLine": 361,
         "startChar": 109,
@@ -93,6 +135,24 @@
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "1f0962cc_4bb813e4",
+        "filename": "dmi-stub/dmi-plugin-demo-and-csit-stub-service/src/main/java/org/onap/cps/ncmp/dmi/rest/stub/model/module/ModuleReference.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 8063
+      },
+      "writtenOn": "2024-10-22T10:31:34Z",
+      "side": 1,
+      "message": "since it has not been verified at ncmp\u0027 end, no need to extra field in order not to make model and complex. also factory should already makes the overall module sizes.",
+      "parentUuid": "96a3def3_33aa224f",
+      "revId": "575879449fe8779c63a80ba59ba7fc6d22874bc9",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "467dbc7d_d2428f69",
@@ -106,6 +166,24 @@
       "writtenOn": "2024-10-21T09:48:10Z",
       "side": 1,
       "message": "same comment as before regarding the grouping of static , local and instance vars.",
+      "revId": "575879449fe8779c63a80ba59ba7fc6d22874bc9",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "b1c05b49_b9fc6bc7",
+        "filename": "dmi-stub/dmi-plugin-demo-and-csit-stub-service/src/main/java/org/onap/cps/ncmp/dmi/rest/stub/service/YangModuleFactory.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 44,
+      "author": {
+        "id": 8063
+      },
+      "writtenOn": "2024-10-22T10:31:34Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "467dbc7d_d2428f69",
       "revId": "575879449fe8779c63a80ba59ba7fc6d22874bc9",
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
     },
@@ -133,6 +211,30 @@
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "e5c6785d_3dad93b4",
+        "filename": "dmi-stub/dmi-plugin-demo-and-csit-stub-service/src/main/java/org/onap/cps/ncmp/dmi/rest/stub/service/YangModuleFactory.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 113,
+      "author": {
+        "id": 8063
+      },
+      "writtenOn": "2024-10-22T10:31:34Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "d3c73df1_556df14d",
+      "range": {
+        "startLine": 113,
+        "startChar": 41,
+        "endLine": 113,
+        "endChar": 42
+      },
+      "revId": "575879449fe8779c63a80ba59ba7fc6d22874bc9",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "3c513935_d538f8f9",
@@ -146,6 +248,30 @@
       "writtenOn": "2024-10-21T09:30:08Z",
       "side": 1,
       "message": "duplicate (and relatively complicated) of line #107 so extract out",
+      "range": {
+        "startLine": 123,
+        "startChar": 29,
+        "endLine": 123,
+        "endChar": 90
+      },
+      "revId": "575879449fe8779c63a80ba59ba7fc6d22874bc9",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "aa480563_826c91b7",
+        "filename": "dmi-stub/dmi-plugin-demo-and-csit-stub-service/src/main/java/org/onap/cps/ncmp/dmi/rest/stub/service/YangModuleFactory.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 123,
+      "author": {
+        "id": 8063
+      },
+      "writtenOn": "2024-10-22T10:31:34Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3c513935_d538f8f9",
       "range": {
         "startLine": 123,
         "startChar": 29,
@@ -187,6 +313,24 @@
       "side": 1,
       "message": "agreed, code should not be committed for review when not passing spotbugs/checkstyle",
       "parentUuid": "c92af67a_305f3c46",
+      "revId": "575879449fe8779c63a80ba59ba7fc6d22874bc9",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "34bfc73a_80f7bdd6",
+        "filename": "dmi-stub/dmi-plugin-demo-and-csit-stub-service/src/main/java/org/onap/cps/ncmp/dmi/rest/stub/service/YangModuleFactory.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 136,
+      "author": {
+        "id": 8063
+      },
+      "writtenOn": "2024-10-22T10:31:34Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "b0df1512_3d4db2a9",
       "revId": "575879449fe8779c63a80ba59ba7fc6d22874bc9",
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
     },
@@ -238,6 +382,30 @@
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "921e350a_dfb3a3dc",
+        "filename": "dmi-stub/dmi-plugin-demo-and-csit-stub-service/src/main/java/org/onap/cps/ncmp/dmi/rest/stub/service/YangModuleFactory.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 137,
+      "author": {
+        "id": 8063
+      },
+      "writtenOn": "2024-10-22T10:31:34Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ff42d761_421f0395",
+      "range": {
+        "startLine": 137,
+        "startChar": 58,
+        "endLine": 137,
+        "endChar": 61
+      },
+      "revId": "575879449fe8779c63a80ba59ba7fc6d22874bc9",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "68616608_66234167",
@@ -261,6 +429,30 @@
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "5a165856_31c66a0c",
+        "filename": "dmi-stub/dmi-plugin-demo-and-csit-stub-service/src/main/java/org/onap/cps/ncmp/dmi/rest/stub/service/YangModuleFactory.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 139,
+      "author": {
+        "id": 8063
+      },
+      "writtenOn": "2024-10-22T10:31:34Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "68616608_66234167",
+      "range": {
+        "startLine": 139,
+        "startChar": 45,
+        "endLine": 139,
+        "endChar": 57
+      },
+      "revId": "575879449fe8779c63a80ba59ba7fc6d22874bc9",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "384543a9_07ba6e4d",
@@ -274,6 +466,30 @@
       "writtenOn": "2024-10-21T09:30:08Z",
       "side": 1,
       "message": "whyy do you need a string?!",
+      "range": {
+        "startLine": 29,
+        "startChar": 30,
+        "endLine": 29,
+        "endChar": 42
+      },
+      "revId": "575879449fe8779c63a80ba59ba7fc6d22874bc9",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "cfdfd860_adb911fc",
+        "filename": "dmi-stub/dmi-plugin-demo-and-csit-stub-service/src/main/java/org/onap/cps/ncmp/dmi/rest/stub/utils/ModuleResponseType.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 8063
+      },
+      "writtenOn": "2024-10-22T10:31:34Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "384543a9_07ba6e4d",
       "range": {
         "startLine": 29,
         "startChar": 30,
@@ -354,6 +570,54 @@
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "8ae3f11f_ac779626",
+        "filename": "dmi-stub/dmi-plugin-demo-and-csit-stub-service/src/main/java/org/onap/cps/ncmp/dmi/rest/stub/utils/TagUtil.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 8063
+      },
+      "writtenOn": "2024-10-22T10:31:34Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "f0b125cb_62b3f4ff",
+      "range": {
+        "startLine": 26,
+        "startChar": 13,
+        "endLine": 26,
+        "endChar": 21
+      },
+      "revId": "575879449fe8779c63a80ba59ba7fc6d22874bc9",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "c3202c4e_d5569e5e",
+        "filename": "dmi-stub/dmi-plugin-demo-and-csit-stub-service/src/main/java/org/onap/cps/ncmp/dmi/rest/stub/utils/TagUtil.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 8063
+      },
+      "writtenOn": "2024-10-22T10:31:34Z",
+      "side": 1,
+      "message": "it is needed toine if you look at controller and factory you ll see it has been used to initialize NUMBER_OF_MODULE_SET_TAGS. \n\nIf I remove then I should repeat it in these two places.\n\nAs priyank suggests ModuleSetTagUtil is a good name",
+      "parentUuid": "224ae63d_6595119d",
+      "range": {
+        "startLine": 26,
+        "startChar": 13,
+        "endLine": 26,
+        "endChar": 20
+      },
+      "revId": "575879449fe8779c63a80ba59ba7fc6d22874bc9",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "911994f9_c88b3978",
@@ -367,6 +631,24 @@
       "writtenOn": "2024-10-21T09:48:10Z",
       "side": 1,
       "message": "final ?",
+      "revId": "575879449fe8779c63a80ba59ba7fc6d22874bc9",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "e237091d_f714d131",
+        "filename": "dmi-stub/dmi-plugin-demo-and-csit-stub-service/src/main/java/org/onap/cps/ncmp/dmi/rest/stub/utils/TagUtil.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 8063
+      },
+      "writtenOn": "2024-10-22T10:31:34Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "911994f9_c88b3978",
       "revId": "575879449fe8779c63a80ba59ba7fc6d22874bc9",
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
     }
