@@ -294,9 +294,9 @@ public class DmiRestStubController {
     public ResponseEntity<Object> retrieveDataJobResult(
             @PathVariable("dataProducerId") final String dataProducerId,
             @PathVariable("dataProducerJobId") final String dataProducerJobId,
-            @RequestParam(name = "destination") String destination) {
-        log.debug("Received request to retrieve data job result. Data Producer ID: {}, " +
-                        "Data Producer Job ID: {}, Destination: {}",
+            @RequestParam(name = "destination") final String destination) {
+        log.debug("Received request to retrieve data job result. Data Producer ID: {}, "
+                        + "Data Producer Job ID: {}, Destination: {}",
                 dataProducerId, dataProducerJobId, destination);
         return ResponseEntity.ok(Map.of("result", "some status"));
     }
@@ -350,24 +350,25 @@ public class DmiRestStubController {
         return dataOperationEvent;
     }
 
-    private ResponseEntity<String> processModuleRequest(Object moduleRequest, String responseFileName, long simulatedResponseDelay) {
-        String moduleSetTag = extractModuleSetTagFromRequest(moduleRequest);
+    private ResponseEntity<String> processModuleRequest(final Object moduleRequest, final String responseFileName,
+                                                        final long simulatedResponseDelay) {
+        final String moduleSetTag = extractModuleSetTagFromRequest(moduleRequest);
         logRequestBody(moduleRequest);
-        String moduleResponseContent = getModuleResponseContent(moduleSetTag, responseFileName);
+        final String moduleResponseContent = getModuleResponseContent(moduleSetTag, responseFileName);
         delay(simulatedResponseDelay);
         return ResponseEntity.ok(moduleResponseContent);
     }
 
-    private String extractModuleSetTagFromRequest(Object moduleReferencesRequest) {
-        JsonNode rootNode = objectMapper.valueToTree(moduleReferencesRequest);
+    private String extractModuleSetTagFromRequest(final Object moduleReferencesRequest) {
+        final JsonNode rootNode = objectMapper.valueToTree(moduleReferencesRequest);
         return rootNode.path("moduleSetTag").asText(null);
     }
 
-    private boolean isModuleSetTagNullOrEmpty(String moduleSetTag) {
+    private boolean isModuleSetTagNullOrEmpty(final String moduleSetTag) {
         return moduleSetTag == null || moduleSetTag.trim().isEmpty();
     }
 
-    private void logRequestBody(Object request) {
+    private void logRequestBody(final Object request) {
         try {
             log.info("Incoming DMI request body: {}", objectMapper.writeValueAsString(request));
         } catch (final JsonProcessingException jsonProcessingException) {
@@ -376,12 +377,12 @@ public class DmiRestStubController {
     }
 
     private String getModuleResponseContent(final String moduleSetTag, final String responseFileName) {
-        String moduleResponseFilePath = isModuleSetTagNullOrEmpty(moduleSetTag)
+        final String moduleResponseFilePath = isModuleSetTagNullOrEmpty(moduleSetTag)
                 ? String.format("module/ietfYang-%s", responseFileName)
                 : String.format("module/%s-%s", moduleSetTag, responseFileName);
         log.info("Using module responses from : {}", moduleResponseFilePath);
 
-        Resource moduleResponseResource = applicationContext.getResource(
+        final Resource moduleResponseResource = applicationContext.getResource(
                 ResourceLoader.CLASSPATH_URL_PREFIX + moduleResponseFilePath);
         return ResourceFileReaderUtil.getResourceFileContent(moduleResponseResource);
     }
