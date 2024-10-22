@@ -22,6 +22,8 @@ package org.onap.cps.ncmp.dmi.rest.stub.controller.aop;
 
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import java.util.Map;
+import java.util.concurrent.ConcurrentHashMap;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.aspectj.lang.ProceedingJoinPoint;
@@ -29,10 +31,9 @@ import org.aspectj.lang.annotation.Around;
 import org.aspectj.lang.annotation.Aspect;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpStatus;
-import org.springframework.stereotype.Component;
 import org.springframework.http.ResponseEntity;
-import java.util.Map;
-import java.util.concurrent.ConcurrentHashMap;
+import org.springframework.stereotype.Component;
+
 
 /**
  * Aspect to handle initial processing for methods annotated with @ModuleInitialProcess.
@@ -57,47 +58,50 @@ public class ModuleInitialProcessAspect {
      * @return the result of the method execution or a ResponseEntity indicating that the service is unavailable
      */
     @Around("@annotation(moduleInitialProcess)")
-    public Object handleModuleInitialProcess(ProceedingJoinPoint proceedingJoinPoint, ModuleInitialProcess moduleInitialProcess) throws Throwable {
+    public Object handleModuleInitialProcess(final ProceedingJoinPoint proceedingJoinPoint,
+                                             final ModuleInitialProcess moduleInitialProcess) throws Throwable {
         log.debug("Aspect invoked for method: {}", proceedingJoinPoint.getSignature());
-        Object moduleRequest = proceedingJoinPoint.getArgs()[1];
-        String moduleSetTag = extractModuleSetTagFromRequest(moduleRequest);
+        final Object moduleRequest = proceedingJoinPoint.getArgs()[1];
+        final String moduleSetTag = extractModuleSetTagFromRequest(moduleRequest);
 
         if (isModuleSetTagEmptyOrInvalid(moduleSetTag)) {
             log.debug("Received request with an empty or null moduleSetTag. Returning default processing.");
             return proceedingJoinPoint.proceed();
         }
 
-        long firstRequestTimestamp = getFirstRequestTimestamp(moduleSetTag);
-        long currentTimestamp = System.currentTimeMillis();
+        final long firstRequestTimestamp = getFirstRequestTimestamp(moduleSetTag);
+        final long currentTimestamp = System.currentTimeMillis();
 
         if (isInitialProcessingCompleted(currentTimestamp, firstRequestTimestamp)) {
             log.debug("Initial processing for moduleSetTag '{}' is completed.", moduleSetTag);
             return proceedingJoinPoint.proceed();
         }
 
-        long remainingProcessingTime = calculateRemainingProcessingTime(currentTimestamp, firstRequestTimestamp);
-        log.info("Initial processing for moduleSetTag '{}' is still active. Returning HTTP 503. Remaining time: {} ms.", moduleSetTag, remainingProcessingTime);
+        final long remainingProcessingTime = calculateRemainingProcessingTime(currentTimestamp, firstRequestTimestamp);
+        log.info("Initial processing for moduleSetTag '{}' is still active. Returning HTTP 503. Remaining time: {} ms.",
+                moduleSetTag, remainingProcessingTime);
         return ResponseEntity.status(HttpStatus.SERVICE_UNAVAILABLE).build();
     }
 
-    private String extractModuleSetTagFromRequest(Object moduleRequest) {
-        JsonNode rootNode = objectMapper.valueToTree(moduleRequest);
+    private String extractModuleSetTagFromRequest(final Object moduleRequest) {
+        final JsonNode rootNode = objectMapper.valueToTree(moduleRequest);
         return rootNode.path("moduleSetTag").asText(null);
     }
 
-    private boolean isModuleSetTagEmptyOrInvalid(String moduleSetTag) {
+    private boolean isModuleSetTagEmptyOrInvalid(final String moduleSetTag) {
         return moduleSetTag == null || moduleSetTag.trim().isEmpty();
     }
 
-    private long getFirstRequestTimestamp(String moduleSetTag) {
-        return firstRequestTimePerModuleSetTag.computeIfAbsent(moduleSetTag, firstRequestTime -> System.currentTimeMillis());
+    private long getFirstRequestTimestamp(final String moduleSetTag) {
+        return firstRequestTimePerModuleSetTag
+                .computeIfAbsent(moduleSetTag, firstRequestTime -> System.currentTimeMillis());
     }
 
-    private boolean isInitialProcessingCompleted(long currentTimestamp, long firstRequestTimestamp) {
+    private boolean isInitialProcessingCompleted(final long currentTimestamp, final long firstRequestTimestamp) {
         return currentTimestamp - firstRequestTimestamp >= moduleInitialProcessingDelayMs;
     }
 
-    private long calculateRemainingProcessingTime(long currentTimestamp, long firstRequestTimestamp) {
+    private long calculateRemainingProcessingTime(final long currentTimestamp, final long firstRequestTimestamp) {
         return moduleInitialProcessingDelayMs - (currentTimestamp - firstRequestTimestamp);
     }
 }
