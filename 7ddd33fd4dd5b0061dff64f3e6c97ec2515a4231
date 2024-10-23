@@ -227,6 +227,29 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "4e86ec69_cb4130a2",
+        "filename": "dmi-stub/dmi-plugin-demo-and-csit-stub-service/src/main/java/org/onap/cps/ncmp/dmi/rest/stub/service/YangModuleFactory.java",
+        "patchSetId": 5
+      },
+      "lineNbr": 143,
+      "author": {
+        "id": 7957
+      },
+      "writtenOn": "2024-10-23T13:02:43Z",
+      "side": 1,
+      "message": "\"*\".repeat(Math.max(0, paddingSize)):\nThis method uses Math.max(0, paddingSize) to ensure that the repeat count is never negative.\nIf paddingSize is negative, it will instead use 0, resulting in an empty string.\nTherefore, it safely handles cases where paddingSize could potentially be negative, avoiding exceptions.:\n\n\nfinal int paddingSize \u003d TARGET_SIZE * KILOBYTE - MODULE_TEMPLATE.length();\n        final String padding \u003d \"String that we want for padding \".repeat(Math.max(0, paddingSize));",
+      "range": {
+        "startLine": 143,
+        "startChar": 8,
+        "endLine": 143,
+        "endChar": 109
+      },
+      "revId": "7ddd33fd4dd5b0061dff64f3e6c97ec2515a4231",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "0b50515a_3e7b048f",
         "filename": "dmi-stub/dmi-plugin-demo-and-csit-stub-service/src/main/java/org/onap/cps/ncmp/dmi/rest/stub/utils/ModuleSetTagUtil.java",
         "patchSetId": 5
