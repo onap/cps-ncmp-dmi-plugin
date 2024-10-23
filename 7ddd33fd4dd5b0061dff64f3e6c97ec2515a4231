@@ -3,6 +3,52 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "69cb5fc9_0d706d98",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 5
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 7965
+      },
+      "writtenOn": "2024-10-23T09:16:52Z",
+      "side": 1,
+      "message": "it was 100KB before.. right ?\nu got feedback from the stakeholders??",
+      "range": {
+        "startLine": 13,
+        "startChar": 28,
+        "endLine": 13,
+        "endChar": 33
+      },
+      "revId": "7ddd33fd4dd5b0061dff64f3e6c97ec2515a4231",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "fde4263c_0f8e6387",
+        "filename": "dmi-stub/dmi-plugin-demo-and-csit-stub-service/src/main/java/org/onap/cps/ncmp/dmi/rest/stub/controller/DmiRestStubController.java",
+        "patchSetId": 5
+      },
+      "lineNbr": 81,
+      "author": {
+        "id": 7965
+      },
+      "writtenOn": "2024-10-23T09:16:52Z",
+      "side": 1,
+      "message": "rename this . causes sonar violation.\nDATA_OPERATION_EVENT_TYPE.\n\nor consider hardcoding at relevant place.",
+      "range": {
+        "startLine": 81,
+        "startChar": 32,
+        "endLine": 81,
+        "endChar": 54
+      },
+      "revId": "7ddd33fd4dd5b0061dff64f3e6c97ec2515a4231",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "58a42aa2_548c5308",
         "filename": "dmi-stub/dmi-plugin-demo-and-csit-stub-service/src/main/java/org/onap/cps/ncmp/dmi/rest/stub/controller/DmiRestStubController.java",
         "patchSetId": 5
