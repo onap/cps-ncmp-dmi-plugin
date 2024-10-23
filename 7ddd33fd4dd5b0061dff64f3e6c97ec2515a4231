@@ -1,0 +1,73 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "58a42aa2_548c5308",
+        "filename": "dmi-stub/dmi-plugin-demo-and-csit-stub-service/src/main/java/org/onap/cps/ncmp/dmi/rest/stub/controller/DmiRestStubController.java",
+        "patchSetId": 5
+      },
+      "lineNbr": 83,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2024-10-23T09:03:42Z",
+      "side": 1,
+      "message": "thsi is no longer a \u0027number\u0027",
+      "range": {
+        "startLine": 83,
+        "startChar": 38,
+        "endLine": 83,
+        "endChar": 64
+      },
+      "revId": "7ddd33fd4dd5b0061dff64f3e6c97ec2515a4231",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "3d8f4614_cf8bc7e0",
+        "filename": "dmi-stub/dmi-plugin-demo-and-csit-stub-service/src/main/java/org/onap/cps/ncmp/dmi/rest/stub/service/YangModuleFactory.java",
+        "patchSetId": 5
+      },
+      "lineNbr": 45,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2024-10-23T09:03:42Z",
+      "side": 1,
+      "message": "just combine this into one constant:\nTARGET_FILE_SIZE_IN_KB \u003d 32 * 1024",
+      "range": {
+        "startLine": 44,
+        "startChar": 4,
+        "endLine": 45,
+        "endChar": 45
+      },
+      "revId": "7ddd33fd4dd5b0061dff64f3e6c97ec2515a4231",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "0b50515a_3e7b048f",
+        "filename": "dmi-stub/dmi-plugin-demo-and-csit-stub-service/src/main/java/org/onap/cps/ncmp/dmi/rest/stub/utils/ModuleSetTagUtil.java",
+        "patchSetId": 5
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2024-10-23T09:03:42Z",
+      "side": 1,
+      "message": "you need a static method in teh same class, not a Separete UTIL class",
+      "range": {
+        "startLine": 26,
+        "startChar": 13,
+        "endLine": 26,
+        "endChar": 30
+      },
+      "revId": "7ddd33fd4dd5b0061dff64f3e6c97ec2515a4231",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    }
+  ]
+}

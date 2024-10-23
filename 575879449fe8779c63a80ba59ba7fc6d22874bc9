@@ -618,6 +618,30 @@
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "6bc7f983_61a32d6c",
+        "filename": "dmi-stub/dmi-plugin-demo-and-csit-stub-service/src/main/java/org/onap/cps/ncmp/dmi/rest/stub/utils/TagUtil.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2024-10-23T09:03:42Z",
+      "side": 1,
+      "message": "you need a static method in teh same class, not a Separete UTIL class",
+      "parentUuid": "c3202c4e_d5569e5e",
+      "range": {
+        "startLine": 26,
+        "startChar": 13,
+        "endLine": 26,
+        "endChar": 20
+      },
+      "revId": "575879449fe8779c63a80ba59ba7fc6d22874bc9",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "911994f9_c88b3978",
