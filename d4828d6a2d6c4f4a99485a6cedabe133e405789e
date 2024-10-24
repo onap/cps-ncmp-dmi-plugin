@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "a89a7ca2_80e1580b",
+        "filename": "dmi-stub/dmi-plugin-demo-and-csit-stub-service/src/main/java/org/onap/cps/ncmp/dmi/rest/stub/service/YangModuleFactory.java",
+        "patchSetId": 8
+      },
+      "lineNbr": 143,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2024-10-24T11:28:55Z",
+      "side": 1,
+      "message": "OK as we cannot use the tag in the revision (which has to be a valid date format)\n\nJust use the Tag Index (int) for Month (and/or day)\n\n200 Different Modules with 5 revisions\n\nModule000-Module199 TagA\n2024-1-1  2024-1-1\n\nModule000-Module200 TagB\n2024-2-2  2024-2-2",
+      "range": {
+        "startLine": 142,
+        "startChar": 6,
+        "endLine": 143,
+        "endChar": 72
+      },
+      "revId": "d4828d6a2d6c4f4a99485a6cedabe133e405789e",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    }
+  ]
+}
