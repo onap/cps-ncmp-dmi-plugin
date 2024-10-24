@@ -41,6 +41,30 @@
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "8dbc05d8_1ebbef6d",
+        "filename": "dmi-stub/dmi-plugin-demo-and-csit-stub-service/src/main/java/org/onap/cps/ncmp/dmi/rest/stub/service/YangModuleFactory.java",
+        "patchSetId": 6
+      },
+      "lineNbr": 114,
+      "author": {
+        "id": 8063
+      },
+      "writtenOn": "2024-10-24T10:10:42Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "cc4458ae_b7c1b60e",
+      "range": {
+        "startLine": 114,
+        "startChar": 59,
+        "endLine": 114,
+        "endChar": 77
+      },
+      "revId": "9997e0833ade53462b9d5f1e46fcac574e4f1776",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "094420c6_4fe67849",
@@ -64,6 +88,30 @@
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "3c3db821_c59ff421",
+        "filename": "dmi-stub/dmi-plugin-demo-and-csit-stub-service/src/main/java/org/onap/cps/ncmp/dmi/rest/stub/service/YangModuleFactory.java",
+        "patchSetId": 6
+      },
+      "lineNbr": 122,
+      "author": {
+        "id": 8063
+      },
+      "writtenOn": "2024-10-24T10:10:42Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "094420c6_4fe67849",
+      "range": {
+        "startLine": 122,
+        "startChar": 60,
+        "endLine": 122,
+        "endChar": 73
+      },
+      "revId": "9997e0833ade53462b9d5f1e46fcac574e4f1776",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "fea9bd7e_e76424ed",
@@ -77,6 +125,30 @@
       "writtenOn": "2024-10-23T14:25:40Z",
       "side": 1,
       "message": "NB: Can we fix size here?",
+      "range": {
+        "startLine": 159,
+        "startChar": 38,
+        "endLine": 159,
+        "endChar": 51
+      },
+      "revId": "9997e0833ade53462b9d5f1e46fcac574e4f1776",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "d4c9fc33_fcdf96de",
+        "filename": "dmi-stub/dmi-plugin-demo-and-csit-stub-service/src/main/java/org/onap/cps/ncmp/dmi/rest/stub/service/YangModuleFactory.java",
+        "patchSetId": 6
+      },
+      "lineNbr": 159,
+      "author": {
+        "id": 8063
+      },
+      "writtenOn": "2024-10-24T10:10:42Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "fea9bd7e_e76424ed",
       "range": {
         "startLine": 159,
         "startChar": 38,
