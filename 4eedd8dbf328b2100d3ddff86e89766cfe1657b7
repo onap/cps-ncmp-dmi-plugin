@@ -41,6 +41,30 @@
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "09461577_46f20572",
+        "filename": "dmi-stub/dmi-plugin-demo-and-csit-stub-service/src/main/java/org/onap/cps/ncmp/dmi/rest/stub/service/YangModuleFactory.java",
+        "patchSetId": 10
+      },
+      "lineNbr": 117,
+      "author": {
+        "id": 8063
+      },
+      "writtenOn": "2024-10-25T09:51:33Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3982cb39_124dea26",
+      "range": {
+        "startLine": 117,
+        "startChar": 61,
+        "endLine": 117,
+        "endChar": 89
+      },
+      "revId": "4eedd8dbf328b2100d3ddff86e89766cfe1657b7",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "66b5265f_59d898fa",
@@ -54,6 +78,30 @@
       "writtenOn": "2024-10-24T15:53:19Z",
       "side": 1,
       "message": "simplify:\ntagIndex \u003d MODULE_SET_TAGS.indexOf(tag)\nreturn LocalDate.of(2024, tagIndex + 1, tagIndex +1)",
+      "range": {
+        "startLine": 136,
+        "startChar": 0,
+        "endLine": 139,
+        "endChar": 24
+      },
+      "revId": "4eedd8dbf328b2100d3ddff86e89766cfe1657b7",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "cfe46436_640627f5",
+        "filename": "dmi-stub/dmi-plugin-demo-and-csit-stub-service/src/main/java/org/onap/cps/ncmp/dmi/rest/stub/service/YangModuleFactory.java",
+        "patchSetId": 10
+      },
+      "lineNbr": 139,
+      "author": {
+        "id": 8063
+      },
+      "writtenOn": "2024-10-25T09:51:33Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "66b5265f_59d898fa",
       "range": {
         "startLine": 136,
         "startChar": 0,
