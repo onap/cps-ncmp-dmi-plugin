@@ -24,30 +24,28 @@
   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
+
     <parent>
-        <groupId>org.onap.oparent</groupId>
-        <artifactId>oparent</artifactId>
-        <version>3.3.0</version>
+        <groupId>org.onap.cps</groupId>
+        <artifactId>cps-parent</artifactId>
+        <version>3.5.5-SNAPSHOT</version>
         <relativePath/>
     </parent>
+
     <packaging>pom</packaging>
     <organization>
         <name>ONAP - CPS</name>
         <url>http://www.onap.org/</url>
     </organization>
+
     <modules>
         <module>dmi-service</module>
         <module>dmi-stub</module>
     </modules>
-    <groupId>org.onap.cps</groupId>
     <artifactId>ncmp-dmi-plugin</artifactId>
-    <version>1.6.0-SNAPSHOT</version>
+<!--    <version>1.6.0-SNAPSHOT</version>-->
     <name>ncmp-dmi-plugin</name>
     <description>DMI Plugin Service</description>
-
-    <properties>
-        <cps.version>3.5.2</cps.version>
-    </properties>
 
     <build>
         <plugins>
@@ -63,7 +61,7 @@
                         </goals>
                         <phase>process-sources</phase>
                         <configuration>
-                            <configLocation>onap-checkstyle/check-license.xml</configLocation>
+                            <configLocation>cps-checkstyle/check-license.xml</configLocation>
                             <includeResources>false</includeResources>
                             <includeTestSourceDirectory>true</includeTestSourceDirectory>
                             <includeTestResources>false</includeTestResources>
@@ -76,13 +74,13 @@
                         </configuration>
                     </execution>
                     <execution>
-                        <id>onap-java-style</id>
+                        <id>cps-java-style</id>
                         <goals>
                             <goal>check</goal>
                         </goals>
                         <phase>process-sources</phase>
                         <configuration>
-                            <configLocation>onap-checkstyle/onap-java-style.xml</configLocation>
+                            <configLocation>cps-checkstyle/cps-java-style.xml</configLocation>
                             <sourceDirectories>
                                 <sourceDirectory>${project.build.sourceDirectory}</sourceDirectory>
                             </sourceDirectories>
@@ -94,35 +92,15 @@
                             <failOnViolation>true</failOnViolation>
                         </configuration>
                     </execution>
-                    <execution>
-                        <id>cps-java-style</id>
-                        <goals>
-                            <goal>check</goal>
-                        </goals>
-                        <phase>process-sources</phase>
-                        <configuration>
-                            <configLocation>cps-java-style.xml</configLocation>
-                            <sourceDirectories>
-                                <sourceDirectory>${project.build.sourceDirectory}</sourceDirectory>
-                            </sourceDirectories>
-                            <includeResources>true</includeResources>
-                            <includeTestSourceDirectory>true</includeTestSourceDirectory>
-                            <includeTestResources>true</includeTestResources>
-                            <consoleOutput>true</consoleOutput>
-                            <violationSeverity>warning</violationSeverity>
-                            <failOnViolation>true</failOnViolation>
-                        </configuration>
-                    </execution>
                 </executions>
                 <dependencies>
                     <dependency>
                         <groupId>${project.groupId}</groupId>
                         <artifactId>checkstyle</artifactId>
-                        <version>${cps.version}</version>
+                        <version>${project.parent.version}</version>
                     </dependency>
                 </dependencies>
             </plugin>
         </plugins>
     </build>
-
 </project>
