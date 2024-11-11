@@ -3,9 +3,11 @@
 *.war
 *.log
 *.log.zip
+*.*~
 
 target/
 log/
+checkstyle/
 
 .idea/
 .idea_modules/
