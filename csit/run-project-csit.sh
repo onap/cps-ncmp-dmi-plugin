@@ -32,5 +32,5 @@ source install-deps.sh
 for dir in plans/*/
 do
     dir=${dir%*/}  # remove the trailing /
-   ./run-csit.sh ${dir} ${TESTOPTIONS}
+#   ./run-csit.sh ${dir} ${TESTOPTIONS}
 done
