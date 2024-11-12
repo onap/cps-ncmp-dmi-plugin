@@ -47,11 +47,11 @@ public class NcmpRestClient {
      * @return the response entity
      */
     public ResponseEntity<String> registerCmHandlesWithNcmp(final String jsonData) {
-        final var ncmpRegistrationUrl = buildNcmpRegistrationUrl();
-        final var httpHeaders = new HttpHeaders();
+        final String ncmpRegistrationUrl = buildNcmpRegistrationUrl();
+        final HttpHeaders httpHeaders = new HttpHeaders();
         httpHeaders.setBasicAuth(cpsProperties.getAuthUsername(), cpsProperties.getAuthPassword());
         httpHeaders.set(HttpHeaders.CONTENT_TYPE, MediaType.APPLICATION_JSON_VALUE);
-        final var httpEntity = new HttpEntity<>(jsonData, httpHeaders);
+        final HttpEntity httpEntity = new HttpEntity<>(jsonData, httpHeaders);
         return restTemplate.exchange(ncmpRegistrationUrl, HttpMethod.POST, httpEntity, String.class);
     }
 

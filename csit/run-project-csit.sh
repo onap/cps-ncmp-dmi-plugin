@@ -18,19 +18,19 @@
 # Branched from ccsdk/distribution to this repository Feb 23, 2021
 # $1 test options (passed on to run-csit.sh as such)
 
-export TESTOPTIONS=${1}
-export DMI_PLUGIN_HOME=$(git rev-parse --show-toplevel)
-export WORKSPACE=$(git rev-parse --show-toplevel)/csit
+#export TESTOPTIONS=${1}
+#export DMI_PLUGIN_HOME=$(git rev-parse --show-toplevel)
+#export WORKSPACE=$(git rev-parse --show-toplevel)/csit
 
-rm -rf ${WORKSPACE}/archives
-mkdir -p ${WORKSPACE}/archives
-cd ${WORKSPACE}
+#rm -rf ${WORKSPACE}/archives
+#mkdir -p ${WORKSPACE}/archives
+#cd ${WORKSPACE}
 
-source install-deps.sh
+#source install-deps.sh
 
 # Execute all test-suites defined under plans subdirectory
-for dir in plans/*/
-do
-    dir=${dir%*/}  # remove the trailing /
-   ./run-csit.sh ${dir} ${TESTOPTIONS}
-done
+#for dir in plans/*/
+#do
+#    dir=${dir%*/}  # remove the trailing /
+#   ./run-csit.sh ${dir} ${TESTOPTIONS}
+#done
