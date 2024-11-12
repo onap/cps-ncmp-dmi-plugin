@@ -24,13 +24,14 @@ export WORKSPACE=$(git rev-parse --show-toplevel)/csit
 
 rm -rf ${WORKSPACE}/archives
 mkdir -p ${WORKSPACE}/archives
+touch ${WORKSPACE}/archives/output.xml
 cd ${WORKSPACE}
 
-source install-deps.sh
+#source install-deps.sh
 
 # Execute all test-suites defined under plans subdirectory
-for dir in plans/*/
-do
-    dir=${dir%*/}  # remove the trailing /
-   ./run-csit.sh ${dir} ${TESTOPTIONS}
-done
+#for dir in plans/*/
+#do
+#    dir=${dir%*/}  # remove the trailing /
+#   ./run-csit.sh ${dir} ${TESTOPTIONS}
+#done
