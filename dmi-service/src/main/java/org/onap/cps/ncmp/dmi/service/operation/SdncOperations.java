@@ -234,7 +234,7 @@ public class SdncOperations {
     private List<ModuleSchema> convertToModuleSchemas(final String modulesListAsJson) {
         try {
             return JsonPath.using(jsonPathConfiguration).parse(modulesListAsJson).read(
-                PATH_TO_MODULE_SCHEMAS, new TypeRef<>() {
+                PATH_TO_MODULE_SCHEMAS, new TypeRef<List<ModuleSchema>>() {
                 });
         } catch (final JsonPathException jsonPathException) {
             throw new SdncException("SDNC Response processing failed",
