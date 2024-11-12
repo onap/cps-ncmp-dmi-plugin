@@ -58,7 +58,7 @@ public class DmiExceptionHandler {
 
     private static ResponseEntity<Object> buildErrorResponse(final HttpStatus httpStatus, final Exception exception) {
         logForNonDmiException(exception);
-        final var errorMessage = new ErrorMessage();
+        final ErrorMessage errorMessage = new ErrorMessage();
         errorMessage.setStatus(httpStatus.toString());
         errorMessage.setMessage(exception.getMessage());
         errorMessage.setDetails(exception instanceof DmiException ? ((DmiException) exception).getDetails() :
