@@ -31,10 +31,11 @@
 
 
     <properties>
-        <sonar.skip>true</sonar.skip>
+        <checkstyle.config.location>../</checkstyle.config.location>
         <jacoco.skip>true</jacoco.skip>
         <java.version>17</java.version>
         <maven.compiler.release>17</maven.compiler.release>
+        <sonar.skip>true</sonar.skip>
     </properties>
 
     <modules>

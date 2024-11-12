@@ -24,17 +24,13 @@
   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
-    <parent>
-        <groupId>org.onap.oparent</groupId>
-        <artifactId>oparent</artifactId>
-        <version>3.3.0</version>
-        <relativePath/>
-    </parent>
+
     <packaging>pom</packaging>
     <organization>
         <name>ONAP - CPS</name>
         <url>http://www.onap.org/</url>
     </organization>
+
     <modules>
         <module>dmi-service</module>
         <module>dmi-stub</module>
@@ -46,15 +42,48 @@
     <description>DMI Plugin Service</description>
 
     <properties>
-        <cps.version>3.5.2</cps.version>
+        <checkstyle.config.location>${project.basedir}</checkstyle.config.location>
+        <cps.version>3.5.5-SNAPSHOT</cps.version>
+        <maven.checkstyle.plugin.version>3.6.0</maven.checkstyle.plugin.version>
+        <maven.dependency.plugin.version>3.7.1</maven.dependency.plugin.version>
     </properties>
 
     <build>
         <plugins>
-            <!-- Add the Maven Checkstyle Plugin here -->
+            <!-- Maven Dependency Plugin for unpacking resources only in the root module -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-dependency-plugin</artifactId>
+                <version>${maven.dependency.plugin.version}</version>
+                <executions>
+                    <execution>
+                        <id>unpack-checkstyle-config</id>
+                        <phase>initialize</phase>
+                        <goals>
+                            <goal>unpack</goal>
+                        </goals>
+                        <configuration>
+                            <artifactItems>
+                                <artifactItem>
+                                    <groupId>${project.groupId}</groupId>
+                                    <artifactId>checkstyle</artifactId>
+                                    <version>${cps.version}</version>
+                                    <type>jar</type>
+                                    <overWrite>true</overWrite>
+                                    <outputDirectory>${project.basedir}/checkstyle</outputDirectory>
+                                    <includes>cps-checkstyle/**</includes>
+                                </artifactItem>
+                            </artifactItems>
+                        </configuration>
+                        <inherited>false</inherited>
+                    </execution>
+                </executions>
+            </plugin>
+            <!-- Maven Checkstyle Plugin -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-checkstyle-plugin</artifactId>
+                <version>${maven.checkstyle.plugin.version}</version>
                 <executions>
                     <execution>
                         <id>onap-license</id>
@@ -63,32 +92,13 @@
                         </goals>
                         <phase>process-sources</phase>
                         <configuration>
-                            <configLocation>onap-checkstyle/check-license.xml</configLocation>
-                            <includeResources>false</includeResources>
+                            <configLocation>${checkstyle.config.location}/checkstyle/cps-checkstyle/check-license.xml</configLocation>
+                            <includeResources>true</includeResources>
                             <includeTestSourceDirectory>true</includeTestSourceDirectory>
                             <includeTestResources>false</includeTestResources>
                             <sourceDirectories>
                                 <sourceDirectory>${project.build.sourceDirectory}</sourceDirectory>
                             </sourceDirectories>
-                            <consoleOutput>false</consoleOutput>
-                            <violationSeverity>warning</violationSeverity>
-                            <failOnViolation>true</failOnViolation>
-                        </configuration>
-                    </execution>
-                    <execution>
-                        <id>onap-java-style</id>
-                        <goals>
-                            <goal>check</goal>
-                        </goals>
-                        <phase>process-sources</phase>
-                        <configuration>
-                            <configLocation>onap-checkstyle/onap-java-style.xml</configLocation>
-                            <sourceDirectories>
-                                <sourceDirectory>${project.build.sourceDirectory}</sourceDirectory>
-                            </sourceDirectories>
-                            <includeResources>true</includeResources>
-                            <includeTestSourceDirectory>true</includeTestSourceDirectory>
-                            <includeTestResources>true</includeTestResources>
                             <consoleOutput>false</consoleOutput>
                             <violationSeverity>warning</violationSeverity>
                             <failOnViolation>true</failOnViolation>
@@ -101,14 +111,14 @@
                         </goals>
                         <phase>process-sources</phase>
                         <configuration>
-                            <configLocation>cps-java-style.xml</configLocation>
+                            <configLocation>${checkstyle.config.location}/checkstyle/cps-checkstyle/cps-java-style.xml</configLocation>
                             <sourceDirectories>
                                 <sourceDirectory>${project.build.sourceDirectory}</sourceDirectory>
                             </sourceDirectories>
                             <includeResources>true</includeResources>
                             <includeTestSourceDirectory>true</includeTestSourceDirectory>
                             <includeTestResources>true</includeTestResources>
-                            <consoleOutput>true</consoleOutput>
+                            <consoleOutput>false</consoleOutput>
                             <violationSeverity>warning</violationSeverity>
                             <failOnViolation>true</failOnViolation>
                         </configuration>
@@ -124,5 +134,4 @@
             </plugin>
         </plugins>
     </build>
-
 </project>
