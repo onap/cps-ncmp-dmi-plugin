@@ -65,6 +65,9 @@ docker-compose up -d
 cd $DMI_PLUGIN_HOME
 git clone "https://gerrit.onap.org/r/cps"
 cd $DMI_PLUGIN_HOME/cps/docker-compose
+# Using DMI_VERSION for now as a temporary solution.
+# This will be removed in the next CPS release version.
+export DMI_VERSION=1.6.0-SNAPSHOT-latest
 docker-compose up -d
 
 ###################### setup sdnc #######################################
