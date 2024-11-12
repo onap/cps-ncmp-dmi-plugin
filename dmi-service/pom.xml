@@ -20,6 +20,7 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
+
     <parent>
         <groupId>org.onap.cps</groupId>
         <artifactId>ncmp-dmi-plugin</artifactId>
@@ -29,7 +30,29 @@
     <artifactId>dmi-service</artifactId>
 
     <properties>
+        <!-- Application Configuration -->
+        <app>org.onap.cps.ncmp.dmi.Application</app>
+
+        <image.name>ncmp-dmi-plugin</image.name>
+        <!-- Encoding Configuration -->
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+
+        <!-- Checkstyle Configuration -->
+        <checkstyle.config.location>${project.parent.basedir}</checkstyle.config.location>
+
+        <!-- Global properties for version management -->
+        <bug.pattern.version>1.5.0</bug.pattern.version>
+        <gmavenplus.plugin.version>4.0.1</gmavenplus.plugin.version>
+        <maven.surefire.plugin.version>3.3.1</maven.surefire.plugin.version>
+        <openapi.generator.maven.plugin.version>6.6.0</openapi.generator.maven.plugin.version>
+        <spring.boot.maven.plugin.version>3.1.2</spring.boot.maven.plugin.version>
+        <spotbugs.maven.plugin.version>4.4.2</spotbugs.maven.plugin.version>
+
+        <!-- Code Coverage Configuration -->
+        <jacoco.execFile>${basedir}/target/code-coverage/jacoco-ut.exec</jacoco.execFile>
         <jacoco.minimum.coverage>0.98</jacoco.minimum.coverage>
+        <jacoco.outputDirectory>${project.reporting.outputDirectory}/jacoco-ut</jacoco.outputDirectory>
+        <jacoco.version>0.8.11</jacoco.version>
     </properties>
 
     <dependencyManagement>
@@ -289,6 +312,7 @@
             <scope>test</scope>
         </dependency>
     </dependencies>
+
     <build>
         <resources>
             <resource>
@@ -313,7 +337,7 @@
             <plugin>
                 <groupId>org.openapitools</groupId>
                 <artifactId>openapi-generator-maven-plugin</artifactId>
-                <version>6.6.0</version>
+                <version>${openapi.generator.maven.plugin.version}</version>
                 <executions>
                     <execution>
                         <id>dmi-code-gen</id>
@@ -396,7 +420,7 @@
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
-                <version>3.1.2</version>
+                <version>${spring.boot.maven.plugin.version}</version>
                 <executions>
                     <execution>
                         <goals>
@@ -409,7 +433,7 @@
             <plugin>
                 <groupId>org.codehaus.gmavenplus</groupId>
                 <artifactId>gmavenplus-plugin</artifactId>
-                <version>4.0.1</version>
+                <version>${gmavenplus.plugin.version}</version>
                 <executions>
                     <execution>
                         <goals>
@@ -421,6 +445,7 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-surefire-plugin</artifactId>
+                <version>${maven.surefire.plugin.version}</version>
                 <configuration>
                     <argLine>${surefireArgLine}</argLine>
                     <includes>
@@ -442,7 +467,7 @@
             <plugin>
                 <groupId>com.github.spotbugs</groupId>
                 <artifactId>spotbugs-maven-plugin</artifactId>
-                <version>4.4.2</version>
+                <version>${spotbugs.maven.plugin.version}</version>
                 <executions>
                     <execution>
                         <id>analyze-compile</id>
@@ -465,7 +490,7 @@
                         <plugin>
                             <groupId>jp.skypencil.findbugs.slf4j</groupId>
                             <artifactId>bug-pattern</artifactId>
-                            <version>1.5.0</version>
+                            <version>${bug.pattern.version}</version>
                         </plugin>
                     </plugins>
                     <effort>Max</effort>
@@ -480,7 +505,7 @@
             <plugin>
                 <groupId>org.jacoco</groupId>
                 <artifactId>jacoco-maven-plugin</artifactId>
-                <version>0.8.10</version>
+                <version>${jacoco.version}</version>
                 <configuration>
                     <excludes>
                         <exclude>org/onap/cps/ncmp/dmi/model/*</exclude>
@@ -493,14 +518,19 @@
                         <goals>
                             <goal>prepare-agent</goal>
                         </goals>
+                        <configuration>
+                            <destFile>${jacoco.execFile}</destFile>
+                            <propertyName>surefireArgLine</propertyName>
+                        </configuration>
                     </execution>
                     <execution>
                         <id>coverage-check</id>
+                        <phase>test</phase>
                         <goals>
                             <goal>check</goal>
                         </goals>
                         <configuration>
-                            <dataFile>${basedir}/target/code-coverage/jacoco-ut.exec</dataFile>
+                            <dataFile>${jacoco.execFile}</dataFile>
                             <rules>
                                 <rule>
                                     <element>BUNDLE</element>
@@ -516,19 +546,81 @@
                         </configuration>
                     </execution>
                     <execution>
-                        <id>report</id>
-                        <phase>verify</phase>
+                        <id>post-unit-test</id>
+                        <phase>test</phase>
                         <goals>
-                            <goal>report-aggregate</goal>
+                            <goal>report</goal>
                         </goals>
                         <configuration>
-                            <dataFileIncludes>
-                                <fileInclude>**/code-coverage/jacoco-ut.exec</fileInclude>
-                            </dataFileIncludes>
+                            <outputEncoding>${project.reporting.outputEncoding}</outputEncoding>
+                            <!-- Sets the path to the file which contains the execution data. -->
+                            <dataFile>${jacoco.execFile}</dataFile>
+                            <!-- Sets the output directory for the code coverage report. -->
+                            <outputDirectory>${jacoco.outputDirectory}</outputDirectory>
                         </configuration>
                     </execution>
                 </executions>
             </plugin>
         </plugins>
+        <pluginManagement>
+            <plugins>
+                <plugin>
+                    <groupId>com.google.cloud.tools</groupId>
+                    <artifactId>jib-maven-plugin</artifactId>
+                    <version>3.3.2</version>
+                    <configuration>
+                        <container>
+                            <mainClass>${app}</mainClass>
+                            <creationTime>USE_CURRENT_TIMESTAMP</creationTime>
+                        </container>
+                        <from>
+                            <image>${base.image}</image>
+                        </from>
+                        <to>
+                            <tags>
+                                <tag>latest</tag>
+                                <tag>${project.version}-latest</tag>
+                            </tags>
+                            <image>${docker.push.registry}/onap/${image.name}:${image.tag}</image>
+                        </to>
+                    </configuration>
+                    <executions>
+                        <execution>
+                            <phase>package</phase>
+                            <id>build</id>
+                            <goals>
+                                <goal>dockerBuild</goal>
+                            </goals>
+                        </execution>
+                        <execution>
+                            <phase>deploy</phase>
+                            <id>buildAndPush</id>
+                            <goals>
+                                <goal>build</goal>
+                            </goals>
+                        </execution>
+                    </executions>
+                </plugin>
+            </plugins>
+        </pluginManagement>
     </build>
+    <profiles>
+        <profile>
+            <id>docker</id>
+            <activation>
+                <activeByDefault>true</activeByDefault>
+            </activation>
+            <properties>
+                <image.name>ncmp-dmi-plugin</image.name>
+            </properties>
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>com.google.cloud.tools</groupId>
+                        <artifactId>jib-maven-plugin</artifactId>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+    </profiles>
 </project>

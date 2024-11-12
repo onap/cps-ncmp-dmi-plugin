@@ -46,7 +46,9 @@ check_health()
 ###################### setup env ############################
 # Set env variables for docker compose
 export LOCAL_IP=$(ip -4 addr show docker0 | grep -Po 'inet \K[\d.]+')
-
+# Using DMI_VERSION for now as a temporary solution.
+# This will be removed in the next CPS release version.
+export DMI_VERSION=1.6.0-SNAPSHOT-latest
 source $WORKSPACE/plans/dmi/test.properties
 export $(cut -d= -f1 $WORKSPACE/plans/dmi/test.properties)
 

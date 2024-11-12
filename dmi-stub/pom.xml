@@ -19,6 +19,7 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
+
     <parent>
         <groupId>org.onap.cps</groupId>
         <artifactId>ncmp-dmi-plugin</artifactId>
@@ -31,16 +32,18 @@
 
 
     <properties>
-        <sonar.skip>true</sonar.skip>
+        <checkstyle.config.location>../</checkstyle.config.location>
         <jacoco.skip>true</jacoco.skip>
         <java.version>17</java.version>
         <maven.compiler.release>17</maven.compiler.release>
+        <sonar.skip>true</sonar.skip>
     </properties>
 
     <modules>
         <module>dmi-plugin-demo-and-csit-stub-service</module>
         <module>dmi-plugin-demo-and-csit-stub-app</module>
     </modules>
+
 <dependencyManagement>
         <dependencies>
             <dependency>

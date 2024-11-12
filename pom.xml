@@ -24,17 +24,13 @@
   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
-    <parent>
-        <groupId>org.onap.oparent</groupId>
-        <artifactId>oparent</artifactId>
-        <version>3.3.0</version>
-        <relativePath/>
-    </parent>
+
     <packaging>pom</packaging>
     <organization>
         <name>ONAP - CPS</name>
         <url>http://www.onap.org/</url>
     </organization>
+
     <modules>
         <module>dmi-service</module>
         <module>dmi-stub</module>
@@ -46,21 +42,71 @@
     <description>DMI Plugin Service</description>
 
     <properties>
-        <cps.version>3.5.2</cps.version>
+        <!-- Set UTF-8 encoding for consistent builds across platforms -->
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+
+        <!-- Application and Docker Configuration -->
         <app>org.onap.cps.ncmp.dmi.Application</app>
         <base.image>${docker.pull.registry}/onap/integration-java17:12.0.0</base.image>
-        <image.tag>${project.version}-${maven.build.timestamp}</image.tag>
-        <maven.build.timestamp.format>yyyyMMdd'T'HHmmss'Z'</maven.build.timestamp.format>
-        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <image.name>ncmp-dmi-plugin</image.name>
+        <image.tag>${project.version}-${maven.build.timestamp}</image.tag>
+
+        <!-- Project Versioning and Timestamp -->
+        <cps.version>3.5.5-SNAPSHOT</cps.version>
+        <maven.build.timestamp.format>yyyyMMdd'T'HHmmss'Z'</maven.build.timestamp.format>
+
+        <!-- Code Quality and Dependency Management -->
+        <checkstyle.config.location>${project.basedir}</checkstyle.config.location>
+        <maven.checkstyle.plugin.version>3.3.1</maven.checkstyle.plugin.version>
+        <maven.compiler.plugin.version>3.13.0</maven.compiler.plugin.version>
+        <maven.compiler.source>17</maven.compiler.source>
+        <maven.compiler.target>17</maven.compiler.target>
+        <maven.dependency.plugin.version>3.7.1</maven.dependency.plugin.version>
+        <maven.deploy.plugin.version>3.1.2</maven.deploy.plugin.version>
+
+        <!-- ONAP Nexus Repository Configuration -->
+        <onap.nexus.url>https://nexus.onap.org</onap.nexus.url>
+        <nexusproxy>https://nexus.onap.org</nexusproxy>
+        <releaseNexusPath>/content/repositories/releases/</releaseNexusPath>
+        <snapshotNexusPath>/content/repositories/snapshots/</snapshotNexusPath>
     </properties>
 
     <build>
         <plugins>
-            <!-- Add the Maven Checkstyle Plugin here -->
+            <!-- Maven Dependency Plugin for unpacking resources only in the root module -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-dependency-plugin</artifactId>
+                <version>${maven.dependency.plugin.version}</version>
+                <executions>
+                    <execution>
+                        <id>unpack-checkstyle-config</id>
+                        <phase>initialize</phase>
+                        <goals>
+                            <goal>unpack</goal>
+                        </goals>
+                        <configuration>
+                            <artifactItems>
+                                <artifactItem>
+                                    <groupId>${project.groupId}</groupId>
+                                    <artifactId>checkstyle</artifactId>
+                                    <version>${cps.version}</version>
+                                    <type>jar</type>
+                                    <overWrite>true</overWrite>
+                                    <outputDirectory>${project.basedir}/checkstyle</outputDirectory>
+                                    <includes>cps-checkstyle/**</includes>
+                                </artifactItem>
+                            </artifactItems>
+                        </configuration>
+                        <inherited>false</inherited>
+                    </execution>
+                </executions>
+            </plugin>
+            <!-- Maven Checkstyle Plugin -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-checkstyle-plugin</artifactId>
+                <version>${maven.checkstyle.plugin.version}</version>
                 <executions>
                     <execution>
                         <id>onap-license</id>
@@ -69,32 +115,13 @@
                         </goals>
                         <phase>process-sources</phase>
                         <configuration>
-                            <configLocation>onap-checkstyle/check-license.xml</configLocation>
-                            <includeResources>false</includeResources>
+                            <configLocation>${checkstyle.config.location}/checkstyle/cps-checkstyle/check-license.xml</configLocation>
+                            <includeResources>true</includeResources>
                             <includeTestSourceDirectory>true</includeTestSourceDirectory>
                             <includeTestResources>false</includeTestResources>
                             <sourceDirectories>
                                 <sourceDirectory>${project.build.sourceDirectory}</sourceDirectory>
                             </sourceDirectories>
-                            <consoleOutput>false</consoleOutput>
-                            <violationSeverity>warning</violationSeverity>
-                            <failOnViolation>true</failOnViolation>
-                        </configuration>
-                    </execution>
-                    <execution>
-                        <id>onap-java-style</id>
-                        <goals>
-                            <goal>check</goal>
-                        </goals>
-                        <phase>process-sources</phase>
-                        <configuration>
-                            <configLocation>onap-checkstyle/onap-java-style.xml</configLocation>
-                            <sourceDirectories>
-                                <sourceDirectory>${project.build.sourceDirectory}</sourceDirectory>
-                            </sourceDirectories>
-                            <includeResources>true</includeResources>
-                            <includeTestSourceDirectory>true</includeTestSourceDirectory>
-                            <includeTestResources>true</includeTestResources>
                             <consoleOutput>false</consoleOutput>
                             <violationSeverity>warning</violationSeverity>
                             <failOnViolation>true</failOnViolation>
@@ -107,14 +134,14 @@
                         </goals>
                         <phase>process-sources</phase>
                         <configuration>
-                            <configLocation>cps-java-style.xml</configLocation>
+                            <configLocation>${checkstyle.config.location}/checkstyle/cps-checkstyle/cps-java-style.xml</configLocation>
                             <sourceDirectories>
                                 <sourceDirectory>${project.build.sourceDirectory}</sourceDirectory>
                             </sourceDirectories>
                             <includeResources>true</includeResources>
                             <includeTestSourceDirectory>true</includeTestSourceDirectory>
                             <includeTestResources>true</includeTestResources>
-                            <consoleOutput>true</consoleOutput>
+                            <consoleOutput>false</consoleOutput>
                             <violationSeverity>warning</violationSeverity>
                             <failOnViolation>true</failOnViolation>
                         </configuration>
@@ -128,66 +155,40 @@
                     </dependency>
                 </dependencies>
             </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-deploy-plugin</artifactId>
+                <version>${maven.deploy.plugin.version}</version>
+            </plugin>
         </plugins>
         <pluginManagement>
             <plugins>
                 <plugin>
-                    <groupId>com.google.cloud.tools</groupId>
-                    <artifactId>jib-maven-plugin</artifactId>
-                    <version>3.3.2</version>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-compiler-plugin</artifactId>
+                    <version>${maven.compiler.plugin.version}</version>
                     <configuration>
-                        <container>
-                            <mainClass>${app}</mainClass>
-                            <creationTime>USE_CURRENT_TIMESTAMP</creationTime>
-                        </container>
-                        <from>
-                            <image>${base.image}</image>
-                        </from>
-                        <to>
-                            <tags>
-                                <tag>latest</tag>
-                                <tag>${project.version}-latest</tag>
-                            </tags>
-                            <image>${docker.push.registry}/onap/${image.name}:${image.tag}</image>
-                        </to>
+                        <encoding>${project.build.sourceEncoding}</encoding>
+                        <source>17</source>
+                        <target>17</target>
                     </configuration>
-                    <executions>
-                        <execution>
-                            <phase>package</phase>
-                            <id>build</id>
-                            <goals>
-                                <goal>dockerBuild</goal>
-                            </goals>
-                        </execution>
-                        <execution>
-                            <phase>deploy</phase>
-                            <id>buildAndPush</id>
-                            <goals>
-                                <goal>build</goal>
-                            </goals>
-                        </execution>
-                    </executions>
                 </plugin>
             </plugins>
         </pluginManagement>
     </build>
 
-    <profiles>
-        <profile>
-            <id>docker</id>
-            <activation>
-                <activeByDefault>true</activeByDefault>
-            </activation>
-            <build>
-                <plugins>
-                    <plugin>
-                        <groupId>com.google.cloud.tools</groupId>
-                        <artifactId>jib-maven-plugin</artifactId>
-                    </plugin>
-                </plugins>
-            </build>
-        </profile>
 
-    </profiles>
+    <distributionManagement>
+        <repository>
+            <id>ecomp-releases</id>
+            <name>ECOMP Release Repository</name>
+            <url>${onap.nexus.url}${releaseNexusPath}</url>
+        </repository>
+        <snapshotRepository>
+            <id>ecomp-snapshots</id>
+            <name>ECOMP Snapshot Repository</name>
+            <url>${onap.nexus.url}${snapshotNexusPath}</url>
+        </snapshotRepository>
+    </distributionManagement>
 
 </project>
