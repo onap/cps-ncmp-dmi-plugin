@@ -59,7 +59,7 @@ cd $WORKSPACE/archives/ncmp-dmi-plugin
 docker-compose version
 
 # start CPS and PostgreSQL containers with docker compose
-docker-compose up -d
+#docker-compose up -d
 
 ####################### setup cps-ncmp ############################
 cd $DMI_PLUGIN_HOME
