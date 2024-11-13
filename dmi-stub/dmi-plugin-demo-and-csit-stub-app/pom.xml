@@ -27,76 +27,6 @@
 
     <artifactId>dmi-plugin-demo-and-csit-stub-app</artifactId>
 
-    <properties>
-        <app>org.onap.cps.ncmp.dmi.rest.stub.DmiDemoApplication</app>
-        <maven.build.timestamp.format>yyyyMMdd'T'HHmmss'Z'</maven.build.timestamp.format>
-        <base.image>${docker.pull.registry}/onap/integration-java17:12.0.0</base.image>
-        <image.tag>${project.version}-${maven.build.timestamp}</image.tag>
-        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    </properties>
-
-    <build>
-        <pluginManagement>
-            <plugins>
-                <plugin>
-                    <groupId>com.google.cloud.tools</groupId>
-                    <artifactId>jib-maven-plugin</artifactId>
-                    <configuration>
-                        <container>
-                            <mainClass>${app}</mainClass>
-                            <creationTime>USE_CURRENT_TIMESTAMP</creationTime>
-                        </container>
-                        <from>
-                            <image>${base.image}</image>
-                        </from>
-                        <to>
-                            <tags>
-                                <tag>latest</tag>
-                            </tags>
-                            <image>${docker.push.registry}/onap/${image.name}:${image.tag}</image>
-                        </to>
-                    </configuration>
-                    <executions>
-                        <execution>
-                            <phase>package</phase>
-                            <id>build</id>
-                            <goals>
-                                <goal>dockerBuild</goal>
-                            </goals>
-                        </execution>
-                        <execution>
-                            <phase>deploy</phase>
-                            <id>buildAndPush</id>
-                            <goals>
-                                <goal>build</goal>
-                            </goals>
-                        </execution>
-                    </executions>
-                </plugin>
-            </plugins>
-        </pluginManagement>
-    </build>
-
-    <profiles>
-        <profile>
-            <id>docker</id>
-            <activation>
-                <activeByDefault>true</activeByDefault>
-            </activation>
-            <properties>
-                <image.name>dmi-plugin-demo-and-csit-stub</image.name>
-            </properties>
-            <build>
-                <plugins>
-                    <plugin>
-                        <groupId>com.google.cloud.tools</groupId>
-                        <artifactId>jib-maven-plugin</artifactId>
-                        <version>3.3.2</version>
-                    </plugin>
-                </plugins>
-            </build>
-        </profile>
-    </profiles>
     <dependencies>
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -127,7 +57,5 @@
                 </exclusion>
             </exclusions>
         </dependency>
-
-
     </dependencies>
 </project>

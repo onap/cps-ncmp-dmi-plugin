@@ -3,6 +3,7 @@
 *.war
 *.log
 *.log.zip
+*.*~
 
 target/
 log/
