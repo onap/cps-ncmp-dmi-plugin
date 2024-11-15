@@ -39,6 +39,30 @@
       },
       "revId": "9bb88718e022d1075cb4cadbae715a1f80b08bc3",
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "bc8f0ccf_42743ba1",
+        "filename": "dmi-stub/pom.xml",
+        "patchSetId": 6
+      },
+      "lineNbr": 52,
+      "author": {
+        "id": 7957
+      },
+      "writtenOn": "2024-11-15T13:24:31Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "a58c14a8_d4e0bf95",
+      "range": {
+        "startLine": 52,
+        "startChar": 26,
+        "endLine": 52,
+        "endChar": 31
+      },
+      "revId": "9bb88718e022d1075cb4cadbae715a1f80b08bc3",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
     }
   ]
 }
