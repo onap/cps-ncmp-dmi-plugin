@@ -28,7 +28,7 @@
     </parent>
 
     <artifactId>dmi-plugin-demo-and-csit-stub</artifactId>
-    <packaging>pom</packaging>
+    <packaging>jar</packaging>
 
 
     <properties>
