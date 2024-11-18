@@ -27,6 +27,7 @@
     </parent>
 
     <artifactId>dmi-plugin-demo-and-csit-stub-app</artifactId>
+    <packaging>jar</packaging>
 
     <properties>
         <app>org.onap.cps.ncmp.dmi.rest.stub.DmiDemoApplication</app>

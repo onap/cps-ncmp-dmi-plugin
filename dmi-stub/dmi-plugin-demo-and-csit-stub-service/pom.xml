@@ -27,6 +27,7 @@
     </parent>
 
     <artifactId>dmi-plugin-demo-and-csit-stub-service</artifactId>
+    <packaging>jar</packaging>
 
     <properties>
         <gmavenplus.plugin.version>4.0.1</gmavenplus.plugin.version>
