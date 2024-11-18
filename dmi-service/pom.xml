@@ -34,7 +34,6 @@
         <!-- Application Configuration -->
         <app>org.onap.cps.ncmp.dmi.Application</app>
 
-        <image.name>ncmp-dmi-plugin</image.name>
         <!-- Encoding Configuration -->
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 

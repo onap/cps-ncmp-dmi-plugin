@@ -109,7 +109,7 @@
 
     <profiles>
         <profile>
-            <id>docker</id>
+            <id>stub-docker</id>
             <activation>
                 <activeByDefault>true</activeByDefault>
             </activation>
