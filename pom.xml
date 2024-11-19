@@ -31,14 +31,14 @@
     </organization>
 
     <modules>
-        <module>dmi-service</module>
-        <module>dmi-stub</module>
+        <module>onap-dmi-service</module>
+        <module>onap-dmi-stub</module>
     </modules>
 
     <groupId>org.onap.cps</groupId>
     <artifactId>ncmp-dmi-plugin</artifactId>
     <version>3.5.5-SNAPSHOT</version>
-    <name>ncmp-dmi-plugin</name>
+    <name>onap-dmi-ncmp-plugin</name>
     <description>DMI Plugin Service</description>
     <packaging>pom</packaging>
 

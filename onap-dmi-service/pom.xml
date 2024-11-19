@@ -27,7 +27,7 @@
         <version>3.5.5-SNAPSHOT</version>
     </parent>
 
-    <artifactId>dmi-service</artifactId>
+    <artifactId>onap-dmi-service</artifactId>
     <packaging>jar</packaging>
 
     <properties>
