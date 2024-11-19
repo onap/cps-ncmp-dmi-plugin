@@ -114,7 +114,7 @@
                 <activeByDefault>true</activeByDefault>
             </activation>
             <properties>
-                <image.name>dmi-plugin-demo-and-csit-stub</image.name>
+                <image.name>onap-dmi-plugin-demo-and-csit-stub</image.name>
             </properties>
             <build>
                 <plugins>
