@@ -22,6 +22,30 @@
       },
       "revId": "26719db4d561d5cb7b0fd80e6363ab1d61b793f5",
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "88f8717b_9c4573f4",
+        "filename": "dmi-stub/dmi-stub-app/pom.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 8063
+      },
+      "writtenOn": "2024-11-20T15:16:27Z",
+      "side": 1,
+      "message": "NB: I would not suggest to have the same version of the cps-and-ncmp. That means we need to keep updating dmi-plugin (also the dmi-stub), as the cps-and-ncmp gets newer versions...",
+      "parentUuid": "3aad1029_c389f561",
+      "range": {
+        "startLine": 26,
+        "startChar": 17,
+        "endLine": 26,
+        "endChar": 31
+      },
+      "revId": "26719db4d561d5cb7b0fd80e6363ab1d61b793f5",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
     }
   ]
 }
