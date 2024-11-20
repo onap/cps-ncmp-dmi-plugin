@@ -43,6 +43,7 @@
         <!-- Global properties for version management -->
         <bug.pattern.version>1.5.0</bug.pattern.version>
         <gmavenplus.plugin.version>4.0.1</gmavenplus.plugin.version>
+        <maven.deploy.plugin.version>3.1.2</maven.deploy.plugin.version>
         <maven.surefire.plugin.version>3.3.1</maven.surefire.plugin.version>
         <openapi.generator.maven.plugin.version>6.6.0</openapi.generator.maven.plugin.version>
         <spring.boot.maven.plugin.version>3.1.2</spring.boot.maven.plugin.version>
@@ -53,6 +54,11 @@
         <jacoco.minimum.coverage>0.98</jacoco.minimum.coverage>
         <jacoco.outputDirectory>${project.reporting.outputDirectory}/jacoco-ut</jacoco.outputDirectory>
         <jacoco.version>0.8.11</jacoco.version>
+
+        <!-- ONAP Nexus Repository Configuration -->
+        <onap.nexus.url>https://nexus.onap.org</onap.nexus.url>
+        <releaseNexusPath>/content/repositories/releases/</releaseNexusPath>
+        <snapshotNexusPath>/content/repositories/snapshots/</snapshotNexusPath>
     </properties>
 
     <dependencyManagement>
@@ -562,6 +568,11 @@
                     </execution>
                 </executions>
             </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-deploy-plugin</artifactId>
+                <version>${maven.deploy.plugin.version}</version>
+            </plugin>
         </plugins>
         <pluginManagement>
             <plugins>
@@ -605,6 +616,7 @@
             </plugins>
         </pluginManagement>
     </build>
+
     <profiles>
         <profile>
             <id>docker</id>
@@ -625,4 +637,18 @@
             </build>
         </profile>
     </profiles>
+
+    <distributionManagement>
+        <repository>
+            <id>ecomp-releases</id>
+            <name>ECOMP Release Repository</name>
+            <url>${onap.nexus.url}${releaseNexusPath}</url>
+        </repository>
+        <snapshotRepository>
+            <id>ecomp-snapshots</id>
+            <name>ECOMP Snapshot Repository</name>
+            <url>${onap.nexus.url}${snapshotNexusPath}</url>
+        </snapshotRepository>
+    </distributionManagement>
+
 </project>
