@@ -118,6 +118,30 @@
       },
       "revId": "26719db4d561d5cb7b0fd80e6363ab1d61b793f5",
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "e14d0af9_e07c5c15",
+        "filename": "dmi-stub/dmi-stub-app/pom.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2024-11-20T15:37:43Z",
+      "side": 1,
+      "message": "yes lets revert to separate versioning. \nwe hoped that aligning the version solved the issue but it didn\u0027t so lets go back to dmi versioning...",
+      "parentUuid": "45f65183_7f71c046",
+      "range": {
+        "startLine": 26,
+        "startChar": 17,
+        "endLine": 26,
+        "endChar": 31
+      },
+      "revId": "26719db4d561d5cb7b0fd80e6363ab1d61b793f5",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
     }
   ]
 }

@@ -16,6 +16,23 @@
       "message": "I agree to get this merged to see if we no more see 403 issue, or similar the before...",
       "revId": "297c21863098c876cc85108300ac9e739c4a4525",
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "0e753a54_de1b8c1c",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2024-11-20T15:37:43Z",
+      "side": 1,
+      "message": "renaming is good, just need to revert versioning",
+      "revId": "297c21863098c876cc85108300ac9e739c4a4525",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
     }
   ]
 }
