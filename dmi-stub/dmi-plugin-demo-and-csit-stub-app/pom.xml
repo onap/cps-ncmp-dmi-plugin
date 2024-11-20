@@ -31,6 +31,13 @@
 
     <properties>
         <app>org.onap.cps.ncmp.dmi.rest.stub.DmiDemoApplication</app>
+
+        <maven.deploy.plugin.version>3.1.2</maven.deploy.plugin.version>
+
+        <!-- ONAP Nexus Repository Configuration -->
+        <onap.nexus.url>https://nexus.onap.org</onap.nexus.url>
+        <releaseNexusPath>/content/repositories/releases/</releaseNexusPath>
+        <snapshotNexusPath>/content/repositories/snapshots/</snapshotNexusPath>
     </properties>
 
     <dependencies>
@@ -103,6 +110,11 @@
                         </execution>
                     </executions>
                 </plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-deploy-plugin</artifactId>
+                    <version>${maven.deploy.plugin.version}</version>
+                </plugin>
             </plugins>
         </pluginManagement>
     </build>
@@ -114,7 +126,7 @@
                 <activeByDefault>true</activeByDefault>
             </activation>
             <properties>
-                <image.name>onap-dmi-plugin-demo-and-csit-stub</image.name>
+                <image.name>dmi-plugin-demo-and-csit-stub</image.name>
             </properties>
             <build>
                 <plugins>
@@ -127,4 +139,18 @@
             </build>
         </profile>
     </profiles>
+
+    <distributionManagement>
+        <repository>
+            <id>ecomp-releases</id>
+            <name>ECOMP Release Repository</name>
+            <url>${onap.nexus.url}${releaseNexusPath}</url>
+        </repository>
+        <snapshotRepository>
+            <id>ecomp-snapshots</id>
+            <name>ECOMP Snapshot Repository</name>
+            <url>${onap.nexus.url}${snapshotNexusPath}</url>
+        </snapshotRepository>
+    </distributionManagement>
+
 </project>
