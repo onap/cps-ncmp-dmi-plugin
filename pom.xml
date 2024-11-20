@@ -32,7 +32,6 @@
 
     <modules>
         <module>dmi-service</module>
-        <module>dmi-stub</module>
     </modules>
 
     <groupId>org.onap.cps</groupId>
