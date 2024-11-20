@@ -22,16 +22,18 @@
 
     <parent>
         <groupId>org.onap.cps</groupId>
-        <artifactId>dmi-plugin-demo-and-csit-stub</artifactId>
+        <artifactId>dmi-stub</artifactId>
         <version>3.5.5-SNAPSHOT</version>
     </parent>
 
-    <artifactId>dmi-plugin-demo-and-csit-stub-app</artifactId>
+    <artifactId>dmi-stub-app</artifactId>
     <packaging>jar</packaging>
 
     <properties>
+        <!-- Application Configuration -->
         <app>org.onap.cps.ncmp.dmi.rest.stub.DmiDemoApplication</app>
 
+        <!-- Global properties for version management -->
         <maven.deploy.plugin.version>3.1.2</maven.deploy.plugin.version>
 
         <!-- ONAP Nexus Repository Configuration -->
@@ -61,7 +63,7 @@
         </dependency>
         <dependency>
             <groupId>org.onap.cps</groupId>
-            <artifactId>dmi-plugin-demo-and-csit-stub-service</artifactId>
+            <artifactId>dmi-stub-service</artifactId>
             <version>${project.version}</version>
             <exclusions>
                 <exclusion>
@@ -126,7 +128,7 @@
                 <activeByDefault>true</activeByDefault>
             </activation>
             <properties>
-                <image.name>dmi-plugin-demo-and-csit-stub</image.name>
+                <image.name>dmi-stub</image.name>
             </properties>
             <build>
                 <plugins>

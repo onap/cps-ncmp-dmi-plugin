@@ -624,7 +624,7 @@
                 <activeByDefault>true</activeByDefault>
             </activation>
             <properties>
-                <image.name>ncmp-dmi-plugin</image.name>
+                <image.name>dmi-service</image.name>
             </properties>
             <build>
                 <plugins>
