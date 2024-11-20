@@ -94,6 +94,30 @@
       },
       "revId": "26719db4d561d5cb7b0fd80e6363ab1d61b793f5",
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "45f65183_7f71c046",
+        "filename": "dmi-stub/dmi-stub-app/pom.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 6742
+      },
+      "writtenOn": "2024-11-20T15:33:39Z",
+      "side": 1,
+      "message": "I don\u0027t think we should sync the versions either if we don\u0027t have to. They will probably go out of sync pretty quickly",
+      "parentUuid": "9f34daae_b8fec508",
+      "range": {
+        "startLine": 26,
+        "startChar": 17,
+        "endLine": 26,
+        "endChar": 31
+      },
+      "revId": "26719db4d561d5cb7b0fd80e6363ab1d61b793f5",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
     }
   ]
 }
