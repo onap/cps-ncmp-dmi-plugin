@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "87746ad0_8a8884c7",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 8063
+      },
+      "writtenOn": "2024-11-20T15:22:12Z",
+      "side": 1,
+      "message": "I agree to get this merged to see if we no more see 403 issue, or similar the before...",
+      "revId": "297c21863098c876cc85108300ac9e739c4a4525",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    }
+  ]
+}
