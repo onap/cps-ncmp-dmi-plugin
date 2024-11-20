@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "3aad1029_c389f561",
+        "filename": "dmi-stub/dmi-stub-app/pom.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 7965
+      },
+      "writtenOn": "2024-11-20T14:57:20Z",
+      "side": 1,
+      "message": "are we still gonna use 3.5.5-SNAPSHOT similar to CPS-NCMP or follow what we had in DMI which is 1.6.0-SNAPSHOT. Teams opinion ??",
+      "range": {
+        "startLine": 26,
+        "startChar": 17,
+        "endLine": 26,
+        "endChar": 31
+      },
+      "revId": "26719db4d561d5cb7b0fd80e6363ab1d61b793f5",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    }
+  ]
+}
