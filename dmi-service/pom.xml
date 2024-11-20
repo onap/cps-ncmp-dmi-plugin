@@ -24,7 +24,7 @@
     <parent>
         <groupId>org.onap.cps</groupId>
         <artifactId>ncmp-dmi-plugin</artifactId>
-        <version>3.5.5-SNAPSHOT</version>
+        <version>1.6.0-SNAPSHOT</version>
     </parent>
 
     <artifactId>dmi-service</artifactId>
