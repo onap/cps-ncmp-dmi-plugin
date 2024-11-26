@@ -41,6 +41,30 @@
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "284be297_f1e4e534",
+        "filename": "dmi-stub/dmi-stub-service/pom.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 7957
+      },
+      "writtenOn": "2024-11-26T13:58:21Z",
+      "side": 1,
+      "message": "Yes If it works will make it as variable",
+      "parentUuid": "007e3b79_b286e5f9",
+      "range": {
+        "startLine": 24,
+        "startChar": 17,
+        "endLine": 24,
+        "endChar": 45
+      },
+      "revId": "29fc31316b0b1c6f38d61877107bb7da1dbd5139",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "71e5b307_ac8d8cc9",
@@ -64,6 +88,30 @@
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "ae2a0a52_14e38e7e",
+        "filename": "dmi-stub/pom.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 7957
+      },
+      "writtenOn": "2024-11-26T13:58:21Z",
+      "side": 1,
+      "message": "If it works will use var",
+      "parentUuid": "71e5b307_ac8d8cc9",
+      "range": {
+        "startLine": 24,
+        "startChar": 17,
+        "endLine": 24,
+        "endChar": 46
+      },
+      "revId": "29fc31316b0b1c6f38d61877107bb7da1dbd5139",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "0e141e34_44141081",
@@ -77,6 +125,30 @@
       "writtenOn": "2024-11-26T13:54:28Z",
       "side": 1,
       "message": "I hoep this is not an issue",
+      "range": {
+        "startLine": 55,
+        "startChar": 21,
+        "endLine": 55,
+        "endChar": 22
+      },
+      "revId": "29fc31316b0b1c6f38d61877107bb7da1dbd5139",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "9de243e9_4080292e",
+        "filename": "pom.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 55,
+      "author": {
+        "id": 7957
+      },
+      "writtenOn": "2024-11-26T13:58:21Z",
+      "side": 1,
+      "message": "blank space is removed from beginning",
+      "parentUuid": "0e141e34_44141081",
       "range": {
         "startLine": 55,
         "startChar": 21,
