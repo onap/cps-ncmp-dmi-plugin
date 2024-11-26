@@ -1,0 +1,90 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "e2cbae63_fde7ce6c",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2024-11-26T13:54:28Z",
+      "side": 1,
+      "message": "just to be suer remove the space in front of version",
+      "revId": "29fc31316b0b1c6f38d61877107bb7da1dbd5139",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "007e3b79_b286e5f9",
+        "filename": "dmi-stub/dmi-stub-service/pom.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2024-11-26T13:54:28Z",
+      "side": 1,
+      "message": "NB: if it works can we use the ${group,id} here too ?",
+      "range": {
+        "startLine": 24,
+        "startChar": 17,
+        "endLine": 24,
+        "endChar": 45
+      },
+      "revId": "29fc31316b0b1c6f38d61877107bb7da1dbd5139",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "71e5b307_ac8d8cc9",
+        "filename": "dmi-stub/pom.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2024-11-26T13:54:28Z",
+      "side": 1,
+      "message": "use ${var} heer too ?",
+      "range": {
+        "startLine": 24,
+        "startChar": 17,
+        "endLine": 24,
+        "endChar": 46
+      },
+      "revId": "29fc31316b0b1c6f38d61877107bb7da1dbd5139",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "0e141e34_44141081",
+        "filename": "pom.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 55,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2024-11-26T13:54:28Z",
+      "side": 1,
+      "message": "I hoep this is not an issue",
+      "range": {
+        "startLine": 55,
+        "startChar": 21,
+        "endLine": 55,
+        "endChar": 22
+      },
+      "revId": "29fc31316b0b1c6f38d61877107bb7da1dbd5139",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    }
+  ]
+}
