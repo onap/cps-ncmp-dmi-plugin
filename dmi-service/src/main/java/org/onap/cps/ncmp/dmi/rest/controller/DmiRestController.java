@@ -86,7 +86,7 @@ public class DmiRestController implements DmiPluginApi, DmiPluginInternalApi {
         final ModuleResourcesReadRequest moduleResourcesReadRequest) {
         final List<ModuleReference> moduleReferences = convertRestObjectToJavaApiObject(moduleResourcesReadRequest);
         final YangResources yangResources = dmiService.getModuleResources(cmHandle, moduleReferences);
-        log.info("Module set tag received: {}", moduleResourcesReadRequest.getModuleSetTag());
+        log.info("Module set tag received from read request: {}", moduleResourcesReadRequest.getModuleSetTag());
         return new ResponseEntity<>(yangResources, HttpStatus.OK);
     }
 
