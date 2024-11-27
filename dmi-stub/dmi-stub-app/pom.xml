@@ -62,7 +62,7 @@
                 </exclusion></exclusions>
         </dependency>
         <dependency>
-            <groupId>org.onap.cps.ncmp-dmi-plugin</groupId>
+            <groupId>${parent.groupId}</groupId>
             <artifactId>dmi-stub-service</artifactId>
             <version>${project.version}</version>
             <exclusions>
