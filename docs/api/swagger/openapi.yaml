@@ -4,26 +4,27 @@ info:
   title: NCMP DMI Plugin
   version: 1.0.0
 servers:
-- url: /dmi
+  - url: /dmi
 tags:
-- description: DMI plugin internal rest apis
-  name: dmi-plugin-internal
-- description: DMI plugin rest apis
-  name: dmi-plugin
+  - description: DMI plugin internal rest apis
+    name: dmi-plugin-internal
+  - description: DMI plugin rest apis
+    name: dmi-plugin
 paths:
   /v1/ch/{cmHandle}/modules:
     post:
       description: Get all modules for given cm handle
       operationId: getModuleReferences
       parameters:
-      - description: "The identifier for a network function, network element, subnetwork,\
-          \ or any other cm object by managed Network CM Proxy"
-        in: path
-        name: cmHandle
-        required: true
-        schema:
-          example: my-cm-handle
-          type: string
+        - description: "The CM handle or alternate identifier for a network function,\
+          \ network element, subnetwork, or any other CM object managed by Network\
+          \ CM Proxy"
+          in: path
+          name: cmHandle
+          required: true
+          schema:
+            example: my-cm-handle
+            type: string
       requestBody:
         content:
           application/json:
@@ -59,20 +60,21 @@ paths:
           description: Internal Server Error
       summary: Get all modules for cm handle
       tags:
-      - dmi-plugin
+        - dmi-plugin
   /v1/ch/{cmHandle}/moduleResources:
     post:
       description: Retrieve module resources for one or more modules
       operationId: retrieveModuleResources
       parameters:
-      - description: "The identifier for a network function, network element, subnetwork,\
-          \ or any other cm object by managed Network CM Proxy"
-        in: path
-        name: cmHandle
-        required: true
-        schema:
-          example: my-cm-handle
-          type: string
+        - description: "The CM handle or alternate identifier for a network function,\
+          \ network element, subnetwork, or any other CM object managed by Network\
+          \ CM Proxy"
+          in: path
+          name: cmHandle
+          required: true
+          schema:
+            example: my-cm-handle
+            type: string
       requestBody:
         content:
           application/json:
@@ -108,7 +110,7 @@ paths:
           description: Internal Server Error
       summary: Retrieve module resources
       tags:
-      - dmi-plugin
+        - dmi-plugin
   /v1/inventory/cmHandles:
     post:
       description: register given list of cm handles (internal use only)
@@ -150,7 +152,7 @@ paths:
           description: Internal Server Error
       summary: register given list of cm handles (internal use only)
       tags:
-      - dmi-plugin-internal
+        - dmi-plugin-internal
       x-api-audience: component-internal
   /v1/ch/{cmHandle}/data/ds/{datastore-name}:
     post:
@@ -158,54 +160,55 @@ paths:
         cm handle
       operationId: dataAccessPassthrough
       parameters:
-      - description: The type of the requested data
-        in: path
-        name: datastore-name
-        required: true
-        schema:
-          example: ncmp-datastore:passthrough-operational or ncmp-datastore:passthrough-running
-          type: string
-      - description: "The identifier for a network function, network element, subnetwork,\
-          \ or any other cm object by managed Network CM Proxy"
-        in: path
-        name: cmHandle
-        required: true
-        schema:
-          example: my-cm-handle
-          type: string
-      - description: Resource identifier to get/set the resource data
-        in: query
-        name: resourceIdentifier
-        required: true
-        schema:
-          example: my-schema:my-node
-          type: string
-      - description: "options parameter in query, it is mandatory to wrap key(s)=value(s)\
+        - description: The type of the requested data
+          in: path
+          name: datastore-name
+          required: true
+          schema:
+            example: ncmp-datastore:passthrough-operational or ncmp-datastore:passthrough-running
+            type: string
+        - description: "The CM handle or alternate identifier for a network function,\
+          \ network element, subnetwork, or any other CM object managed by Network\
+          \ CM Proxy"
+          in: path
+          name: cmHandle
+          required: true
+          schema:
+            example: my-cm-handle
+            type: string
+        - description: Resource identifier to get/set the resource data
+          in: query
+          name: resourceIdentifier
+          required: true
+          schema:
+            example: my-schema:my-node
+            type: string
+        - description: "options parameter in query, it is mandatory to wrap key(s)=value(s)\
           \ in parenthesis'()'."
-        examples:
-          sample1:
-            value:
-              options: "(key1=value1,key2=value2)"
-          sample2:
-            value:
-              options: "(key1=value1,key2=value1/value2)"
-          sample3:
-            value:
-              options: "(key1=10,key2=value2,key3=val31,val32)"
-        in: query
-        name: options
-        required: false
-        schema:
-          type: string
-      - description: topic name passed from client(NCMP).
-        examples:
-          sample1:
-            value: my-topic-name
-        in: query
-        name: topic
-        required: false
-        schema:
-          type: string
+          examples:
+            sample1:
+              value:
+                options: "(key1=value1,key2=value2)"
+            sample2:
+              value:
+                options: "(key1=value1,key2=value1/value2)"
+            sample3:
+              value:
+                options: "(key1=10,key2=value2,key3=val31,val32)"
+          in: query
+          name: options
+          required: false
+          schema:
+            type: string
+        - description: topic name passed from client(NCMP).
+          examples:
+            sample1:
+              value: my-topic-name
+          in: query
+          name: topic
+          required: false
+          schema:
+            type: string
       requestBody:
         content:
           application/json:
@@ -219,9 +222,9 @@ paths:
             application/json:
               schema:
                 example:
-                - yangSource: my-yang-source
-                  moduleName: my-module-name
-                  revision: my-revision
+                  - yangSource: my-yang-source
+                    moduleName: my-module-name
+                    revision: my-revision
                 type: object
           description: OK
         "400":
@@ -247,33 +250,33 @@ paths:
       summary: Get resource data from passthrough operational or running for a cm
         handle
       tags:
-      - dmi-plugin
+        - dmi-plugin
   /v1/data:
     post:
-      description: Execute a data operation for group of cm handle ids by supplied
-        operation details
+      description: Execute a data operation for group of CM handle (IDs or alternate
+        IDs) by supplied operation details
       operationId: getResourceDataForCmHandleDataOperation
       parameters:
-      - description: mandatory topic name passed from client(NCMP).
-        examples:
-          sample1:
-            value:
-              topic: my-topic-name
-        in: query
-        name: topic
-        required: true
-        schema:
-          type: string
-      - description: request Id generated by NCMP and sent as an acknowledgement for
-          the client request the same including here.
-        examples:
-          sample1:
-            value: 4753fc1f-7de2-449a-b306-a6204b5370b3
-        in: query
-        name: requestId
-        required: true
-        schema:
-          type: string
+        - description: mandatory topic name passed from client(NCMP).
+          examples:
+            sample1:
+              value:
+                topic: my-topic-name
+          in: query
+          name: topic
+          required: true
+          schema:
+            type: string
+        - description: request Id generated by NCMP and sent as an acknowledgement for
+            the client request the same including here.
+          examples:
+            sample1:
+              value: 4753fc1f-7de2-449a-b306-a6204b5370b3
+          in: query
+          name: requestId
+          required: true
+          schema:
+            type: string
       requestBody:
         content:
           application/json:
@@ -313,14 +316,15 @@ paths:
               schema:
                 $ref: '#/components/schemas/ErrorMessage'
           description: Not Implemented
-      summary: Execute a data operation for group of cm handle ids.
+      summary: Execute a data operation for group of cm handle references.
       tags:
-      - dmi-plugin
+        - dmi-plugin
 components:
   parameters:
     cmHandleInPath:
-      description: "The identifier for a network function, network element, subnetwork,\
-        \ or any other cm object by managed Network CM Proxy"
+      description: "The CM handle or alternate identifier for a network function,\
+        \ network element, subnetwork, or any other CM object managed by Network CM\
+        \ Proxy"
       in: path
       name: cmHandle
       required: true
@@ -459,12 +463,12 @@ components:
     ModuleSet:
       example:
         schemas:
-        - moduleName: my-module-name
-          namespace: my-namespace
-          revision: my-revision
-        - moduleName: my-module-name
-          namespace: my-namespace
-          revision: my-revision
+          - moduleName: my-module-name
+            namespace: my-namespace
+            revision: my-revision
+          - moduleName: my-module-name
+            namespace: my-namespace
+            revision: my-revision
       properties:
         schemas:
           items:
@@ -485,10 +489,10 @@ components:
       example:
         data:
           modules:
-          - name: my-name
-            revision: my-revision
-          - name: my-name
-            revision: my-revision
+            - name: my-name
+              revision: my-revision
+            - name: my-name
+              revision: my-revision
         moduleSetTag: Module-set-tag-1
         cmHandleProperties:
           key: "{\"prop1\":\"value1\",\"prop2\":\"value2\"}"
@@ -528,15 +532,15 @@ components:
     CmHandles:
       example:
         cmHandles:
-        - cmHandleId1
-        - cmHandleId2
-        - cmHandleId3
-      properties:
-        cmHandles:
-          example:
           - cmHandleId1
           - cmHandleId2
           - cmHandleId3
+      properties:
+        cmHandles:
+          example:
+            - cmHandleId1
+            - cmHandleId2
+            - cmHandleId3
           items:
             type: string
           type: array
@@ -553,11 +557,11 @@ components:
       properties:
         operation:
           enum:
-          - read
-          - create
-          - update
-          - patch
-          - delete
+            - read
+            - create
+            - update
+            - patch
+            - delete
           example: read
           type: string
         dataType:
@@ -633,10 +637,10 @@ components:
     ModuleResourcesReadRequest_data:
       example:
         modules:
-        - name: my-name
-          revision: my-revision
-        - name: my-name
-          revision: my-revision
+          - name: my-name
+            revision: my-revision
+          - name: my-name
+            revision: my-revision
       properties:
         modules:
           items:
@@ -650,16 +654,16 @@ components:
         options: some option
         operationId: "12"
         cmHandles:
-        - id: cmHandle123
-          cmHandleProperties:
-            myProp: some value
-            otherProp: other value
-            moduleSetTag: module-set-tag1
-        - id: cmHandle123
-          cmHandleProperties:
-            myProp: some value
-            otherProp: other value
-            moduleSetTag: module-set-tag1
+          - id: cmHandle123
+            cmHandleProperties:
+              myProp: some value
+              otherProp: other value
+              moduleSetTag: module-set-tag1
+          - id: cmHandle123
+            cmHandleProperties:
+              myProp: some value
+              otherProp: other value
+              moduleSetTag: module-set-tag1
         operation: read
       properties:
         operation:
@@ -684,9 +688,9 @@ components:
             $ref: '#/components/schemas/dmiOperationCmHandle'
           type: array
       required:
-      - cmHandles
-      - datastore
-      - operation
-      - operationId
+        - cmHandles
+        - datastore
+        - operation
+        - operationId
       title: DataOperationRequest
       type: object

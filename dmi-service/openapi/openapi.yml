@@ -154,8 +154,8 @@ paths:
     post:
       tags:
         - dmi-plugin
-      summary: Execute a data operation for group of cm handle ids.
-      description: Execute a data operation for group of cm handle ids by supplied operation details
+      summary: Execute a data operation for group of cm handle references.
+      description: Execute a data operation for group of CM handle (IDs or alternate IDs) by supplied operation details
       operationId: getResourceDataForCmHandleDataOperation
       parameters:
         - $ref: 'components.yml#/components/parameters/requiredTopicParamInQuery'
