@@ -320,7 +320,7 @@ components:
   parameters:
     cmHandleInPath:
       description: "The identifier for a network function, network element, subnetwork,\
-        \ or any other cm object by managed Network CM Proxy"
+        \ or any other cm object by managed Network CM Proxy can in"
       in: path
       name: cmHandle
       required: true
