@@ -1,0 +1,67 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "a2f0dff3_4ddd4d45",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2024-11-27T13:22:01Z",
+      "side": 1,
+      "message": "i think you have some unintended change below",
+      "revId": "13ded4614e5ba4709e3f37812d17bce325b9e1e2",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "402baeb1_c67eb0f9",
+        "filename": "dmi-service/openapi/openapi.yml",
+        "patchSetId": 1
+      },
+      "lineNbr": 158,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2024-11-27T13:22:01Z",
+      "side": 1,
+      "message": "suggestion insert in brackets:\n(id or alternate id)",
+      "range": {
+        "startLine": 158,
+        "startChar": 66,
+        "endLine": 158,
+        "endChar": 78
+      },
+      "revId": "13ded4614e5ba4709e3f37812d17bce325b9e1e2",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "ae88eb3d_5d33a34e",
+        "filename": "docs/api/swagger/openapi.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 323,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2024-11-27T13:22:01Z",
+      "side": 1,
+      "message": "copy \u0026 paste error ?!",
+      "range": {
+        "startLine": 323,
+        "startChar": 59,
+        "endLine": 323,
+        "endChar": 68
+      },
+      "revId": "13ded4614e5ba4709e3f37812d17bce325b9e1e2",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    }
+  ]
+}
