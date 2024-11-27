@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "eec46d53_c64e0a09",
+        "filename": "dmi-stub/dmi-stub-app/pom.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 7957
+      },
+      "writtenOn": "2024-11-27T11:38:42Z",
+      "side": 1,
+      "message": "Important Notes :\n\nWe cant make use of ${dmi.groupId} here or other places within \u003cparent/\u003e tag, if we try to force it complaining \"Properties in parent definition are prohibited\" :\n\nThe error \"Properties in parent definition are prohibited\" occurs because Maven does not allow properties (e.g., ${dmi.groupId}) to be used in the \u003cparent\u003e section of a pom.xml file. Maven expects the groupId, artifactId, and version of the parent project to be explicitly defined as static values.\n\nThe \u003cparent\u003e section is used to establish a hierarchical relationship between Maven projects. It must reference the exact group ID, artifact ID, and version of the parent POM. Properties in this context are not supported because Maven requires these values to be resolved at the very beginning of the build lifecycle, before any property resolution occurs.",
+      "range": {
+        "startLine": 24,
+        "startChar": 8,
+        "endLine": 24,
+        "endChar": 55
+      },
+      "revId": "edefabe4002e3265a870495d1b65991e647ce873",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    }
+  ]
+}
