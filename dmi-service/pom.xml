@@ -352,7 +352,7 @@
                             <goal>generate</goal>
                         </goals>
                         <configuration>
-                            <inputSpec>${project.basedir}/../docs/api/swagger/openapi.yaml</inputSpec>
+                            <inputSpec>${project.basedir}/openapi/openapi.yml</inputSpec>
                             <generatorName>spring</generatorName>
                             <generateSupportingFiles>false</generateSupportingFiles>
                             <invokerPackage>org.onap.cps.ncmp.dmi.rest.controller</invokerPackage>
@@ -376,7 +376,7 @@
                             <goal>generate</goal>
                         </goals>
                         <configuration>
-                            <inputSpec>${project.basedir}/../docs/api/swagger/openapi-datajob.yaml</inputSpec>
+                            <inputSpec>${project.basedir}/openapi/openapi-datajob.yml</inputSpec>
                             <generatorName>spring</generatorName>
                             <generateSupportingFiles>false</generateSupportingFiles>
                             <invokerPackage>org.onap.cps.ncmp.dmi.datajobs.rest.controller</invokerPackage>
@@ -401,7 +401,7 @@
                         </goals>
                         <phase>compile</phase>
                         <configuration>
-                            <inputSpec>${project.basedir}/../docs/api/swagger/openapi.yaml</inputSpec>
+                            <inputSpec>${project.basedir}/openapi/openapi.yml</inputSpec>
                             <generatorName>openapi-yaml</generatorName>
                             <configOptions>
                                 <outputFile>openapi/openapi.yaml</outputFile>
@@ -415,7 +415,7 @@
                         </goals>
                         <phase>compile</phase>
                         <configuration>
-                            <inputSpec>${project.basedir}/../docs/api/swagger/openapi-datajob.yaml</inputSpec>
+                            <inputSpec>${project.basedir}/openapi/openapi-datajob.yml</inputSpec>
                             <generatorName>openapi-yaml</generatorName>
                             <configOptions>
                                 <outputFile>openapi/openapi-datajob.yaml</outputFile>

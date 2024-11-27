@@ -67,7 +67,7 @@
                     <goal>generate</goal>
                 </goals>
                 <configuration>
-                    <inputSpec>${maven.multiModuleProjectDirectory}/docs/api/swagger/openapi-datajob.yaml</inputSpec>
+                    <inputSpec>${maven.multiModuleProjectDirectory}/dmi-service/openapi/openapi-datajob.yml</inputSpec>
                     <modelPackage>org.onap.cps.ncmp.dmi.datajobs.model</modelPackage>
                     <apiPackage>org.onap.cps.ncmp.dmi.datajobs.rest.api</apiPackage>
                     <generatorName>spring</generatorName>
@@ -90,7 +90,7 @@
                 </goals>
                 <phase>compile</phase>
                 <configuration>
-                    <inputSpec>${maven.multiModuleProjectDirectory}/docs/api/swagger/openapi-datajob.yaml</inputSpec>
+                    <inputSpec>${maven.multiModuleProjectDirectory}/dmi-service/openapi/openapi-datajob.yml</inputSpec>
                     <generatorName>openapi-yaml</generatorName>
                     <configOptions>
                         <outputFile>openapi-datajob.yaml</outputFile>
