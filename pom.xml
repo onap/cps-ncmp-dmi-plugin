@@ -35,7 +35,7 @@
         <module>dmi-stub</module>
     </modules>
 
-    <groupId>org.onap.cps.ncmp-dmi-plugin</groupId>
+    <groupId>${dmi.groupId}</groupId>
     <artifactId>ncmp-dmi-plugin</artifactId>
     <version>1.6.0-SNAPSHOT</version>
     <name>ncmp-dmi-plugin</name>
@@ -53,6 +53,7 @@
         <!-- Project Versioning and Timestamp -->
         <cps.groupId>org.onap.cps</cps.groupId>
         <cps.version>3.5.5-SNAPSHOT</cps.version>
+        <dmi.groupId>org.onap.cps.ncmp-dmi-plugin</dmi.groupId>
         <maven.build.timestamp.format>yyyyMMdd'T'HHmmss'Z'</maven.build.timestamp.format>
 
         <!-- Code Quality and Dependency Management -->
