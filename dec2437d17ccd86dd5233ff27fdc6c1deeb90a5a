@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "2de6845f_4722a7ea",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 4893
+      },
+      "writtenOn": "2024-11-28T15:53:33Z",
+      "side": 1,
+      "message": "Why are we changing this back to using the openapi instead of the docs?",
+      "revId": "dec2437d17ccd86dd5233ff27fdc6c1deeb90a5a",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    }
+  ]
+}
