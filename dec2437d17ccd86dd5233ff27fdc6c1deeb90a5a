@@ -51,6 +51,24 @@
       "parentUuid": "2de6845f_4722a7ea",
       "revId": "dec2437d17ccd86dd5233ff27fdc6c1deeb90a5a",
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "1d1fdb77_e60a9895",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 4893
+      },
+      "writtenOn": "2024-11-28T16:57:24Z",
+      "side": 1,
+      "message": "Unless I am very much mistaken https://lf-onap.atlassian.net/browse/CPS-2332 was to set up to use the doc folder as the single truth for openapi so we don\u0027t need to copy manually to the doc folder anymore",
+      "parentUuid": "81369971_8972a187",
+      "revId": "dec2437d17ccd86dd5233ff27fdc6c1deeb90a5a",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
     }
   ]
 }
