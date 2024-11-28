@@ -16,6 +16,41 @@
       "message": "Why are we changing this back to using the openapi instead of the docs?",
       "revId": "dec2437d17ccd86dd5233ff27fdc6c1deeb90a5a",
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "3ecb95cf_a083863f",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 7965
+      },
+      "writtenOn": "2024-11-28T16:18:21Z",
+      "side": 1,
+      "message": "once i receive response from Ger.",
+      "revId": "dec2437d17ccd86dd5233ff27fdc6c1deeb90a5a",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "81369971_8972a187",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 7965
+      },
+      "writtenOn": "2024-11-28T16:18:21Z",
+      "side": 1,
+      "message": "the original copy is present inside the dmi-service module.. right ??\nand as per my understanding we are referring to that and generating the final openapi and datajob yaml file.\nthen during the release the generated file is copied over to root docs folder.\n\nam i missing something ???",
+      "parentUuid": "2de6845f_4722a7ea",
+      "revId": "dec2437d17ccd86dd5233ff27fdc6c1deeb90a5a",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
     }
   ]
 }
