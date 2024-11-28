@@ -87,6 +87,24 @@
       "parentUuid": "1d1fdb77_e60a9895",
       "revId": "dec2437d17ccd86dd5233ff27fdc6c1deeb90a5a",
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "2db348e8_e7f6f31e",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 7965
+      },
+      "writtenOn": "2024-11-28T17:10:23Z",
+      "side": 1,
+      "message": "thnx. will remove my -1.",
+      "parentUuid": "2d999ec7_8198f248",
+      "revId": "dec2437d17ccd86dd5233ff27fdc6c1deeb90a5a",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
     }
   ]
 }
