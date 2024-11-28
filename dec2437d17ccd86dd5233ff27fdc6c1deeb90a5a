@@ -69,6 +69,24 @@
       "parentUuid": "81369971_8972a187",
       "revId": "dec2437d17ccd86dd5233ff27fdc6c1deeb90a5a",
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "2d999ec7_8198f248",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 4893
+      },
+      "writtenOn": "2024-11-28T17:09:33Z",
+      "side": 1,
+      "message": "Discussed. Decision had been made to revert but somehow hadn\u0027t been done.",
+      "parentUuid": "1d1fdb77_e60a9895",
+      "revId": "dec2437d17ccd86dd5233ff27fdc6c1deeb90a5a",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
     }
   ]
 }
