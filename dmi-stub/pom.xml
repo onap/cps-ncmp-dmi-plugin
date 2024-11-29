@@ -31,7 +31,7 @@
 
 
     <properties>
-        <checkstyle.config.location>../</checkstyle.config.location>
+        <checkstyle.config.location>${project.basedir}</checkstyle.config.location>
         <jacoco.skip>true</jacoco.skip>
         <java.version>17</java.version>
         <maven.compiler.release>17</maven.compiler.release>

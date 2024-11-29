@@ -38,7 +38,7 @@
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 
         <!-- Checkstyle Configuration -->
-        <checkstyle.config.location>${project.parent.basedir}</checkstyle.config.location>
+        <checkstyle.config.location>${project.basedir}</checkstyle.config.location>
 
         <!-- Global properties for version management -->
         <bug.pattern.version>1.5.0</bug.pattern.version>
