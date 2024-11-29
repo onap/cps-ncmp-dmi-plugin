@@ -17,6 +17,7 @@ paths:
       parameters:
       - description: The destination of the results (Kafka topic name or s3 bucket
           name)
+        explode: true
         in: query
         name: destination
         required: true
@@ -50,6 +51,7 @@ paths:
       parameters:
       - description: The destination of the results (Kafka topic name or s3 bucket
           name)
+        explode: true
         in: query
         name: destination
         required: true
@@ -137,6 +139,7 @@ paths:
         style: simple
       - description: The destination of the results (Kafka topic name or s3 bucket
           name)
+        explode: true
         in: query
         name: destination
         required: true
@@ -191,6 +194,7 @@ components:
       style: simple
     dataProducerIdInQuery:
       description: Identifier for the data producer
+      explode: true
       in: query
       name: dataProducerId
       required: true
@@ -200,6 +204,7 @@ components:
       style: form
     destinationInQuery:
       description: The destination of the results (Kafka topic name or s3 bucket name)
+      explode: true
       in: query
       name: destination
       required: true
