@@ -2,7 +2,7 @@ openapi: 3.0.1
 info:
   description: Adds Data Model Inventory Registry capability for ONAP
   title: NCMP DMI Plugin
-  version: 1.0.0
+  version: 1.7.0
 servers:
 - url: /dmi
 tags:

@@ -3,7 +3,7 @@ info:
   description: Support datajobs through one or more subjob for each DMI and Data Producer
     Identifier combination
   title: NCMP Data Subjob API
-  version: 1.0.0
+  version: 1.7.0
 servers:
 - url: /dmi
 tags:

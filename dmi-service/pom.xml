@@ -48,6 +48,7 @@
         <openapi.generator.maven.plugin.version>6.6.0</openapi.generator.maven.plugin.version>
         <spring.boot.maven.plugin.version>3.1.2</spring.boot.maven.plugin.version>
         <spotbugs.maven.plugin.version>4.4.2</spotbugs.maven.plugin.version>
+        <maven-resources-plugin.version>3.3.1</maven-resources-plugin.version>
 
         <!-- Code Coverage Configuration -->
         <jacoco.execFile>${basedir}/target/code-coverage/jacoco-ut.exec</jacoco.execFile>
@@ -420,6 +421,33 @@
                             <configOptions>
                                 <outputFile>openapi/openapi-datajob.yaml</outputFile>
                             </configOptions>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-resources-plugin</artifactId>
+                <version>${maven-resources-plugin.version}</version>
+                <executions>
+                    <execution>
+                        <id>copy-to-doc-folder</id>
+                        <phase>compile</phase>
+                        <goals>
+                            <goal>copy-resources</goal>
+                        </goals>
+                        <configuration>
+                            <outputDirectory>${project.basedir}/../docs/api/swagger</outputDirectory>
+                            <overwrite>true</overwrite>
+                            <resources>
+                                <resource>
+                                    <directory>${project.basedir}/target/generated-sources/openapi/openapi/</directory>
+                                    <includes>
+                                        <include>openapi.yaml</include>
+                                        <include>openapi-datajob.yaml</include>
+                                    </includes>
+                                </resource>
+                            </resources>
                         </configuration>
                     </execution>
                 </executions>
