@@ -46,6 +46,7 @@
         <maven.deploy.plugin.version>3.1.2</maven.deploy.plugin.version>
         <maven.surefire.plugin.version>3.3.1</maven.surefire.plugin.version>
         <openapi.generator.maven.plugin.version>6.6.0</openapi.generator.maven.plugin.version>
+        <sonar.version>4.0.0.4121</sonar.version>
         <spring.boot.maven.plugin.version>3.1.2</spring.boot.maven.plugin.version>
         <spotbugs.maven.plugin.version>4.4.2</spotbugs.maven.plugin.version>
         <maven-resources-plugin.version>3.3.1</maven-resources-plugin.version>
@@ -55,6 +56,7 @@
         <jacoco.minimum.coverage>0.98</jacoco.minimum.coverage>
         <jacoco.outputDirectory>${project.reporting.outputDirectory}/jacoco-ut</jacoco.outputDirectory>
         <jacoco.version>0.8.11</jacoco.version>
+        <sonar.coverage.jacoco.xmlReportPaths>${project.reporting.outputDirectory}/jacoco-ut/jacoco.xml</sonar.coverage.jacoco.xmlReportPaths>
 
         <!-- ONAP Nexus Repository Configuration -->
         <onap.nexus.url>https://nexus.onap.org</onap.nexus.url>
@@ -595,6 +597,12 @@
                         </configuration>
                     </execution>
                 </executions>
+            </plugin>
+            <!-- Sonar Plugin for Code Quality -->
+            <plugin>
+                <groupId>org.sonarsource.scanner.maven</groupId>
+                <artifactId>sonar-maven-plugin</artifactId>
+                <version>${sonar.version}</version>
             </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
