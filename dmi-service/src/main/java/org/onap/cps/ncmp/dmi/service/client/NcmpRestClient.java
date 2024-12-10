@@ -51,7 +51,7 @@ public class NcmpRestClient {
         final HttpHeaders httpHeaders = new HttpHeaders();
         httpHeaders.setBasicAuth(cpsProperties.getAuthUsername(), cpsProperties.getAuthPassword());
         httpHeaders.set(HttpHeaders.CONTENT_TYPE, MediaType.APPLICATION_JSON_VALUE);
-        final HttpEntity httpEntity = new HttpEntity<>(jsonData, httpHeaders);
+        final HttpEntity<String> httpEntity = new HttpEntity<>(jsonData, httpHeaders);
         return restTemplate.exchange(ncmpRegistrationUrl, HttpMethod.POST, httpEntity, String.class);
     }
 
