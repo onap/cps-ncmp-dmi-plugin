@@ -181,20 +181,14 @@ paths:
         name: resourceIdentifier
         required: true
         schema:
-          example: my-schema:my-node
+          example: NRCellDU/attributes/cellLocalId
           type: string
       - description: "options parameter in query, it is mandatory to wrap key(s)=value(s)\
           \ in parenthesis'()'."
         examples:
           sample1:
             value:
-              options: "(key1=value1,key2=value2)"
-          sample2:
-            value:
-              options: "(key1=value1,key2=value1/value2)"
-          sample3:
-            value:
-              options: "(key1=10,key2=value2,key3=val31,val32)"
+              options: (fields=NRCellDU/attributes/cellLocalId)
         in: query
         name: options
         required: false
@@ -345,7 +339,7 @@ components:
       name: resourceIdentifier
       required: true
       schema:
-        example: my-schema:my-node
+        example: NRCellDU/attributes/cellLocalId
         type: string
     optionsParamInQuery:
       description: "options parameter in query, it is mandatory to wrap key(s)=value(s)\
@@ -353,13 +347,7 @@ components:
       examples:
         sample1:
           value:
-            options: "(key1=value1,key2=value2)"
-        sample2:
-          value:
-            options: "(key1=value1,key2=value1/value2)"
-        sample3:
-          value:
-            options: "(key1=10,key2=value2,key3=val31,val32)"
+            options: (fields=NRCellDU/attributes/cellLocalId)
       in: query
       name: options
       required: false
@@ -649,9 +637,9 @@ components:
       type: object
     DataOperationRequest:
       example:
-        resourceIdentifier: some resource identifier
+        resourceIdentifier: NRCellDU/attributes/cellLocalId
         datastore: ncmp-datastore:passthrough-operational
-        options: some option
+        options: (fields=NRCellDU/attributes/cellLocalId)
         operationId: "12"
         cmHandles:
         - id: cmHandle123
@@ -678,10 +666,10 @@ components:
           example: ncmp-datastore:passthrough-operational
           type: string
         options:
-          example: some option
+          example: (fields=NRCellDU/attributes/cellLocalId)
           type: string
         resourceIdentifier:
-          example: some resource identifier
+          example: NRCellDU/attributes/cellLocalId
           type: string
         cmHandles:
           items:
