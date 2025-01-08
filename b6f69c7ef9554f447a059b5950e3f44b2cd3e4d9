@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "7a81b582_5ce00386",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 8063
+      },
+      "writtenOn": "2025-01-08T16:41:38Z",
+      "side": 1,
+      "message": "NB: Do you want to update openapi-datajob.yml too? Since there are some subJobId or dataProducerId have been given like my-sub-job-id and my-data-producer-identifier.",
+      "revId": "b6f69c7ef9554f447a059b5950e3f44b2cd3e4d9",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    }
+  ]
+}
