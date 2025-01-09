@@ -60,7 +60,6 @@ spelling_lang = "en_GB"
 intersphinx_mapping = {}
 
 intersphinx_mapping['onap-cps'] = ('{}/onap-cps/en/%s'.format(doc_url) % branch, None)
-intersphinx_mapping['onap-cps-cps-temporal'] = ('{}/onap-cps-cps-temporal/en/%s'.format(doc_url) % branch, None)
 
 linkcheck_ignore = [
     'http://localhost',
