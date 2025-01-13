@@ -69,10 +69,10 @@ components:
             example: 'ncmp-datastore:passthrough-operational'
           options:
             type: string
-            example: 'some option'
+            example: '(fields=NRCellDU/attributes/cellLocalId)'
           resourceIdentifier:
             type: string
-            example: 'some resource identifier'
+            example: 'NRCellDU/attributes/cellLocalId'
           cmHandles:
             type: array
             items:
@@ -257,7 +257,7 @@ components:
       required: true
       schema:
         type: string
-        example: my-schema:my-node
+        example: "NRCellDU/attributes/cellLocalId"
 
     optionsParamInQuery:
       name: options
@@ -269,13 +269,7 @@ components:
       examples:
         sample1:
           value:
-            options: (key1=value1,key2=value2)
-        sample2:
-          value:
-            options: (key1=value1,key2=value1/value2)
-        sample3:
-          value:
-            options: (key1=10,key2=value2,key3=val31,val32)
+            options: (fields=NRCellDU/attributes/cellLocalId)
 
     topicParamInQuery:
       name: topic
