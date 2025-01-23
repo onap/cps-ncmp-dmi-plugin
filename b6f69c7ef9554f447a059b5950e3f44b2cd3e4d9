@@ -16,6 +16,144 @@
       "message": "NB: Do you want to update openapi-datajob.yml too? Since there are some subJobId or dataProducerId have been given like my-sub-job-id and my-data-producer-identifier.",
       "revId": "b6f69c7ef9554f447a059b5950e3f44b2cd3e4d9",
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "68739889_5d8e05bf",
+        "filename": "dmi-service/openapi/components.yml",
+        "patchSetId": 1
+      },
+      "lineNbr": 72,
+      "author": {
+        "id": 8121
+      },
+      "writtenOn": "2025-01-23T15:04:42Z",
+      "side": 1,
+      "message": "same comment as the in the ncmp commit",
+      "range": {
+        "startLine": 72,
+        "startChar": 22,
+        "endLine": 72,
+        "endChar": 62
+      },
+      "revId": "b6f69c7ef9554f447a059b5950e3f44b2cd3e4d9",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "56f71a44_c875a7de",
+        "filename": "dmi-service/openapi/components.yml",
+        "patchSetId": 1
+      },
+      "lineNbr": 260,
+      "author": {
+        "id": 8121
+      },
+      "writtenOn": "2025-01-23T15:04:42Z",
+      "side": 1,
+      "message": "same",
+      "range": {
+        "startLine": 260,
+        "startChar": 18,
+        "endLine": 260,
+        "endChar": 50
+      },
+      "revId": "b6f69c7ef9554f447a059b5950e3f44b2cd3e4d9",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "3e525769_9150a4c2",
+        "filename": "docs/api/swagger/openapi.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 184,
+      "author": {
+        "id": 8121
+      },
+      "writtenOn": "2025-01-23T15:04:42Z",
+      "side": 1,
+      "message": "same",
+      "range": {
+        "startLine": 184,
+        "startChar": 19,
+        "endLine": 184,
+        "endChar": 50
+      },
+      "revId": "b6f69c7ef9554f447a059b5950e3f44b2cd3e4d9",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "db906030_e040a783",
+        "filename": "docs/api/swagger/openapi.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 342,
+      "author": {
+        "id": 8121
+      },
+      "writtenOn": "2025-01-23T15:04:42Z",
+      "side": 1,
+      "message": "same",
+      "range": {
+        "startLine": 342,
+        "startChar": 15,
+        "endLine": 342,
+        "endChar": 48
+      },
+      "revId": "b6f69c7ef9554f447a059b5950e3f44b2cd3e4d9",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "98fb4375_d122cdaf",
+        "filename": "docs/api/swagger/openapi.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 640,
+      "author": {
+        "id": 8121
+      },
+      "writtenOn": "2025-01-23T15:04:42Z",
+      "side": 1,
+      "message": "same",
+      "range": {
+        "startLine": 640,
+        "startChar": 0,
+        "endLine": 640,
+        "endChar": 5
+      },
+      "revId": "b6f69c7ef9554f447a059b5950e3f44b2cd3e4d9",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "32e41b82_767647dc",
+        "filename": "docs/api/swagger/openapi.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 672,
+      "author": {
+        "id": 8121
+      },
+      "writtenOn": "2025-01-23T15:04:42Z",
+      "side": 1,
+      "message": "same",
+      "range": {
+        "startLine": 672,
+        "startChar": 0,
+        "endLine": 672,
+        "endChar": 5
+      },
+      "revId": "b6f69c7ef9554f447a059b5950e3f44b2cd3e4d9",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
     }
   ],
   "submitRequirementResults": [
