@@ -69,7 +69,7 @@ components:
             example: 'ncmp-datastore:passthrough-operational'
           options:
             type: string
-            example: '(fields=NRCellDU/attributes/cellLocalId)'
+            example: '(ManagedElement=NRNode1/GNBDUFunction=1)'
           resourceIdentifier:
             type: string
             example: 'NRCellDU/attributes/cellLocalId'
@@ -257,7 +257,7 @@ components:
       required: true
       schema:
         type: string
-        example: "NRCellDU/attributes/cellLocalId"
+        example: "ManagedElement=NRNode1/GNBDUFunction=1/NRCellDU=cell1"
 
     optionsParamInQuery:
       name: options
