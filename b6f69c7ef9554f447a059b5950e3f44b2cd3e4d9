@@ -41,6 +41,30 @@
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "a39f83d1_94429860",
+        "filename": "dmi-service/openapi/components.yml",
+        "patchSetId": 1
+      },
+      "lineNbr": 72,
+      "author": {
+        "id": 7957
+      },
+      "writtenOn": "2025-01-27T14:52:24Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "68739889_5d8e05bf",
+      "range": {
+        "startLine": 72,
+        "startChar": 22,
+        "endLine": 72,
+        "endChar": 62
+      },
+      "revId": "b6f69c7ef9554f447a059b5950e3f44b2cd3e4d9",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "56f71a44_c875a7de",
@@ -54,6 +78,30 @@
       "writtenOn": "2025-01-23T15:04:42Z",
       "side": 1,
       "message": "same",
+      "range": {
+        "startLine": 260,
+        "startChar": 18,
+        "endLine": 260,
+        "endChar": 50
+      },
+      "revId": "b6f69c7ef9554f447a059b5950e3f44b2cd3e4d9",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "5f8a6a7d_817fd7b6",
+        "filename": "dmi-service/openapi/components.yml",
+        "patchSetId": 1
+      },
+      "lineNbr": 260,
+      "author": {
+        "id": 7957
+      },
+      "writtenOn": "2025-01-27T14:52:24Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "56f71a44_c875a7de",
       "range": {
         "startLine": 260,
         "startChar": 18,
@@ -87,6 +135,30 @@
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "7a3ee753_266971b6",
+        "filename": "docs/api/swagger/openapi.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 184,
+      "author": {
+        "id": 7957
+      },
+      "writtenOn": "2025-01-27T14:52:24Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "3e525769_9150a4c2",
+      "range": {
+        "startLine": 184,
+        "startChar": 19,
+        "endLine": 184,
+        "endChar": 50
+      },
+      "revId": "b6f69c7ef9554f447a059b5950e3f44b2cd3e4d9",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "db906030_e040a783",
@@ -110,6 +182,30 @@
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "9cbcde1f_deb06bb7",
+        "filename": "docs/api/swagger/openapi.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 342,
+      "author": {
+        "id": 7957
+      },
+      "writtenOn": "2025-01-27T14:52:24Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "db906030_e040a783",
+      "range": {
+        "startLine": 342,
+        "startChar": 15,
+        "endLine": 342,
+        "endChar": 48
+      },
+      "revId": "b6f69c7ef9554f447a059b5950e3f44b2cd3e4d9",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "98fb4375_d122cdaf",
@@ -123,6 +219,30 @@
       "writtenOn": "2025-01-23T15:04:42Z",
       "side": 1,
       "message": "same",
+      "range": {
+        "startLine": 640,
+        "startChar": 0,
+        "endLine": 640,
+        "endChar": 5
+      },
+      "revId": "b6f69c7ef9554f447a059b5950e3f44b2cd3e4d9",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "8008bf9a_b6ddcc6f",
+        "filename": "docs/api/swagger/openapi.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 640,
+      "author": {
+        "id": 7957
+      },
+      "writtenOn": "2025-01-27T14:52:24Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "98fb4375_d122cdaf",
       "range": {
         "startLine": 640,
         "startChar": 0,
