@@ -257,7 +257,7 @@ components:
       required: true
       schema:
         type: string
-        example: "NRCellDU/attributes/cellLocalId"
+        example: "ManagedElement=NRNode1/GNBDUFunction=1"
 
     optionsParamInQuery:
       name: options

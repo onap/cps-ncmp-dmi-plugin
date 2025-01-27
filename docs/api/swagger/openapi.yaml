@@ -181,7 +181,7 @@ paths:
         name: resourceIdentifier
         required: true
         schema:
-          example: NRCellDU/attributes/cellLocalId
+          example: "ManagedElement=NRNode1/GNBDUFunction=1"
           type: string
       - description: "options parameter in query, it is mandatory to wrap key(s)=value(s)\
           \ in parenthesis'()'."
@@ -339,7 +339,7 @@ components:
       name: resourceIdentifier
       required: true
       schema:
-        example: NRCellDU/attributes/cellLocalId
+        example: "ManagedElement=NRNode1/GNBDUFunction=1"
         type: string
     optionsParamInQuery:
       description: "options parameter in query, it is mandatory to wrap key(s)=value(s)\
@@ -637,9 +637,9 @@ components:
       type: object
     DataOperationRequest:
       example:
-        resourceIdentifier: NRCellDU/attributes/cellLocalId
+        resourceIdentifier: "ManagedElement=NRNode1/GNBDUFunction=1"
         datastore: ncmp-datastore:passthrough-operational
-        options: (fields=NRCellDU/attributes/cellLocalId)
+        options: "(fields=NRCellDU/attributes/cellLocalId)"
         operationId: "12"
         cmHandles:
         - id: cmHandle123
@@ -669,7 +669,7 @@ components:
           example: (fields=NRCellDU/attributes/cellLocalId)
           type: string
         resourceIdentifier:
-          example: NRCellDU/attributes/cellLocalId
+          example: "ManagedElement=NRNode1/GNBDUFunction=1"
           type: string
         cmHandles:
           items:
