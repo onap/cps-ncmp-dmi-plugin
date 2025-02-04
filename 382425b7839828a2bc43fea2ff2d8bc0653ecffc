@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "41c00fff_4f609167",
+        "filename": "docs/api/swagger/openapi.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 642,
+      "author": {
+        "id": 7931
+      },
+      "writtenOn": "2025-02-04T14:43:13Z",
+      "side": 1,
+      "message": "this remains same?",
+      "range": {
+        "startLine": 642,
+        "startChar": 17,
+        "endLine": 642,
+        "endChar": 59
+      },
+      "revId": "382425b7839828a2bc43fea2ff2d8bc0653ecffc",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    }
+  ]
+}
