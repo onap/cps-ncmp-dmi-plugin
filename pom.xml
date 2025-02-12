@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
   ============LICENSE_START=======================================================
-  Copyright (c) 2021-2024 Nordix Foundation.
+  Copyright (c) 2021-2025 Nordix Foundation.
   Modifications Copyright (C) 2021 Bell Canada.
   ================================================================================
   Licensed under the Apache License, Version 2.0 (the "License");
@@ -52,7 +52,7 @@
 
         <!-- Project Versioning and Timestamp -->
         <cps.groupId>org.onap.cps</cps.groupId>
-        <cps.version>3.5.5</cps.version>
+        <cps.version>3.6.0</cps.version>
         <maven.build.timestamp.format>yyyyMMdd'T'HHmmss'Z'</maven.build.timestamp.format>
 
         <!-- Code Quality and Dependency Management -->
