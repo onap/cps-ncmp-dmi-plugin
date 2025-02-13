@@ -24,6 +24,30 @@
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "a033eb22_2ece08c8",
+        "filename": "dmi-service/openapi/components.yml",
+        "patchSetId": 4
+      },
+      "lineNbr": 75,
+      "author": {
+        "id": 7957
+      },
+      "writtenOn": "2025-02-13T11:43:44Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "026fe0ca_c210d43d",
+      "range": {
+        "startLine": 75,
+        "startChar": 21,
+        "endLine": 75,
+        "endChar": 61
+      },
+      "revId": "e5eb27ddb22602819716e7ab77525e4675383856",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "b92b2398_060080c2",
@@ -37,6 +61,30 @@
       "writtenOn": "2025-02-12T15:44:30Z",
       "side": 1,
       "message": "\u0027/ManagedElement\u003dNRNode1/GNBDUFunction\u003d1\u0027",
+      "range": {
+        "startLine": 260,
+        "startChar": 17,
+        "endLine": 260,
+        "endChar": 57
+      },
+      "revId": "e5eb27ddb22602819716e7ab77525e4675383856",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "bf4d4494_3e66e177",
+        "filename": "dmi-service/openapi/components.yml",
+        "patchSetId": 4
+      },
+      "lineNbr": 260,
+      "author": {
+        "id": 7957
+      },
+      "writtenOn": "2025-02-13T11:43:44Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "b92b2398_060080c2",
       "range": {
         "startLine": 260,
         "startChar": 17,
