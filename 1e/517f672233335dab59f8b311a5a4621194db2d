@@ -1,0 +1,10 @@
+Verified+1: ONAP Bypass GHA <releng+onap.bypass.gha@linuxfoundation.org>
+Code-Review+2: Daniel Hanrahan <daniel.hanrahan@est.tech>
+Code-Review+1: Toine Siebelink <toine.siebelink@est.tech>
+Verified+1: ONAP Jobbuilder <onap-jobbuilder@jenkins.onap.org>
+Verified+1: ONAP Required GHA <releng+onap.required.gha@linuxfoundation.org>
+Submitted-by: Daniel Hanrahan <daniel.hanrahan@est.tech>
+Submitted-at: Fri, 14 Feb 2025 13:05:45 +0000
+Reviewed-on: https://gerrit.onap.org/r/c/cps/ncmp-dmi-plugin/+/140054
+Project: cps/ncmp-dmi-plugin
+Branch: refs/heads/master
