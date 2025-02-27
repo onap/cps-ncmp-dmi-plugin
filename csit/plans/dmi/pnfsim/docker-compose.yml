@@ -25,3 +25,18 @@ services:
     volumes:
       - ./netconf-config:/config/modules/stores
       - ./tls:/config/tls
+
+    healthcheck:
+       test: |
+         echo "Checking Netconf-PNP-Simulator health..."
+         if nc -z localhost 830; then
+           echo "✅ Netconf-PNP-Simulator is healthy!"
+           exit 0
+         else
+           echo "❌ Netconf-PNP-Simulator is not responding on port 830."
+           exit 1
+         fi
+       interval: 30s
+       timeout: 10s
+       retries: 20
+       start_period: 60s
