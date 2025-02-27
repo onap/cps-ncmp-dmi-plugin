@@ -62,6 +62,26 @@ services:
       - ./certs/certs.properties:/opt/opendaylight/certs/certs.properties
       - ./certs/keys0.zip:/opt/opendaylight/certs/keys0.zip
 
+
+    healthcheck:
+      test: |
+        response=$(curl --write-out '%{http_code}' --silent --output /dev/null \
+          -H "Authorization: Basic YWRtaW46S3A4Yko0U1hzek0wV1hsaGFrM2VIbGNzZTJnQXc4NHZhb0dHbUp2VXkyVQ==" \
+          -X POST -H "X-FromAppId: csit-sdnc" -H "X-TransactionId: csit-sdnc" \
+          -H "Accept: application/json" -H "Content-Type: application/json" \
+          http://localhost:8181/restconf/operations/SLI-API:healthcheck);
+        if [ "$response" == "200" ]; then
+          echo "✅ SDNC is healthy!"
+          exit 0
+        else
+          echo "❌ SDNC is not responding! Health check failed."
+          exit 1
+        fi
+      interval: 30s
+      timeout: 10s
+      retries: 20
+      start_period: 60s
+
     dns:
       - ${DNS_IP_ADDR-10.0.100.1}
     logging:
