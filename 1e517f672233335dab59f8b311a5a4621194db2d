@@ -22,6 +22,30 @@
       },
       "revId": "1e517f672233335dab59f8b311a5a4621194db2d",
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "4de8b9cd_a08b0917",
+        "filename": "dmi-stub/dmi-stub-service/src/main/resources/application.yml",
+        "patchSetId": 1
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 8063
+      },
+      "writtenOn": "2025-03-18T11:42:26Z",
+      "side": 0,
+      "message": "We can not track the history since the code moved from cps repo. I talked to Sourabh to see if he remember but unfortunately none of us remember why the property introduced.",
+      "parentUuid": "6c5ced06_fae9fc4d",
+      "range": {
+        "startLine": 20,
+        "startChar": 4,
+        "endLine": 22,
+        "endChar": 19
+      },
+      "revId": "1e517f672233335dab59f8b311a5a4621194db2d",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
     }
   ]
 }
