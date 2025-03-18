@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "6c5ced06_fae9fc4d",
+        "filename": "dmi-stub/dmi-stub-service/src/main/resources/application.yml",
+        "patchSetId": 1
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 7965
+      },
+      "writtenOn": "2025-03-18T11:24:56Z",
+      "side": 0,
+      "message": "why was it introduced for the first place then. Anybody recalls this ??",
+      "range": {
+        "startLine": 20,
+        "startChar": 4,
+        "endLine": 22,
+        "endChar": 19
+      },
+      "revId": "1e517f672233335dab59f8b311a5a4621194db2d",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    }
+  ]
+}
