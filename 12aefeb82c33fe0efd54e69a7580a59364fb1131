@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "ce0f6283_426b1347",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2025-04-09T12:54:41Z",
+      "side": 1,
+      "message": "as per the related commit, we need to block this until the legal issues are sorted",
+      "revId": "12aefeb82c33fe0efd54e69a7580a59364fb1131",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    }
+  ]
+}
