@@ -41,14 +41,13 @@
         <checkstyle.config.location>${project.basedir}</checkstyle.config.location>
 
         <!-- Global properties for version management -->
-        <bug.pattern.version>1.5.0</bug.pattern.version>
         <gmavenplus.plugin.version>4.0.1</gmavenplus.plugin.version>
         <maven.deploy.plugin.version>3.1.2</maven.deploy.plugin.version>
         <maven.surefire.plugin.version>3.3.1</maven.surefire.plugin.version>
         <openapi.generator.maven.plugin.version>6.6.0</openapi.generator.maven.plugin.version>
         <sonar.version>4.0.0.4121</sonar.version>
-        <spring.boot.maven.plugin.version>3.4.1</spring.boot.maven.plugin.version>
-        <spotbugs.maven.plugin.version>4.4.2</spotbugs.maven.plugin.version>
+        <spring.boot.maven.plugin.version>3.4.4</spring.boot.maven.plugin.version>
+        <spotbugs.maven.plugin.version>4.7.3.0</spotbugs.maven.plugin.version>
         <maven-resources-plugin.version>3.3.1</maven-resources-plugin.version>
 
         <!-- Code Coverage Configuration -->
@@ -69,7 +68,7 @@
             <dependency>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-dependencies</artifactId>
-                <version>3.4.1</version>
+                <version>${spring.boot.maven.plugin.version}</version>
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
@@ -118,7 +117,7 @@
             <dependency>
                 <groupId>net.minidev</groupId>
                 <artifactId>json-smart</artifactId>
-                <version>2.5.0</version>
+                <version>2.5.2</version>
             </dependency>
             <dependency>
                 <groupId>org.apache.httpcomponents</groupId>
@@ -370,6 +369,7 @@
                                 <useSpringBoot3>true</useSpringBoot3>
                                 <openApiNullable>false</openApiNullable>
                                 <skipDefaultInterface>true</skipDefaultInterface>
+                                <serializableModel>true</serializableModel>
                             </configOptions>
                         </configuration>
                     </execution>
@@ -394,6 +394,7 @@
                                 <useSpringBoot3>true</useSpringBoot3>
                                 <openApiNullable>false</openApiNullable>
                                 <skipDefaultInterface>true</skipDefaultInterface>
+                                <serializableModel>true</serializableModel>
                             </configOptions>
                         </configuration>
                     </execution>
@@ -523,18 +524,11 @@
                     </dependency>
                 </dependencies>
                 <configuration>
-                    <plugins>
-                        <plugin>
-                            <groupId>jp.skypencil.findbugs.slf4j</groupId>
-                            <artifactId>bug-pattern</artifactId>
-                            <version>${bug.pattern.version}</version>
-                        </plugin>
-                    </plugins>
                     <effort>Max</effort>
                     <threshold>Low</threshold>
                     <failOnError>true</failOnError>
                     <excludeFilterFile>spotbugs-exclude.xml</excludeFilterFile>
-                    <addSourceDirs>true</addSourceDirs>
+                    <addSources>true</addSources>
                     <xmlOutput>true</xmlOutput>
                     <xmlOutputDirectory>${basedir}/target/spotbugs</xmlOutputDirectory>
                 </configuration>
