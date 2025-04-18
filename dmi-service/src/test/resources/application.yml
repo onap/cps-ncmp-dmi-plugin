@@ -74,6 +74,11 @@ app:
   ncmp:
     async:
       topic: ${NCMP_ASYNC_M2M_TOPIC:ncmp-async-m2m}
+  dmi:
+    ves:
+      topics:
+        - "unauthenticated.VES_PNFREG_OUTPUT"
+        - "unauthenticated.VES_O1_NOTIFY_PNF_REGISTRATION_OUTPUT"
 
 logging:
   format: json

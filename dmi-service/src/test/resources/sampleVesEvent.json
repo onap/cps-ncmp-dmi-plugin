@@ -1,0 +1,52 @@
+{
+  "event": {
+    "commonEventHeader": {
+      "sourceId": "ManagementElement=pynts-o-du-o1",
+      "startEpochMicrosec": 1742470240133788,
+      "eventId": "ManagedElement=pynts-o-du-o1_pnfRegistration",
+      "timeZoneOffset": "+00:00",
+      "reportingEntityId": "",
+      "internalHeaderFields": {
+        "collectorTimeStamp": "Thu, 03 20 2025 11:30:40 GMT"
+      },
+      "eventType": "PyNTS_pnfRegistration",
+      "priority": "Low",
+      "version": "4.1",
+      "nfVendorName": "pynts",
+      "reportingEntityName": "ManagementElement=pynts-o-du-o1",
+      "sequence": 0,
+      "domain": "pnfRegistration",
+      "lastEpochMicrosec": 1742470240133788,
+      "eventName": "pnfRegistration_PyNTS_pnfRegistration",
+      "vesEventListenerVersion": "7.2.1",
+      "sourceName": "pynts-o-du-o1",
+      "nfNamingCode": "001"
+    },
+    "pnfRegistrationFields": {
+      "unitType": "o-du-o1",
+      "macAddress": "36:e9:09:e9:28:36",
+      "serialNumber": "pynts-o-du-o1-172.20.0.5-pynts",
+      "additionalFields": {
+        "protocol": "TLS",
+        "oamPort": "6513",
+        "betweenAttemptsTimeout": "2000",
+        "keepaliveDelay": "120",
+        "sleep-factor": "1.5",
+        "reconnectOnChangedSchema": "false",
+        "keyId": "tls-endpoint",
+        "connectionTimeout": "20000",
+        "maxConnectionAttempts": "100",
+        "tcpOnly": "false",
+        "username": "netconf"
+      },
+      "pnfRegistrationFieldsVersion": "2.1",
+      "manufactureDate": "2021-01-16",
+      "modelNumber": "pynts",
+      "lastServiceDate": "2021-03-26",
+      "unitFamily": "pynts-o-du-o1",
+      "vendorName": "pynts",
+      "oamV4IpAddress": "172.20.0.5",
+      "softwareVersion": "2.3.5"
+    }
+  }
+}

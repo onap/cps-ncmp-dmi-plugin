@@ -74,6 +74,10 @@ app:
     avc:
       cm-subscription-dmi-in: ${CM_SUBSCRIPTION_DMI_IN_TOPIC:ncmp-dmi-cm-avc-subscription}
       cm-subscription-dmi-out: ${CM_SUBSCRIPTION_DMI_OUT_TOPIC:dmi-ncmp-cm-avc-subscription}
+    ves:
+      topics:
+        - "unauthenticated.VES_PNFREG_OUTPUT"
+        - "unauthenticated.VES_O1_NOTIFY_PNF_REGISTRATION_OUTPUT"
 
 notification:
   async:
