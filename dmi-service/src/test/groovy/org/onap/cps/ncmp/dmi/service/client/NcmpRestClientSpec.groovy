@@ -1,6 +1,6 @@
 /*
  *  ============LICENSE_START=======================================================
- *  Copyright (C) 2021-2022 Nordix Foundation
+ *  Copyright (C) 2021-2025 OpenInfra Foundation Europe. All rights reserved.
  *  ================================================================================
  *  Licensed under the Apache License, Version 2.0 (the "License");
  *  you may not use this file except in compliance with the License.
@@ -42,16 +42,30 @@ class NcmpRestClientSpec extends Specification {
         and: 'configuration data'
             mockCpsProperties.baseUrl >> 'http://some-uri'
             mockCpsProperties.dmiRegistrationUrl >> 'some-url'
-            mockCpsProperties.authUsername >> 'some-username'
-            mockCpsProperties.authPassword >> 'some-password'
         and: 'the rest template returns a valid response entity'
-            def mockResponseEntity = Mock(ResponseEntity)
+            def mockResponseEntityFromRestTemplate = Mock(ResponseEntity)
         when: 'registering a cm handle'
             def result = objectUnderTest.registerCmHandlesWithNcmp(someRequestData)
         then: 'the rest template is called with the correct uri and original request data in the body'
             1 * mockRestTemplate.exchange({ it.toString() == 'http://some-uri/some-url' },
-                    HttpMethod.POST, { it.body.contains(someRequestData) }, String.class) >> mockResponseEntity
+                    HttpMethod.POST, { it.body.contains(someRequestData) }, String.class) >> mockResponseEntityFromRestTemplate
         and: 'the output of the method is equal to the output from the rest template service'
-            result == mockResponseEntity
+            result == mockResponseEntityFromRestTemplate
+    }
+
+    def 'Enable data sync for a cm handle identifier.'() {
+        given: 'some cm handle id'
+            def someCmHandleId = 'some-cm-handle-id'
+        and: 'configuring the url to enable data sync'
+            mockCpsProperties.baseUrl >> 'http://my-base-uri'
+            mockCpsProperties.dataSyncEnabledUrl >> 'datasync-url/{test-parameter}/data-sync?dataSyncEnabled=true'
+        and: 'the rest template configured to return a response entity'
+            def mockResponseEntityFromRestTemplate = Mock(ResponseEntity)
+            mockRestTemplate.exchange({ it.toString() == 'http://my-base-uri/datasync-url/some-cm-handle-id/data-sync?dataSyncEnabled=true' },
+                HttpMethod.PUT, _, String.class) >> mockResponseEntityFromRestTemplate
+        when: 'enabling the NCMP data sync flag'
+            def result = objectUnderTest.enableNcmpDataSync(someCmHandleId)
+        then: 'the output of the method is equal to the output from the rest template service'
+            assert result == mockResponseEntityFromRestTemplate
     }
 }
