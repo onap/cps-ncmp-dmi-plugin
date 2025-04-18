@@ -1,6 +1,6 @@
 /*
  *  ============LICENSE_START=======================================================
- *  Copyright (C) 2021-2025 Nordix Foundation
+ *  Copyright (C) 2021-2025 OpenInfra Foundation Europe. All rights reserved.
  *  ================================================================================
  *  Licensed under the Apache License, Version 2.0 (the "License");
  *  you may not use this file except in compliance with the License.
@@ -20,6 +20,7 @@
 
 package org.onap.cps.ncmp.dmi.service.client;
 
+import lombok.extern.slf4j.Slf4j;
 import org.onap.cps.ncmp.dmi.config.DmiConfiguration.CpsProperties;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpHeaders;
@@ -30,6 +31,7 @@ import org.springframework.stereotype.Component;
 import org.springframework.web.client.RestTemplate;
 import org.springframework.web.util.UriComponentsBuilder;
 
+@Slf4j
 @Component
 public class NcmpRestClient {
 
@@ -55,10 +57,33 @@ public class NcmpRestClient {
         return restTemplate.exchange(ncmpRegistrationUrl, HttpMethod.POST, httpEntity, String.class);
     }
 
+    /**
+     * Register a cmHandle with NCMP using a HTTP call.
+     *
+     * @param cmHandleId cm handle identifier
+     * @return the response entity
+     */
+    public ResponseEntity<String> enabledDataSyncFlagWithNcmp(final String cmHandleId) {
+        final String ncmpDataSyncEnabledUrl = buildDataSyncEnabledUrl(cmHandleId);
+        final HttpHeaders httpHeaders = new HttpHeaders();
+        httpHeaders.set(HttpHeaders.CONTENT_TYPE, MediaType.APPLICATION_JSON_VALUE);
+        final HttpEntity<String> httpEntity = new HttpEntity<>(httpHeaders);
+        return restTemplate.exchange(ncmpDataSyncEnabledUrl, HttpMethod.PUT, httpEntity, String.class);
+    }
+
     private String buildNcmpRegistrationUrl() {
         return UriComponentsBuilder
             .fromUriString(cpsProperties.getBaseUrl())
             .path(cpsProperties.getDmiRegistrationUrl())
             .toUriString();
+    }
+
+    private String buildDataSyncEnabledUrl(final String cmHandleId) {
+        final String dataSyncEnabledUrl = UriComponentsBuilder.fromUriString(cpsProperties.getBaseUrl())
+                                                  .path(cpsProperties.getDataSyncEnabledUrl())
+                                                  .buildAndExpand(cmHandleId)
+                                                  .toUriString();
+        log.debug("dataSyncEnabledUrl : {}", dataSyncEnabledUrl);
+        return dataSyncEnabledUrl;
     }
 }
