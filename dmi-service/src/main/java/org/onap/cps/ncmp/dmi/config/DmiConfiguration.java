@@ -1,6 +1,6 @@
 /*
  * ============LICENSE_START=======================================================
- *  Copyright (C) 2021 Nordix Foundation
+ *  Copyright (C) 2021-2025 OpenInfra Foundation Europe. All rights reserved.
  *  ================================================================================
  *  Licensed under the Apache License, Version 2.0 (the "License");
  *  you may not use this file except in compliance with the License.
@@ -45,6 +45,8 @@ public class DmiConfiguration {
         private String baseUrl;
         @Value("${cps-core.dmiRegistrationUrl}")
         private String dmiRegistrationUrl;
+        @Value("${cps-core.dataSyncEnabledUrl}")
+        private String dataSyncEnabledUrl;
         @Value("${cps-core.auth.username}")
         private String authUsername;
         @Value("${cps-core.auth.password}")

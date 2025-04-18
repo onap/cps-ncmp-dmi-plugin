@@ -42,6 +42,7 @@ class DmiConfigurationSpec extends Specification {
             cpsProperties.dmiRegistrationUrl == 'some registration url'
             cpsProperties.authUsername == 'some cps core user'
             cpsProperties.authPassword == 'some cps core password'
+            cpsProperties.dataSyncEnabledUrl == 'some data sync url'
     }
 
     def 'SDNC properties configuration.'() {
