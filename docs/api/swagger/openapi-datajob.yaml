@@ -301,27 +301,6 @@ components:
     CmHandleProperties:
       description: Private properties of the cm handle for the given path
       type: object
-    Resource:
-      properties:
-        id:
-          description: Identifier of the resource object
-          example: resource-identifier
-          type: string
-        attributes:
-          additionalProperties:
-            example: "userLabel: label11"
-            type: string
-          description: Key value map representing the objects class attributes and
-            values
-          type: object
-      type: object
-    ActionParameters:
-      additionalProperties:
-        type: string
-      description: The input of the action in the form of key value pairs
-      type: object
-    Object:
-      type: object
     SubjobWriteResponse:
       properties:
         subJobId:
@@ -395,14 +374,6 @@ components:
       - op
       - path
       type: object
-    SubjobWriteRequest_data_inner_value:
-      description: Value dependent on the op specified. Resource for an add. Object
-        for a replace. ActionParameters for an action.
-      oneOf:
-      - $ref: '#/components/schemas/Resource'
-      - $ref: '#/components/schemas/ActionParameters'
-      - $ref: '#/components/schemas/Object'
-      type: object
     SubjobWriteRequest_data_inner:
       properties:
         path:
@@ -425,7 +396,10 @@ components:
           description: Private properties of the cm handle for the given path
           type: object
         value:
-          $ref: '#/components/schemas/SubjobWriteRequest_data_inner_value'
+          additionalProperties: true
+          description: Value dependent on the op specified. Resource for an add. Object
+            for a replace. ActionParameters for an action.
+          type: object
       required:
       - op
       - path
