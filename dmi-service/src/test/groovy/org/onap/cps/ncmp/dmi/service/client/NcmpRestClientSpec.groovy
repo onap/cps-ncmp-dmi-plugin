@@ -54,4 +54,21 @@ class NcmpRestClientSpec extends Specification {
         and: 'the output of the method is equal to the output from the rest template service'
             result == mockResponseEntity
     }
+
+    def 'Enable data sync for a cm handle identifier.'() {
+        given: 'some cm handle id'
+            def someCmHandleId = 'some-cm-handle-id'
+        and: 'configuration data'
+            mockCpsProperties.baseUrl >> 'http://some-uri'
+            mockCpsProperties.dataSyncEnabledUrl >> 'datasync-url'
+        and: 'the rest template returns a valid response entity'
+            def mockResponseEntity = Mock(ResponseEntity)
+        when: 'registering a cm handle'
+            def result = objectUnderTest.enabledDataSyncFlagWithNcmp(someCmHandleId)
+        then: 'the rest template is called with the correct uri and original request data in the body'
+            1 * mockRestTemplate.exchange({ it.toString() == 'http://some-uri/datasync-url/some-cm-handle-id/data-sync?dataSyncEnabled=true' },
+                HttpMethod.PUT, _, String.class) >> mockResponseEntity
+        and: 'the output of the method is equal to the output from the rest template service'
+            assert result == mockResponseEntity
+    }
 }
