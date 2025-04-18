@@ -1,5 +1,5 @@
 #  ============LICENSE_START=======================================================
-#  Copyright (C) 2021-2024 Nordix Foundation
+#  Copyright (C) 2021-2025 OpenInfra Foundation Europe. All rights reserved.
 #  Modifications Copyright (C) 2021 Bell Canada.
 #  ================================================================================
 #  Licensed under the Apache License, Version 2.0 (the "License");
@@ -70,6 +70,8 @@ app:
   ncmp:
     async:
       topic: ${NCMP_ASYNC_M2M_TOPIC:ncmp-async-m2m}
+    lcm:
+      topic: ${LCM_EVENTS_TOPIC:ncmp-events}
   dmi:
     avc:
       cm-subscription-dmi-in: ${CM_SUBSCRIPTION_DMI_IN_TOPIC:ncmp-dmi-cm-avc-subscription}
@@ -102,6 +104,7 @@ management:
 cps-core:
   baseUrl: http://${CPS_CORE_HOST}:${CPS_CORE_PORT}
   dmiRegistrationUrl : /ncmpInventory/v1/ch
+  dataSyncEnabledUrl: /ncmp/v1/ch
   auth:
     username: ${CPS_CORE_USERNAME}
     password: ${CPS_CORE_PASSWORD}
