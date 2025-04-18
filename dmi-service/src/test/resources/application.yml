@@ -36,6 +36,7 @@ sdnc:
 cps-core:
   baseUrl: some url for cps
   dmiRegistrationUrl: some registration url
+  dataSyncEnabledUrl: some data sync url
   auth:
     username: some cps core user
     password: some cps core password
