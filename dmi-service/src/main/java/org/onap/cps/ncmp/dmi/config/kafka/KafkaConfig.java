@@ -1,6 +1,6 @@
 /*
  * ============LICENSE_START=======================================================
- * Copyright (C) 2023 Nordix Foundation
+ * Copyright (C) 2023-2025 OpenInfra Foundation Europe. All rights reserved.
  * ================================================================================
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -21,6 +21,7 @@
 package org.onap.cps.ncmp.dmi.config.kafka;
 
 import io.cloudevents.CloudEvent;
+import java.time.Duration;
 import java.util.Map;
 import lombok.RequiredArgsConstructor;
 import org.apache.kafka.clients.producer.ProducerConfig;
@@ -132,11 +133,27 @@ public class KafkaConfig<T> {
      */
     @Bean
     public ConcurrentKafkaListenerContainerFactory<String, CloudEvent>
-        cloudEventConcurrentKafkaListenerContainerFactory() {
-        final ConcurrentKafkaListenerContainerFactory<String, CloudEvent> containerFactory =
-            new ConcurrentKafkaListenerContainerFactory<>();
-        containerFactory.setConsumerFactory(cloudEventConsumerFactory());
-        return containerFactory;
+                            cloudEventConcurrentKafkaListenerContainerFactory() {
+        final ConcurrentKafkaListenerContainerFactory<String, CloudEvent> concurrentKafkaListenerContainerFactory =
+                new ConcurrentKafkaListenerContainerFactory<>();
+        concurrentKafkaListenerContainerFactory.setConsumerFactory(cloudEventConsumerFactory());
+        return concurrentKafkaListenerContainerFactory;
+    }
+
+    /**
+     * A legacy concurrent kafka listener container factory.
+     *
+     * @return instance of Concurrent kafka listener factory
+     */
+    @Bean
+    @Primary
+    public ConcurrentKafkaListenerContainerFactory<String, T> legacyEventConcurrentKafkaListenerContainerFactory() {
+        final ConcurrentKafkaListenerContainerFactory<String, T> concurrentKafkaListenerContainerFactory =
+                new ConcurrentKafkaListenerContainerFactory<>();
+        concurrentKafkaListenerContainerFactory.setConsumerFactory(legacyEventConsumerFactory());
+        concurrentKafkaListenerContainerFactory.getContainerProperties()
+                .setAuthExceptionRetryInterval(Duration.ofSeconds(10));
+        return concurrentKafkaListenerContainerFactory;
     }
 
 }
