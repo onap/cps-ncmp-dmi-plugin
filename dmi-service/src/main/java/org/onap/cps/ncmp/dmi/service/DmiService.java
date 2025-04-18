@@ -1,6 +1,6 @@
 /*
  *  ============LICENSE_START=======================================================
- *  Copyright (C) 2021-2023 Nordix Foundation
+ *  Copyright (C) 2021-2025 OpenInfra Foundation Europe. All rights reserved.
  *  Modifications Copyright (C) 2022 Bell Canada
  *  ================================================================================
  *  Licensed under the Apache License, Version 2.0 (the "License");
@@ -55,6 +55,15 @@ public interface DmiService {
      * @param cmHandles list of cm-handles
      */
     void registerCmHandles(List<String> cmHandles);
+
+    /**
+     * This method is used to enable data synchronization for
+     * the given {@code CmHandles}.
+     *
+     * @param cmHandles list of cm-handles
+     */
+    void enableDataSyncForCmHandles(List<String> cmHandles);
+
 
     /**
      * Get module resources for the given cm handle and modules.

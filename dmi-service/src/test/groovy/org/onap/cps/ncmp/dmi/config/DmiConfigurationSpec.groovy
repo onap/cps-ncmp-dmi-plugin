@@ -1,6 +1,6 @@
 /*
  *  ============LICENSE_START=======================================================
- *  Copyright (C) 2021 Nordix Foundation
+ *  Copyright (C) 2021-2025 OpenInfra Foundation Europe. All rights reserved.
  *  ================================================================================
  *  Licensed under the Apache License, Version 2.0 (the "License");
  *  you may not use this file except in compliance with the License.
@@ -42,6 +42,7 @@ class DmiConfigurationSpec extends Specification {
             cpsProperties.dmiRegistrationUrl == 'some registration url'
             cpsProperties.authUsername == 'some cps core user'
             cpsProperties.authPassword == 'some cps core password'
+            cpsProperties.dataSyncEnabledUrl == 'some data sync url/{some-cm-handle}?dataSyncFlag=true'
     }
 
     def 'SDNC properties configuration.'() {

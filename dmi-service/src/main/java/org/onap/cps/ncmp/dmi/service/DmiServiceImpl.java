@@ -1,6 +1,6 @@
 /*
  *  ============LICENSE_START=======================================================
- *  Copyright (C) 2021-2023 Nordix Foundation
+ *  Copyright (C) 2021-2025 OpenInfra Foundation Europe. All rights reserved.
  *  Modifications Copyright (C) 2021-2022 Bell Canada
  *  ================================================================================
  *  Licensed under the Apache License, Version 2.0 (the "License");
@@ -135,6 +135,12 @@ public class DmiServiceImpl implements DmiService {
         if (!responseEntity.getStatusCode().is2xxSuccessful()) {
             throw new CmHandleRegistrationException(responseEntity.getBody());
         }
+    }
+
+    @Override
+    public void enableDataSyncForCmHandles(final List<String> cmHandles) {
+        log.info("Enabling dataSync flag for : {}", cmHandles);
+        cmHandles.forEach(cmHandleId -> ncmpRestClient.enableDataSyncFlagWithNcmp(cmHandleId));
     }
 
     private ModuleSetSchemasInner toModuleSetSchemas(final ModuleSchema moduleSchema) {
