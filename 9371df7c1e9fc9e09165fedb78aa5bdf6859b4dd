@@ -1,0 +1,67 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "d249259a_1687e059",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 7931
+      },
+      "writtenOn": "2025-05-01T12:13:54Z",
+      "side": 1,
+      "message": "looks good overall",
+      "revId": "9371df7c1e9fc9e09165fedb78aa5bdf6859b4dd",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "7eac02ac_63ca0a3a",
+        "filename": "dmi-service/src/main/java/org/onap/cps/ncmp/dmi/cmstack/ves/VesEventConsumer.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 7931
+      },
+      "writtenOn": "2025-05-01T12:13:54Z",
+      "side": 1,
+      "message": "stream?",
+      "range": {
+        "startLine": 42,
+        "startChar": 39,
+        "endLine": 42,
+        "endChar": 45
+      },
+      "revId": "9371df7c1e9fc9e09165fedb78aa5bdf6859b4dd",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "69dcdde3_abe7cf9e",
+        "filename": "docs/api/swagger/openapi-datajob.yaml",
+        "patchSetId": 3
+      },
+      "lineNbr": 400,
+      "author": {
+        "id": 7931
+      },
+      "writtenOn": "2025-05-01T12:13:54Z",
+      "side": 1,
+      "message": "operation (op)",
+      "range": {
+        "startLine": 400,
+        "startChar": 45,
+        "endLine": 400,
+        "endChar": 49
+      },
+      "revId": "9371df7c1e9fc9e09165fedb78aa5bdf6859b4dd",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    }
+  ]
+}
