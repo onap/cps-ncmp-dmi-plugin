@@ -100,6 +100,24 @@
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "009e8e49_d44e76ff",
+        "filename": "dmi-service/src/main/java/org/onap/cps/ncmp/dmi/cmstack/ves/VesEventConsumer.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 49,
+      "author": {
+        "id": 4893
+      },
+      "writtenOn": "2025-05-01T12:48:25Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "8323b86e_b21f3565",
+      "revId": "9371df7c1e9fc9e09165fedb78aa5bdf6859b4dd",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "e9c6b6ff_61a5cb42",
@@ -169,6 +187,24 @@
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "52319054_f6170d24",
+        "filename": "dmi-service/src/test/groovy/org/onap/cps/ncmp/dmi/cmstack/ves/VesEventConsumerSpec.groovy",
+        "patchSetId": 3
+      },
+      "lineNbr": 82,
+      "author": {
+        "id": 4893
+      },
+      "writtenOn": "2025-05-01T12:48:25Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "fd05eade_de31d950",
+      "revId": "9371df7c1e9fc9e09165fedb78aa5bdf6859b4dd",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "54aba984_e8ed0f9c",
@@ -223,6 +259,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "27d7593e_cf9ff4c8",
+        "filename": "dmi-service/src/test/groovy/org/onap/cps/ncmp/dmi/cmstack/ves/VesEventConsumerSpec.groovy",
+        "patchSetId": 3
+      },
+      "lineNbr": 92,
+      "author": {
+        "id": 4893
+      },
+      "writtenOn": "2025-05-01T12:48:25Z",
+      "side": 1,
+      "message": "spelling mistake, needs 2 r\u0027s",
+      "parentUuid": "d00efb1e_578f3c91",
+      "revId": "9371df7c1e9fc9e09165fedb78aa5bdf6859b4dd",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "a1a165f3_aa4c142c",
         "filename": "dmi-service/src/test/groovy/org/onap/cps/ncmp/dmi/cmstack/ves/VesEventConsumerSpec.groovy",
         "patchSetId": 3
@@ -252,6 +306,24 @@
       "side": 1,
       "message": "yes.",
       "parentUuid": "a1a165f3_aa4c142c",
+      "revId": "9371df7c1e9fc9e09165fedb78aa5bdf6859b4dd",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "f09969bf_8565540c",
+        "filename": "dmi-service/src/test/groovy/org/onap/cps/ncmp/dmi/cmstack/ves/VesEventConsumerSpec.groovy",
+        "patchSetId": 3
+      },
+      "lineNbr": 96,
+      "author": {
+        "id": 4893
+      },
+      "writtenOn": "2025-05-01T12:48:25Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "a0bbae71_b4ac875a",
       "revId": "9371df7c1e9fc9e09165fedb78aa5bdf6859b4dd",
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
     },
