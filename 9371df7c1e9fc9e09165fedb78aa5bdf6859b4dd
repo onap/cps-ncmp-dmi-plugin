@@ -43,6 +43,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "28d94ffa_820254e4",
+        "filename": "dmi-service/src/main/java/org/onap/cps/ncmp/dmi/cmstack/ves/VesEventConsumer.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 7965
+      },
+      "writtenOn": "2025-05-01T12:20:07Z",
+      "side": 1,
+      "message": "yes. ves -\u003e virtual network function event stream 😊",
+      "parentUuid": "7eac02ac_63ca0a3a",
+      "range": {
+        "startLine": 42,
+        "startChar": 39,
+        "endLine": 42,
+        "endChar": 45
+      },
+      "revId": "9371df7c1e9fc9e09165fedb78aa5bdf6859b4dd",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "69dcdde3_abe7cf9e",
         "filename": "docs/api/swagger/openapi-datajob.yaml",
         "patchSetId": 3
@@ -54,6 +78,30 @@
       "writtenOn": "2025-05-01T12:13:54Z",
       "side": 1,
       "message": "operation (op)",
+      "range": {
+        "startLine": 400,
+        "startChar": 45,
+        "endLine": 400,
+        "endChar": 49
+      },
+      "revId": "9371df7c1e9fc9e09165fedb78aa5bdf6859b4dd",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "4bf87744_fd5b84a8",
+        "filename": "docs/api/swagger/openapi-datajob.yaml",
+        "patchSetId": 3
+      },
+      "lineNbr": 400,
+      "author": {
+        "id": 7965
+      },
+      "writtenOn": "2025-05-01T12:20:07Z",
+      "side": 1,
+      "message": "this is just the copy that is generated with the change that was last merged by sourabh.",
+      "parentUuid": "69dcdde3_abe7cf9e",
       "range": {
         "startLine": 400,
         "startChar": 45,
