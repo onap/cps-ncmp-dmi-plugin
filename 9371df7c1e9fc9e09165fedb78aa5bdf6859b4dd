@@ -84,6 +84,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "8323b86e_b21f3565",
+        "filename": "dmi-service/src/main/java/org/onap/cps/ncmp/dmi/cmstack/ves/VesEventConsumer.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 49,
+      "author": {
+        "id": 7965
+      },
+      "writtenOn": "2025-05-01T12:46:46Z",
+      "side": 1,
+      "message": "not needed as its a mandatory field as per the schema definition.\nreference : https://docs.onap.org/projects/onap-vnfrqts-requirements/en/latest/Chapter8/ves_7_2/ves_event_listener_7_2.html#common-event-datatypes",
+      "parentUuid": "ae659915_d0373aae",
+      "revId": "9371df7c1e9fc9e09165fedb78aa5bdf6859b4dd",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "e9c6b6ff_61a5cb42",
         "filename": "dmi-service/src/main/java/org/onap/cps/ncmp/dmi/cmstack/ves/VesEventConsumer.java",
         "patchSetId": 3
@@ -135,6 +153,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "fd05eade_de31d950",
+        "filename": "dmi-service/src/test/groovy/org/onap/cps/ncmp/dmi/cmstack/ves/VesEventConsumerSpec.groovy",
+        "patchSetId": 3
+      },
+      "lineNbr": 82,
+      "author": {
+        "id": 7965
+      },
+      "writtenOn": "2025-05-01T12:46:46Z",
+      "side": 1,
+      "message": "yes. as per the code.",
+      "parentUuid": "0c303f05_9de7105b",
+      "revId": "9371df7c1e9fc9e09165fedb78aa5bdf6859b4dd",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "54aba984_e8ed0f9c",
         "filename": "dmi-service/src/test/groovy/org/onap/cps/ncmp/dmi/cmstack/ves/VesEventConsumerSpec.groovy",
         "patchSetId": 3
@@ -169,6 +205,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "d00efb1e_578f3c91",
+        "filename": "dmi-service/src/test/groovy/org/onap/cps/ncmp/dmi/cmstack/ves/VesEventConsumerSpec.groovy",
+        "patchSetId": 3
+      },
+      "lineNbr": 92,
+      "author": {
+        "id": 7965
+      },
+      "writtenOn": "2025-05-01T12:46:46Z",
+      "side": 1,
+      "message": "meaning??",
+      "parentUuid": "4070d8e9_8ee1b89a",
+      "revId": "9371df7c1e9fc9e09165fedb78aa5bdf6859b4dd",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "a1a165f3_aa4c142c",
         "filename": "dmi-service/src/test/groovy/org/onap/cps/ncmp/dmi/cmstack/ves/VesEventConsumerSpec.groovy",
         "patchSetId": 3
@@ -180,6 +234,24 @@
       "writtenOn": "2025-05-01T12:28:26Z",
       "side": 1,
       "message": "Is the logging order guaranteed?",
+      "revId": "9371df7c1e9fc9e09165fedb78aa5bdf6859b4dd",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "a0bbae71_b4ac875a",
+        "filename": "dmi-service/src/test/groovy/org/onap/cps/ncmp/dmi/cmstack/ves/VesEventConsumerSpec.groovy",
+        "patchSetId": 3
+      },
+      "lineNbr": 96,
+      "author": {
+        "id": 7965
+      },
+      "writtenOn": "2025-05-01T12:46:46Z",
+      "side": 1,
+      "message": "yes.",
+      "parentUuid": "a1a165f3_aa4c142c",
       "revId": "9371df7c1e9fc9e09165fedb78aa5bdf6859b4dd",
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
     },
