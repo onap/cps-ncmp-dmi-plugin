@@ -135,6 +135,24 @@
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "76c90025_d2d7a89c",
+        "filename": "dmi-service/src/main/java/org/onap/cps/ncmp/dmi/cmstack/ves/VesEventConsumer.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 54,
+      "author": {
+        "id": 7965
+      },
+      "writtenOn": "2025-05-02T10:46:32Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "e9c6b6ff_61a5cb42",
+      "revId": "9371df7c1e9fc9e09165fedb78aa5bdf6859b4dd",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "7c1f04e9_86bbe14d",
@@ -222,6 +240,24 @@
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "d8dec47e_374a1a31",
+        "filename": "dmi-service/src/test/groovy/org/onap/cps/ncmp/dmi/cmstack/ves/VesEventConsumerSpec.groovy",
+        "patchSetId": 3
+      },
+      "lineNbr": 84,
+      "author": {
+        "id": 7965
+      },
+      "writtenOn": "2025-05-02T10:46:32Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "54aba984_e8ed0f9c",
+      "revId": "9371df7c1e9fc9e09165fedb78aa5bdf6859b4dd",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "4070d8e9_8ee1b89a",
@@ -289,6 +325,24 @@
       "side": 1,
       "message": "ahh.. 😄 right.",
       "parentUuid": "27d7593e_cf9ff4c8",
+      "revId": "9371df7c1e9fc9e09165fedb78aa5bdf6859b4dd",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "f0250a89_5a8266f1",
+        "filename": "dmi-service/src/test/groovy/org/onap/cps/ncmp/dmi/cmstack/ves/VesEventConsumerSpec.groovy",
+        "patchSetId": 3
+      },
+      "lineNbr": 92,
+      "author": {
+        "id": 7965
+      },
+      "writtenOn": "2025-05-02T10:46:32Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ebb94a3b_a5fe1d29",
       "revId": "9371df7c1e9fc9e09165fedb78aa5bdf6859b4dd",
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
     },
