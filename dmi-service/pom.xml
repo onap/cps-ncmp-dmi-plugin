@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
   ============LICENSE_START=======================================================
-  Copyright (C) 2024 Nordix Foundation
+  Copyright (C) 2024-2025 OpenInfra Foundation Europe. All rights reserved.
   ================================================================================
   Licensed under the Apache License, Version 2.0 (the "License");
   you may not use this file except in compliance with the License.
@@ -44,7 +44,7 @@
         <gmavenplus.plugin.version>4.0.1</gmavenplus.plugin.version>
         <maven.deploy.plugin.version>3.1.2</maven.deploy.plugin.version>
         <maven.surefire.plugin.version>3.3.1</maven.surefire.plugin.version>
-        <openapi.generator.maven.plugin.version>6.6.0</openapi.generator.maven.plugin.version>
+        <openapi.generator.maven.plugin.version>7.12.0</openapi.generator.maven.plugin.version>
         <sonar.version>4.0.0.4121</sonar.version>
         <spring.boot.maven.plugin.version>3.4.4</spring.boot.maven.plugin.version>
         <spotbugs.maven.plugin.version>4.7.3.0</spotbugs.maven.plugin.version>
@@ -354,7 +354,7 @@
                             <goal>generate</goal>
                         </goals>
                         <configuration>
-                            <inputSpec>${project.basedir}/openapi/openapi.yml</inputSpec>
+                            <inputSpec>https://gerrit.onap.org/r/gitweb?p=cps.git;a=blob_plain;f=docs/api/swagger/dmi/openapi.yml</inputSpec>
                             <generatorName>spring</generatorName>
                             <generateSupportingFiles>false</generateSupportingFiles>
                             <invokerPackage>org.onap.cps.ncmp.dmi.rest.controller</invokerPackage>
@@ -379,7 +379,7 @@
                             <goal>generate</goal>
                         </goals>
                         <configuration>
-                            <inputSpec>${project.basedir}/openapi/openapi-datajob.yml</inputSpec>
+                            <inputSpec>https://gerrit.onap.org/r/gitweb?p=cps.git;a=blob_plain;f=docs/api/swagger/dmi/openapi-datajob.yml</inputSpec>
                             <generatorName>spring</generatorName>
                             <generateSupportingFiles>false</generateSupportingFiles>
                             <invokerPackage>org.onap.cps.ncmp.dmi.datajobs.rest.controller</invokerPackage>
@@ -396,61 +396,6 @@
                                 <skipDefaultInterface>true</skipDefaultInterface>
                                 <serializableModel>true</serializableModel>
                             </configOptions>
-                        </configuration>
-                    </execution>
-                    <execution>
-                        <id>openapi-yaml-gen</id>
-                        <goals>
-                            <goal>generate</goal>
-                        </goals>
-                        <phase>compile</phase>
-                        <configuration>
-                            <inputSpec>${project.basedir}/openapi/openapi.yml</inputSpec>
-                            <generatorName>openapi-yaml</generatorName>
-                            <configOptions>
-                                <outputFile>openapi/openapi.yaml</outputFile>
-                            </configOptions>
-                        </configuration>
-                    </execution>
-                    <execution>
-                        <id>openapi-datajob-yaml-gen</id>
-                        <goals>
-                            <goal>generate</goal>
-                        </goals>
-                        <phase>compile</phase>
-                        <configuration>
-                            <inputSpec>${project.basedir}/openapi/openapi-datajob.yml</inputSpec>
-                            <generatorName>openapi-yaml</generatorName>
-                            <configOptions>
-                                <outputFile>openapi/openapi-datajob.yaml</outputFile>
-                            </configOptions>
-                        </configuration>
-                    </execution>
-                </executions>
-            </plugin>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-resources-plugin</artifactId>
-                <version>${maven-resources-plugin.version}</version>
-                <executions>
-                    <execution>
-                        <id>copy-to-doc-folder</id>
-                        <phase>compile</phase>
-                        <goals>
-                            <goal>copy-resources</goal>
-                        </goals>
-                        <configuration>
-                            <outputDirectory>${project.basedir}/../docs/api/swagger</outputDirectory>
-                            <overwrite>true</overwrite>
-                            <resources>
-                                <resource>
-                                    <directory>${project.basedir}/target/generated-sources/openapi/openapi/</directory>
-                                    <includes>
-                                        <include>openapi.yaml</include>
-                                        <include>openapi-datajob.yaml</include>
-                                    </includes>
-                                </resource>
-                            </resources>
                         </configuration>
                     </execution>
                 </executions>
