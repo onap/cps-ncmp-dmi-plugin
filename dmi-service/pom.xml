@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
   ============LICENSE_START=======================================================
-  Copyright (C) 2024 Nordix Foundation
+  Copyright (C) 2024-2025 OpenInfra Foundation Europe. All rights reserved.
   ================================================================================
   Licensed under the Apache License, Version 2.0 (the "License");
   you may not use this file except in compliance with the License.
@@ -344,6 +344,39 @@
         </resources>
         <plugins>
             <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>exec-maven-plugin</artifactId>
+                <version>3.1.0</version>
+                <executions>
+                    <execution>
+                        <id>download-multiple-openapi-specs</id>
+                        <phase>generate-sources</phase>
+                        <goals>
+                            <goal>exec</goal>
+                        </goals>
+                        <configuration>
+                            <executable>sh</executable>
+                            <arguments>
+                                <argument>-c</argument>
+                                <argument>
+                                    <![CDATA[
+                                    mkdir -p "${project.basedir}/openapi" &&
+                                                  curl -s -L "https://gerrit.nordix.org/plugins/gitiles/onap/cps/+/refs/heads/master/docs/api/swagger/dmi/dmi-components.yml?format=TEXT" \
+              | base64 -d > "${project.basedir}/openapi/dmi-components.yml" &&
+
+              curl -s -L "https://gerrit.nordix.org/plugins/gitiles/onap/cps/+/refs/heads/master/docs/api/swagger/dmi/openapi.yml?format=TEXT" \
+              | base64 -d > "${project.basedir}/openapi/openapi.yml" &&
+
+              curl -s -L "https://gerrit.nordix.org/plugins/gitiles/onap/cps/+/refs/heads/master/docs/api/swagger/dmi/openapi-datajob.yml?format=TEXT" \
+              | base64 -d > "${project.basedir}/openapi/openapi-datajob.yml"
+            ]]>
+                                </argument>
+                            </arguments>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
                 <groupId>org.openapitools</groupId>
                 <artifactId>openapi-generator-maven-plugin</artifactId>
                 <version>${openapi.generator.maven.plugin.version}</version>
@@ -424,33 +457,6 @@
                             <configOptions>
                                 <outputFile>openapi/openapi-datajob.yaml</outputFile>
                             </configOptions>
-                        </configuration>
-                    </execution>
-                </executions>
-            </plugin>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-resources-plugin</artifactId>
-                <version>${maven-resources-plugin.version}</version>
-                <executions>
-                    <execution>
-                        <id>copy-to-doc-folder</id>
-                        <phase>compile</phase>
-                        <goals>
-                            <goal>copy-resources</goal>
-                        </goals>
-                        <configuration>
-                            <outputDirectory>${project.basedir}/../docs/api/swagger</outputDirectory>
-                            <overwrite>true</overwrite>
-                            <resources>
-                                <resource>
-                                    <directory>${project.basedir}/target/generated-sources/openapi/openapi/</directory>
-                                    <includes>
-                                        <include>openapi.yaml</include>
-                                        <include>openapi-datajob.yaml</include>
-                                    </includes>
-                                </resource>
-                            </resources>
                         </configuration>
                     </execution>
                 </executions>
