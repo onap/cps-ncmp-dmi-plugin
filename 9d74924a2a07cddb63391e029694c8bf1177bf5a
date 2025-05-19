@@ -39,6 +39,30 @@
       },
       "revId": "9d74924a2a07cddb63391e029694c8bf1177bf5a",
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "4576e9d2_f73089fe",
+        "filename": "dmi-service/pom.xml",
+        "patchSetId": 2
+      },
+      "lineNbr": 390,
+      "author": {
+        "id": 4893
+      },
+      "writtenOn": "2025-05-19T11:07:36Z",
+      "side": 1,
+      "message": "The openapi.yml relies on the components in dmi-components.yml so we can\u0027t use the remote url from CPS for the openapi.yml",
+      "parentUuid": "533588ae_4a367453",
+      "range": {
+        "startLine": 390,
+        "startChar": 39,
+        "endLine": 390,
+        "endChar": 77
+      },
+      "revId": "9d74924a2a07cddb63391e029694c8bf1177bf5a",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
     }
   ]
 }
