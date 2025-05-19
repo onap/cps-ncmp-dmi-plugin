@@ -16,6 +16,29 @@
       "message": "recheck",
       "revId": "9d74924a2a07cddb63391e029694c8bf1177bf5a",
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "533588ae_4a367453",
+        "filename": "dmi-service/pom.xml",
+        "patchSetId": 2
+      },
+      "lineNbr": 390,
+      "author": {
+        "id": 7965
+      },
+      "writtenOn": "2025-05-19T10:51:42Z",
+      "side": 1,
+      "message": "As An alternate approach we can also use the remote url from CPS instead of introducing a new maven plugin.\nCan decide with the team.",
+      "range": {
+        "startLine": 390,
+        "startChar": 39,
+        "endLine": 390,
+        "endChar": 77
+      },
+      "revId": "9d74924a2a07cddb63391e029694c8bf1177bf5a",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
     }
   ]
 }
