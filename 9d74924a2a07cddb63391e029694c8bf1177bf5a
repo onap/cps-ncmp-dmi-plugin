@@ -20,6 +20,29 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "48ef1d74_8ff55a6b",
+        "filename": "dmi-service/pom.xml",
+        "patchSetId": 2
+      },
+      "lineNbr": 378,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2025-05-19T13:35:00Z",
+      "side": 1,
+      "message": "I would like to hear Sean\u0027s feedback on this, there might be a simpler solution",
+      "range": {
+        "startLine": 346,
+        "startChar": 0,
+        "endLine": 378,
+        "endChar": 21
+      },
+      "revId": "9d74924a2a07cddb63391e029694c8bf1177bf5a",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "533588ae_4a367453",
         "filename": "dmi-service/pom.xml",
         "patchSetId": 2
