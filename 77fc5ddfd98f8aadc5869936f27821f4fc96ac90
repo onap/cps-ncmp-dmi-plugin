@@ -16,6 +16,29 @@
       "message": "recheck",
       "revId": "77fc5ddfd98f8aadc5869936f27821f4fc96ac90",
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "31ad7a99_2fb05200",
+        "filename": "csit/plans/dmi/setup.sh",
+        "patchSetId": 1
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 8063
+      },
+      "writtenOn": "2025-05-23T11:39:09Z",
+      "side": 1,
+      "message": "NB: openinfra can be used here in the another commit",
+      "range": {
+        "startLine": 3,
+        "startChar": 16,
+        "endLine": 3,
+        "endChar": 39
+      },
+      "revId": "77fc5ddfd98f8aadc5869936f27821f4fc96ac90",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
     }
   ]
 }
