@@ -39,6 +39,30 @@
       },
       "revId": "bec82715175f007b1c54f7c5db6e36d44f417ca6",
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "b47fe2f1_882501b5",
+        "filename": "dmi-service/pom.xml",
+        "patchSetId": 5
+      },
+      "lineNbr": 357,
+      "author": {
+        "id": 4893
+      },
+      "writtenOn": "2025-05-26T09:04:44Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "eaabf69e_5a30ffda",
+      "range": {
+        "startLine": 357,
+        "startChar": 39,
+        "endLine": 357,
+        "endChar": 129
+      },
+      "revId": "bec82715175f007b1c54f7c5db6e36d44f417ca6",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
     }
   ]
 }
