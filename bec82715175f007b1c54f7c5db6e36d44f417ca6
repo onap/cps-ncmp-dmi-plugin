@@ -1,0 +1,44 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "39e3b455_eca7ae0a",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 5
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 8171
+      },
+      "writtenOn": "2025-05-26T08:39:21Z",
+      "side": 1,
+      "message": "Looks good, just one NB",
+      "revId": "bec82715175f007b1c54f7c5db6e36d44f417ca6",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "eaabf69e_5a30ffda",
+        "filename": "dmi-service/pom.xml",
+        "patchSetId": 5
+      },
+      "lineNbr": 357,
+      "author": {
+        "id": 8171
+      },
+      "writtenOn": "2025-05-26T08:39:21Z",
+      "side": 1,
+      "message": "NB: Link could be added to the properties tags above. See: https://gerrit.nordix.org/c/onap/cps/+/23545/2/cps-ncmp-rest/pom.xml#39",
+      "range": {
+        "startLine": 357,
+        "startChar": 39,
+        "endLine": 357,
+        "endChar": 129
+      },
+      "revId": "bec82715175f007b1c54f7c5db6e36d44f417ca6",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    }
+  ]
+}
