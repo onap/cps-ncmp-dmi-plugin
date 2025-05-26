@@ -41,6 +41,30 @@
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "a787670f_24630e0f",
+        "filename": "dmi-service/pom.xml",
+        "patchSetId": 2
+      },
+      "lineNbr": 378,
+      "author": {
+        "id": 4893
+      },
+      "writtenOn": "2025-05-26T09:05:01Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "48ef1d74_8ff55a6b",
+      "range": {
+        "startLine": 346,
+        "startChar": 0,
+        "endLine": 378,
+        "endChar": 21
+      },
+      "revId": "9d74924a2a07cddb63391e029694c8bf1177bf5a",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "533588ae_4a367453",
@@ -102,6 +126,30 @@
       "side": 1,
       "message": "but after the mvn compile phase.. there is one file that is created and copied over to the docs folder.. maybe u can use the final openapi file that is generated in cps-ncmp repo and copy it over to DMI repo and generate the code here.\nyour thoughts?",
       "parentUuid": "4576e9d2_f73089fe",
+      "range": {
+        "startLine": 390,
+        "startChar": 39,
+        "endLine": 390,
+        "endChar": 77
+      },
+      "revId": "9d74924a2a07cddb63391e029694c8bf1177bf5a",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "f72376ae_0d93a3dc",
+        "filename": "dmi-service/pom.xml",
+        "patchSetId": 2
+      },
+      "lineNbr": 390,
+      "author": {
+        "id": 4893
+      },
+      "writtenOn": "2025-05-26T09:05:01Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "6873106f_82229ad1",
       "range": {
         "startLine": 390,
         "startChar": 39,
