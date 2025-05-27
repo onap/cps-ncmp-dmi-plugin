@@ -65,6 +65,30 @@
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "dd611adf_c67ce8d7",
+        "filename": "dmi-service/src/main/java/org/onap/cps/ncmp/dmi/cmstack/ves/VesEventTopics.java",
+        "patchSetId": 7
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2025-05-27T16:07:57Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "24f38d3e_de36c409",
+      "range": {
+        "startLine": 35,
+        "startChar": 13,
+        "endLine": 35,
+        "endChar": 28
+      },
+      "revId": "0746fb46429a8e15c3aca39af374a47b04c89805",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "b8dde801_058165b3",
@@ -102,6 +126,30 @@
       "side": 1,
       "message": "VesEventsConfiguration.TopicNames",
       "parentUuid": "b8dde801_058165b3",
+      "range": {
+        "startLine": 37,
+        "startChar": 31,
+        "endLine": 37,
+        "endChar": 38
+      },
+      "revId": "0746fb46429a8e15c3aca39af374a47b04c89805",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "f5610cbc_80b2535a",
+        "filename": "dmi-service/src/main/java/org/onap/cps/ncmp/dmi/cmstack/ves/VesEventTopics.java",
+        "patchSetId": 7
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2025-05-27T16:07:57Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "543d1879_0d1bf7ac",
       "range": {
         "startLine": 37,
         "startChar": 31,

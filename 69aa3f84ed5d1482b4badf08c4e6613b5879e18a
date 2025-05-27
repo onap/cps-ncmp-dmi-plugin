@@ -1,0 +1,90 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "a2098065_b08eb10a",
+        "filename": "dmi-service/src/test/groovy/org/onap/cps/ncmp/dmi/cmstack/ves/VesEventConsumerSpec.groovy",
+        "patchSetId": 10
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2025-05-27T16:07:57Z",
+      "side": 1,
+      "message": "be consistent in your terms event/message decide/cm handle\nshort scenarios!",
+      "revId": "69aa3f84ed5d1482b4badf08c4e6613b5879e18a",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "61724d4e_682ca63b",
+        "filename": "dmi-service/src/test/groovy/org/onap/cps/ncmp/dmi/cmstack/ves/VesEventConsumerSpec.groovy",
+        "patchSetId": 10
+      },
+      "lineNbr": 62,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2025-05-27T16:07:57Z",
+      "side": 1,
+      "message": "NB: shoudln\u0027t be mentioned here as it is of no significance for the test",
+      "range": {
+        "startLine": 62,
+        "startChar": 37,
+        "endLine": 62,
+        "endChar": 59
+      },
+      "revId": "69aa3f84ed5d1482b4badf08c4e6613b5879e18a",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "66d247a5_15978e18",
+        "filename": "dmi-service/src/test/groovy/org/onap/cps/ncmp/dmi/cmstack/ves/VesEventConsumerSpec.groovy",
+        "patchSetId": 10
+      },
+      "lineNbr": 62,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2025-05-27T16:07:57Z",
+      "side": 1,
+      "message": "Consume VES event.",
+      "range": {
+        "startLine": 62,
+        "startChar": 9,
+        "endLine": 62,
+        "endChar": 59
+      },
+      "revId": "69aa3f84ed5d1482b4badf08c4e6613b5879e18a",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "13bbcd8e_407ade6b",
+        "filename": "dmi-service/src/test/groovy/org/onap/cps/ncmp/dmi/cmstack/ves/VesEventConsumerSpec.groovy",
+        "patchSetId": 10
+      },
+      "lineNbr": 73,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2025-05-27T16:07:57Z",
+      "side": 1,
+      "message": "Consume create event for existing cm-handle",
+      "range": {
+        "startLine": 73,
+        "startChar": 9,
+        "endLine": 73,
+        "endChar": 99
+      },
+      "revId": "69aa3f84ed5d1482b4badf08c4e6613b5879e18a",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    }
+  ]
+}
