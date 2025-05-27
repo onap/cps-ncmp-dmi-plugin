@@ -67,6 +67,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "54bacd02_b27a0456",
+        "filename": "dmi-service/src/main/java/org/onap/cps/ncmp/dmi/cmstack/ves/VesEventConsumer.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2025-05-27T09:24:33Z",
+      "side": 1,
+      "message": "so is it the \u0027Schema for virtual network function event stream\u0027",
+      "parentUuid": "28d94ffa_820254e4",
+      "range": {
+        "startLine": 42,
+        "startChar": 39,
+        "endLine": 42,
+        "endChar": 45
+      },
+      "revId": "9371df7c1e9fc9e09165fedb78aa5bdf6859b4dd",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "ae659915_d0373aae",
         "filename": "dmi-service/src/main/java/org/onap/cps/ncmp/dmi/cmstack/ves/VesEventConsumer.java",
         "patchSetId": 3
@@ -166,6 +190,24 @@
       "writtenOn": "2025-05-01T12:28:26Z",
       "side": 1,
       "message": "Would the entire stack trace be useful to log?",
+      "revId": "9371df7c1e9fc9e09165fedb78aa5bdf6859b4dd",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "39f70aa5_4765a692",
+        "filename": "dmi-service/src/main/java/org/onap/cps/ncmp/dmi/cmstack/ves/VesEventConsumer.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 55,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2025-05-27T09:24:33Z",
+      "side": 1,
+      "message": "agreed, especially given this is like an ONAP PoC DMI it wil never be really big scale and any help for troubleshooting is good, we don\u0027t need to worry about excesive logging or performance etc.",
+      "parentUuid": "7c1f04e9_86bbe14d",
       "revId": "9371df7c1e9fc9e09165fedb78aa5bdf6859b4dd",
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
     },
