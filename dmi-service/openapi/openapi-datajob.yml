@@ -20,7 +20,7 @@ openapi: 3.0.3
 info:
   title: NCMP Data Subjob API
   description: Support datajobs through one or more subjob for each DMI and Data Producer Identifier combination
-  version: 1.7.0
+  version: "1.7.0"
 servers:
   - url: /dmi
 tags:

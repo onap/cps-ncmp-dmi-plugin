@@ -52,7 +52,7 @@
 
         <!-- Project Versioning and Timestamp -->
         <cps.groupId>org.onap.cps</cps.groupId>
-        <cps.version>3.6.2</cps.version>
+        <cps.version>3.6.3</cps.version>
         <maven.build.timestamp.format>yyyyMMdd'T'HHmmss'Z'</maven.build.timestamp.format>
 
         <!-- Code Quality and Dependency Management -->
