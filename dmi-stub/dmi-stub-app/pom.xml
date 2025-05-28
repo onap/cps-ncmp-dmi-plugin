@@ -23,7 +23,7 @@
     <parent>
         <groupId>org.onap.cps.ncmp-dmi-plugin</groupId>
         <artifactId>dmi-stub</artifactId>
-        <version>1.7.0-SNAPSHOT</version>
+        <version>1.7.0</version>
     </parent>
 
     <artifactId>dmi-stub-app</artifactId>

@@ -37,7 +37,7 @@
 
     <groupId>org.onap.cps.ncmp-dmi-plugin</groupId>
     <artifactId>ncmp-dmi-plugin</artifactId>
-    <version>1.7.0-SNAPSHOT</version>
+    <version>1.7.0</version>
     <name>ncmp-dmi-plugin</name>
     <description>DMI Plugin Service</description>
     <packaging>pom</packaging>
