@@ -64,6 +64,54 @@
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "98a1418a_990942aa",
+        "filename": "dmi-service/src/test/groovy/org/onap/cps/ncmp/dmi/cmstack/ves/VesEventConsumerSpec.groovy",
+        "patchSetId": 10
+      },
+      "lineNbr": 62,
+      "author": {
+        "id": 7965
+      },
+      "writtenOn": "2025-05-28T10:18:43Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "66d247a5_15978e18",
+      "range": {
+        "startLine": 62,
+        "startChar": 9,
+        "endLine": 62,
+        "endChar": 59
+      },
+      "revId": "69aa3f84ed5d1482b4badf08c4e6613b5879e18a",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "0c5d889f_370d87a5",
+        "filename": "dmi-service/src/test/groovy/org/onap/cps/ncmp/dmi/cmstack/ves/VesEventConsumerSpec.groovy",
+        "patchSetId": 10
+      },
+      "lineNbr": 62,
+      "author": {
+        "id": 7965
+      },
+      "writtenOn": "2025-05-28T10:18:43Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "61724d4e_682ca63b",
+      "range": {
+        "startLine": 62,
+        "startChar": 37,
+        "endLine": 62,
+        "endChar": 59
+      },
+      "revId": "69aa3f84ed5d1482b4badf08c4e6613b5879e18a",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "13bbcd8e_407ade6b",
@@ -77,6 +125,30 @@
       "writtenOn": "2025-05-27T16:07:57Z",
       "side": 1,
       "message": "Consume create event for existing cm-handle",
+      "range": {
+        "startLine": 73,
+        "startChar": 9,
+        "endLine": 73,
+        "endChar": 99
+      },
+      "revId": "69aa3f84ed5d1482b4badf08c4e6613b5879e18a",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "cfc319c4_508a89eb",
+        "filename": "dmi-service/src/test/groovy/org/onap/cps/ncmp/dmi/cmstack/ves/VesEventConsumerSpec.groovy",
+        "patchSetId": 10
+      },
+      "lineNbr": 73,
+      "author": {
+        "id": 7965
+      },
+      "writtenOn": "2025-05-28T10:18:43Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "13bbcd8e_407ade6b",
       "range": {
         "startLine": 73,
         "startChar": 9,
