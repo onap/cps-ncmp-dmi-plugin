@@ -18,6 +18,24 @@
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "bbf2555f_57be6034",
+        "filename": "dmi-service/src/test/groovy/org/onap/cps/ncmp/dmi/cmstack/ves/VesEventConsumerSpec.groovy",
+        "patchSetId": 10
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 7965
+      },
+      "writtenOn": "2025-05-29T15:38:23Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "a2098065_b08eb10a",
+      "revId": "69aa3f84ed5d1482b4badf08c4e6613b5879e18a",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "61724d4e_682ca63b",
