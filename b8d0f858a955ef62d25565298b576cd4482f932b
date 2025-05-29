@@ -259,6 +259,30 @@
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "824d00c8_d03d9680",
+        "filename": "dmi-service/src/test/groovy/org/onap/cps/ncmp/dmi/cmstack/ves/VesEventConsumerSpec.groovy",
+        "patchSetId": 11
+      },
+      "lineNbr": 84,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2025-05-29T15:31:16Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "900f33e0_eb28ae53",
+      "range": {
+        "startLine": 84,
+        "startChar": 49,
+        "endLine": 84,
+        "endChar": 57
+      },
+      "revId": "b8d0f858a955ef62d25565298b576cd4482f932b",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "edfb1c0f_42763d24",
@@ -296,6 +320,30 @@
       "side": 1,
       "message": "nope. same code path. hence removed the other test that checks for Exception.\nNow i just check for CmHandleRegistrationException.",
       "parentUuid": "edfb1c0f_42763d24",
+      "range": {
+        "startLine": 89,
+        "startChar": 59,
+        "endLine": 89,
+        "endChar": 68
+      },
+      "revId": "b8d0f858a955ef62d25565298b576cd4482f932b",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "5dc06f30_755b0feb",
+        "filename": "dmi-service/src/test/groovy/org/onap/cps/ncmp/dmi/cmstack/ves/VesEventConsumerSpec.groovy",
+        "patchSetId": 11
+      },
+      "lineNbr": 89,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2025-05-29T15:31:16Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "550138f7_8108cdee",
       "range": {
         "startLine": 89,
         "startChar": 59,
