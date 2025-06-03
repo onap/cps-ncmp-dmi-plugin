@@ -1,5 +1,161 @@
 {
-  "comments": [],
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "362cb7be_0ce427d7",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 15
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 5519
+      },
+      "writtenOn": "2025-06-03T13:33:56Z",
+      "side": 1,
+      "message": "Few comments / questions",
+      "revId": "7276e0fb13ad9652f6e8b8cf20531507840ac4ff",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "9632f5f5_f9782bfb",
+        "filename": "dmi-service/src/main/java/org/onap/cps/ncmp/dmi/cmstack/ves/VesEventConsumer.java",
+        "patchSetId": 15
+      },
+      "lineNbr": 51,
+      "author": {
+        "id": 5519
+      },
+      "writtenOn": "2025-06-03T13:33:56Z",
+      "side": 1,
+      "message": "Is sourceName the right field to use? \nWould sourceID be better?\nOr reportingEntityId or reportingEntityName ?",
+      "range": {
+        "startLine": 51,
+        "startChar": 49,
+        "endLine": 51,
+        "endChar": 59
+      },
+      "revId": "7276e0fb13ad9652f6e8b8cf20531507840ac4ff",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "81281f9e_d4bebe9e",
+        "filename": "dmi-service/src/main/java/org/onap/cps/ncmp/dmi/cmstack/ves/VesEventConsumer.java",
+        "patchSetId": 15
+      },
+      "lineNbr": 51,
+      "author": {
+        "id": 5519
+      },
+      "writtenOn": "2025-06-03T13:33:56Z",
+      "side": 1,
+      "message": "Is this for all VES events (not just PNFRegistration)? Register every time?",
+      "range": {
+        "startLine": 51,
+        "startChar": 11,
+        "endLine": 51,
+        "endChar": 62
+      },
+      "revId": "7276e0fb13ad9652f6e8b8cf20531507840ac4ff",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "052669e6_c6c5444a",
+        "filename": "dmi-service/src/test/groovy/org/onap/cps/ncmp/dmi/cmstack/ves/VesEventConsumerSpec.groovy",
+        "patchSetId": 15
+      },
+      "lineNbr": 72,
+      "author": {
+        "id": 5519
+      },
+      "writtenOn": "2025-06-03T13:33:56Z",
+      "side": 1,
+      "message": "Suggest also test with more complicated CMHandles - e.g. where some characters need to be escaped, as would be common in a real device ID with mo-id/-path.",
+      "range": {
+        "startLine": 72,
+        "startChar": 47,
+        "endLine": 72,
+        "endChar": 60
+      },
+      "revId": "7276e0fb13ad9652f6e8b8cf20531507840ac4ff",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "57a0b8fa_fa39b8c7",
+        "filename": "dmi-service/src/test/resources/sampleVesEvent.json",
+        "patchSetId": 15
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 5519
+      },
+      "writtenOn": "2025-06-03T13:33:56Z",
+      "side": 1,
+      "message": "Suggest testing with a few other example PNF-registration events - in different formats - event if just the sourceName is used.",
+      "range": {
+        "startLine": 2,
+        "startChar": 3,
+        "endLine": 2,
+        "endChar": 8
+      },
+      "revId": "7276e0fb13ad9652f6e8b8cf20531507840ac4ff",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "1c2866fb_628661f8",
+        "filename": "dmi-service/src/test/resources/sampleVesEvent.json",
+        "patchSetId": 15
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 5519
+      },
+      "writtenOn": "2025-06-03T13:33:56Z",
+      "side": 1,
+      "message": "Is this correct?",
+      "range": {
+        "startLine": 12,
+        "startChar": 20,
+        "endLine": 12,
+        "endChar": 41
+      },
+      "revId": "7276e0fb13ad9652f6e8b8cf20531507840ac4ff",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "fd018be4_0d2556e4",
+        "filename": "dmi-service/src/test/resources/sampleVesEvent.json",
+        "patchSetId": 15
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 5519
+      },
+      "writtenOn": "2025-06-03T13:33:56Z",
+      "side": 1,
+      "message": "Is this correct?",
+      "range": {
+        "startLine": 16,
+        "startChar": 30,
+        "endLine": 16,
+        "endChar": 47
+      },
+      "revId": "7276e0fb13ad9652f6e8b8cf20531507840ac4ff",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    }
+  ],
   "submitRequirementResults": [
     {
       "submitRequirement": {
