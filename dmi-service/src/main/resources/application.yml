@@ -98,6 +98,10 @@ management:
         enabled: true
     loggers:
       enabled: true
+  info:
+    git:
+      enabled: true
+      mode: full
 
 cps-core:
   baseUrl: http://${CPS_CORE_HOST}:${CPS_CORE_PORT}
