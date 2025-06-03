@@ -66,6 +66,54 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "aca3f5b2_40b8b1ff",
+        "filename": "dmi-service/src/main/java/org/onap/cps/ncmp/dmi/cmstack/ves/VesEventConsumer.java",
+        "patchSetId": 15
+      },
+      "lineNbr": 51,
+      "author": {
+        "id": 7965
+      },
+      "writtenOn": "2025-06-03T14:03:38Z",
+      "side": 1,
+      "message": "from the simulator , when we saw the message the sourceName is: pynts-o-du-o1 but the sourceId was ManagedElement\u003dpynts-o-du-o1 so we decided to use the sourceName.\n\nWe can discuss on this if you think it wont work with the real device.",
+      "parentUuid": "9632f5f5_f9782bfb",
+      "range": {
+        "startLine": 51,
+        "startChar": 49,
+        "endLine": 51,
+        "endChar": 59
+      },
+      "revId": "7276e0fb13ad9652f6e8b8cf20531507840ac4ff",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "b2c6f090_c1cba8ca",
+        "filename": "dmi-service/src/main/java/org/onap/cps/ncmp/dmi/cmstack/ves/VesEventConsumer.java",
+        "patchSetId": 15
+      },
+      "lineNbr": 51,
+      "author": {
+        "id": 7965
+      },
+      "writtenOn": "2025-06-03T14:03:38Z",
+      "side": 1,
+      "message": "m listening from the below topics and i assume only the registration events are coming.\n- \"unauthenticated.VES_PNFREG_OUTPUT\"\n- \"unauthenticated.VES_O1_NOTIFY_PNF_REGISTRATION_OUTPUT\"\n\nwe discussed this before and I recorded the decision on the wiki page as well.\nhttps://lf-onap.atlassian.net/wiki/spaces/DW/pages/129695745/CPS-2675+OAM+SDNC+NCMP+CM+Stack+Use+Case#Open-Questions",
+      "parentUuid": "81281f9e_d4bebe9e",
+      "range": {
+        "startLine": 51,
+        "startChar": 11,
+        "endLine": 51,
+        "endChar": 62
+      },
+      "revId": "7276e0fb13ad9652f6e8b8cf20531507840ac4ff",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "052669e6_c6c5444a",
         "filename": "dmi-service/src/test/groovy/org/onap/cps/ncmp/dmi/cmstack/ves/VesEventConsumerSpec.groovy",
         "patchSetId": 15
@@ -112,6 +160,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "3b358332_df2958c5",
+        "filename": "dmi-service/src/test/resources/sampleVesEvent.json",
+        "patchSetId": 15
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 7965
+      },
+      "writtenOn": "2025-06-03T14:03:38Z",
+      "side": 1,
+      "message": "sure. I will reach out to you to get some more examples of the same.",
+      "parentUuid": "57a0b8fa_fa39b8c7",
+      "range": {
+        "startLine": 2,
+        "startChar": 3,
+        "endLine": 2,
+        "endChar": 8
+      },
+      "revId": "7276e0fb13ad9652f6e8b8cf20531507840ac4ff",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "1c2866fb_628661f8",
         "filename": "dmi-service/src/test/resources/sampleVesEvent.json",
         "patchSetId": 15
@@ -123,6 +195,30 @@
       "writtenOn": "2025-06-03T13:33:56Z",
       "side": 1,
       "message": "Is this correct?",
+      "range": {
+        "startLine": 12,
+        "startChar": 20,
+        "endLine": 12,
+        "endChar": 41
+      },
+      "revId": "7276e0fb13ad9652f6e8b8cf20531507840ac4ff",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "67b11ea0_592b5ed1",
+        "filename": "dmi-service/src/test/resources/sampleVesEvent.json",
+        "patchSetId": 15
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 7965
+      },
+      "writtenOn": "2025-06-03T14:03:38Z",
+      "side": 1,
+      "message": "I actually copied this event from the simulator itself. this is what the simulator emits so I assume its correct.\nyour thoughts?",
+      "parentUuid": "1c2866fb_628661f8",
       "range": {
         "startLine": 12,
         "startChar": 20,
