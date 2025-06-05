@@ -24,6 +24,30 @@
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "c3a6b59c_3ff02b74",
+        "filename": "dmi-service/src/main/java/org/onap/cps/ncmp/dmi/cmstack/lcm/LcmEventConsumer.java",
+        "patchSetId": 8
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 7965
+      },
+      "writtenOn": "2025-06-05T13:16:50Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "0f10203f_1d901c8d",
+      "range": {
+        "startLine": 41,
+        "startChar": 78,
+        "endLine": 41,
+        "endChar": 91
+      },
+      "revId": "475ba4313a6da6ede51c40c3ded516d0d21d8c36",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "2cf88b45_ca33b2b8",
@@ -37,6 +61,30 @@
       "writtenOn": "2025-06-05T11:32:56Z",
       "side": 1,
       "message": "strange sentecn, not suer if CSP shoudl be mentioned",
+      "range": {
+        "startLine": 61,
+        "startChar": 7,
+        "endLine": 62,
+        "endChar": 16
+      },
+      "revId": "475ba4313a6da6ede51c40c3ded516d0d21d8c36",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "407675ad_a966edc0",
+        "filename": "dmi-service/src/main/java/org/onap/cps/ncmp/dmi/service/DmiService.java",
+        "patchSetId": 8
+      },
+      "lineNbr": 62,
+      "author": {
+        "id": 7965
+      },
+      "writtenOn": "2025-06-05T13:16:50Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "2cf88b45_ca33b2b8",
       "range": {
         "startLine": 61,
         "startChar": 7,
@@ -70,6 +118,30 @@
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "0187e716_189b578a",
+        "filename": "dmi-service/src/main/java/org/onap/cps/ncmp/dmi/service/client/NcmpRestClient.java",
+        "patchSetId": 8
+      },
+      "lineNbr": 71,
+      "author": {
+        "id": 7965
+      },
+      "writtenOn": "2025-06-05T13:16:50Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "320a1e1b_086896f3",
+      "range": {
+        "startLine": 68,
+        "startChar": 0,
+        "endLine": 71,
+        "endChar": 103
+      },
+      "revId": "475ba4313a6da6ede51c40c3ded516d0d21d8c36",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "4ccf1b0c_8dcabe3a",
@@ -83,6 +155,30 @@
       "writtenOn": "2025-06-05T11:32:56Z",
       "side": 1,
       "message": "nout used?\nuou are not assertign any logging",
+      "range": {
+        "startLine": 52,
+        "startChar": 0,
+        "endLine": 63,
+        "endChar": 0
+      },
+      "revId": "475ba4313a6da6ede51c40c3ded516d0d21d8c36",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "f4230854_5876453f",
+        "filename": "dmi-service/src/test/groovy/org/onap/cps/ncmp/dmi/cmstack/lcm/LcmEventConsumerSpec.groovy",
+        "patchSetId": 8
+      },
+      "lineNbr": 63,
+      "author": {
+        "id": 7965
+      },
+      "writtenOn": "2025-06-05T13:16:50Z",
+      "side": 1,
+      "message": "right. 😊",
+      "parentUuid": "4ccf1b0c_8dcabe3a",
       "range": {
         "startLine": 52,
         "startChar": 0,
@@ -116,6 +212,30 @@
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "b2fd07fd_5f7e0e95",
+        "filename": "dmi-service/src/test/groovy/org/onap/cps/ncmp/dmi/service/client/NcmpRestClientSpec.groovy",
+        "patchSetId": 8
+      },
+      "lineNbr": 61,
+      "author": {
+        "id": 7965
+      },
+      "writtenOn": "2025-06-05T13:16:50Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "e9d40b93_0dfb08d0",
+      "range": {
+        "startLine": 61,
+        "startChar": 14,
+        "endLine": 61,
+        "endChar": 32
+      },
+      "revId": "475ba4313a6da6ede51c40c3ded516d0d21d8c36",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "b4b740f1_86fc29ce",
@@ -129,6 +249,30 @@
       "writtenOn": "2025-06-05T11:32:56Z",
       "side": 1,
       "message": "ist is asserted below so make it like \u0027my-base_uri\u0027 or something like that",
+      "range": {
+        "startLine": 62,
+        "startChar": 49,
+        "endLine": 62,
+        "endChar": 57
+      },
+      "revId": "475ba4313a6da6ede51c40c3ded516d0d21d8c36",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "24b88709_1eca77c5",
+        "filename": "dmi-service/src/test/groovy/org/onap/cps/ncmp/dmi/service/client/NcmpRestClientSpec.groovy",
+        "patchSetId": 8
+      },
+      "lineNbr": 62,
+      "author": {
+        "id": 7965
+      },
+      "writtenOn": "2025-06-05T13:16:50Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "b4b740f1_86fc29ce",
       "range": {
         "startLine": 62,
         "startChar": 49,
@@ -162,6 +306,30 @@
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "1a529ffd_d8dbd4c3",
+        "filename": "dmi-service/src/test/groovy/org/onap/cps/ncmp/dmi/service/client/NcmpRestClientSpec.groovy",
+        "patchSetId": 8
+      },
+      "lineNbr": 63,
+      "author": {
+        "id": 7965
+      },
+      "writtenOn": "2025-06-05T13:16:50Z",
+      "side": 1,
+      "message": "test-parameter",
+      "parentUuid": "39dbbe65_d4f108b5",
+      "range": {
+        "startLine": 63,
+        "startChar": 53,
+        "endLine": 63,
+        "endChar": 105
+      },
+      "revId": "475ba4313a6da6ede51c40c3ded516d0d21d8c36",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "ae5b3903_ba027dbe",
@@ -175,6 +343,30 @@
       "writtenOn": "2025-06-05T11:32:56Z",
       "side": 1,
       "message": "since you assert the mocked response below you do NOT need to check it is called, alwasy do one or teh other not both typically if your test result depend on teh mocked output you dont need to check for it being called",
+      "range": {
+        "startLine": 69,
+        "startChar": 12,
+        "endLine": 69,
+        "endChar": 16
+      },
+      "revId": "475ba4313a6da6ede51c40c3ded516d0d21d8c36",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "54820eed_88141420",
+        "filename": "dmi-service/src/test/groovy/org/onap/cps/ncmp/dmi/service/client/NcmpRestClientSpec.groovy",
+        "patchSetId": 8
+      },
+      "lineNbr": 69,
+      "author": {
+        "id": 7965
+      },
+      "writtenOn": "2025-06-05T13:16:50Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ae5b3903_ba027dbe",
       "range": {
         "startLine": 69,
         "startChar": 12,
@@ -208,6 +400,30 @@
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "51ca61c9_c4284318",
+        "filename": "dmi-service/src/test/groovy/org/onap/cps/ncmp/dmi/service/client/NcmpRestClientSpec.groovy",
+        "patchSetId": 8
+      },
+      "lineNbr": 72,
+      "author": {
+        "id": 7965
+      },
+      "writtenOn": "2025-06-05T13:16:50Z",
+      "side": 1,
+      "message": "mockResponseEntityFromRestTemplate",
+      "parentUuid": "2a13dcb3_e3fcdfe0",
+      "range": {
+        "startLine": 72,
+        "startChar": 29,
+        "endLine": 72,
+        "endChar": 47
+      },
+      "revId": "475ba4313a6da6ede51c40c3ded516d0d21d8c36",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "2047ce19_4bed7f72",
@@ -221,6 +437,30 @@
       "writtenOn": "2025-06-05T11:32:56Z",
       "side": 1,
       "message": "can we have something more readable:, maybe just \u0027ch-1\u0027 like we use in many other testware",
+      "range": {
+        "startLine": 10,
+        "startChar": 19,
+        "endLine": 10,
+        "endChar": 32
+      },
+      "revId": "475ba4313a6da6ede51c40c3ded516d0d21d8c36",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "278d95a0_3d5f0b98",
+        "filename": "dmi-service/src/test/resources/sampleLcmEvent.json",
+        "patchSetId": 8
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 7965
+      },
+      "writtenOn": "2025-06-05T13:16:50Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "2047ce19_4bed7f72",
       "range": {
         "startLine": 10,
         "startChar": 19,
