@@ -97,6 +97,29 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "8e02191f_62627c21",
+        "filename": "dmi-service/src/main/java/org/onap/cps/ncmp/dmi/service/client/NcmpRestClient.java",
+        "patchSetId": 8
+      },
+      "lineNbr": 54,
+      "author": {
+        "id": 7965
+      },
+      "writtenOn": "2025-06-05T14:29:58Z",
+      "side": 1,
+      "message": "this is removed from here , but to handle the removal of auth username and password when calling CPS-NCMP apis will be handled as part of https://lf-onap.atlassian.net/browse/CPS-2841",
+      "range": {
+        "startLine": 54,
+        "startChar": 8,
+        "endLine": 54,
+        "endChar": 99
+      },
+      "revId": "475ba4313a6da6ede51c40c3ded516d0d21d8c36",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "320a1e1b_086896f3",
         "filename": "dmi-service/src/main/java/org/onap/cps/ncmp/dmi/service/client/NcmpRestClient.java",
         "patchSetId": 8
