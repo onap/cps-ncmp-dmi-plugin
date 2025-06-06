@@ -49,13 +49,7 @@ class VesEventConsumerSpec extends MessagingBaseSpec {
 
     def logger = Spy(ListAppender<ILoggingEvent>)
 
-    def vesEvent
-
     void setup() {
-
-        def jsonData = TestUtils.getResourceFileContent('sampleVesEvent.json')
-        vesEvent = objectMapper.readValue(jsonData, VesEventSchema.class)
-
         ((Logger) LoggerFactory.getLogger(VesEventConsumer.class)).addAppender(logger)
         logger.start()
     }
@@ -66,15 +60,25 @@ class VesEventConsumerSpec extends MessagingBaseSpec {
 
 
     def 'Consume a VES event'() {
+        given: 'sample PNF registration events [VES Events]'
+            def jsonData = TestUtils.getResourceFileContent(fileName)
+            def vesEvent = objectMapper.readValue(jsonData, VesEventSchema.class)
         when: 'event is consumed'
             objectUnderTest.consumeVesEvent(vesEvent)
         then: 'cm handle(s) is registered with the dmi service'
-            1 * dmiService.registerCmHandles(['pynts-o-du-o1'])
+            1 * dmiService.registerCmHandles(expectedCmhandles)
+        where: 'we use the sample events'
+            fileName                               || expectedCmhandles
+            'sampleVesEvent-pynts-odu-o1.json'     || ['pynts-o-du-o1']
+            'sampleVesEvent-openairinterface.json' || ['gNB-Eurecom-5GNRBox-00001']
 
     }
 
     def 'Consume create event with error during registration'() {
-        given: 'an error occured during registration'
+        given: 'sample PNF registration event'
+            def jsonData = TestUtils.getResourceFileContent('sampleVesEvent-pynts-odu-o1.json')
+            def vesEvent = objectMapper.readValue(jsonData, VesEventSchema.class)
+        and: 'an error occured during registration'
             dmiService.registerCmHandles(_) >> { throw new CmHandleRegistrationException('some error for test') }
         when: 'event is consumed'
             objectUnderTest.consumeVesEvent(vesEvent)

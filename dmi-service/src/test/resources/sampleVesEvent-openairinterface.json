@@ -1,0 +1,49 @@
+{
+  "event": {
+    "commonEventHeader": {
+      "domain": "pnfRegistration",
+      "eventId": "ManagedElement=gNB-Eurecom-5GNRBox-00001_pnfRegistration",
+      "eventName": "pnfRegistration_OAI_pnfRegistration",
+      "eventType": "OAI_pnfRegistration",
+      "sequence": 0,
+      "priority": "Low",
+      "reportingEntityId": "",
+      "reportingEntityName": "ManagedElement=gNB-Eurecom-5GNRBox-00001",
+      "sourceId": "3584",
+      "sourceName": "gNB-Eurecom-5GNRBox-00001",
+      "startEpochMicrosec": 1748957443348743,
+      "lastEpochMicrosec": 1748957443348743,
+      "nfNamingCode": "001",
+      "nfVendorName": "OpenAirInterface",
+      "timeZoneOffset": "+00:00",
+      "version": "4.1",
+      "vesEventListenerVersion": "7.2.1"
+    },
+    "pnfRegistrationFields": {
+      "pnfRegistrationFieldsVersion": "2.1",
+      "lastServiceDate": "2021-03-26",
+      "macAddress": "00:00:00:00:00:00",
+      "manufactureDate": "2021-01-16",
+      "modelNumber": "nr-softmodem",
+      "oamV4IpAddress": "10.2.1.10",
+      "serialNumber": "OpenAirInterface-gNB-10.2.1.10-nr-softmodem",
+      "softwareVersion": "2.3.5",
+      "unitFamily": "OpenAirInterface-gNB",
+      "unitType": "gNB",
+      "vendorName": "OpenAirInterface",
+      "additionalFields": {
+        "oamPort": "1830",
+        "protocol": "SSH",
+        "username": "netconf",
+        "password": "netconf!",
+        "reconnectOnChangedSchema": "false",
+        "sleep-factor": "1.5",
+        "tcpOnly": "false",
+        "connectionTimeout": "20000",
+        "maxConnectionAttempts": "100",
+        "betweenAttemptsTimeout": "2000",
+        "keepaliveDelay": "120"
+      }
+    }
+  }
+}
