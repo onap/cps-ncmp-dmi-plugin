@@ -1,0 +1,44 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "adf93037_301f373a",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2025-06-09T15:44:12Z",
+      "side": 1,
+      "message": "just a quick question",
+      "revId": "8aa9cca273dc737ed09bd5cebb36022ca91dca2f",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "3829a240_b8f64651",
+        "filename": "dmi-service/pom.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 474,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2025-06-09T15:44:12Z",
+      "side": 1,
+      "message": "where does this come from, why is it needed, I dont; see  it in CPS/NCMP",
+      "range": {
+        "startLine": 474,
+        "startChar": 51,
+        "endLine": 474,
+        "endChar": 84
+      },
+      "revId": "8aa9cca273dc737ed09bd5cebb36022ca91dca2f",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    }
+  ]
+}
