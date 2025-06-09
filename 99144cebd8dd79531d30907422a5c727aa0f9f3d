@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "22faddac_f6441473",
+        "filename": "dmi-service/src/main/java/org/onap/cps/ncmp/dmi/service/client/NcmpRestClient.java",
+        "patchSetId": 9
+      },
+      "lineNbr": 59,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2025-06-09T10:46:14Z",
+      "side": 1,
+      "message": "wording: You dont Enable the flag, you use a flag (\u0027how\u0027, not \u0027what\u0027) to enable or disable a feature:\n\nsuggestion \u0027enableNcmpDataSync\u0027",
+      "range": {
+        "startLine": 59,
+        "startChar": 7,
+        "endLine": 59,
+        "endChar": 54
+      },
+      "revId": "99144cebd8dd79531d30907422a5c727aa0f9f3d",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "e459bfb0_1f514a8e",
+        "filename": "dmi-service/src/test/groovy/org/onap/cps/ncmp/dmi/service/client/NcmpRestClientSpec.groovy",
+        "patchSetId": 9
+      },
+      "lineNbr": 68,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2025-06-09T10:46:14Z",
+      "side": 1,
+      "message": "this should be moved to a (new) given (adn) block. If possible, if not it should at least have its own description/and block",
+      "range": {
+        "startLine": 68,
+        "startChar": 16,
+        "endLine": 68,
+        "endChar": 86
+      },
+      "revId": "99144cebd8dd79531d30907422a5c727aa0f9f3d",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    }
+  ]
+}
