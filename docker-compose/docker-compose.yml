@@ -1,5 +1,5 @@
 # ============LICENSE_START=======================================================
-# Copyright (C) 2021-2022 Nordix Foundation
+# Copyright (C) 2021-2025 OpenInfra Foundation Europe. All rights reserved.
 # Modifications Copyright (C) 2021 Bell Canada.
 # ================================================================================
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -20,16 +20,12 @@
 services:
   ncmp-dmi-plugin:
     container_name: ncmp-dmi-plugin
-    image: ${DOCKER_REPO:-nexus3.onap.org:10003}/onap/ncmp-dmi-plugin:${DMI_VERSION:-latest}
+    image: ${DOCKER_REPO:-nexus3.onap.org:10003}/onap/ncmp-dmi-plugin:${DMI_VERSION:-1.8.0-SNAPSHOT-latest}
     ports:
       - ${DMI_PORT:-8783}:8080
     environment:
-      CPS_USERNAME: ${CPS_CORE_USERNAME:-cpsuser}
-      CPS_PASSWORD: ${CPS_CORE_PASSWORD:-cpsr0cks!}
       CPS_CORE_HOST: ${CPS_CORE_HOST:-cps}
       CPS_CORE_PORT: ${CPS_CORE_PORT:-8080}
-      CPS_CORE_USERNAME: ${CPS_CORE_USERNAME:-cpsuser}
-      CPS_CORE_PASSWORD: ${CPS_CORE_PASSWORD:-cpsr0cks!}
       SDNC_HOST: ${SDNC_HOST:-sdnc}
       SDNC_PORT: ${SDNC_PORT:-8181}
       SDNC_USERNAME: ${SDNC_USERNAME:-admin}

@@ -47,10 +47,6 @@ public class DmiConfiguration {
         private String dmiRegistrationUrl;
         @Value("${cps-core.dataSyncEnabledUrl}")
         private String dataSyncEnabledUrl;
-        @Value("${cps-core.auth.username}")
-        private String authUsername;
-        @Value("${cps-core.auth.password}")
-        private String authPassword;
     }
 
     @Getter
