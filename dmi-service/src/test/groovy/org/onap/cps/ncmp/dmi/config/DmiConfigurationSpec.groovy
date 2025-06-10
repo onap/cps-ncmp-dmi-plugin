@@ -40,8 +40,6 @@ class DmiConfigurationSpec extends Specification {
         expect: 'CPS properties are set to values in test configuration yaml file'
             cpsProperties.baseUrl == 'some url for cps'
             cpsProperties.dmiRegistrationUrl == 'some registration url'
-            cpsProperties.authUsername == 'some cps core user'
-            cpsProperties.authPassword == 'some cps core password'
             cpsProperties.dataSyncEnabledUrl == 'some data sync url/{some-cm-handle}?dataSyncFlag=true'
     }
 

@@ -63,7 +63,6 @@ dmi-plugin can be started either using a Java Archive previously built or direct
 Following command starts the application using JAR file:
 
 ```bash
-CPS_USERNAME=cpsuser CPS_PASSWORD=cpsr0cks! \
   java -jar ncmp-dmi-plugin/target/ncmp-dmi-plugin-x.y.z-SNAPSHOT.jar
 ```
 
@@ -72,8 +71,7 @@ CPS_USERNAME=cpsuser CPS_PASSWORD=cpsr0cks! \
 Here are the steps to run or debug the application from Intellij:
 
 1. Enable the desired maven profile from Maven Tool Window
-2. Run a configuration from `Run -> Edit configurations` with following settings:
-   * `Environment variables`: `CPS_USERNAME=cpsuser CPS_PASSWORD=cpsr0cks!`
+2. Run a configuration from `Run -> Edit configurations`
 
 ## Accessing services
 

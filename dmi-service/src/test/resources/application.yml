@@ -37,9 +37,6 @@ cps-core:
   baseUrl: some url for cps
   dmiRegistrationUrl: some registration url
   dataSyncEnabledUrl: some data sync url/{some-cm-handle}?dataSyncFlag=true
-  auth:
-    username: some cps core user
-    password: some cps core password
 
 dmi:
   service:

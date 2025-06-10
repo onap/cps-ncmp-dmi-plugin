@@ -109,9 +109,6 @@ cps-core:
   baseUrl: http://${CPS_CORE_HOST}:${CPS_CORE_PORT}
   dmiRegistrationUrl : /ncmpInventory/v1/ch
   dataSyncEnabledUrl: /ncmp/v1/ch/{cmHandleId}/data-sync?dataSyncEnabled=true
-  auth:
-    username: ${CPS_CORE_USERNAME}
-    password: ${CPS_CORE_PASSWORD}
 
 sdnc:
   baseUrl: http://${SDNC_HOST}:${SDNC_PORT}
