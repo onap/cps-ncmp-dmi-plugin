@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "2431356e_2f521200",
+        "filename": "dmi-stub/dmi-stub-app/pom.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 94,
+      "author": {
+        "id": 7965
+      },
+      "writtenOn": "2025-06-11T09:29:02Z",
+      "side": 1,
+      "message": "we can decide with the team to suffix -latest tag to image.version or not.\ncoz at other places we are suffixing it.\n\nif we go with this then for consistency we should change at other places too.",
+      "range": {
+        "startLine": 94,
+        "startChar": 33,
+        "endLine": 94,
+        "endChar": 61
+      },
+      "revId": "be180a1499df245f2da19cec49c64c1d0f2df605",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    }
+  ]
+}
