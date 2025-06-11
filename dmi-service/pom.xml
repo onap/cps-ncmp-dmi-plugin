@@ -656,7 +656,7 @@
                         <to>
                             <tags>
                                 <tag>latest</tag>
-                                <tag>${project.version}-latest</tag>
+                                <tag>${project.version}</tag>
                             </tags>
                             <image>${docker.push.registry}/onap/${image.name}:${image.tag}</image>
                         </to>
