@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "08de214b_3d74c5a3",
+        "filename": "dmi-service/pom.xml",
+        "patchSetId": 3
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 7965
+      },
+      "writtenOn": "2025-06-11T11:34:06Z",
+      "side": 1,
+      "message": "NB: license.",
+      "range": {
+        "startLine": 4,
+        "startChar": 16,
+        "endLine": 4,
+        "endChar": 38
+      },
+      "revId": "477f4062f0c100ad1d5590a1091761a8f8612b2f",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    }
+  ]
+}

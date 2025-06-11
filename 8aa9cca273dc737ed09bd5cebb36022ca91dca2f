@@ -39,6 +39,30 @@
       },
       "revId": "8aa9cca273dc737ed09bd5cebb36022ca91dca2f",
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "5fcf85e9_2ed1cd14",
+        "filename": "dmi-service/pom.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 474,
+      "author": {
+        "id": 7965
+      },
+      "writtenOn": "2025-06-11T11:34:06Z",
+      "side": 1,
+      "message": "amm. in CPS-NCMP we create a config class named JettyConfig.\nIf this change works then we can discuss with the team where to have the config.\npom or java class.",
+      "parentUuid": "3829a240_b8f64651",
+      "range": {
+        "startLine": 474,
+        "startChar": 51,
+        "endLine": 474,
+        "endChar": 84
+      },
+      "revId": "8aa9cca273dc737ed09bd5cebb36022ca91dca2f",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
     }
   ]
 }
