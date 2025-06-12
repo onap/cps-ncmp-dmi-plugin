@@ -1,5 +1,5 @@
 #  ============LICENSE_START=======================================================
-#  Copyright (C) 2023-2024 Nordix Foundation
+#  Copyright (C) 2023-2025 OpenInfra Foundation Europe. All rights reserved.
 #  ================================================================================
 #  Licensed under the Apache License, Version 2.0 (the "License");
 #  you may not use this file except in compliance with the License.
@@ -64,10 +64,3 @@ delay:
     read-data-for-cm-handle-delay-ms: ${READ_DATA_FOR_CM_HANDLE_DELAY_MS:300}
     write-data-for-cm-handle-delay-ms: ${WRITE_DATA_FOR_CM_HANDLE_DELAY_MS:670}
 
-logging:
-    level:
-        org:
-            springframework:
-                web:
-                    filter:
-                        CommonsRequestLoggingFilter: DEBUG

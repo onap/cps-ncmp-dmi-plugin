@@ -1,6 +1,6 @@
 /*
  * ============LICENSE_START=======================================================
- *  Copyright (C) 2023-2024 Nordix Foundation
+ *  Copyright (C) 2023-2025 OpenInfra Foundation Europe. All rights reserved.
  *  ================================================================================
  *  Licensed under the Apache License, Version 2.0 (the "License");
  *  you may not use this file except in compliance with the License.
@@ -211,14 +211,14 @@ public class DmiRestStubController {
             @RequestParam(value = "topic", required = false) final String topic,
             @RequestHeader(value = "Authorization", required = false) final String authorization,
             @RequestBody final String requestBody) {
-        log.info("DMI AUTH HEADER: {}", authorization);
+        log.debug("DMI AUTH HEADER: {}", authorization);
         final String passthroughOperationType = getPassthroughOperationType(requestBody);
         if (passthroughOperationType.equals("read")) {
             delay(readDataForCmHandleDelayMs);
         } else {
             delay(writeDataForCmHandleDelayMs);
         }
-        log.info("Logging request body {}", requestBody);
+        log.debug("Logging request body {}", requestBody);
 
         final String sampleJson = ResourceFileReaderUtil.getResourceFileContent(applicationContext.getResource(
                 ResourceLoader.CLASSPATH_URL_PREFIX + "data/ietf-network-topology-sample-rfc8345.json"));
@@ -240,15 +240,15 @@ public class DmiRestStubController {
             @RequestBody final DmiDataOperationRequest dmiDataOperationRequest) {
         delay(writeDataForCmHandleDelayMs);
         try {
-            log.info("Request received from the NCMP to DMI Plugin: {}",
+            log.debug("Request received from the NCMP to DMI Plugin: {}",
                     objectMapper.writeValueAsString(dmiDataOperationRequest));
         } catch (final JsonProcessingException jsonProcessingException) {
-            log.info("Unable to process dmi data operation request to json string");
+            log.warn("Unable to process dmi data operation request to json string");
         }
         dmiDataOperationRequest.getOperations().forEach(dmiDataOperation -> {
             final DataOperationEvent dataOperationEvent = getDataOperationEvent(dmiDataOperation);
             dmiDataOperation.getCmHandles().forEach(dmiOperationCmHandle -> {
-                log.info("Module Set Tag received: {}", dmiOperationCmHandle.getModuleSetTag());
+                log.debug("Module Set Tag received: {}", dmiOperationCmHandle.getModuleSetTag());
                 dataOperationEvent.getData().getResponses().get(0).setIds(List.of(dmiOperationCmHandle.getId()));
                 final CloudEvent cloudEvent = buildAndGetCloudEvent(topic, requestId, dataOperationEvent);
                 cloudEventKafkaTemplate.send(ncmpAsyncM2mTopic, UUID.randomUUID().toString(), cloudEvent);
@@ -286,7 +286,7 @@ public class DmiRestStubController {
     public ResponseEntity<Map<String, String>> retrieveDataJobStatus(
             @PathVariable("dataProducerId") final String dataProducerId,
             @PathVariable("dataProducerJobId") final String dataProducerJobId) {
-        log.info("Received request to retrieve data job status. Request ID: {}, Data Producer Job ID: {}",
+        log.debug("Received request to retrieve data job status. Request ID: {}, Data Producer Job ID: {}",
                 dataProducerId, dataProducerJobId);
         return ResponseEntity.ok(Map.of("status", "FINISHED"));
     }
@@ -390,9 +390,9 @@ public class DmiRestStubController {
 
     private void logRequestBody(final Object request) {
         try {
-            log.info("Incoming DMI request body: {}", objectMapper.writeValueAsString(request));
+            log.debug("Incoming DMI request body: {}", objectMapper.writeValueAsString(request));
         } catch (final JsonProcessingException jsonProcessingException) {
-            log.info("Unable to parse DMI request to json string");
+            log.warn("Unable to parse DMI request to json string");
         }
     }
 

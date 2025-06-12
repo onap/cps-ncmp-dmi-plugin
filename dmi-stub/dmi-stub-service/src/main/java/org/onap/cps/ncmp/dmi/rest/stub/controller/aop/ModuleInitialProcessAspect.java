@@ -1,6 +1,6 @@
 /*
  * ============LICENSE_START=======================================================
- *  Copyright (C) 2024 Nordix Foundation
+ *  Copyright (C) 2024-2025 OpenInfra Foundation Europe. All rights reserved.
  *  ================================================================================
  *  Licensed under the Apache License, Version 2.0 (the "License");
  *  you may not use this file except in compliance with the License.
@@ -78,7 +78,8 @@ public class ModuleInitialProcessAspect {
         }
 
         final long remainingProcessingTime = calculateRemainingProcessingTime(currentTimestamp, firstRequestTimestamp);
-        log.info("Initial processing for moduleSetTag '{}' is still active. Returning HTTP 503. Remaining time: {} ms.",
+        log.debug("Initial processing for moduleSetTag '{}' is still active."
+                + " Returning HTTP 503. Remaining time: {} ms.",
                 moduleSetTag, remainingProcessingTime);
         return ResponseEntity.status(HttpStatus.SERVICE_UNAVAILABLE).build();
     }
