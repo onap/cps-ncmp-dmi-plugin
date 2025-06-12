@@ -22,6 +22,30 @@
       },
       "revId": "be180a1499df245f2da19cec49c64c1d0f2df605",
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "681cfcfb_9d991a83",
+        "filename": "dmi-stub/dmi-stub-app/pom.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 94,
+      "author": {
+        "id": 7965
+      },
+      "writtenOn": "2025-06-12T10:02:57Z",
+      "side": 1,
+      "message": "discussed with the team and we will just go with project.version at all places.",
+      "parentUuid": "2431356e_2f521200",
+      "range": {
+        "startLine": 94,
+        "startChar": 33,
+        "endLine": 94,
+        "endChar": 61
+      },
+      "revId": "be180a1499df245f2da19cec49c64c1d0f2df605",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
     }
   ]
 }
