@@ -16,6 +16,92 @@
       "message": "it looks good.",
       "revId": "e88a7416b4549f73366abb92f819930351c04725",
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "19cd266b_e9879af5",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 7965
+      },
+      "writtenOn": "2025-06-12T17:16:15Z",
+      "side": 1,
+      "message": "all good except license update.",
+      "revId": "e88a7416b4549f73366abb92f819930351c04725",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "aade6239_63d664fe",
+        "filename": "dmi-stub/dmi-stub-service/src/main/java/org/onap/cps/ncmp/dmi/rest/stub/controller/DmiRestStubController.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 7965
+      },
+      "writtenOn": "2025-06-12T17:16:15Z",
+      "side": 1,
+      "message": "NB: license",
+      "range": {
+        "startLine": 3,
+        "startChar": 18,
+        "endLine": 3,
+        "endChar": 45
+      },
+      "revId": "e88a7416b4549f73366abb92f819930351c04725",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "d70892df_4e5d1673",
+        "filename": "dmi-stub/dmi-stub-service/src/main/java/org/onap/cps/ncmp/dmi/rest/stub/controller/aop/ModuleInitialProcessAspect.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 7965
+      },
+      "writtenOn": "2025-06-12T17:16:15Z",
+      "side": 1,
+      "message": "NB: license",
+      "range": {
+        "startLine": 3,
+        "startChar": 18,
+        "endLine": 3,
+        "endChar": 40
+      },
+      "revId": "e88a7416b4549f73366abb92f819930351c04725",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "85f28290_7b88de3f",
+        "filename": "dmi-stub/dmi-stub-service/src/main/resources/application.yml",
+        "patchSetId": 1
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 7965
+      },
+      "writtenOn": "2025-06-12T17:16:15Z",
+      "side": 1,
+      "message": "NB: license",
+      "range": {
+        "startLine": 2,
+        "startChar": 3,
+        "endLine": 2,
+        "endChar": 44
+      },
+      "revId": "e88a7416b4549f73366abb92f819930351c04725",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
     }
   ]
 }
