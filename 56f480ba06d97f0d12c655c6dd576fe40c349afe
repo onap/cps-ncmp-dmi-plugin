@@ -16,6 +16,29 @@
       "message": "I priyank thinks no other changes are required I am good with this",
       "revId": "56f480ba06d97f0d12c655c6dd576fe40c349afe",
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "b7e3706b_41bb2e68",
+        "filename": "dmi-service/pom.xml",
+        "patchSetId": 2
+      },
+      "lineNbr": 659,
+      "author": {
+        "id": 7965
+      },
+      "writtenOn": "2025-06-12T10:05:46Z",
+      "side": 1,
+      "message": "also update in the docker-compose file.",
+      "range": {
+        "startLine": 659,
+        "startChar": 32,
+        "endLine": 659,
+        "endChar": 61
+      },
+      "revId": "56f480ba06d97f0d12c655c6dd576fe40c349afe",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
     }
   ]
 }
