@@ -1,0 +1,44 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "9c0541c6_9e47ee8f",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 7965
+      },
+      "writtenOn": "2025-06-12T12:03:39Z",
+      "side": 1,
+      "message": "fine by me.",
+      "revId": "3419cb4052f3cd578ee411d4f2fc5917a841528a",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "6a48a2e6_9d9cdf4b",
+        "filename": "dmi-service/pom.xml",
+        "patchSetId": 3
+      },
+      "lineNbr": 658,
+      "author": {
+        "id": 7965
+      },
+      "writtenOn": "2025-06-12T12:03:39Z",
+      "side": 1,
+      "message": "not for this patch but we can eventually remove the latest tag eventually.",
+      "range": {
+        "startLine": 658,
+        "startChar": 32,
+        "endLine": 658,
+        "endChar": 49
+      },
+      "revId": "3419cb4052f3cd578ee411d4f2fc5917a841528a",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    }
+  ]
+}
