@@ -64,10 +64,3 @@ delay:
     read-data-for-cm-handle-delay-ms: ${READ_DATA_FOR_CM_HANDLE_DELAY_MS:300}
     write-data-for-cm-handle-delay-ms: ${WRITE_DATA_FOR_CM_HANDLE_DELAY_MS:670}
 
-logging:
-    level:
-        org:
-            springframework:
-                web:
-                    filter:
-                        CommonsRequestLoggingFilter: DEBUG

@@ -78,7 +78,8 @@ public class ModuleInitialProcessAspect {
         }
 
         final long remainingProcessingTime = calculateRemainingProcessingTime(currentTimestamp, firstRequestTimestamp);
-        log.info("Initial processing for moduleSetTag '{}' is still active. Returning HTTP 503. Remaining time: {} ms.",
+        log.debug("Initial processing for moduleSetTag '{}' is still active."
+                + " Returning HTTP 503. Remaining time: {} ms.",
                 moduleSetTag, remainingProcessingTime);
         return ResponseEntity.status(HttpStatus.SERVICE_UNAVAILABLE).build();
     }
