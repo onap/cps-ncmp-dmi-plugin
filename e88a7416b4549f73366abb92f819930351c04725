@@ -58,6 +58,30 @@
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "94999103_c4df6dba",
+        "filename": "dmi-stub/dmi-stub-service/src/main/java/org/onap/cps/ncmp/dmi/rest/stub/controller/DmiRestStubController.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2025-06-16T07:34:01Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "aade6239_63d664fe",
+      "range": {
+        "startLine": 3,
+        "startChar": 18,
+        "endLine": 3,
+        "endChar": 45
+      },
+      "revId": "e88a7416b4549f73366abb92f819930351c04725",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "d70892df_4e5d1673",
@@ -81,6 +105,30 @@
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "8ad0c95a_61c5af6e",
+        "filename": "dmi-stub/dmi-stub-service/src/main/java/org/onap/cps/ncmp/dmi/rest/stub/controller/aop/ModuleInitialProcessAspect.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2025-06-16T07:34:01Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "d70892df_4e5d1673",
+      "range": {
+        "startLine": 3,
+        "startChar": 18,
+        "endLine": 3,
+        "endChar": 40
+      },
+      "revId": "e88a7416b4549f73366abb92f819930351c04725",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "85f28290_7b88de3f",
@@ -94,6 +142,30 @@
       "writtenOn": "2025-06-12T17:16:15Z",
       "side": 1,
       "message": "NB: license",
+      "range": {
+        "startLine": 2,
+        "startChar": 3,
+        "endLine": 2,
+        "endChar": 44
+      },
+      "revId": "e88a7416b4549f73366abb92f819930351c04725",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "100b3757_46dffdb9",
+        "filename": "dmi-stub/dmi-stub-service/src/main/resources/application.yml",
+        "patchSetId": 1
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2025-06-16T07:34:01Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "85f28290_7b88de3f",
       "range": {
         "startLine": 2,
         "startChar": 3,
