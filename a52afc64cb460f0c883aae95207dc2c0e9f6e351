@@ -22,6 +22,30 @@
       },
       "revId": "a52afc64cb460f0c883aae95207dc2c0e9f6e351",
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "fdbe0259_fb7873af",
+        "filename": "dmi-service/pom.xml",
+        "patchSetId": 2
+      },
+      "lineNbr": 478,
+      "author": {
+        "id": 4893
+      },
+      "writtenOn": "2025-06-16T13:57:02Z",
+      "side": 1,
+      "message": "Yes, nothing added to the repo. Anything under /target is ignored",
+      "parentUuid": "4043ea8a_7eb99184",
+      "range": {
+        "startLine": 478,
+        "startChar": 36,
+        "endLine": 478,
+        "endChar": 107
+      },
+      "revId": "a52afc64cb460f0c883aae95207dc2c0e9f6e351",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
     }
   ]
 }
