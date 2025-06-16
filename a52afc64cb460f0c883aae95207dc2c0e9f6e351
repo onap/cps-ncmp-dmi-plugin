@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "4043ea8a_7eb99184",
+        "filename": "dmi-service/pom.xml",
+        "patchSetId": 2
+      },
+      "lineNbr": 478,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2025-06-16T13:21:52Z",
+      "side": 1,
+      "message": "this is still a \u0027generated\u0027 folder correct, nothing will be added to the repo...",
+      "range": {
+        "startLine": 478,
+        "startChar": 36,
+        "endLine": 478,
+        "endChar": 107
+      },
+      "revId": "a52afc64cb460f0c883aae95207dc2c0e9f6e351",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    }
+  ]
+}
