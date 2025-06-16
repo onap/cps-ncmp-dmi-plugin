@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "36d8593e_2d6a4af8",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 7965
+      },
+      "writtenOn": "2025-06-16T15:49:59Z",
+      "side": 1,
+      "message": "Need to handle the below in a separate patchset.\n1. Currently all the docs are referred from the master branch irrespective of the branch we are on/ release we are on. So need to use the release tag in conf.py \n2. The url for openapi file should also be used as per the release/branch we are on.",
+      "revId": "ef2c8f2bef67c1fecced285213a1e7b6c0239978",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    }
+  ]
+}
