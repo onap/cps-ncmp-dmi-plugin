@@ -17,9 +17,10 @@ Offered APIs
 
 The DMI-Plugin supports the public APIs listed in the link below:
 
-:download:`DMI Rest OpenApi Specification <https://gerrit.onap.org/r/gitweb?p=cps.git;a=blob_plain;f=docs/api/swagger/dmi/openapi.yml>`
+|dmi_openapi_url|
 
-:download:`DMI Datajob OpenApi Specification <https://gerrit.onap.org/r/gitweb?p=cps.git;a=blob_plain;f=docs/api/swagger/dmi/openapi-datajob.yml>`
+|dmi_openapi_datajob_url|
+
 
 View Offered APIs
 -----------------
