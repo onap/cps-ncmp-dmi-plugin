@@ -46,7 +46,7 @@
         <maven.surefire.plugin.version>3.3.1</maven.surefire.plugin.version>
         <openapi.generator.maven.plugin.version>7.12.0</openapi.generator.maven.plugin.version>
         <sonar.version>4.0.0.4121</sonar.version>
-        <spring.boot.maven.plugin.version>3.4.4</spring.boot.maven.plugin.version>
+        <spring.boot.maven.plugin.version>3.4.7</spring.boot.maven.plugin.version>
         <spotbugs.maven.plugin.version>4.7.3.0</spotbugs.maven.plugin.version>
         <maven-resources-plugin.version>3.3.1</maven-resources-plugin.version>
 
@@ -169,7 +169,7 @@
             <dependency>
                 <groupId>org.apache.httpcomponents.client5</groupId>
                 <artifactId>httpclient5</artifactId>
-                <version>5.4.1</version>
+                <version>5.4.4</version>
             </dependency>
             <dependency>
                 <groupId>com.jayway.jsonpath</groupId>
