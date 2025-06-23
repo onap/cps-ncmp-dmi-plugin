@@ -43,6 +43,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "918878f0_a1b0f49c",
+        "filename": "dmi-service/pom.xml",
+        "patchSetId": 2
+      },
+      "lineNbr": 64,
+      "author": {
+        "id": 4893
+      },
+      "writtenOn": "2025-06-23T09:45:06Z",
+      "side": 1,
+      "message": "Was going to do it once it as merged",
+      "parentUuid": "8e2f49bf_6d9edd49",
+      "range": {
+        "startLine": 64,
+        "startChar": 8,
+        "endLine": 64,
+        "endChar": 47
+      },
+      "revId": "db1692afe080d1bfa8cfe907d12d01bde1c8adb3",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "82f11fd9_37dc8f78",
         "filename": "docs/conf.py",
         "patchSetId": 2
@@ -54,6 +78,30 @@
       "writtenOn": "2025-06-23T09:20:38Z",
       "side": 1,
       "message": "what is this about?\nOH  Is ee now, you are replacing placeholders, there is no way of inserting it directly?",
+      "range": {
+        "startLine": 25,
+        "startChar": 0,
+        "endLine": 29,
+        "endChar": 3
+      },
+      "revId": "db1692afe080d1bfa8cfe907d12d01bde1c8adb3",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "8282730e_1ab30f4d",
+        "filename": "docs/conf.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 4893
+      },
+      "writtenOn": "2025-06-23T09:45:06Z",
+      "side": 1,
+      "message": "Not if you want to substitute the release into the url. Limitation of rst",
+      "parentUuid": "82f11fd9_37dc8f78",
       "range": {
         "startLine": 25,
         "startChar": 0,
