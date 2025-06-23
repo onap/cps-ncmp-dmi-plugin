@@ -23,6 +23,11 @@ project = "onap"
 release = "master"
 version = "master"
 
+rst_epilog = f"""
+.. |dmi_openapi_url| replace:: `DMI Rest OpenAPI Specification <https://gerrit.onap.org/r/gitweb?p=cps.git;a=blob_plain;f=docs/api/swagger/dmi/openapi.yml;hb=refs/heads/{release}>`__
+.. |dmi_openapi_datajob_url| replace:: `DMI Datajob OpenApi Specification <https://gerrit.onap.org/r/gitweb?p=cps.git;a=blob_plain;f=docs/api/swagger/dmi/openapi-datajob.yml;hb=refs/heads/{release}>`__
+"""
+
 author = "Open Network Automation Platform"
 # yamllint disable-line rule:line-length
 copyright = "ONAP. Licensed under Creative Commons Attribution 4.0 International License"
