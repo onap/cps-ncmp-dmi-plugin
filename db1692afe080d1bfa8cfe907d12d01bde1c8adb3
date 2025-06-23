@@ -65,6 +65,30 @@
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "1c618558_9116c114",
+        "filename": "dmi-service/pom.xml",
+        "patchSetId": 2
+      },
+      "lineNbr": 64,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2025-06-23T12:31:49Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "918878f0_a1b0f49c",
+      "range": {
+        "startLine": 64,
+        "startChar": 8,
+        "endLine": 64,
+        "endChar": 47
+      },
+      "revId": "db1692afe080d1bfa8cfe907d12d01bde1c8adb3",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "82f11fd9_37dc8f78",
@@ -102,6 +126,30 @@
       "side": 1,
       "message": "Not if you want to substitute the release into the url. Limitation of rst",
       "parentUuid": "82f11fd9_37dc8f78",
+      "range": {
+        "startLine": 25,
+        "startChar": 0,
+        "endLine": 29,
+        "endChar": 3
+      },
+      "revId": "db1692afe080d1bfa8cfe907d12d01bde1c8adb3",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "e237a50b_73319008",
+        "filename": "docs/conf.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2025-06-23T12:31:49Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "8282730e_1ab30f4d",
       "range": {
         "startLine": 25,
         "startChar": 0,
