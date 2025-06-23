@@ -1,0 +1,67 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "b908ea95_d8c3df02",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2025-06-23T09:20:38Z",
+      "side": 1,
+      "message": "just 2 questions...",
+      "revId": "db1692afe080d1bfa8cfe907d12d01bde1c8adb3",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "8e2f49bf_6d9edd49",
+        "filename": "dmi-service/pom.xml",
+        "patchSetId": 2
+      },
+      "lineNbr": 64,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2025-06-23T09:20:38Z",
+      "side": 1,
+      "message": "did you update our \u0027release\u0027 wiki with anot about this?",
+      "range": {
+        "startLine": 64,
+        "startChar": 8,
+        "endLine": 64,
+        "endChar": 47
+      },
+      "revId": "db1692afe080d1bfa8cfe907d12d01bde1c8adb3",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "82f11fd9_37dc8f78",
+        "filename": "docs/conf.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2025-06-23T09:20:38Z",
+      "side": 1,
+      "message": "what is this about?\nOH  Is ee now, you are replacing placeholders, there is no way of inserting it directly?",
+      "range": {
+        "startLine": 25,
+        "startChar": 0,
+        "endLine": 29,
+        "endChar": 3
+      },
+      "revId": "db1692afe080d1bfa8cfe907d12d01bde1c8adb3",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    }
+  ]
+}
