@@ -65,7 +65,7 @@ docker-compose up -d
 cd $DMI_PLUGIN_HOME
 git clone "https://gerrit.onap.org/r/cps"
 cd $DMI_PLUGIN_HOME/cps/docker-compose
-docker-compose -f cps-base.yml up -d
+docker-compose -f docker-compose.yml up -d
 
 ###################### setup sdnc #######################################
 source $WORKSPACE/plans/dmi/sdnc/sdnc_setup.sh
