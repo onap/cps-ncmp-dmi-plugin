@@ -16,6 +16,23 @@
       "message": "recheck",
       "revId": "8fc8ced56399341020747609123071eaa3093b84",
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "41144f54_d711f556",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2025-07-08T15:39:03Z",
+      "side": 1,
+      "message": "Looks like the same 2 CSIT test are consistently failing\nIs it a compatibilty issue? maybe you need to build CPS first and rebuild DMI with latest CPS?\"!",
+      "revId": "8fc8ced56399341020747609123071eaa3093b84",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
     }
   ]
 }
