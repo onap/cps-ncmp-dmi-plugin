@@ -33,6 +33,24 @@
       "message": "Looks like the same 2 CSIT test are consistently failing\nIs it a compatibilty issue? maybe you need to build CPS first and rebuild DMI with latest CPS?\"!",
       "revId": "8fc8ced56399341020747609123071eaa3093b84",
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "6cfd8c1e_dde3e350",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 4893
+      },
+      "writtenOn": "2025-07-09T15:39:44Z",
+      "side": 1,
+      "message": "It was the messing around with docker-compose file naming in CPS that was not reflected in the CSIT setup here",
+      "parentUuid": "41144f54_d711f556",
+      "revId": "8fc8ced56399341020747609123071eaa3093b84",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
     }
   ]
 }
