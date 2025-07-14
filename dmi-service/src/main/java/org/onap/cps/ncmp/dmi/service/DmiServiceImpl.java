@@ -30,6 +30,7 @@ import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 import lombok.extern.slf4j.Slf4j;
+import org.onap.cps.ncmp.dmi.cmstack.avc.CmAvcEventService;
 import org.onap.cps.ncmp.dmi.config.DmiPluginConfig.DmiPluginProperties;
 import org.onap.cps.ncmp.dmi.exception.CmHandleRegistrationException;
 import org.onap.cps.ncmp.dmi.exception.DmiException;
@@ -59,6 +60,7 @@ public class DmiServiceImpl implements DmiService {
     private NcmpRestClient ncmpRestClient;
     private ObjectMapper objectMapper;
     private DmiPluginProperties dmiPluginProperties;
+    private CmAvcEventService cmAvcEventService;
 
     /**
      * Constructor.
@@ -67,14 +69,18 @@ public class DmiServiceImpl implements DmiService {
      * @param ncmpRestClient      ncmpRestClient
      * @param sdncOperations      sdncOperations
      * @param objectMapper        objectMapper
+     * @param cmAvcEventService   cmAvcEventService
      */
     public DmiServiceImpl(final DmiPluginProperties dmiPluginProperties,
-        final NcmpRestClient ncmpRestClient,
-        final SdncOperations sdncOperations, final ObjectMapper objectMapper) {
+                                    final NcmpRestClient ncmpRestClient,
+                                    final SdncOperations sdncOperations,
+                                    final ObjectMapper objectMapper,
+                                    final CmAvcEventService cmAvcEventService) {
         this.dmiPluginProperties = dmiPluginProperties;
         this.ncmpRestClient = ncmpRestClient;
         this.objectMapper = objectMapper;
         this.sdncOperations = sdncOperations;
+        this.cmAvcEventService = cmAvcEventService;
     }
 
     @Override
@@ -160,7 +166,7 @@ public class DmiServiceImpl implements DmiService {
             resourceIdentifier,
             optionsParamInQuery,
             restconfContentQueryParam);
-        return prepareAndSendResponse(responseEntity, cmHandle);
+        return getDeviceResponse(responseEntity, cmHandle);
     }
 
     @Override
@@ -170,10 +176,12 @@ public class DmiServiceImpl implements DmiService {
                             final String dataType, final String data) {
         final ResponseEntity<String> responseEntity =
             sdncOperations.writeData(operation, cmHandle, resourceIdentifier, dataType, data);
-        return prepareAndSendResponse(responseEntity, cmHandle);
+        final String deviceResponse = getDeviceResponse(responseEntity, cmHandle);
+        cmAvcEventService.sendCmAvcEvent(operation, cmHandle, resourceIdentifier, data);
+        return deviceResponse;
     }
 
-    private String prepareAndSendResponse(final ResponseEntity<String> responseEntity, final String cmHandle) {
+    private String getDeviceResponse(final ResponseEntity<String> responseEntity, final String cmHandle) {
         if (responseEntity.getStatusCode().is2xxSuccessful()) {
             return responseEntity.getBody();
         } else {
