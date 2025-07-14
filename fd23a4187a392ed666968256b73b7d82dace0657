@@ -1,0 +1,44 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "2b05bc3c_218607f1",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 7931
+      },
+      "writtenOn": "2025-07-14T16:10:17Z",
+      "side": 1,
+      "message": "minor comment , all good",
+      "revId": "fd23a4187a392ed666968256b73b7d82dace0657",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "cc047ad1_2820a3dd",
+        "filename": "dmi-service/src/main/java/org/onap/cps/ncmp/dmi/cmstack/avc/CmAvcEventService.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 55,
+      "author": {
+        "id": 7931
+      },
+      "writtenOn": "2025-07-14T16:10:17Z",
+      "side": 1,
+      "message": "i think this is over explaining its purpose but not exactly what the method its describing does?\n\nit handles creation of event and sends event",
+      "range": {
+        "startLine": 55,
+        "startChar": 32,
+        "endLine": 55,
+        "endChar": 86
+      },
+      "revId": "fd23a4187a392ed666968256b73b7d82dace0657",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    }
+  ]
+}
