@@ -76,6 +76,7 @@ app:
     avc:
       cm-subscription-dmi-in: ${CM_SUBSCRIPTION_DMI_IN_TOPIC:ncmp-dmi-cm-avc-subscription}
       cm-subscription-dmi-out: ${CM_SUBSCRIPTION_DMI_OUT_TOPIC:dmi-ncmp-cm-avc-subscription}
+      cm-avc-events-topic: ${DMI_CM_AVC_EVENTS:dmi-cm-events}
     ves:
       topicNames:
         - "unauthenticated.VES_PNFREG_OUTPUT"

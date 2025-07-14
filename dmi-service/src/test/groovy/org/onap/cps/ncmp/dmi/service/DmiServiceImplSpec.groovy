@@ -1,6 +1,6 @@
 /*
  *  ============LICENSE_START=======================================================
- *  Copyright (C) 2021-2022 Nordix Foundation
+ *  Copyright (C) 2021-2025 OpenInfra Foundation Europe. All rights reserved.
  *  Modifications Copyright (C) 2021-2022 Bell Canada
  *  ================================================================================
  *  Licensed under the Apache License, Version 2.0 (the "License");
@@ -24,16 +24,17 @@ package org.onap.cps.ncmp.dmi.service
 import com.fasterxml.jackson.core.JsonProcessingException
 import com.fasterxml.jackson.databind.ObjectMapper
 import com.fasterxml.jackson.databind.ObjectWriter
+import org.onap.cps.ncmp.dmi.cmstack.avc.CmAvcEventService
 import org.onap.cps.ncmp.dmi.config.DmiPluginConfig
 import org.onap.cps.ncmp.dmi.exception.CmHandleRegistrationException
 import org.onap.cps.ncmp.dmi.exception.DmiException
+import org.onap.cps.ncmp.dmi.exception.HttpClientRequestException
 import org.onap.cps.ncmp.dmi.exception.ModuleResourceNotFoundException
 import org.onap.cps.ncmp.dmi.exception.ModulesNotFoundException
-import org.onap.cps.ncmp.dmi.exception.HttpClientRequestException
-import org.onap.cps.ncmp.dmi.service.model.ModuleReference
 import org.onap.cps.ncmp.dmi.model.YangResource
 import org.onap.cps.ncmp.dmi.model.YangResources
 import org.onap.cps.ncmp.dmi.service.client.NcmpRestClient
+import org.onap.cps.ncmp.dmi.service.model.ModuleReference
 import org.onap.cps.ncmp.dmi.service.model.ModuleSchema
 import org.onap.cps.ncmp.dmi.service.operation.SdncOperations
 import org.springframework.http.HttpStatus
@@ -51,7 +52,8 @@ class DmiServiceImplSpec extends Specification {
     def spyObjectMapper = Spy(ObjectMapper)
     def mockObjectMapper = Mock(ObjectMapper)
     def mockSdncOperations = Mock(SdncOperations)
-    def objectUnderTest = new DmiServiceImpl(mockDmiPluginProperties, mockNcmpRestClient, mockSdncOperations, spyObjectMapper)
+    def mockCmAvcEventService = Mock(CmAvcEventService)
+    def objectUnderTest = new DmiServiceImpl(mockDmiPluginProperties, mockNcmpRestClient, mockSdncOperations, spyObjectMapper, mockCmAvcEventService)
 
     def 'Register cm handles with ncmp.'() {
         given: 'some cm-handle ids'
@@ -252,13 +254,15 @@ class DmiServiceImplSpec extends Specification {
 
     def 'Write resource data with special characters.'() {
         given: 'sdnc returns a created response'
-            mockSdncOperations.writeData(CREATE, 'some-cmHandle',
-                    'some-resourceIdentifier', 'some-dataType', 'data with quote " and \n new line') >> new ResponseEntity<String>('response json', HttpStatus.CREATED)
+            mockSdncOperations.writeData(CREATE, 'my-cmHandle',
+                    'my-resourceIdentifier', 'my-dataType', 'data with quote " and \n new line') >> new ResponseEntity<String>('response json', HttpStatus.CREATED)
         when: 'resource data is written to sdnc'
-            def response = objectUnderTest.writeData(CREATE, 'some-cmHandle',
-                    'some-resourceIdentifier', 'some-dataType', 'data with quote " and \n new line')
+            def response = objectUnderTest.writeData(CREATE, 'my-cmHandle',
+                    'my-resourceIdentifier', 'my-dataType', 'data with quote " and \n new line')
         then: 'the response matches the expected data'
-            response == 'response json'
+            assert response == 'response json'
+        and: 'the cm avc event is sent to NCMP'
+            1 * mockCmAvcEventService.sendCmAvcEvent(CREATE, 'my-cmHandle', 'my-resourceIdentifier', 'data with quote " and \n new line')
     }
 
     def 'Write resource data for passthrough running with a 500 response from sdnc.'() {
@@ -269,5 +273,18 @@ class DmiServiceImplSpec extends Specification {
                     'some-resourceIdentifier', 'some-dataType', _ as String)
         then: 'a dmi exception is thrown'
             thrown(DmiException.class)
+        and : 'cm avc event is not sent'
+            0 * mockCmAvcEventService.sendCmAvcEvent(*_)
+    }
+
+    def 'Enabling data synchronization flag'() {
+        given: 'a list of cm handle ids'
+            def cmHandleIds = ['ch-1', 'ch-2']
+        when: 'data sync is enabled for the cm handles'
+            objectUnderTest.enableNcmpDataSyncForCmHandles(cmHandleIds)
+        then: 'the data sync is enabled for each cm handle (over the REST interface)'
+            1 * mockNcmpRestClient.enableNcmpDataSync('ch-1')
+            1 * mockNcmpRestClient.enableNcmpDataSync('ch-2')
+
     }
 }
