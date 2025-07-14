@@ -1,6 +1,6 @@
 /*
  *  ============LICENSE_START=======================================================
- *  Copyright (C) 2021-2022 Nordix Foundation
+ *  Copyright (C) 2021-2025 OpenInfra Foundation Europe. All rights reserved.
  *  Modifications Copyright (C) 2021-2022 Bell Canada
  *  ================================================================================
  *  Licensed under the Apache License, Version 2.0 (the "License");
@@ -24,6 +24,7 @@ package org.onap.cps.ncmp.dmi.service
 import com.fasterxml.jackson.core.JsonProcessingException
 import com.fasterxml.jackson.databind.ObjectMapper
 import com.fasterxml.jackson.databind.ObjectWriter
+import org.onap.cps.ncmp.dmi.cmstack.avc.CmAvcEventService
 import org.onap.cps.ncmp.dmi.config.DmiPluginConfig
 import org.onap.cps.ncmp.dmi.exception.CmHandleRegistrationException
 import org.onap.cps.ncmp.dmi.exception.DmiException
@@ -51,7 +52,8 @@ class DmiServiceImplSpec extends Specification {
     def spyObjectMapper = Spy(ObjectMapper)
     def mockObjectMapper = Mock(ObjectMapper)
     def mockSdncOperations = Mock(SdncOperations)
-    def objectUnderTest = new DmiServiceImpl(mockDmiPluginProperties, mockNcmpRestClient, mockSdncOperations, spyObjectMapper)
+    def mockCmAvcEventService = Mock(CmAvcEventService)
+    def objectUnderTest = new DmiServiceImpl(mockDmiPluginProperties, mockNcmpRestClient, mockSdncOperations, spyObjectMapper, mockCmAvcEventService)
 
     def 'Register cm handles with ncmp.'() {
         given: 'some cm-handle ids'
@@ -269,5 +271,13 @@ class DmiServiceImplSpec extends Specification {
                     'some-resourceIdentifier', 'some-dataType', _ as String)
         then: 'a dmi exception is thrown'
             thrown(DmiException.class)
+    }
+
+    def 'Enabling data synchronization flag'() {
+        when: 'data sync is enabled for the cm handles'
+            objectUnderTest.enableNcmpDataSyncForCmHandles(['ch-1', 'ch-2'])
+        then: 'the ncmp rest client is invoked for the cm handles'
+            2 * mockNcmpRestClient.enableNcmpDataSync(_)
+
     }
 }
