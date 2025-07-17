@@ -56,6 +56,24 @@
       "message": "Just for my own knowledge are specversion and type not required for a cloudevent?",
       "revId": "fd23a4187a392ed666968256b73b7d82dace0657",
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "6d29adc5_6377b43b",
+        "filename": "dmi-service/src/main/java/org/onap/cps/ncmp/dmi/cmstack/avc/CmAvcEventService.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 101,
+      "author": {
+        "id": 7965
+      },
+      "writtenOn": "2025-07-17T10:57:27Z",
+      "side": 1,
+      "message": "yep. they are needed.\nwe have v1 as the spec version and withType method is setting the type. I guess its little hard to see coz the way it is formatted. let me fix the formatting 😊",
+      "parentUuid": "601e73fe_6ad7336d",
+      "revId": "fd23a4187a392ed666968256b73b7d82dace0657",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
     }
   ]
 }
