@@ -1,0 +1,418 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "d54cd582_d9c82abe",
+        "filename": "dmi-service/src/main/java/org/onap/cps/ncmp/dmi/cmstack/avc/CmAvcEventService.java",
+        "patchSetId": 4
+      },
+      "lineNbr": 68,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2025-07-21T14:35:14Z",
+      "side": 1,
+      "message": "remove ! adn witch blocks",
+      "range": {
+        "startLine": 68,
+        "startChar": 35,
+        "endLine": 68,
+        "endChar": 37
+      },
+      "revId": "5061614602e6940f52f1677906a2c4e6a496ee7d",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "83e98d1f_c447b527",
+        "filename": "dmi-service/src/main/java/org/onap/cps/ncmp/dmi/cmstack/avc/CmAvcEventService.java",
+        "patchSetId": 4
+      },
+      "lineNbr": 83,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2025-07-21T14:35:14Z",
+      "side": 1,
+      "message": "why 1 ?!",
+      "range": {
+        "startLine": 83,
+        "startChar": 19,
+        "endLine": 83,
+        "endChar": 25
+      },
+      "revId": "5061614602e6940f52f1677906a2c4e6a496ee7d",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "c55d9e32_9124b3c7",
+        "filename": "dmi-service/src/main/java/org/onap/cps/ncmp/dmi/cmstack/avc/CmAvcEventService.java",
+        "patchSetId": 4
+      },
+      "lineNbr": 98,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2025-07-21T14:35:14Z",
+      "side": 1,
+      "message": "not needed, if you follow the next 2 comments",
+      "range": {
+        "startLine": 98,
+        "startChar": 8,
+        "endLine": 98,
+        "endChar": 37
+      },
+      "revId": "5061614602e6940f52f1677906a2c4e6a496ee7d",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "4c7d2ff1_e830d177",
+        "filename": "dmi-service/src/main/java/org/onap/cps/ncmp/dmi/cmstack/avc/CmAvcEventService.java",
+        "patchSetId": 4
+      },
+      "lineNbr": 101,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2025-07-21T14:35:14Z",
+      "side": 1,
+      "message": "return",
+      "range": {
+        "startLine": 101,
+        "startChar": 12,
+        "endLine": 101,
+        "endChar": 24
+      },
+      "revId": "5061614602e6940f52f1677906a2c4e6a496ee7d",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "fbc52614_e357fc85",
+        "filename": "dmi-service/src/main/java/org/onap/cps/ncmp/dmi/cmstack/avc/CmAvcEventService.java",
+        "patchSetId": 4
+      },
+      "lineNbr": 112,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2025-07-21T14:35:14Z",
+      "side": 1,
+      "message": "null",
+      "range": {
+        "startLine": 112,
+        "startChar": 15,
+        "endLine": 112,
+        "endChar": 25
+      },
+      "revId": "5061614602e6940f52f1677906a2c4e6a496ee7d",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "14ead9af_31ea9c3a",
+        "filename": "dmi-service/src/main/java/org/onap/cps/ncmp/dmi/service/DmiServiceImpl.java",
+        "patchSetId": 4
+      },
+      "lineNbr": 77,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2025-07-21T14:35:14Z",
+      "side": 1,
+      "message": "why pass around the objectMapper, is it not easier to initialise one?",
+      "range": {
+        "startLine": 77,
+        "startChar": 36,
+        "endLine": 77,
+        "endChar": 66
+      },
+      "revId": "5061614602e6940f52f1677906a2c4e6a496ee7d",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "74a5a0e2_780575e2",
+        "filename": "dmi-service/src/main/java/org/onap/cps/ncmp/dmi/service/DmiServiceImpl.java",
+        "patchSetId": 4
+      },
+      "lineNbr": 184,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2025-07-21T14:35:14Z",
+      "side": 1,
+      "message": "not much \u0027preparation\u0027 or \u0027sending\u0027 going on in this method ie its badly named",
+      "range": {
+        "startLine": 184,
+        "startChar": 19,
+        "endLine": 184,
+        "endChar": 41
+      },
+      "revId": "5061614602e6940f52f1677906a2c4e6a496ee7d",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "6c2a9db6_658c95c4",
+        "filename": "dmi-service/src/main/resources/application.yml",
+        "patchSetId": 4
+      },
+      "lineNbr": 79,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2025-07-21T14:35:14Z",
+      "side": 1,
+      "message": "I assume this is a topic name. but that not clear from the parameter hierarchy: dmi.avc.cm_events It seems to be named after its value rather then its purpose...",
+      "range": {
+        "startLine": 79,
+        "startChar": 6,
+        "endLine": 79,
+        "endChar": 15
+      },
+      "revId": "5061614602e6940f52f1677906a2c4e6a496ee7d",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "a5e3bfe3_08962602",
+        "filename": "dmi-service/src/test/groovy/org/onap/cps/ncmp/dmi/cmstack/avc/CmAvcEventServiceSpec.groovy",
+        "patchSetId": 4
+      },
+      "lineNbr": 44,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2025-07-21T14:35:14Z",
+      "side": 1,
+      "message": "since you are verifying this I would not use term \u0027some\u0027 but rather \u0027my\u0027 or \u0027test\u0027",
+      "range": {
+        "startLine": 44,
+        "startChar": 28,
+        "endLine": 44,
+        "endChar": 42
+      },
+      "revId": "5061614602e6940f52f1677906a2c4e6a496ee7d",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "fabdf8d1_6d57d558",
+        "filename": "dmi-service/src/test/groovy/org/onap/cps/ncmp/dmi/cmstack/avc/CmAvcEventServiceSpec.groovy",
+        "patchSetId": 4
+      },
+      "lineNbr": 44,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2025-07-21T14:35:14Z",
+      "side": 1,
+      "message": "cmHandleId",
+      "range": {
+        "startLine": 44,
+        "startChar": 16,
+        "endLine": 44,
+        "endChar": 25
+      },
+      "revId": "5061614602e6940f52f1677906a2c4e6a496ee7d",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "8174cc96_33bdbdce",
+        "filename": "dmi-service/src/test/groovy/org/onap/cps/ncmp/dmi/cmstack/avc/CmAvcEventServiceSpec.groovy",
+        "patchSetId": 4
+      },
+      "lineNbr": 46,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2025-07-21T14:35:14Z",
+      "side": 1,
+      "message": "no need for variable, use sting literal below",
+      "range": {
+        "startLine": 46,
+        "startChar": 16,
+        "endLine": 46,
+        "endChar": 25
+      },
+      "revId": "5061614602e6940f52f1677906a2c4e6a496ee7d",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "d4d1849a_70a5a81e",
+        "filename": "dmi-service/src/test/groovy/org/onap/cps/ncmp/dmi/cmstack/avc/CmAvcEventServiceSpec.groovy",
+        "patchSetId": 4
+      },
+      "lineNbr": 52,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2025-07-21T14:35:14Z",
+      "side": 1,
+      "message": "no need for var, just use enum value her directly, shorten mayeb by using static import",
+      "range": {
+        "startLine": 52,
+        "startChar": 43,
+        "endLine": 52,
+        "endChar": 52
+      },
+      "revId": "5061614602e6940f52f1677906a2c4e6a496ee7d",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "df035e79_264d8b23",
+        "filename": "dmi-service/src/test/groovy/org/onap/cps/ncmp/dmi/cmstack/avc/CmAvcEventServiceSpec.groovy",
+        "patchSetId": 4
+      },
+      "lineNbr": 63,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2025-07-21T14:35:14Z",
+      "side": 1,
+      "message": "no var needed (its not asserted)",
+      "range": {
+        "startLine": 63,
+        "startChar": 16,
+        "endLine": 63,
+        "endChar": 25
+      },
+      "revId": "5061614602e6940f52f1677906a2c4e6a496ee7d",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "4fbc2bd1_3f46ed6b",
+        "filename": "dmi-service/src/test/groovy/org/onap/cps/ncmp/dmi/cmstack/avc/CmAvcEventServiceSpec.groovy",
+        "patchSetId": 4
+      },
+      "lineNbr": 64,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2025-07-21T14:35:14Z",
+      "side": 1,
+      "message": "no var needed (its not asserted)",
+      "range": {
+        "startLine": 64,
+        "startChar": 16,
+        "endLine": 64,
+        "endChar": 35
+      },
+      "revId": "5061614602e6940f52f1677906a2c4e6a496ee7d",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "ffde8024_a7edb0ba",
+        "filename": "dmi-service/src/test/groovy/org/onap/cps/ncmp/dmi/cmstack/avc/CmAvcEventServiceSpec.groovy",
+        "patchSetId": 4
+      },
+      "lineNbr": 65,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2025-07-21T14:35:14Z",
+      "side": 1,
+      "message": "no var needed (its not asserted)",
+      "range": {
+        "startLine": 65,
+        "startChar": 16,
+        "endLine": 65,
+        "endChar": 25
+      },
+      "revId": "5061614602e6940f52f1677906a2c4e6a496ee7d",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "59b486d1_a15834ff",
+        "filename": "dmi-service/src/test/groovy/org/onap/cps/ncmp/dmi/cmstack/avc/CmAvcEventServiceSpec.groovy",
+        "patchSetId": 4
+      },
+      "lineNbr": 66,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2025-07-21T14:35:14Z",
+      "side": 1,
+      "message": "no var needed (its not asserted)",
+      "range": {
+        "startLine": 66,
+        "startChar": 16,
+        "endLine": 66,
+        "endChar": 26
+      },
+      "revId": "5061614602e6940f52f1677906a2c4e6a496ee7d",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "c76be2dd_093af767",
+        "filename": "dmi-service/src/test/groovy/org/onap/cps/ncmp/dmi/service/DmiServiceImplSpec.groovy",
+        "patchSetId": 4
+      },
+      "lineNbr": 265,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2025-07-21T14:35:14Z",
+      "side": 1,
+      "message": "as before, once you start asserting values do not use \u0027some\u0027",
+      "range": {
+        "startLine": 265,
+        "startChar": 62,
+        "endLine": 265,
+        "endChar": 66
+      },
+      "revId": "5061614602e6940f52f1677906a2c4e6a496ee7d",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "26e3838c_9b948c85",
+        "filename": "dmi-service/src/test/groovy/org/onap/cps/ncmp/dmi/service/DmiServiceImplSpec.groovy",
+        "patchSetId": 4
+      },
+      "lineNbr": 284,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2025-07-21T14:35:14Z",
+      "side": 1,
+      "message": "NB: could make this striter, expecting a call specific for each maybe?",
+      "range": {
+        "startLine": 284,
+        "startChar": 11,
+        "endLine": 284,
+        "endChar": 56
+      },
+      "revId": "5061614602e6940f52f1677906a2c4e6a496ee7d",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    }
+  ]
+}
