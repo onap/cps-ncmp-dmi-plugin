@@ -24,6 +24,30 @@
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "9c58e5ea_28a95076",
+        "filename": "dmi-service/src/main/java/org/onap/cps/ncmp/dmi/cmstack/avc/CmAvcEventService.java",
+        "patchSetId": 4
+      },
+      "lineNbr": 68,
+      "author": {
+        "id": 7965
+      },
+      "writtenOn": "2025-07-21T16:09:29Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "d54cd582_d9c82abe",
+      "range": {
+        "startLine": 68,
+        "startChar": 35,
+        "endLine": 68,
+        "endChar": 37
+      },
+      "revId": "5061614602e6940f52f1677906a2c4e6a496ee7d",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "83e98d1f_c447b527",
@@ -37,6 +61,30 @@
       "writtenOn": "2025-07-21T14:35:14Z",
       "side": 1,
       "message": "why 1 ?!",
+      "range": {
+        "startLine": 83,
+        "startChar": 19,
+        "endLine": 83,
+        "endChar": 25
+      },
+      "revId": "5061614602e6940f52f1677906a2c4e6a496ee7d",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "c2335fec_95c1cb1b",
+        "filename": "dmi-service/src/main/java/org/onap/cps/ncmp/dmi/cmstack/avc/CmAvcEventService.java",
+        "patchSetId": 4
+      },
+      "lineNbr": 83,
+      "author": {
+        "id": 7965
+      },
+      "writtenOn": "2025-07-21T16:09:29Z",
+      "side": 1,
+      "message": "mistake. resolved now.",
+      "parentUuid": "83e98d1f_c447b527",
       "range": {
         "startLine": 83,
         "startChar": 19,
@@ -70,6 +118,30 @@
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "e504af47_84ae6871",
+        "filename": "dmi-service/src/main/java/org/onap/cps/ncmp/dmi/cmstack/avc/CmAvcEventService.java",
+        "patchSetId": 4
+      },
+      "lineNbr": 98,
+      "author": {
+        "id": 7965
+      },
+      "writtenOn": "2025-07-21T16:09:29Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "c55d9e32_9124b3c7",
+      "range": {
+        "startLine": 98,
+        "startChar": 8,
+        "endLine": 98,
+        "endChar": 37
+      },
+      "revId": "5061614602e6940f52f1677906a2c4e6a496ee7d",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "4c7d2ff1_e830d177",
@@ -93,6 +165,30 @@
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "584dc1dd_e9ac0b81",
+        "filename": "dmi-service/src/main/java/org/onap/cps/ncmp/dmi/cmstack/avc/CmAvcEventService.java",
+        "patchSetId": 4
+      },
+      "lineNbr": 101,
+      "author": {
+        "id": 7965
+      },
+      "writtenOn": "2025-07-21T16:09:29Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "4c7d2ff1_e830d177",
+      "range": {
+        "startLine": 101,
+        "startChar": 12,
+        "endLine": 101,
+        "endChar": 24
+      },
+      "revId": "5061614602e6940f52f1677906a2c4e6a496ee7d",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "fbc52614_e357fc85",
@@ -106,6 +202,30 @@
       "writtenOn": "2025-07-21T14:35:14Z",
       "side": 1,
       "message": "null",
+      "range": {
+        "startLine": 112,
+        "startChar": 15,
+        "endLine": 112,
+        "endChar": 25
+      },
+      "revId": "5061614602e6940f52f1677906a2c4e6a496ee7d",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "90c92711_bde2ce36",
+        "filename": "dmi-service/src/main/java/org/onap/cps/ncmp/dmi/cmstack/avc/CmAvcEventService.java",
+        "patchSetId": 4
+      },
+      "lineNbr": 112,
+      "author": {
+        "id": 7965
+      },
+      "writtenOn": "2025-07-21T16:09:29Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "fbc52614_e357fc85",
       "range": {
         "startLine": 112,
         "startChar": 15,
@@ -141,6 +261,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "5dca6618_c63cefce",
+        "filename": "dmi-service/src/main/java/org/onap/cps/ncmp/dmi/service/DmiServiceImpl.java",
+        "patchSetId": 4
+      },
+      "lineNbr": 77,
+      "author": {
+        "id": 7965
+      },
+      "writtenOn": "2025-07-21T16:09:29Z",
+      "side": 1,
+      "message": "no no. its constructor based injection.\ncan do it the lombok way but an irrelevant test was failing. ( i can handle it separately if needed )",
+      "parentUuid": "14ead9af_31ea9c3a",
+      "range": {
+        "startLine": 77,
+        "startChar": 36,
+        "endLine": 77,
+        "endChar": 66
+      },
+      "revId": "5061614602e6940f52f1677906a2c4e6a496ee7d",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "74a5a0e2_780575e2",
         "filename": "dmi-service/src/main/java/org/onap/cps/ncmp/dmi/service/DmiServiceImpl.java",
         "patchSetId": 4
@@ -152,6 +296,30 @@
       "writtenOn": "2025-07-21T14:35:14Z",
       "side": 1,
       "message": "not much \u0027preparation\u0027 or \u0027sending\u0027 going on in this method ie its badly named",
+      "range": {
+        "startLine": 184,
+        "startChar": 19,
+        "endLine": 184,
+        "endChar": 41
+      },
+      "revId": "5061614602e6940f52f1677906a2c4e6a496ee7d",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "3960e621_2c8b2c28",
+        "filename": "dmi-service/src/main/java/org/onap/cps/ncmp/dmi/service/DmiServiceImpl.java",
+        "patchSetId": 4
+      },
+      "lineNbr": 184,
+      "author": {
+        "id": 7965
+      },
+      "writtenOn": "2025-07-21T16:09:29Z",
+      "side": 1,
+      "message": "😊 renamed it to \u0027getResponse\u0027\nor how about getDeviceResponse ?",
+      "parentUuid": "74a5a0e2_780575e2",
       "range": {
         "startLine": 184,
         "startChar": 19,
@@ -175,6 +343,30 @@
       "writtenOn": "2025-07-21T14:35:14Z",
       "side": 1,
       "message": "I assume this is a topic name. but that not clear from the parameter hierarchy: dmi.avc.cm_events It seems to be named after its value rather then its purpose...",
+      "range": {
+        "startLine": 79,
+        "startChar": 6,
+        "endLine": 79,
+        "endChar": 15
+      },
+      "revId": "5061614602e6940f52f1677906a2c4e6a496ee7d",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "70308e18_de051fe8",
+        "filename": "dmi-service/src/main/resources/application.yml",
+        "patchSetId": 4
+      },
+      "lineNbr": 79,
+      "author": {
+        "id": 7965
+      },
+      "writtenOn": "2025-07-21T16:09:29Z",
+      "side": 1,
+      "message": "here I am reusing the same topic that NCMP is configured to listen the AVC events on.",
+      "parentUuid": "6c2a9db6_658c95c4",
       "range": {
         "startLine": 79,
         "startChar": 6,
@@ -231,6 +423,54 @@
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "435030d9_f1c251cf",
+        "filename": "dmi-service/src/test/groovy/org/onap/cps/ncmp/dmi/cmstack/avc/CmAvcEventServiceSpec.groovy",
+        "patchSetId": 4
+      },
+      "lineNbr": 44,
+      "author": {
+        "id": 7965
+      },
+      "writtenOn": "2025-07-21T16:09:29Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "a5e3bfe3_08962602",
+      "range": {
+        "startLine": 44,
+        "startChar": 28,
+        "endLine": 44,
+        "endChar": 42
+      },
+      "revId": "5061614602e6940f52f1677906a2c4e6a496ee7d",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "9423f3ec_8aebdf85",
+        "filename": "dmi-service/src/test/groovy/org/onap/cps/ncmp/dmi/cmstack/avc/CmAvcEventServiceSpec.groovy",
+        "patchSetId": 4
+      },
+      "lineNbr": 44,
+      "author": {
+        "id": 7965
+      },
+      "writtenOn": "2025-07-21T16:09:29Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "fabdf8d1_6d57d558",
+      "range": {
+        "startLine": 44,
+        "startChar": 16,
+        "endLine": 44,
+        "endChar": 25
+      },
+      "revId": "5061614602e6940f52f1677906a2c4e6a496ee7d",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "8174cc96_33bdbdce",
@@ -244,6 +484,30 @@
       "writtenOn": "2025-07-21T14:35:14Z",
       "side": 1,
       "message": "no need for variable, use sting literal below",
+      "range": {
+        "startLine": 46,
+        "startChar": 16,
+        "endLine": 46,
+        "endChar": 25
+      },
+      "revId": "5061614602e6940f52f1677906a2c4e6a496ee7d",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "1b122c9d_128f456e",
+        "filename": "dmi-service/src/test/groovy/org/onap/cps/ncmp/dmi/cmstack/avc/CmAvcEventServiceSpec.groovy",
+        "patchSetId": 4
+      },
+      "lineNbr": 46,
+      "author": {
+        "id": 7965
+      },
+      "writtenOn": "2025-07-21T16:09:29Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "8174cc96_33bdbdce",
       "range": {
         "startLine": 46,
         "startChar": 16,
@@ -277,6 +541,30 @@
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "806d2e5a_f7791305",
+        "filename": "dmi-service/src/test/groovy/org/onap/cps/ncmp/dmi/cmstack/avc/CmAvcEventServiceSpec.groovy",
+        "patchSetId": 4
+      },
+      "lineNbr": 52,
+      "author": {
+        "id": 7965
+      },
+      "writtenOn": "2025-07-21T16:09:29Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "d4d1849a_70a5a81e",
+      "range": {
+        "startLine": 52,
+        "startChar": 43,
+        "endLine": 52,
+        "endChar": 52
+      },
+      "revId": "5061614602e6940f52f1677906a2c4e6a496ee7d",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "df035e79_264d8b23",
@@ -290,6 +578,30 @@
       "writtenOn": "2025-07-21T14:35:14Z",
       "side": 1,
       "message": "no var needed (its not asserted)",
+      "range": {
+        "startLine": 63,
+        "startChar": 16,
+        "endLine": 63,
+        "endChar": 25
+      },
+      "revId": "5061614602e6940f52f1677906a2c4e6a496ee7d",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "60eeb871_0703beb0",
+        "filename": "dmi-service/src/test/groovy/org/onap/cps/ncmp/dmi/cmstack/avc/CmAvcEventServiceSpec.groovy",
+        "patchSetId": 4
+      },
+      "lineNbr": 63,
+      "author": {
+        "id": 7965
+      },
+      "writtenOn": "2025-07-21T16:09:29Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "df035e79_264d8b23",
       "range": {
         "startLine": 63,
         "startChar": 16,
@@ -323,6 +635,30 @@
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "b986ff37_94513df6",
+        "filename": "dmi-service/src/test/groovy/org/onap/cps/ncmp/dmi/cmstack/avc/CmAvcEventServiceSpec.groovy",
+        "patchSetId": 4
+      },
+      "lineNbr": 64,
+      "author": {
+        "id": 7965
+      },
+      "writtenOn": "2025-07-21T16:09:29Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "4fbc2bd1_3f46ed6b",
+      "range": {
+        "startLine": 64,
+        "startChar": 16,
+        "endLine": 64,
+        "endChar": 35
+      },
+      "revId": "5061614602e6940f52f1677906a2c4e6a496ee7d",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "ffde8024_a7edb0ba",
@@ -336,6 +672,30 @@
       "writtenOn": "2025-07-21T14:35:14Z",
       "side": 1,
       "message": "no var needed (its not asserted)",
+      "range": {
+        "startLine": 65,
+        "startChar": 16,
+        "endLine": 65,
+        "endChar": 25
+      },
+      "revId": "5061614602e6940f52f1677906a2c4e6a496ee7d",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "7932edfa_c8d20814",
+        "filename": "dmi-service/src/test/groovy/org/onap/cps/ncmp/dmi/cmstack/avc/CmAvcEventServiceSpec.groovy",
+        "patchSetId": 4
+      },
+      "lineNbr": 65,
+      "author": {
+        "id": 7965
+      },
+      "writtenOn": "2025-07-21T16:09:29Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ffde8024_a7edb0ba",
       "range": {
         "startLine": 65,
         "startChar": 16,
@@ -369,6 +729,30 @@
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "5deb37f0_d9c564cf",
+        "filename": "dmi-service/src/test/groovy/org/onap/cps/ncmp/dmi/cmstack/avc/CmAvcEventServiceSpec.groovy",
+        "patchSetId": 4
+      },
+      "lineNbr": 66,
+      "author": {
+        "id": 7965
+      },
+      "writtenOn": "2025-07-21T16:09:29Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "59b486d1_a15834ff",
+      "range": {
+        "startLine": 66,
+        "startChar": 16,
+        "endLine": 66,
+        "endChar": 26
+      },
+      "revId": "5061614602e6940f52f1677906a2c4e6a496ee7d",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "c76be2dd_093af767",
@@ -392,6 +776,30 @@
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "9baa42a8_10015b84",
+        "filename": "dmi-service/src/test/groovy/org/onap/cps/ncmp/dmi/service/DmiServiceImplSpec.groovy",
+        "patchSetId": 4
+      },
+      "lineNbr": 265,
+      "author": {
+        "id": 7965
+      },
+      "writtenOn": "2025-07-21T16:09:29Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "c76be2dd_093af767",
+      "range": {
+        "startLine": 265,
+        "startChar": 62,
+        "endLine": 265,
+        "endChar": 66
+      },
+      "revId": "5061614602e6940f52f1677906a2c4e6a496ee7d",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "26e3838c_9b948c85",
@@ -405,6 +813,30 @@
       "writtenOn": "2025-07-21T14:35:14Z",
       "side": 1,
       "message": "NB: could make this striter, expecting a call specific for each maybe?",
+      "range": {
+        "startLine": 284,
+        "startChar": 11,
+        "endLine": 284,
+        "endChar": 56
+      },
+      "revId": "5061614602e6940f52f1677906a2c4e6a496ee7d",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "c73e0f06_e0cca9a2",
+        "filename": "dmi-service/src/test/groovy/org/onap/cps/ncmp/dmi/service/DmiServiceImplSpec.groovy",
+        "patchSetId": 4
+      },
+      "lineNbr": 284,
+      "author": {
+        "id": 7965
+      },
+      "writtenOn": "2025-07-21T16:09:29Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "26e3838c_9b948c85",
       "range": {
         "startLine": 284,
         "startChar": 11,
