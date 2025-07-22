@@ -90,6 +90,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "525e64b3_fadeb77b",
+        "filename": "dmi-service/src/test/groovy/org/onap/cps/ncmp/dmi/cmstack/avc/CmAvcEventServiceSpec.groovy",
+        "patchSetId": 3
+      },
+      "lineNbr": 53,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2025-07-22T16:32:18Z",
+      "side": 1,
+      "message": "agreed: \u0027the event with correct details is send\u0027",
+      "parentUuid": "00dd75d2_b7181fda",
+      "range": {
+        "startLine": 53,
+        "startChar": 15,
+        "endLine": 53,
+        "endChar": 50
+      },
+      "revId": "693051cd0547c168498e57946407c3ddfae6d639",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "810c5b87_e2a552ab",
         "filename": "dmi-service/src/test/groovy/org/onap/cps/ncmp/dmi/cmstack/avc/CmAvcEventServiceSpec.groovy",
         "patchSetId": 3
