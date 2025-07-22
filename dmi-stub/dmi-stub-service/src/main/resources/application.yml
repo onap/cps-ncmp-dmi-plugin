@@ -21,6 +21,7 @@ server:
 rest:
     api:
         dmi-stub-base-path: /dmi
+        provmns-base-path: /ProvMnS
 
 spring:
     main:
