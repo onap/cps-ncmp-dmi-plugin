@@ -98,6 +98,24 @@
       "parentUuid": "601e73fe_6ad7336d",
       "revId": "fd23a4187a392ed666968256b73b7d82dace0657",
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "674913c0_c4a90547",
+        "filename": "dmi-service/src/main/java/org/onap/cps/ncmp/dmi/cmstack/avc/CmAvcEventService.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 101,
+      "author": {
+        "id": 7965
+      },
+      "writtenOn": "2025-07-22T07:45:26Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "6d29adc5_6377b43b",
+      "revId": "fd23a4187a392ed666968256b73b7d82dace0657",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
     }
   ]
 }
