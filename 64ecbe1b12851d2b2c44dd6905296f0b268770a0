@@ -24,6 +24,30 @@
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "3f1e15ee_4e8e3d89",
+        "filename": "dmi-service/src/main/java/org/onap/cps/ncmp/dmi/service/DmiServiceImpl.java",
+        "patchSetId": 5
+      },
+      "lineNbr": 184,
+      "author": {
+        "id": 7965
+      },
+      "writtenOn": "2025-07-23T09:45:07Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "2b485de9_5cb81cb0",
+      "range": {
+        "startLine": 184,
+        "startChar": 19,
+        "endLine": 184,
+        "endChar": 22
+      },
+      "revId": "64ecbe1b12851d2b2c44dd6905296f0b268770a0",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "463a91e0_0a817de9",
@@ -49,6 +73,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "4305da65_7dbcf4dc",
+        "filename": "dmi-service/src/main/resources/application.yml",
+        "patchSetId": 5
+      },
+      "lineNbr": 79,
+      "author": {
+        "id": 7965
+      },
+      "writtenOn": "2025-07-23T09:45:07Z",
+      "side": 1,
+      "message": "used cm-avc-events-topic now.",
+      "parentUuid": "463a91e0_0a817de9",
+      "range": {
+        "startLine": 79,
+        "startChar": 6,
+        "endLine": 79,
+        "endChar": 15
+      },
+      "revId": "64ecbe1b12851d2b2c44dd6905296f0b268770a0",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "ea4c09fe_7a3bbc7c",
         "filename": "dmi-service/src/test/groovy/org/onap/cps/ncmp/dmi/service/DmiServiceImplSpec.groovy",
         "patchSetId": 5
@@ -60,6 +108,30 @@
       "writtenOn": "2025-07-22T16:32:18Z",
       "side": 1,
       "message": "NB: simple hardcode is better and more readable I think (asl description can be better), like so:\nthen \u0027the data sync is enabled for each cm handle (over the REST interface)\u0027\n1* mockNcmpRestClient.enableNcmpDataSync(\u0027ch-1\u0027)\n1* mockNcmpRestClient.enableNcmpDataSync(\u0027ch-2\u0027)",
+      "range": {
+        "startLine": 286,
+        "startChar": 0,
+        "endLine": 292,
+        "endChar": 13
+      },
+      "revId": "64ecbe1b12851d2b2c44dd6905296f0b268770a0",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "1a6c641a_d48fc110",
+        "filename": "dmi-service/src/test/groovy/org/onap/cps/ncmp/dmi/service/DmiServiceImplSpec.groovy",
+        "patchSetId": 5
+      },
+      "lineNbr": 292,
+      "author": {
+        "id": 7965
+      },
+      "writtenOn": "2025-07-23T09:45:07Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ea4c09fe_7a3bbc7c",
       "range": {
         "startLine": 286,
         "startChar": 0,
