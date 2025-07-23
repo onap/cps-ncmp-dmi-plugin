@@ -401,6 +401,30 @@
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "05087587_c26e19fb",
+        "filename": "dmi-service/src/main/resources/application.yml",
+        "patchSetId": 4
+      },
+      "lineNbr": 79,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2025-07-23T13:21:14Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "70308e18_de051fe8",
+      "range": {
+        "startLine": 79,
+        "startChar": 6,
+        "endLine": 79,
+        "endChar": 15
+      },
+      "revId": "5061614602e6940f52f1677906a2c4e6a496ee7d",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "a5e3bfe3_08962602",

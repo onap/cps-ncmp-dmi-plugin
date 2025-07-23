@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "daf61459_d223afab",
+        "filename": "dmi-service/src/main/java/org/onap/cps/ncmp/dmi/cmstack/avc/CmAvcEventService.java",
+        "patchSetId": 6
+      },
+      "lineNbr": 48,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2025-07-23T13:21:14Z",
+      "side": 1,
+      "message": "much better",
+      "range": {
+        "startLine": 48,
+        "startChar": 26,
+        "endLine": 48,
+        "endChar": 44
+      },
+      "revId": "ca7272f782299872c7d3c4dab87434cce7772c67",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    }
+  ]
+}
