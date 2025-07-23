@@ -19,9 +19,10 @@
 rest:
   api:
     dmi-base-path: /dmi
+    provmns-base-path: /ProvMnS
 
 security:
-  permit-uri: /actuator/**,/swagger-ui/**,/swagger-resources/**,/v3/api-docs
+  permit-uri: /actuator/**,/swagger-ui/**,/swagger-resources/**,/v3/api-docs,/ProvMnS/**
   auth:
     username: cpsuser
     password: cpsr0cks!

@@ -423,6 +423,34 @@
                             </configOptions>
                         </configuration>
                     </execution>
+                    <execution>
+                        <id>dmi-code-gen-provmns</id>
+                        <goals>
+                            <goal>generate</goal>
+                        </goals>
+                        <configuration>
+                            <inputSpec>https://forge.3gpp.org/rep/all/5G_APIs/-/raw/REL-18/TS28532_ProvMnS.yaml</inputSpec>
+                            <invokerPackage>org.onap.cps.ncmp.dmi.provmns.rest.controller</invokerPackage>
+                            <modelPackage>org.onap.cps.ncmp.dmi.provmns.model</modelPackage>
+                            <apiPackage>org.onap.cps.ncmp.dmi.provmns.api</apiPackage>
+                            <generatorName>spring</generatorName>
+                            <generateSupportingFiles>false</generateSupportingFiles>
+                            <configOptions>
+                                <sourceFolder>src/gen/java</sourceFolder>
+                                <dateLibrary>java11</dateLibrary>
+                                <interfaceOnly>true</interfaceOnly>
+                                <useSpringBoot3>true</useSpringBoot3>
+                                <useTags>true</useTags>
+                                <openApiNullable>false</openApiNullable>
+                                <skipDefaultInterface>true</skipDefaultInterface>
+                            </configOptions>
+                            <importMappings>
+                                <importMapping>Resource=org.onap.cps.ncmp.dmi.provmns.model.Resource</importMapping>
+                                <importMapping>ClassNameIdGetDataNodeSelectorParameter=org.onap.cps.ncmp.dmi.provmns.model.ClassNameIdGetDataNodeSelectorParameter</importMapping>
+                            </importMappings>
+                            <ignoreFileOverride>${project.basedir}/.openapi-generator-ignore-provmns</ignoreFileOverride>
+                        </configuration>
+                    </execution>
                     </executions>
             </plugin>
             <plugin>
@@ -524,7 +552,7 @@
                     <threshold>Low</threshold>
                     <failOnError>true</failOnError>
                     <excludeFilterFile>spotbugs-exclude.xml</excludeFilterFile>
-                    <addSources>true</addSources>
+                    <addSourceDirs>true</addSourceDirs>
                     <xmlOutput>true</xmlOutput>
                     <xmlOutputDirectory>${basedir}/target/spotbugs</xmlOutputDirectory>
                 </configuration>
@@ -537,6 +565,7 @@
                     <excludes>
                         <exclude>org/onap/cps/ncmp/dmi/model/*</exclude>
                         <exclude>org/onap/cps/ncmp/dmi/datajobs/model/*</exclude>
+                        <exclude>org/onap/cps/ncmp/dmi/provmns/model/*</exclude>
                         <exclude>**/pom.xml</exclude>
                     </excludes>
                 </configuration>
