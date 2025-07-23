@@ -33,6 +33,52 @@
       "message": "when we are able to do this patch task. https://lf-onap.atlassian.net/browse/CPS-2902\nthen this patch will not be required. But for now this patch is ok to go and we can revisit this once we are able to investigate new module for provmns in cps-ncmp.",
       "revId": "b8da8a49fbf86817e99bd98e7ef3c1a5641b60c2",
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "94d7b06b_b9f0c081",
+        "filename": "dmi-service/src/main/java/org/onap/cps/ncmp/dmi/provmns/model/ClassNameIdGetDataNodeSelectorParameter.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 8063
+      },
+      "writtenOn": "2025-07-23T12:39:29Z",
+      "side": 1,
+      "message": "NB: isn\u0027t Lombok still be outdated? Since java supports this get \u0026 set through record?",
+      "range": {
+        "startLine": 32,
+        "startChar": 13,
+        "endLine": 32,
+        "endChar": 52
+      },
+      "revId": "b8da8a49fbf86817e99bd98e7ef3c1a5641b60c2",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "53f2e854_5f21051b",
+        "filename": "dmi-service/src/test/groovy/org/onap/cps/ncmp/dmi/rest/controller/ProvMnsControllerSpec.groovy",
+        "patchSetId": 1
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 8063
+      },
+      "writtenOn": "2025-07-23T12:39:29Z",
+      "side": 1,
+      "message": "NB: I thought the security has been removed from NCMP and CPS, do you still realy need to import it?",
+      "range": {
+        "startLine": 41,
+        "startChar": 0,
+        "endLine": 41,
+        "endChar": 26
+      },
+      "revId": "b8da8a49fbf86817e99bd98e7ef3c1a5641b60c2",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
     }
   ]
 }
