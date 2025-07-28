@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "789bdd24_695afd2f",
+        "filename": "dmi-stub/dmi-stub-service/pom.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2025-07-28T07:42:29Z",
+      "side": 1,
+      "message": "is this really need, i have never seen it before for a parent",
+      "range": {
+        "startLine": 27,
+        "startChar": 8,
+        "endLine": 27,
+        "endChar": 47
+      },
+      "revId": "76e16117c7c7705c11a753aff4ab1f9a19eb2d11",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    }
+  ]
+}
