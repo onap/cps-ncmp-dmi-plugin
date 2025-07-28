@@ -22,6 +22,30 @@
       },
       "revId": "76e16117c7c7705c11a753aff4ab1f9a19eb2d11",
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "c3f93f49_15ee9197",
+        "filename": "dmi-stub/dmi-stub-service/pom.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 8171
+      },
+      "writtenOn": "2025-07-28T12:20:19Z",
+      "side": 1,
+      "message": "Leftover from debugging, removed.",
+      "parentUuid": "789bdd24_695afd2f",
+      "range": {
+        "startLine": 27,
+        "startChar": 8,
+        "endLine": 27,
+        "endChar": 47
+      },
+      "revId": "76e16117c7c7705c11a753aff4ab1f9a19eb2d11",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
     }
   ]
 }
