@@ -22,6 +22,7 @@
 package org.onap.cps.ncmp.dmi.service.operation;
 
 import static org.onap.cps.ncmp.dmi.model.DataAccessRequest.OperationEnum;
+import static org.onap.cps.ncmp.dmi.service.operation.ResourceIdentifierEncodingUtility.encodeNestedResourcePath;
 
 import com.jayway.jsonpath.Configuration;
 import com.jayway.jsonpath.JsonPath;
@@ -36,6 +37,7 @@ import java.util.EnumMap;
 import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
+import lombok.extern.slf4j.Slf4j;
 import org.onap.cps.ncmp.dmi.config.DmiConfiguration.SdncProperties;
 import org.onap.cps.ncmp.dmi.exception.SdncException;
 import org.onap.cps.ncmp.dmi.model.DataAccessRequest;
@@ -51,6 +53,7 @@ import org.springframework.util.LinkedMultiValueMap;
 import org.springframework.util.MultiValueMap;
 import org.springframework.web.util.UriComponentsBuilder;
 
+@Slf4j
 @Component
 public class SdncOperations {
 
@@ -209,26 +212,37 @@ public class SdncOperations {
     private String prepareResourceDataUrl(final String nodeId,
                                           final String resourceId,
                                           final MultiValueMap<String, String> queryMap) {
-        return addQuery(addResource(addTopologyDataUrlwithNode(nodeId), resourceId), queryMap);
+        return addQuery(addResourceEncoded(addTopologyDataUrlwithNode(nodeId), resourceId), queryMap);
     }
 
     private String addResource(final String url, final String resourceId) {
+
         return UriComponentsBuilder.fromUriString(url)
                 .pathSegment(resourceId)
                 .buildAndExpand().toUriString();
     }
 
+    private String addResourceEncoded(final String url, final String resourceId) {
+
+        final String encodeNestedResourcePath = encodeNestedResourcePath(resourceId);
+        log.debug("Raw resourceId : {} , EncodedResourcePath : {}", resourceId, encodeNestedResourcePath);
+        return addResource(url, encodeNestedResourcePath);
+    }
+
     private String addQuery(final String url, final MultiValueMap<String, String> queryMap) {
-        return UriComponentsBuilder.fromUriString(url)
-                .queryParams(queryMap)
-                .buildAndExpand().toUriString();
+
+        return UriComponentsBuilder
+                       .fromUriString(url)
+                       .queryParams(queryMap)
+                       .buildAndExpand().toUriString();
     }
 
     private String addTopologyDataUrlwithNode(final String nodeId) {
-        return UriComponentsBuilder.fromUriString(topologyUrlData)
-                .pathSegment("node={nodeId}")
-                .pathSegment("yang-ext:mount")
-                .buildAndExpand(nodeId).toUriString();
+        return UriComponentsBuilder
+                       .fromUriString(topologyUrlData)
+                       .pathSegment("node={nodeId}")
+                       .pathSegment("yang-ext:mount")
+                       .buildAndExpand(nodeId).toUriString();
     }
 
     private List<ModuleSchema> convertToModuleSchemas(final String modulesListAsJson) {
@@ -267,4 +281,5 @@ public class SdncOperations {
                         queryParam -> queryParam[QUERY_PARAM_NAME_INDEX],
                         queryParam -> queryParam[QUERY_PARAM_VALUE_INDEX]));
     }
+
 }
