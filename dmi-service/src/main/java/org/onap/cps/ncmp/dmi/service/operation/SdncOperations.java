@@ -1,6 +1,6 @@
 /*
  *  ============LICENSE_START=======================================================
- *  Copyright (C) 2021-2023 Nordix Foundation
+ *  Copyright (C) 2021-2025 OpenInfra Foundation Europe. All rights reserved.
  *  Modifications Copyright (C) 2021-2022 Bell Canada
  *  ================================================================================
  *  Licensed under the Apache License, Version 2.0 (the "License");
@@ -22,6 +22,7 @@
 package org.onap.cps.ncmp.dmi.service.operation;
 
 import static org.onap.cps.ncmp.dmi.model.DataAccessRequest.OperationEnum;
+import static org.onap.cps.ncmp.dmi.service.operation.ResourceIdentifierEncoder.encodeNestedResourcePath;
 
 import com.jayway.jsonpath.Configuration;
 import com.jayway.jsonpath.JsonPath;
@@ -36,6 +37,7 @@ import java.util.EnumMap;
 import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
+import lombok.extern.slf4j.Slf4j;
 import org.onap.cps.ncmp.dmi.config.DmiConfiguration.SdncProperties;
 import org.onap.cps.ncmp.dmi.exception.SdncException;
 import org.onap.cps.ncmp.dmi.model.DataAccessRequest;
@@ -51,6 +53,7 @@ import org.springframework.util.LinkedMultiValueMap;
 import org.springframework.util.MultiValueMap;
 import org.springframework.web.util.UriComponentsBuilder;
 
+@Slf4j
 @Component
 public class SdncOperations {
 
@@ -64,7 +67,8 @@ public class SdncOperations {
     private static final int QUERY_PARAM_VALUE_INDEX = 1;
     private static final int QUERY_PARAM_NAME_INDEX = 0;
 
-    private static EnumMap<OperationEnum, HttpMethod> operationToHttpMethodMap = new EnumMap<>(OperationEnum.class);
+    private static final EnumMap<OperationEnum, HttpMethod> operationToHttpMethodMap =
+            new EnumMap<>(OperationEnum.class);
 
     static {
         operationToHttpMethodMap.put(OperationEnum.READ, HttpMethod.GET);
@@ -79,7 +83,7 @@ public class SdncOperations {
     private final String topologyUrlData;
     private final String topologyUrlOperational;
 
-    private Configuration jsonPathConfiguration = Configuration.builder()
+    private final Configuration jsonPathConfiguration = Configuration.builder()
         .mappingProvider(new JacksonMappingProvider())
         .jsonProvider(new JacksonJsonProvider())
         .build();
@@ -209,32 +213,43 @@ public class SdncOperations {
     private String prepareResourceDataUrl(final String nodeId,
                                           final String resourceId,
                                           final MultiValueMap<String, String> queryMap) {
-        return addQuery(addResource(addTopologyDataUrlwithNode(nodeId), resourceId), queryMap);
+        return addQuery(addResourceEncoded(addTopologyDataUrlwithNode(nodeId), resourceId), queryMap);
     }
 
     private String addResource(final String url, final String resourceId) {
+
         return UriComponentsBuilder.fromUriString(url)
                 .pathSegment(resourceId)
                 .buildAndExpand().toUriString();
     }
 
+    private String addResourceEncoded(final String url, final String resourceId) {
+
+        final String encodedNestedResourcePath = encodeNestedResourcePath(resourceId);
+        log.debug("Raw resourceId : {} , EncodedResourcePath : {}", resourceId, encodedNestedResourcePath);
+        return addResource(url, encodedNestedResourcePath);
+    }
+
     private String addQuery(final String url, final MultiValueMap<String, String> queryMap) {
-        return UriComponentsBuilder.fromUriString(url)
-                .queryParams(queryMap)
-                .buildAndExpand().toUriString();
+
+        return UriComponentsBuilder
+                       .fromUriString(url)
+                       .queryParams(queryMap)
+                       .buildAndExpand().toUriString();
     }
 
     private String addTopologyDataUrlwithNode(final String nodeId) {
-        return UriComponentsBuilder.fromUriString(topologyUrlData)
-                .pathSegment("node={nodeId}")
-                .pathSegment("yang-ext:mount")
-                .buildAndExpand(nodeId).toUriString();
+        return UriComponentsBuilder
+                       .fromUriString(topologyUrlData)
+                       .pathSegment("node={nodeId}")
+                       .pathSegment("yang-ext:mount")
+                       .buildAndExpand(nodeId).toUriString();
     }
 
     private List<ModuleSchema> convertToModuleSchemas(final String modulesListAsJson) {
         try {
             return JsonPath.using(jsonPathConfiguration).parse(modulesListAsJson).read(
-                PATH_TO_MODULE_SCHEMAS, new TypeRef<List<ModuleSchema>>() {
+                PATH_TO_MODULE_SCHEMAS, new TypeRef<>() {
                 });
         } catch (final JsonPathException jsonPathException) {
             throw new SdncException("SDNC Response processing failed",
@@ -267,4 +282,5 @@ public class SdncOperations {
                         queryParam -> queryParam[QUERY_PARAM_NAME_INDEX],
                         queryParam -> queryParam[QUERY_PARAM_VALUE_INDEX]));
     }
+
 }

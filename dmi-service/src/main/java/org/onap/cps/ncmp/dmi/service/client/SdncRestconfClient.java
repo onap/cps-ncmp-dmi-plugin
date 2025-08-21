@@ -1,6 +1,6 @@
 /*
  *  ============LICENSE_START=======================================================
- *  Copyright (C) 2021-2022 Nordix Foundation
+ *  Copyright (C) 2021-2025 OpenInfra Foundation Europe. All rights reserved.
  *  ================================================================================
  *  Licensed under the Apache License, Version 2.0 (the "License");
  *  you may not use this file except in compliance with the License.
@@ -20,6 +20,9 @@
 
 package org.onap.cps.ncmp.dmi.service.client;
 
+import java.net.URI;
+import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.onap.cps.ncmp.dmi.config.DmiConfiguration.SdncProperties;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpHeaders;
@@ -28,16 +31,13 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Component;
 import org.springframework.web.client.RestTemplate;
 
+@Slf4j
 @Component
+@RequiredArgsConstructor
 public class SdncRestconfClient {
 
-    private SdncProperties sdncProperties;
-    private RestTemplate restTemplate;
-
-    public SdncRestconfClient(final SdncProperties sdncProperties, final RestTemplate restTemplate) {
-        this.sdncProperties = sdncProperties;
-        this.restTemplate = restTemplate;
-    }
+    private final SdncProperties sdncProperties;
+    private final RestTemplate restTemplate;
 
     /**
      * restconf get operation on sdnc.
@@ -57,7 +57,7 @@ public class SdncRestconfClient {
      * @return the response entity
      */
     public ResponseEntity<String> getOperation(final String getResourceUrl, final HttpHeaders httpHeaders) {
-        return  httpOperationWithJsonData(HttpMethod.GET, getResourceUrl, null, httpHeaders);
+        return  httpOperationWithJsonDataWithUri(HttpMethod.GET, getResourceUrl, null, httpHeaders);
     }
 
     /**
@@ -73,15 +73,41 @@ public class SdncRestconfClient {
                                                             final String resourceUrl,
                                                             final String jsonData,
                                                             final HttpHeaders httpHeaders) {
+        return executeHttpOperation(httpMethod, resourceUrl, jsonData, httpHeaders, RestTemplateAddressType.URL_STRING);
+    }
+
+    /**
+     * restconf http operations on sdnc.
+     *
+     * @param httpMethod HTTP Method
+     * @param resourceUrl sdnc resource url
+     * @param jsonData json data
+     * @param httpHeaders HTTP Headers
+     * @return response entity
+     */
+    public ResponseEntity<String> httpOperationWithJsonDataWithUri(final HttpMethod httpMethod,
+            final String resourceUrl,
+            final String jsonData,
+            final HttpHeaders httpHeaders) {
+        return executeHttpOperation(httpMethod, resourceUrl, jsonData, httpHeaders, RestTemplateAddressType.URI);
+    }
+
+    private ResponseEntity<String> executeHttpOperation(final HttpMethod httpMethod, final String resourceUrl,
+            final String jsonData, final HttpHeaders httpHeaders,
+            final RestTemplateAddressType restTemplateAddressType) {
         final String sdncBaseUrl = sdncProperties.getBaseUrl();
         final String sdncRestconfUrl = sdncBaseUrl.concat(resourceUrl);
         httpHeaders.setBasicAuth(sdncProperties.getAuthUsername(), sdncProperties.getAuthPassword());
-        final HttpEntity<String> httpEntity;
-        if (jsonData == null) {
-            httpEntity = new HttpEntity<>(httpHeaders);
-        } else {
-            httpEntity = new HttpEntity<>(jsonData, httpHeaders);
+
+        final HttpEntity<String> httpEntity =
+                jsonData == null ? new HttpEntity<>(httpHeaders) : new HttpEntity<>(jsonData, httpHeaders);
+
+        if (RestTemplateAddressType.URI.equals(restTemplateAddressType)) {
+            final URI sdncRestconfUri = URI.create(sdncRestconfUrl);
+            log.debug("sdncRestconfUri: {}", sdncRestconfUri);
+            return restTemplate.exchange(sdncRestconfUri, httpMethod, httpEntity, String.class);
         }
+        log.debug("sdncRestconfUrl: {}", sdncRestconfUrl);
         return restTemplate.exchange(sdncRestconfUrl, httpMethod, httpEntity, String.class);
     }
 }
