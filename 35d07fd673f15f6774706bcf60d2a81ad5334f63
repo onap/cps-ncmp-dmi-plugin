@@ -1,0 +1,119 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "137d219f_c227fa86",
+        "filename": "dmi-service/src/main/java/org/onap/cps/ncmp/dmi/service/client/SdncRestconfClient.java",
+        "patchSetId": 5
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2025-09-03T17:08:21Z",
+      "side": 1,
+      "message": "this is confusing, I think you are better of using an enum, something like\n\nRestTemplateAddressType\n  URL_STRING\n  URI",
+      "range": {
+        "startLine": 37,
+        "startChar": 3,
+        "endLine": 38,
+        "endChar": 56
+      },
+      "revId": "35d07fd673f15f6774706bcf60d2a81ad5334f63",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "c99e7a94_424a8ae9",
+        "filename": "dmi-service/src/main/java/org/onap/cps/ncmp/dmi/service/operation/ResourceIdentifierEncodingUtility.java",
+        "patchSetId": 5
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2025-09-03T17:08:21Z",
+      "side": 1,
+      "message": "shorten to \"Encoder\"",
+      "range": {
+        "startLine": 32,
+        "startChar": 37,
+        "endLine": 32,
+        "endChar": 53
+      },
+      "revId": "35d07fd673f15f6774706bcf60d2a81ad5334f63",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "1158384e_4f08c803",
+        "filename": "dmi-service/src/main/java/org/onap/cps/ncmp/dmi/service/operation/ResourceIdentifierEncodingUtility.java",
+        "patchSetId": 5
+      },
+      "lineNbr": 57,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2025-09-03T17:08:21Z",
+      "side": 1,
+      "message": "you need better names to clearly show differentiate between\n\nresourcePathSegments and resourcePathParts\n\n\nMaybe use terms like \"in\" and \"out\" or \"raw\" and \"encoded\" ?",
+      "range": {
+        "startLine": 57,
+        "startChar": 27,
+        "endLine": 57,
+        "endChar": 48
+      },
+      "revId": "35d07fd673f15f6774706bcf60d2a81ad5334f63",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "422a40da_a20a0d14",
+        "filename": "dmi-service/src/main/java/org/onap/cps/ncmp/dmi/service/operation/SdncOperations.java",
+        "patchSetId": 5
+      },
+      "lineNbr": 227,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2025-09-03T17:08:21Z",
+      "side": 1,
+      "message": "encoded (you missed the last d)",
+      "range": {
+        "startLine": 227,
+        "startChar": 21,
+        "endLine": 227,
+        "endChar": 46
+      },
+      "revId": "35d07fd673f15f6774706bcf60d2a81ad5334f63",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "ae33b9e4_48d0a022",
+        "filename": "dmi-service/src/test/groovy/org/onap/cps/ncmp/dmi/service/operation/ResourceIdentifierEncodingUtilitySpec.groovy",
+        "patchSetId": 5
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2025-09-03T17:08:21Z",
+      "side": 1,
+      "message": "very clear!",
+      "range": {
+        "startLine": 33,
+        "startChar": 12,
+        "endLine": 38,
+        "endChar": 5
+      },
+      "revId": "35d07fd673f15f6774706bcf60d2a81ad5334f63",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    }
+  ]
+}
