@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "2afac57d_be468cce",
+        "filename": "dmi-service/src/main/java/org/onap/cps/ncmp/dmi/service/operation/ResourceIdentifierEncoder.java",
+        "patchSetId": 6
+      },
+      "lineNbr": 58,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2025-09-04T11:18:22Z",
+      "side": 1,
+      "message": "NB: would swap lines 57 and 58",
+      "range": {
+        "startLine": 58,
+        "startChar": 23,
+        "endLine": 58,
+        "endChar": 41
+      },
+      "revId": "bb1e1efeec5b7877fb8ccb33bcf16b6701a5731f",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    }
+  ]
+}
