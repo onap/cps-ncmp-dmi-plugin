@@ -24,6 +24,30 @@
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "7096cef8_c4001a72",
+        "filename": "dmi-service/src/main/java/org/onap/cps/ncmp/dmi/service/client/SdncRestconfClient.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 91,
+      "author": {
+        "id": 7965
+      },
+      "writtenOn": "2025-09-04T12:37:06Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9a36c4d0_948080e9",
+      "range": {
+        "startLine": 91,
+        "startChar": 59,
+        "endLine": 91,
+        "endChar": 66
+      },
+      "revId": "997f14996ff5b43c65b96b6a12ace6cc385aa2a7",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "34bfc717_43e2cc60",
@@ -94,6 +118,30 @@
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "f1b95e5e_81658174",
+        "filename": "dmi-service/src/main/java/org/onap/cps/ncmp/dmi/service/client/SdncRestconfClient.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 107,
+      "author": {
+        "id": 7965
+      },
+      "writtenOn": "2025-09-04T12:37:06Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "8bc725e4_4eccad7e",
+      "range": {
+        "startLine": 107,
+        "startChar": 12,
+        "endLine": 107,
+        "endChar": 18
+      },
+      "revId": "997f14996ff5b43c65b96b6a12ace6cc385aa2a7",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "2f6c846d_0c62f213",
@@ -141,6 +189,30 @@
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "7b003825_753c94cd",
+        "filename": "dmi-service/src/main/java/org/onap/cps/ncmp/dmi/service/operation/ResourceIdentifierEncodingUtility.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 51,
+      "author": {
+        "id": 7965
+      },
+      "writtenOn": "2025-09-04T12:37:06Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "823e9ee0_8b7f7e17",
+      "range": {
+        "startLine": 51,
+        "startChar": 32,
+        "endLine": 51,
+        "endChar": 37
+      },
+      "revId": "997f14996ff5b43c65b96b6a12ace6cc385aa2a7",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "d11b6dec_ed07e7a1",
@@ -154,6 +226,30 @@
       "writtenOn": "2025-08-25T14:01:31Z",
       "side": 1,
       "message": "i have seen 3 places now where you check/prepend path separtor. I think it could be simplified much",
+      "range": {
+        "startLine": 74,
+        "startChar": 33,
+        "endLine": 74,
+        "endChar": 48
+      },
+      "revId": "997f14996ff5b43c65b96b6a12ace6cc385aa2a7",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "7f5573ee_17e5ac8b",
+        "filename": "dmi-service/src/main/java/org/onap/cps/ncmp/dmi/service/operation/ResourceIdentifierEncodingUtility.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 74,
+      "author": {
+        "id": 7965
+      },
+      "writtenOn": "2025-09-04T12:37:06Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "d11b6dec_ed07e7a1",
       "range": {
         "startLine": 74,
         "startChar": 33,
@@ -187,6 +283,30 @@
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "5b1dd440_9d28ee72",
+        "filename": "dmi-service/src/main/java/org/onap/cps/ncmp/dmi/service/operation/ResourceIdentifierEncodingUtility.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 98,
+      "author": {
+        "id": 7965
+      },
+      "writtenOn": "2025-09-04T12:37:06Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "eb54f952_04295ce5",
+      "range": {
+        "startLine": 77,
+        "startChar": 2,
+        "endLine": 98,
+        "endChar": 71
+      },
+      "revId": "997f14996ff5b43c65b96b6a12ace6cc385aa2a7",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "bb96bb0e_863542da",
@@ -200,6 +320,30 @@
       "writtenOn": "2025-08-25T14:01:31Z",
       "side": 1,
       "message": "expectedEncodedString",
+      "range": {
+        "startLine": 31,
+        "startChar": 29,
+        "endLine": 31,
+        "endChar": 37
+      },
+      "revId": "997f14996ff5b43c65b96b6a12ace6cc385aa2a7",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "c963d5fa_67fe74c0",
+        "filename": "dmi-service/src/test/groovy/org/onap/cps/ncmp/dmi/service/operation/ResourceIdentifierEncodingUtilitySpec.groovy",
+        "patchSetId": 1
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 7965
+      },
+      "writtenOn": "2025-09-04T12:37:06Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "bb96bb0e_863542da",
       "range": {
         "startLine": 31,
         "startChar": 29,
@@ -233,6 +377,30 @@
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "10402420_bd49c1b6",
+        "filename": "dmi-service/src/test/groovy/org/onap/cps/ncmp/dmi/service/operation/ResourceIdentifierEncodingUtilitySpec.groovy",
+        "patchSetId": 1
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 7965
+      },
+      "writtenOn": "2025-09-04T12:37:06Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "f2dd89d4_f6da1f47",
+      "range": {
+        "startLine": 34,
+        "startChar": 72,
+        "endLine": 34,
+        "endChar": 109
+      },
+      "revId": "997f14996ff5b43c65b96b6a12ace6cc385aa2a7",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "5ff37aac_24415162",
@@ -246,6 +414,30 @@
       "writtenOn": "2025-08-25T14:01:31Z",
       "side": 1,
       "message": "same as above?!",
+      "range": {
+        "startLine": 35,
+        "startChar": 53,
+        "endLine": 35,
+        "endChar": 112
+      },
+      "revId": "997f14996ff5b43c65b96b6a12ace6cc385aa2a7",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "d40ad718_e560082b",
+        "filename": "dmi-service/src/test/groovy/org/onap/cps/ncmp/dmi/service/operation/ResourceIdentifierEncodingUtilitySpec.groovy",
+        "patchSetId": 1
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 7965
+      },
+      "writtenOn": "2025-09-04T12:37:06Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5ff37aac_24415162",
       "range": {
         "startLine": 35,
         "startChar": 53,

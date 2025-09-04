@@ -142,6 +142,30 @@
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "804edd8a_5872625c",
+        "filename": "dmi-service/src/main/java/org/onap/cps/ncmp/dmi/service/operation/ResourceIdentifierEncodingUtility.java",
+        "patchSetId": 5
+      },
+      "lineNbr": 57,
+      "author": {
+        "id": 7965
+      },
+      "writtenOn": "2025-09-04T12:37:06Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5845555f_3dec62e2",
+      "range": {
+        "startLine": 57,
+        "startChar": 27,
+        "endLine": 57,
+        "endChar": 48
+      },
+      "revId": "35d07fd673f15f6774706bcf60d2a81ad5334f63",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "422a40da_a20a0d14",
