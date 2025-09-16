@@ -38,8 +38,8 @@ import spock.lang.Specification
 import static org.onap.cps.ncmp.dmi.model.DataAccessRequest.OperationEnum.CREATE
 import static org.onap.cps.ncmp.dmi.model.DataAccessRequest.OperationEnum.DELETE
 import static org.onap.cps.ncmp.dmi.model.DataAccessRequest.OperationEnum.PATCH
-import static org.onap.cps.ncmp.dmi.model.DataAccessRequest.OperationEnum.UPDATE
 import static org.onap.cps.ncmp.dmi.model.DataAccessRequest.OperationEnum.READ
+import static org.onap.cps.ncmp.dmi.model.DataAccessRequest.OperationEnum.UPDATE
 
 @SpringBootTest
 @ContextConfiguration(classes = [DmiConfiguration.SdncProperties, SdncOperations])
@@ -172,5 +172,20 @@ class SdncOperationsSpec extends Specification {
             scenario              | optionsParamInQuery
             '"," in value'        | '(a=(x,y),b=y)'
             '"," in string value' | '(a="x,y",b=y)'
+    }
+
+    def 'add resource identifier to the url path'() {
+        given: 'base url and resource identifier'
+            def baseUrl = 'some-base-url'
+        when: 'the resource id is added as separate path segments'
+            def result = objectUnderTest.addResource(baseUrl, resourceId)
+        then: 'the url is passed as is and no further encoding/decoding takes place'
+            assert result == expectedUrl
+        where: 'following scenarios are used'
+            scenario                                    | resourceId || expectedUrl
+            'empty resource id'                         | ''         || 'some-base-url'
+            'forward slash'                             | '/'        || 'some-base-url'
+            'resource id with forward slash in between' | 'a/b'      || 'some-base-url/a/b'
+            'encoded slash in resource id'              | 'a%2Fb/c'  || 'some-base-url/a%2Fb/c'
     }
 }

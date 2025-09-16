@@ -57,7 +57,7 @@ public class SdncRestconfClient {
      * @return the response entity
      */
     public ResponseEntity<String> getOperation(final String getResourceUrl, final HttpHeaders httpHeaders) {
-        return  httpOperationWithJsonDataWithUri(HttpMethod.GET, getResourceUrl, null, httpHeaders);
+        return  httpOperationWithJsonData(HttpMethod.GET, getResourceUrl, null, httpHeaders);
     }
 
     /**
@@ -73,28 +73,11 @@ public class SdncRestconfClient {
                                                             final String resourceUrl,
                                                             final String jsonData,
                                                             final HttpHeaders httpHeaders) {
-        return executeHttpOperation(httpMethod, resourceUrl, jsonData, httpHeaders, RestTemplateAddressType.URL_STRING);
-    }
-
-    /**
-     * restconf http operations on sdnc.
-     *
-     * @param httpMethod HTTP Method
-     * @param resourceUrl sdnc resource url
-     * @param jsonData json data
-     * @param httpHeaders HTTP Headers
-     * @return response entity
-     */
-    public ResponseEntity<String> httpOperationWithJsonDataWithUri(final HttpMethod httpMethod,
-            final String resourceUrl,
-            final String jsonData,
-            final HttpHeaders httpHeaders) {
-        return executeHttpOperation(httpMethod, resourceUrl, jsonData, httpHeaders, RestTemplateAddressType.URI);
+        return executeHttpOperation(httpMethod, resourceUrl, jsonData, httpHeaders);
     }
 
     private ResponseEntity<String> executeHttpOperation(final HttpMethod httpMethod, final String resourceUrl,
-            final String jsonData, final HttpHeaders httpHeaders,
-            final RestTemplateAddressType restTemplateAddressType) {
+            final String jsonData, final HttpHeaders httpHeaders) {
         final String sdncBaseUrl = sdncProperties.getBaseUrl();
         final String sdncRestconfUrl = sdncBaseUrl.concat(resourceUrl);
         httpHeaders.setBasicAuth(sdncProperties.getAuthUsername(), sdncProperties.getAuthPassword());
@@ -102,12 +85,9 @@ public class SdncRestconfClient {
         final HttpEntity<String> httpEntity =
                 jsonData == null ? new HttpEntity<>(httpHeaders) : new HttpEntity<>(jsonData, httpHeaders);
 
-        if (RestTemplateAddressType.URI.equals(restTemplateAddressType)) {
-            final URI sdncRestconfUri = URI.create(sdncRestconfUrl);
-            log.debug("sdncRestconfUri: {}", sdncRestconfUri);
-            return restTemplate.exchange(sdncRestconfUri, httpMethod, httpEntity, String.class);
-        }
-        log.debug("sdncRestconfUrl: {}", sdncRestconfUrl);
-        return restTemplate.exchange(sdncRestconfUrl, httpMethod, httpEntity, String.class);
+        final URI sdncRestconfUri = URI.create(sdncRestconfUrl);
+        log.debug("sdncRestconfUri: {}", sdncRestconfUri);
+        return restTemplate.exchange(sdncRestconfUri, httpMethod, httpEntity, String.class);
+
     }
 }
