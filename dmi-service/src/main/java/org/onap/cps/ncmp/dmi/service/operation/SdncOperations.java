@@ -22,7 +22,6 @@
 package org.onap.cps.ncmp.dmi.service.operation;
 
 import static org.onap.cps.ncmp.dmi.model.DataAccessRequest.OperationEnum;
-import static org.onap.cps.ncmp.dmi.service.operation.ResourceIdentifierEncoder.encodeNestedResourcePath;
 
 import com.jayway.jsonpath.Configuration;
 import com.jayway.jsonpath.JsonPath;
@@ -213,21 +212,14 @@ public class SdncOperations {
     private String prepareResourceDataUrl(final String nodeId,
                                           final String resourceId,
                                           final MultiValueMap<String, String> queryMap) {
-        return addQuery(addResourceEncoded(addTopologyDataUrlwithNode(nodeId), resourceId), queryMap);
+        return addQuery(addResource(addTopologyDataUrlwithNode(nodeId), resourceId), queryMap);
     }
 
     private String addResource(final String url, final String resourceId) {
 
         return UriComponentsBuilder.fromUriString(url)
-                .pathSegment(resourceId)
+                .pathSegment(resourceId.split("/"))
                 .buildAndExpand().toUriString();
-    }
-
-    private String addResourceEncoded(final String url, final String resourceId) {
-
-        final String encodedNestedResourcePath = encodeNestedResourcePath(resourceId);
-        log.debug("Raw resourceId : {} , EncodedResourcePath : {}", resourceId, encodedNestedResourcePath);
-        return addResource(url, encodedNestedResourcePath);
     }
 
     private String addQuery(final String url, final MultiValueMap<String, String> queryMap) {
