@@ -38,8 +38,8 @@ import spock.lang.Specification
 import static org.onap.cps.ncmp.dmi.model.DataAccessRequest.OperationEnum.CREATE
 import static org.onap.cps.ncmp.dmi.model.DataAccessRequest.OperationEnum.DELETE
 import static org.onap.cps.ncmp.dmi.model.DataAccessRequest.OperationEnum.PATCH
-import static org.onap.cps.ncmp.dmi.model.DataAccessRequest.OperationEnum.UPDATE
 import static org.onap.cps.ncmp.dmi.model.DataAccessRequest.OperationEnum.READ
+import static org.onap.cps.ncmp.dmi.model.DataAccessRequest.OperationEnum.UPDATE
 
 @SpringBootTest
 @ContextConfiguration(classes = [DmiConfiguration.SdncProperties, SdncOperations])
