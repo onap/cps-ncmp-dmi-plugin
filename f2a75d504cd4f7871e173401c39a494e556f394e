@@ -1,0 +1,44 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "7af66ea9_40f07704",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2025-09-16T10:01:30Z",
+      "side": 1,
+      "message": "one minor suggestion, see below\nBut I am missing a specific test update, can this behavior be shown in an existing test?",
+      "revId": "f2a75d504cd4f7871e173401c39a494e556f394e",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "202e317c_a79b47f7",
+        "filename": "dmi-service/src/main/java/org/onap/cps/ncmp/dmi/service/operation/SdncOperations.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 221,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2025-09-16T10:01:30Z",
+      "side": 1,
+      "message": "maybe extract out for readability:\n\nresourceIdAsPathSegments \u003d resourceId.split(\"/\")",
+      "range": {
+        "startLine": 221,
+        "startChar": 29,
+        "endLine": 221,
+        "endChar": 50
+      },
+      "revId": "f2a75d504cd4f7871e173401c39a494e556f394e",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    }
+  ]
+}
