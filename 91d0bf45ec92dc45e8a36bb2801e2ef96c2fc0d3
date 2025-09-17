@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "6b69d606_1b1ad3a9",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 8171
+      },
+      "writtenOn": "2025-09-17T11:33:18Z",
+      "side": 1,
+      "message": "looks good to me, not directly related to this patch but javadoc descriptions in SdncRestconfClient.java could be improved",
+      "revId": "91d0bf45ec92dc45e8a36bb2801e2ef96c2fc0d3",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    }
+  ]
+}
