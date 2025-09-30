@@ -22,7 +22,7 @@ package org.onap.cps.ncmp.dmi.notifications.mapper
 
 import com.fasterxml.jackson.databind.ObjectMapper
 import io.cloudevents.core.builder.CloudEventBuilder
-import org.onap.cps.ncmp.impl.cmnotificationsubscription_1_0_0.client_to_ncmp.NcmpInEvent
+import org.onap.cps.ncmp.impl.datajobs.subscription.client_to_ncmp.DataJobSubscriptionOperationInEvent
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.boot.test.context.SpringBootTest
 import spock.lang.Specification
@@ -37,13 +37,13 @@ class CloudEventMapperSpec extends Specification {
         expect: 'Events mapped correctly'
             assert mappedCloudEvent == (CloudEventMapper.toTargetEvent(testCloudEvent(), targetClass) != null)
         where: 'below are the scenarios'
-            scenario                | targetClass                                   || mappedCloudEvent
-            'valid concrete type'   | NcmpInEvent.class || true
-            'invalid concrete type' | ArrayList.class                               || false
+            scenario                | targetClass                              || mappedCloudEvent
+            'valid concrete type'   | DataJobSubscriptionOperationInEvent.class|| true
+            'invalid concrete type' | ArrayList.class                          || false
     }
 
     def testCloudEvent() {
-        return CloudEventBuilder.v1().withData(objectMapper.writeValueAsBytes(new NcmpInEvent()))
+        return CloudEventBuilder.v1().withData(objectMapper.writeValueAsBytes(new DataJobSubscriptionOperationInEvent()))
                 .withId("cmhandle1")
                 .withSource(URI.create('test-source'))
                 .withDataSchema(URI.create('test'))
