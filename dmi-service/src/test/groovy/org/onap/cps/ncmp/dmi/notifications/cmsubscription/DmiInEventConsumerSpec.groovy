@@ -1,6 +1,6 @@
 /*
  * ============LICENSE_START=======================================================
- *  Copyright (C) 2024 Nordix Foundation
+ *  Copyright (C) 2024-2025 OpenInfra Foundation Europe. All rights reserved.
  *  ================================================================================
  *  Licensed under the Apache License, Version 2.0 (the "License");
  *  you may not use this file except in compliance with the License.
@@ -32,9 +32,9 @@ import org.onap.cps.ncmp.dmi.TestUtils
 import org.onap.cps.ncmp.dmi.api.kafka.MessagingBaseSpec
 import org.onap.cps.ncmp.dmi.notifications.cmsubscription.model.CmNotificationSubscriptionStatus
 import org.onap.cps.ncmp.dmi.notifications.mapper.CloudEventMapper
-import org.onap.cps.ncmp.impl.cmnotificationsubscription_1_0_0.dmi_to_ncmp.Data
-import org.onap.cps.ncmp.impl.cmnotificationsubscription_1_0_0.dmi_to_ncmp.DmiOutEvent
-import org.onap.cps.ncmp.impl.cmnotificationsubscription_1_0_0.ncmp_to_dmi.DmiInEvent
+import org.onap.cps.ncmp.impl.datajobs.subscription.dmi_to_ncmp.Data
+import org.onap.cps.ncmp.impl.datajobs.subscription.dmi_to_ncmp.DataJobSubscriptionDmiOutEvent
+import org.onap.cps.ncmp.impl.datajobs.subscription.ncmp_to_dmi.DataJobSubscriptionDmiInEvent
 import org.slf4j.LoggerFactory
 import org.spockframework.spring.SpringBean
 import org.springframework.test.annotation.DirtiesContext
@@ -74,7 +74,7 @@ class DmiInEventConsumerSpec extends MessagingBaseSpec {
             def correlationId = 'test-subscriptionId#test-ncmp-dmi'
             def cmSubscriptionDmiOutEventData = new Data(statusCode: subscriptionStatusCode, statusMessage: subscriptionStatusMessage)
             def subscriptionEventResponse =
-                    new DmiOutEvent().withData(cmSubscriptionDmiOutEventData)
+                    new DataJobSubscriptionDmiOutEvent().withData(cmSubscriptionDmiOutEventData)
         and: 'consumer has a subscription'
             kafkaConsumer.subscribe([testTopic] as List<String>)
         when: 'an event is published'
@@ -102,11 +102,11 @@ class DmiInEventConsumerSpec extends MessagingBaseSpec {
             def eventKey = UUID.randomUUID().toString()
             def timestamp = new Timestamp(1679521929511)
             def jsonData = TestUtils.getResourceFileContent('cmNotificationSubscriptionCreationEvent.json')
-            def subscriptionEvent = objectMapper.readValue(jsonData, DmiInEvent.class)
+            def subscriptionEvent = objectMapper.readValue(jsonData, DataJobSubscriptionDmiInEvent.class)
             objectUnderTest.dmoOutEventTopic = testTopic
             def cloudEvent = CloudEventBuilder.v1().withId(UUID.randomUUID().toString()).withSource(URI.create('test-ncmp-dmi'))
                     .withType(subscriptionType)
-                    .withDataSchema(URI.create("urn:cps:" + DmiInEvent.class.getName() + ":1.0.0"))
+                    .withDataSchema(URI.create("urn:cps:" + DataJobSubscriptionDmiInEvent.class.getName() + ":1.0.0"))
                     .withExtension("correlationid", eventKey)
                     .withTime(OffsetDateTime.ofInstant(timestamp.toInstant(), ZoneId.of("UTC")))
                     .withData(objectMapper.writeValueAsBytes(subscriptionEvent)).build()

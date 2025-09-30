@@ -1,6 +1,6 @@
 /*
  * ============LICENSE_START=======================================================
- *  Copyright (C) 2024 Nordix Foundation
+ *  Copyright (C) 2024-2025 OpenInfra Foundation Europe. All rights reserved.
  *  ================================================================================
  *  Licensed under the Apache License, Version 2.0 (the "License");
  *  you may not use this file except in compliance with the License.
@@ -25,9 +25,9 @@ import lombok.RequiredArgsConstructor;
 import org.apache.kafka.clients.consumer.ConsumerRecord;
 import org.onap.cps.ncmp.dmi.notifications.cmsubscription.model.CmNotificationSubscriptionStatus;
 import org.onap.cps.ncmp.dmi.notifications.mapper.CloudEventMapper;
-import org.onap.cps.ncmp.impl.cmnotificationsubscription_1_0_0.dmi_to_ncmp.Data;
-import org.onap.cps.ncmp.impl.cmnotificationsubscription_1_0_0.dmi_to_ncmp.DmiOutEvent;
-import org.onap.cps.ncmp.impl.cmnotificationsubscription_1_0_0.ncmp_to_dmi.DmiInEvent;
+import org.onap.cps.ncmp.impl.datajobs.subscription.dmi_to_ncmp.Data;
+import org.onap.cps.ncmp.impl.datajobs.subscription.dmi_to_ncmp.DataJobSubscriptionDmiOutEvent;
+import org.onap.cps.ncmp.impl.datajobs.subscription.ncmp_to_dmi.DataJobSubscriptionDmiInEvent;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.kafka.annotation.KafkaListener;
 import org.springframework.kafka.core.KafkaTemplate;
@@ -53,10 +53,10 @@ public class DmiInEventConsumer {
         containerFactory = "cloudEventConcurrentKafkaListenerContainerFactory")
     public void consumeDmiInEvent(
         final ConsumerRecord<String, CloudEvent> dmiInCloudEvent) {
-        final DmiInEvent cmNotificationSubscriptionDmiInEvent =
+        final DataJobSubscriptionDmiInEvent dataJobSubscriptionDmiInEvent =
             CloudEventMapper.toTargetEvent(dmiInCloudEvent.value(),
-                DmiInEvent.class);
-        if (cmNotificationSubscriptionDmiInEvent != null) {
+                    DataJobSubscriptionDmiInEvent.class);
+        if (dataJobSubscriptionDmiInEvent != null) {
             final String subscriptionId = dmiInCloudEvent.value().getId();
             final String subscriptionType = dmiInCloudEvent.value().getType();
             final String correlationId = String.valueOf(dmiInCloudEvent.value()
@@ -84,8 +84,8 @@ public class DmiInEventConsumer {
         final String eventKey, final String subscriptionType, final String correlationId,
         final CmNotificationSubscriptionStatus cmNotificationSubscriptionStatus) {
 
-        final DmiOutEvent cmNotificationSubscriptionDmiOutEvent =
-            new DmiOutEvent();
+        final DataJobSubscriptionDmiOutEvent dataJobSubscriptionDmiOutEvent =
+            new DataJobSubscriptionDmiOutEvent();
         final Data dmiOutEventData = new Data();
 
         if (cmNotificationSubscriptionStatus.equals(CmNotificationSubscriptionStatus.ACCEPTED)) {
@@ -95,10 +95,10 @@ public class DmiInEventConsumer {
             dmiOutEventData.setStatusCode("104");
             dmiOutEventData.setStatusMessage("REJECTED");
         }
-        cmNotificationSubscriptionDmiOutEvent.setData(dmiOutEventData);
+        dataJobSubscriptionDmiOutEvent.setData(dmiOutEventData);
 
         cloudEventKafkaTemplate.send(dmoOutEventTopic, eventKey,
-            DmiOutEventToCloudEventMapper.toCloudEvent(cmNotificationSubscriptionDmiOutEvent,
+            DmiOutEventToCloudEventMapper.toCloudEvent(dataJobSubscriptionDmiOutEvent,
                 subscriptionType, dmiName, correlationId));
 
     }
