@@ -23,8 +23,8 @@ package org.onap.cps.ncmp.dmi.notifications.cmsubscription
 import com.fasterxml.jackson.databind.ObjectMapper
 import io.cloudevents.core.builder.CloudEventBuilder
 import org.onap.cps.ncmp.dmi.exception.CloudEventConstructionException
-import org.onap.cps.ncmp.impl.cmnotificationsubscription_1_0_0.dmi_to_ncmp.Data
-import org.onap.cps.ncmp.impl.cmnotificationsubscription_1_0_0.dmi_to_ncmp.DmiOutEvent
+import org.onap.cps.ncmp.impl.datajobs.subscription.dmi_to_ncmp.Data
+import org.onap.cps.ncmp.impl.datajobs.subscription.dmi_to_ncmp.DataJobSubscriptionDmiOutEvent
 import org.spockframework.spring.SpringBean
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.boot.test.context.SpringBootTest
@@ -45,13 +45,13 @@ class DmiOutEventToCloudEventMapperSpec extends Specification {
             def correlationId = 'subscription1#test-ncmp-dmi'
             def cmSubscriptionDmiOutEventData = new Data(statusCode: "1", statusMessage: "accepted")
             def cmSubscriptionDmiOutEvent =
-                    new DmiOutEvent().withData(cmSubscriptionDmiOutEventData)
+                    new DataJobSubscriptionDmiOutEvent().withData(cmSubscriptionDmiOutEventData)
         when: 'a Cm Subscription DMI Out Event is converted'
             def result = objectUnderTest.toCloudEvent(cmSubscriptionDmiOutEvent, "subscriptionCreatedStatus", dmiName, correlationId)
         then: 'Cm Subscription DMI Out Event is converted as expected'
             def expectedCloudEvent = CloudEventBuilder.v1().withId(UUID.randomUUID().toString()).withSource(URI.create('test-ncmp-dmi'))
                     .withType("subscriptionCreated")
-                    .withDataSchema(URI.create("urn:cps:" + DmiOutEvent.class.getName() + ":1.0.0"))
+                    .withDataSchema(URI.create("urn:cps:" + DataJobSubscriptionDmiOutEvent.class.getName() + ":1.0.0"))
                     .withExtension("correlationid", correlationId)
                     .withData(objectMapper.writeValueAsBytes(cmSubscriptionDmiOutEvent)).build()
             assert expectedCloudEvent.data == result.data
@@ -60,7 +60,7 @@ class DmiOutEventToCloudEventMapperSpec extends Specification {
     def 'Map the Cloud Event to data of the subscription event with null parameters causes an exception'() {
         given: 'an empty subscription response event and event key'
             def correlationId = 'subscription1#test-ncmp-dmi'
-            def dmiOutEvent = new DmiOutEvent()
+            def dmiOutEvent = new DataJobSubscriptionDmiOutEvent()
         when: 'the cm subscription dmi out Event map to data of cloud event'
             objectUnderTest.toCloudEvent(dmiOutEvent, "subscriptionCreatedStatus", null , correlationId)
         then: 'a run time exception is thrown'

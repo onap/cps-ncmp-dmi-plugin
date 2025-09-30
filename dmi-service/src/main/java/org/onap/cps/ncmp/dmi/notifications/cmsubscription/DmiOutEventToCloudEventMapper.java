@@ -28,7 +28,7 @@ import java.util.UUID;
 import lombok.AccessLevel;
 import lombok.NoArgsConstructor;
 import org.onap.cps.ncmp.dmi.exception.CloudEventConstructionException;
-import org.onap.cps.ncmp.impl.cmnotificationsubscription_1_0_0.dmi_to_ncmp.DmiOutEvent;
+import org.onap.cps.ncmp.impl.datajobs.subscription.dmi_to_ncmp.DataJobSubscriptionDmiOutEvent;
 
 @NoArgsConstructor(access = AccessLevel.PRIVATE)
 public class DmiOutEventToCloudEventMapper {
@@ -44,7 +44,7 @@ public class DmiOutEventToCloudEventMapper {
      * @param correlationId             String of correlationId.
      * @return CloudEvent built.
      */
-    public static CloudEvent toCloudEvent(final DmiOutEvent dmiOutEvent,
+    public static CloudEvent toCloudEvent(final DataJobSubscriptionDmiOutEvent dmiOutEvent,
                                           final String subscriptionType, final String dmiName,
                                           final String correlationId) {
         try {
