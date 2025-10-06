@@ -22,6 +22,7 @@ package org.onap.cps.ncmp.dmi.rest.controller
 
 import com.fasterxml.jackson.databind.ObjectMapper
 import org.onap.cps.ncmp.dmi.config.WebSecurityConfig
+import org.onap.cps.ncmp.dmi.provmns.api.ProvMnsController
 import org.onap.cps.ncmp.dmi.provmns.model.ResourceOneOf
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.beans.factory.annotation.Value
@@ -51,7 +52,7 @@ class ProvMnsControllerSpec extends Specification {
 
     def 'Get Resource Data from provmns interface.'() {
         given: 'resource data url'
-            def getUrl = "$provMnSBasePath/test=another"
+            def getUrl = "$provMnSBasePath/v1/test=another"
         when: 'get data resource request is performed'
             def response = mvc.perform(get(getUrl).contentType(MediaType.APPLICATION_JSON)).andReturn().response
         then: 'response status is Not Implemented (501)'
@@ -60,7 +61,7 @@ class ProvMnsControllerSpec extends Specification {
 
     def 'Put Resource Data from provmns interface.'() {
         given: 'resource data url'
-            def putUrl = "$provMnSBasePath/test=another"
+            def putUrl = "$provMnSBasePath/v1/test=another"
         and: 'an example resource json object'
             def jsonBody = objectMapper.writeValueAsString((new ResourceOneOf('test')))
         when: 'put data resource request is performed'
@@ -74,7 +75,7 @@ class ProvMnsControllerSpec extends Specification {
 
     def 'Patch Resource Data from provmns interface.'() {
         given: 'resource data url'
-            def patchUrl = "$provMnSBasePath/test=another"
+            def patchUrl = "$provMnSBasePath/v1/test=another"
         and: 'an example resource json object'
             def jsonBody = objectMapper.writeValueAsString((new ResourceOneOf('test')))
         when: 'patch data resource request is performed'
@@ -88,7 +89,7 @@ class ProvMnsControllerSpec extends Specification {
 
     def 'Delete Resource Data from provmns interface.'() {
         given: 'resource data url'
-            def deleteUrl = "$provMnSBasePath/test=another"
+            def deleteUrl = "$provMnSBasePath/v1/test=another"
         when: 'delete data resource request is performed'
             def response = mvc.perform(delete(deleteUrl)).andReturn().response
         then: 'response status is Not Implemented (501)'
