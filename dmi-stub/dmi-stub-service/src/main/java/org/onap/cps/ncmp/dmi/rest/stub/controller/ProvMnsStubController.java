@@ -20,82 +20,86 @@
 
 package org.onap.cps.ncmp.dmi.rest.stub.controller;
 
+
+import jakarta.servlet.http.HttpServletRequest;
 import java.util.List;
+import lombok.RequiredArgsConstructor;
+import org.onap.cps.ncmp.dmi.provmns.api.ProvMnS;
 import org.onap.cps.ncmp.dmi.provmns.model.ClassNameIdGetDataNodeSelectorParameter;
 import org.onap.cps.ncmp.dmi.provmns.model.Resource;
 import org.onap.cps.ncmp.dmi.provmns.model.ResourceOneOf;
 import org.onap.cps.ncmp.dmi.provmns.model.Scope;
-import org.onap.cps.ncmp.dmi.provmns.rest.api.DefaultApi;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 
-public class ProvMnsStubController implements DefaultApi {
+@RestController
+@RequestMapping("${rest.api.provmns-base-path}")
+@RequiredArgsConstructor
+public class ProvMnsStubController implements ProvMnS {
 
     /**
      * Replaces a complete single resource or creates it if it does not exist.
      *
-     * @param className               Class name of the targeted resource
-     * @param id                      Identifier of the targeted resource
+     * @param request                 URI request including path
      * @param resource                Resource representation of the resource to be created or replaced
      * @return {@code ResponseEntity} The representation of the updated resource is returned in the response
      *                                message body.
      */
     @Override
-    public ResponseEntity<Resource> classNameidPut(final String className, final String id, final Resource resource) {
+    public ResponseEntity<Resource> putMoi(final HttpServletRequest request, final Resource resource) {
         return new ResponseEntity<>(resource, HttpStatus.OK);
     }
 
     /**
      * Reads one or multiple resources.
      *
-     * @param className        Class name of the targeted resource
-     * @param id               Identifier of the targeted resource
-     * @param scope            Extends the set of targeted resources beyond the base
-     *                         resource identified with the authority and path component of
-     *                         the URI.
-     * @param filter           Reduces the targeted set of resources by applying a filter to
-     *                         the scoped set of resource representations. Only resources
-     *                         representations for which the filter construct evaluates to
-     *                         "true" are targeted.
-     * @param attributes       Attributes of the scoped resources to be returned. The
-     *                         value is a comma-separated list of attribute names.
-     * @param fields           Attribute fields of the scoped resources to be returned. The
-     *                         value is a comma-separated list of JSON pointers to the
-     *                         attribute fields.
-     * @param dataNodeSelector dataNodeSelector object
+     * @param request                 URI request including path
+     * @param scope                   Extends the set of targeted resources beyond the base
+     *                                resource identified with the authority and path component of
+     *                                the URI.
+     * @param filter                  Reduces the targeted set of resources by applying a filter to
+     *                                the scoped set of resource representations. Only resources
+     *                                representations for which the filter construct evaluates to
+     *                                "true" are targeted.
+     * @param attributes              Attributes of the scoped resources to be returned. The
+     *                                value is a comma-separated list of attribute names.
+     * @param fields                  Attribute fields of the scoped resources to be returned. The
+     *                                value is a comma-separated list of JSON pointers to the
+     *                                attribute fields.
+     * @param dataNodeSelector        dataNodeSelector object
      * @return {@code ResponseEntity} The resources identified in the request for retrieval are returned
-     *                         in the response message body.
+     *                                in the response message body.
      */
     @Override
-    public ResponseEntity<Resource> classNameidGet(final String className, final String id, final Scope scope,
-                                                   final String filter, final List<String> attributes,
-                                                   final List<String> fields,
-                                                   final ClassNameIdGetDataNodeSelectorParameter dataNodeSelector) {
+    public ResponseEntity<Resource> getMoi(final HttpServletRequest request, final Scope scope,
+                                           final String filter, final List<String> attributes,
+                                           final List<String> fields,
+                                           final ClassNameIdGetDataNodeSelectorParameter dataNodeSelector) {
         return new ResponseEntity<>(new ResourceOneOf("exampleResourceId"), HttpStatus.OK);
     }
 
     /**
      * Patches (Create, Update or Delete) one or multiple resources.
      *
-     * @param className               Class name of the targeted resource
-     * @param id                      Identifier of the targeted resource
+     * @param request                 URI request including path
      * @param resource                Resource representation of the resource to be created or replaced
      * @return {@code ResponseEntity} The updated resource representations are returned in the response message body.
      */
     @Override
-    public ResponseEntity<Resource> classNameidPatch(final String className, final String id, final Resource resource) {
+    public ResponseEntity<Resource> patchMoi(final HttpServletRequest request, final Resource resource) {
         return new ResponseEntity<>(resource, HttpStatus.OK);
     }
 
     /**
      * Delete one or multiple resources.
      *
-     * @param className               Class name of the targeted resource
-     * @param id                      Identifier of the targeted resource
+     * @param request                 URI request including path
      * @return {@code ResponseEntity} The response body is empty, HTTP status returned.
      */
     @Override
-    public ResponseEntity<Void> classNameidDelete(final String className, final String id) {
+    public ResponseEntity<Void> deleteMoi(final HttpServletRequest request) {
         return new ResponseEntity<>(HttpStatus.OK);
     }
 }
