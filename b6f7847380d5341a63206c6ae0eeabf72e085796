@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "e86bddb9_f9d25b51",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2025-10-06T10:22:32Z",
+      "side": 1,
+      "message": "Does it also need an uplift of CPS?",
+      "revId": "b6f7847380d5341a63206c6ae0eeabf72e085796",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    }
+  ]
+}
