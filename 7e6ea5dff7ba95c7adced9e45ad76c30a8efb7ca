@@ -24,6 +24,30 @@
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "bdcdb9cb_46108d5d",
+        "filename": "dmi-service/src/main/java/org/onap/cps/ncmp/dmi/provmns/api/ProvMnsController.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 49,
+      "author": {
+        "id": 8171
+      },
+      "writtenOn": "2025-10-09T08:33:29Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "a8e86581_cdec3d85",
+      "range": {
+        "startLine": 49,
+        "startChar": 68,
+        "endLine": 49,
+        "endChar": 75
+      },
+      "revId": "7e6ea5dff7ba95c7adced9e45ad76c30a8efb7ca",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "f9eff64a_a2a5724c",
@@ -37,6 +61,30 @@
       "writtenOn": "2025-10-07T09:49:46Z",
       "side": 1,
       "message": "dont shorten",
+      "range": {
+        "startLine": 74,
+        "startChar": 68,
+        "endLine": 74,
+        "endChar": 75
+      },
+      "revId": "7e6ea5dff7ba95c7adced9e45ad76c30a8efb7ca",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "859d7cfd_91b16e1c",
+        "filename": "dmi-service/src/main/java/org/onap/cps/ncmp/dmi/provmns/api/ProvMnsController.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 74,
+      "author": {
+        "id": 8171
+      },
+      "writtenOn": "2025-10-09T08:33:29Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "f9eff64a_a2a5724c",
       "range": {
         "startLine": 74,
         "startChar": 68,
@@ -70,6 +118,30 @@
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "c7c87c68_6abbe7e4",
+        "filename": "dmi-service/src/main/java/org/onap/cps/ncmp/dmi/provmns/api/ProvMnsController.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 77,
+      "author": {
+        "id": 8171
+      },
+      "writtenOn": "2025-10-09T08:33:29Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "ae9d91de_eaca3cfe",
+      "range": {
+        "startLine": 77,
+        "startChar": 97,
+        "endLine": 77,
+        "endChar": 113
+      },
+      "revId": "7e6ea5dff7ba95c7adced9e45ad76c30a8efb7ca",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "888b4fd3_a52a728f",
@@ -83,6 +155,30 @@
       "writtenOn": "2025-10-07T09:49:46Z",
       "side": 1,
       "message": "dont shorten",
+      "range": {
+        "startLine": 89,
+        "startChar": 70,
+        "endLine": 89,
+        "endChar": 77
+      },
+      "revId": "7e6ea5dff7ba95c7adced9e45ad76c30a8efb7ca",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "21e52fc9_e83fa7c5",
+        "filename": "dmi-service/src/main/java/org/onap/cps/ncmp/dmi/provmns/api/ProvMnsController.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 89,
+      "author": {
+        "id": 8171
+      },
+      "writtenOn": "2025-10-09T08:33:29Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "888b4fd3_a52a728f",
       "range": {
         "startLine": 89,
         "startChar": 70,
@@ -116,6 +212,30 @@
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "f45de3f9_a40d6bc8",
+        "filename": "dmi-service/src/main/java/org/onap/cps/ncmp/dmi/provmns/api/ProvMnsController.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 100,
+      "author": {
+        "id": 8171
+      },
+      "writtenOn": "2025-10-09T08:33:29Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "2efda770_0c495864",
+      "range": {
+        "startLine": 100,
+        "startChar": 67,
+        "endLine": 100,
+        "endChar": 74
+      },
+      "revId": "7e6ea5dff7ba95c7adced9e45ad76c30a8efb7ca",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "94a1c073_ae969a1e",
@@ -135,6 +255,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "14eb8446_fb11fc7f",
+        "filename": "dmi-stub/dmi-stub-app/src/main/java/org/onap/cps/ncmp/dmi/provmns/api/ProvMnS.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 8171
+      },
+      "writtenOn": "2025-10-09T08:33:29Z",
+      "side": 1,
+      "message": "Correct this will be completed under the CPS-2965 ticket",
+      "parentUuid": "94a1c073_ae969a1e",
+      "revId": "7e6ea5dff7ba95c7adced9e45ad76c30a8efb7ca",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "61b364ad_91064806",
         "filename": "dmi-stub/dmi-stub-service/src/main/java/org/onap/cps/ncmp/dmi/rest/stub/controller/ProvMnsStubController.java",
         "patchSetId": 1
@@ -146,6 +284,30 @@
       "writtenOn": "2025-10-07T09:49:46Z",
       "side": 1,
       "message": "is/should the javadoc not be (only) in the interface?!",
+      "range": {
+        "startLine": 55,
+        "startChar": 0,
+        "endLine": 74,
+        "endChar": 7
+      },
+      "revId": "7e6ea5dff7ba95c7adced9e45ad76c30a8efb7ca",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "858da971_4907e335",
+        "filename": "dmi-stub/dmi-stub-service/src/main/java/org/onap/cps/ncmp/dmi/rest/stub/controller/ProvMnsStubController.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 74,
+      "author": {
+        "id": 8171
+      },
+      "writtenOn": "2025-10-09T08:33:29Z",
+      "side": 1,
+      "message": "I suppose you could, other controller implementations have java doc on their methods so I was keeping it consistent across implementations.",
+      "parentUuid": "61b364ad_91064806",
       "range": {
         "startLine": 55,
         "startChar": 0,
@@ -179,6 +341,30 @@
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "173e4f87_c6f32fb6",
+        "filename": "dmi-stub/dmi-stub-service/src/main/java/org/onap/cps/ncmp/dmi/rest/stub/controller/ProvMnsStubController.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 76,
+      "author": {
+        "id": 8171
+      },
+      "writtenOn": "2025-10-09T08:33:29Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3a88b211_5455627b",
+      "range": {
+        "startLine": 76,
+        "startChar": 68,
+        "endLine": 76,
+        "endChar": 75
+      },
+      "revId": "7e6ea5dff7ba95c7adced9e45ad76c30a8efb7ca",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "52afe881_f591fd7a",
@@ -202,6 +388,30 @@
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "e3994fc7_80df88cb",
+        "filename": "dmi-stub/dmi-stub-service/src/main/java/org/onap/cps/ncmp/dmi/rest/stub/controller/ProvMnsStubController.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 91,
+      "author": {
+        "id": 8171
+      },
+      "writtenOn": "2025-10-09T08:33:29Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "52afe881_f591fd7a",
+      "range": {
+        "startLine": 91,
+        "startChar": 70,
+        "endLine": 91,
+        "endChar": 77
+      },
+      "revId": "7e6ea5dff7ba95c7adced9e45ad76c30a8efb7ca",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "8a627774_2d4ab1d9",
@@ -215,6 +425,30 @@
       "writtenOn": "2025-10-07T09:49:46Z",
       "side": 1,
       "message": "dont shorten",
+      "range": {
+        "startLine": 102,
+        "startChar": 67,
+        "endLine": 102,
+        "endChar": 74
+      },
+      "revId": "7e6ea5dff7ba95c7adced9e45ad76c30a8efb7ca",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "516f15da_e05631d0",
+        "filename": "dmi-stub/dmi-stub-service/src/main/java/org/onap/cps/ncmp/dmi/rest/stub/controller/ProvMnsStubController.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 102,
+      "author": {
+        "id": 8171
+      },
+      "writtenOn": "2025-10-09T08:33:29Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "8a627774_2d4ab1d9",
       "range": {
         "startLine": 102,
         "startChar": 67,
