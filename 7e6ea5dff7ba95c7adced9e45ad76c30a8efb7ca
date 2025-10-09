@@ -271,6 +271,24 @@
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "707e248c_14a1685c",
+        "filename": "dmi-stub/dmi-stub-app/src/main/java/org/onap/cps/ncmp/dmi/provmns/api/ProvMnS.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2025-10-09T16:02:06Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "14eb8446_fb11fc7f",
+      "revId": "7e6ea5dff7ba95c7adced9e45ad76c30a8efb7ca",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "61b364ad_91064806",
@@ -308,6 +326,30 @@
       "side": 1,
       "message": "I suppose you could, other controller implementations have java doc on their methods so I was keeping it consistent across implementations.",
       "parentUuid": "61b364ad_91064806",
+      "range": {
+        "startLine": 55,
+        "startChar": 0,
+        "endLine": 74,
+        "endChar": 7
+      },
+      "revId": "7e6ea5dff7ba95c7adced9e45ad76c30a8efb7ca",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "89b7384e_84abf041",
+        "filename": "dmi-stub/dmi-stub-service/src/main/java/org/onap/cps/ncmp/dmi/rest/stub/controller/ProvMnsStubController.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 74,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2025-10-09T16:02:06Z",
+      "side": 1,
+      "message": "in any case don\u0027t do both. I think just IFC is the best practice",
+      "parentUuid": "858da971_4907e335",
       "range": {
         "startLine": 55,
         "startChar": 0,
