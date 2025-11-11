@@ -1,0 +1,67 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "122961ae_3321ff59",
+        "filename": "dmi-stub/dmi-stub-service/src/main/java/org/onap/cps/ncmp/dmi/rest/stub/controller/DmiRestStubController.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 217,
+      "author": {
+        "id": 7931
+      },
+      "writtenOn": "2025-11-11T14:49:04Z",
+      "side": 1,
+      "message": "would change this to getCompositeNetworkId() which does the whole concatenation",
+      "revId": "7c9c959317cce182df9b092c910db213bf645fca",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "19eb68b2_19728fda",
+        "filename": "dmi-stub/dmi-stub-service/src/main/java/org/onap/cps/ncmp/dmi/rest/stub/controller/DmiRestStubController.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 227,
+      "author": {
+        "id": 7931
+      },
+      "writtenOn": "2025-11-11T14:49:04Z",
+      "side": 1,
+      "message": "#network-id",
+      "range": {
+        "startLine": 227,
+        "startChar": 53,
+        "endLine": 227,
+        "endChar": 55
+      },
+      "revId": "7c9c959317cce182df9b092c910db213bf645fca",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "159d437e_b5ccc395",
+        "filename": "dmi-stub/dmi-stub-service/src/main/resources/data/ietf-network-topology-sample-rfc8345.json",
+        "patchSetId": 1
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 7931
+      },
+      "writtenOn": "2025-11-11T14:49:04Z",
+      "side": 1,
+      "message": "be more specific than # , might cause issues \"#network-id\"",
+      "range": {
+        "startLine": 7,
+        "startChar": 26,
+        "endLine": 7,
+        "endChar": 27
+      },
+      "revId": "7c9c959317cce182df9b092c910db213bf645fca",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    }
+  ]
+}
