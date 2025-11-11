@@ -4,7 +4,7 @@
          {
            "network-types": {
            },
-           "network-id": "otn-hc",
+           "network-id": "#",
            "node": [
              {
                "node-id": "D1",
