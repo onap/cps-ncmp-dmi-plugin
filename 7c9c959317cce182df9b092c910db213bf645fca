@@ -18,6 +18,24 @@
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "3798429e_6a1eba92",
+        "filename": "dmi-stub/dmi-stub-service/src/main/java/org/onap/cps/ncmp/dmi/rest/stub/controller/DmiRestStubController.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 217,
+      "author": {
+        "id": 8063
+      },
+      "writtenOn": "2025-11-11T15:15:12Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "122961ae_3321ff59",
+      "revId": "7c9c959317cce182df9b092c910db213bf645fca",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "19eb68b2_19728fda",
@@ -41,6 +59,30 @@
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "669c3cb0_70a892e7",
+        "filename": "dmi-stub/dmi-stub-service/src/main/java/org/onap/cps/ncmp/dmi/rest/stub/controller/DmiRestStubController.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 227,
+      "author": {
+        "id": 8063
+      },
+      "writtenOn": "2025-11-11T15:15:12Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "19eb68b2_19728fda",
+      "range": {
+        "startLine": 227,
+        "startChar": 53,
+        "endLine": 227,
+        "endChar": 55
+      },
+      "revId": "7c9c959317cce182df9b092c910db213bf645fca",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "159d437e_b5ccc395",
@@ -54,6 +96,30 @@
       "writtenOn": "2025-11-11T14:49:04Z",
       "side": 1,
       "message": "be more specific than # , might cause issues \"#network-id\"",
+      "range": {
+        "startLine": 7,
+        "startChar": 26,
+        "endLine": 7,
+        "endChar": 27
+      },
+      "revId": "7c9c959317cce182df9b092c910db213bf645fca",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "8e8355cc_99b1d84e",
+        "filename": "dmi-stub/dmi-stub-service/src/main/resources/data/ietf-network-topology-sample-rfc8345.json",
+        "patchSetId": 1
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 8063
+      },
+      "writtenOn": "2025-11-11T15:15:12Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "159d437e_b5ccc395",
       "range": {
         "startLine": 7,
         "startChar": 26,
