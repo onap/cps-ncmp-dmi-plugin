@@ -69,6 +69,7 @@ import org.springframework.web.bind.annotation.RequestHeader;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
 @RestController
 @RequestMapping("${rest.api.dmi-stub-base-path}")
@@ -222,7 +223,7 @@ public class DmiRestStubController {
 
         final String sampleJson = ResourceFileReaderUtil.getResourceFileContent(applicationContext.getResource(
                 ResourceLoader.CLASSPATH_URL_PREFIX + "data/ietf-network-topology-sample-rfc8345.json"));
-        return ResponseEntity.ok(sampleJson);
+        return ResponseEntity.ok(sampleJson.replace("#network-id", getCompositeNetworkId(cmHandleId)));
     }
 
     /**
@@ -414,4 +415,13 @@ public class DmiRestStubController {
             Thread.currentThread().interrupt();
         }
     }
+
+    private static String getCompositeNetworkId(final String cmHandleId) {
+        final String servletURI = ServletUriComponentsBuilder
+            .fromCurrentContextPath()    // scheme://host:port
+            .build()
+            .toUriString();
+        return servletURI + "-" + cmHandleId; // e.g. http://cps-ncmp-dmi-stub-1:8092-my-cm-handle
+    }
+
 }
