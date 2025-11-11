@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "6a8b7f30_e7b3def5",
+        "filename": "dmi-stub/dmi-stub-service/src/main/java/org/onap/cps/ncmp/dmi/rest/stub/controller/DmiRestStubController.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 217,
+      "author": {
+        "id": 7931
+      },
+      "writtenOn": "2025-11-11T20:20:31Z",
+      "side": 1,
+      "message": "i meant this all should be the getCompositeNetworkId() and it should return \u0027http://cps-ncmp-dmi-stub-1:8092-my-cm-handle\u0027",
+      "range": {
+        "startLine": 217,
+        "startChar": 41,
+        "endLine": 217,
+        "endChar": 85
+      },
+      "revId": "a56c9b89eec9727ed01a5c189b91306c58c29239",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    }
+  ]
+}
