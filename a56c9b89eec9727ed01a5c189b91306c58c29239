@@ -22,6 +22,53 @@
       },
       "revId": "a56c9b89eec9727ed01a5c189b91306c58c29239",
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "d873d921_3bca9d11",
+        "filename": "dmi-stub/dmi-stub-service/src/main/java/org/onap/cps/ncmp/dmi/rest/stub/controller/DmiRestStubController.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 217,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2025-11-12T10:01:57Z",
+      "side": 1,
+      "message": "naming is confusing\n\nIt looks like A \u003d getA() + B  which does not make sense...",
+      "parentUuid": "6a8b7f30_e7b3def5",
+      "range": {
+        "startLine": 217,
+        "startChar": 41,
+        "endLine": 217,
+        "endChar": 85
+      },
+      "revId": "a56c9b89eec9727ed01a5c189b91306c58c29239",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "9a26924e_c4a0065a",
+        "filename": "dmi-stub/dmi-stub-service/src/main/java/org/onap/cps/ncmp/dmi/rest/stub/controller/DmiRestStubController.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 420,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2025-11-12T10:01:57Z",
+      "side": 1,
+      "message": "looks like this is NOT the composite but just the first part ie just the ServerNam,adress ? PLease namin accordingly",
+      "range": {
+        "startLine": 420,
+        "startChar": 26,
+        "endLine": 420,
+        "endChar": 47
+      },
+      "revId": "a56c9b89eec9727ed01a5c189b91306c58c29239",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
     }
   ]
 }
