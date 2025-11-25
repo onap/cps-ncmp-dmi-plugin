@@ -16,7 +16,7 @@
 #  SPDX-License-Identifier: Apache-2.0
 #  ============LICENSE_END=========================================================
 server:
-    port: ${SERVER_PORT:8092}
+    port: ${DMI_STUB_SERVER_PORT:8092}
 
 rest:
     api:
