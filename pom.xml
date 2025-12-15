@@ -58,7 +58,7 @@
         <!-- Code Quality and Dependency Management -->
         <checkstyle.config.location>${project.basedir}</checkstyle.config.location>
         <maven.checkstyle.plugin.version>3.3.1</maven.checkstyle.plugin.version>
-        <maven.compiler.plugin.version>3.13.0</maven.compiler.plugin.version>
+        <maven.compiler.plugin.version>3.14.1</maven.compiler.plugin.version>
         <maven.compiler.source>17</maven.compiler.source>
         <maven.compiler.target>17</maven.compiler.target>
         <maven.dependency.plugin.version>3.7.1</maven.dependency.plugin.version>

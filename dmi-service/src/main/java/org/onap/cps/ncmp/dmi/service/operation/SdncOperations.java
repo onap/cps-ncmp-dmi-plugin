@@ -67,7 +67,7 @@ public class SdncOperations {
     private static final int QUERY_PARAM_NAME_INDEX = 0;
 
     private static final EnumMap<OperationEnum, HttpMethod> operationToHttpMethodMap =
-            new EnumMap<>(OperationEnum.class);
+        new EnumMap<>(OperationEnum.class);
 
     static {
         operationToHttpMethodMap.put(OperationEnum.READ, HttpMethod.GET);
@@ -79,8 +79,6 @@ public class SdncOperations {
 
     private final SdncProperties sdncProperties;
     private final SdncRestconfClient sdncRestconfClient;
-    private final String topologyUrlData;
-    private final String topologyUrlOperational;
 
     private final Configuration jsonPathConfiguration = Configuration.builder()
         .mappingProvider(new JacksonMappingProvider())
@@ -88,7 +86,7 @@ public class SdncOperations {
         .build();
 
     /**
-     * Constructor for {@code SdncOperations}. This method also manipulates url properties.
+     * Constructor for {@code SdncOperations}.
      *
      * @param sdncProperties     {@code SdncProperties}
      * @param sdncRestconfClient {@code SdncRestconfClient}
@@ -96,12 +94,10 @@ public class SdncOperations {
     public SdncOperations(final SdncProperties sdncProperties, final SdncRestconfClient sdncRestconfClient) {
         this.sdncProperties = sdncProperties;
         this.sdncRestconfClient = sdncRestconfClient;
-        topologyUrlOperational = getTopologyUrlOperational();
-        topologyUrlData = getTopologyUrlData();
     }
 
     /**
-     * This method fetches list of modules usind sdnc client.
+     * This method fetches list of modules using sdnc client.
      *
      * @param nodeId node id for node
      * @return a collection of module schemas
@@ -202,7 +198,7 @@ public class SdncOperations {
     }
 
     private String prepareGetOperationSchemaUrl(final String nodeId) {
-        return UriComponentsBuilder.fromUriString(topologyUrlOperational)
+        return UriComponentsBuilder.fromUriString(getTopologyUrl(TOPOLOGY_URL_TEMPLATE_OPERATIONAL))
                 .pathSegment("node={nodeId}")
                 .pathSegment("yang-ext:mount")
                 .path(GET_SCHEMA_SOURCES_URL)
@@ -225,43 +221,30 @@ public class SdncOperations {
     }
 
     private String addQuery(final String url, final MultiValueMap<String, String> queryMap) {
-
-        return UriComponentsBuilder
-                       .fromUriString(url)
-                       .queryParams(queryMap)
-                       .buildAndExpand().toUriString();
+        return UriComponentsBuilder.fromUriString(url).queryParams(queryMap).buildAndExpand().toUriString();
     }
 
     private String addTopologyDataUrlwithNode(final String nodeId) {
-        return UriComponentsBuilder
-                       .fromUriString(topologyUrlData)
-                       .pathSegment("node={nodeId}")
-                       .pathSegment("yang-ext:mount")
-                       .buildAndExpand(nodeId).toUriString();
+        return UriComponentsBuilder.fromUriString(getTopologyUrl(TOPOLOGY_URL_TEMPLATE_DATA))
+                                   .pathSegment("node={nodeId}")
+                                   .pathSegment("yang-ext:mount")
+                                   .buildAndExpand(nodeId).toUriString();
     }
 
     private List<ModuleSchema> convertToModuleSchemas(final String modulesListAsJson) {
         try {
             return JsonPath.using(jsonPathConfiguration).parse(modulesListAsJson).read(
-                PATH_TO_MODULE_SCHEMAS, new TypeRef<>() {
-                });
+                PATH_TO_MODULE_SCHEMAS, new TypeRef<>() {});
         } catch (final JsonPathException jsonPathException) {
             throw new SdncException("SDNC Response processing failed",
                 "SDNC response is not in the expected format.", jsonPathException);
         }
     }
 
-    private String getTopologyUrlData() {
-        return UriComponentsBuilder.fromUriString(TOPOLOGY_URL_TEMPLATE_DATA)
-                .path("topology={topologyId}")
-                .buildAndExpand(this.sdncProperties.getTopologyId()).toUriString();
-    }
-
-    private String getTopologyUrlOperational() {
-        return UriComponentsBuilder.fromUriString(
-                        TOPOLOGY_URL_TEMPLATE_OPERATIONAL)
-                .path("topology={topologyId}")
-                .buildAndExpand(this.sdncProperties.getTopologyId()).toUriString();
+    private String getTopologyUrl(final String uriTemplate) {
+        return UriComponentsBuilder.fromUriString(uriTemplate)
+                                   .path("topology={topologyId}")
+                                   .buildAndExpand(sdncProperties.getTopologyId()).toUriString();
     }
 
     private Map<String, String> extractQueryParams(final String optionsParamInQuery,
