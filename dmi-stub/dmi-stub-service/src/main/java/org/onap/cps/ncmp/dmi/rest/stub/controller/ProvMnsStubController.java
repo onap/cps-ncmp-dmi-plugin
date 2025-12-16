@@ -20,15 +20,21 @@
 
 package org.onap.cps.ncmp.dmi.rest.stub.controller;
 
-
 import jakarta.servlet.http.HttpServletRequest;
+import java.util.Collections;
 import java.util.List;
+import java.util.Optional;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.onap.cps.ncmp.dmi.provmns.api.ProvMnS;
 import org.onap.cps.ncmp.dmi.provmns.model.ClassNameIdGetDataNodeSelectorParameter;
+import org.onap.cps.ncmp.dmi.provmns.model.ErrorResponseDefault;
 import org.onap.cps.ncmp.dmi.provmns.model.Resource;
 import org.onap.cps.ncmp.dmi.provmns.model.ResourceOneOf;
 import org.onap.cps.ncmp.dmi.provmns.model.Scope;
+import org.onap.cps.ncmp.dmi.rest.stub.utils.Sleeper;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -37,19 +43,36 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequestMapping("${rest.api.provmns-base-path}")
 @RequiredArgsConstructor
+@Slf4j
 public class ProvMnsStubController implements ProvMnS {
+
+    static final ResourceOneOf dummyResource = new ResourceOneOf("some id");
+
+    static final Pattern PATTERN_SIMULATION = Pattern.compile("dmiSimulation=(\\w+_\\d{1,3})");
+    static final Pattern PATTERN_HTTP_ERROR = Pattern.compile("httpError_(\\d{3})");
+    static final Pattern PATTERN_SLOW_RESPONSE = Pattern.compile("slowResponse_(\\d{1,3})");
+
+    private final Sleeper sleeper;
+
+    static {
+        dummyResource.setObjectClass("dummyClass");
+        dummyResource.setObjectInstance("dummyInstance");
+        dummyResource.setAttributes(Collections.singletonMap("dummyAttribute", "dummy value"));
+    }
 
     /**
      * Replaces a complete single resource or creates it if it does not exist.
      *
      * @param httpServletRequest      URI request including path
      * @param resource                Resource representation of the resource to be created or replaced
-     * @return {@code ResponseEntity} The representation of the updated resource is returned in the response
+     * @return {@code Object}         The representation of the updated resource is returned in the response
      *                                message body.
      */
     @Override
-    public ResponseEntity<Resource> putMoi(final HttpServletRequest httpServletRequest, final Resource resource) {
-        return new ResponseEntity<>(resource, HttpStatus.OK);
+    public ResponseEntity<Object> putMoi(final HttpServletRequest httpServletRequest, final Resource resource) {
+        log.info("putMoi: {}", resource);
+        final Optional<ResponseEntity<Object>> optionalResponseEntity = simulate(httpServletRequest);
+        return optionalResponseEntity.orElseGet(() -> new ResponseEntity<>(resource, HttpStatus.OK));
     }
 
     /**
@@ -73,11 +96,14 @@ public class ProvMnsStubController implements ProvMnS {
      *                                in the response message body.
      */
     @Override
-    public ResponseEntity<Resource> getMoi(final HttpServletRequest httpServletRequest, final Scope scope,
+    public ResponseEntity<Object> getMoi(final HttpServletRequest httpServletRequest, final Scope scope,
                                            final String filter, final List<String> attributes,
                                            final List<String> fields,
                                            final ClassNameIdGetDataNodeSelectorParameter dataNodeSelector) {
-        return new ResponseEntity<>(new ResourceOneOf("exampleResourceId"), HttpStatus.OK);
+        log.info("getMoi: scope: {}, filter: {}, attributes: {}, fields: {}, dataNodeSelector: {}",
+                scope, filter, attributes, fields, dataNodeSelector);
+        final Optional<ResponseEntity<Object>> optionalResponseEntity = simulate(httpServletRequest);
+        return optionalResponseEntity.orElseGet(() -> new ResponseEntity<>(dummyResource, HttpStatus.OK));
     }
 
     /**
@@ -88,8 +114,10 @@ public class ProvMnsStubController implements ProvMnS {
      * @return {@code ResponseEntity} The updated resource representations are returned in the response message body.
      */
     @Override
-    public ResponseEntity<Resource> patchMoi(final HttpServletRequest httpServletRequest, final Resource resource) {
-        return new ResponseEntity<>(resource, HttpStatus.OK);
+    public ResponseEntity<Object> patchMoi(final HttpServletRequest httpServletRequest, final Resource resource) {
+        log.info("patchMoi: {}", resource);
+        final Optional<ResponseEntity<Object>> optionalResponseEntity = simulate(httpServletRequest);
+        return optionalResponseEntity.orElseGet(() -> new ResponseEntity<>(resource, HttpStatus.OK));
     }
 
     /**
@@ -99,7 +127,44 @@ public class ProvMnsStubController implements ProvMnS {
      * @return {@code ResponseEntity} The response body is empty, HTTP status returned.
      */
     @Override
-    public ResponseEntity<Void> deleteMoi(final HttpServletRequest httpServletRequest) {
-        return new ResponseEntity<>(HttpStatus.OK);
+    public ResponseEntity<Object> deleteMoi(final HttpServletRequest httpServletRequest) {
+        log.info("deleteMoi:");
+        final Optional<ResponseEntity<Object>> optionalResponseEntity = simulate(httpServletRequest);
+        return optionalResponseEntity.orElseGet(() -> new ResponseEntity<>(HttpStatus.OK));
     }
+
+    private Optional<ResponseEntity<Object>> simulate(final HttpServletRequest httpServletRequest) {
+        Matcher matcher = PATTERN_SIMULATION.matcher(httpServletRequest.getRequestURI());
+        if (matcher.find()) {
+            final String simulation = matcher.group(1);
+            matcher = PATTERN_SLOW_RESPONSE.matcher(simulation);
+            if (matcher.matches()) {
+                haveALittleRest(Integer.parseInt(matcher.group(1)));
+            }
+            matcher = PATTERN_HTTP_ERROR.matcher(simulation);
+            if (matcher.matches()) {
+                return Optional.of(createErrorRsponseEntity(Integer.parseInt(matcher.group(1))));
+            }
+        }
+        return Optional.empty();
+    }
+
+    private void haveALittleRest(final int durationInSeconds) {
+        log.warn("Stub is mocking slow response; delay {} seconds", durationInSeconds);
+        try {
+            sleeper.haveALittleRest(durationInSeconds);
+        } catch (final InterruptedException e) {
+            log.trace("Sleep interrupted, re-interrupting the thread");
+            Thread.currentThread().interrupt();
+        }
+    }
+
+    private static ResponseEntity<Object> createErrorRsponseEntity(final int errorCode) {
+        log.warn("Stub is mocking an error response, code: {}", errorCode);
+        final ErrorResponseDefault errorResponseDefault = new ErrorResponseDefault("ERROR_FROM_STUB");
+        errorResponseDefault.setTitle("Title set by Stub");
+        errorResponseDefault.setStatus(String.valueOf(errorCode));
+        return new ResponseEntity<>(errorResponseDefault, HttpStatus.valueOf(errorCode));
+    }
+
 }

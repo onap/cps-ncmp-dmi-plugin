@@ -110,6 +110,7 @@ public class DmiRestStubController {
      */
     @PostMapping("/v1/tagMapping")
     public ResponseEntity<Map<String, String>> addTagForMapping(@RequestBody final Map<String, String> requestBody) {
+        log.info("tagMapping: add {}", requestBody);
         moduleSetTagPerCmHandleId.putAll(requestBody);
         return new ResponseEntity<>(requestBody, HttpStatus.CREATED);
     }
@@ -120,7 +121,8 @@ public class DmiRestStubController {
      * @return The map represents the module set tag mapping.
      */
     @GetMapping("/v1/tagMapping")
-    public ResponseEntity<Map<String, String>> getTagMapping() {
+    public ResponseEntity<Map<String, String>> getTagMapping()    {
+        log.info("tagMapping: get");
         return ResponseEntity.ok(moduleSetTagPerCmHandleId);
     }
 
@@ -131,6 +133,7 @@ public class DmiRestStubController {
      */
     @GetMapping("/v1/tagMapping/ch/{cmHandleId}")
     public ResponseEntity<String> getTagMappingByCmHandleId(@PathVariable final String cmHandleId) {
+        log.info("tagMapping: get cm handle id: {}", cmHandleId);
         return ResponseEntity.ok(moduleSetTagPerCmHandleId.get(cmHandleId));
     }
 
@@ -145,6 +148,7 @@ public class DmiRestStubController {
 
     @PutMapping("/v1/tagMapping")
     public ResponseEntity<Map<String, String>> updateTagMapping(@RequestBody final Map<String, String> requestBody) {
+        log.info("tagMapping: update: {}", requestBody);
         moduleSetTagPerCmHandleId.putAll(requestBody);
         return ResponseEntity.noContent().build();
     }
@@ -157,6 +161,7 @@ public class DmiRestStubController {
      */
     @DeleteMapping("/v1/tagMapping/ch/{cmHandleId}")
     public ResponseEntity<String> deleteTagMappingByCmHandleId(@PathVariable final String cmHandleId) {
+        log.info("tagMapping: remove cm handle id: {}", cmHandleId);
         moduleSetTagPerCmHandleId.remove(cmHandleId);
         return ResponseEntity.ok(String.format("Mapping of %s is deleted successfully", cmHandleId));
     }
@@ -173,6 +178,7 @@ public class DmiRestStubController {
     @ModuleInitialProcess
     public ResponseEntity<String> getModuleReferences(@PathVariable("cmHandleId") final String cmHandleId,
                                                       @RequestBody final Object moduleReferencesRequest) {
+        log.info("get module references for cm handle id: {}", cmHandleId);
         return processModuleRequest(moduleReferencesRequest, MODULE_REFERENCE_RESPONSE, moduleReferencesDelayMs);
     }
 
@@ -189,6 +195,7 @@ public class DmiRestStubController {
     public ResponseEntity<String> getModuleResources(
             @PathVariable("cmHandleId") final String cmHandleId,
             @RequestBody final Object moduleResourcesReadRequest) {
+        log.info("get module resources for cm handle id: {}", cmHandleId);
         return processModuleRequest(moduleResourcesReadRequest, MODULE_RESOURCE_RESPONSE, moduleResourcesDelayMs);
     }
 
@@ -212,6 +219,7 @@ public class DmiRestStubController {
             @RequestParam(value = "topic", required = false) final String topic,
             @RequestHeader(value = "Authorization", required = false) final String authorization,
             @RequestBody final String requestBody) {
+        log.info("create resource data for cm handle id: {}", cmHandleId);
         log.debug("DMI AUTH HEADER: {}", authorization);
         final String passthroughOperationType = getPassthroughOperationType(requestBody);
         if (passthroughOperationType.equals("read")) {
@@ -241,7 +249,7 @@ public class DmiRestStubController {
             @RequestBody final DmiDataOperationRequest dmiDataOperationRequest) {
         delay(writeDataForCmHandleDelayMs);
         try {
-            log.debug("Request received from the NCMP to DMI Plugin: {}",
+            log.info("Request received from the NCMP to DMI Plugin: {}",
                     objectMapper.writeValueAsString(dmiDataOperationRequest));
         } catch (final JsonProcessingException jsonProcessingException) {
             log.warn("Unable to process dmi data operation request to json string");
@@ -269,8 +277,9 @@ public class DmiRestStubController {
     public ResponseEntity<SubjobWriteResponse> consumeWriteSubJobs(
                                                         @RequestBody final SubjobWriteRequest subJobWriteRequest,
                                                         @RequestParam("destination") final String destination) {
-        log.debug("Destination: {}", destination);
-        log.debug("Request body: {}", subJobWriteRequest);
+        log.info("cm write (datajob) request");
+        log.info("Destination: {}", destination);
+        log.info("Request body: {}", subJobWriteRequest);
         return ResponseEntity.ok(new SubjobWriteResponse(String.valueOf(subJobWriteRequestCounter.incrementAndGet()),
                 "some-dmi-service-name", "my-data-producer-id"));
     }
@@ -287,7 +296,7 @@ public class DmiRestStubController {
     public ResponseEntity<Map<String, String>> retrieveDataJobStatus(
             @PathVariable("dataProducerId") final String dataProducerId,
             @PathVariable("dataProducerJobId") final String dataProducerJobId) {
-        log.debug("Received request to retrieve data job status. Request ID: {}, Data Producer Job ID: {}",
+        log.info("Received request to retrieve data job status. Request ID: {}, Data Producer Job ID: {}",
                 dataProducerId, dataProducerJobId);
         return ResponseEntity.ok(Map.of("status", "FINISHED"));
     }
@@ -305,7 +314,7 @@ public class DmiRestStubController {
             @PathVariable("dataProducerId") final String dataProducerId,
             @PathVariable("dataProducerJobId") final String dataProducerJobId,
             @RequestParam(name = "destination") final String destination) {
-        log.debug("Received request to retrieve data job result. Data Producer ID: {}, "
+        log.info("Received request to retrieve data job result. Data Producer ID: {}, "
                         + "Data Producer Job ID: {}, Destination: {}",
                 dataProducerId, dataProducerJobId, destination);
         return ResponseEntity.ok(Map.of("result", "some status"));
