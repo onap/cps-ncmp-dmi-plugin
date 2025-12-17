@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "0e60641e_1e3ddd41",
+        "filename": "dmi-stub/dmi-stub-service/src/main/java/org/onap/cps/ncmp/dmi/rest/stub/controller/DmiStubApplication.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2025-12-17T08:50:53Z",
+      "side": 1,
+      "message": "I have a new version where this is not need\n(by moving the controller test to the the other module, I nver understood why this was split into two modules anyway, somethign to do with teh Jars I believe)",
+      "revId": "5739d785906167300a1f73050fa717f609de9825",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    }
+  ]
+}
