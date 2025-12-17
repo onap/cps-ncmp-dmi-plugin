@@ -63,6 +63,47 @@
       "message": "I have a new version where this is not need\n(by moving the controller test to the the other module, I nver understood why this was split into two modules anyway, somethign to do with teh Jars I believe)",
       "revId": "5739d785906167300a1f73050fa717f609de9825",
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "175cf76e_30f145bd",
+        "filename": "dmi-stub/dmi-stub-service/src/main/java/org/onap/cps/ncmp/dmi/rest/stub/controller/DmiStubApplication.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2025-12-17T09:39:09Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "0e60641e_1e3ddd41",
+      "revId": "5739d785906167300a1f73050fa717f609de9825",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "62d49fc3_35898801",
+        "filename": "dmi-stub/dmi-stub-service/src/main/java/org/onap/cps/ncmp/dmi/rest/stub/controller/ProvMnsStubController.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 141,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2025-12-17T09:39:09Z",
+      "side": 1,
+      "message": "weirdly enough, this worked in test but in production code it return null, took me some time to get to the bottom of that...",
+      "range": {
+        "startLine": 141,
+        "startChar": 72,
+        "endLine": 141,
+        "endChar": 85
+      },
+      "revId": "5739d785906167300a1f73050fa717f609de9825",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
     }
   ]
 }
