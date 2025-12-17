@@ -26,6 +26,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "25ef2528_d796f715",
+        "filename": "dmi-stub/dmi-stub-service/src/main/java/org/onap/cps/ncmp/dmi/rest/stub/controller/DmiRestStubController.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 125,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2025-12-17T09:28:53Z",
+      "side": 1,
+      "message": "its only a get there is no additional data in the request.\nI just added the bare minimum to these tag use cases as I dont really know how they work I just mainly want to see in the logs which interaction take place.\nWhen I first started working on this I thought it wasn\u0027t working because nothing was logged at any endpoint at info level :-(",
+      "parentUuid": "bbbee87e_deb4933b",
+      "range": {
+        "startLine": 125,
+        "startChar": 17,
+        "endLine": 125,
+        "endChar": 36
+      },
+      "revId": "5739d785906167300a1f73050fa717f609de9825",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "0e60641e_1e3ddd41",
         "filename": "dmi-stub/dmi-stub-service/src/main/java/org/onap/cps/ncmp/dmi/rest/stub/controller/DmiStubApplication.java",
         "patchSetId": 1
