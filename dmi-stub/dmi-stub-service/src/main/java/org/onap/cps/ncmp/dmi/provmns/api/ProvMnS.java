@@ -34,6 +34,7 @@ import org.onap.cps.ncmp.dmi.provmns.model.ClassNameIdGetDataNodeSelectorParamet
 import org.onap.cps.ncmp.dmi.provmns.model.ClassNameIdPatchDefaultResponse;
 import org.onap.cps.ncmp.dmi.provmns.model.ErrorResponseDefault;
 import org.onap.cps.ncmp.dmi.provmns.model.ErrorResponseGet;
+import org.onap.cps.ncmp.dmi.provmns.model.PatchItem;
 import org.onap.cps.ncmp.dmi.provmns.model.Resource;
 import org.onap.cps.ncmp.dmi.provmns.model.Scope;
 import org.springframework.http.ResponseEntity;
@@ -156,7 +157,7 @@ public interface ProvMnS {
      * and the patch document included in the request message body.
      *
      * @param httpServletRequest (required)
-     * @param resource The request body describes changes to be made to the target resources.
+     * @param patchItems The request body describes changes to be made to the target resources.
      *                 The following patch media types are available
      *                 - "application/json-patch+json" (RFC 6902)
      *                 - "application/3gpp-json-patch+json" (TS 32.158) (required)
@@ -196,7 +197,7 @@ public interface ProvMnS {
     @PatchMapping(
         value = "v1/**",
         produces = { "application/json" },
-        consumes = {"application/json-patch+json", "application/3gpp-json-patch+json" }
+        consumes = { "application/json-patch+json", "application/3gpp-json-patch+json" }
     )
 
     ResponseEntity<Object> patchMoi(
@@ -205,7 +206,7 @@ public interface ProvMnS {
             + "resources. The following patch media types are available   "
             + "- \"application/json-patch+json\" (RFC 6902)   "
             + "- \"application/3gpp-json-patch+json\" (TS 32.158)", required = true) @Valid @RequestBody
-        Resource resource
+        List<PatchItem> patchItems
     );
 
 
