@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "9a55a7e3_2b85ef2a",
+        "filename": "dmi-service/src/main/java/org/onap/cps/ncmp/dmi/provmns/api/ProvMnS.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 160,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2026-01-06T17:05:08Z",
+      "side": 1,
+      "message": "NB: update wording?!",
+      "range": {
+        "startLine": 160,
+        "startChar": 29,
+        "endLine": 160,
+        "endChar": 41
+      },
+      "revId": "8af62537d5d33cc30265a27c8578ae08485d42c7",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "87e30317_8e49fbe8",
+        "filename": "dmi-stub/dmi-stub-app/src/main/java/org/onap/cps/ncmp/dmi/provmns/api/ProvMnS.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 160,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2026-01-06T17:05:08Z",
+      "side": 1,
+      "message": "NB: wording?",
+      "range": {
+        "startLine": 160,
+        "startChar": 29,
+        "endLine": 160,
+        "endChar": 42
+      },
+      "revId": "8af62537d5d33cc30265a27c8578ae08485d42c7",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    }
+  ]
+}
