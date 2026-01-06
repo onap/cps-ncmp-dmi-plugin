@@ -23,6 +23,8 @@ package org.onap.cps.ncmp.dmi.rest.controller
 import com.fasterxml.jackson.databind.ObjectMapper
 import org.onap.cps.ncmp.dmi.config.WebSecurityConfig
 import org.onap.cps.ncmp.dmi.provmns.api.ProvMnsController
+import org.onap.cps.ncmp.dmi.provmns.model.PatchItem
+import org.onap.cps.ncmp.dmi.provmns.model.PatchOperation
 import org.onap.cps.ncmp.dmi.provmns.model.ResourceOneOf
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.beans.factory.annotation.Value
@@ -77,7 +79,7 @@ class ProvMnsControllerSpec extends Specification {
         given: 'resource data url'
             def patchUrl = "$provMnSBasePath/v1/test=another"
         and: 'an example resource json object'
-            def jsonBody = objectMapper.writeValueAsString((new ResourceOneOf('test')))
+            def jsonBody = objectMapper.writeValueAsString(([new PatchItem(PatchOperation.ADD, "someType")]))
         when: 'patch data resource request is performed'
             def response = mvc.perform(patch(patchUrl)
                     .contentType(new MediaType('application', 'json-patch+json'))

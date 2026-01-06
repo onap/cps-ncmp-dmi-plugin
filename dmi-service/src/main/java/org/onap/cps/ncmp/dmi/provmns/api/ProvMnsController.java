@@ -25,6 +25,7 @@ import jakarta.servlet.http.HttpServletRequest;
 import java.util.List;
 import lombok.RequiredArgsConstructor;
 import org.onap.cps.ncmp.dmi.provmns.model.ClassNameIdGetDataNodeSelectorParameter;
+import org.onap.cps.ncmp.dmi.provmns.model.PatchItem;
 import org.onap.cps.ncmp.dmi.provmns.model.Resource;
 import org.onap.cps.ncmp.dmi.provmns.model.Scope;
 import org.springframework.http.HttpStatus;
@@ -51,7 +52,8 @@ public class ProvMnsController implements ProvMnS {
     }
 
     @Override
-    public ResponseEntity<Resource> patchMoi(final HttpServletRequest httpServletRequest, final Resource resource) {
+    public ResponseEntity<Object> patchMoi(final HttpServletRequest httpServletRequest,
+                                           final List<PatchItem> patchItems) {
         return new ResponseEntity<>(HttpStatus.NOT_IMPLEMENTED);
     }
 

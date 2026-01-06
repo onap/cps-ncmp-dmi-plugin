@@ -20,6 +20,7 @@
 
 package org.onap.cps.ncmp.dmi.rest.stub.controller;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
 import jakarta.servlet.http.HttpServletRequest;
 import java.util.Collections;
 import java.util.List;
@@ -31,6 +32,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.onap.cps.ncmp.dmi.provmns.api.ProvMnS;
 import org.onap.cps.ncmp.dmi.provmns.model.ClassNameIdGetDataNodeSelectorParameter;
 import org.onap.cps.ncmp.dmi.provmns.model.ErrorResponseDefault;
+import org.onap.cps.ncmp.dmi.provmns.model.PatchItem;
 import org.onap.cps.ncmp.dmi.provmns.model.Resource;
 import org.onap.cps.ncmp.dmi.provmns.model.ResourceOneOf;
 import org.onap.cps.ncmp.dmi.provmns.model.Scope;
@@ -53,6 +55,7 @@ public class ProvMnsStubController implements ProvMnS {
     static final Pattern PATTERN_SLOW_RESPONSE = Pattern.compile("slowResponse_(\\d{1,3})");
 
     private final Sleeper sleeper;
+    private final ObjectMapper objectMapper;
 
     static {
         dummyResource.setObjectClass("dummyClass");
@@ -71,8 +74,12 @@ public class ProvMnsStubController implements ProvMnS {
     @Override
     public ResponseEntity<Object> putMoi(final HttpServletRequest httpServletRequest, final Resource resource) {
         log.info("putMoi: {}", resource);
+        final ResourceOneOf stubResource = new ResourceOneOf("Id set by Stub");
+        stubResource.setObjectClass("ObjectClass set by Stub");
+        stubResource.setObjectInstance("ObjectInstance set by Stub");
+        stubResource.setAttributes("Attribute set by Stub");
         final Optional<ResponseEntity<Object>> optionalResponseEntity = simulate(httpServletRequest);
-        return optionalResponseEntity.orElseGet(() -> new ResponseEntity<>(resource, HttpStatus.OK));
+        return optionalResponseEntity.orElseGet(() -> new ResponseEntity<>(stubResource, HttpStatus.OK));
     }
 
     /**
@@ -110,14 +117,15 @@ public class ProvMnsStubController implements ProvMnS {
      * Patches (Create, Update or Delete) one or multiple resources.
      *
      * @param httpServletRequest      URI request including path
-     * @param resource                Resource representation of the resource to be created or replaced
+     * @param patchItems              A list of items to be created, updated or replaced
      * @return {@code ResponseEntity} The updated resource representations are returned in the response message body.
      */
     @Override
-    public ResponseEntity<Object> patchMoi(final HttpServletRequest httpServletRequest, final Resource resource) {
-        log.info("patchMoi: {}", resource);
+    public ResponseEntity<Object> patchMoi(final HttpServletRequest httpServletRequest,
+                                           final List<PatchItem> patchItems) {
+        log.info("patchMoi: {}", patchItems);
         final Optional<ResponseEntity<Object>> optionalResponseEntity = simulate(httpServletRequest);
-        return optionalResponseEntity.orElseGet(() -> new ResponseEntity<>(resource, HttpStatus.OK));
+        return optionalResponseEntity.orElseGet(() -> new ResponseEntity<>(patchItems, HttpStatus.OK));
     }
 
     /**
