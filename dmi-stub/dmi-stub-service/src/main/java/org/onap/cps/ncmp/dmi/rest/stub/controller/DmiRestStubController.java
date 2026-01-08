@@ -82,6 +82,7 @@ public class DmiRestStubController {
     private static final Map<String, String> moduleSetTagPerCmHandleId = new HashMap<>();
     private static final List<String> MODULE_SET_TAGS = YangModuleFactory.generateTags();
     private static final String DEFAULT_TAG = "tagDefault";
+    private static final String ERROR_TAG = "errorTag";
 
     private final KafkaTemplate<String, CloudEvent> cloudEventKafkaTemplate;
     private final ObjectMapper objectMapper;
@@ -375,6 +376,10 @@ public class DmiRestStubController {
         logRequestBody(moduleRequest);
         String moduleResponseContent = "";
         String moduleSetTag = extractModuleSetTagFromRequest(moduleRequest);
+
+        if (ERROR_TAG.equals(moduleSetTag)) {
+            return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
+        }
 
         moduleSetTag = (!isModuleSetTagNullOrEmpty(moduleSetTag)
             && MODULE_SET_TAGS.contains(moduleSetTag)) ? moduleSetTag : DEFAULT_TAG;

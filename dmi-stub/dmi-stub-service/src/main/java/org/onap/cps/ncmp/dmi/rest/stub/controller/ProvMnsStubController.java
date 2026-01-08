@@ -22,6 +22,7 @@ package org.onap.cps.ncmp.dmi.rest.stub.controller;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import jakarta.servlet.http.HttpServletRequest;
+import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 import java.util.Optional;
@@ -33,6 +34,7 @@ import org.onap.cps.ncmp.dmi.provmns.api.ProvMnS;
 import org.onap.cps.ncmp.dmi.provmns.model.ClassNameIdGetDataNodeSelectorParameter;
 import org.onap.cps.ncmp.dmi.provmns.model.ErrorResponseDefault;
 import org.onap.cps.ncmp.dmi.provmns.model.PatchItem;
+import org.onap.cps.ncmp.dmi.provmns.model.PatchOperation;
 import org.onap.cps.ncmp.dmi.provmns.model.Resource;
 import org.onap.cps.ncmp.dmi.provmns.model.ResourceOneOf;
 import org.onap.cps.ncmp.dmi.provmns.model.Scope;
@@ -124,8 +126,11 @@ public class ProvMnsStubController implements ProvMnS {
     public ResponseEntity<Object> patchMoi(final HttpServletRequest httpServletRequest,
                                            final List<PatchItem> patchItems) {
         log.info("patchMoi: {}", patchItems);
+        final List<PatchItem> stubResponse = new ArrayList<>();
+        stubResponse.add(new PatchItem(PatchOperation.ADD, "/path=setByStub"));
+        stubResponse.add(new PatchItem(PatchOperation.REMOVE, "/path=alsoSetByStub"));
         final Optional<ResponseEntity<Object>> optionalResponseEntity = simulate(httpServletRequest);
-        return optionalResponseEntity.orElseGet(() -> new ResponseEntity<>(patchItems, HttpStatus.OK));
+        return optionalResponseEntity.orElseGet(() -> new ResponseEntity<>(stubResponse, HttpStatus.OK));
     }
 
     /**
