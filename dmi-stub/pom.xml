@@ -89,7 +89,7 @@
                     <goal>generate</goal>
                 </goals>
                 <configuration>
-                    <inputSpec>https://forge.3gpp.org/rep/sa5/MnS/-/raw/Rel-18/OpenAPI/TS28532_ProvMnS.yaml</inputSpec>
+                    <inputSpec>https://forge.3gpp.org/rep/sa5/MnS/-/raw/Tag_Rel18_SA110/OpenAPI/TS28532_ProvMnS.yaml</inputSpec>
                     <invokerPackage>org.onap.cps.ncmp.dmi.rest.stub.provmns.controller</invokerPackage>
                     <modelPackage>org.onap.cps.ncmp.dmi.provmns.model</modelPackage>
                     <apiPackage>org.onap.cps.ncmp.dmi.provmns.rest.api</apiPackage>
