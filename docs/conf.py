@@ -44,7 +44,7 @@ html_show_sphinx = False
 
 extensions = [
     'sphinx.ext.intersphinx','sphinxcontrib.blockdiag',
-    'sphinxcontrib.seqdiag', 'sphinxcontrib.swaggerdoc', 'sphinx.ext.graphviz',
+    'sphinxcontrib.seqdiag', 'sphinx.ext.graphviz',
     'sphinxcontrib.spelling']
 
 #
