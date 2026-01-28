@@ -1,6 +1,6 @@
 /*
  *  ============LICENSE_START=======================================================
- *  Copyright (C) 2025 OpenInfra Foundation Europe
+ *  Copyright (C) 2025-2026 OpenInfra Foundation Europe
  *  ================================================================================
  *  Licensed under the Apache License, Version 2.0 (the "License");
  *  you may not use this file except in compliance with the License.
@@ -39,6 +39,7 @@ import org.onap.cps.ncmp.dmi.provmns.model.Resource;
 import org.onap.cps.ncmp.dmi.provmns.model.ResourceOneOf;
 import org.onap.cps.ncmp.dmi.provmns.model.Scope;
 import org.onap.cps.ncmp.dmi.rest.stub.utils.Sleeper;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -65,6 +66,11 @@ public class ProvMnsStubController implements ProvMnS {
         dummyResource.setAttributes(Collections.singletonMap("dummyAttribute", "dummy value"));
     }
 
+    @Value("${delay.provmns-read-delay-ms}")
+    private long provMnSReadDelayMs;
+    @Value("${delay.provmns-write-delay-ms}")
+    private long provMnSWriteDelayMs;
+
     /**
      * Replaces a complete single resource or creates it if it does not exist.
      *
@@ -75,6 +81,7 @@ public class ProvMnsStubController implements ProvMnS {
      */
     @Override
     public ResponseEntity<Object> putMoi(final HttpServletRequest httpServletRequest, final Resource resource) {
+        sleeper.delay(provMnSWriteDelayMs);
         log.info("putMoi: {}", resource);
         final ResourceOneOf stubResource = new ResourceOneOf("Id set by Stub");
         stubResource.setObjectClass("ObjectClass set by Stub");
@@ -109,6 +116,7 @@ public class ProvMnsStubController implements ProvMnS {
                                            final String filter, final List<String> attributes,
                                            final List<String> fields,
                                            final ClassNameIdGetDataNodeSelectorParameter dataNodeSelector) {
+        sleeper.delay(provMnSReadDelayMs);
         log.info("getMoi: scope: {}, filter: {}, attributes: {}, fields: {}, dataNodeSelector: {}",
                 scope, filter, attributes, fields, dataNodeSelector);
         final Optional<ResponseEntity<Object>> optionalResponseEntity = simulate(httpServletRequest);
@@ -125,6 +133,7 @@ public class ProvMnsStubController implements ProvMnS {
     @Override
     public ResponseEntity<Object> patchMoi(final HttpServletRequest httpServletRequest,
                                            final List<PatchItem> patchItems) {
+        sleeper.delay(provMnSWriteDelayMs);
         log.info("patchMoi: {}", patchItems);
         final List<PatchItem> stubResponse = new ArrayList<>();
         stubResponse.add(new PatchItem(PatchOperation.ADD, "/path=setByStub"));
@@ -141,6 +150,7 @@ public class ProvMnsStubController implements ProvMnS {
      */
     @Override
     public ResponseEntity<Object> deleteMoi(final HttpServletRequest httpServletRequest) {
+        sleeper.delay(provMnSWriteDelayMs);
         log.info("deleteMoi:");
         final Optional<ResponseEntity<Object>> optionalResponseEntity = simulate(httpServletRequest);
         return optionalResponseEntity.orElseGet(() -> new ResponseEntity<>(HttpStatus.OK));
