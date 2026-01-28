@@ -1,6 +1,6 @@
 /*
  * ============LICENSE_START=======================================================
- *  Copyright (C) 2023-2025 OpenInfra Foundation Europe. All rights reserved.
+ *  Copyright (C) 2023-2026 OpenInfra Foundation Europe. All rights reserved.
  *  ================================================================================
  *  Licensed under the Apache License, Version 2.0 (the "License");
  *  you may not use this file except in compliance with the License.
@@ -50,6 +50,7 @@ import org.onap.cps.ncmp.dmi.rest.stub.service.YangModuleFactory;
 import org.onap.cps.ncmp.dmi.rest.stub.utils.EventDateTimeFormatter;
 import org.onap.cps.ncmp.dmi.rest.stub.utils.ModuleResponseType;
 import org.onap.cps.ncmp.dmi.rest.stub.utils.ResourceFileReaderUtil;
+import org.onap.cps.ncmp.dmi.rest.stub.utils.Sleeper;
 import org.onap.cps.ncmp.events.async1_0_0.Data;
 import org.onap.cps.ncmp.events.async1_0_0.DataOperationEvent;
 import org.onap.cps.ncmp.events.async1_0_0.Response;
@@ -89,6 +90,7 @@ public class DmiRestStubController {
     private final ApplicationContext applicationContext;
     private final AtomicInteger subJobWriteRequestCounter = new AtomicInteger();
     private final YangModuleFactory yangModuleFactory;
+    private final Sleeper sleeper;
 
     @Value("${app.ncmp.async-m2m.topic}")
     private String ncmpAsyncM2mTopic;
@@ -224,9 +226,9 @@ public class DmiRestStubController {
         log.debug("DMI AUTH HEADER: {}", authorization);
         final String passthroughOperationType = getPassthroughOperationType(requestBody);
         if (passthroughOperationType.equals("read")) {
-            delay(readDataForCmHandleDelayMs);
+            sleeper.delay(readDataForCmHandleDelayMs);
         } else {
-            delay(writeDataForCmHandleDelayMs);
+            sleeper.delay(writeDataForCmHandleDelayMs);
         }
         log.debug("Logging request body {}", requestBody);
 
@@ -248,7 +250,7 @@ public class DmiRestStubController {
             @RequestParam(value = "topic") final String topic,
             @RequestParam(value = "requestId") final String requestId,
             @RequestBody final DmiDataOperationRequest dmiDataOperationRequest) {
-        delay(writeDataForCmHandleDelayMs);
+        sleeper.delay(writeDataForCmHandleDelayMs);
         try {
             log.info("Request received from the NCMP to DMI Plugin: {}",
                     objectMapper.writeValueAsString(dmiDataOperationRequest));
@@ -390,7 +392,7 @@ public class DmiRestStubController {
             moduleResponseContent = yangModuleFactory.getModuleReferencesJson(moduleSetTag);
         }
 
-        delay(simulatedResponseDelay);
+        sleeper.delay(simulatedResponseDelay);
         return ResponseEntity.ok(moduleResponseContent);
     }
 
@@ -419,15 +421,6 @@ public class DmiRestStubController {
             log.error("Invalid JSON format. cause : {}", jsonProcessingException.getMessage());
         }
         return DEFAULT_PASSTHROUGH_OPERATION;
-    }
-
-    private void delay(final long milliseconds) {
-        try {
-            Thread.sleep(milliseconds);
-        } catch (final InterruptedException e) {
-            log.error("Thread sleep interrupted: {}", e.getMessage());
-            Thread.currentThread().interrupt();
-        }
     }
 
     private static String getCompositeNetworkId(final String cmHandleId) {
