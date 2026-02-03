@@ -1,0 +1,44 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "e2297a53_241a6b15",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2026-02-03T11:13:22Z",
+      "side": 1,
+      "message": "as discussed, you might have stumbled on a legacy issues with the simulated delays, please double check!",
+      "revId": "4e8a617b76fc856a69ee202517180f61a17b70c5",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "cacc8ee0_fecd1983",
+        "filename": "dmi-stub/dmi-stub-service/src/main/java/org/onap/cps/ncmp/dmi/rest/stub/controller/DmiRestStubController.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 253,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2026-02-03T11:13:22Z",
+      "side": 1,
+      "message": "read?!\n\nMaybe double check how this is used\n(if this is used during performance)",
+      "range": {
+        "startLine": 253,
+        "startChar": 22,
+        "endLine": 253,
+        "endChar": 49
+      },
+      "revId": "4e8a617b76fc856a69ee202517180f61a17b70c5",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    }
+  ]
+}
