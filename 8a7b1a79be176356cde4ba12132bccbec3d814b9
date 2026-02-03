@@ -1,0 +1,44 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "3e734918_37ff6f38",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2026-02-03T09:02:43Z",
+      "side": 1,
+      "message": "smaa improvement suggestion",
+      "revId": "8a7b1a79be176356cde4ba12132bccbec3d814b9",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "11af2857_aea5a912",
+        "filename": "dmi-stub/dmi-stub-service/src/main/java/org/onap/cps/ncmp/dmi/rest/stub/controller/ProvMnsStubController.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 119,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2026-02-03T09:02:43Z",
+      "side": 1,
+      "message": "for each of the operations this could go into the simulate-method (seem appropriate too) as the default \u0027simulation\u0027 behavior. Just add defaultDelayMs as  parameter to simluate() signature",
+      "range": {
+        "startLine": 119,
+        "startChar": 8,
+        "endLine": 119,
+        "endChar": 42
+      },
+      "revId": "8a7b1a79be176356cde4ba12132bccbec3d814b9",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    }
+  ]
+}
