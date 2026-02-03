@@ -63,6 +63,30 @@
       },
       "revId": "4e8a617b76fc856a69ee202517180f61a17b70c5",
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "5f7bca66_a3c5129a",
+        "filename": "dmi-stub/dmi-stub-service/src/main/java/org/onap/cps/ncmp/dmi/rest/stub/controller/DmiRestStubController.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 253,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2026-02-03T11:57:53Z",
+      "side": 1,
+      "message": "ok, so we need to keep an eye on performance after this gets merged\n(if really used and measure it should only go down)",
+      "parentUuid": "7a25e361_1005b30e",
+      "range": {
+        "startLine": 253,
+        "startChar": 22,
+        "endLine": 253,
+        "endChar": 49
+      },
+      "revId": "4e8a617b76fc856a69ee202517180f61a17b70c5",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
     }
   ]
 }
