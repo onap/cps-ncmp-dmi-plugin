@@ -1,6 +1,6 @@
 /*
  *  ============LICENSE_START=======================================================
- *  Copyright (C) 2025 OpenInfra Foundation Europe
+ *  Copyright (C) 2025-2026 OpenInfra Foundation Europe
  *  ================================================================================
  *  Licensed under the Apache License, Version 2.0 (the "License");
  *  you may not use this file except in compliance with the License.
@@ -21,15 +21,38 @@
 package org.onap.cps.ncmp.dmi.rest.stub.utils;
 
 import java.util.concurrent.TimeUnit;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Component;
 
 /**
  * This class is to extract out sleep functionality so the interrupted exception handling can
  * be covered with a test (e.g. using spy on Sleeper) and help to get too 100% code coverage.
  */
+@Slf4j
 @Component
 public class Sleeper {
+    /**
+     * Pauses execution for the specified duration in seconds.
+     *
+     * @param durationInSeconds the duration to sleep in seconds
+     * @throws InterruptedException if the thread is interrupted while sleeping
+     */
     public void haveALittleRest(final int durationInSeconds) throws InterruptedException {
         TimeUnit.SECONDS.sleep(durationInSeconds);
+    }
+
+    /**
+     * Pauses execution for the specified duration in milliseconds.
+     * Handles InterruptedException internally by logging and restoring interrupt status.
+     *
+     * @param milliseconds the duration to sleep in milliseconds
+     */
+    public void delay(final long milliseconds) {
+        try {
+            Thread.sleep(milliseconds);
+        } catch (final InterruptedException e) {
+            log.error("Thread sleep interrupted: {}", e.getMessage());
+            Thread.currentThread().interrupt();
+        }
     }
 }
