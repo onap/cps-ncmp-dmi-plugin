@@ -20,10 +20,8 @@
 
 package org.onap.cps.ncmp.dmi.rest.stub.controller;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
 import jakarta.servlet.http.HttpServletRequest;
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
 import java.util.Optional;
 import java.util.regex.Matcher;
@@ -38,7 +36,10 @@ import org.onap.cps.ncmp.dmi.provmns.model.PatchOperation;
 import org.onap.cps.ncmp.dmi.provmns.model.Resource;
 import org.onap.cps.ncmp.dmi.provmns.model.ResourceOneOf;
 import org.onap.cps.ncmp.dmi.provmns.model.Scope;
+import org.onap.cps.ncmp.dmi.rest.stub.utils.ResourceFileReaderUtil;
 import org.onap.cps.ncmp.dmi.rest.stub.utils.Sleeper;
+import org.springframework.context.ApplicationContext;
+import org.springframework.core.io.ResourceLoader;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -58,12 +59,11 @@ public class ProvMnsStubController implements ProvMnS {
     static final Pattern PATTERN_SLOW_RESPONSE = Pattern.compile("slowResponse_(\\d{1,3})");
 
     private final Sleeper sleeper;
-    private final ObjectMapper objectMapper;
+    private final ApplicationContext applicationContext;
 
     static {
         dummyResource.setObjectClass("dummyClass");
         dummyResource.setObjectInstance("dummyInstance");
-        dummyResource.setAttributes(Collections.singletonMap("dummyAttribute", "dummy value"));
     }
 
     @Value("${delay.provmns-read-delay-ms}")
@@ -120,6 +120,9 @@ public class ProvMnsStubController implements ProvMnS {
                 scope, filter, attributes, fields, dataNodeSelector);
         final Optional<ResponseEntity<Object>> optionalResponseEntity = simulate(httpServletRequest,
             provMnSReadDelayMs);
+        final String sampleFiveKbJson = ResourceFileReaderUtil.getResourceFileContent(applicationContext.getResource(
+            ResourceLoader.CLASSPATH_URL_PREFIX + "data/ietf-network-topology-sample-rfc8345-large.json"));
+        dummyResource.setAttributes(sampleFiveKbJson);
         return optionalResponseEntity.orElseGet(() -> new ResponseEntity<>(dummyResource, HttpStatus.OK));
     }
 
@@ -134,8 +137,12 @@ public class ProvMnsStubController implements ProvMnS {
     public ResponseEntity<Object> patchMoi(final HttpServletRequest httpServletRequest,
                                            final List<PatchItem> patchItems) {
         log.info("patchMoi: {}", patchItems);
+        final String sampleFiveKbJson = ResourceFileReaderUtil.getResourceFileContent(applicationContext.getResource(
+            ResourceLoader.CLASSPATH_URL_PREFIX + "data/ietf-network-topology-sample-rfc8345-large.json"));
+        final PatchItem addOperationPatchItem = new PatchItem(PatchOperation.ADD, "/path=setByStub");
+        addOperationPatchItem.setValue(sampleFiveKbJson);
         final List<PatchItem> stubResponse = new ArrayList<>();
-        stubResponse.add(new PatchItem(PatchOperation.ADD, "/path=setByStub"));
+        stubResponse.add(addOperationPatchItem);
         stubResponse.add(new PatchItem(PatchOperation.REMOVE, "/path=alsoSetByStub"));
         final Optional<ResponseEntity<Object>> optionalResponseEntity = simulate(httpServletRequest,
             provMnSWriteDelayMs);
