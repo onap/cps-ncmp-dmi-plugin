@@ -1,0 +1,129 @@
+{
+  "network-types": {
+    "ietf-network-topology:nmpts-topology": {}
+  },
+  "network-id": "enterprise-backbone-core-01",
+  "node": [
+      {
+        "node-id": "D1-CORE-ROUTER-SFO",
+        "termination-point": [
+          {"tp-id": "eth-1-0-1-gigabit-ethernet-port"},
+          {"tp-id": "eth-1-2-1-optical-fiber-backplane"},
+          {"tp-id": "eth-1-3-1-redundant-uplink-path"},
+          {"tp-id": "eth-1-4-1-management-interface-primary"},
+          {"tp-id": "eth-1-5-1-auxiliary-console-port-vty"},
+          {"tp-id": "eth-1-6-1-inter-chassis-link-stack"}
+        ],
+        "supporting-node": [
+          {"network-ref": "physical-layer", "node-ref": "PN-SFO-01"}
+        ]
+      },
+      {
+        "node-id": "D2-CORE-ROUTER-NYC",
+        "termination-point": [
+          {"tp-id": "eth-2-0-1-gigabit-ethernet-port"},
+          {"tp-id": "eth-2-1-1-optical-fiber-backplane"},
+          {"tp-id": "eth-2-3-1-redundant-uplink-path"},
+          {"tp-id": "eth-2-4-1-management-interface-primary"},
+          {"tp-id": "eth-2-5-1-auxiliary-console-port-vty"},
+          {"tp-id": "eth-2-6-1-inter-chassis-link-stack"}
+        ],
+        "supporting-node": [
+          {"network-ref": "physical-layer", "node-ref": "PN-NYC-01"}
+        ]
+      },
+      {
+        "node-id": "D3-DIST-SWITCH-CHI",
+        "termination-point": [
+          {"tp-id": "ge-3-1-1-access-port-vlan10"},
+          {"tp-id": "ge-3-2-1-access-port-vlan20"},
+          {"tp-id": "ge-3-4-1-trunk-link-to-core"},
+          {"tp-id": "ge-3-5-1-wifi-ap-backhaul"},
+          {"tp-id": "ge-3-0-1-local-management-console"}
+        ]
+      },
+      {
+        "node-id": "D4-DIST-SWITCH-LON",
+        "termination-point": [
+          {"tp-id": "ge-4-1-1-access-port-vlan10"},
+          {"tp-id": "ge-4-2-1-access-port-vlan20"},
+          {"tp-id": "ge-4-3-1-trunk-link-to-core"},
+          {"tp-id": "ge-4-5-1-wifi-ap-backhaul"},
+          {"tp-id": "ge-4-0-1-local-management-console"}
+        ]
+      },
+      {
+        "node-id": "D5-EDGE-FIREWALL-TOK",
+        "termination-point": [
+          {"tp-id": "fw-5-1-1-untrusted-outside-zone"},
+          {"tp-id": "fw-5-2-1-trusted-inside-zone"},
+          {"tp-id": "fw-5-3-1-dmz-zone-public-servers"},
+          {"tp-id": "fw-5-4-1-vpn-concentrator-link"},
+          {"tp-id": "fw-5-0-1-ha-heartbeat-interface"}
+        ]
+      },
+      {
+        "node-id": "D6-EDGE-FIREWALL-SYD",
+        "termination-point": [
+          {"tp-id": "fw-6-1-1-untrusted-outside-zone"},
+          {"tp-id": "fw-6-2-1-trusted-inside-zone"},
+          {"tp-id": "fw-6-3-1-dmz-zone-public-servers"},
+          {"tp-id": "fw-6-4-1-vpn-concentrator-link"},
+          {"tp-id": "fw-6-0-1-ha-heartbeat-interface"}
+        ]
+      }
+    ],
+    "ietf-network-topology:link": [
+      {
+        "link-id": "link-sfo-to-nyc-high-speed-backbone-001",
+        "source": {"source-node": "D1-CORE-ROUTER-SFO", "source-tp": "eth-1-2-1-optical-fiber-backplane"},
+        "destination": {"dest-node": "D2-CORE-ROUTER-NYC", "dest-tp": "eth-2-1-1-optical-fiber-backplane"}
+      },
+      {
+        "link-id": "link-nyc-to-sfo-high-speed-backbone-001",
+        "source": {"source-node": "D2-CORE-ROUTER-NYC", "source-tp": "eth-2-1-1-optical-fiber-backplane"},
+        "destination": {"dest-node": "D1-CORE-ROUTER-SFO", "dest-tp": "eth-1-2-1-optical-fiber-backplane"}
+      },
+      {
+        "link-id": "link-chi-to-sfo-regional-distribution-002",
+        "source": {"source-node": "D3-DIST-SWITCH-CHI", "source-tp": "ge-3-1-1-access-port-vlan10"},
+        "destination": {"dest-node": "D1-CORE-ROUTER-SFO", "dest-tp": "eth-1-3-1-redundant-uplink-path"}
+      },
+      {
+        "link-id": "link-sfo-to-chi-regional-distribution-002",
+        "source": {"source-node": "D1-CORE-ROUTER-SFO", "source-tp": "eth-1-3-1-redundant-uplink-path"},
+        "destination": {"dest-node": "D3-DIST-SWITCH-CHI", "dest-tp": "ge-3-1-1-access-port-vlan10"}
+      },
+      {
+        "link-id": "link-lon-to-nyc-transatlantic-link-003",
+        "source": {"source-node": "D4-DIST-SWITCH-LON", "source-tp": "ge-4-1-1-access-port-vlan10"},
+        "destination": {"dest-node": "D2-CORE-ROUTER-NYC", "dest-tp": "eth-2-3-1-redundant-uplink-path"}
+      },
+      {
+        "link-id": "link-nyc-to-lon-transatlantic-link-003",
+        "source": {"source-node": "D2-CORE-ROUTER-NYC", "source-tp": "eth-2-3-1-redundant-uplink-path"},
+        "destination": {"dest-node": "D4-DIST-SWITCH-LON", "dest-tp": "ge-4-1-1-access-port-vlan10"}
+      },
+      {
+        "link-id": "link-tok-to-sfo-pacific-rim-backhaul-004",
+        "source": {"source-node": "D5-EDGE-FIREWALL-TOK", "source-tp": "fw-5-1-1-untrusted-outside-zone"},
+        "destination": {"dest-node": "D1-CORE-ROUTER-SFO", "dest-tp": "eth-1-5-1-auxiliary-console-port-vty"}
+      },
+      {
+        "link-id": "link-sfo-to-tok-pacific-rim-backhaul-004",
+        "source": {"source-node": "D1-CORE-ROUTER-SFO", "source-tp": "eth-1-5-1-auxiliary-console-port-vty"},
+        "destination": {"dest-node": "D5-EDGE-FIREWALL-TOK", "dest-tp": "fw-5-1-1-untrusted-outside-zone"}
+      },
+      {
+        "link-id": "link-syd-to-sfo-management-trunk-vlan-999",
+        "source": {"source-node": "D6-EDGE-FIREWALL-SYD", "source-tp": "fw-6-1-1-untrusted-outside-zone"},
+        "destination": {"dest-node": "D1-CORE-ROUTER-SFO", "dest-tp": "eth-1-6-1-inter-chassis-link-stack"}
+      },
+      {
+        "link-id": "link-sfo-to-syd-management-trunk-vlan-999",
+        "source": {"source-node": "D1-CORE-ROUTER-SFO", "source-tp": "eth-1-6-1-inter-chassis-link-stack"},
+        "destination": {"dest-node": "D6-EDGE-FIREWALL-SYD", "dest-tp": "fw-6-1-1-untrusted-outside-zone"}
+      }
+    ]
+}
+
