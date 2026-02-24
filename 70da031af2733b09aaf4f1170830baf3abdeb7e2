@@ -16,6 +16,24 @@
       "message": "Only 3.6 KB :-)",
       "revId": "70da031af2733b09aaf4f1170830baf3abdeb7e2",
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "1ad340f1_287c4dc0",
+        "filename": "dmi-stub/dmi-stub-service/src/main/resources/data/ietf-network-topology-sample-rfc8345-large.json",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 8171
+      },
+      "writtenOn": "2026-02-24T14:52:00Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "c09c2192_ae64a88e",
+      "revId": "70da031af2733b09aaf4f1170830baf3abdeb7e2",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
     }
   ]
 }
