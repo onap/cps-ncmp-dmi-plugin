@@ -24,20 +24,17 @@ import jakarta.servlet.http.HttpServletRequest;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.onap.cps.ncmp.dmi.provmns.api.ProvMnS;
 import org.onap.cps.ncmp.dmi.provmns.model.ClassNameIdGetDataNodeSelectorParameter;
-import org.onap.cps.ncmp.dmi.provmns.model.ErrorResponseDefault;
 import org.onap.cps.ncmp.dmi.provmns.model.PatchItem;
 import org.onap.cps.ncmp.dmi.provmns.model.PatchOperation;
 import org.onap.cps.ncmp.dmi.provmns.model.Resource;
 import org.onap.cps.ncmp.dmi.provmns.model.ResourceOneOf;
 import org.onap.cps.ncmp.dmi.provmns.model.Scope;
+import org.onap.cps.ncmp.dmi.rest.stub.utils.ControllerSimulation;
 import org.onap.cps.ncmp.dmi.rest.stub.utils.ResourceFileReaderUtil;
-import org.onap.cps.ncmp.dmi.rest.stub.utils.Sleeper;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.ApplicationContext;
 import org.springframework.core.io.ResourceLoader;
@@ -54,12 +51,8 @@ public class ProvMnsStubController implements ProvMnS {
 
     static final ResourceOneOf dummyResource = new ResourceOneOf("some id");
 
-    static final Pattern PATTERN_SIMULATION = Pattern.compile("dmiSimulation=(\\w+_\\d{1,3})");
-    static final Pattern PATTERN_HTTP_ERROR = Pattern.compile("httpError_(\\d{3})");
-    static final Pattern PATTERN_SLOW_RESPONSE = Pattern.compile("slowResponse_(\\d{1,3})");
-
-    private final Sleeper sleeper;
     private final ApplicationContext applicationContext;
+    private final ControllerSimulation controllerSimulation;
 
     static {
         dummyResource.setObjectClass("dummyClass");
@@ -86,8 +79,8 @@ public class ProvMnsStubController implements ProvMnS {
         stubResource.setObjectClass("ObjectClass set by Stub");
         stubResource.setObjectInstance("ObjectInstance set by Stub");
         stubResource.setAttributes("Attribute set by Stub");
-        final Optional<ResponseEntity<Object>> optionalResponseEntity = simulate(httpServletRequest,
-            provMnSWriteDelayMs);
+        final Optional<ResponseEntity<Object>> optionalResponseEntity = controllerSimulation.simulate(
+            httpServletRequest, provMnSWriteDelayMs);
         return optionalResponseEntity.orElseGet(() -> new ResponseEntity<>(stubResource, HttpStatus.OK));
     }
 
@@ -118,8 +111,8 @@ public class ProvMnsStubController implements ProvMnS {
                                            final ClassNameIdGetDataNodeSelectorParameter dataNodeSelector) {
         log.info("getMoi: scope: {}, filter: {}, attributes: {}, fields: {}, dataNodeSelector: {}",
                 scope, filter, attributes, fields, dataNodeSelector);
-        final Optional<ResponseEntity<Object>> optionalResponseEntity = simulate(httpServletRequest,
-            provMnSReadDelayMs);
+        final Optional<ResponseEntity<Object>> optionalResponseEntity = controllerSimulation.simulate(
+            httpServletRequest, provMnSReadDelayMs);
         final String sampleFiveKbJson = ResourceFileReaderUtil.getResourceFileContent(applicationContext.getResource(
             ResourceLoader.CLASSPATH_URL_PREFIX + "data/ietf-network-topology-sample-rfc8345-large.json"));
         dummyResource.setAttributes(sampleFiveKbJson);
@@ -144,8 +137,8 @@ public class ProvMnsStubController implements ProvMnS {
         final List<PatchItem> stubResponse = new ArrayList<>();
         stubResponse.add(addOperationPatchItem);
         stubResponse.add(new PatchItem(PatchOperation.REMOVE, "/path=alsoSetByStub"));
-        final Optional<ResponseEntity<Object>> optionalResponseEntity = simulate(httpServletRequest,
-            provMnSWriteDelayMs);
+        final Optional<ResponseEntity<Object>> optionalResponseEntity = controllerSimulation.simulate(
+            httpServletRequest, provMnSWriteDelayMs);
         return optionalResponseEntity.orElseGet(() -> new ResponseEntity<>(stubResponse, HttpStatus.OK));
     }
 
@@ -158,46 +151,8 @@ public class ProvMnsStubController implements ProvMnS {
     @Override
     public ResponseEntity<Object> deleteMoi(final HttpServletRequest httpServletRequest) {
         log.info("deleteMoi:");
-        final Optional<ResponseEntity<Object>> optionalResponseEntity = simulate(httpServletRequest,
-            provMnSWriteDelayMs);
+        final Optional<ResponseEntity<Object>> optionalResponseEntity = controllerSimulation.simulate(
+            httpServletRequest, provMnSWriteDelayMs);
         return optionalResponseEntity.orElseGet(() -> new ResponseEntity<>(HttpStatus.OK));
     }
-
-    private Optional<ResponseEntity<Object>> simulate(final HttpServletRequest httpServletRequest,
-                                                      final long defaultDelay) {
-        Matcher matcher = PATTERN_SIMULATION.matcher(httpServletRequest.getRequestURI());
-        if (matcher.find()) {
-            final String simulation = matcher.group(1);
-            matcher = PATTERN_SLOW_RESPONSE.matcher(simulation);
-            if (matcher.matches()) {
-                haveALittleRest(Integer.parseInt(matcher.group(1)));
-            }
-            matcher = PATTERN_HTTP_ERROR.matcher(simulation);
-            if (matcher.matches()) {
-                return Optional.of(createErrorRsponseEntity(Integer.parseInt(matcher.group(1))));
-            }
-        } else {
-            sleeper.delay(defaultDelay);
-        }
-        return Optional.empty();
-    }
-
-    private void haveALittleRest(final int durationInSeconds) {
-        log.warn("Stub is mocking slow response; delay {} seconds", durationInSeconds);
-        try {
-            sleeper.haveALittleRest(durationInSeconds);
-        } catch (final InterruptedException e) {
-            log.trace("Sleep interrupted, re-interrupting the thread");
-            Thread.currentThread().interrupt();
-        }
-    }
-
-    private static ResponseEntity<Object> createErrorRsponseEntity(final int errorCode) {
-        log.warn("Stub is mocking an error response, code: {}", errorCode);
-        final ErrorResponseDefault errorResponseDefault = new ErrorResponseDefault("ERROR_FROM_STUB");
-        errorResponseDefault.setTitle("Title set by Stub");
-        errorResponseDefault.setStatus(String.valueOf(errorCode));
-        return new ResponseEntity<>(errorResponseDefault, HttpStatus.valueOf(errorCode));
-    }
-
 }
