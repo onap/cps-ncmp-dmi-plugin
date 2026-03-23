@@ -1,5 +1,5 @@
 #  ============LICENSE_START=======================================================
-#  Copyright (C) 2021-2025 OpenInfra Foundation Europe. All rights reserved.
+#  Copyright (C) 2021-2026 OpenInfra Foundation Europe. All rights reserved.
 #  Modifications Copyright (C) 2021 Bell Canada.
 #  ================================================================================
 #  Licensed under the Apache License, Version 2.0 (the "License");
@@ -29,9 +29,10 @@ rest:
   api:
     dmi-base-path: /dmi
     provmns-base-path: /ProvMnS
+    provmns-extensions-base-path: /prov-mns-extensions
 
 security:
-  permit-uri: /actuator/**,/swagger-ui.html,/swagger-ui/**,/swagger-resources/**,/api-docs/**,/v3/api-docs/**,/ProvMnS/**
+  permit-uri: /actuator/**,/swagger-ui.html,/swagger-ui/**,/swagger-resources/**,/api-docs/**,/v3/api-docs/**,/ProvMnS/**,/prov-mns-extensions/**
   auth:
     username: ${DMI_USERNAME}
     password: ${DMI_PASSWORD}
