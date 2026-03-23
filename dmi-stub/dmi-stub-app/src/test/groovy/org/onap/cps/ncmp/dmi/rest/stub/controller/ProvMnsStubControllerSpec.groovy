@@ -1,6 +1,6 @@
 /*
  *  ============LICENSE_START=======================================================
- *  Copyright (C) 2025 OpenInfra Foundation Europe. All rights reserved.
+ *  Copyright (C) 2025-2026 OpenInfra Foundation Europe. All rights reserved.
  *  ================================================================================
  *  Licensed under the Apache License, Version 2.0 (the "License");
  *  you may not use this file except in compliance with the License.
@@ -22,6 +22,7 @@ package org.onap.cps.ncmp.dmi.rest.stub.controller
 
 import com.fasterxml.jackson.databind.ObjectMapper
 import org.onap.cps.ncmp.dmi.provmns.model.ResourceOneOf
+import org.onap.cps.ncmp.dmi.rest.stub.utils.ControllerSimulation
 import org.onap.cps.ncmp.dmi.rest.stub.utils.Sleeper
 import org.spockframework.spring.SpringBean
 import org.springframework.beans.factory.annotation.Autowired
@@ -45,6 +46,9 @@ class ProvMnsStubControllerSpec extends Specification {
 
     @SpringBean
     Sleeper sleeper = Mock()
+
+    @SpringBean
+    ControllerSimulation controllerSimulation
 
     @Autowired
     ObjectMapper objectMapper
