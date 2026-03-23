@@ -1,6 +1,6 @@
 /*
  *  ============LICENSE_START=======================================================
- *  Copyright (C) 2025 OpenInfra Foundation Europe. All rights reserved.
+ *  Copyright (C) 2025-2026 OpenInfra Foundation Europe. All rights reserved.
  *  ================================================================================
  *  Licensed under the Apache License, Version 2.0 (the "License");
  *  you may not use this file except in compliance with the License.
@@ -21,7 +21,10 @@
 package org.onap.cps.ncmp.dmi.rest.stub.controller
 
 import com.fasterxml.jackson.databind.ObjectMapper
+import org.onap.cps.ncmp.dmi.provmns.model.PatchItem
+import org.onap.cps.ncmp.dmi.provmns.model.PatchOperation
 import org.onap.cps.ncmp.dmi.provmns.model.ResourceOneOf
+import org.onap.cps.ncmp.dmi.rest.stub.utils.ControllerSimulation
 import org.onap.cps.ncmp.dmi.rest.stub.utils.Sleeper
 import org.spockframework.spring.SpringBean
 import org.springframework.beans.factory.annotation.Autowired
@@ -37,7 +40,7 @@ import static org.springframework.test.web.servlet.request.MockMvcRequestBuilder
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.patch
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.put
 
-@WebMvcTest(controllers = ProvMnsStubController)
+@WebMvcTest([ProvMnsStubController, ControllerSimulation])
 class ProvMnsStubControllerSpec extends Specification {
 
     @Autowired
@@ -83,15 +86,15 @@ class ProvMnsStubControllerSpec extends Specification {
             assert response.getContentAsString().contains(expectedContentSnippet)
         where: 'following simulations are applied'
             scenario        | segmentName      | segmentValue     || expectedHttpStatus       || expectedContentSnippet
-            'no simulation' | 'anotherSegment' | 'some value'     || HttpStatus.OK            || '"id":"myId"'
-            'delay 1'       | 'dmiSimulation'  | 'slowResponse_1' || HttpStatus.OK            || '"id":"myId"'
+            'no simulation' | 'anotherSegment' | 'some value'     || HttpStatus.OK            || '"id":"Id set by Stub"'
+            'delay 1'       | 'dmiSimulation'  | 'slowResponse_1' || HttpStatus.OK            || '"id":"Id set by Stub"'
             'http error'    | 'dmiSimulation'  | 'httpError_418'  || HttpStatus.I_AM_A_TEAPOT || '"status":"418"'
     }
 
     def 'ProvMnS PATCH request with #scenario.'() {
         given: 'url and some resource as body'
             def url = "/ProvMnS/v1/someSegment=1/otherSegment=2/${segmentName}=${segmentValue}/finalSegment=3"
-            def requestBody = objectMapper.writeValueAsString(new ResourceOneOf('myId'))
+            def requestBody = objectMapper.writeValueAsString([new PatchItem(PatchOperation.REMOVE,'/myPath')])
         when: 'patch request is executed'
             def response = mockMvc.perform(patch(url)
                 .contentType("application/json-patch+json")
@@ -103,8 +106,8 @@ class ProvMnsStubControllerSpec extends Specification {
             assert response.getContentAsString().contains(expectedContentSnippet)
         where: 'following simulations are applied'
             scenario        | segmentName      | segmentValue     || expectedHttpStatus       || expectedContentSnippet
-            'no simulation' | 'anotherSegment' | 'some value'     || HttpStatus.OK            || '"id":"myId"'
-            'delay 1'       | 'dmiSimulation'  | 'slowResponse_1' || HttpStatus.OK            || '"id":"myId"'
+            'no simulation' | 'anotherSegment' | 'some value'     || HttpStatus.OK            || '"path":"/path=setByStub"'
+            'delay 1'       | 'dmiSimulation'  | 'slowResponse_1' || HttpStatus.OK            || '"path":"/path=setByStub"'
             'http error'    | 'dmiSimulation'  | 'httpError_418'  || HttpStatus.I_AM_A_TEAPOT || '"status":"418"'
     }
 

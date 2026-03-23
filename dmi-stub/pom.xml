@@ -111,6 +111,29 @@
                     <ignoreFileOverride>${project.basedir}/.openapi-generator-ignore-provmns</ignoreFileOverride>
                 </configuration>
             </execution>
+            <execution>
+                <id>dmi-code-gen-prov-mns-extensions</id>
+                <goals>
+                    <goal>generate</goal>
+                </goals>
+                <configuration>
+                    <inputSpec>${project.basedir}/docs/prov-mns-extensions.yml</inputSpec>
+                    <invokerPackage>org.onap.cps.ncmp.dmi.rest.stub.provmns.controller</invokerPackage>
+                    <modelPackage>org.onap.cps.ncmp.dmi.provmns.model</modelPackage>
+                    <apiPackage>org.onap.cps.ncmp.dmi.provmns.rest.api</apiPackage>
+                    <generatorName>spring</generatorName>
+                    <generateSupportingFiles>false</generateSupportingFiles>
+                    <configOptions>
+                        <sourceFolder>src/gen/java</sourceFolder>
+                        <dateLibrary>java11</dateLibrary>
+                        <interfaceOnly>true</interfaceOnly>
+                        <useSpringBoot3>true</useSpringBoot3>
+                        <useTags>true</useTags>
+                        <openApiNullable>false</openApiNullable>
+                        <skipDefaultInterface>true</skipDefaultInterface>
+                    </configOptions>
+                </configuration>
+            </execution>
         </executions>
     </plugin>
         <plugin>

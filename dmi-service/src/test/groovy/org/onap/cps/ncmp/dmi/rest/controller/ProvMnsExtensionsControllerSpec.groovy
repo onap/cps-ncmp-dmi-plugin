@@ -1,0 +1,58 @@
+/*
+ *  ============LICENSE_START=======================================================
+ *  Copyright (C) 2026 OpenInfra Foundation Europe. All rights reserved.
+ *  ================================================================================
+ *  Licensed under the Apache License, Version 2.0 (the "License");
+ *  you may not use this file except in compliance with the License.
+ *  You may obtain a copy of the License at
+ *
+ *        http://www.apache.org/licenses/LICENSE-2.0
+ *
+ *  Unless required by applicable law or agreed to in writing, software
+ *  distributed under the License is distributed on an "AS IS" BASIS,
+ *  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ *  See the License for the specific language governing permissions and
+ *  limitations under the License.
+ *
+ *  SPDX-License-Identifier: Apache-2.0
+ *  ============LICENSE_END=========================================================
+ */
+
+package org.onap.cps.ncmp.dmi.rest.controller
+
+import com.fasterxml.jackson.databind.ObjectMapper
+import org.onap.cps.ncmp.dmi.config.WebSecurityConfig
+import org.onap.cps.ncmp.dmi.provmns.api.ProvMnSExtensionsController
+import org.springframework.beans.factory.annotation.Autowired
+import org.springframework.beans.factory.annotation.Value
+import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest
+import org.springframework.context.annotation.Import
+import org.springframework.http.HttpStatus
+import org.springframework.http.MediaType
+import org.springframework.test.web.servlet.MockMvc
+import spock.lang.Specification
+
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*
+
+@WebMvcTest(ProvMnSExtensionsController)
+@Import(WebSecurityConfig)
+class ProvMnsExtensionsControllerSpec extends Specification {
+
+    @Autowired
+    MockMvc mvc
+
+    @Value('${rest.api.provmns-extensions-base-path}')
+    def provMnSExtensionsBasePath
+
+    def 'Get Resource Data from provmns interface.'() {
+        given: 'resource data url'
+            def provMnSExtensionsUrl = "$provMnSExtensionsBasePath/v1/actions/some=fdn/updateAction"
+        when: 'post data resource request is performed'
+            def response = mvc.perform(post(provMnSExtensionsUrl)
+                    .contentType(MediaType.APPLICATION_JSON)
+                    .content('{"customProperties":{},"input":{}}'))
+                    .andReturn().response
+        then: 'response status is Not Implemented (501)'
+            assert response.status == HttpStatus.NOT_IMPLEMENTED.value()
+    }
+}
