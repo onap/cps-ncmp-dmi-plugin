@@ -16,6 +16,46 @@
       "message": "recheck",
       "revId": "7939e2a7e2fd5522f1c9c527f60b7cb81239941c",
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "f5d66f1a_b703c088",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2026-03-30T07:30:04Z",
+      "side": 1,
+      "message": "main issue is still the duplication of ifx and controller, did you look into that?\nCma we discuss today maybe?",
+      "revId": "7939e2a7e2fd5522f1c9c527f60b7cb81239941c",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "021aa1a2_921290b9",
+        "filename": "dmi-service/src/test/groovy/org/onap/cps/ncmp/dmi/rest/controller/ProvMnsExtensionsControllerSpec.groovy",
+        "patchSetId": 2
+      },
+      "lineNbr": 47,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2026-03-30T07:30:04Z",
+      "side": 1,
+      "message": "See comments on labels in patch #1",
+      "range": {
+        "startLine": 47,
+        "startChar": 13,
+        "endLine": 47,
+        "endChar": 26
+      },
+      "revId": "7939e2a7e2fd5522f1c9c527f60b7cb81239941c",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
     }
   ]
 }
