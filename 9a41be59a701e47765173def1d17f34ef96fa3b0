@@ -1,0 +1,67 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "bb430bff_f296e6e3",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2026-03-31T17:22:26Z",
+      "side": 1,
+      "message": "just one question really",
+      "revId": "9a41be59a701e47765173def1d17f34ef96fa3b0",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "69defa1a_0ece472e",
+        "filename": "dmi-stub/dmi-stub-app/src/test/groovy/org/onap/cps/ncmp/dmi/rest/stub/controller/ProvMnsExtensionsStubControllerSpec.groovy",
+        "patchSetId": 3
+      },
+      "lineNbr": 53,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2026-03-31T17:22:26Z",
+      "side": 1,
+      "message": "NB: could be a little more descriptive :-)",
+      "range": {
+        "startLine": 53,
+        "startChar": 15,
+        "endLine": 53,
+        "endChar": 22
+      },
+      "revId": "9a41be59a701e47765173def1d17f34ef96fa3b0",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "57cdd06f_7821ac95",
+        "filename": "dmi-stub/dmi-stub-service/src/main/java/org/onap/cps/ncmp/dmi/provmns/api/ProvMnSExtensions.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2026-03-31T17:22:26Z",
+      "side": 1,
+      "message": "? Is this import needed if only use in annotation?\n(weird how you previous commit did not have those two imports, was it not compiel)",
+      "range": {
+        "startLine": 32,
+        "startChar": 43,
+        "endLine": 32,
+        "endChar": 57
+      },
+      "revId": "9a41be59a701e47765173def1d17f34ef96fa3b0",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    }
+  ]
+}
