@@ -41,6 +41,30 @@
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "a3243de3_93b92acc",
+        "filename": "dmi-service/src/main/java/org/onap/cps/ncmp/dmi/provmns/api/ProvMnSExtensions.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 8171
+      },
+      "writtenOn": "2026-03-31T15:48:53Z",
+      "side": 1,
+      "message": "As discussed this will be addressed in a later patch",
+      "parentUuid": "df233f14_2c5427b4",
+      "range": {
+        "startLine": 38,
+        "startChar": 0,
+        "endLine": 38,
+        "endChar": 36
+      },
+      "revId": "4e2e3290da38e7a65cf14a851342a9e74a48e706",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "8d40fdb1_292ae4cf",
@@ -54,6 +78,30 @@
       "writtenOn": "2026-03-23T11:20:11Z",
       "side": 1,
       "message": "import from CPS?",
+      "range": {
+        "startLine": 35,
+        "startChar": 13,
+        "endLine": 35,
+        "endChar": 41
+      },
+      "revId": "4e2e3290da38e7a65cf14a851342a9e74a48e706",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "ba391a13_b94b3caf",
+        "filename": "dmi-service/src/main/java/org/onap/cps/ncmp/dmi/provmns/api/ProvMnSExtensionsController.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 8171
+      },
+      "writtenOn": "2026-03-31T15:48:53Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "8d40fdb1_292ae4cf",
       "range": {
         "startLine": 35,
         "startChar": 13,
@@ -87,6 +135,30 @@
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "837622e6_39f50219",
+        "filename": "dmi-service/src/test/groovy/org/onap/cps/ncmp/dmi/rest/controller/ProvMnsExtensionsControllerSpec.groovy",
+        "patchSetId": 1
+      },
+      "lineNbr": 47,
+      "author": {
+        "id": 8171
+      },
+      "writtenOn": "2026-03-31T15:48:53Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "e6ef47b9_a1789c75",
+      "range": {
+        "startLine": 47,
+        "startChar": 9,
+        "endLine": 47,
+        "endChar": 26
+      },
+      "revId": "4e2e3290da38e7a65cf14a851342a9e74a48e706",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "dd89114e_704eb6bd",
@@ -100,6 +172,30 @@
       "writtenOn": "2026-03-23T11:20:11Z",
       "side": 1,
       "message": "action",
+      "range": {
+        "startLine": 48,
+        "startChar": 16,
+        "endLine": 48,
+        "endChar": 29
+      },
+      "revId": "4e2e3290da38e7a65cf14a851342a9e74a48e706",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "5d4cfdc7_91294c1e",
+        "filename": "dmi-service/src/test/groovy/org/onap/cps/ncmp/dmi/rest/controller/ProvMnsExtensionsControllerSpec.groovy",
+        "patchSetId": 1
+      },
+      "lineNbr": 48,
+      "author": {
+        "id": 8171
+      },
+      "writtenOn": "2026-03-31T15:48:53Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "dd89114e_704eb6bd",
       "range": {
         "startLine": 48,
         "startChar": 16,
@@ -133,6 +229,30 @@
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "2cf4dd4c_2fa8381d",
+        "filename": "dmi-service/src/test/groovy/org/onap/cps/ncmp/dmi/rest/controller/ProvMnsExtensionsControllerSpec.groovy",
+        "patchSetId": 1
+      },
+      "lineNbr": 50,
+      "author": {
+        "id": 8171
+      },
+      "writtenOn": "2026-03-31T15:48:53Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "24793157_9d33fe3e",
+      "range": {
+        "startLine": 50,
+        "startChar": 15,
+        "endLine": 50,
+        "endChar": 34
+      },
+      "revId": "4e2e3290da38e7a65cf14a851342a9e74a48e706",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "120e0814_ec81c036",
@@ -146,6 +266,24 @@
       "writtenOn": "2026-03-23T11:20:11Z",
       "side": 1,
       "message": "another duplicate?!",
+      "revId": "4e2e3290da38e7a65cf14a851342a9e74a48e706",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "2ae14ad8_fd8d02df",
+        "filename": "dmi-stub/dmi-stub-app/src/main/java/org/onap/cps/ncmp/dmi/provmns/api/ProvMnSExtensions.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 8171
+      },
+      "writtenOn": "2026-03-31T15:48:53Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "120e0814_ec81c036",
       "revId": "4e2e3290da38e7a65cf14a851342a9e74a48e706",
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
     }
