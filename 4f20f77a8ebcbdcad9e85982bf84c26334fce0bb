@@ -50,6 +50,24 @@
       "message": "NB: Log should have a better description of the data ie \u0027incoming DMI request body class name\u0027",
       "revId": "4f20f77a8ebcbdcad9e85982bf84c26334fce0bb",
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "57ce2123_61e6c85c",
+        "filename": "dmi-stub/dmi-stub-service/src/main/java/org/onap/cps/ncmp/dmi/rest/stub/controller/DmiRestStubController.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 376,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2026-03-31T11:19:52Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "c505664d_1b5e9664",
+      "revId": "4f20f77a8ebcbdcad9e85982bf84c26334fce0bb",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
     }
   ]
 }
