@@ -16,6 +16,40 @@
       "message": "recheck",
       "revId": "4f20f77a8ebcbdcad9e85982bf84c26334fce0bb",
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "bee50dd4_92fb88a5",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 8171
+      },
+      "writtenOn": "2026-03-31T09:37:05Z",
+      "side": 1,
+      "message": "Looks good, minor NB",
+      "revId": "4f20f77a8ebcbdcad9e85982bf84c26334fce0bb",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "c505664d_1b5e9664",
+        "filename": "dmi-stub/dmi-stub-service/src/main/java/org/onap/cps/ncmp/dmi/rest/stub/controller/DmiRestStubController.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 376,
+      "author": {
+        "id": 8171
+      },
+      "writtenOn": "2026-03-31T09:37:05Z",
+      "side": 1,
+      "message": "NB: Log should have a better description of the data ie \u0027incoming DMI request body class name\u0027",
+      "revId": "4f20f77a8ebcbdcad9e85982bf84c26334fce0bb",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
     }
   ]
 }
