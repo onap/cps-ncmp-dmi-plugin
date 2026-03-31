@@ -24,7 +24,7 @@
     <parent>
         <groupId>org.onap.cps.ncmp-dmi-plugin</groupId>
         <artifactId>ncmp-dmi-plugin</artifactId>
-        <version>1.8.0-SNAPSHOT</version>
+        <version>1.8.1-SNAPSHOT</version>
     </parent>
 
     <artifactId>dmi-service</artifactId>
@@ -365,7 +365,7 @@
                             <goal>generate</goal>
                         </goals>
                         <configuration>
-                            <inputSpec>https://gerrit.onap.org/r/gitweb?p=cps.git;a=blob_plain;f=docs/api/swagger/dmi/openapi.yml;hb=refs/heads/${swagger.branch}</inputSpec>
+                            <inputSpec>https://raw.githubusercontent.com/onap/cps/refs/heads/${swagger.branch}/docs/api/swagger/dmi/openapi.yml</inputSpec>
                             <generatorName>spring</generatorName>
                             <generateSupportingFiles>false</generateSupportingFiles>
                             <invokerPackage>org.onap.cps.ncmp.dmi.rest.controller</invokerPackage>
@@ -390,7 +390,7 @@
                             <goal>generate</goal>
                         </goals>
                         <configuration>
-                            <inputSpec>https://gerrit.onap.org/r/gitweb?p=cps.git;a=blob_plain;f=docs/api/swagger/dmi/openapi-datajob.yml;hb=refs/heads/${swagger.branch}</inputSpec>
+                            <inputSpec>https://raw.githubusercontent.com/onap/cps/refs/heads/${swagger.branch}/docs/api/swagger/dmi/openapi-datajob.yml</inputSpec>
                             <generatorName>spring</generatorName>
                             <generateSupportingFiles>false</generateSupportingFiles>
                             <invokerPackage>org.onap.cps.ncmp.dmi.datajobs.rest.controller</invokerPackage>
@@ -416,7 +416,7 @@
                         </goals>
                         <phase>compile</phase>
                         <configuration>
-                            <inputSpec>https://gerrit.onap.org/r/gitweb?p=cps.git;a=blob_plain;f=docs/api/swagger/dmi/openapi.yml;hb=refs/heads/${swagger.branch}</inputSpec>
+                            <inputSpec>https://raw.githubusercontent.com/onap/cps/refs/heads/${swagger.branch}/docs/api/swagger/dmi/openapi.yml</inputSpec>
                             <generatorName>openapi-yaml</generatorName>
                             <configOptions>
                                 <outputFile>openapi.yaml</outputFile>
