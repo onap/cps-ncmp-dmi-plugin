@@ -230,7 +230,7 @@ public class DmiRestStubController {
         } else {
             sleeper.delay(writeDataForCmHandleDelayMs);
         }
-        log.debug("Logging request body {}", requestBody);
+        log.debug("Logging request body size: {} chars", requestBody.length());
 
         final String sampleJson = ResourceFileReaderUtil.getResourceFileContent(applicationContext.getResource(
                 ResourceLoader.CLASSPATH_URL_PREFIX + "data/ietf-network-topology-sample-rfc8345.json"));
@@ -251,12 +251,9 @@ public class DmiRestStubController {
             @RequestParam(value = "requestId") final String requestId,
             @RequestBody final DmiDataOperationRequest dmiDataOperationRequest) {
         sleeper.delay(readDataForCmHandleDelayMs);
-        try {
-            log.info("Request received from the NCMP to DMI Plugin: {}",
-                    objectMapper.writeValueAsString(dmiDataOperationRequest));
-        } catch (final JsonProcessingException jsonProcessingException) {
-            log.warn("Unable to process dmi data operation request to json string");
-        }
+        log.info("Request received from the NCMP to DMI Plugin: {} with {} operations",
+                dmiDataOperationRequest.getClass().getSimpleName(),
+                dmiDataOperationRequest.getOperations() != null ? dmiDataOperationRequest.getOperations().size() : 0);
         dmiDataOperationRequest.getOperations().forEach(dmiDataOperation -> {
             final DataOperationEvent dataOperationEvent = getDataOperationEvent(dmiDataOperation);
             dmiDataOperation.getCmHandles().forEach(dmiOperationCmHandle -> {
@@ -282,7 +279,9 @@ public class DmiRestStubController {
                                                         @RequestParam("destination") final String destination) {
         log.info("cm write (datajob) request");
         log.info("Destination: {}", destination);
-        log.info("Request body: {}", subJobWriteRequest);
+        log.info("Request body: {} with {} operations",
+                 subJobWriteRequest.getClass().getSimpleName(),
+                 subJobWriteRequest.getData() != null ? subJobWriteRequest.getData().size() : 0);
         return ResponseEntity.ok(new SubjobWriteResponse(String.valueOf(subJobWriteRequestCounter.incrementAndGet()),
                 "some-dmi-service-name", "my-data-producer-id"));
     }
@@ -350,8 +349,7 @@ public class DmiRestStubController {
         response.setOperationId(dataOperationRequest.getOperationId());
         response.setStatusCode("0");
         response.setStatusMessage("Successfully applied changes");
-        response.setIds(dataOperationRequest.getCmHandles().stream().map(DmiOperationCmHandle::getId)
-                .collect(Collectors.toList()));
+        response.setIds(dataOperationRequest.getCmHandles().stream().map(DmiOperationCmHandle::getId).toList());
         response.setResourceIdentifier(dataOperationRequest.getResourceIdentifier());
         response.setOptions(dataOperationRequest.getOptions());
         final String ietfNetworkTopologySample = ResourceFileReaderUtil.getResourceFileContent(
@@ -375,8 +373,7 @@ public class DmiRestStubController {
     private ResponseEntity<String> processModuleRequest(final Object moduleRequest,
                                                         final ModuleResponseType moduleResponseType,
                                                         final long simulatedResponseDelay) {
-        logRequestBody(moduleRequest);
-        String moduleResponseContent = "";
+        log.info("Incoming DMI request body class: {}", moduleRequest.getClass().getSimpleName());
         String moduleSetTag = extractModuleSetTagFromRequest(moduleRequest);
 
         if (ERROR_TAG.equals(moduleSetTag)) {
@@ -386,6 +383,7 @@ public class DmiRestStubController {
         moduleSetTag = (!isModuleSetTagNullOrEmpty(moduleSetTag)
             && MODULE_SET_TAGS.contains(moduleSetTag)) ? moduleSetTag : DEFAULT_TAG;
 
+        final String moduleResponseContent;
         if (MODULE_RESOURCE_RESPONSE == moduleResponseType) {
             moduleResponseContent = yangModuleFactory.getModuleResourcesJson(moduleSetTag);
         } else {
@@ -403,14 +401,6 @@ public class DmiRestStubController {
 
     private boolean isModuleSetTagNullOrEmpty(final String moduleSetTag) {
         return moduleSetTag == null || moduleSetTag.trim().isEmpty();
-    }
-
-    private void logRequestBody(final Object request) {
-        try {
-            log.debug("Incoming DMI request body: {}", objectMapper.writeValueAsString(request));
-        } catch (final JsonProcessingException jsonProcessingException) {
-            log.warn("Unable to parse DMI request to json string");
-        }
     }
 
     private String getPassthroughOperationType(final String requestBody) {
