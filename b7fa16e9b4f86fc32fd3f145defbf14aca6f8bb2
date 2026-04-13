@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "81061077_fb3fe676",
+        "filename": "dmi-stub/dmi-stub-app/src/test/groovy/org/onap/cps/ncmp/dmi/rest/stub/controller/ProvMnsExtensionsStubControllerSpec.groovy",
+        "patchSetId": 5
+      },
+      "lineNbr": 53,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2026-04-13T09:29:10Z",
+      "side": 1,
+      "message": "same comment as in #3",
+      "range": {
+        "startLine": 53,
+        "startChar": 15,
+        "endLine": 53,
+        "endChar": 22
+      },
+      "revId": "b7fa16e9b4f86fc32fd3f145defbf14aca6f8bb2",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    }
+  ]
+}

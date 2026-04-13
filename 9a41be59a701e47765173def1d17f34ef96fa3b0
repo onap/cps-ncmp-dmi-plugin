@@ -20,6 +20,29 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "1b86747c_93c91e47",
+        "filename": "dmi-service/docs/prov-mns-extensions.yml",
+        "patchSetId": 3
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2026-04-13T09:29:10Z",
+      "side": 1,
+      "message": "are we really supposed to take out this?!",
+      "range": {
+        "startLine": 26,
+        "startChar": 0,
+        "endLine": 27,
+        "endChar": 78
+      },
+      "revId": "9a41be59a701e47765173def1d17f34ef96fa3b0",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "69defa1a_0ece472e",
         "filename": "dmi-stub/dmi-stub-app/src/test/groovy/org/onap/cps/ncmp/dmi/rest/stub/controller/ProvMnsExtensionsStubControllerSpec.groovy",
         "patchSetId": 3
