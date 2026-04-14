@@ -1,0 +1,57 @@
+/*
+ *  ============LICENSE_START=======================================================
+ *  Copyright (C) 2026 OpenInfra Foundation Europe
+ *  ================================================================================
+ *  Licensed under the Apache License, Version 2.0 (the "License");
+ *  you may not use this file except in compliance with the License.
+ *  You may obtain a copy of the License at
+ *
+ *        http://www.apache.org/licenses/LICENSE-2.0
+ *
+ *  Unless required by applicable law or agreed to in writing, software
+ *  distributed under the License is distributed on an "AS IS" BASIS,
+ *  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ *  See the License for the specific language governing permissions and
+ *  limitations under the License.
+ *
+ *  SPDX-License-Identifier: Apache-2.0
+ *  ============LICENSE_END=========================================================
+ */
+
+package org.onap.cps.ncmp.dmi.rest.stub.controller;
+
+import jakarta.servlet.http.HttpServletRequest;
+import java.util.HashMap;
+import java.util.Optional;
+import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
+import org.onap.cps.ncmp.dmi.provmns.api.ProvMnSExtensions;
+import org.onap.cps.ncmp.dmi.provmns.model.ActionRequest;
+import org.onap.cps.ncmp.dmi.provmns.model.ActionResponse;
+import org.onap.cps.ncmp.dmi.rest.stub.utils.ControllerSimulation;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+@RestController
+@RequestMapping("${rest.api.provmns-extensions-base-path}")
+@RequiredArgsConstructor
+@Slf4j
+public class ProvMnSExtensionsStubController implements ProvMnSExtensions {
+
+    private final ControllerSimulation controllerSimulation;
+
+    @Override
+    public ResponseEntity<Object> executeAction(final HttpServletRequest httpServletRequest,
+                                                final ActionRequest actionRequest) {
+        log.info("executeAction: {}", actionRequest);
+        final Optional<ResponseEntity<Object>> optionalResponseEntity =
+            controllerSimulation.simulate(httpServletRequest, 0);
+        final HashMap<String, Object> customProperties = new HashMap<>();
+        customProperties.put("KeySetByStub", "ValueSetByStub");
+        final ActionResponse actionResponse = new ActionResponse();
+        actionResponse.setCustomProperties(customProperties);
+        return optionalResponseEntity.orElseGet(() -> new ResponseEntity<>(actionResponse, HttpStatus.OK));
+    }
+}
