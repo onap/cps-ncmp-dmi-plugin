@@ -39,6 +39,30 @@
       },
       "revId": "b7fa16e9b4f86fc32fd3f145defbf14aca6f8bb2",
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "f8d978d9_94034c9f",
+        "filename": "dmi-stub/dmi-stub-app/src/test/groovy/org/onap/cps/ncmp/dmi/rest/stub/controller/ProvMnsExtensionsStubControllerSpec.groovy",
+        "patchSetId": 5
+      },
+      "lineNbr": 53,
+      "author": {
+        "id": 8171
+      },
+      "writtenOn": "2026-04-14T14:24:00Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "81061077_fb3fe676",
+      "range": {
+        "startLine": 53,
+        "startChar": 15,
+        "endLine": 53,
+        "endChar": 22
+      },
+      "revId": "b7fa16e9b4f86fc32fd3f145defbf14aca6f8bb2",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
     }
   ]
 }

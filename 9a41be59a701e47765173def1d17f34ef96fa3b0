@@ -41,6 +41,30 @@
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "bd916305_a0fd87ba",
+        "filename": "dmi-service/docs/prov-mns-extensions.yml",
+        "patchSetId": 3
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 8171
+      },
+      "writtenOn": "2026-04-14T14:24:00Z",
+      "side": 1,
+      "message": "Was removed in the revised api",
+      "parentUuid": "1b86747c_93c91e47",
+      "range": {
+        "startLine": 26,
+        "startChar": 0,
+        "endLine": 27,
+        "endChar": 78
+      },
+      "revId": "9a41be59a701e47765173def1d17f34ef96fa3b0",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "69defa1a_0ece472e",
@@ -64,6 +88,30 @@
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "5dcc3e24_79b11280",
+        "filename": "dmi-stub/dmi-stub-app/src/test/groovy/org/onap/cps/ncmp/dmi/rest/stub/controller/ProvMnsExtensionsStubControllerSpec.groovy",
+        "patchSetId": 3
+      },
+      "lineNbr": 53,
+      "author": {
+        "id": 8171
+      },
+      "writtenOn": "2026-04-14T14:24:00Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "69defa1a_0ece472e",
+      "range": {
+        "startLine": 53,
+        "startChar": 15,
+        "endLine": 53,
+        "endChar": 22
+      },
+      "revId": "9a41be59a701e47765173def1d17f34ef96fa3b0",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "57cdd06f_7821ac95",
@@ -77,6 +125,30 @@
       "writtenOn": "2026-03-31T17:22:26Z",
       "side": 1,
       "message": "? Is this import needed if only use in annotation?\n(weird how you previous commit did not have those two imports, was it not compiel)",
+      "range": {
+        "startLine": 32,
+        "startChar": 43,
+        "endLine": 32,
+        "endChar": 57
+      },
+      "revId": "9a41be59a701e47765173def1d17f34ef96fa3b0",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "60e72213_e945ac04",
+        "filename": "dmi-stub/dmi-stub-service/src/main/java/org/onap/cps/ncmp/dmi/provmns/api/ProvMnSExtensions.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 8171
+      },
+      "writtenOn": "2026-04-14T14:24:00Z",
+      "side": 1,
+      "message": "it\u0027s needed for the annotations, previous build did \u0027pass\u0027 but was not correct due to issue with onap docker. Its been resolved now",
+      "parentUuid": "57cdd06f_7821ac95",
       "range": {
         "startLine": 32,
         "startChar": 43,
