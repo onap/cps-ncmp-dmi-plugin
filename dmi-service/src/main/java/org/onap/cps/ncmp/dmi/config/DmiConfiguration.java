@@ -20,6 +20,7 @@
 
 package org.onap.cps.ncmp.dmi.config;
 
+import java.util.concurrent.TimeUnit;
 import lombok.Getter;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.web.client.RestTemplateBuilder;

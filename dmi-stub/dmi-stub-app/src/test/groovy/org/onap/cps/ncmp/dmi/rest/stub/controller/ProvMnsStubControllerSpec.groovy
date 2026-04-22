@@ -21,11 +21,11 @@
 package org.onap.cps.ncmp.dmi.rest.stub.controller
 
 import com.fasterxml.jackson.databind.ObjectMapper
-import org.onap.cps.ncmp.dmi.provmns.model.PatchItem
-import org.onap.cps.ncmp.dmi.provmns.model.PatchOperation
-import org.onap.cps.ncmp.dmi.provmns.model.ResourceOneOf
 import org.onap.cps.ncmp.dmi.rest.stub.utils.ControllerSimulation
 import org.onap.cps.ncmp.dmi.rest.stub.utils.Sleeper
+import org.onap.cps.ncmp.provmns.model.PatchItem
+import org.onap.cps.ncmp.provmns.model.PatchOperation
+import org.onap.cps.ncmp.provmns.model.ResourceOneOf
 import org.spockframework.spring.SpringBean
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest
