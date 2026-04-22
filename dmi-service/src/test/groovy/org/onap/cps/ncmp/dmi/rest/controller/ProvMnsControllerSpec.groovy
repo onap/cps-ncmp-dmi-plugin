@@ -23,9 +23,9 @@ package org.onap.cps.ncmp.dmi.rest.controller
 import com.fasterxml.jackson.databind.ObjectMapper
 import org.onap.cps.ncmp.dmi.config.WebSecurityConfig
 import org.onap.cps.ncmp.dmi.provmns.api.ProvMnsController
-import org.onap.cps.ncmp.dmi.provmns.model.PatchItem
-import org.onap.cps.ncmp.dmi.provmns.model.PatchOperation
-import org.onap.cps.ncmp.dmi.provmns.model.ResourceOneOf
+import org.onap.cps.ncmp.provmns.model.PatchItem
+import org.onap.cps.ncmp.provmns.model.PatchOperation
+import org.onap.cps.ncmp.provmns.model.ResourceOneOf
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.beans.factory.annotation.Value
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest
