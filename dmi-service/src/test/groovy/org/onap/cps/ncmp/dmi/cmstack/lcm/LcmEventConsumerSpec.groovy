@@ -23,14 +23,14 @@ package org.onap.cps.ncmp.dmi.cmstack.lcm
 import com.fasterxml.jackson.databind.ObjectMapper
 import org.onap.cps.ncmp.dmi.TestUtils
 import org.onap.cps.ncmp.dmi.service.DmiService
-import org.onap.cps.ncmp.events.lcm.v1.LcmEvent
+import org.onap.cps.ncmp.events.lcm.LcmEventV1
 import org.spockframework.spring.SpringBean
 import org.springframework.boot.test.context.SpringBootTest
 import org.springframework.test.annotation.DirtiesContext
 import org.testcontainers.spock.Testcontainers
 import spock.lang.Specification
 
-import static org.onap.cps.ncmp.events.lcm.v1.Values.CmHandleState.LOCKED
+import static org.onap.cps.ncmp.events.lcm.Values.CmHandleState.LOCKED
 
 @SpringBootTest(classes = [ObjectMapper])
 @Testcontainers
@@ -51,7 +51,7 @@ class LcmEventConsumerSpec extends Specification {
 
     def 'Consume LCM message when the cm handle is READY( module sync done )'() {
         given: 'LCM event is created and sent '
-            def lcmEvent = objectMapper.readValue(jsonData, LcmEvent.class)
+            def lcmEvent = objectMapper.readValue(jsonData, LcmEventV1.class)
         when: 'event is consumed'
             objectUnderTest.consumeLcmEvent(lcmEvent)
         then: 'cm handle(s) are enabled for data sync'
@@ -61,7 +61,7 @@ class LcmEventConsumerSpec extends Specification {
 
     def 'Consume LCM message when the cm handle is in LOCKED state'() {
         given: 'LCM event is created and sent '
-            def lcmEvent = objectMapper.readValue(jsonData, LcmEvent.class)
+            def lcmEvent = objectMapper.readValue(jsonData, LcmEventV1.class)
         and: 'cm handle is in LOCKED state'
             lcmEvent.event.newValues.cmHandleState = LOCKED
         when: 'event is consumed'
@@ -73,11 +73,11 @@ class LcmEventConsumerSpec extends Specification {
 
     def 'Consume LCM message with no target state'() {
         given: 'LCM event is created and sent '
-            def lcmEvent = objectMapper.readValue(jsonData, LcmEvent.class)
+            def lcmEvent = objectMapper.readValue(jsonData, LcmEventV1.class)
         and: 'the target state ( newValues ) is set to null'
             lcmEvent.event.newValues = null
         when: 'event is consumed'
-            objectUnderTest.consumeLcmEvent(lcmEvent)
+            objectUnderTest.consumeLcmEvent(lcmEvent as LcmEventV1)
         then: 'data sync flag is not enabled as state is not READY'
             0 * dmiService.enableNcmpDataSyncForCmHandles(_)
 
