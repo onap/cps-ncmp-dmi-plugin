@@ -81,6 +81,11 @@
                 </exclusion>
             </exclusions>
         </dependency>
+        <dependency>
+            <groupId>${cps.groupId}</groupId>
+            <artifactId>provmns-api</artifactId>
+            <version>${cps.version}</version>
+        </dependency>
         <!-- T E S T   D E P E N D E N C I E S -->
         <dependency>
             <groupId>org.spockframework</groupId>

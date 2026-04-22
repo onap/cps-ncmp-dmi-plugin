@@ -20,6 +20,7 @@
 
 package org.onap.cps.ncmp.dmi.config;
 
+import java.time.Duration;
 import lombok.Getter;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.web.client.RestTemplateBuilder;
@@ -71,14 +72,8 @@ public class DmiConfiguration {
      */
     @Bean
     public RestTemplate restTemplate(final RestTemplateBuilder restTemplateBuilder) {
-        final RestTemplate restTemplate =  restTemplateBuilder.build();
-        setCustomRequestFactoryToSupportPatch(restTemplate);
-        return restTemplate;
-    }
-
-    private void setCustomRequestFactoryToSupportPatch(final RestTemplate restTemplate) {
-        final HttpComponentsClientHttpRequestFactory requestFactory = new HttpComponentsClientHttpRequestFactory();
-        requestFactory.setConnectTimeout(TIMEOUT);
-        restTemplate.setRequestFactory(requestFactory);
+        return restTemplateBuilder.connectTimeout(Duration.ofMillis(TIMEOUT))
+            .requestFactory(() -> new HttpComponentsClientHttpRequestFactory())
+            .build();
     }
 }

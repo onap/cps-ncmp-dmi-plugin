@@ -108,6 +108,11 @@
             <version>${cps.version}</version>
         </dependency>
         <dependency>
+            <groupId>${cps.groupId}</groupId>
+            <artifactId>provmns-api</artifactId>
+            <version>${cps.version}</version>
+        </dependency>
+        <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-aop</artifactId>
         </dependency>
