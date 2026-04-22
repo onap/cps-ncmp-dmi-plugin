@@ -22,6 +22,30 @@
       },
       "revId": "c12542cfe0f8879e8965942a3ca7bc3b10e8bf48",
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "1bfc15e7_6a6cf9af",
+        "filename": "dmi-service/src/main/java/org/onap/cps/ncmp/dmi/cmstack/lcm/LcmEventConsumer.java",
+        "patchSetId": 4
+      },
+      "lineNbr": 47,
+      "author": {
+        "id": 8171
+      },
+      "writtenOn": "2026-04-22T12:56:45Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7d6ba9ff_bb20139e",
+      "range": {
+        "startLine": 47,
+        "startChar": 27,
+        "endLine": 47,
+        "endChar": 98
+      },
+      "revId": "c12542cfe0f8879e8965942a3ca7bc3b10e8bf48",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
     }
   ]
 }
