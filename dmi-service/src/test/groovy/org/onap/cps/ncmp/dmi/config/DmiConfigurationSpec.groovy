@@ -58,8 +58,8 @@ class DmiConfigurationSpec extends Specification {
             RestTemplateBuilder mockRestTemplateBuilder = Spy(RestTemplateBuilder)
         when: 'rest template method is invoked'
             objectUnderTest.restTemplate(mockRestTemplateBuilder)
-        then: 'DMI configuration uses the build method on the template builder'
-            1 * mockRestTemplateBuilder.build()
+        then: 'DMI configuration uses the connectTimeout method on the template builder'
+            1 * mockRestTemplateBuilder.connectTimeout(_)
     }
 
 }

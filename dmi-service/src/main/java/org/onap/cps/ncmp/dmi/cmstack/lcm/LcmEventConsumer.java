@@ -24,8 +24,8 @@ import java.util.List;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.onap.cps.ncmp.dmi.service.DmiService;
-import org.onap.cps.ncmp.events.lcm.v1.LcmEvent;
-import org.onap.cps.ncmp.events.lcm.v1.Values;
+import org.onap.cps.ncmp.events.lcm.LcmEventV1;
+import org.onap.cps.ncmp.events.lcm.Values;
 import org.springframework.kafka.annotation.KafkaListener;
 import org.springframework.stereotype.Component;
 
@@ -44,8 +44,8 @@ public class LcmEventConsumer {
      */
     @KafkaListener(topics = "${app.ncmp.lcm.topic}",
             containerFactory = "legacyEventConcurrentKafkaListenerContainerFactory",
-            properties = {"spring.json.value.default.type=org.onap.cps.ncmp.events.lcm.v1.LcmEvent"})
-    public void consumeLcmEvent(final LcmEvent lcmEvent) {
+            properties = {"spring.json.value.default.type=org.onap.cps.ncmp.events.lcm.LcmEventV1"})
+    public void consumeLcmEvent(final LcmEventV1 lcmEvent) {
 
         final Values newValues = lcmEvent.getEvent().getNewValues();
 
