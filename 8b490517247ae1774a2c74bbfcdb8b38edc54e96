@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "29349683_3b93c1a7",
+        "filename": "dmi-service/src/main/java/org/onap/cps/ncmp/dmi/cmstack/lcm/LcmEventConsumer.java",
+        "patchSetId": 5
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2026-04-22T13:26:49Z",
+      "side": 1,
+      "message": "apologies, this was  a missed impact of my user story. I should have updated these",
+      "range": {
+        "startLine": 27,
+        "startChar": 36,
+        "endLine": 27,
+        "endChar": 46
+      },
+      "revId": "8b490517247ae1774a2c74bbfcdb8b38edc54e96",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    }
+  ]
+}
