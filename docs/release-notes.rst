@@ -15,6 +15,56 @@ DMI-Plugin Release Notes
     :depth: 2
 ..
 
+Version: 1.8.1
+==============
+
+Release Data
+------------
+
++--------------------------------------+--------------------------------------------------------+
+| **CPS Project**                      |  DMI-Plugin                                            |
+|                                      |                                                        |
++--------------------------------------+--------------------------------------------------------+
+| **Docker images**                    | onap/ncmp-dmi-plugin:1.8.1-SNAPSHOT                    |
+|                                      |                                                        |
++--------------------------------------+--------------------------------------------------------+
+| **Release designation**              | 1.8.1-SNAPSHOT                                         |
+|                                      |                                                        |
++--------------------------------------+--------------------------------------------------------+
+| **Release date**                     | (Not Yet Released)                                     |
+|                                      |                                                        |
++--------------------------------------+--------------------------------------------------------+
+
+Features
+--------
+
+Version: 1.8.0
+==============
+
+Release Data
+------------
+
++--------------------------------------+--------------------------------------------------------+
+| **CPS Project**                      |  DMI-Plugin                                            |
+|                                      |                                                        |
++--------------------------------------+--------------------------------------------------------+
+| **Docker images**                    | onap/ncmp-dmi-plugin:1.8.0                             |
+|                                      |                                                        |
++--------------------------------------+--------------------------------------------------------+
+| **Release designation**              | 1.8.0                                                  |
+|                                      |                                                        |
++--------------------------------------+--------------------------------------------------------+
+| **Release date**                     | 2026 April 29                                          |
+|                                      |                                                        |
++--------------------------------------+--------------------------------------------------------+
+
+Features
+--------
+    - `CPS-1992 <https://lf-onap.atlassian.net/browse/CPS-1992>`_  Introducing ProvMnS interface
+    - `CPS-2723 <https://lf-onap.atlassian.net/browse/CPS-2723>`_  Update DMI plugin with new subscription schemas
+    - `CPS-3094 <https://lf-onap.atlassian.net/browse/CPS-3094>`_  Add (error)simulations to DMI Stub ProvMnS Interface
+    - `CPS-2521 <https://lf-onap.atlassian.net/browse/CPS-2521>`_  Extend ProvMnS interfaces to support Action Operation
+
 ..      ====================
 ..      * * *   PARIS  * * *
 ..      ====================
@@ -35,12 +85,16 @@ Release Data
 | **Release designation**              | 1.7.1 Paris                                            |
 |                                      |                                                        |
 +--------------------------------------+--------------------------------------------------------+
-| **Release date**                     | (not yet released)                                     |
+| **Release date**                     | 2025 June 12                                           |
 |                                      |                                                        |
 +--------------------------------------+--------------------------------------------------------+
 
 Features
 --------
+
+    - `CPS-2710 <https://lf-onap.atlassian.net/browse/CPS-2710>`_  Automate the process of device registration
+    - `CPS-2757 <https://lf-onap.atlassian.net/browse/CPS-2757>`_  Enabling datasync flag when the cmhandle is READY
+    - `CPS-2846 <https://lf-onap.atlassian.net/browse/CPS-2846>`_  Change DMI server from Tomcat to Jetty
 
 Version: 1.7.0
 ==============
