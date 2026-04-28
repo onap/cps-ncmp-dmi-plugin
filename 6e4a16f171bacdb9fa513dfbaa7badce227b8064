@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "b54bd621_60bdcbf8",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2026-04-28T17:46:58Z",
+      "side": 1,
+      "message": "I did not record but I presume you have the comments we made during the standup earlier?",
+      "revId": "6e4a16f171bacdb9fa513dfbaa7badce227b8064",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    }
+  ]
+}
