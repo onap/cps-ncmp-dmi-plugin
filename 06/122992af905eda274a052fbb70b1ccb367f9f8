@@ -1,0 +1,12 @@
+Verified+1: Toine Siebelink <toine.siebelink@est.tech>
+Verified+1: ONAP Jobbuilder <onap-jobbuilder@jenkins.onap.org>
+Verified+1: Lee Anjella Macabuhay <lee.anjella.macabuhay@est.tech>
+Verified+1: ONAP Required GHA <releng+onap.required.gha@linuxfoundation.org>
+Code-Review+1: Toine Siebelink <toine.siebelink@est.tech>
+Code-Review+2: Lee Anjella Macabuhay <lee.anjella.macabuhay@est.tech>
+Code-Review+1: Shivani Khare <shivani.khare@est.tech>
+Submitted-by: Toine Siebelink <toine.siebelink@est.tech>
+Submitted-at: Thu, 30 Apr 2026 07:13:46 +0000
+Reviewed-on: https://gerrit.onap.org/r/c/cps/ncmp-dmi-plugin/+/144129
+Project: cps/ncmp-dmi-plugin
+Branch: refs/heads/master
