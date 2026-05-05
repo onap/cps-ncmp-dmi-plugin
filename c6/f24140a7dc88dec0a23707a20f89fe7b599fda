@@ -1,0 +1,9 @@
+Verified+1: Gerard Nugent <gerard.nugent@est.tech>
+Verified+1: ONAP Jobbuilder <onap-jobbuilder@jenkins.onap.org>
+Code-Review+2: Gerard Nugent <gerard.nugent@est.tech>
+Verified+1: ONAP Required GHA <releng+onap.required.gha@linuxfoundation.org>
+Submitted-by: Gerard Nugent <gerard.nugent@est.tech>
+Submitted-at: Tue, 05 May 2026 13:39:34 +0000
+Reviewed-on: https://gerrit.onap.org/r/c/cps/ncmp-dmi-plugin/+/144219
+Project: cps/ncmp-dmi-plugin
+Branch: refs/heads/master
