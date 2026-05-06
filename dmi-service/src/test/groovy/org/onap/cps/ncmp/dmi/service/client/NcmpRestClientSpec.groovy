@@ -1,6 +1,6 @@
 /*
  *  ============LICENSE_START=======================================================
- *  Copyright (C) 2021-2025 OpenInfra Foundation Europe. All rights reserved.
+ *  Copyright (C) 2021-2026 OpenInfra Foundation Europe. All rights reserved.
  *  ================================================================================
  *  Licensed under the Apache License, Version 2.0 (the "License");
  *  you may not use this file except in compliance with the License.
@@ -27,14 +27,9 @@ import org.springframework.web.client.RestTemplate
 import spock.lang.Specification
 
 class NcmpRestClientSpec extends Specification {
-    def objectUnderTest = new NcmpRestClient(mockCpsProperties, mockRestTemplate)
     def mockCpsProperties = Mock(DmiConfiguration.CpsProperties)
     def mockRestTemplate = Mock(RestTemplate)
-
-    def setup() {
-        objectUnderTest.cpsProperties = mockCpsProperties
-        objectUnderTest.restTemplate = mockRestTemplate
-    }
+    def objectUnderTest = new NcmpRestClient(mockCpsProperties, mockRestTemplate)
 
     def 'Register a cm handle.'() {
         given: 'some request data'

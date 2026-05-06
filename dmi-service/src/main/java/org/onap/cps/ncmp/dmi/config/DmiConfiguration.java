@@ -1,6 +1,6 @@
 /*
  * ============LICENSE_START=======================================================
- *  Copyright (C) 2021-2025 OpenInfra Foundation Europe. All rights reserved.
+ *  Copyright (C) 2021-2026 OpenInfra Foundation Europe. All rights reserved.
  *  ================================================================================
  *  Licensed under the Apache License, Version 2.0 (the "License");
  *  you may not use this file except in compliance with the License.
@@ -61,7 +61,7 @@ public class DmiConfiguration {
         @Value("${sdnc.auth.password}")
         private String authPassword;
         @Value("${sdnc.topologyId}")
-        public String topologyId;
+        private String topologyId;
     }
 
     /**
@@ -71,6 +71,7 @@ public class DmiConfiguration {
      * @return {@code RestTemplate} rest template
      */
     @Bean
+    @SuppressWarnings("squid:S1612") // Method reference is ambiguous due to overloaded requestFactory()
     public RestTemplate restTemplate(final RestTemplateBuilder restTemplateBuilder) {
         return restTemplateBuilder.connectTimeout(Duration.ofMillis(TIMEOUT))
             .requestFactory(() -> new HttpComponentsClientHttpRequestFactory())

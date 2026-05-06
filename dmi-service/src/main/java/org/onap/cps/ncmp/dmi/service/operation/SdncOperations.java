@@ -1,6 +1,6 @@
 /*
  *  ============LICENSE_START=======================================================
- *  Copyright (C) 2021-2025 OpenInfra Foundation Europe. All rights reserved.
+ *  Copyright (C) 2021-2026 OpenInfra Foundation Europe. All rights reserved.
  *  Modifications Copyright (C) 2021-2022 Bell Canada
  *  ================================================================================
  *  Licensed under the Apache License, Version 2.0 (the "License");
@@ -249,9 +249,9 @@ public class SdncOperations {
 
     private Map<String, String> extractQueryParams(final String optionsParamInQuery,
                                                    final String restConfContentQueryParam) {
-        final String QueryParamsAsString = stripParenthesisFromOptionsQuery(optionsParamInQuery)
+        final String queryParamsAsString = stripParenthesisFromOptionsQuery(optionsParamInQuery)
                 + "," + restConfContentQueryParam;
-        final String[] splitTempQueryByComma = QueryParamsAsString.split(",");
+        final String[] splitTempQueryByComma = queryParamsAsString.split(",");
         return Arrays.stream(splitTempQueryByComma)
                 .map(queryParamPair -> queryParamPair.split("=", QUERY_PARAM_SPLIT_LIMIT))
                 .filter(queryParam -> queryParam.length > 1)

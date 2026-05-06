@@ -1,6 +1,7 @@
 /*
  *  ============LICENSE_START=======================================================
  *  Copyright (C) 2021 Bell Canada
+ *  Modifications Copyright (C) 2026 OpenInfra Foundation Europe. All rights reserved.
  *  ================================================================================
  *  Licensed under the Apache License, Version 2.0 (the "License");
  *  you may not use this file except in compliance with the License.
@@ -37,9 +38,7 @@ public class SdncException extends DmiException {
      * @param responseBody responseBody
      */
     public SdncException(final String message, final HttpStatus httpStatus, final String responseBody) {
-        super(message, String.format("sdnc http status: %s, response body : %s ",
-            httpStatus.toString(),
-            responseBody));
+        super(message, String.format("sdnc http status: %s, response body : %s ", httpStatus, responseBody));
     }
 
     public SdncException(final String message, final String details, final Throwable cause) {

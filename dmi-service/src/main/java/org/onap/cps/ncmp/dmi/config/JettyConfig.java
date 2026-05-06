@@ -1,6 +1,6 @@
 /*
  * ============LICENSE_START=======================================================
- * Copyright (C) 2025 OpenInfra Foundation Europe. All rights reserved.
+ * Copyright (C) 2025-2026 OpenInfra Foundation Europe. All rights reserved.
  * ================================================================================
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -43,9 +43,9 @@ public class JettyConfig implements WebServerFactoryCustomizer<JettyServletWebSe
         jettyServletWebServerFactory.addServerCustomizers(server -> {
             for (final Connector connector : server.getConnectors()) {
                 for (final ConnectionFactory connectionFactory : connector.getConnectionFactories()) {
-                    if (connectionFactory instanceof HttpConnectionFactory) {
+                    if (connectionFactory instanceof HttpConnectionFactory httpConnectionFactory) {
                         final HttpConfiguration httpConfiguration
-                                = ((HttpConnectionFactory) connectionFactory).getHttpConfiguration();
+                                = httpConnectionFactory.getHttpConfiguration();
                         httpConfiguration.setUriCompliance(UriCompliance.from(EnumSet.of(
                                 UriCompliance.Violation.AMBIGUOUS_PATH_SEPARATOR)));
                     }

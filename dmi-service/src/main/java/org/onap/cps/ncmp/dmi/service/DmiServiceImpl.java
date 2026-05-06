@@ -1,6 +1,6 @@
 /*
  *  ============LICENSE_START=======================================================
- *  Copyright (C) 2021-2025 OpenInfra Foundation Europe. All rights reserved.
+ *  Copyright (C) 2021-2026 OpenInfra Foundation Europe. All rights reserved.
  *  Modifications Copyright (C) 2021-2022 Bell Canada
  *  ================================================================================
  *  Licensed under the Apache License, Version 2.0 (the "License");
@@ -29,6 +29,7 @@ import java.util.Collection;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
+import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.onap.cps.ncmp.dmi.cmstack.avc.CmAvcEventService;
 import org.onap.cps.ncmp.dmi.config.DmiPluginConfig.DmiPluginProperties;
@@ -54,34 +55,15 @@ import org.springframework.stereotype.Service;
 
 @Service
 @Slf4j
+@RequiredArgsConstructor
 public class DmiServiceImpl implements DmiService {
 
-    private SdncOperations sdncOperations;
-    private NcmpRestClient ncmpRestClient;
-    private ObjectMapper objectMapper;
-    private DmiPluginProperties dmiPluginProperties;
-    private CmAvcEventService cmAvcEventService;
+    private final SdncOperations sdncOperations;
+    private final NcmpRestClient ncmpRestClient;
+    private final ObjectMapper objectMapper;
+    private final DmiPluginProperties dmiPluginProperties;
+    private final CmAvcEventService cmAvcEventService;
 
-    /**
-     * Constructor.
-     *
-     * @param dmiPluginProperties dmiPluginProperties
-     * @param ncmpRestClient      ncmpRestClient
-     * @param sdncOperations      sdncOperations
-     * @param objectMapper        objectMapper
-     * @param cmAvcEventService   cmAvcEventService
-     */
-    public DmiServiceImpl(final DmiPluginProperties dmiPluginProperties,
-                                    final NcmpRestClient ncmpRestClient,
-                                    final SdncOperations sdncOperations,
-                                    final ObjectMapper objectMapper,
-                                    final CmAvcEventService cmAvcEventService) {
-        this.dmiPluginProperties = dmiPluginProperties;
-        this.ncmpRestClient = ncmpRestClient;
-        this.objectMapper = objectMapper;
-        this.sdncOperations = sdncOperations;
-        this.cmAvcEventService = cmAvcEventService;
-    }
 
     @Override
     public ModuleSet getModulesForCmHandle(final String cmHandle) throws DmiException {
@@ -146,7 +128,7 @@ public class DmiServiceImpl implements DmiService {
     @Override
     public void enableNcmpDataSyncForCmHandles(final List<String> cmHandles) {
         log.info("Enabling NCMP dataSync flag for : {}", cmHandles);
-        cmHandles.forEach(cmHandleId -> ncmpRestClient.enableNcmpDataSync(cmHandleId));
+        cmHandles.forEach(ncmpRestClient::enableNcmpDataSync);
     }
 
     private ModuleSetSchemasInner toModuleSetSchemas(final ModuleSchema moduleSchema) {

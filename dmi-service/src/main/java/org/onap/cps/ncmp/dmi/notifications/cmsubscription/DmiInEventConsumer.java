@@ -1,6 +1,6 @@
 /*
  * ============LICENSE_START=======================================================
- *  Copyright (C) 2024-2025 OpenInfra Foundation Europe. All rights reserved.
+ *  Copyright (C) 2024-2026 OpenInfra Foundation Europe. All rights reserved.
  *  ================================================================================
  *  Licensed under the Apache License, Version 2.0 (the "License");
  *  you may not use this file except in compliance with the License.
@@ -37,9 +37,12 @@ import org.springframework.stereotype.Service;
 @RequiredArgsConstructor
 public class DmiInEventConsumer {
 
+    private static final String ACCEPTED_STATUS_CODE = "1";
+    private static final String REJECTED_STATUS_CODE = "104";
+
 
     @Value("${app.dmi.avc.cm-subscription-dmi-out}")
-    private String dmoOutEventTopic;
+    private String dmiOutEventTopic;
     @Value("${dmi.service.name}")
     private String dmiName;
     private final KafkaTemplate<String, CloudEvent> cloudEventKafkaTemplate;
@@ -88,16 +91,16 @@ public class DmiInEventConsumer {
             new DataJobSubscriptionDmiOutEvent();
         final Data dmiOutEventData = new Data();
 
-        if (cmNotificationSubscriptionStatus.equals(CmNotificationSubscriptionStatus.ACCEPTED)) {
-            dmiOutEventData.setStatusCode("1");
+        if (cmNotificationSubscriptionStatus == CmNotificationSubscriptionStatus.ACCEPTED) {
+            dmiOutEventData.setStatusCode(ACCEPTED_STATUS_CODE);
             dmiOutEventData.setStatusMessage("ACCEPTED");
         } else {
-            dmiOutEventData.setStatusCode("104");
+            dmiOutEventData.setStatusCode(REJECTED_STATUS_CODE);
             dmiOutEventData.setStatusMessage("REJECTED");
         }
         dataJobSubscriptionDmiOutEvent.setData(dmiOutEventData);
 
-        cloudEventKafkaTemplate.send(dmoOutEventTopic, eventKey,
+        cloudEventKafkaTemplate.send(dmiOutEventTopic, eventKey,
             DmiOutEventToCloudEventMapper.toCloudEvent(dataJobSubscriptionDmiOutEvent,
                 subscriptionType, dmiName, correlationId));
 

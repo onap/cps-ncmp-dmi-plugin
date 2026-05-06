@@ -1,6 +1,6 @@
 /*
  * ============LICENSE_START=======================================================
- *  Copyright (C) 2024-2025 OpenInfra Foundation Europe. All rights reserved.
+ *  Copyright (C) 2024-2026 OpenInfra Foundation Europe. All rights reserved.
  *  ================================================================================
  *  Licensed under the Apache License, Version 2.0 (the "License");
  *  you may not use this file except in compliance with the License.
@@ -70,7 +70,7 @@ class DmiInEventConsumerSpec extends MessagingBaseSpec {
     def 'Sends subscription cloud event response successfully.'() {
         given: 'an subscription event response'
             objectUnderTest.dmiName = testDmiName
-            objectUnderTest.dmoOutEventTopic = testTopic
+            objectUnderTest.dmiOutEventTopic = testTopic
             def correlationId = 'test-subscriptionId#test-ncmp-dmi'
             def cmSubscriptionDmiOutEventData = new Data(statusCode: subscriptionStatusCode, statusMessage: subscriptionStatusMessage)
             def subscriptionEventResponse =
@@ -103,7 +103,7 @@ class DmiInEventConsumerSpec extends MessagingBaseSpec {
             def timestamp = new Timestamp(1679521929511)
             def jsonData = TestUtils.getResourceFileContent('cmNotificationSubscriptionCreationEvent.json')
             def subscriptionEvent = objectMapper.readValue(jsonData, DataJobSubscriptionDmiInEvent.class)
-            objectUnderTest.dmoOutEventTopic = testTopic
+            objectUnderTest.dmiOutEventTopic = testTopic
             def cloudEvent = CloudEventBuilder.v1().withId(UUID.randomUUID().toString()).withSource(URI.create('test-ncmp-dmi'))
                     .withType(subscriptionType)
                     .withDataSchema(URI.create("urn:cps:" + DataJobSubscriptionDmiInEvent.class.getName() + ":1.0.0"))
@@ -127,7 +127,7 @@ class DmiInEventConsumerSpec extends MessagingBaseSpec {
             def eventKey = UUID.randomUUID().toString()
             def timestamp = new Timestamp(1679521929511)
             def invalidJsonBody = "/////"
-            objectUnderTest.dmoOutEventTopic = testTopic
+            objectUnderTest.dmiOutEventTopic = testTopic
             def cloudEvent = CloudEventBuilder.v1().withId(UUID.randomUUID().toString()).withSource(URI.create('test-ncmp-dmi'))
                     .withType("subscriptionCreated")
                     .withDataSchema(URI.create("urn:cps:org.onap.ncmp.dmi.cm.subscription:1.0.0"))

@@ -1,6 +1,6 @@
 /*
  *  ============LICENSE_START=======================================================
- *  Copyright (C) 2021-2025 OpenInfra Foundation Europe. All rights reserved.
+ *  Copyright (C) 2021-2026 OpenInfra Foundation Europe. All rights reserved.
  *  Modifications Copyright (C) 2021-2022 Bell Canada
  *  ================================================================================
  *  Licensed under the Apache License, Version 2.0 (the "License");
@@ -53,7 +53,7 @@ class DmiServiceImplSpec extends Specification {
     def mockObjectMapper = Mock(ObjectMapper)
     def mockSdncOperations = Mock(SdncOperations)
     def mockCmAvcEventService = Mock(CmAvcEventService)
-    def objectUnderTest = new DmiServiceImpl(mockDmiPluginProperties, mockNcmpRestClient, mockSdncOperations, spyObjectMapper, mockCmAvcEventService)
+    def objectUnderTest = new DmiServiceImpl(mockSdncOperations, mockNcmpRestClient, spyObjectMapper, mockDmiPluginProperties, mockCmAvcEventService)
 
     def 'Register cm handles with ncmp.'() {
         given: 'some cm-handle ids'
@@ -89,10 +89,10 @@ class DmiServiceImplSpec extends Specification {
         given: 'some cm-handle ids'
             def cmHandlesList = ['node1', 'node2']
         and: ' "JsonProcessingException" occurs during parsing'
-            objectUnderTest.objectMapper = mockObjectMapper
+            def objectUnderTestWithMockMapper = new DmiServiceImpl(mockSdncOperations, mockNcmpRestClient, mockObjectMapper, mockDmiPluginProperties, mockCmAvcEventService)
             mockObjectMapper.writeValueAsString(_) >> { throw new JsonProcessingException('some error.') }
         when: 'the cmHandles are registered'
-            objectUnderTest.registerCmHandles(cmHandlesList)
+            objectUnderTestWithMockMapper.registerCmHandles(cmHandlesList)
         then: 'a dmi exception is thrown'
             thrown(DmiException.class)
     }
