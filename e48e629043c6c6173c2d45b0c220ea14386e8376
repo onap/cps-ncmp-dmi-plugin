@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "8e36628d_cb7567b3",
+        "filename": "dmi-service/src/main/java/org/onap/cps/ncmp/dmi/notifications/cmsubscription/DmiInEventConsumer.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 94,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2026-05-06T15:09:53Z",
+      "side": 1,
+      "message": "using \u003d\u003d on ENUMS is BETTER (and handled null), I\u0027ll update our code convention rules with this. Using .equals() for all other classes in such cases is still correct!",
+      "range": {
+        "startLine": 94,
+        "startChar": 44,
+        "endLine": 94,
+        "endChar": 48
+      },
+      "revId": "e48e629043c6c6173c2d45b0c220ea14386e8376",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    }
+  ]
+}
