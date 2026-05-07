@@ -22,6 +22,30 @@
       },
       "revId": "3a5a1231469569bde912d154f676e693d2fe5592",
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "64c7cbd0_01f07201",
+        "filename": "dmi-service/src/main/java/org/onap/cps/ncmp/dmi/notifications/cmsubscription/DmiInEventConsumer.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2026-05-07T16:25:29Z",
+      "side": 0,
+      "message": "actually AI fount that!",
+      "parentUuid": "ea6cb391_45a08d69",
+      "range": {
+        "startLine": 42,
+        "startChar": 19,
+        "endLine": 42,
+        "endChar": 35
+      },
+      "revId": "3a5a1231469569bde912d154f676e693d2fe5592",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
     }
   ]
 }
