@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "ea6cb391_45a08d69",
+        "filename": "dmi-service/src/main/java/org/onap/cps/ncmp/dmi/notifications/cmsubscription/DmiInEventConsumer.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 7931
+      },
+      "writtenOn": "2026-05-07T14:50:31Z",
+      "side": 0,
+      "message": "nice catch",
+      "range": {
+        "startLine": 42,
+        "startChar": 19,
+        "endLine": 42,
+        "endChar": 35
+      },
+      "revId": "3a5a1231469569bde912d154f676e693d2fe5592",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    }
+  ]
+}
