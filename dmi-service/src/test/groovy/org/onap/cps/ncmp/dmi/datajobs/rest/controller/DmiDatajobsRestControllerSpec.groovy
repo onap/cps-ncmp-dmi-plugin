@@ -21,21 +21,22 @@
 package org.onap.cps.ncmp.dmi.datajobs.rest.controller
 
 import org.onap.cps.ncmp.dmi.config.WebSecurityConfig
+import org.onap.cps.ncmp.dmi.config.DmiPluginConfig
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.beans.factory.annotation.Value
-import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest
+import org.springframework.boot.webmvc.test.autoconfigure.WebMvcTest
 import org.springframework.context.annotation.Import
 import org.springframework.http.HttpStatus
-import org.springframework.security.test.context.support.WithMockUser
+import org.springframework.boot.webmvc.test.autoconfigure.AutoConfigureMockMvc
 import org.springframework.test.web.servlet.MockMvc
 import spock.lang.Specification
 
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post
 
-@Import(WebSecurityConfig)
+@Import([WebSecurityConfig, DmiPluginConfig])
 @WebMvcTest(DmiDatajobsRestController.class)
-@WithMockUser
+@AutoConfigureMockMvc(addFilters = false)
 class DmiDatajobsRestControllerSpec extends Specification{
 
     @Autowired
