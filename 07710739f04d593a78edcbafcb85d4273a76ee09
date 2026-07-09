@@ -1,0 +1,205 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "d4fb73b4_4cbe2cc2",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2026-07-09T15:34:05Z",
+      "side": 1,
+      "message": "my biggest concern is the extra \"-wrapping in the output as tested in DmiRestControllerSpec.groovy! That seems backward incompatible!",
+      "revId": "07710739f04d593a78edcbafcb85d4273a76ee09",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "b35dffc9_a0ce07f7",
+        "filename": "dmi-service/src/main/java/org/onap/cps/ncmp/dmi/config/DmiPluginConfig.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 45,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2026-07-09T15:34:05Z",
+      "side": 1,
+      "message": "NB: does this not fit on one line?",
+      "range": {
+        "startLine": 44,
+        "startChar": 83,
+        "endLine": 45,
+        "endChar": 44
+      },
+      "revId": "07710739f04d593a78edcbafcb85d4273a76ee09",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "7058507c_09b69133",
+        "filename": "dmi-service/src/test/groovy/org/onap/cps/ncmp/dmi/config/DmiConfigurationSpec.groovy",
+        "patchSetId": 1
+      },
+      "lineNbr": 59,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2026-07-09T15:34:05Z",
+      "side": 1,
+      "message": "tshi si no loner assert, can you assrt anythign else like it?",
+      "range": {
+        "startLine": 59,
+        "startChar": 48,
+        "endLine": 59,
+        "endChar": 79
+      },
+      "revId": "07710739f04d593a78edcbafcb85d4273a76ee09",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "15f116f9_0384f3e1",
+        "filename": "dmi-service/src/test/groovy/org/onap/cps/ncmp/dmi/config/DmiConfigurationSpec.groovy",
+        "patchSetId": 1
+      },
+      "lineNbr": 60,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2026-07-09T15:34:05Z",
+      "side": 1,
+      "message": "if you cannot assert anythign else just assert thsi object !\u003d null",
+      "range": {
+        "startLine": 60,
+        "startChar": 25,
+        "endLine": 60,
+        "endChar": 48
+      },
+      "revId": "07710739f04d593a78edcbafcb85d4273a76ee09",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "8338b1e9_f792aee0",
+        "filename": "dmi-service/src/test/groovy/org/onap/cps/ncmp/dmi/config/JettyConfigSpec.groovy",
+        "patchSetId": 1
+      },
+      "lineNbr": 65,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2026-07-09T15:34:05Z",
+      "side": 1,
+      "message": "I looked at teh version in CPS--NCMP and it still used connectionFactory instanceof HttpConnectionFactory) on line 45 instead. Maybe non of these changes are needed at all",
+      "range": {
+        "startLine": 65,
+        "startChar": 12,
+        "endLine": 65,
+        "endChar": 97
+      },
+      "revId": "07710739f04d593a78edcbafcb85d4273a76ee09",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "32c2d6cc_a839525b",
+        "filename": "dmi-service/src/test/groovy/org/onap/cps/ncmp/dmi/datajobs/rest/controller/DmiDatajobsRestControllerSpec.groovy",
+        "patchSetId": 1
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2026-07-09T15:34:05Z",
+      "side": 1,
+      "message": "we did not do this in CPS-NCMP",
+      "range": {
+        "startLine": 39,
+        "startChar": 22,
+        "endLine": 39,
+        "endChar": 40
+      },
+      "revId": "07710739f04d593a78edcbafcb85d4273a76ee09",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "153e27c1_cb26c4ed",
+        "filename": "dmi-service/src/test/groovy/org/onap/cps/ncmp/dmi/rest/controller/ControllerSecuritySpec.groovy",
+        "patchSetId": 1
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2026-07-09T15:34:05Z",
+      "side": 1,
+      "message": "NB: really needed?!",
+      "range": {
+        "startLine": 36,
+        "startChar": 28,
+        "endLine": 36,
+        "endChar": 43
+      },
+      "revId": "07710739f04d593a78edcbafcb85d4273a76ee09",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "35aff8fe_dc35d007",
+        "filename": "dmi-service/src/test/groovy/org/onap/cps/ncmp/dmi/rest/controller/DmiRestControllerSpec.groovy",
+        "patchSetId": 1
+      },
+      "lineNbr": 300,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2026-07-09T15:34:05Z",
+      "side": 1,
+      "message": "this look like a major fucntional difference?! AN extra pair of \" \"!\nI doubn that is correct... But maybe it is just a tets setup thing...",
+      "range": {
+        "startLine": 300,
+        "startChar": 138,
+        "endLine": 300,
+        "endChar": 139
+      },
+      "revId": "07710739f04d593a78edcbafcb85d4273a76ee09",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "2d5e7355_992b977b",
+        "filename": "dmi-service/src/test/groovy/org/onap/cps/ncmp/dmi/rest/controller/ProvMnsControllerSpec.groovy",
+        "patchSetId": 1
+      },
+      "lineNbr": 45,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2026-07-09T15:34:05Z",
+      "side": 1,
+      "message": "needed ?",
+      "range": {
+        "startLine": 45,
+        "startChar": 28,
+        "endLine": 45,
+        "endChar": 43
+      },
+      "revId": "07710739f04d593a78edcbafcb85d4273a76ee09",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    }
+  ]
+}
