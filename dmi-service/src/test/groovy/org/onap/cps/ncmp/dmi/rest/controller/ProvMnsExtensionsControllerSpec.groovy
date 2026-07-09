@@ -20,13 +20,10 @@
 
 package org.onap.cps.ncmp.dmi.rest.controller
 
-import com.fasterxml.jackson.databind.ObjectMapper
-import org.onap.cps.ncmp.dmi.config.WebSecurityConfig
 import org.onap.cps.ncmp.dmi.provmns.api.ProvMnSExtensionsController
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.beans.factory.annotation.Value
-import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest
-import org.springframework.context.annotation.Import
+import org.springframework.boot.webmvc.test.autoconfigure.WebMvcTest
 import org.springframework.http.HttpStatus
 import org.springframework.http.MediaType
 import org.springframework.test.web.servlet.MockMvc
@@ -35,7 +32,6 @@ import spock.lang.Specification
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*
 
 @WebMvcTest(ProvMnSExtensionsController)
-@Import(WebSecurityConfig)
 class ProvMnsExtensionsControllerSpec extends Specification {
 
     @Autowired
