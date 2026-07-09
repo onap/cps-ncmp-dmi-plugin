@@ -26,13 +26,13 @@ import org.springframework.context.annotation.Import
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get
 
 import org.springframework.beans.factory.annotation.Autowired
-import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest
+import org.springframework.boot.webmvc.test.autoconfigure.WebMvcTest
 import org.springframework.http.HttpStatus
 import org.springframework.test.web.servlet.MockMvc
 import spock.lang.Specification
 
 @WebMvcTest(controllers = TestController.class)
-@Import(WebSecurityConfig)
+@Import([WebSecurityConfig])
 class ControllerSecuritySpec extends Specification {
 
     @Autowired

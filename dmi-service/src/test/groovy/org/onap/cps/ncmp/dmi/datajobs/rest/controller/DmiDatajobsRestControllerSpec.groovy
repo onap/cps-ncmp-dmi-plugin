@@ -23,19 +23,21 @@ package org.onap.cps.ncmp.dmi.datajobs.rest.controller
 import org.onap.cps.ncmp.dmi.config.WebSecurityConfig
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.beans.factory.annotation.Value
-import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest
+import org.springframework.boot.test.context.TestConfiguration
+import org.springframework.boot.webmvc.test.autoconfigure.MockMvcBuilderCustomizer
+import org.springframework.boot.webmvc.test.autoconfigure.WebMvcTest
+import org.springframework.context.annotation.Bean
 import org.springframework.context.annotation.Import
 import org.springframework.http.HttpStatus
-import org.springframework.security.test.context.support.WithMockUser
 import org.springframework.test.web.servlet.MockMvc
+import org.springframework.test.web.servlet.setup.ConfigurableMockMvcBuilder
 import spock.lang.Specification
 
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post
 
-@Import(WebSecurityConfig)
+@Import([WebSecurityConfig, DmiDatajobsRestControllerSpec.DefaultAuthMockMvcConfig])
 @WebMvcTest(DmiDatajobsRestController.class)
-@WithMockUser
 class DmiDatajobsRestControllerSpec extends Specification{
 
     @Autowired
@@ -90,5 +92,20 @@ class DmiDatajobsRestControllerSpec extends Specification{
             ).andReturn().response
         then: 'response value is Not Implemented'
             response.status == HttpStatus.NOT_IMPLEMENTED.value()
+    }
+
+    /**
+     * Applies a Basic auth header to every MockMvc request by default, so individual
+     * tests do not need to attach authentication themselves.
+     */
+    @TestConfiguration
+    static class DefaultAuthMockMvcConfig {
+
+        @Bean
+        MockMvcBuilderCustomizer defaultAuthMockMvcBuilderCustomizer() {
+            return { final ConfigurableMockMvcBuilder<?> builder ->
+                builder.defaultRequest(get('/').header('Authorization', 'Basic Y3BzdXNlcjpjcHNyMGNrcyE='))
+            } as MockMvcBuilderCustomizer
+        }
     }
 }
