@@ -25,7 +25,7 @@ import org.eclipse.jetty.server.Connector
 import org.eclipse.jetty.server.HttpConfiguration
 import org.eclipse.jetty.server.HttpConnectionFactory
 import org.eclipse.jetty.server.Server
-import org.springframework.boot.web.embedded.jetty.JettyServletWebServerFactory
+import org.springframework.boot.jetty.servlet.JettyServletWebServerFactory
 import spock.lang.Specification
 
 class JettyConfigSpec extends Specification{
@@ -38,15 +38,16 @@ class JettyConfigSpec extends Specification{
         given: 'a Jetty server factory'
             def jettyServletWebServerFactory = new JettyServletWebServerFactory()
         and: 'a mocked connection factory (Http or Non-Http)'
-            def connectionFactory = connectionFactoryType == 'http' ? Mock(HttpConnectionFactory) : Mock(ConnectionFactory)
+            def httpConnectionFactory = Mock(HttpConnectionFactory)
+            def connectionFactory = connectionFactoryType == 'http' ? httpConnectionFactory : null
         and: 'optional mock for HttpConfiguration if applicable'
             def httpConfig = null
-            if (connectionFactory instanceof HttpConnectionFactory) {
+            if (connectionFactory != null) {
                 httpConfig = Mock(HttpConfiguration)
-                connectionFactory.getHttpConfiguration() >> httpConfig
+                httpConnectionFactory.getHttpConfiguration() >> httpConfig
             }
         and: 'mocked components return expected values'
-            connector.getConnectionFactories() >> [connectionFactory]
+            connector.getConnectionFactories() >> (connectionFactory != null ? [connectionFactory] : [])
             server.getConnectors() >> [connector]
         when: 'JettyConfig customization is triggered on the server factory'
             objectUnderTest.customize(jettyServletWebServerFactory)
@@ -55,10 +56,12 @@ class JettyConfigSpec extends Specification{
         and: 'the customizer is applied to the mocked Jetty server'
             serverCustomizer.customize(server)
         then: 'only the HTTP configuration is updated to allow ambiguous path separators'
-            expectedCalls * httpConfig.setUriCompliance({ it.toString().contains('AMBIGUOUS_PATH_SEPARATOR') })
+            if (httpConfig != null) {
+                expectedCalls * httpConfig.setUriCompliance({ it.toString().contains('AMBIGUOUS_PATH_SEPARATOR') })
+            }
         where: 'type of connection factories'
             scenario                                                 | connectionFactoryType || expectedCalls
             'HttpConnectionFactory - should configure UriCompliance' | 'http'                || 1
-            'Non-HttpConnectionFactory - should do nothing'          | 'non-http'            || 0
+            'No HttpConnectionFactory - should do nothing'           | 'non-http'            || 0
     }
 }

@@ -27,6 +27,7 @@ import ch.qos.logback.classic.spi.ILoggingEvent
 import ch.qos.logback.core.read.ListAppender
 import org.onap.cps.ncmp.dmi.TestUtils
 import org.onap.cps.ncmp.dmi.config.WebSecurityConfig
+import org.onap.cps.ncmp.dmi.config.DmiPluginConfig
 import org.onap.cps.ncmp.dmi.exception.DmiException
 import org.onap.cps.ncmp.dmi.exception.ModuleResourceNotFoundException
 import org.onap.cps.ncmp.dmi.exception.ModulesNotFoundException
@@ -42,12 +43,12 @@ import org.slf4j.LoggerFactory
 import org.spockframework.spring.SpringBean
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.beans.factory.annotation.Value
-import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest
+import org.springframework.boot.webmvc.test.autoconfigure.WebMvcTest
 import org.springframework.context.annotation.Import
 import org.springframework.http.HttpStatus
 import org.springframework.http.MediaType
 import org.springframework.kafka.core.KafkaTemplate
-import org.springframework.security.test.context.support.WithMockUser
+import org.springframework.boot.webmvc.test.autoconfigure.AutoConfigureMockMvc
 import org.springframework.test.web.servlet.MockMvc
 import spock.lang.Specification
 
@@ -63,9 +64,9 @@ import static org.springframework.http.HttpStatus.NO_CONTENT
 import static org.springframework.http.HttpStatus.OK
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post
 
-@Import(WebSecurityConfig)
+@Import([WebSecurityConfig, DmiPluginConfig])
 @WebMvcTest(DmiRestController.class)
-@WithMockUser
+@AutoConfigureMockMvc(addFilters = false)
 class DmiRestControllerSpec extends Specification {
 
     @Autowired
@@ -296,11 +297,11 @@ class DmiRestControllerSpec extends Specification {
             response.getContentAsString() == expectedJsonResponse
         where: 'given request body and data'
             scenario   | requestBodyFile                 | operationEnum     | dataType                      || expectedResponseStatus | expectedJsonResponse
-            'Create'   | 'createDataWithNormalChar.json' | CREATE            | 'application/json'            || CREATED.value()        | '{some-json}'
-            'Update'   | 'updateData.json'               | UPDATE            | 'application/json'            || OK.value()             | '{some-json}'
-            'Delete'   | 'deleteData.json'               | DELETE            | 'application/json'            || NO_CONTENT.value()     | '{some-json}'
+            'Create'   | 'createDataWithNormalChar.json' | CREATE            | 'application/json'            || CREATED.value()        | '"{some-json}"'
+            'Update'   | 'updateData.json'               | UPDATE            | 'application/json'            || OK.value()             | '"{some-json}"'
+            'Delete'   | 'deleteData.json'               | DELETE            | 'application/json'            || NO_CONTENT.value()     | '"{some-json}"'
             'Read'     | 'readData.json'                 | READ              | 'application/json'            || OK.value()             | ''
-            'Patch'    | 'patchData.json'                | PATCH             | 'application/yang.patch+json' || OK.value()             | '{some-json}'
+            'Patch'    | 'patchData.json'                | PATCH             | 'application/yang.patch+json' || OK.value()             | '"{some-json}"'
     }
 
     def 'Create data using passthrough for special characters.'(){
@@ -319,7 +320,7 @@ class DmiRestControllerSpec extends Specification {
         then: 'response status is CREATED'
             response.status == CREATED.value()
         and: 'the response content matches the result from the DMI service'
-            response.getContentAsString() == '{some-json}'
+            response.getContentAsString() == '"{some-json}"'
     }
 
     def 'PassThrough Returns OK when topic is used for async'(){

@@ -22,13 +22,14 @@ package org.onap.cps.ncmp.dmi.rest.controller
 
 import com.fasterxml.jackson.databind.ObjectMapper
 import org.onap.cps.ncmp.dmi.config.WebSecurityConfig
+import org.onap.cps.ncmp.dmi.config.DmiPluginConfig
 import org.onap.cps.ncmp.dmi.provmns.api.ProvMnsController
 import org.onap.cps.ncmp.provmns.model.PatchItem
 import org.onap.cps.ncmp.provmns.model.PatchOperation
 import org.onap.cps.ncmp.provmns.model.ResourceOneOf
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.beans.factory.annotation.Value
-import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest
+import org.springframework.boot.webmvc.test.autoconfigure.WebMvcTest
 import org.springframework.context.annotation.Import
 import org.springframework.http.HttpStatus
 import org.springframework.http.MediaType
@@ -41,7 +42,7 @@ import static org.springframework.test.web.servlet.request.MockMvcRequestBuilder
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.put
 
 @WebMvcTest(ProvMnsController)
-@Import(WebSecurityConfig)
+@Import([WebSecurityConfig, DmiPluginConfig])
 class ProvMnsControllerSpec extends Specification {
 
     @Autowired

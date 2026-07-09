@@ -22,8 +22,8 @@ package org.onap.cps.ncmp.dmi.config
 
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.boot.test.context.SpringBootTest
-import org.springframework.boot.web.client.RestTemplateBuilder
 import org.springframework.test.context.ContextConfiguration
+import org.springframework.web.client.RestTemplate
 import spock.lang.Specification
 
 @SpringBootTest
@@ -54,12 +54,10 @@ class DmiConfigurationSpec extends Specification {
     def 'Rest template building.'() {
         given: 'a DMI configuration'
             DmiConfiguration objectUnderTest = new DmiConfiguration()
-        and: 'a rest template builder'
-            RestTemplateBuilder mockRestTemplateBuilder = Spy(RestTemplateBuilder)
         when: 'rest template method is invoked'
-            objectUnderTest.restTemplate(mockRestTemplateBuilder)
-        then: 'DMI configuration uses the connectTimeout method on the template builder'
-            1 * mockRestTemplateBuilder.connectTimeout(_)
+            def restTemplate = objectUnderTest.restTemplate()
+        then: 'a rest template is returned with HttpComponents request factory'
+            restTemplate instanceof RestTemplate
     }
 
 }
