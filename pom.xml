@@ -47,20 +47,20 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 
         <!-- Application and Docker Configuration -->
-        <base.image>${docker.pull.registry}/onap/integration-java17:12.0.0</base.image>
+        <base.image>${docker.pull.registry}/onap/policy-jre-alpine:5.0.0</base.image>
         <image.tag>${project.version}-${maven.build.timestamp}</image.tag>
 
         <!-- Project Versioning and Timestamp -->
         <cps.groupId>org.onap.cps</cps.groupId>
-        <cps.version>3.7.7</cps.version>
+        <cps.version>3.7.9</cps.version>
         <maven.build.timestamp.format>yyyyMMdd'T'HHmmss'Z'</maven.build.timestamp.format>
 
         <!-- Code Quality and Dependency Management -->
         <checkstyle.config.location>${project.basedir}</checkstyle.config.location>
         <maven.checkstyle.plugin.version>3.3.1</maven.checkstyle.plugin.version>
         <maven.compiler.plugin.version>3.14.1</maven.compiler.plugin.version>
-        <maven.compiler.source>17</maven.compiler.source>
-        <maven.compiler.target>17</maven.compiler.target>
+        <maven.compiler.source>21</maven.compiler.source>
+        <maven.compiler.target>21</maven.compiler.target>
         <maven.dependency.plugin.version>3.7.1</maven.dependency.plugin.version>
         <maven.deploy.plugin.version>3.1.2</maven.deploy.plugin.version>
         <maven.deploy.skip>false</maven.deploy.skip>
@@ -184,8 +184,8 @@
                     <version>${maven.compiler.plugin.version}</version>
                     <configuration>
                         <encoding>${project.build.sourceEncoding}</encoding>
-                        <source>17</source>
-                        <target>17</target>
+                        <source>21</source>
+                        <target>21</target>
                     </configuration>
                 </plugin>
             </plugins>

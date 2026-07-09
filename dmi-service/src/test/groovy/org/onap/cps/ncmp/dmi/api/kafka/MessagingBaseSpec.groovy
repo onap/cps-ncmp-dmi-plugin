@@ -45,7 +45,7 @@ class MessagingBaseSpec extends Specification {
         kafkaTestContainer.stop()
     }
 
-    static kafkaTestContainer = new KafkaContainer(DockerImageName.parse('registry.nordix.org/onaptest/confluentinc/cp-kafka:6.2.1').asCompatibleSubstituteFor('confluentinc/cp-kafka'))
+    static kafkaTestContainer = new KafkaContainer(DockerImageName.parse('confluentinc/cp-kafka:7.8.0'))
 
     def producerConfigProperties(valueSerializer) {
         return [('bootstrap.servers'): kafkaTestContainer.getBootstrapServers().split(',')[0],

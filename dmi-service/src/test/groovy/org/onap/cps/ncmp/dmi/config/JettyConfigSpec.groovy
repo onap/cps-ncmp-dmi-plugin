@@ -1,6 +1,6 @@
 /*
  * ============LICENSE_START=======================================================
- * Copyright (C) 2025 OpenInfra Foundation Europe. All rights reserved.
+ * Copyright (C) 2025-2026 OpenInfra Foundation Europe. All rights reserved.
  * ================================================================================
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -25,40 +25,44 @@ import org.eclipse.jetty.server.Connector
 import org.eclipse.jetty.server.HttpConfiguration
 import org.eclipse.jetty.server.HttpConnectionFactory
 import org.eclipse.jetty.server.Server
-import org.springframework.boot.web.embedded.jetty.JettyServletWebServerFactory
+import org.springframework.boot.jetty.servlet.JettyServletWebServerFactory
 import spock.lang.Specification
 
-class JettyConfigSpec extends Specification{
+class JettyConfigSpec extends Specification {
 
     def objectUnderTest = new JettyConfig()
     def server = Mock(Server)
     def connector = Mock(Connector)
+    def mockServerCustomizer
 
-    def 'Enable support for ambiguous path separators in Jetty Http configuration'() {
-        given: 'a Jetty server factory'
-            def jettyServletWebServerFactory = new JettyServletWebServerFactory()
-        and: 'a mocked connection factory (Http or Non-Http)'
-            def connectionFactory = connectionFactoryType == 'http' ? Mock(HttpConnectionFactory) : Mock(ConnectionFactory)
-        and: 'optional mock for HttpConfiguration if applicable'
-            def httpConfig = null
-            if (connectionFactory instanceof HttpConnectionFactory) {
-                httpConfig = Mock(HttpConfiguration)
-                connectionFactory.getHttpConfiguration() >> httpConfig
-            }
-        and: 'mocked components return expected values'
+    def setup() {
+        server.getConnectors() >> [connector]
+        def jettyServletWebServerFactory = new JettyServletWebServerFactory()
+        objectUnderTest.customize(jettyServletWebServerFactory)
+        mockServerCustomizer = jettyServletWebServerFactory.serverCustomizers.first()
+    }
+
+    def 'Customize with Http connection factory.'() {
+        given: 'a mocked HttpConnectionFactory with HttpConfiguration'
+            def connectionFactory = Mock(HttpConnectionFactory)
+            def httpConfig = Mock(HttpConfiguration)
+            connectionFactory.getHttpConfiguration() >> httpConfig
             connector.getConnectionFactories() >> [connectionFactory]
-            server.getConnectors() >> [connector]
-        when: 'JettyConfig customization is triggered on the server factory'
-            objectUnderTest.customize(jettyServletWebServerFactory)
-        and: 'a server customizer is extracted from the configured factory'
-            def serverCustomizer = jettyServletWebServerFactory.serverCustomizers.first()
-        and: 'the customizer is applied to the mocked Jetty server'
-            serverCustomizer.customize(server)
-        then: 'only the HTTP configuration is updated to allow ambiguous path separators'
-            expectedCalls * httpConfig.setUriCompliance({ it.toString().contains('AMBIGUOUS_PATH_SEPARATOR') })
-        where: 'type of connection factories'
-            scenario                                                 | connectionFactoryType || expectedCalls
-            'HttpConnectionFactory - should configure UriCompliance' | 'http'                || 1
-            'Non-HttpConnectionFactory - should do nothing'          | 'non-http'            || 0
+        when: 'the server customizer is applied to the mocked Jetty server'
+            mockServerCustomizer.customize(server)
+        then: 'the HTTP configuration is updated to allow ambiguous path separators'
+            1 * httpConfig.setUriCompliance({
+                it.toString().contains('AMBIGUOUS_PATH_SEPARATOR')
+            })
+    }
+
+    def 'Customize with other connection factory.'() {
+        given: 'a mocked non-Http ConnectionFactory'
+            def connectionFactory = Mock(ConnectionFactory)
+            connector.getConnectionFactories() >> [connectionFactory]
+        when: 'the server customizer is applied to the mocked Jetty server'
+            mockServerCustomizer.customize(server)
+        then: 'no configuration methods are called on the connection factory'
+            0 * connectionFactory._
     }
 }
