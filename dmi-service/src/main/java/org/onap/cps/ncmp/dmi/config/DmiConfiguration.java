@@ -20,10 +20,14 @@
 
 package org.onap.cps.ncmp.dmi.config;
 
-import java.time.Duration;
+import java.util.concurrent.TimeUnit;
 import lombok.Getter;
+import org.apache.hc.client5.http.config.ConnectionConfig;
+import org.apache.hc.client5.http.impl.classic.CloseableHttpClient;
+import org.apache.hc.client5.http.impl.classic.HttpClients;
+import org.apache.hc.client5.http.impl.io.PoolingHttpClientConnectionManagerBuilder;
+import org.apache.hc.client5.http.io.HttpClientConnectionManager;
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.boot.web.client.RestTemplateBuilder;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.http.client.HttpComponentsClientHttpRequestFactory;
@@ -67,14 +71,21 @@ public class DmiConfiguration {
     /**
      * Returns restTemplate bean for the spring context.
      *
-     * @param restTemplateBuilder   restTemplate builder
      * @return {@code RestTemplate} rest template
      */
     @Bean
-    @SuppressWarnings("squid:S1612") // Method reference is ambiguous due to overloaded requestFactory()
-    public RestTemplate restTemplate(final RestTemplateBuilder restTemplateBuilder) {
-        return restTemplateBuilder.connectTimeout(Duration.ofMillis(TIMEOUT))
-            .requestFactory(() -> new HttpComponentsClientHttpRequestFactory())
+    public RestTemplate restTemplate() {
+        final ConnectionConfig connectionConfig = ConnectionConfig.custom()
+            .setConnectTimeout(TIMEOUT, TimeUnit.MILLISECONDS)
             .build();
+        final HttpClientConnectionManager connectionManager = PoolingHttpClientConnectionManagerBuilder.create()
+            .setDefaultConnectionConfig(connectionConfig)
+            .build();
+        final CloseableHttpClient httpClient = HttpClients.custom()
+            .setConnectionManager(connectionManager)
+            .build();
+        final HttpComponentsClientHttpRequestFactory requestFactory =
+            new HttpComponentsClientHttpRequestFactory(httpClient);
+        return new RestTemplate(requestFactory);
     }
 }
