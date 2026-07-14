@@ -26,6 +26,30 @@
     {
       "unresolved": false,
       "key": {
+        "uuid": "d8b1f308_0dc33ed9",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 8088
+      },
+      "writtenOn": "2026-07-14T09:04:56Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "0d184c06_804775b7",
+      "range": {
+        "startLine": 7,
+        "startChar": 33,
+        "endLine": 7,
+        "endChar": 39
+      },
+      "revId": "07710739f04d593a78edcbafcb85d4273a76ee09",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
+      "unresolved": false,
+      "key": {
         "uuid": "d4fb73b4_4cbe2cc2",
         "filename": "/PATCHSET_LEVEL",
         "patchSetId": 1
@@ -64,6 +88,30 @@
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "68de9b63_eb54b61e",
+        "filename": "dmi-service/pom.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 49,
+      "author": {
+        "id": 8088
+      },
+      "writtenOn": "2026-07-14T09:04:56Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "e4544bf9_c1ed42ab",
+      "range": {
+        "startLine": 49,
+        "startChar": 44,
+        "endLine": 49,
+        "endChar": 47
+      },
+      "revId": "07710739f04d593a78edcbafcb85d4273a76ee09",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "b35dffc9_a0ce07f7",
@@ -77,6 +125,30 @@
       "writtenOn": "2026-07-09T15:34:05Z",
       "side": 1,
       "message": "NB: does this not fit on one line?",
+      "range": {
+        "startLine": 44,
+        "startChar": 83,
+        "endLine": 45,
+        "endChar": 44
+      },
+      "revId": "07710739f04d593a78edcbafcb85d4273a76ee09",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "3d81a3ce_315552c7",
+        "filename": "dmi-service/src/main/java/org/onap/cps/ncmp/dmi/config/DmiPluginConfig.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 45,
+      "author": {
+        "id": 8088
+      },
+      "writtenOn": "2026-07-14T09:04:56Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "b35dffc9_a0ce07f7",
       "range": {
         "startLine": 44,
         "startChar": 83,
@@ -110,6 +182,30 @@
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "4f8688ab_b798456b",
+        "filename": "dmi-service/src/test/groovy/org/onap/cps/ncmp/dmi/config/DmiConfigurationSpec.groovy",
+        "patchSetId": 1
+      },
+      "lineNbr": 59,
+      "author": {
+        "id": 8088
+      },
+      "writtenOn": "2026-07-14T09:04:56Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "7058507c_09b69133",
+      "range": {
+        "startLine": 59,
+        "startChar": 48,
+        "endLine": 59,
+        "endChar": 79
+      },
+      "revId": "07710739f04d593a78edcbafcb85d4273a76ee09",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "15f116f9_0384f3e1",
@@ -123,6 +219,30 @@
       "writtenOn": "2026-07-09T15:34:05Z",
       "side": 1,
       "message": "if you cannot assert anythign else just assert thsi object !\u003d null",
+      "range": {
+        "startLine": 60,
+        "startChar": 25,
+        "endLine": 60,
+        "endChar": 48
+      },
+      "revId": "07710739f04d593a78edcbafcb85d4273a76ee09",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "996c60a9_31961fb1",
+        "filename": "dmi-service/src/test/groovy/org/onap/cps/ncmp/dmi/config/DmiConfigurationSpec.groovy",
+        "patchSetId": 1
+      },
+      "lineNbr": 60,
+      "author": {
+        "id": 8088
+      },
+      "writtenOn": "2026-07-14T09:04:56Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "15f116f9_0384f3e1",
       "range": {
         "startLine": 60,
         "startChar": 25,
@@ -156,6 +276,30 @@
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "e2cb7ce5_e52784bd",
+        "filename": "dmi-service/src/test/groovy/org/onap/cps/ncmp/dmi/config/JettyConfigSpec.groovy",
+        "patchSetId": 1
+      },
+      "lineNbr": 65,
+      "author": {
+        "id": 8088
+      },
+      "writtenOn": "2026-07-14T09:04:56Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "8338b1e9_f792aee0",
+      "range": {
+        "startLine": 65,
+        "startChar": 12,
+        "endLine": 65,
+        "endChar": 97
+      },
+      "revId": "07710739f04d593a78edcbafcb85d4273a76ee09",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "32c2d6cc_a839525b",
@@ -169,6 +313,30 @@
       "writtenOn": "2026-07-09T15:34:05Z",
       "side": 1,
       "message": "we did not do this in CPS-NCMP",
+      "range": {
+        "startLine": 39,
+        "startChar": 22,
+        "endLine": 39,
+        "endChar": 40
+      },
+      "revId": "07710739f04d593a78edcbafcb85d4273a76ee09",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "281907e5_06426e53",
+        "filename": "dmi-service/src/test/groovy/org/onap/cps/ncmp/dmi/datajobs/rest/controller/DmiDatajobsRestControllerSpec.groovy",
+        "patchSetId": 1
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 8088
+      },
+      "writtenOn": "2026-07-14T09:04:56Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "32c2d6cc_a839525b",
       "range": {
         "startLine": 39,
         "startChar": 22,
@@ -202,6 +370,30 @@
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "cf4b5596_23f757a4",
+        "filename": "dmi-service/src/test/groovy/org/onap/cps/ncmp/dmi/rest/controller/ControllerSecuritySpec.groovy",
+        "patchSetId": 1
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 8088
+      },
+      "writtenOn": "2026-07-14T09:04:56Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "153e27c1_cb26c4ed",
+      "range": {
+        "startLine": 36,
+        "startChar": 28,
+        "endLine": 36,
+        "endChar": 43
+      },
+      "revId": "07710739f04d593a78edcbafcb85d4273a76ee09",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "35aff8fe_dc35d007",
@@ -225,6 +417,30 @@
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "1fb462d1_c97f3632",
+        "filename": "dmi-service/src/test/groovy/org/onap/cps/ncmp/dmi/rest/controller/DmiRestControllerSpec.groovy",
+        "patchSetId": 1
+      },
+      "lineNbr": 300,
+      "author": {
+        "id": 8088
+      },
+      "writtenOn": "2026-07-14T09:04:56Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "35aff8fe_dc35d007",
+      "range": {
+        "startLine": 300,
+        "startChar": 138,
+        "endLine": 300,
+        "endChar": 139
+      },
+      "revId": "07710739f04d593a78edcbafcb85d4273a76ee09",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "2d5e7355_992b977b",
@@ -238,6 +454,30 @@
       "writtenOn": "2026-07-09T15:34:05Z",
       "side": 1,
       "message": "needed ?",
+      "range": {
+        "startLine": 45,
+        "startChar": 28,
+        "endLine": 45,
+        "endChar": 43
+      },
+      "revId": "07710739f04d593a78edcbafcb85d4273a76ee09",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "686dd656_3d329cf3",
+        "filename": "dmi-service/src/test/groovy/org/onap/cps/ncmp/dmi/rest/controller/ProvMnsControllerSpec.groovy",
+        "patchSetId": 1
+      },
+      "lineNbr": 45,
+      "author": {
+        "id": 8088
+      },
+      "writtenOn": "2026-07-14T09:04:56Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "2d5e7355_992b977b",
       "range": {
         "startLine": 45,
         "startChar": 28,
