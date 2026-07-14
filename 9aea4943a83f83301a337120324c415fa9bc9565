@@ -1,0 +1,44 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "ed2b9c4a_7a7de75d",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 8171
+      },
+      "writtenOn": "2026-07-14T13:57:48Z",
+      "side": 1,
+      "message": "Just a minor comment",
+      "revId": "9aea4943a83f83301a337120324c415fa9bc9565",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "d0071b55_ae892bf3",
+        "filename": "dmi-service/src/test/groovy/org/onap/cps/ncmp/dmi/api/kafka/MessagingBaseSpec.groovy",
+        "patchSetId": 3
+      },
+      "lineNbr": 48,
+      "author": {
+        "id": 8171
+      },
+      "writtenOn": "2026-07-14T13:57:48Z",
+      "side": 1,
+      "message": "The latest version is 8.2.2, see if it works, better to be up to date",
+      "range": {
+        "startLine": 48,
+        "startChar": 96,
+        "endLine": 48,
+        "endChar": 101
+      },
+      "revId": "9aea4943a83f83301a337120324c415fa9bc9565",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    }
+  ]
+}
