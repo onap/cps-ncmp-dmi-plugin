@@ -58,6 +58,30 @@
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "edd2be38_ef9e2707",
+        "filename": "dmi-service/src/main/java/org/onap/cps/ncmp/dmi/config/DmiPluginConfig.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 53,
+      "author": {
+        "id": 8088
+      },
+      "writtenOn": "2026-07-21T12:21:15Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "aadb6524_56827366",
+      "range": {
+        "startLine": 53,
+        "startChar": 79,
+        "endLine": 53,
+        "endChar": 89
+      },
+      "revId": "9aea4943a83f83301a337120324c415fa9bc9565",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "d0071b55_ae892bf3",
@@ -152,6 +176,30 @@
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "f91a8476_42ecf696",
+        "filename": "dmi-service/src/test/groovy/org/onap/cps/ncmp/dmi/config/JettyConfigSpec.groovy",
+        "patchSetId": 3
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 8088
+      },
+      "writtenOn": "2026-07-21T12:21:15Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "27dd3817_5f01effc",
+      "range": {
+        "startLine": 37,
+        "startChar": 30,
+        "endLine": 37,
+        "endChar": 63
+      },
+      "revId": "9aea4943a83f83301a337120324c415fa9bc9565",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "51c7bb8a_136011ba",
@@ -165,6 +213,30 @@
       "writtenOn": "2026-07-20T10:45:53Z",
       "side": 1,
       "message": "dont get AI to generate these. It breaks our convetion: NOT expectation in teh title!",
+      "range": {
+        "startLine": 57,
+        "startChar": 9,
+        "endLine": 57,
+        "endChar": 54
+      },
+      "revId": "9aea4943a83f83301a337120324c415fa9bc9565",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "7ba8f1af_887a9214",
+        "filename": "dmi-service/src/test/groovy/org/onap/cps/ncmp/dmi/config/JettyConfigSpec.groovy",
+        "patchSetId": 3
+      },
+      "lineNbr": 57,
+      "author": {
+        "id": 8088
+      },
+      "writtenOn": "2026-07-21T12:21:15Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "51c7bb8a_136011ba",
       "range": {
         "startLine": 57,
         "startChar": 9,
@@ -200,6 +272,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "38ef1eb8_8ed697fa",
+        "filename": "dmi-service/src/test/groovy/org/onap/cps/ncmp/dmi/datajobs/rest/controller/DmiDatajobsRestControllerSpec.groovy",
+        "patchSetId": 3
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 8088
+      },
+      "writtenOn": "2026-07-21T12:21:15Z",
+      "side": 1,
+      "message": "1. Removed DmiPluginConfig from @Import\n\nDmiPluginConfig was only pulled in during the Spring Boot 4.1 upgrade as part of the addFilters \u003d false workaround. This controller (DmiDatajobsRestController) returns simple 501 responses with no request/response body serialization, so it doesn\u0027t actually need the Jackson message converters that DmiPluginConfig provides. With nothing depending on it, importing it is dead weight — so it\u0027s removed.\n\n2. Removed @AutoConfigureMockMvc(addFilters \u003d false)\n\naddFilters \u003d false turns off the security filter chain entirely. That means the tests were running with security completely bypassed — not testing anything close to real behavior. Since we now want real security active (and authenticate properly instead), disabling filters is no longer needed and would defeat the purpose, so it\u0027s removed.\n\n3. Added DefaultAuthMockMvcConfig to @Import\n\nWith filters back on, every request needs authentication or it fails with 401. Rather than adding an Authorization header in each test method, this nested @TestConfiguration registers a MockMvcBuilderCustomizer that attaches a default Basic-auth header to every MockMvc request automatically.",
+      "parentUuid": "bee00c17_b0546cd2",
+      "range": {
+        "startLine": 39,
+        "startChar": 22,
+        "endLine": 39,
+        "endChar": 40
+      },
+      "revId": "9aea4943a83f83301a337120324c415fa9bc9565",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "84943473_6b350236",
         "filename": "dmi-service/src/test/groovy/org/onap/cps/ncmp/dmi/rest/controller/ControllerSecuritySpec.groovy",
         "patchSetId": 3
@@ -223,6 +319,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "6a701dfa_bf49847c",
+        "filename": "dmi-service/src/test/groovy/org/onap/cps/ncmp/dmi/rest/controller/ControllerSecuritySpec.groovy",
+        "patchSetId": 3
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 8088
+      },
+      "writtenOn": "2026-07-21T12:21:15Z",
+      "side": 1,
+      "message": "ControllerSecuritySpec still passes without DmiPluginConfig.",
+      "parentUuid": "84943473_6b350236",
+      "range": {
+        "startLine": 36,
+        "startChar": 28,
+        "endLine": 36,
+        "endChar": 43
+      },
+      "revId": "9aea4943a83f83301a337120324c415fa9bc9565",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "7ec896d1_efd7da54",
         "filename": "dmi-service/src/test/groovy/org/onap/cps/ncmp/dmi/rest/controller/DmiRestControllerSpec.groovy",
         "patchSetId": 3
@@ -234,6 +354,30 @@
       "writtenOn": "2026-07-20T10:45:53Z",
       "side": 1,
       "message": "OK teh \" wrapping is gone, but please explain how/why",
+      "range": {
+        "startLine": 297,
+        "startChar": 137,
+        "endLine": 297,
+        "endChar": 150
+      },
+      "revId": "9aea4943a83f83301a337120324c415fa9bc9565",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "8c9381ca_38b8d451",
+        "filename": "dmi-service/src/test/groovy/org/onap/cps/ncmp/dmi/rest/controller/DmiRestControllerSpec.groovy",
+        "patchSetId": 3
+      },
+      "lineNbr": 297,
+      "author": {
+        "id": 8088
+      },
+      "writtenOn": "2026-07-21T12:21:15Z",
+      "side": 1,
+      "message": "The \"...\" wrapping is Jackson\u0027s JSON string-encoding. It\u0027s gone because the controller returns a String, and Spring\u0027s default @WebMvcTest converters write a String verbatim via StringHttpMessageConverter instead of through Jackson. This is built into @WebMvcTest, not DmiPluginConfig — I confirmed the spec still passes without DmiPluginConfig.",
+      "parentUuid": "7ec896d1_efd7da54",
       "range": {
         "startLine": 297,
         "startChar": 137,
