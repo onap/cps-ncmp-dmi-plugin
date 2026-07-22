@@ -155,6 +155,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "e89aed13_cedba5eb",
+        "filename": "dmi-service/src/test/groovy/org/onap/cps/ncmp/dmi/api/kafka/MessagingBaseSpec.groovy",
+        "patchSetId": 3
+      },
+      "lineNbr": 48,
+      "author": {
+        "id": 8088
+      },
+      "writtenOn": "2026-07-22T11:00:15Z",
+      "side": 1,
+      "message": "Migrate Kafka Testcontainer to KRaft-aware KafkaContainer and upgrade cp-kafka image will be done in separate task\nhttps://lf-onap.atlassian.net/browse/CPS-3295",
+      "parentUuid": "a903c04e_b0dd7569",
+      "range": {
+        "startLine": 48,
+        "startChar": 96,
+        "endLine": 48,
+        "endChar": 101
+      },
+      "revId": "9aea4943a83f83301a337120324c415fa9bc9565",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "27dd3817_5f01effc",
         "filename": "dmi-service/src/test/groovy/org/onap/cps/ncmp/dmi/config/JettyConfigSpec.groovy",
         "patchSetId": 3
