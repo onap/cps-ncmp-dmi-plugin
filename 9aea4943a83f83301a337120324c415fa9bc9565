@@ -177,6 +177,30 @@
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "a9281b99_01b97f13",
+        "filename": "dmi-service/src/test/groovy/org/onap/cps/ncmp/dmi/api/kafka/MessagingBaseSpec.groovy",
+        "patchSetId": 3
+      },
+      "lineNbr": 48,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2026-07-22T14:18:56Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "e89aed13_cedba5eb",
+      "range": {
+        "startLine": 48,
+        "startChar": 96,
+        "endLine": 48,
+        "endChar": 101
+      },
+      "revId": "9aea4943a83f83301a337120324c415fa9bc9565",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "27dd3817_5f01effc",
@@ -318,6 +342,30 @@
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "c96b244e_bc417002",
+        "filename": "dmi-service/src/test/groovy/org/onap/cps/ncmp/dmi/datajobs/rest/controller/DmiDatajobsRestControllerSpec.groovy",
+        "patchSetId": 3
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2026-07-22T14:18:56Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "38ef1eb8_8ed697fa",
+      "range": {
+        "startLine": 39,
+        "startChar": 22,
+        "endLine": 39,
+        "endChar": 40
+      },
+      "revId": "9aea4943a83f83301a337120324c415fa9bc9565",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "84943473_6b350236",
@@ -365,6 +413,30 @@
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "c5dff553_ed15adf5",
+        "filename": "dmi-service/src/test/groovy/org/onap/cps/ncmp/dmi/rest/controller/ControllerSecuritySpec.groovy",
+        "patchSetId": 3
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2026-07-22T14:18:56Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "6a701dfa_bf49847c",
+      "range": {
+        "startLine": 36,
+        "startChar": 28,
+        "endLine": 36,
+        "endChar": 43
+      },
+      "revId": "9aea4943a83f83301a337120324c415fa9bc9565",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "7ec896d1_efd7da54",
@@ -402,6 +474,30 @@
       "side": 1,
       "message": "The \"...\" wrapping is Jackson\u0027s JSON string-encoding. It\u0027s gone because the controller returns a String, and Spring\u0027s default @WebMvcTest converters write a String verbatim via StringHttpMessageConverter instead of through Jackson. This is built into @WebMvcTest, not DmiPluginConfig — I confirmed the spec still passes without DmiPluginConfig.",
       "parentUuid": "7ec896d1_efd7da54",
+      "range": {
+        "startLine": 297,
+        "startChar": 137,
+        "endLine": 297,
+        "endChar": 150
+      },
+      "revId": "9aea4943a83f83301a337120324c415fa9bc9565",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "31a512fd_9675d879",
+        "filename": "dmi-service/src/test/groovy/org/onap/cps/ncmp/dmi/rest/controller/DmiRestControllerSpec.groovy",
+        "patchSetId": 3
+      },
+      "lineNbr": 297,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2026-07-22T14:18:56Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "8c9381ca_38b8d451",
       "range": {
         "startLine": 297,
         "startChar": 137,
