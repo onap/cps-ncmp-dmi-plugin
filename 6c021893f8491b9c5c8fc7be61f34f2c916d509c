@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "b18b8a85_69b1930e",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 5
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2026-07-22T12:54:43Z",
+      "side": 1,
+      "message": "build is still failing related to J21 setup?!\nsee logs:\n11:58:08 [ERROR] Failed to execute goal org.apache.maven.plugins:maven-compiler-plugin:3.14.1:compile (default-compile) on project dmi-service: Fatal error compiling: error: invalid target release: 21 -\u003e [Help 1]\n11:58:08 org.apache.maven.lifecycle.LifecycleExecutionException: Failed to execute goal org.apache.maven.plugins:maven-compiler-plugin:3.14.1:compile (default-compile) on project dmi-service: Fatal error compiling",
+      "revId": "6c021893f8491b9c5c8fc7be61f34f2c916d509c",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    }
+  ]
+}
