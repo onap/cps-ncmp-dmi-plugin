@@ -31,7 +31,7 @@ import org.springframework.kafka.core.KafkaTemplate
 import org.springframework.kafka.support.serializer.JsonSerializer
 import org.springframework.test.context.DynamicPropertyRegistry
 import org.springframework.test.context.DynamicPropertySource
-import org.testcontainers.containers.KafkaContainer
+import org.testcontainers.kafka.ConfluentKafkaContainer
 import org.testcontainers.utility.DockerImageName
 import spock.lang.Specification
 
@@ -45,7 +45,7 @@ class MessagingBaseSpec extends Specification {
         kafkaTestContainer.stop()
     }
 
-    static kafkaTestContainer = new KafkaContainer(DockerImageName.parse('confluentinc/cp-kafka:7.8.0'))
+    static kafkaTestContainer = new ConfluentKafkaContainer(DockerImageName.parse('confluentinc/cp-kafka:8.2.2'))
 
     def producerConfigProperties(valueSerializer) {
         return [('bootstrap.servers'): kafkaTestContainer.getBootstrapServers().split(',')[0],
