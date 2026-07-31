@@ -115,6 +115,17 @@ jobs:
   # gerrit_* inputs drive the reusable workflow's Gerrit-aware checkout;
   # for a manual GERRIT_DISABLED run they are blanked so it falls back to
   # a standard checkout of the calling repository.
+  #
+  # Pinned to v0.1.0, which removes a github_summary input the build
+  # lane passed to build-metadata-action, an action that has no such
+  # input. It produced two warning annotations on every run and never
+  # did anything. The release also moves the default harden-runner
+  # allow-list to v0.12.2.
+  #
+  # Build artefact publication arrives in the same release and stays
+  # off here: nothing downstream consumes the jars yet. Enable
+  # upload_build_artifacts when a merge, stage or container lane needs
+  # them.
   build-test:
     needs: clear-vote
     if: >-
@@ -125,7 +136,7 @@ jobs:
       contents: read
       pull-requests: read  # repository-metadata-action queries PR data
     # yamllint disable-line rule:line-length
-    uses: lfreleng-actions/java-workflows/.github/workflows/maven-build-test.yaml@0b9c8f0b9f23a32b2a43a0df9329caf4d288f64e  # v0.0.4
+    uses: lfreleng-actions/java-workflows/.github/workflows/maven-build-test.yaml@20717353740378765cd330ab44c2a7cfc0cb8c61  # v0.1.0
     with:
       # java_version is deliberately left unset so the lane detects the
       # project's JDK from the POMs. The CLM lane in this repository
