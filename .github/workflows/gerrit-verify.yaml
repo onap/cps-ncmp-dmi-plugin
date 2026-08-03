@@ -116,13 +116,17 @@ jobs:
   # for a manual GERRIT_DISABLED run they are blanked so it falls back to
   # a standard checkout of the calling repository.
   #
-  # Pinned to v0.1.1. v0.1.0 removed a github_summary input the build
+  # Pinned to v0.1.2. v0.1.0 removed a github_summary input the build
   # lane passed to build-metadata-action, an action that has no such
   # input; it produced two warning annotations on every run and never
   # did anything. That release also moved the default harden-runner
-  # allow-list to v0.12.2. v0.1.1 leaves both reusables byte-identical,
-  # having bumped the allow-list only in that repository's own CI, and
-  # is taken to keep this pin on the current release.
+  # allow-list to v0.12.2.
+  #
+  # v0.1.2 carries maven-build-action v0.3.1, which stops that action
+  # leaving a Maven settings document in the workspace. This lane
+  # supplies one through maven_global_settings and builds the code under
+  # review, so the file was readable by the plugins and tests of the
+  # patchset being verified.
   #
   # Build artefact publication arrives in the same release and stays
   # off here: nothing downstream consumes the jars yet. Enable
@@ -138,7 +142,7 @@ jobs:
       contents: read
       pull-requests: read  # repository-metadata-action queries PR data
     # yamllint disable-line rule:line-length
-    uses: lfreleng-actions/java-workflows/.github/workflows/maven-build-test.yaml@10f088e090f0a06572156a21a34321073af04a75  # v0.1.1
+    uses: lfreleng-actions/java-workflows/.github/workflows/maven-build-test.yaml@cb4d89f992669dbb10c1c016fed9829d41517c5f  # v0.1.2
     with:
       # java_version is deliberately left unset so the lane detects the
       # project's JDK from the POMs. The CLM lane in this repository
