@@ -217,7 +217,7 @@ public interface ProvMnS {
      * The target resource is identified by the target URI.
      *
      * @param httpServletRequest (required)
-     * @param resource  (required)
+     * @param requestBody  (required)
      * @return Success case ("200 OK"). This status code shall be returned when the resource is replaced,
      *         and when the replaced resource representation is not identical to the resource representation in
      *         the request. This status code may be returned when the resource is updated and when the updated
@@ -266,7 +266,7 @@ public interface ProvMnS {
 
     ResponseEntity<Resource> putMoi(
         HttpServletRequest httpServletRequest,
-        @Parameter(name = "Resource", description = "", required = true) @Valid @RequestBody Resource resource
+        @Parameter(name = "Resource", description = "", required = true) @RequestBody String requestBody
     );
 
 }
