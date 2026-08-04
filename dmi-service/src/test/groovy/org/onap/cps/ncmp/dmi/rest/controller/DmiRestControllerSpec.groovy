@@ -25,6 +25,7 @@ package org.onap.cps.ncmp.dmi.rest.controller
 import ch.qos.logback.classic.Logger
 import ch.qos.logback.classic.spi.ILoggingEvent
 import ch.qos.logback.core.read.ListAppender
+import com.fasterxml.jackson.databind.ObjectMapper
 import org.onap.cps.ncmp.dmi.TestUtils
 import org.onap.cps.ncmp.dmi.exception.DmiException
 import org.onap.cps.ncmp.dmi.exception.ModuleResourceNotFoundException
@@ -108,7 +109,9 @@ class DmiRestControllerSpec extends Specification {
         then: 'status is OK'
             response.status == OK.value()
         and: 'the response content matches the result from the DMI service'
-            response.getContentAsString() == '{"schemas":[{"moduleName":"some-moduleName","revision":"some-revision","namespace":"some-namespace"}]}'
+            def objectMapper = new ObjectMapper()
+            objectMapper.readTree(response.getContentAsString()) == objectMapper.readTree(
+                    '{"schemas":[{"moduleName":"some-moduleName","revision":"some-revision","namespace":"some-namespace"}]}')
     }
 
     def 'Get all modules with exception handling of #scenario.'() {
@@ -182,7 +185,9 @@ class DmiRestControllerSpec extends Specification {
         then: 'a OK status is returned'
             response.status == OK.value()
         and: 'the response content matches the result from the DMI service'
-            response.getContentAsString() == '[{"yangSource":"\\"some-data\\"","moduleName":"NAME","revision":"REVISION"}]'
+            def objectMapper = new ObjectMapper()
+            objectMapper.readTree(response.getContentAsString()) == objectMapper.readTree(
+                    '[{"yangSource":"\\"some-data\\"","moduleName":"NAME","revision":"REVISION"}]')
     }
 
     def 'Retrieve module resources with exception handling.'() {
