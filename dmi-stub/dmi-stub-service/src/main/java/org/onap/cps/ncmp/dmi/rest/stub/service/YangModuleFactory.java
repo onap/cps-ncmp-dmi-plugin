@@ -1,6 +1,6 @@
 /*
  * ============LICENSE_START=======================================================
- *  Copyright (C) 2024 Nordix Foundation.
+ *  Copyright (C) 2024-2026 OpenInfra Foundation Europe. All rights reserved.
  * ================================================================================
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -68,6 +68,7 @@ public class YangModuleFactory {
     private final ObjectMapper objectMapper;
     private final Map<String, String> moduleReferencesJsonMap = new HashMap<>();
     private final Map<String, String> moduleResourcesJsonMap = new HashMap<>();
+    private final Map<String, Integer> contentChangeCountPerTag = new HashMap<>();
 
     @PostConstruct
     private void initializeModuleJsonStrings() {
@@ -104,6 +105,23 @@ public class YangModuleFactory {
     }
 
     /**
+     * Simulate a model regeneration for the given module set tag: the content of the first module (module0) is
+     * changed while its module name and revision stay the same. Subsequent module resource reads for this tag return
+     * the changed content, so a module refresh will detect and apply the change. Intended for testing/demo only.
+     *
+     * @param moduleSetTag the module set tag to change content for (e.g. tagA)
+     */
+    public void changeModuleContent(final String moduleSetTag) {
+        final int numberOfModules = DEFAULT_TAG.equals(moduleSetTag)
+            ? NUMBER_OF_MODULES_NOT_IN_MODULE_SET : NUMBER_OF_MODULES_PER_MODULE_SET;
+        final int changeCount = contentChangeCountPerTag.merge(moduleSetTag, 1, Integer::sum);
+        final String contentMarker = "content change #" + changeCount + " ";
+        moduleResourcesJsonMap.put(moduleSetTag,
+            createModuleResourcesJson(moduleSetTag, numberOfModules, contentMarker));
+        log.info("Simulated content change #{} for module set tag '{}' (module0)", changeCount, moduleSetTag);
+    }
+
+    /**
      * Generates a list of tags from 'A' to 'E'.
      *
      * @return a list of tags in the format "tagX" where X is each character from 'A' to 'E'
@@ -126,11 +144,17 @@ public class YangModuleFactory {
     }
 
     private String createModuleResourcesJson(final String tag, final int numberOfModules) {
+        return createModuleResourcesJson(tag, numberOfModules, "");
+    }
+
+    private String createModuleResourcesJson(final String tag, final int numberOfModules,
+                                             final String contentMarkerForFirstModule) {
         final List<ModuleResource> moduleResourceList = new ArrayList<>(numberOfModules);
         final String moduleRevision = generateModuleRevision(tag);
         for (int i = 0; i < numberOfModules; i++) {
             final String moduleName = "module" + i;
-            final String yangSource = generateYangSource(moduleName, moduleRevision);
+            final String contentMarker = (i == 0) ? contentMarkerForFirstModule : "";
+            final String yangSource = generateYangSource(moduleName, moduleRevision, contentMarker);
             moduleResourceList.add(new ModuleResource(moduleName, moduleRevision, yangSource));
         }
         return serializeToJson(moduleResourceList, "ModuleResources");
@@ -151,11 +175,12 @@ public class YangModuleFactory {
         return LocalDate.of(2024, tagIndex + 1, tagIndex + 1).toString();
     }
 
-    private static String generateYangSource(final String moduleName, final String moduleRevision) {
+    private static String generateYangSource(final String moduleName, final String moduleRevision,
+                                             final String contentMarker) {
         final int paddingSize = TARGET_FILE_SIZE_IN_KB - MODULE_TEMPLATE.length();
-        final String padding = "*".repeat(Math.max(0, paddingSize));
+        final String description = contentMarker + "*".repeat(Math.max(0, paddingSize));
         return MODULE_TEMPLATE.replaceAll("<MODULE_NAME>", moduleName)
             .replace("<MODULE_REVISION>", moduleRevision)
-            .replace("<DESCRIPTION>", padding);
+            .replace("<DESCRIPTION>", description);
     }
 }
