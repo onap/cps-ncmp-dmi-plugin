@@ -33,6 +33,23 @@
       "message": "recheck",
       "revId": "86e44501197bdf4e74faa5705f47f1b983edeed3",
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "8d552cde_bb842408",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2026-08-06T07:04:29Z",
+      "side": 1,
+      "message": "Shivani, I suggest you disable the failing CSIT tests for now. Maybe the whole testsuite. WE need to replace it with proper K6 tests anway...",
+      "revId": "86e44501197bdf4e74faa5705f47f1b983edeed3",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
     }
   ]
 }
