@@ -169,6 +169,22 @@ public class DmiRestStubController {
     }
 
     /**
+     * Simulate a model regeneration on the node for a given module set tag by changing the content of one of its
+     * modules (module name and revision unchanged). A subsequent module refresh will detect and apply the change.
+     * For testing/demo only.
+     *
+     * @param moduleSetTag the module set tag to change content for (e.g. tagA)
+     * @return a ResponseEntity confirming the simulated change
+     */
+    @PostMapping("/v1/simulateModuleContentChange/{moduleSetTag}")
+    public ResponseEntity<String> simulateModuleContentChange(
+            @PathVariable("moduleSetTag") final String moduleSetTag) {
+        log.info("simulateModuleContentChange for module set tag: {}", moduleSetTag);
+        yangModuleFactory.changeModuleContent(moduleSetTag);
+        return ResponseEntity.ok(String.format("Simulated module content change for module set tag %s", moduleSetTag));
+    }
+
+    /**
      * Get all modules for given cm handle.
      *
      * @param cmHandleId              The identifier for a network function, network element, subnetwork,
