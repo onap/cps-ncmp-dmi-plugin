@@ -67,6 +67,46 @@
       "message": "recheck",
       "revId": "86e44501197bdf4e74faa5705f47f1b983edeed3",
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "7f377581_f88bb9f9",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 7931
+      },
+      "writtenOn": "2026-08-10T13:35:51Z",
+      "side": 1,
+      "message": "minor comment",
+      "revId": "86e44501197bdf4e74faa5705f47f1b983edeed3",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "690124a5_56fe3541",
+        "filename": "dmi-service/src/main/java/org/onap/cps/ncmp/dmi/config/DmiPluginConfig.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 7931
+      },
+      "writtenOn": "2026-08-10T13:35:51Z",
+      "side": 1,
+      "message": "NB: can this be removed now then since no override and not used ?",
+      "range": {
+        "startLine": 35,
+        "startChar": 29,
+        "endLine": 35,
+        "endChar": 56
+      },
+      "revId": "86e44501197bdf4e74faa5705f47f1b983edeed3",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
     }
   ]
 }
