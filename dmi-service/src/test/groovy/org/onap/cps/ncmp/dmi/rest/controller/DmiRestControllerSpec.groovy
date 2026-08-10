@@ -108,7 +108,7 @@ class DmiRestControllerSpec extends Specification {
         then: 'status is OK'
             response.status == OK.value()
         and: 'the response content matches the result from the DMI service'
-            response.getContentAsString() == '{"schemas":[{"moduleName":"some-moduleName","revision":"some-revision","namespace":"some-namespace"}]}'
+            response.getContentAsString() == '{"schemas":[{"moduleName":"some-moduleName","namespace":"some-namespace","revision":"some-revision"}]}'
     }
 
     def 'Get all modules with exception handling of #scenario.'() {
@@ -182,7 +182,7 @@ class DmiRestControllerSpec extends Specification {
         then: 'a OK status is returned'
             response.status == OK.value()
         and: 'the response content matches the result from the DMI service'
-            response.getContentAsString() == '[{"yangSource":"\\"some-data\\"","moduleName":"NAME","revision":"REVISION"}]'
+            response.getContentAsString() == '[{"moduleName":"NAME","revision":"REVISION","yangSource":"\\"some-data\\""}]'
     }
 
     def 'Retrieve module resources with exception handling.'() {

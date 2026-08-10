@@ -39,7 +39,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class ProvMnsController implements ProvMnS {
 
     @Override
-    public ResponseEntity<Resource> putMoi(final HttpServletRequest httpServletRequest, final Resource resource) {
+    public ResponseEntity<Resource> putMoi(final HttpServletRequest httpServletRequest, final String requestBody) {
         return new ResponseEntity<>(HttpStatus.NOT_IMPLEMENTED);
     }
 
