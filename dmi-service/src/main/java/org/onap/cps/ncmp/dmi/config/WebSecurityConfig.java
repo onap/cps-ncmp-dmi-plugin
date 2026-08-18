@@ -76,7 +76,7 @@ public class WebSecurityConfig {
     // web browsers are. ncmp  does not manage sessions, each request requires the authentication token in the header.
     // See https://docs.spring.io/spring-security/site/docs/5.3.8.RELEASE/reference/html5/#csrf
     @SuppressWarnings("squid:S4502")
-    public SecurityFilterChain filterChain(final HttpSecurity http) throws Exception {
+    public SecurityFilterChain filterChain(final HttpSecurity http) {
         http
                 .httpBasic(httpBasicCustomizer -> {})
                 .authorizeHttpRequests(authorizeHttpRequestsCustomizer -> {
