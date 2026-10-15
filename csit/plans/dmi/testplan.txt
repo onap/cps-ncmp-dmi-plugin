@@ -16,5 +16,7 @@
 
 # Test suites are relative paths under csit/tests/.
 # Place the suites in run order.
+#
+# The dmi-integration suite was removed: its coverage is now provided by the k6
+# tests in the cps repository, under k6-tests/onap-dmi-stack/.
 actuator
-dmi-integration
