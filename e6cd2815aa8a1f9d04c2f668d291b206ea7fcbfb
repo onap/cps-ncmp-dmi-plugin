@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "e5a49af2_8d6b8fd2",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 7931
+      },
+      "writtenOn": "2026-10-16T13:53:06Z",
+      "side": 1,
+      "message": "should we not just remove the whole csit if its already covered?",
+      "revId": "e6cd2815aa8a1f9d04c2f668d291b206ea7fcbfb",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    }
+  ]
+}
