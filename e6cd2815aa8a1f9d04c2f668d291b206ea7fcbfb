@@ -34,6 +34,23 @@
       "parentUuid": "e5a49af2_8d6b8fd2",
       "revId": "e6cd2815aa8a1f9d04c2f668d291b206ea7fcbfb",
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "faee35eb_5f71d0fc",
+        "filename": "csit/plans/dmi/testplan.txt",
+        "patchSetId": 1
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 8171
+      },
+      "writtenOn": "2026-10-20T15:50:00Z",
+      "side": 1,
+      "message": "NB: can this file not just be deleted too?",
+      "revId": "e6cd2815aa8a1f9d04c2f668d291b206ea7fcbfb",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
     }
   ]
 }
