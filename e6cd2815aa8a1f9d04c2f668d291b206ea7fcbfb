@@ -36,6 +36,23 @@
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "79921a56_e18dc7e0",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2026-10-21T11:44:18Z",
+      "side": 1,
+      "message": "lets delete all we can...",
+      "revId": "e6cd2815aa8a1f9d04c2f668d291b206ea7fcbfb",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "faee35eb_5f71d0fc",
@@ -49,6 +66,24 @@
       "writtenOn": "2026-10-20T15:50:00Z",
       "side": 1,
       "message": "NB: can this file not just be deleted too?",
+      "revId": "e6cd2815aa8a1f9d04c2f668d291b206ea7fcbfb",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "90983e9d_bc4412fc",
+        "filename": "csit/plans/dmi/testplan.txt",
+        "patchSetId": 1
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2026-10-21T11:44:18Z",
+      "side": 1,
+      "message": "agree: clean up any remaining csit files, i think the whole /csit folder can be deleted?",
+      "parentUuid": "faee35eb_5f71d0fc",
       "revId": "e6cd2815aa8a1f9d04c2f668d291b206ea7fcbfb",
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
     }
