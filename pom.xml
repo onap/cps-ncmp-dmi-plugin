@@ -70,6 +70,9 @@
         <onap.nexus.url>https://nexus.onap.org</onap.nexus.url>
         <releaseNexusPath>/content/repositories/releases/</releaseNexusPath>
         <snapshotNexusPath>/content/repositories/snapshots/</snapshotNexusPath>
+
+        <!-- Keep CI/infrastructure files (GitHub workflows etc.) out of SonarCloud analysis -->
+        <sonar.exclusions>.github/**</sonar.exclusions>
     </properties>
 
     <build>
